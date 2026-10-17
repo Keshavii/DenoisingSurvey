@@ -1,0 +1,14 @@
+{
+  "recall@10": 0.036387241429132924,
+  "recall@20": 0.06272177255751389,
+  "recall@50": 0.12122183424862859,
+  "ndcg@10": 0.041974413364625644,
+  "ndcg@20": 0.05155350797577407,
+  "ndcg@50": 0.07323517667396919,
+  "n_eval_users": 31668,
+  "seen_item_leak_rate": 0.0,
+  "data": "data/sanity_yelp2018",
+  "topk": "runs/sanity/lightgcn_bpr/topk_valid.npy",
+  "split": "valid_clean",
+  "evaluated_at": "2026-10-17 18:38:23"
+}

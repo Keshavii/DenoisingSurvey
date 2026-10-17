@@ -1,0 +1,21 @@
+job_id,cwd,cmd,slots
+noise_adressa_clean,.,python -m rq1kit.noise --data data/adressa --cond clean,1
+noise_adressa_N2_20_s1,.,python -m rq1kit.noise --data data/adressa --cond N2 --rate 0.2 --seed 1,1
+noise_adressa_N2_20_s2,.,python -m rq1kit.noise --data data/adressa --cond N2 --rate 0.2 --seed 2,1
+noise_adressa_N2_20_s3,.,python -m rq1kit.noise --data data/adressa --cond N2 --rate 0.2 --seed 3,1
+noise_ml1m_clean,.,python -m rq1kit.noise --data data/ml1m --cond clean,1
+noise_ml1m_N2_20_s1,.,python -m rq1kit.noise --data data/ml1m --cond N2 --rate 0.2 --seed 1,1
+noise_ml1m_N2_20_s2,.,python -m rq1kit.noise --data data/ml1m --cond N2 --rate 0.2 --seed 2,1
+noise_ml1m_N2_20_s3,.,python -m rq1kit.noise --data data/ml1m --cond N2 --rate 0.2 --seed 3,1
+noise_yelp_clean,.,python -m rq1kit.noise --data data/yelp --cond clean,1
+noise_yelp_N2_20_s1,.,python -m rq1kit.noise --data data/yelp --cond N2 --rate 0.2 --seed 1,1
+noise_yelp_N2_20_s2,.,python -m rq1kit.noise --data data/yelp --cond N2 --rate 0.2 --seed 2,1
+noise_yelp_N2_20_s3,.,python -m rq1kit.noise --data data/yelp --cond N2 --rate 0.2 --seed 3,1
+noise_gowalla_clean,.,python -m rq1kit.noise --data data/gowalla --cond clean,1
+noise_gowalla_N2_20_s1,.,python -m rq1kit.noise --data data/gowalla --cond N2 --rate 0.2 --seed 1,1
+noise_gowalla_N2_20_s2,.,python -m rq1kit.noise --data data/gowalla --cond N2 --rate 0.2 --seed 2,1
+noise_gowalla_N2_20_s3,.,python -m rq1kit.noise --data data/gowalla --cond N2 --rate 0.2 --seed 3,1
+noise_amazon_book_clean,.,python -m rq1kit.noise --data data/amazon_book --cond clean,1
+noise_amazon_book_N2_20_s1,.,python -m rq1kit.noise --data data/amazon_book --cond N2 --rate 0.2 --seed 1,1
+noise_amazon_book_N2_20_s2,.,python -m rq1kit.noise --data data/amazon_book --cond N2 --rate 0.2 --seed 2,1
+noise_amazon_book_N2_20_s3,.,python -m rq1kit.noise --data data/amazon_book --cond N2 --rate 0.2 --seed 3,1

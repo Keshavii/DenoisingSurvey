@@ -1,0 +1,71 @@
+paper,year,venue,venue_tier,survey_column,family,family_note,noise_targeted,detection_signal,foundation,evaluation_noise,datasets,n_datasets,backbones,code,core_rq1,data_status
+ADT (T-CE / R-CE),2021,WSDM'21,conference,Explicit,T1,,false positives,optimization-driven (loss),none,natural,Adressa; Amazon-Book; Yelp,3,CDAE; GMF; NeuMF,github.com/WenjieWWJ/DenoisingRec,yes,Read from PDF
+DeCA,2022,WWW'22,conference,Explicit,T2,,,probability-driven (model agreement),model,natural,Adressa; Amazon-Electronics; Modcloth; MovieLens-100K,4,CDAE; GMF; LightGCN; NeuMF,github.com/wangyu-ustc/DeCA,yes,Read from PDF
+SGDL,2022,SIGIR'22,conference,Explicit,T1,,,optimization-driven (memorization),data,natural,Adressa; MovieLens-100K; Yelp,3,CDAE; LightGCN; NGCF; NeuMF,github.com/yuntaod/SGDL,yes,Read from PDF
+KRDN,2023,SIGIR'23,conference,Explicit,T3,,,,,injected+natural,Alibaba-iFashion; Last-FM; Yelp2018,3,MF-BPR,"github.com/xj-zhu98/KRDN (from paper, unopened)",no,Read from PDF
+BOD,2023,KDD'23,conference,Explicit,T1,,,optimization-driven (meta-gradient),model,injected+natural,Alibaba-iFashion; Amazon-Beauty; Yelp2018,3,GMF; LightGCN; NGCF; NeuMF,github.com/CoderWZW/BOD,yes,Read from PDF
+DCF,2024,KDD'24,conference,Explicit,T2,,,optimization-driven (loss with confidence bounds),none,natural,Adressa; MovieLens-100K; Yelp,3,GMF; LightGCN; NGCF; NeuMF,github.com/bruno686/DCF,yes,Read from PDF
+DDRM (= PlugIn Diffusion),2024,SIGIR'24,conference,Explicit,T6,,,none (generative),none,injected+natural,Amazon-Book; MovieLens-1M; Yelp,3,LightGCN; MF-BPR; SGL,github.com/Polaris-JZ/DDRM,yes,Read from PDF
+UDT,2024,RecSys'24,conference,Explicit,T1,,,,,natural,Amazon-Book; MovieLens-1M; Yelp,3,CDAE; GMF; NeuMF,github.com/hyNTU/UDT,no,Read from PDF
+DA-MRS,2024,KDD'24,conference,Explicit,T4,,,,,injected+natural,Amazon-Baby; Amazon-Clothing; Amazon-Sports; TikTok,4,LightGCN,github.com/XMUDM/DA-MRS,no,Read from PDF
+PLD,2025,WWW'25,conference,Explicit,T1,,,optimization-driven (per-user loss distribution),none,injected+natural,Gowalla; MIND; Yelp2018,3,LightGCN; MF-BPR,github.com/Kaike-Zhang/PLD,yes,Read from PDF
+AEL,2025,ICASSP'25,conference,Explicit,T1,,,,,natural,Adressa; Modcloth; MovieLens-100K,3,CDAE; GMF; LightGCN; NeuMF,"github.com/cpu9xx/AEL (from paper, unopened)",no,Read from PDF
+DeMBR,2025,WSDM'25,conference,Explicit,T3,,,,,natural,IJCAI-Contest; Taobao,2,,github.com/DeMBR2024/DeMBR (unclear),no,Read from PDF
+LLM for Denoising Rec (LLaRD),2025,WWW'25,conference,Explicit,T4,,,reasoning-driven (LLM knowledge),knowledge,injected+natural,Amazon-Book; Steam; Yelp,3,GMF; LightGCN,github.com/shuyao-wang/LLaRD,yes,Read from PDF
+SVV,2025,KDD'25,conference,Explicit,T1,,,,,natural,Amazon-CDs & Vinyl; Amazon-Movies & TV; Amazon-Video Games; Ta Feng,4,AE; DAE; LightGCN; MF-BPR,github.com/Forrest-Stone/SVV (partial),no,Read from PDF
+IADSR,2025,CIKM'25,conference,Explicit,T5,,,,,natural,Amazon-Beauty; Amazon-Sports; Amazon-Toys; MovieLens-100K,4,Caser; GRU4Rec; SASRec,github.com/Applied-Machine-Learning-Lab/IADSR,no,Read from PDF
+LLM4DSR,2025,TOIS'25,journal,Explicit,T2,,,,,injected+natural,Amazon-Movies & TV; Amazon-Toys; Amazon-Video Games,3,BERT4Rec; LLaRA; SASRec,none found,no,Read from PDF
+LLMHD,2024,arXiv 2024 (2409.10343),preprint,Explicit,T1,,,,,injected+natural,Amazon-Book; Steam; Yelp,3,LightGCN; NCL; NGCF; SGL,not checked,no,Read from PDF (baseline list partial)
+RuleAgent,2025,arXiv'25,preprint,Explicit,T1,,,,,injected+natural,Amazon-Beauty; Gowalla; Yelp2018,3,GMF; LightGCN; XSimGCL,none found,no,Read from PDF
+CSRec,2023,arXiv'23,preprint,Explicit,T2,,,,,natural,Amazon-Electronics; Amazon-Movies & TV; Last-FM; Yelp,4,GRU4Rec; NARM; NextItNet; SASRec,"github.com/Furyton/CSRec (from paper, unopened)",no,Read from PDF
+CLID,2025,Preprint'25,preprint,Explicit,T3,,,,,natural,Amazon-Baby; Amazon-Clothing; Amazon-Sports,3,,"github.com/Qiyx5025/CLID-master (from paper, unopened)",no,Read from PDF (baseline list partial)
+GUIDER,2025,WSDM'25,conference,Explicit,T4,,,,,natural,Amazon-Baby; Amazon-Clothing; Amazon-Sports; MicroLens,4,BM3; DRAGON; FREEDOM; MMGCN; VBPR,github.com/Neon-Jing/Guider,no,Read from PDF
+Hierarchical Denoising (Social Rec),2025,TKDE'25,journal,Explicit,T3,,,,,injected+natural,Douban; Epinions; Yelp2018,3,LightGCN,"github.com/laowangzi/HDSR (from paper, unopened)",no,Read from PDF
+DNR,2026,arXiv'26,preprint,Explicit,T7,tentative,,,,natural,Amazon-Toys; Kuaivideo; MovieLens-1M,3,Caser; GRU4Rec; SASRec,"github.com/maowenyu-11/DNR (from paper, unopened)",no,Read from PDF
+CF-Diff,2024,SIGIR'24,conference,Implicit,T6,,,,,natural,Anime; MovieLens-1M; Yelp,3,,"github.com/jackfrost168/CF_Diff (from paper, unopened)",no,Read from PDF
+CDiff4Rec,2025,WWW Companion'25,conference (short/companion/industry),Implicit,T6,,,,,natural,Amazon-Video Games; CiteULike-t; Yelp,3,,not checked,no,Read from PDF
+PreferDiff,2025,ICLR'25,conference,Implicit,T6,,,,,natural,Amazon-Beauty; Amazon-Sports; Amazon-Toys; MovieLens-1M; Steam; Yahoo! R1,6,,github.com/lswhim/PreferDiff,no,Read from PDF
+DrRL,2025,AAAI'25,conference,Implicit,T7,,,none (objective-level),none,injected,Amazon-Beauty; Amazon-Electronics; Amazon-Kitchen; Gowalla,4,LightGCN; MF-BPR; XSimGCL,github.com/cynthia-shengjia/AAAI-2025-DrRL,yes,Read from PDF (statistics not in main text)
+DVIB,2025,WWW'25,conference,Implicit,T4,,,,,natural,Amazon-Baby; Amazon-Clothing; Amazon-Sports; Pinterest,4,BM3; FREEDOM; GRCN; LayerGCN; MMGCN; SelfCF; VBPR,not checked,no,Read from PDF
+SMORE,2025,WSDM'25,conference,Implicit,T4,,,,,natural,Amazon-Baby; Amazon-Clothing; Amazon-Sports,3,,"github.com/kennethorq/SMORE (from paper, unopened)",no,Read from PDF
+SymCERE,2025,arXiv'25,preprint,Implicit,T2,,,,,natural,"Amazon-Automotive; Amazon-Beauty; Amazon-CDs & Vinyl; Amazon-Cell Phones & Accessories; Amazon-Clothing; Amazon-Health & Household; Amazon-Office Products; Amazon-Patio, Lawn & Garden; Amazon-Pet Supplies; Amazon-Sports; Amazon-Tools & Home; Amazon-Toys; Amazon-Video Games; Travel (Tripadvisor-style reviews); Yelp",15,,not checked,no,Read from PDF
+SIGE,2025,arXiv'25,preprint,Implicit,T4,,,,,natural,Amazon-Baby; Amazon-Clothing; Amazon-Sports; MicroLens,4,,not checked,no,Read from PDF (no statistics table in paper)
+CLEA,2021,SIGIR 2021,conference,Explicit,T5,tentative,,,,unknown,,0,,not checked,no,Not reachable (no data)
+IR,2021,ACM MM 2021,conference,Explicit,T2,,,,,unknown,MovieLens-100K; MovieLens-1M; Netflix,3,,not checked,no,Partial (web search / README only)
+DUMN,2021,RecSys 2021,conference,Explicit,T4,tentative,,,,natural,"Alibaba display-ads logs; Industrial (DUMN, proprietary)",2,,not checked,no,Read via web (summary; verify numbers)
+RLNF,2021,SIGIR (short) 2021,conference (short/companion/industry),Explicit,T1,,,,,unknown,,0,,not checked,no,Not reachable (no data)
+CONDE,2021,CIKM 2021,conference,Explicit,T3,,,,,natural,"Amazon-Electronics; Micro-video (CONDE, proprietary)",2,,not checked,no,Read via web (summary; verify numbers)
+RGCF,2022,SIGIR 2022,conference,Explicit,T3,,,structure-driven (edge reliability),data,injected+natural,Amazon-Book; MovieLens-1M; Yelp,3,,github.com/ChangxinTian/RGCF,yes,Partial (web search / README only)
+HSD,2022,CIKM 2022,conference,Explicit,T5,,,,,natural,Amazon-Beauty; Amazon-Sports; MovieLens-100K; MovieLens-1M; Yelp,5,BERT4Rec; Caser; GRU4Rec; NARM; SASRec; STAMP,github.com/zc-97/HSD,no,Read via web (summary; verify numbers)
+Rec-Denoiser,2022,RecSys 2022,conference,Explicit,T5,,,,,injected+natural,Amazon-Beauty; Amazon-Movies & TV; Amazon-Video Games; MovieLens-1M; Steam,5,BERT4Rec; SASRec; SSE-PT; TiSASRec,not checked,no,Read via web (summary; verify numbers)
+DiCycle (DTCM),2022,SIGIR (short) 2022,conference (short/companion/industry),Explicit,T5,tentative,,,,natural,Amazon-Book; IndRec; Last-FM; MovieLens-1M,4,,not checked,no,Read via web (summary; verify numbers)
+STEAM,2023,WWW 2023,conference,Explicit,T2,,,,,injected+natural,Amazon-Beauty; Amazon-Sports; Yelp,3,,github.com/TempSDU/STEAM,no,Read via web (summary; verify numbers)
+AutoDenoise,2023,WWW 2023,conference,Explicit,T1,,,,,natural,KuaiRec; MovieLens-1M; Netflix,3,DCN; DeepFM; FM; PNN; Wide&Deep,not checked,no,Read via web (summary; verify numbers)
+GDMSR,2023,WWW 2023,conference,Explicit,T3,,,,,injected+natural,Ciao; Douban; Yelp,3,DiffNet++; MHCN,github.com/tsinghua-fib-lab/Graph-Denoising-SocialRec,no,Read via web (summary; verify numbers)
+DPT,2023,WWW 2023,conference,Explicit,T4,,,,,natural,IJCAI-Contest; Tmall,2,,not checked,no,Read via web (summary; verify numbers)
+DSL,2023,IJCAI 2023,conference,Explicit,T3,,,,,injected+natural,Ciao; Epinions; Yelp,3,,not checked,no,Read via web (summary; verify numbers)
+SLED,2023,ACM TOIS 42(2) 2023,journal,Explicit,T3,,,,,natural,Amazon-Beauty; MIND; MovieLens-1M; Taobao; Taobao User Behavior (small),5,ComiRec-SA; LightGCN; MIND (multi-interest); NGCF,not checked,no,Read via web (summary; verify numbers)
+RocSE,2023,"ACM TOIS 41(3), Art. 59 2023",journal,Explicit,T3,,,,,unknown,,0,,not checked,no,UNREACHABLE (403; no arXiv found). Note actual title is '...Structure Denoising and Embedding Perturbation'
+GraphDA,2023,SIGIR (short) 2023,conference (short/companion/industry),Explicit,T3,,,,,natural,Amazon-Beauty; Amazon-Tools & Home; Amazon-Toys,3,LightGCN; NGCF,not checked,no,Read via web (summary; verify numbers)
+D2Co,2023,RecSys 2023,conference,Explicit,T7,,,,,natural,KuaiRand; WeChat,2,AutoInt; DeepFM; FM,not checked,no,Read via web (summary; verify numbers)
+RealHNS,2023,RecSys 2023,conference,Explicit,T2,,,,,unknown,,0,,not checked,no,UNREACHABLE (403; no arXiv found; GitHub README has no experiment details)
+BNS,2023,ICDE 2023,conference,Explicit,T2,,,,,natural,MovieLens-100K; MovieLens-1M; Yahoo! R3,3,LightGCN; MF-BPR,not checked,no,Read via web (summary; verify numbers)
+END4Rec,2024,WWW 2024,conference,Explicit,T4,,,,,natural,CIKM Cup; IJCAI-Contest; Taobao,3,BERT4Rec; SASRec,not checked,no,Read via web (summary; verify numbers)
+SSDRec,2024,ICDE 2024,conference,Explicit,T5,,,,,natural,Amazon-Beauty; Amazon-Sports; MovieLens-100K; MovieLens-1M; Yelp,5,BERT4Rec; Caser; GRU4Rec; NARM; SASRec; STAMP,github.com/zc-97/SSDRec,no,Read via web (summary; verify numbers)
+GBSR,2024,KDD 2024,conference,Explicit,T3,,,,,natural,Douban; Epinions; Yelp,3,DiffNet++; GraphRec; LightGCN-S; SocialLGN,github.com/yimutianyang/KDD24-GBSR,no,Read via web (summary; verify numbers)
+Noisy-feedback debiasing,2024,KDD 2024,conference,Explicit,T7,,,,,injected+natural,Coat; KuaiRec; MovieLens-100K; Yahoo! R3,4,MF-BPR,not checked,no,Read via web (summary; verify numbers)
+MSDCCL,2024,Neural Networks 179:106480 2024,journal,Explicit,T5,,,,,natural,Amazon-Beauty; Amazon-Sports; MovieLens-100K; MovieLens-1M; Yelp,5,BERT4Rec; Caser; GRU4Rec; NARM; SASRec; STAMP,not checked,no,Read via web (summary; verify numbers)
+DALR,2025,"ACM TOIS 43(2), Art. 32 2025",journal,Explicit,T4,,,,,injected+natural,Amazon-Book; MovieLens-1M; Steam; Yelp2018,4,AutoCF; BOD; DCCF; LightGCN; SGL; SimGCL,not checked,no,Read via web (summary; verify numbers)
+DeBaTeR,2025,WSDM 2025,conference,Explicit,T3,,,,,injected+natural,Amazon-Movies & TV; MovieLens-100K; MovieLens-1M; Yelp,4,SimGCL,supplementary only,no,Read via web (summary; verify numbers)
+NR-GCF,2025,CIKM 2025,conference,Explicit,T3,,,,,unknown,Last-FM; MovieLens-1M; Yelp2018,3,DirectAU; LightGCN; SGL,none found,no,Not reachable (no data)
+DDSSR (name ours),2025,CIKM 2025,conference,Explicit,T6,,,,,unknown,,0,,not checked,no,Not reachable (no data)
+DIF,2026,KDD (ADS track) 2026,conference (short/companion/industry),Explicit,T1,tentative,,,,natural,Amazon-Baby; Amazon-Sports; TikTok,3,LightGCN; NeuMF; SimGCL,not checked,no,Read via web (summary; verify numbers)
+DiffRec,2023,SIGIR 2023,conference,Implicit,T6,,,none (generative),none,injected+natural,Amazon-Book; MovieLens-1M; Yelp,3,LightGCN,github.com/YiyanXu/DiffRec,yes,Read via web (summary; verify numbers)
+DiffKG,2024,WSDM 2024,conference,Implicit,T6,,,,,injected+natural,Alibaba-iFashion; Last-FM; MIND,3,,not checked,no,Read via web (summary; verify numbers)
+SGL,2021,SIGIR 2021,conference,Implicit,T4,,,representation-driven (no explicit detection),none,natural,Alibaba-iFashion; Amazon-Book; Yelp2018,3,LightGCN,github.com/wujcan/SGL-Torch,yes,Read via web (summary; verify numbers)
+FMLP-Rec,2022,WWW 2022,conference,Implicit,T5,,,,,natural,Amazon-Beauty; Amazon-Sports; Amazon-Toys; Nowplaying; Retailrocket; Tmall; Yelp; Yoochoose,8,SASRec,github.com/Woeee/FMLP-Rec,no,Read via web (summary; verify numbers)
+GTN,2022,SIGIR 2022,conference,Implicit,T3,,,,,injected+natural,Amazon-Book; Gowalla; Last-FM; Yelp2018,4,LightGCN,not checked,no,Read via web (summary; verify numbers)
+SimGCL,2022,SIGIR 2022,conference,Implicit,T4,,,,,natural,Amazon-Book; Douban; Yelp2018,3,LightGCN,not checked,no,Read via web (summary; verify numbers)
+DCCF,2023,SIGIR 2023,conference,Implicit,T4,,,,,natural,Amazon-Book; Gowalla; Tmall,3,LightGCN,not checked,no,Read via web (summary; verify numbers)
+DCRec,2023,WWW 2023,conference,Implicit,T4,,,,,natural,Amazon-Beauty; Amazon-Sports; MovieLens-20M; Reddit,4,SASRec,not checked,no,Read via web (summary; verify numbers)
+LLMHNI,2026,AAAI'26 (arXiv 2511.07295),conference,Explicit,T1,,,,,unknown,,0,,github.com/TianRui-Song717/LLMHNI (placeholder),no,not read
