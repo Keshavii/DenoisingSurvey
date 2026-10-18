@@ -1,0 +1,15 @@
+{
+  "dataset": "amazon_book",
+  "train_file": "train.tsv",
+  "method": "MostPop",
+  "valid_clean": {
+    "recall@20": 0.00838422090052556,
+    "ndcg@20": 0.004995020870550426,
+    "seen_item_leak_rate": 0.0
+  },
+  "test": {
+    "recall@20": 0.008217781493390931,
+    "ndcg@20": 0.004642169003450638,
+    "seen_item_leak_rate": 0.0
+  }
+}

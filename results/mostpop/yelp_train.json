@@ -1,0 +1,15 @@
+{
+  "dataset": "yelp",
+  "train_file": "train.tsv",
+  "method": "MostPop",
+  "valid_clean": {
+    "recall@20": 0.013114046814413034,
+    "ndcg@20": 0.007848999459233763,
+    "seen_item_leak_rate": 0.0
+  },
+  "test": {
+    "recall@20": 0.013751125749816576,
+    "ndcg@20": 0.007850883936660776,
+    "seen_item_leak_rate": 0.0
+  }
+}

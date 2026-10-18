@@ -1,0 +1,15 @@
+{
+  "dataset": "adressa",
+  "train_file": "train.tsv",
+  "method": "MostPop",
+  "valid_clean": {
+    "recall@20": 0.3899494190017222,
+    "ndcg@20": 0.2340848187118778,
+    "seen_item_leak_rate": 0.0
+  },
+  "test": {
+    "recall@20": 0.3178836866409121,
+    "ndcg@20": 0.18515967267589667,
+    "seen_item_leak_rate": 0.0
+  }
+}

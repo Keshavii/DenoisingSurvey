@@ -1,0 +1,15 @@
+{
+  "dataset": "ml1m",
+  "train_file": "train.tsv",
+  "method": "MostPop",
+  "valid_clean": {
+    "recall@20": 0.08154773399940812,
+    "ndcg@20": 0.07160674090943021,
+    "seen_item_leak_rate": 0.0
+  },
+  "test": {
+    "recall@20": 0.07377786718361573,
+    "ndcg@20": 0.06800033504422826,
+    "seen_item_leak_rate": 0.0
+  }
+}
