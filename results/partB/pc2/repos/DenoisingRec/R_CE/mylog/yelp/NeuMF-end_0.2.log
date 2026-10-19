@@ -1,0 +1,67 @@
+arguments: Namespace(dataset='yelp', model='NeuMF-end', alpha=0.2, lr=0.001, dropout=0.0, batch_size=1024, epochs=10, eval_freq=2000, top_k=[50, 100], factor_num=32, num_layers=3, num_ng=1, out=True, gpu='0') 
+config model NeuMF-end
+config data path ../data/yelp/
+config model path ./models/yelp/
+user, item num
+45548 57396
+data loaded! user_num:45548, item_num:57396 train_data_len:1672520 test_user_num:45525
+/home/anurag/miniconda3/envs/adt/lib/python3.10/site-packages/torch/cuda/__init__.py:654: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+/home/anurag/miniconda3/envs/adt/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+epoch: 0, iter: 2000, loss:0.3747483491897583
+################### EVAL ######################
+Eval loss:152.08770751953125
+epoch: 1, iter: 4000, loss:0.2103874385356903
+################### EVAL ######################
+Eval loss:92.95555877685547
+epoch: 1, iter: 6000, loss:0.18313606083393097
+################### EVAL ######################
+Eval loss:78.65432739257812
+epoch: 2, iter: 8000, loss:0.14625100791454315
+################### EVAL ######################
+Eval loss:73.83438110351562
+epoch: 3, iter: 10000, loss:0.13043998181819916
+################### EVAL ######################
+Eval loss:73.38249206542969
+epoch: 3, iter: 12000, loss:0.11674195528030396
+################### EVAL ######################
+Eval loss:69.41419982910156
+epoch: 4, iter: 14000, loss:0.10595093667507172
+################### EVAL ######################
+Eval loss:73.459716796875
+epoch: 4, iter: 16000, loss:0.10367913544178009
+################### EVAL ######################
+Eval loss:71.34705352783203
+epoch: 5, iter: 18000, loss:0.07640789449214935
+################### EVAL ######################
+Eval loss:75.33929443359375
+epoch: 6, iter: 20000, loss:0.06923509389162064
+################### EVAL ######################
+Eval loss:81.99506378173828
+epoch: 6, iter: 22000, loss:0.08614581823348999
+################### EVAL ######################
+Eval loss:78.46296691894531
+epoch: 7, iter: 24000, loss:0.07813882827758789
+################### EVAL ######################
+Eval loss:85.9426498413086
+epoch: 7, iter: 26000, loss:0.06482299417257309
+################### EVAL ######################
+Eval loss:80.94622039794922
+epoch: 8, iter: 28000, loss:0.05888022482395172
+################### EVAL ######################
+Eval loss:86.1961441040039
+epoch: 9, iter: 30000, loss:0.049961648881435394
+################### EVAL ######################
+Eval loss:89.71248626708984
+epoch: 9, iter: 32000, loss:0.048935726284980774
+################### EVAL ######################
+Eval loss:88.23473358154297
+############################## Training End. ##############################
+/home/anurag/repos/DenoisingRec/R_CE/main.py:203: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  test_model = torch.load('{}{}_{}.pth'.format(model_path, args.model, args.alpha))
+/home/anurag/miniconda3/envs/adt/lib/python3.10/site-packages/torch/cuda/__init__.py:654: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+################### TEST ######################
+Recall 0.0796-0.1314
+NDCG 0.0324-0.0441

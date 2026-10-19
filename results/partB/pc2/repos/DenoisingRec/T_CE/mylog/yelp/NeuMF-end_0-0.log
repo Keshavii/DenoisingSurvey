@@ -1,0 +1,67 @@
+arguments: Namespace(dataset='yelp', model='NeuMF-end', drop_rate=0.0, num_gradual=0, exponent=1, lr=0.001, dropout=0.0, batch_size=1024, epochs=10, eval_freq=2000, top_k=[50, 100], factor_num=32, num_layers=3, num_ng=1, out=True, gpu='0') 
+config model NeuMF-end
+config data path ../data/yelp/
+config model path ./models/yelp/
+user, item num
+45548 57396
+data loaded! user_num:45548, item_num:57396 train_data_len:1672520 test_user_num:45525
+/home/anurag/miniconda3/envs/adt/lib/python3.10/site-packages/torch/cuda/__init__.py:654: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+/home/anurag/miniconda3/envs/adt/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+epoch: 0, iter: 2000, loss:0.4563169479370117
+################### EVAL ######################
+Eval loss:186.4806671142578
+epoch: 1, iter: 4000, loss:0.2873097062110901
+################### EVAL ######################
+Eval loss:123.14506530761719
+epoch: 1, iter: 6000, loss:0.25061988830566406
+################### EVAL ######################
+Eval loss:108.05093383789062
+epoch: 2, iter: 8000, loss:0.20110759139060974
+################### EVAL ######################
+Eval loss:104.45310974121094
+epoch: 3, iter: 10000, loss:0.19077476859092712
+################### EVAL ######################
+Eval loss:107.84435272216797
+epoch: 3, iter: 12000, loss:0.1767314374446869
+################### EVAL ######################
+Eval loss:105.13019561767578
+epoch: 4, iter: 14000, loss:0.16863834857940674
+################### EVAL ######################
+Eval loss:115.47966003417969
+epoch: 4, iter: 16000, loss:0.15852758288383484
+################### EVAL ######################
+Eval loss:113.26270294189453
+epoch: 5, iter: 18000, loss:0.13312101364135742
+################### EVAL ######################
+Eval loss:126.43159484863281
+epoch: 6, iter: 20000, loss:0.11379284411668777
+################### EVAL ######################
+Eval loss:150.56895446777344
+epoch: 6, iter: 22000, loss:0.14478769898414612
+################### EVAL ######################
+Eval loss:140.41078186035156
+epoch: 7, iter: 24000, loss:0.13875961303710938
+################### EVAL ######################
+Eval loss:170.5348663330078
+epoch: 7, iter: 26000, loss:0.11423265933990479
+################### EVAL ######################
+Eval loss:156.19747924804688
+epoch: 8, iter: 28000, loss:0.10253146290779114
+################### EVAL ######################
+Eval loss:175.16268920898438
+epoch: 9, iter: 30000, loss:0.10140983760356903
+################### EVAL ######################
+Eval loss:206.9717559814453
+epoch: 9, iter: 32000, loss:0.09410861134529114
+################### EVAL ######################
+Eval loss:195.89671325683594
+############################## Training End. ##############################
+/home/anurag/repos/DenoisingRec/T_CE/main.py:221: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  test_model = torch.load('{}{}_{}-{}.pth'.format(model_path, args.model, args.drop_rate, args.num_gradual))
+/home/anurag/miniconda3/envs/adt/lib/python3.10/site-packages/torch/cuda/__init__.py:654: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+################### TEST ######################
+Recall 0.0785-0.1254
+NDCG 0.0322-0.0428

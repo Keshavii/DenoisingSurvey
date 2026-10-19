@@ -1,0 +1,97 @@
+arguments: Namespace(dataset='amazon_book', model='NeuMF-end', drop_rate=0.2, num_gradual=30000, exponent=1, lr=0.001, dropout=0.0, batch_size=1024, epochs=10, eval_freq=2000, top_k=[50, 100], factor_num=32, num_layers=3, num_ng=1, out=True, gpu='0') 
+config model NeuMF-end
+config data path ../data/amazon_book/
+config model path ./models/amazon_book/
+user, item num
+80464 98663
+data loaded! user_num:80464, item_num:98663 train_data_len:2714021 test_user_num:80349
+/home/anurag/miniconda3/envs/adt/lib/python3.10/site-packages/torch/cuda/__init__.py:654: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+/home/anurag/miniconda3/envs/adt/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+epoch: 0, iter: 2000, loss:0.5849038362503052
+################### EVAL ######################
+Eval loss:385.072021484375
+epoch: 0, iter: 4000, loss:0.47417429089546204
+################### EVAL ######################
+Eval loss:304.4111633300781
+epoch: 1, iter: 6000, loss:0.3079069256782532
+################### EVAL ######################
+Eval loss:241.24903869628906
+epoch: 1, iter: 8000, loss:0.2559325397014618
+################### EVAL ######################
+Eval loss:198.69520568847656
+epoch: 1, iter: 10000, loss:0.24936091899871826
+################### EVAL ######################
+Eval loss:169.01544189453125
+epoch: 2, iter: 12000, loss:0.17627985775470734
+################### EVAL ######################
+Eval loss:160.004150390625
+epoch: 2, iter: 14000, loss:0.1588505059480667
+################### EVAL ######################
+Eval loss:145.68072509765625
+epoch: 3, iter: 16000, loss:0.12219114601612091
+################### EVAL ######################
+Eval loss:150.5202178955078
+epoch: 3, iter: 18000, loss:0.09279962629079819
+################### EVAL ######################
+Eval loss:129.3909912109375
+epoch: 3, iter: 20000, loss:0.09015041589736938
+################### EVAL ######################
+Eval loss:116.39189910888672
+epoch: 4, iter: 22000, loss:0.07440220564603806
+################### EVAL ######################
+Eval loss:133.06854248046875
+epoch: 4, iter: 24000, loss:0.0501350499689579
+################### EVAL ######################
+Eval loss:130.89154052734375
+epoch: 4, iter: 26000, loss:0.116862952709198
+################### EVAL ######################
+Eval loss:101.44869232177734
+epoch: 5, iter: 28000, loss:0.0682968944311142
+################### EVAL ######################
+Eval loss:128.0689239501953
+epoch: 5, iter: 30000, loss:0.038648251444101334
+################### EVAL ######################
+Eval loss:109.83523559570312
+epoch: 6, iter: 32000, loss:0.014400573447346687
+################### EVAL ######################
+Eval loss:121.74967956542969
+epoch: 6, iter: 34000, loss:0.04826798290014267
+################### EVAL ######################
+Eval loss:118.81301879882812
+epoch: 6, iter: 36000, loss:0.042898502200841904
+################### EVAL ######################
+Eval loss:159.6387176513672
+epoch: 7, iter: 38000, loss:0.016959886997938156
+################### EVAL ######################
+Eval loss:152.16531372070312
+epoch: 7, iter: 40000, loss:0.05488153547048569
+################### EVAL ######################
+Eval loss:137.79507446289062
+epoch: 7, iter: 42000, loss:0.0648292526602745
+################### EVAL ######################
+Eval loss:141.34117126464844
+epoch: 8, iter: 44000, loss:0.020093189552426338
+################### EVAL ######################
+Eval loss:153.70962524414062
+epoch: 8, iter: 46000, loss:0.09819256514310837
+################### EVAL ######################
+Eval loss:140.36732482910156
+epoch: 9, iter: 48000, loss:0.017479879781603813
+################### EVAL ######################
+Eval loss:173.0313262939453
+epoch: 9, iter: 50000, loss:0.07518094033002853
+################### EVAL ######################
+Eval loss:174.6526641845703
+epoch: 9, iter: 52000, loss:0.07028572261333466
+################### EVAL ######################
+Eval loss:168.86618041992188
+############################## Training End. ##############################
+/home/anurag/repos/DenoisingRec/T_CE/main.py:221: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  test_model = torch.load('{}{}_{}-{}.pth'.format(model_path, args.model, args.drop_rate, args.num_gradual))
+/home/anurag/miniconda3/envs/adt/lib/python3.10/site-packages/torch/cuda/__init__.py:654: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+################### TEST ######################
+Recall 0.0704-0.1117
+NDCG 0.0279-0.0370

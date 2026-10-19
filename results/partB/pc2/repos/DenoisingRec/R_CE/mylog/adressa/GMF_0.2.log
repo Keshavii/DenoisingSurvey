@@ -1,0 +1,262 @@
+arguments: Namespace(dataset='adressa', model='GMF', alpha=0.2, lr=0.001, dropout=0.0, batch_size=1024, epochs=10, eval_freq=100, top_k=[3, 20], factor_num=32, num_layers=3, num_ng=1, out=True, gpu='0') 
+config model GMF
+config data path ../data/adressa/
+config model path ./models/adressa/
+user, item num
+212231 6596
+data loaded! user_num:212231, item_num:6596 train_data_len:419491 test_user_num:10380
+/home/anurag/miniconda3/envs/adt/lib/python3.10/site-packages/torch/cuda/__init__.py:654: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+/home/anurag/miniconda3/envs/adt/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+epoch: 0, iter: 100, loss:0.6034001708030701
+################### EVAL ######################
+Eval loss:63.35895919799805
+epoch: 0, iter: 200, loss:0.6033322811126709
+################### EVAL ######################
+Eval loss:63.35517883300781
+epoch: 0, iter: 300, loss:0.5993812084197998
+################### EVAL ######################
+Eval loss:63.24454879760742
+epoch: 0, iter: 400, loss:0.5780071020126343
+################### EVAL ######################
+Eval loss:62.56771469116211
+epoch: 0, iter: 500, loss:0.5226397514343262
+################### EVAL ######################
+Eval loss:60.82381820678711
+epoch: 0, iter: 600, loss:0.45524507761001587
+################### EVAL ######################
+Eval loss:58.34378433227539
+epoch: 0, iter: 700, loss:0.3779767155647278
+################### EVAL ######################
+Eval loss:55.821617126464844
+epoch: 0, iter: 800, loss:0.2937302589416504
+################### EVAL ######################
+Eval loss:53.7714958190918
+epoch: 1, iter: 900, loss:0.2248760461807251
+################### EVAL ######################
+Eval loss:52.48604202270508
+epoch: 1, iter: 1000, loss:0.17070844769477844
+################### EVAL ######################
+Eval loss:51.60215759277344
+epoch: 1, iter: 1100, loss:0.15138894319534302
+################### EVAL ######################
+Eval loss:51.121517181396484
+epoch: 1, iter: 1200, loss:0.13466450572013855
+################### EVAL ######################
+Eval loss:50.8286018371582
+epoch: 1, iter: 1300, loss:0.113083615899086
+################### EVAL ######################
+Eval loss:50.466556549072266
+epoch: 1, iter: 1400, loss:0.10085441172122955
+################### EVAL ######################
+Eval loss:50.27213668823242
+epoch: 1, iter: 1500, loss:0.08754237741231918
+################### EVAL ######################
+Eval loss:50.36262512207031
+epoch: 1, iter: 1600, loss:0.09401674568653107
+################### EVAL ######################
+Eval loss:50.18690490722656
+epoch: 2, iter: 1700, loss:0.07240816205739975
+################### EVAL ######################
+Eval loss:50.4642448425293
+epoch: 2, iter: 1800, loss:0.06600283086299896
+################### EVAL ######################
+Eval loss:50.681488037109375
+epoch: 2, iter: 1900, loss:0.07108724117279053
+################### EVAL ######################
+Eval loss:50.79704666137695
+epoch: 2, iter: 2000, loss:0.07625915855169296
+################### EVAL ######################
+Eval loss:50.78984832763672
+epoch: 2, iter: 2100, loss:0.055327173322439194
+################### EVAL ######################
+Eval loss:51.095069885253906
+epoch: 2, iter: 2200, loss:0.059003591537475586
+################### EVAL ######################
+Eval loss:51.0411376953125
+epoch: 2, iter: 2300, loss:0.0634094774723053
+################### EVAL ######################
+Eval loss:50.98866653442383
+epoch: 2, iter: 2400, loss:0.06362198293209076
+################### EVAL ######################
+Eval loss:51.421939849853516
+epoch: 3, iter: 2500, loss:0.06338843703269958
+################### EVAL ######################
+Eval loss:51.33683776855469
+epoch: 3, iter: 2600, loss:0.05172353982925415
+################### EVAL ######################
+Eval loss:51.50651168823242
+epoch: 3, iter: 2700, loss:0.06522853672504425
+################### EVAL ######################
+Eval loss:51.468685150146484
+epoch: 3, iter: 2800, loss:0.06660217046737671
+################### EVAL ######################
+Eval loss:51.724735260009766
+epoch: 3, iter: 2900, loss:0.052616722881793976
+################### EVAL ######################
+Eval loss:51.72015380859375
+epoch: 3, iter: 3000, loss:0.053296394646167755
+################### EVAL ######################
+Eval loss:51.91612243652344
+epoch: 3, iter: 3100, loss:0.05665068328380585
+################### EVAL ######################
+Eval loss:51.946861267089844
+epoch: 3, iter: 3200, loss:0.06676378846168518
+################### EVAL ######################
+Eval loss:51.7005615234375
+epoch: 4, iter: 3300, loss:0.04467770457267761
+################### EVAL ######################
+Eval loss:51.972877502441406
+epoch: 4, iter: 3400, loss:0.049986980855464935
+################### EVAL ######################
+Eval loss:52.06417465209961
+epoch: 4, iter: 3500, loss:0.0552297867834568
+################### EVAL ######################
+Eval loss:52.02924346923828
+epoch: 4, iter: 3600, loss:0.06278292089700699
+################### EVAL ######################
+Eval loss:52.29140090942383
+epoch: 4, iter: 3700, loss:0.042943086475133896
+################### EVAL ######################
+Eval loss:52.11005401611328
+epoch: 4, iter: 3800, loss:0.041796136647462845
+################### EVAL ######################
+Eval loss:52.25982666015625
+epoch: 4, iter: 3900, loss:0.042297571897506714
+################### EVAL ######################
+Eval loss:52.178375244140625
+epoch: 4, iter: 4000, loss:0.04151086509227753
+################### EVAL ######################
+Eval loss:52.30760192871094
+epoch: 5, iter: 4100, loss:0.03841778635978699
+################### EVAL ######################
+Eval loss:52.25212097167969
+epoch: 5, iter: 4200, loss:0.03823181241750717
+################### EVAL ######################
+Eval loss:52.10303497314453
+epoch: 5, iter: 4300, loss:0.05054774135351181
+################### EVAL ######################
+Eval loss:52.19618606567383
+epoch: 5, iter: 4400, loss:0.05166869983077049
+################### EVAL ######################
+Eval loss:52.39312744140625
+epoch: 5, iter: 4500, loss:0.041058484464883804
+################### EVAL ######################
+Eval loss:52.634239196777344
+epoch: 5, iter: 4600, loss:0.0500587597489357
+################### EVAL ######################
+Eval loss:52.247291564941406
+epoch: 5, iter: 4700, loss:0.05250236764550209
+################### EVAL ######################
+Eval loss:52.40557861328125
+epoch: 5, iter: 4800, loss:0.0387931726872921
+################### EVAL ######################
+Eval loss:52.4321403503418
+epoch: 5, iter: 4900, loss:0.05507485195994377
+################### EVAL ######################
+Eval loss:52.62431335449219
+epoch: 6, iter: 5000, loss:0.04812361299991608
+################### EVAL ######################
+Eval loss:52.65602493286133
+epoch: 6, iter: 5100, loss:0.05023916810750961
+################### EVAL ######################
+Eval loss:52.643917083740234
+epoch: 6, iter: 5200, loss:0.04190073162317276
+################### EVAL ######################
+Eval loss:52.766639709472656
+epoch: 6, iter: 5300, loss:0.04604431986808777
+################### EVAL ######################
+Eval loss:52.53898620605469
+epoch: 6, iter: 5400, loss:0.03613515943288803
+################### EVAL ######################
+Eval loss:52.846920013427734
+epoch: 6, iter: 5500, loss:0.047684136778116226
+################### EVAL ######################
+Eval loss:52.48769760131836
+epoch: 6, iter: 5600, loss:0.037827275693416595
+################### EVAL ######################
+Eval loss:52.78395080566406
+epoch: 6, iter: 5700, loss:0.044782672077417374
+################### EVAL ######################
+Eval loss:52.44014358520508
+epoch: 7, iter: 5800, loss:0.03689038008451462
+################### EVAL ######################
+Eval loss:52.73667526245117
+epoch: 7, iter: 5900, loss:0.030588364228606224
+################### EVAL ######################
+Eval loss:52.999691009521484
+epoch: 7, iter: 6000, loss:0.041638508439064026
+################### EVAL ######################
+Eval loss:53.06690979003906
+epoch: 7, iter: 6100, loss:0.047468796372413635
+################### EVAL ######################
+Eval loss:53.38833999633789
+epoch: 7, iter: 6200, loss:0.04372473061084747
+################### EVAL ######################
+Eval loss:53.168487548828125
+epoch: 7, iter: 6300, loss:0.03735698387026787
+################### EVAL ######################
+Eval loss:53.05241775512695
+epoch: 7, iter: 6400, loss:0.03508830815553665
+################### EVAL ######################
+Eval loss:52.93733596801758
+epoch: 7, iter: 6500, loss:0.04598641023039818
+################### EVAL ######################
+Eval loss:52.966739654541016
+epoch: 8, iter: 6600, loss:0.0327301062643528
+################### EVAL ######################
+Eval loss:52.778446197509766
+epoch: 8, iter: 6700, loss:0.0295255184173584
+################### EVAL ######################
+Eval loss:53.412540435791016
+epoch: 8, iter: 6800, loss:0.030464649200439453
+################### EVAL ######################
+Eval loss:53.623085021972656
+epoch: 8, iter: 6900, loss:0.04278244823217392
+################### EVAL ######################
+Eval loss:53.4518928527832
+epoch: 8, iter: 7000, loss:0.04841721057891846
+################### EVAL ######################
+Eval loss:53.47612380981445
+epoch: 8, iter: 7100, loss:0.04266596585512161
+################### EVAL ######################
+Eval loss:53.36201095581055
+epoch: 8, iter: 7200, loss:0.04153915494680405
+################### EVAL ######################
+Eval loss:53.63511276245117
+epoch: 8, iter: 7300, loss:0.0339723601937294
+################### EVAL ######################
+Eval loss:53.68301773071289
+epoch: 9, iter: 7400, loss:0.04184829443693161
+################### EVAL ######################
+Eval loss:53.49633026123047
+epoch: 9, iter: 7500, loss:0.03069928102195263
+################### EVAL ######################
+Eval loss:53.65132522583008
+epoch: 9, iter: 7600, loss:0.03467647731304169
+################### EVAL ######################
+Eval loss:53.852638244628906
+epoch: 9, iter: 7700, loss:0.03327088803052902
+################### EVAL ######################
+Eval loss:53.90761184692383
+epoch: 9, iter: 7800, loss:0.034506820142269135
+################### EVAL ######################
+Eval loss:54.15156173706055
+epoch: 9, iter: 7900, loss:0.03603699058294296
+################### EVAL ######################
+Eval loss:53.747886657714844
+epoch: 9, iter: 8000, loss:0.029763225466012955
+################### EVAL ######################
+Eval loss:54.03645706176758
+epoch: 9, iter: 8100, loss:0.02797771990299225
+################### EVAL ######################
+Eval loss:53.71864700317383
+############################## Training End. ##############################
+/home/anurag/repos/DenoisingRec/R_CE/main.py:203: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  test_model = torch.load('{}{}_{}.pth'.format(model_path, args.model, args.alpha))
+/home/anurag/miniconda3/envs/adt/lib/python3.10/site-packages/torch/cuda/__init__.py:654: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+################### TEST ######################
+Recall 0.0904-0.2164
+NDCG 0.0767-0.1227
