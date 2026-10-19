@@ -1,0 +1,20 @@
+user, item num
+944 1611
+data loaded! user_num:944, item_num:1611 train_data_len:79619 test_user_num:707
+seed: 2020
+method: DeCA
+model: GMF, dataset: ml-100k
+h_model: MF
+alpha: 1
+C_1 used in DP: 1000, C_2 used in DN: 1000
+epochs: 20, early_stop: False, early_stop_rounds: 2
+regularization lambda: 0.1
+negative sampling rate: 1
+epoch: 5, iter: 200, loss:462.8095397949219
+epoch: 10, iter: 400, loss:254.12274169921875
+Eval: epoch: 12, iter: 500, Eval loss:1.0828462839126587
+epoch: 15, iter: 600, loss:214.31471252441406
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0228-0.0364-0.0605-0.1075
+NDCG 0.0409-0.0423-0.0477-0.0631

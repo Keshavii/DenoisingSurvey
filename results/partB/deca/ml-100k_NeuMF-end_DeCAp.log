@@ -1,0 +1,45 @@
+user, item num
+944 1611
+data loaded! user_num:944, item_num:1611 train_data_len:79619 test_user_num:707
+seed: 2020
+method: DeCAp
+model: NeuMF-end, dataset: ml-100k
+h_model: MF
+alpha: 1
+C_1 used in DP: 100, C_2 used in DN: 10
+epochs: 100, early_stop: True, early_stop_rounds: 2
+regularization lambda: 0.0
+negative sampling rate: 1
+/home/aura3/repos/DeCA/train.py:336: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.aux_model = torch.load(os.path.join(self.param['folder'], f"{self.param['model']}_{self.param['dataset']}.ckpt")).to(self.device)
+pretrained model not found, train from scratch
+pretrain_model...
+epoch: 5, iter: 200, loss:0.9531153440475464
+epoch: 10, iter: 400, loss:0.8430122137069702
+Eval: epoch: 12, iter: 500, Eval loss:0.9452047348022461
+epoch: 15, iter: 600, loss:0.7931512594223022
+epoch: 20, iter: 800, loss:0.7436094284057617
+epoch: 25, iter: 1000, loss:0.7130321264266968
+Eval: epoch: 25, iter: 1000, Eval loss:1.1996822357177734
+epoch: 30, iter: 1200, loss:0.6811416745185852
+epoch: 35, iter: 1400, loss:0.6189669370651245
+Eval: epoch: 38, iter: 1500, Eval loss:1.8818931579589844
+pretrain model done
+epoch: 5, iter: 200, loss:11.00222110748291
+epoch: 10, iter: 400, loss:10.699821472167969
+Eval: epoch: 12, iter: 500, Eval loss:2.718235492706299
+epoch: 15, iter: 600, loss:9.883763313293457
+epoch: 20, iter: 800, loss:9.397078514099121
+epoch: 25, iter: 1000, loss:9.283681869506836
+Eval: epoch: 25, iter: 1000, Eval loss:2.5858840942382812
+epoch: 30, iter: 1200, loss:9.233048439025879
+epoch: 35, iter: 1400, loss:8.967965126037598
+Eval: epoch: 38, iter: 1500, Eval loss:2.596036672592163
+epoch: 41, iter: 1600, loss:8.833443641662598
+epoch: 46, iter: 1800, loss:8.789655685424805
+epoch: 51, iter: 2000, loss:8.905890464782715
+Eval: epoch: 51, iter: 2000, Eval loss:2.625156879425049
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0363-0.0457-0.0748-0.1225
+NDCG 0.0617-0.0602-0.0654-0.0810

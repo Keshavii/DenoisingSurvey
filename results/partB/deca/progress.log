@@ -1,0 +1,38 @@
+nohup: ignoring input
+2026-10-19 12:41:08 start ml-100k GMF Normal
+2026-10-19 12:41:23 end   ml-100k GMF Normal  ################### CLEAN TEST ###################### Recall 0.0188-0.0365-0.0572-0.0950 NDCG 0.0364-0.0416-0.0471-0.0601 
+2026-10-19 12:41:23 start ml-100k GMF DeCA
+2026-10-19 12:41:40 end   ml-100k GMF DeCA  ################### CLEAN TEST ###################### Recall 0.0228-0.0364-0.0605-0.1075 NDCG 0.0409-0.0423-0.0477-0.0631 
+2026-10-19 12:41:40 start ml-100k GMF DeCAp
+2026-10-19 12:42:06 end   ml-100k GMF DeCAp  ################### CLEAN TEST ###################### Recall 0.0261-0.0408-0.0649-0.1017 NDCG 0.0322-0.0391-0.0474-0.0599 
+2026-10-19 12:42:06 start ml-100k NeuMF-end Normal
+2026-10-19 12:42:31 end   ml-100k NeuMF-end Normal  ################### CLEAN TEST ###################### Recall 0.0266-0.0437-0.0639-0.1103 NDCG 0.0453-0.0482-0.0528-0.0680 
+2026-10-19 12:42:31 start ml-100k NeuMF-end DeCA
+2026-10-19 12:43:32 end   ml-100k NeuMF-end DeCA  ################### CLEAN TEST ###################### Recall 0.0215-0.0322-0.0598-0.0956 NDCG 0.0349-0.0370-0.0466-0.0586 
+2026-10-19 12:43:32 start ml-100k NeuMF-end DeCAp
+2026-10-19 12:44:25 end   ml-100k NeuMF-end DeCAp  ################### CLEAN TEST ###################### Recall 0.0363-0.0457-0.0748-0.1225 NDCG 0.0617-0.0602-0.0654-0.0810 
+2026-10-19 12:44:25 start modcloth GMF Normal
+2026-10-19 12:44:50 end   modcloth GMF Normal  ################### CLEAN TEST ###################### Recall 0.0272-0.0392-0.0715-0.1277 NDCG 0.0240-0.0280-0.0384-0.0537 
+2026-10-19 12:44:50 start modcloth GMF DeCA
+2026-10-19 12:45:39 end   modcloth GMF DeCA  ################### CLEAN TEST ###################### Recall 0.0380-0.0554-0.0866-0.1528 NDCG 0.0345-0.0408-0.0506-0.0683 
+2026-10-19 12:45:39 start modcloth GMF DeCAp
+2026-10-19 12:46:40 end   modcloth GMF DeCAp  ################### CLEAN TEST ###################### Recall 0.0397-0.0552-0.0881-0.1551 NDCG 0.0349-0.0401-0.0506-0.0687 
+2026-10-19 12:46:40 start modcloth NeuMF-end Normal
+2026-10-19 12:47:27 end   modcloth NeuMF-end Normal  ################### CLEAN TEST ###################### Recall 0.0521-0.0760-0.1278-0.2328 NDCG 0.0447-0.0537-0.0704-0.0977 
+2026-10-19 12:47:27 start modcloth NeuMF-end DeCA
+2026-10-19 12:48:18 end   modcloth NeuMF-end DeCA  ################### CLEAN TEST ###################### Recall 0.0487-0.0754-0.1464-0.2644 NDCG 0.0428-0.0530-0.0759-0.1068 
+2026-10-19 12:48:18 start modcloth NeuMF-end DeCAp
+2026-10-19 12:49:25 end   modcloth NeuMF-end DeCAp  ################### CLEAN TEST ###################### Recall 0.0487-0.0780-0.1479-0.2559 NDCG 0.0410-0.0523-0.0749-0.1032 
+2026-10-19 12:49:25 start adressa GMF Normal
+2026-10-19 12:51:00 end   adressa GMF Normal  ################### CLEAN TEST ###################### Recall 0.0608-0.1016-0.1820-0.2112 NDCG 0.0523-0.0702-0.1002-0.1089 
+2026-10-19 12:51:00 start adressa GMF DeCA
+2026-10-19 12:53:03 end   adressa GMF DeCA  ################### CLEAN TEST ###################### Recall 0.0854-0.1231-0.1798-0.2147 NDCG 0.0710-0.0866-0.1077-0.1181 
+2026-10-19 12:53:03 start adressa GMF DeCAp
+2026-10-19 12:55:19 end   adressa GMF DeCAp  ################### CLEAN TEST ###################### Recall 0.0903-0.1256-0.1936-0.2206 NDCG 0.0790-0.0931-0.1181-0.1263 
+2026-10-19 12:55:19 start adressa NeuMF-end Normal
+2026-10-19 12:57:04 end   adressa NeuMF-end Normal  ################### CLEAN TEST ###################### Recall 0.1392-0.1730-0.2464-0.3117 NDCG 0.1178-0.1306-0.1578-0.1777 
+2026-10-19 12:57:04 start adressa NeuMF-end DeCA
+2026-10-19 12:58:52 end   adressa NeuMF-end DeCA  ################### CLEAN TEST ###################### Recall 0.1376-0.1668-0.2823-0.3154 NDCG 0.1167-0.1278-0.1691-0.1792 
+2026-10-19 12:58:52 start adressa NeuMF-end DeCAp
+2026-10-19 13:01:06 end   adressa NeuMF-end DeCAp  ################### CLEAN TEST ###################### Recall 0.1390-0.1768-0.2404-0.3074 NDCG 0.1173-0.1322-0.1553-0.1757 
+ALL DONE

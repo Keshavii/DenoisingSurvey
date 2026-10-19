@@ -1,0 +1,37 @@
+user, item num
+212231 6596
+data loaded! user_num:212231, item_num:6596 train_data_len:419491 test_user_num:10380
+seed: 2020
+method: DeCA
+model: GMF, dataset: adressa
+h_model: MF
+alpha: 1
+C_1 used in DP: 100, C_2 used in DN: 10
+epochs: 15, early_stop: False, early_stop_rounds: 2
+regularization lambda: 0.0
+negative sampling rate: 1
+epoch: 0, iter: 200, loss:5.963281154632568
+epoch: 1, iter: 400, loss:5.715056419372559
+Eval: epoch: 2, iter: 500, Eval loss:28.631473541259766
+epoch: 2, iter: 600, loss:3.69775128364563
+epoch: 3, iter: 800, loss:2.251227378845215
+epoch: 4, iter: 1000, loss:1.5602034330368042
+Eval: epoch: 4, iter: 1000, Eval loss:30.738981246948242
+epoch: 5, iter: 1200, loss:1.3255399465560913
+epoch: 6, iter: 1400, loss:1.1260850429534912
+Eval: epoch: 7, iter: 1500, Eval loss:36.26795196533203
+epoch: 7, iter: 1600, loss:1.0999594926834106
+epoch: 8, iter: 1800, loss:1.024670958518982
+epoch: 9, iter: 2000, loss:0.9756861329078674
+Eval: epoch: 9, iter: 2000, Eval loss:40.675071716308594
+epoch: 10, iter: 2200, loss:0.9584880471229553
+epoch: 11, iter: 2400, loss:1.0601574182510376
+Eval: epoch: 12, iter: 2500, Eval loss:43.35552978515625
+epoch: 12, iter: 2600, loss:1.1129146814346313
+epoch: 13, iter: 2800, loss:1.015995979309082
+epoch: 14, iter: 3000, loss:0.9997060894966125
+Eval: epoch: 14, iter: 3000, Eval loss:45.768768310546875
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0854-0.1231-0.1798-0.2147
+NDCG 0.0710-0.0866-0.1077-0.1181

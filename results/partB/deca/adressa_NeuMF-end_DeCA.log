@@ -1,0 +1,26 @@
+user, item num
+212231 6596
+data loaded! user_num:212231, item_num:6596 train_data_len:419491 test_user_num:10380
+seed: 2020
+method: DeCA
+model: NeuMF-end, dataset: adressa
+h_model: MF
+alpha: 0
+C_1 used in DP: 1000, C_2 used in DN: 10
+epochs: 30, early_stop: True, early_stop_rounds: 2
+regularization lambda: 1
+negative sampling rate: 1
+epoch: 0, iter: 200, loss:6.388825416564941
+epoch: 1, iter: 400, loss:5.6822190284729
+Eval: epoch: 2, iter: 500, Eval loss:158.0181884765625
+epoch: 2, iter: 600, loss:4.82503080368042
+epoch: 3, iter: 800, loss:4.674777030944824
+epoch: 4, iter: 1000, loss:4.311413764953613
+Eval: epoch: 4, iter: 1000, Eval loss:206.59043884277344
+epoch: 5, iter: 1200, loss:4.310127258300781
+epoch: 6, iter: 1400, loss:4.366353988647461
+Eval: epoch: 7, iter: 1500, Eval loss:251.17005920410156
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.1376-0.1668-0.2823-0.3154
+NDCG 0.1167-0.1278-0.1691-0.1792

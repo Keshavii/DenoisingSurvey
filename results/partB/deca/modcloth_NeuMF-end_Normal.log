@@ -1,0 +1,23 @@
+user, item num
+44784 1020
+data loaded! user_num:44784, item_num:1020 train_data_len:79914 test_user_num:4303
+seed: 2020
+method: None
+model: NeuMF-end, dataset: modcloth
+epochs: 40, early_stop: True, early_stop_rounds: 2
+regularization lambda: 10
+negative sampling rate: 1
+epoch: 5, iter: 200, loss:0.7679691910743713
+epoch: 10, iter: 400, loss:0.7609723806381226
+Eval: epoch: 12, iter: 500, Eval loss:4.970319747924805
+epoch: 15, iter: 600, loss:0.725213885307312
+epoch: 20, iter: 800, loss:0.6839514970779419
+epoch: 25, iter: 1000, loss:0.654535174369812
+Eval: epoch: 25, iter: 1000, Eval loss:6.48560905456543
+epoch: 30, iter: 1200, loss:0.6623859405517578
+epoch: 35, iter: 1400, loss:0.6210657358169556
+Eval: epoch: 37, iter: 1500, Eval loss:7.681741714477539
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0521-0.0760-0.1278-0.2328
+NDCG 0.0447-0.0537-0.0704-0.0977
