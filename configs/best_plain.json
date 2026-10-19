@@ -47,6 +47,14 @@
     "trial": "lightgcn_bpr_t5",
     "valid_ndcg@20": 0.05433974415063858
   },
+  "amazon_book|mf|bce": {
+    "best_epoch": 97,
+    "lr": 0.001,
+    "reg": 0.01,
+    "train_seconds": 1302.8,
+    "trial": "mf_bce_t3",
+    "valid_ndcg@20": 0.03950021415948868
+  },
   "amazon_book|mf|bpr": {
     "best_epoch": 98,
     "lr": 0.001,
