@@ -1,0 +1,72 @@
+{
+  "recall@10": 0.10138508593962425,
+  "recall@20": 0.14771753965753054,
+  "recall@50": 0.2363738537044358,
+  "ndcg@10": 0.0770299229605502,
+  "ndcg@20": 0.09110814682425478,
+  "ndcg@50": 0.11399489413179914,
+  "n_eval_users": 29858,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "warm(5-20)": {
+      "n_users": 15450,
+      "ndcg@20": 0.0850201299813548,
+      "recall@20": 0.16174757281553398
+    },
+    "established(>20)": {
+      "n_users": 14408,
+      "ndcg@20": 0.09763645472422734,
+      "recall@20": 0.13267284141411348
+    },
+    "user_q1": {
+      "n_users": 5789,
+      "ndcg@20": 0.0807287080900502,
+      "recall@20": 0.1675591639315944
+    },
+    "user_q2": {
+      "n_users": 5963,
+      "ndcg@20": 0.08506614038252672,
+      "recall@20": 0.15914807982559115
+    },
+    "user_q3": {
+      "n_users": 5298,
+      "ndcg@20": 0.09249131523104424,
+      "recall@20": 0.15722914307285768
+    },
+    "user_q4": {
+      "n_users": 6776,
+      "ndcg@20": 0.0923261509159546,
+      "recall@20": 0.14182408500590318
+    },
+    "user_q5": {
+      "n_users": 6032,
+      "ndcg@20": 0.1044592465092359,
+      "recall@20": 0.11564162783397663
+    },
+    "items_head": {
+      "n_truth": 63478,
+      "recall@20_micro": 0.1955165569173572
+    },
+    "items_mid": {
+      "n_truth": 18178,
+      "recall@20_micro": 0.01738365056661899
+    },
+    "items_tail": {
+      "n_truth": 20790,
+      "recall@20_micro": 0.005868205868205868
+    },
+    "coverage@20": 0.3767111588297016,
+    "gini@20": 0.9459337515533882
+  },
+  "part": "C",
+  "dataset": "gowalla",
+  "method": "Plain-BCE",
+  "backbone": "LightGCN",
+  "cond": "N2_20",
+  "seed": "2",
+  "train_file": "train_N2_20_s2.tsv",
+  "data": "data/gowalla",
+  "topk": "runs/gowalla/plain_lightgcn_bce_N2_20_s2/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-10-19 13:24:06"
+}

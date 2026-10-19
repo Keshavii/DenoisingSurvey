@@ -1,0 +1,121 @@
+################ 1. CODE VERSIONS AND LOCAL CHANGES
+== SGL-Torch  commit c563288
+ M data/sampler.py
+ M main.py
+ M reckit/util/decorators.py
+-from collections import Iterable
++from collections.abc import Iterable
+-        root_dir = 'XXXXXXXX/PythonProjects/SGL-torch/'
+-        data_dir = 'XXXXXXXX/PythonProjects/SGL-torch/dataset/'
++        root_dir = '/home/aura3/repos/SGL-Torch/'
++        data_dir = '/home/aura3/repos/SGL-Torch/dataset/'
+-        root_dir = 'XXXXXXXX/PythonProjects/SGL-torch/'
+-        data_dir = 'XXXXXXXX/PythonProjects/SGL-torch/dataset/'
++        root_dir = '/home/aura3/repos/SGL-Torch/'
++        data_dir = '/home/aura3/repos/SGL-Torch/dataset/'
+-from collections import Iterable
++from collections.abc import Iterable
+== RGCF  commit a7dec98
+== PLD  commit dd7b14f
+ M main.py
+-    noise_list = [0.2, 0.3, 0.1, 0.4, 0.5, 0.0]
++    noise_list = [0.0]
+== DeCA  commit 8b04aa8
+################ 2. SGL
+== yelp2018
+/home/aura3/repos/SGL-Torch/data/dataset.py:317: UserWarning: /home/aura3/repos/SGL-Torch/dataset/yelp2018/yelp2018.valid does not exist.
+/home/aura3/repos/SGL-Torch/data/dataset.py:331: UserWarning: /home/aura3/repos/SGL-Torch/dataset/yelp2018/yelp2018.user2id does not exist.
+/home/aura3/repos/SGL-Torch/data/dataset.py:339: UserWarning: /home/aura3/repos/SGL-Torch/dataset/yelp2018/yelp2018.item2id does not exist.
+2026-10-18 01:27:02.871: Dataset statistics:
+The number of users: 31668
+The number of items: 38048
+The number of ratings: 1561406
+Average actions of users: 49.31
+Average actions of items: 41.04
+The sparsity of the dataset: 99.870412%
+The number of training: 1237259
+dataset=yelp2018
+test_batch_size=128
+aug_type=ED
+2026-10-18 01:52:14.747: Early stopping is trigger at epoch: 31
+2026-10-18 01:52:14.747: best_result@epoch 21:
+
+2026-10-18 01:52:14.748: 		0.0301      	0.0672      	0.0549      
+== amazon-book
+/home/aura3/repos/SGL-Torch/data/dataset.py:317: UserWarning: /home/aura3/repos/SGL-Torch/dataset/amazon-book/amazon-book.valid does not exist.
+/home/aura3/repos/SGL-Torch/data/dataset.py:331: UserWarning: /home/aura3/repos/SGL-Torch/dataset/amazon-book/amazon-book.user2id does not exist.
+/home/aura3/repos/SGL-Torch/data/dataset.py:339: UserWarning: /home/aura3/repos/SGL-Torch/dataset/amazon-book/amazon-book.item2id does not exist.
+2026-10-18 01:52:16.332: Dataset statistics:
+The number of users: 52643
+The number of items: 91599
+The number of ratings: 2984108
+Average actions of users: 56.69
+Average actions of items: 32.58
+The sparsity of the dataset: 99.938115%
+The number of training: 2380730
+dataset=amazon-book
+test_batch_size=128
+aug_type=ED
+2026-10-18 02:54:39.642: Early stopping is trigger at epoch: 26
+2026-10-18 02:54:39.642: best_result@epoch 16:
+
+2026-10-18 02:54:39.642: 		0.0198      	0.0477      	0.0376      
+################ 3. RGCF
+== ml1m_real
+seed = 2020
+train_batch_size = 4096
+learning_rate = 4e-05
+eval_args = {'split': {'RS': [0.8, 0.1, 0.1]}, 'group_by': 'user', 'order': 'RO', 'mode': 'full'}
+valid_metric = MRR@10
+valid_metric_bigger = True
+embedding_size = 64
+n_layers = 2
+reg_weight = 1e-05
+prune_threshold = 0.02
+MIM_weight = 1e-06
+tau = 0.2
+ptb_strategy = None
+ptb_prop = 0.05
+The number of users: 6040
+The number of items: 3884
+The number of inters: 836478
+18 Oct 00:44    INFO  [Training]: train_batch_size = [4096] negative sampling: [{'uniform': 1}]
+epochs trained: 48
+18 Oct 00:57    INFO  best valid : {'recall@10': 0.1701, 'recall@20': 0.2571, 'recall@50': 0.4116, 'mrr@10': 0.365, 'mrr@20': 0.3723, 'mrr@50': 0.3752, 'ndcg@10': 0.2051, 'ndcg@20': 0.2228, 'ndcg@50': 0.2719, 'hit@10': 0.7214, 'hit@20': 0.8251, 'hit@50': 0.9099}
+best valid score:
+== ml1m_replace
+seed = 2020
+train_batch_size = 4096
+learning_rate = 4e-05
+eval_args = {'split': {'RS': [0.8, 0.1, 0.1]}, 'group_by': 'user', 'order': 'RO', 'mode': 'full'}
+valid_metric = MRR@10
+valid_metric_bigger = True
+embedding_size = 64
+n_layers = 2
+reg_weight = 1e-05
+prune_threshold = 0.02
+MIM_weight = 1e-06
+tau = 0.2
+ptb_strategy = replace
+ptb_prop = 0.05
+The number of users: 6040
+The number of items: 3884
+The number of inters: 836478
+The number of inters: 674675	The sparsity of the dataset: 97.12406902831108%
+epochs trained: 38
+18 Oct 01:07    INFO  best valid : {'recall@10': 0.1453, 'recall@20': 0.2223, 'recall@50': 0.362, 'mrr@10': 0.3487, 'mrr@20': 0.3563, 'mrr@50': 0.3594, 'ndcg@10': 0.1863, 'ndcg@20': 0.2011, 'ndcg@50': 0.2465, 'hit@10': 0.6977, 'hit@20': 0.803, 'hit@50': 0.8977}
+best valid score:
+################ 4. PLD
+== Gowalla Origin
+'min_interaction': 10 'noise': 0.0 'out_dim': 64 'batch_size': 2048 'val_interval': 20 'lr': 0.001 'weight_decay': 0.0001 'min_epochs': 40 'n_epochs': 100 'temp': 0.1 'item_num': 5 
+  seeds: 5, last epoch: Epoch 99, {'seed': 2024, 'model': 'MF', 'dataset': 'Gowalla', 'min_interaction': 10, 'noise': 0.0, 'add_p': 1.0, 'out_dim': 64, 'u
+== Gowalla PLD
+'min_interaction': 10 'noise': 0.0 'out_dim': 64 'batch_size': 2048 'val_interval': 20 'lr': 0.001 'weight_decay': 0.0001 'min_epochs': 40 'n_epochs': 100 'temp': 0.1 'item_num': 5 'item_num': 5 
+  seeds: 5, last epoch: Epoch 99, {'seed': 2024, 'model': 'MF', 'dataset': 'Gowalla', 'min_interaction': 10, 'noise': 0.0, 'add_p': 1.0, 'out_dim': 64, 'u
+== Yelp Origin
+'min_interaction': 10 'noise': 0.0 'out_dim': 64 'batch_size': 2048 'val_interval': 20 'lr': 0.001 'weight_decay': 0.0001 'min_epochs': 40 'n_epochs': 100 'temp': 0.1 'item_num': 5 
+  seeds: 5, last epoch: Epoch 99, {'seed': 2024, 'model': 'MF', 'dataset': 'Yelp', 'min_interaction': 10, 'noise': 0.0, 'add_p': 1.0, 'out_dim': 64, 'use_
+== Yelp PLD
+'min_interaction': 10 'noise': 0.0 'out_dim': 64 'batch_size': 2048 'val_interval': 20 'lr': 0.001 'weight_decay': 0.0001 'min_epochs': 40 'n_epochs': 100 'temp': 0.1 'item_num': 5 'item_num': 5 
+  seeds: 5, last epoch: Epoch 99, {'seed': 2024, 'model': 'MF', 'dataset': 'Yelp', 'min_interaction': 10, 'noise': 0.0, 'add_p': 1.0, 'out_dim': 64, 'use_
+################ 5. PART C DATA SANITY
