@@ -1,0 +1,26 @@
+user, item num
+44784 1020
+data loaded! user_num:44784, item_num:1020 train_data_len:79914 test_user_num:4303
+seed: 2022
+method: DeCA
+model: GMF, dataset: modcloth
+h_model: MF
+alpha: 0
+C_1 used in DP: 100, C_2 used in DN: 10
+epochs: 40, early_stop: False, early_stop_rounds: 2
+regularization lambda: 0.1
+negative sampling rate: 1
+epoch: 5, iter: 200, loss:5.984811782836914
+epoch: 10, iter: 400, loss:6.700721263885498
+Eval: epoch: 12, iter: 500, Eval loss:8.043493270874023
+epoch: 15, iter: 600, loss:7.519680023193359
+epoch: 20, iter: 800, loss:7.885476112365723
+epoch: 25, iter: 1000, loss:8.031449317932129
+Eval: epoch: 25, iter: 1000, Eval loss:13.4654541015625
+epoch: 30, iter: 1200, loss:8.109896659851074
+epoch: 35, iter: 1400, loss:8.037105560302734
+Eval: epoch: 37, iter: 1500, Eval loss:17.20556640625
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0372-0.0547-0.0882-0.1549
+NDCG 0.0343-0.0404-0.0511-0.0691

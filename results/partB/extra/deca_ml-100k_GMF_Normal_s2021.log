@@ -1,0 +1,17 @@
+user, item num
+944 1611
+data loaded! user_num:944, item_num:1611 train_data_len:79619 test_user_num:707
+seed: 2021
+method: None
+model: GMF, dataset: ml-100k
+epochs: 20, early_stop: True, early_stop_rounds: 2
+regularization lambda: 0.1
+negative sampling rate: 1
+epoch: 5, iter: 200, loss:1.373801589012146
+epoch: 10, iter: 400, loss:1.206223726272583
+Eval: epoch: 12, iter: 500, Eval loss:1.0763963460922241
+epoch: 15, iter: 600, loss:1.158473253250122
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0225-0.0333-0.0594-0.0960
+NDCG 0.0396-0.0401-0.0483-0.0603
