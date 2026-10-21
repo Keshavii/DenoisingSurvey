@@ -1,0 +1,29 @@
+arguments: Namespace(dataset='adressa', model='GMF', drop_rate=0.2, num_gradual=30000, exponent=1, lr=0.001, dropout=0.0, batch_size=1024, epochs=10, eval_freq=2000, top_k=[5, 10, 20, 50], factor_num=32, num_layers=3, num_ng=1, out=True, gpu='0', time_step=3, co_lambda=0.0001, epoch_decay_start=10, relabel_ratio=0.05) 
+config model GMF
+config data path ../data/adressa/
+config model path ../models/adressa/
+user, item num
+212231 6596
+already create adjacency matrix (218827, 218827) 20.855303049087524
+generate single-normalized adjacency matrix.
+data loaded! user_num:212231, item_num:6596 train_data_len:419491 test_user_num:10380
+Time step initializing...
+epoch: 2, iter: 2000, loss:0.07525470107793808
+################### EVAL ######################
+Eval loss:76.60874938964844
+Time step initializing...
+epoch: 4, iter: 4000, loss:0.0533272847533226
+################### EVAL ######################
+Eval loss:98.03424072265625
+Time step initializing...
+epoch: 7, iter: 6000, loss:0.05076593533158302
+################### EVAL ######################
+Eval loss:111.6280517578125
+Time step initializing...
+epoch: 9, iter: 8000, loss:0.041298553347587585
+################### EVAL ######################
+Eval loss:116.42720794677734
+############################## Training End. ##############################
+################### TEST ######################
+Recall 0.1254-0.1888-0.2133-0.2554
+NDCG 0.0908-0.1141-0.1214-0.1318
