@@ -1,0 +1,27 @@
+user, item num
+1157633 9560
+data loaded! user_num:1157633, item_num:9560 train_data_len:1034363 test_user_num:74888
+seed: 2021
+method: None
+model: GMF, dataset: electronics
+epochs: 10, early_stop: True, early_stop_rounds: 2
+regularization lambda: 0.01
+negative sampling rate: 1
+epoch: 0, iter: 200, loss:1.3863505125045776
+epoch: 0, iter: 400, loss:1.3863413333892822
+Eval: epoch: 0, iter: 500, Eval loss:88.02913665771484
+epoch: 1, iter: 600, loss:1.3805853128433228
+epoch: 1, iter: 800, loss:1.361162543296814
+epoch: 1, iter: 1000, loss:1.3370561599731445
+Eval: epoch: 1, iter: 1000, Eval loss:87.95260620117188
+epoch: 2, iter: 1200, loss:1.0039721727371216
+epoch: 2, iter: 1400, loss:0.8838945031166077
+Eval: epoch: 2, iter: 1500, Eval loss:95.35274505615234
+epoch: 3, iter: 1600, loss:0.5724661350250244
+epoch: 3, iter: 1800, loss:0.5005292296409607
+epoch: 3, iter: 2000, loss:0.4632222652435303
+Eval: epoch: 3, iter: 2000, Eval loss:117.89073181152344
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0145-0.0216-0.0342-0.0623
+NDCG 0.0099-0.0121-0.0153-0.0208

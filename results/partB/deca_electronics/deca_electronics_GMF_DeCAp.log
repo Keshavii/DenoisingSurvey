@@ -1,0 +1,91 @@
+user, item num
+1157633 9560
+data loaded! user_num:1157633, item_num:9560 train_data_len:1034363 test_user_num:74888
+seed: 2020
+method: DeCAp
+model: GMF, dataset: electronics
+h_model: MF
+alpha: 1
+C_1 used in DP: 1000, C_2 used in DN: 10
+epochs: 10, early_stop: False, early_stop_rounds: 2
+regularization lambda: 0.01
+negative sampling rate: 1
+/home/aura3/repos/DeCA/train.py:336: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.aux_model = torch.load(os.path.join(self.param['folder'], f"{self.param['model']}_{self.param['dataset']}.ckpt")).to(self.device)
+pretrained model not found, train from scratch
+pretrain_model...
+epoch: 0, iter: 200, loss:1.3863564729690552
+epoch: 0, iter: 400, loss:1.3863476514816284
+Eval: epoch: 0, iter: 500, Eval loss:88.02916717529297
+epoch: 1, iter: 600, loss:1.3801535367965698
+epoch: 1, iter: 800, loss:1.3573505878448486
+epoch: 1, iter: 1000, loss:1.3311793804168701
+Eval: epoch: 1, iter: 1000, Eval loss:87.9651870727539
+epoch: 2, iter: 1200, loss:0.9982160329818726
+epoch: 2, iter: 1400, loss:0.8905503153800964
+Eval: epoch: 2, iter: 1500, Eval loss:95.68527221679688
+epoch: 3, iter: 1600, loss:0.5914587378501892
+epoch: 3, iter: 1800, loss:0.49903783202171326
+epoch: 3, iter: 2000, loss:0.46979624032974243
+Eval: epoch: 3, iter: 2000, Eval loss:118.44007110595703
+epoch: 4, iter: 2200, loss:0.3215923309326172
+epoch: 4, iter: 2400, loss:0.29174330830574036
+Eval: epoch: 4, iter: 2500, Eval loss:142.3341827392578
+epoch: 5, iter: 2600, loss:0.23351293802261353
+epoch: 5, iter: 2800, loss:0.19767113029956818
+epoch: 5, iter: 3000, loss:0.1955769807100296
+Eval: epoch: 5, iter: 3000, Eval loss:165.59832763671875
+epoch: 6, iter: 3200, loss:0.1553451418876648
+epoch: 6, iter: 3400, loss:0.12788310647010803
+Eval: epoch: 6, iter: 3500, Eval loss:188.38925170898438
+epoch: 7, iter: 3600, loss:0.1119278073310852
+epoch: 7, iter: 3800, loss:0.10997800529003143
+epoch: 7, iter: 4000, loss:0.09678833186626434
+Eval: epoch: 7, iter: 4000, Eval loss:210.8572540283203
+epoch: 8, iter: 4200, loss:0.07915100455284119
+epoch: 8, iter: 4400, loss:0.06986286491155624
+Eval: epoch: 8, iter: 4500, Eval loss:232.6411895751953
+epoch: 9, iter: 4600, loss:0.07136884331703186
+epoch: 9, iter: 4800, loss:0.05486452952027321
+epoch: 9, iter: 5000, loss:0.0551576167345047
+Eval: epoch: 9, iter: 5000, Eval loss:253.6720733642578
+pretrain model done
+epoch: 0, iter: 200, loss:7.238824367523193
+epoch: 0, iter: 400, loss:7.545444488525391
+Eval: epoch: 0, iter: 500, Eval loss:89.94477081298828
+epoch: 1, iter: 600, loss:7.858853816986084
+epoch: 1, iter: 800, loss:8.167266845703125
+epoch: 1, iter: 1000, loss:8.46613883972168
+Eval: epoch: 1, iter: 1000, Eval loss:95.3271484375
+epoch: 2, iter: 1200, loss:8.74531364440918
+epoch: 2, iter: 1400, loss:9.00182819366455
+Eval: epoch: 2, iter: 1500, Eval loss:103.32246398925781
+epoch: 3, iter: 1600, loss:9.227545738220215
+epoch: 3, iter: 1800, loss:9.435425758361816
+epoch: 3, iter: 2000, loss:9.63058090209961
+Eval: epoch: 3, iter: 2000, Eval loss:113.14502716064453
+epoch: 4, iter: 2200, loss:9.691656112670898
+epoch: 4, iter: 2400, loss:9.843230247497559
+Eval: epoch: 4, iter: 2500, Eval loss:124.17631530761719
+epoch: 5, iter: 2600, loss:9.93224811553955
+epoch: 5, iter: 2800, loss:10.022878646850586
+epoch: 5, iter: 3000, loss:10.191519737243652
+Eval: epoch: 5, iter: 3000, Eval loss:136.2786102294922
+epoch: 6, iter: 3200, loss:10.361071586608887
+epoch: 6, iter: 3400, loss:10.391247749328613
+Eval: epoch: 6, iter: 3500, Eval loss:148.53306579589844
+epoch: 7, iter: 3600, loss:10.541537284851074
+epoch: 7, iter: 3800, loss:10.681220054626465
+epoch: 7, iter: 4000, loss:10.738569259643555
+Eval: epoch: 7, iter: 4000, Eval loss:159.73880004882812
+epoch: 8, iter: 4200, loss:10.88768196105957
+epoch: 8, iter: 4400, loss:10.917535781860352
+Eval: epoch: 8, iter: 4500, Eval loss:169.3466033935547
+epoch: 9, iter: 4600, loss:10.947919845581055
+epoch: 9, iter: 4800, loss:11.058550834655762
+epoch: 9, iter: 5000, loss:11.058955192565918
+Eval: epoch: 9, iter: 5000, Eval loss:177.35092163085938
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0266-0.0423-0.0656-0.1094
+NDCG 0.0182-0.0233-0.0291-0.0378

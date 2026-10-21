@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.05939507206567281,
+  "recall@20": 0.09203726839700205,
+  "recall@50": 0.1538712052789936,
+  "ndcg@10": 0.04223762578258104,
+  "ndcg@20": 0.05213989672112363,
+  "ndcg@50": 0.06832166341005821,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1028,
+      "ndcg@20": 0.04967776959944936,
+      "recall@20": 0.0933852140077821
+    },
+    "warm(5-20)": {
+      "n_users": 40291,
+      "ndcg@20": 0.044860218995705775,
+      "recall@20": 0.09424354487768152
+    },
+    "established(>20)": {
+      "n_users": 39030,
+      "ndcg@20": 0.059719619035135736,
+      "recall@20": 0.0897242073216513
+    },
+    "user_q1": {
+      "n_users": 15911,
+      "ndcg@20": 0.037987128893366036,
+      "recall@20": 0.08343284520143297
+    },
+    "user_q2": {
+      "n_users": 12228,
+      "ndcg@20": 0.044461007567105325,
+      "recall@20": 0.09666339548577037
+    },
+    "user_q3": {
+      "n_users": 19634,
+      "ndcg@20": 0.054967896304815925,
+      "recall@20": 0.10576890428168823
+    },
+    "user_q4": {
+      "n_users": 15987,
+      "ndcg@20": 0.0572681479296909,
+      "recall@20": 0.09812973040595484
+    },
+    "user_q5": {
+      "n_users": 16589,
+      "ndcg@20": 0.06308521286948747,
+      "recall@20": 0.074756514061369
+    },
+    "items_head": {
+      "n_truth": 187957,
+      "recall@20_micro": 0.1100145245987114
+    },
+    "items_mid": {
+      "n_truth": 56939,
+      "recall@20_micro": 0.023094891023727148
+    },
+    "items_tail": {
+      "n_truth": 39016,
+      "recall@20_micro": 0.010431617797826533
+    },
+    "coverage@20": 0.5142961393835582,
+    "gini@20": 0.9005323285697241
+  },
+  "part": "C",
+  "dataset": "amazon_book",
+  "method": "Plain-BPR",
+  "backbone": "LightGCN",
+  "cond": "N0",
+  "seed": "3",
+  "train_file": "train.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/amazon_book/plain_lightgcn_bpr_N0_s3/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-10-19 23:19:29"
+}

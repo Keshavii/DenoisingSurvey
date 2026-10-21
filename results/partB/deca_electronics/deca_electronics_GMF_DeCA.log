@@ -1,0 +1,68 @@
+user, item num
+1157633 9560
+data loaded! user_num:1157633, item_num:9560 train_data_len:1034363 test_user_num:74888
+seed: 2020
+method: DeCA
+model: GMF, dataset: electronics
+h_model: MF
+alpha: 1
+C_1 used in DP: 1000, C_2 used in DN: 10
+epochs: 15, early_stop: False, early_stop_rounds: 2
+regularization lambda: 0.01
+negative sampling rate: 1
+epoch: 0, iter: 200, loss:6.000338077545166
+epoch: 0, iter: 400, loss:6.311423301696777
+Eval: epoch: 0, iter: 500, Eval loss:89.96096801757812
+epoch: 1, iter: 600, loss:6.618805408477783
+epoch: 1, iter: 800, loss:6.921335220336914
+epoch: 1, iter: 1000, loss:7.215311527252197
+Eval: epoch: 1, iter: 1000, Eval loss:95.3600845336914
+epoch: 2, iter: 1200, loss:7.452242851257324
+epoch: 2, iter: 1400, loss:7.70420503616333
+Eval: epoch: 2, iter: 1500, Eval loss:103.41614532470703
+epoch: 3, iter: 1600, loss:7.886465549468994
+epoch: 3, iter: 1800, loss:8.086761474609375
+epoch: 3, iter: 2000, loss:8.269330978393555
+Eval: epoch: 3, iter: 2000, Eval loss:113.2278060913086
+epoch: 4, iter: 2200, loss:8.35589599609375
+epoch: 4, iter: 2400, loss:8.466466903686523
+Eval: epoch: 4, iter: 2500, Eval loss:124.36268615722656
+epoch: 5, iter: 2600, loss:8.500175476074219
+epoch: 5, iter: 2800, loss:8.621477127075195
+epoch: 5, iter: 3000, loss:8.725227355957031
+Eval: epoch: 5, iter: 3000, Eval loss:136.6447296142578
+epoch: 6, iter: 3200, loss:8.835514068603516
+epoch: 6, iter: 3400, loss:8.857032775878906
+Eval: epoch: 6, iter: 3500, Eval loss:149.81475830078125
+epoch: 7, iter: 3600, loss:8.930513381958008
+epoch: 7, iter: 3800, loss:9.008219718933105
+epoch: 7, iter: 4000, loss:9.029376983642578
+Eval: epoch: 7, iter: 4000, Eval loss:162.59239196777344
+epoch: 8, iter: 4200, loss:9.081866264343262
+epoch: 8, iter: 4400, loss:9.095109939575195
+Eval: epoch: 8, iter: 4500, Eval loss:174.08285522460938
+epoch: 9, iter: 4600, loss:9.151392936706543
+epoch: 9, iter: 4800, loss:9.115898132324219
+epoch: 9, iter: 5000, loss:9.157901763916016
+Eval: epoch: 9, iter: 5000, Eval loss:184.20947265625
+epoch: 10, iter: 5200, loss:9.204134941101074
+epoch: 10, iter: 5400, loss:9.191494941711426
+Eval: epoch: 10, iter: 5500, Eval loss:193.08743286132812
+epoch: 11, iter: 5600, loss:9.151250839233398
+epoch: 11, iter: 5800, loss:9.124443054199219
+epoch: 11, iter: 6000, loss:9.101210594177246
+Eval: epoch: 11, iter: 6000, Eval loss:201.23480224609375
+epoch: 12, iter: 6200, loss:9.246574401855469
+epoch: 12, iter: 6400, loss:9.10701847076416
+Eval: epoch: 12, iter: 6500, Eval loss:208.86611938476562
+epoch: 13, iter: 6600, loss:9.056995391845703
+epoch: 13, iter: 6800, loss:9.080188751220703
+epoch: 13, iter: 7000, loss:9.003010749816895
+Eval: epoch: 13, iter: 7000, Eval loss:216.0906219482422
+epoch: 14, iter: 7200, loss:9.0795259475708
+epoch: 14, iter: 7400, loss:9.141942977905273
+Eval: epoch: 14, iter: 7500, Eval loss:222.9511260986328
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0262-0.0433-0.0688-0.1045
+NDCG 0.0169-0.0224-0.0288-0.0359

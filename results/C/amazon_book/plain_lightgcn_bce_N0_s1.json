@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.046175979483775144,
+  "recall@20": 0.0733004457626778,
+  "recall@50": 0.13116106182579818,
+  "ndcg@10": 0.03238404486631377,
+  "ndcg@20": 0.040562241066238215,
+  "ndcg@50": 0.05537513710699133,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1028,
+      "ndcg@20": 0.03840877083688931,
+      "recall@20": 0.08365758754863813
+    },
+    "warm(5-20)": {
+      "n_users": 40291,
+      "ndcg@20": 0.03552488923862963,
+      "recall@20": 0.0769113035996459
+    },
+    "established(>20)": {
+      "n_users": 39030,
+      "ndcg@20": 0.04581906171399504,
+      "recall@20": 0.06930013280174394
+    },
+    "user_q1": {
+      "n_users": 15911,
+      "ndcg@20": 0.029489980851893582,
+      "recall@20": 0.06809754258060462
+    },
+    "user_q2": {
+      "n_users": 12228,
+      "ndcg@20": 0.03666878923131463,
+      "recall@20": 0.08047105004906771
+    },
+    "user_q3": {
+      "n_users": 19634,
+      "ndcg@20": 0.04256780545966008,
+      "recall@20": 0.08469152151030525
+    },
+    "user_q4": {
+      "n_users": 15987,
+      "ndcg@20": 0.04280292318539299,
+      "recall@20": 0.07455224036196077
+    },
+    "user_q5": {
+      "n_users": 16589,
+      "ndcg@20": 0.04951882826067495,
+      "recall@20": 0.058316807317222184
+    },
+    "items_head": {
+      "n_truth": 187957,
+      "recall@20_micro": 0.08917465164904739
+    },
+    "items_mid": {
+      "n_truth": 56939,
+      "recall@20_micro": 0.010836157993642319
+    },
+    "items_tail": {
+      "n_truth": 39016,
+      "recall@20_micro": 0.008406807463604674
+    },
+    "coverage@20": 0.35275635243201603,
+    "gini@20": 0.9574275297126438
+  },
+  "part": "C",
+  "dataset": "amazon_book",
+  "method": "Plain-BCE",
+  "backbone": "LightGCN",
+  "cond": "N0",
+  "seed": "1",
+  "train_file": "train.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/amazon_book/plain_lightgcn_bce_N0_s1/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-10-20 04:30:06"
+}
