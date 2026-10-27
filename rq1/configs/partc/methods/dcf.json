@@ -1,0 +1,24 @@
+{
+  "name": "dcf",
+  "display": "DCF",
+  "batch": 1,
+  "module": "rq1kit.dcf",
+  "base_args": "--drop_rate 0.2 --num_gradual 30000 --time_step 3 --schedule_epochs 100",
+  "loss": "bce",
+  "backbones": ["lightgcn", "mf"],
+  "datasets": ["adressa", "ml1m", "yelp", "gowalla", "amazon_book"],
+  "tune_dir": "runs/tune_partc",
+  "source": "He et al., Double Correction Framework for Denoising Recommendation, KDD 2024; github.com/bruno686/DCF @ 873cee3 (loss.py PLC_uncertain_discard, main.py). Code differs from the paper (position-indexed loss memory, no label flip, constant relabel ratio); the port follows the code, see rq1kit/dcf.py",
+  "grid_source": "Paper App. A.2 tunes relabel ratio R in {0, 0.01, 0.03, 0.09, 0.27}, sigma^2 in {0, 0.001, 0.01, 0.1}, time step v in {1..5} (100 points). 8-trial budget: R in {0.01, 0.03, 0.09, 0.27} x sigma^2 in {0.001, 0.01} (the paper reports larger sigma^2 degrades; R = 0 and sigma^2 = 0 switch the components off); v = 3 (authors' default, middle of its range). Drop rate 0.2 and 30000 gradual iterations are the authors' defaults (the paper gives no values)",
+  "grid": [
+    {"relabel_ratio": 0.01, "co_lambda": 0.001},
+    {"relabel_ratio": 0.01, "co_lambda": 0.01},
+    {"relabel_ratio": 0.03, "co_lambda": 0.001},
+    {"relabel_ratio": 0.03, "co_lambda": 0.01},
+    {"relabel_ratio": 0.09, "co_lambda": 0.001},
+    {"relabel_ratio": 0.09, "co_lambda": 0.01},
+    {"relabel_ratio": 0.27, "co_lambda": 0.001},
+    {"relabel_ratio": 0.27, "co_lambda": 0.01}
+  ],
+  "memory": "plain LightGCN/MF plus two float vectors of 2 x n_train (running mean, counter): under 100 MB on Amazon-Book"
+}

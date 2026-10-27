@@ -1,0 +1,24 @@
+{
+  "name": "pld",
+  "display": "PLD",
+  "batch": 1,
+  "module": "rq1kit.pld",
+  "base_args": "--begin_adv 5",
+  "loss": "bpr",
+  "backbones": ["lightgcn", "mf"],
+  "datasets": ["adressa", "ml1m", "yelp", "gowalla", "amazon_book"],
+  "tune_dir": "runs/tune_partc",
+  "source": "Zhang et al., Personalized Denoising Implicit Feedback for Robust Recommender System, WWW 2025; github.com/Kaike-Zhang/PLD @ dd7b14f (utls/trainer.py PLDCFTrainer, utls/mydataset.py, utls/model_config.py begin_adv 5)",
+  "grid_source": "Paper Sec. 5 implementation details: k in {2, 3, 5, 10, 20}, tau in {0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5} (35 points). 8-trial budget: k in {5, 10} x tau in {0.01, 0.05, 0.1, 0.2}; the paper's sensitivity study finds k = 2 dominated by noise, little change beyond k = 10, and unstable results for tau >= 0.2",
+  "grid": [
+    {"item_num": 5, "temp": 0.01},
+    {"item_num": 5, "temp": 0.05},
+    {"item_num": 5, "temp": 0.1},
+    {"item_num": 5, "temp": 0.2},
+    {"item_num": 10, "temp": 0.01},
+    {"item_num": 10, "temp": 0.05},
+    {"item_num": 10, "temp": 0.1},
+    {"item_num": 10, "temp": 0.2}
+  ],
+  "memory": "plain LightGCN/MF plus batch x k candidate scores (2048 x 10 x 64 floats): negligible"
+}

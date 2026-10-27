@@ -154,28 +154,39 @@ def test_full_run_adoption_conflict_retry():
     shutil.rmtree(root)
 
 
-def test_canary_hold_and_legacy_wait():
-    root = make_root(min_ratio=1e9)
-    sleeper = subprocess.Popen([sys.executable, "-c", "import time; time.sleep(8)", "rq1kit.queue"])
-    t0 = time.time()
+def test_legacy_queue_only_canaries():
+    root = make_root()
+    sleeper_start = time.time()
+    sleeper = subprocess.Popen([sys.executable, "-c", "import time; time.sleep(25)", "python -m rq1kit.queue --jobs x"])
     partc(root, "run", "--until-idle", "--poll", "0.5")
     sleeper.wait()
     starts = [json.loads(line) for line in open(os.path.join(root, P.STATE)) if '"start"' in line]
-    first = time.mktime(time.strptime(starts[0]["t"], "%Y-%m-%d %H:%M:%S"))
-    assert first >= t0 + 7, "the driver started a job while an rq1kit.queue process was running"
-    print("ok  legacy wait: nothing started until the rq1kit.queue process ended")
+    jobs, waiting, st, canary, picks = state_of(root)
+    stage = {j["id"]: j["stage"] for j in jobs}
+    sleeper_end = sleeper_start + 25
+    early = [r for r in starts if time.mktime(time.strptime(r["t"], "%Y-%m-%d %H:%M:%S")) < sleeper_end - 1]
+    assert early and all(stage[r["job"]] == "canary" for r in early), [(r["job"], r["t"]) for r in early]
+    assert all(v["status"] == "done" for v in st.values())
+    print(f"ok  queue running: only canaries started ({', '.join(r['job'] for r in early)}); the rest after it ended")
+    shutil.rmtree(root)
+
+
+def test_canary_hold():
+    root = make_root(min_ratio=1e9)
+    partc(root, "run", "--until-idle", "--poll", "0.5")
+    starts = [json.loads(line) for line in open(os.path.join(root, P.STATE)) if '"start"' in line]
     jobs, waiting, st, canary, picks = state_of(root)
     ran = {r["job"] for r in starts}
     assert ran == {"tune_tinya_tce_t0", "tune_tinya_rce_t0"}, ran
     assert canary["tce"][0] == "held" and canary["rce"][0] == "held", canary
-    status = partc(root, "status")
-    assert "HELD" in status
+    assert "HELD" in partc(root, "status")
     print("ok  canary hold: only the two canaries ran; both methods held:", canary["tce"][1][:70])
     shutil.rmtree(root)
 
 
 if __name__ == "__main__":
     test_failure_classes()
-    test_canary_hold_and_legacy_wait()
+    test_canary_hold()
+    test_legacy_queue_only_canaries()
     test_full_run_adoption_conflict_retry()
     print("ALL PARTC TESTS PASSED")

@@ -25,7 +25,8 @@ Rules that keep results consistent:
   * Outputs that exist without a state record (runs made by rq1kit.queue before this pipeline) are adopted only if
     every argument in their run.json matches the planned command; otherwise they are marked as conflicts and left
     alone until `retry`, so no result is ever overwritten silently.
-  * While an rq1kit.queue process is running, the driver starts nothing new (the two would run the same jobs).
+  * While an rq1kit.queue process is running, the driver starts only canaries, one at a time (the queue and the
+    driver could otherwise run the same jobs, and the queue already fills the GPU).
   * Out of GPU memory or killed for RAM: retried once, alone on the GPU. Known transient CUDA errors: retried once.
     Anything else: marked failed with its log tail; the rest of the queue continues.
 """
@@ -239,11 +240,11 @@ def derive(jobs, recs, running_ids=()):
     return st
 
 
-def adopt(jobs, st):
+def adopt(jobs, st, running_ids=()):
     """Record outputs that already exist (made by rq1kit.queue) after checking them against the plan."""
     n = 0
     for j in jobs:
-        if st[j["id"]]["status"] != "todo" or st[j["id"]]["reset"] or not os.path.exists(j["output"]):
+        if j["id"] in running_ids or st[j["id"]]["status"] != "todo" or st[j["id"]]["reset"] or not os.path.exists(j["output"]):
             continue
         ok, why = verify_existing(j)
         if ok:
@@ -308,8 +309,8 @@ def compute_picks(proto, methods, jobs, st):
     return picks
 
 
-def snapshot():
-    """Plan + state as of now (adopting existing outputs on the way)."""
+def snapshot(running_ids=()):
+    """Plan + state as of now (adopting existing outputs on the way; never a job this driver is running)."""
     proto, methods = load_protocol(), load_methods()
     best_plain = load_json(BEST_PLAIN, {})
     recs = read_state()
@@ -317,7 +318,7 @@ def snapshot():
     for _ in range(3):  # picks can unlock finals, which can be adopted, which changes nothing further
         jobs, waiting = build_plan(proto, methods, best_plain, picks)
         st = derive(jobs, read_state())
-        adopt(jobs, st)
+        adopt(jobs, st, running_ids)
         new_picks = compute_picks(proto, methods, jobs, st)
         if new_picks == picks:
             break
@@ -329,7 +330,7 @@ def snapshot():
 # ----------------------------------------------------------------------------------------------- helpers
 def legacy_queue_running():
     try:
-        out = subprocess.run(["pgrep", "-f", "rq1kit.queue"], capture_output=True, text=True).stdout.split()
+        out = subprocess.run(["pgrep", "-f", r"python[0-9.]* (-u )?-m rq1kit\.queue( |$)"], capture_output=True, text=True).stdout.split()
     except FileNotFoundError:
         return []
     return [p for p in out if int(p) != os.getpid()]
@@ -424,10 +425,12 @@ def cmd_run(a):
                                   retry=classify_failure(lt, p.returncode), commit=commit))
             print(f"{time.strftime('%H:%M:%S')} end   {jid} rc={p.returncode} {secs}s", flush=True)
             del running[jid]
-        proto, methods, best_plain, jobs, waiting, st, canary, picks = snapshot()
+        proto, methods, best_plain, jobs, waiting, st, canary, picks = snapshot(set(running))
         st = derive(jobs, read_state(), running_ids=running.keys())
         legacy = legacy_queue_running()
-        ready = [] if legacy else runnable(proto, jobs, st, canary)
+        ready = runnable(proto, jobs, st, canary)
+        if legacy:  # an rq1kit.queue owns the GPU: only canaries, one at a time, so new methods are checked early
+            ready = [] if running else [(j, 1) for j, _ in ready if j["stage"] == "canary"][:1]
         free = proto["total_slots"] - sum(r[2] for r in running.values())
         env = {**os.environ, "OMP_NUM_THREADS": str(proto["threads_per_job"]), "MKL_NUM_THREADS": str(proto["threads_per_job"])}
         commit = kit_commit()
@@ -518,7 +521,7 @@ def render_status(proto, methods, jobs, waiting, st, canary, picks, legacy, runn
             tot["done_all"] += tdone + fdone
     L.append(f"total: {tot['done_all']} of {tot['planned']} done, {tot['running']} running, {tot['failed']} failed, "
              f"{tot['conflict']} conflicts; held: {', '.join(m for m, c in canary.items() if c[0] == 'held') or 'none'}")
-    L.append(f"GPU: {gpu_line()}" + (f"   rq1kit.queue running (pids {' '.join(legacy)}): partc waits for it" if legacy else ""))
+    L.append(f"GPU: {gpu_line()}" + (f"   rq1kit.queue running (pids {' '.join(legacy)}): partc runs only canaries until it ends" if legacy else ""))
     L.append(eta_text(proto, jobs, waiting, st))
     for j in jobs:
         s = st[j["id"]]
