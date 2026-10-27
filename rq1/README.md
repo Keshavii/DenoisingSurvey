@@ -34,3 +34,21 @@ python -m rq1kit.collect
 Tested on CPU on MovieLens-1M end to end; data preparation and noise files tested on all five datasets.
 Not yet run on a GPU or with the method adapters (Step 6 of the runbook).
 Requirements: python 3.10, torch, numpy, scipy, pandas, matplotlib.
+
+## Part C pipeline (`rq1kit/partc.py`)
+
+One driver runs every Part C job: canary, tuning, automatic pick, final runs and evaluation, per method and dataset.
+What runs is defined only by `configs/partc/protocol.json` and `configs/partc/methods/<method>.json`; picks are
+written to `configs/partc/best/<method>.json`. State: `logs/partc/state.jsonl`; job logs: `logs/partc/jobs/`;
+`logs/partc/status.txt` is refreshed every minute.
+
+```
+partc check      environment, data checksums, plain settings, disk, GPU (first run writes the lock files)
+partc status     one table per method x dataset: canary, tuning, pick, finals, failures, rough finish time
+partc show X     a method's full config, canary result and picks, or one job's command, state and log tail
+partc retry X    rerun a failed job, a held method or a conflicting output
+partc plan       what would start next
+partc collect    rebuild tables/ from results/
+partc install    write and enable the systemd user service `partc` (then: systemctl --user start partc)
+```
+`bin/partc` is a wrapper: `alias partc=~/rq1-kit/bin/partc`. Tests: `python tests/test_partc.py` (CPU, ~3 min).

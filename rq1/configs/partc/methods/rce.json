@@ -1,0 +1,18 @@
+{
+  "name": "rce",
+  "display": "R-CE",
+  "batch": 1,
+  "module": "rq1kit.adt",
+  "base_args": "--method rce",
+  "loss": "bce",
+  "backbones": ["lightgcn", "mf"],
+  "datasets": ["adressa", "ml1m", "yelp", "gowalla", "amazon_book"],
+  "tune_dir": "runs/tune_adt",
+  "source": "Wang et al., Denoising Implicit Feedback for Recommendation, WSDM 2021; github.com/WenjieWWJ/DenoisingRec (R_CE/loss.py)",
+  "grid_source": "Paper Sec. 4.1: beta in {0.05, 0.1, 0.15, 0.2, 0.25, 0.5, 1.0} (all 7 values)",
+  "grid": [
+    {"alpha": 0.05}, {"alpha": 0.1}, {"alpha": 0.15}, {"alpha": 0.2},
+    {"alpha": 0.25}, {"alpha": 0.5}, {"alpha": 1.0}
+  ],
+  "memory": "same as plain LightGCN/MF (loss change only)"
+}

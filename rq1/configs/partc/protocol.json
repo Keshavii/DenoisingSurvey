@@ -1,0 +1,20 @@
+{
+  "_about": "Fixed Part C protocol. Changing anything here changes job commands, so the affected jobs get a new hash and rerun. Record every change in the Progress Log first.",
+  "datasets": ["adressa", "ml1m", "yelp", "gowalla", "amazon_book"],
+  "dataset_slots": {"adressa": 1, "ml1m": 1, "yelp": 2, "gowalla": 2, "amazon_book": 2},
+  "total_slots": 4,
+  "threads_per_job": 7,
+  "min_free_disk_gb": 20,
+  "seeds": [1, 2, 3],
+  "tune": {"model": "lightgcn", "train_file": "train.tsv", "epochs": 100, "seed": 0,
+           "max_trials": 8, "select": "best_valid_ndcg@20 on clean validation"},
+  "conditions": [
+    {"model": "lightgcn", "cond": "N0", "train_file": "train.tsv"},
+    {"model": "lightgcn", "cond": "N2_20", "train_file": "train_N2_20_s{seed}.tsv"},
+    {"model": "mf", "cond": "N0", "train_file": "train.tsv"}
+  ],
+  "backbone_names": {"lightgcn": "LightGCN", "mf": "MF-BPR"},
+  "final_extra_args": "",
+  "canary": {"dataset": "adressa", "min_ratio_to_plain": 0.5},
+  "batches": {"1": "loss and sampling methods", "2": "model and graph methods", "3": "LLM-based"}
+}

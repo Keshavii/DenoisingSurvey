@@ -1,0 +1,3 @@
+#!/bin/bash
+# `partc <command>` from anywhere: runs python -m rq1kit.partc in the kit folder (rq1 environment must be active).
+cd "$(dirname "$(readlink -f "$0")")/.." && exec python -m rq1kit.partc "$@"
