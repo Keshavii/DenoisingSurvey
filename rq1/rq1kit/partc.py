@@ -464,6 +464,17 @@ def eta_text(proto, jobs, waiting, st):
         s = st[j["id"]]
         if s["status"] == "done" and s["seconds"]:
             durs[("final" if j["stage"] == "final" else "tune", j["dataset"])].append(s["seconds"])
+    # no timing yet for a dataset: fall back to the plain runs on the same dataset (same backbones, same data)
+    for ds in proto["datasets"]:
+        if not durs[("final", ds)]:
+            for f in glob.glob(f"runs/{ds}/plain_*/run.json"):
+                rj = load_json(f) or {}
+                if rj.get("train_seconds"):
+                    durs[("final", ds)].append(rj["train_seconds"] + (rj.get("export_seconds") or 0) + 30)
+        if not durs[("tune", ds)]:
+            secs = [v["train_seconds"] for k, v in (load_json(BEST_PLAIN, {}) or {}).items()
+                    if k.startswith(ds + "|") and v.get("train_seconds")]
+            durs[("tune", ds)].extend(secs)
     est = lambda kind, ds: (sorted(durs[(kind, ds)])[len(durs[(kind, ds)]) // 2] if durs[(kind, ds)] else None)
     slot_secs, unknown = 0.0, 0
     for j in jobs:
