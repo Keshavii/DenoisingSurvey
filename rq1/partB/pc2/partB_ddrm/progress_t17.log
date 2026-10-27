@@ -1,0 +1,24 @@
+nohup: ignoring input
+2026-10-22 01:44:25 start DDRM_LightGCN train.py
+2026-10-22 01:51:25 end   DDRM_LightGCN train.py   [Test]: Precision: 0.0305-0.0309-0.029-0.0258 Recall: 0.062-0.1193-0.2488-0.3966 NDCG: 0.0468-0.0675-0.1099-0.1532 MRR: 
+2026-10-22 01:51:25 start DDRM_MF train.py
+2026-10-22 02:29:27 end   DDRM_MF train.py   [Test]: Precision: 0.0338-0.0329-0.0271-0.0226 Recall: 0.0464-0.0912-0.1763-0.2768 NDCG: 0.0449-0.0604-0.0895-0.1205 MRR
+2026-10-22 02:29:27 start DDRM_SGL train.py
+2026-10-22 02:41:28 end   DDRM_SGL train.py   [Test]: Precision: 0.0355-0.0343-0.0317-0.0274 Recall: 0.0707-0.1256-0.2561-0.3994 NDCG: 0.0539-0.0741-0.118-0.1609 MRR:
+2026-10-22 02:41:28 start DDRM_LightGCN train_yelp.py
+2026-10-22 03:04:30 end   DDRM_LightGCN train_yelp.py   [Test]: Precision: 0.011-0.0094-0.0073-0.0057 Recall: 0.051-0.0861-0.1613-0.2454 NDCG: 0.0301-0.0407-0.059-0.0759 MRR: 0
+2026-10-22 03:04:30 start DDRM_MF train_yelp.py
+2026-10-22 03:27:31 end   DDRM_MF train_yelp.py   [Test]: Precision: 0.0079-0.0066-0.0051-0.0041 Recall: 0.0345-0.0569-0.1074-0.1702 NDCG: 0.0211-0.0278-0.0401-0.0529 MRR
+2026-10-22 03:27:31 start DDRM_SGL train_yelp.py
+2026-10-22 04:01:33 end   DDRM_SGL train_yelp.py   [Test]: Precision: 0.0113-0.0096-0.0074-0.0058 Recall: 0.0517-0.0859-0.1605-0.2461 NDCG: 0.0311-0.0415-0.0597-0.077 MRR:
+2026-10-22 04:01:33 start DDRM_LightGCN train_amazon.py
+2026-10-22 04:53:36 end   DDRM_LightGCN train_amazon.py   [Test]: Precision: 0.0098-0.008-0.0057-0.0043 Recall: 0.0488-0.0771-0.1299-0.1846 NDCG: 0.0293-0.0378-0.0506-0.0617 MRR:
+2026-10-22 04:53:36 start DDRM_MF train_amazon.py
+2026-10-22 04:55:36 end   DDRM_MF train_amazon.py   
+2026-10-22 04:55:36 start DDRM_SGL train_amazon.py
+2026-10-22 06:19:40 end   DDRM_SGL train_amazon.py   [Test]: Precision: 0.0096-0.0078-0.0055-0.0041 Recall: 0.0508-0.0776-0.1297-0.1837 NDCG: 0.0296-0.0376-0.0502-0.0612 MRR
+2026-10-22 06:19:40 LightGCN ml-1m seed 2021
+   [Test]: Precision: 0.0295-0.0303-0.0285-0.0257 Recall: 0.0646-0.1226-0.2513-0.3997 NDCG: 0.0471-0.0684-0.1105-0.1543 MRR
+2026-10-22 06:26:44 LightGCN ml-1m seed 2022
+   [Test]: Precision: 0.0337-0.0326-0.0292-0.0255 Recall: 0.0643-0.1176-0.2369-0.3702 NDCG: 0.0504-0.0693-0.1085-0.1484 MRR
+2026-10-22 06:35:03 ALL DONE

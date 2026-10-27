@@ -1,0 +1,48 @@
+nohup: ignoring input
+2026-10-22 19:22:41 start drrl_beauty_mf
+2026-10-22 19:24:19 end   drrl_beauty_mf   {'precision': array([0.02653509]), 'recall': array([0.16426859]), 'ndcg': array([0.09613067]), 'hitratio': array([0.20071704])}
+2026-10-22 19:24:19 start drrl_beauty_lgn
+2026-10-22 19:25:22 end   drrl_beauty_lgn   {'precision': array([0.02663413]), 'recall': array([0.1663361]), 'ndcg': array([0.0978334]), 'hitratio': array([0.20146618])}
+2026-10-22 19:25:22 start drrl_beauty_xsim
+2026-10-22 19:25:59 end   drrl_beauty_xsim   {'precision': array([0.02587012]), 'recall': array([0.15926381]), 'ndcg': array([0.093608]), 'hitratio': array([0.19568707])}
+2026-10-22 19:25:59 start drrl_elec_mf
+2026-10-22 19:28:54 end   drrl_elec_mf   {'precision': array([0.01695652]), 'recall': array([0.09043541]), 'ndcg': array([0.05683836]), 'hitratio': array([0.08754293])}
+2026-10-22 19:28:54 start drrl_elec_lgn
+2026-10-22 19:31:19 end   drrl_elec_lgn   {'precision': array([0.01691936]), 'recall': array([0.09048831]), 'ndcg': array([0.05731751]), 'hitratio': array([0.08735107])}
+2026-10-22 19:31:19 start drrl_elec_xsim
+2026-10-22 19:34:08 end   drrl_elec_xsim   {'precision': array([0.01681903]), 'recall': array([0.0899614]), 'ndcg': array([0.05727785]), 'hitratio': array([0.08683307])}
+2026-10-22 19:34:08 start drrl_kitchen_mf
+2026-10-22 19:39:52 end   drrl_kitchen_mf   {'precision': array([0.00520542]), 'recall': array([0.0498363]), 'ndcg': array([0.02724706]), 'hitratio': array([0.05174109])}
+2026-10-22 19:39:52 start drrl_kitchen_lgn
+2026-10-22 19:46:57 end   drrl_kitchen_lgn   {'precision': array([0.00517439]), 'recall': array([0.04905799]), 'ndcg': array([0.02701786]), 'hitratio': array([0.05143259])}
+2026-10-22 19:46:57 start drrl_kitchen_xsim
+2026-10-22 19:53:41 end   drrl_kitchen_xsim   {'precision': array([0.00513656]), 'recall': array([0.04881189]), 'ndcg': array([0.02635059]), 'hitratio': array([0.05105661])}
+2026-10-22 19:53:41 start drrl_gowalla_mf
+2026-10-22 20:39:27 end   drrl_gowalla_mf   {'precision': array([0.05450968]), 'recall': array([0.17867225]), 'ndcg': array([0.14335517]), 'hitratio': array([0.14983751])}
+2026-10-22 20:39:27 start drrl_gowalla_lgn
+2026-10-22 21:03:24 end   drrl_gowalla_lgn   {'precision': array([0.05386998]), 'recall': array([0.17918453]), 'ndcg': array([0.14464756]), 'hitratio': array([0.1480791])}
+2026-10-22 21:03:24 start drrl_gowalla_xsim
+2026-10-22 21:30:54 end   drrl_gowalla_xsim   {'precision': array([0.05320182]), 'recall': array([0.1774915]), 'ndcg': array([0.14071382]), 'hitratio': array([0.14624244])}
+2026-10-22 21:30:54 start sl_beauty_mf
+2026-10-22 21:31:36 end   sl_beauty_mf   {'precision': array([0.02588427]), 'recall': array([0.15833685]), 'ndcg': array([0.09376604]), 'hitratio': array([0.19579409])}
+2026-10-22 21:31:36 start sl_beauty_lgn
+2026-10-22 21:32:07 end   sl_beauty_lgn   {'precision': array([0.02581353]), 'recall': array([0.1591773]), 'ndcg': array([0.09458236]), 'hitratio': array([0.19525899])}
+2026-10-22 21:32:07 start sl_beauty_xsim
+2026-10-22 21:32:33 end   sl_beauty_xsim   {'precision': array([0.02510611]), 'recall': array([0.15055686]), 'ndcg': array([0.08955535]), 'hitratio': array([0.18990796])}
+2026-10-22 21:32:33 start sl_elec_mf
+2026-10-22 21:36:00 end   sl_elec_mf   {'precision': array([0.01547752]), 'recall': array([0.08217092]), 'ndcg': array([0.0511214]), 'hitratio': array([0.07990714])}
+2026-10-22 21:36:00 start sl_elec_lgn
+2026-10-22 21:38:01 end   sl_elec_lgn   {'precision': array([0.0154738]), 'recall': array([0.08149538]), 'ndcg': array([0.05048207]), 'hitratio': array([0.07988796])}
+2026-10-22 21:38:01 start sl_elec_xsim
+2026-10-22 21:43:30 end   sl_elec_xsim   {'precision': array([0.01447046]), 'recall': array([0.0766211]), 'ndcg': array([0.04719446]), 'hitratio': array([0.0747079])}
+2026-10-22 21:43:30 start sl_kitchen_mf
+2026-10-22 21:47:55 end   sl_kitchen_mf   {'precision': array([0.00468362]), 'recall': array([0.04412738]), 'ndcg': array([0.02504939]), 'hitratio': array([0.04655445])}
+2026-10-22 21:47:55 start sl_kitchen_lgn
+2026-10-22 21:52:04 end   sl_kitchen_lgn   {'precision': array([0.00476218]), 'recall': array([0.04515664]), 'ndcg': array([0.02572872]), 'hitratio': array([0.04733534])}
+2026-10-22 21:52:04 start sl_kitchen_xsim
+2026-10-22 21:59:21 end   sl_kitchen_xsim   {'precision': array([0.00444115]), 'recall': array([0.04137517]), 'ndcg': array([0.02368559]), 'hitratio': array([0.0441443])}
+2026-10-22 21:59:21 start sl_gowalla_mf
+2026-10-22 22:17:16 end   sl_gowalla_mf   {'precision': array([0.05002344]), 'recall': array([0.16229364]), 'ndcg': array([0.12521707]), 'hitratio': array([0.13750564])}
+2026-10-22 22:17:16 start sl_gowalla_lgn
+2026-10-22 22:29:04 end   sl_gowalla_lgn   {'precision': array([0.04939547]), 'recall': array([0.16027866]), 'ndcg': array([0.12328995]), 'hitratio': array([0.13577945])}
+2026-10-22 22:29:04 start sl_gowalla_xsim

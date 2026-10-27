@@ -1,0 +1,42 @@
+Baseline Models:
+NCF   LightGCN   MF   NGCF   DirectAU
+--------------------------------------------------------------------------------
+Graph-Based Models:
+SGL   SimGCL
+--------------------------------------------------------------------------------
+Denoising Models:
+BOD
+================================================================================
+Please enter the model you want to run:Reading data and preprocessing...
+/home/anurag/repos/BOD/base/torch_interface.py:10: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:201.)
+  i = torch.LongTensor([coo.row, coo.col])
+Model: LightGCN
+Training Set: /home/anurag/repos/BOD/dataset/yelp2018/train.txt
+Test Set: /home/anurag/repos/BOD/dataset/yelp2018/test.txt
+Embedding Dimension: 64
+Maximum Epoch: 30
+Learning Rate: 0.001
+Batch Size: 512
+Regularization Parameter: reg 0.0001
+Specific parameters: n_layer:2  
+Training Set Size: (user number: 31668, item number 38048, interaction number: 1237259)
+Test Set Size: (user number: 31668, item number 36073, interaction number: 324147)
+================================================================================
+Initializing and building model...
+Training Model...
+Traceback (most recent call last):
+  File "main.py", line 29, in <module>
+    rec.execute()
+  File "/home/anurag/repos/BOD/SELFRec.py", line 28, in execute
+    eval(recommender).execute()
+  File "/home/anurag/repos/BOD/base/recommender.py", line 73, in execute
+    self.train()
+  File "/home/anurag/repos/BOD/model/graph/LightGCN.py", line 27, in train
+    rec_user_emb, rec_item_emb = model()
+  File "/home/anurag/miniconda3/envs/bod_r/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/anurag/repos/BOD/model/graph/LightGCN.py", line 79, in forward
+    ego_embeddings = torch.sparse.mm(self.sparse_norm_adj, ego_embeddings)
+  File "/home/anurag/miniconda3/envs/bod_r/lib/python3.8/site-packages/torch/sparse/__init__.py", line 91, in mm
+    return torch._sparse_mm(mat1, mat2)
+RuntimeError: CUDA error: operation not supported when calling `cusparseCreate(handle)`

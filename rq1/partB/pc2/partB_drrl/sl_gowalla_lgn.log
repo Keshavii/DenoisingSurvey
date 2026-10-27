@@ -1,0 +1,175 @@
+>>SEED: 2023
+[0;30;43mValidTopks[20][0m
+[0;30;43mloading [./normal_data/IID_Data/Gowalla][0m
+Num_item:  40981
+Nume_user:  29858
+716648 interactions for training
+217242 interactions for testing
+93480 interactions for validing
+1027370 interactions in total
+Gowalla Sparsity : 0.0007632247752708027
+Gowalla is ready to go
+loading adjacency matrix
+lgn is already to go(dropout:0)
+User_num:  29858
+Item_num:  40981
+Interaction_num:  1027370
+===========config================
+{'activate_func': 'exp',
+ 'adv_interval': 5,
+ 'adv_lr': 0.001,
+ 'alpha': 0.75,
+ 'beta': 0.8,
+ 'cl_layer': 0,
+ 'cl_rate': 0.001,
+ 'cl_temp': 0.2,
+ 'clip_grad_norm': 0.8,
+ 'constant_protect': 0,
+ 'cuda': '0',
+ 'datapath': 'IID_Data',
+ 'dataset': 'Gowalla',
+ 'diff_margin_and_topk': False,
+ 'enable_dropout': 0,
+ 'eps': 0.1,
+ 'eta_epochs': 5,
+ 'full_batch': False,
+ 'keep_prob': 0.0,
+ 'lambda_k': 10,
+ 'latent_dim_rec': 64,
+ 'learning_mode': 'personlized',
+ 'loss': 'softmax',
+ 'lr': 0.1,
+ 'lr2': 0.001,
+ 'mode': 'lower bound learning',
+ 'model': 'lgn',
+ 'multicore': 0,
+ 'n_layers': 2,
+ 'neg_coefficient': 1,
+ 'noise_ratio': 0.125,
+ 'norm_emb': 1,
+ 'num_negative_items': 1024,
+ 'num_quantile_negative_items': None,
+ 'param_mode': 'artifical_set',
+ 'q': 5,
+ 'reg_weight': 1e-06,
+ 'renyi_margin': 0.7,
+ 'renyi_margin2': 0.7,
+ 'renyi_omega': 150,
+ 'resume_dir': '',
+ 'sample_method': 'random',
+ 'sample_mode': 'uniform',
+ 'sample_noise': 0,
+ 'search_optimizer': 'SGD',
+ 'shift_mode': 'others',
+ 'ssm_temp': 0.08,
+ 'ssm_temp2': 1.0,
+ 'test_u_batch_size': 1024,
+ 'train_batch': 1024,
+ 'w_emb_dim': 64,
+ 'warm_up_epochs': 0,
+ 'weight_decay': 0.0}
+Comment: 
+Test Topks: [20]
+===========end===================
+lgn is already to go(dropout:0)
+EPOCH[1/6001] Loss3.103-Time10
+EPOCH[2/6001] Loss2.243-Time10
+EPOCH[3/6001] Loss2.021-Time10
+EPOCH[4/6001] Loss1.911-Time8
+EPOCH[5/6001] Loss1.844-Time8
+[0;30;43m[Valid][0m
+{'precision': array([0.02731596]), 'recall': array([0.2004722]), 'ndcg': array([0.1162977]), 'hitratio': array([0.17449722])}
+EPOCH[6/6001] Loss1.797-Time8
+EPOCH[7/6001] Loss1.758-Time8
+EPOCH[8/6001] Loss1.727-Time8
+EPOCH[9/6001] Loss1.700-Time8
+EPOCH[10/6001] Loss1.674-Time8
+[0;30;43m[Valid][0m
+{'precision': array([0.02798747]), 'recall': array([0.20516825]), 'ndcg': array([0.12003706]), 'hitratio': array([0.17878691])}
+EPOCH[11/6001] Loss1.652-Time8
+EPOCH[12/6001] Loss1.631-Time8
+EPOCH[13/6001] Loss1.612-Time8
+EPOCH[14/6001] Loss1.595-Time8
+EPOCH[15/6001] Loss1.579-Time10
+[0;30;43m[Valid][0m
+{'precision': array([0.02828388]), 'recall': array([0.20761244]), 'ndcg': array([0.12178427]), 'hitratio': array([0.18068036])}
+EPOCH[16/6001] Loss1.564-Time14
+EPOCH[17/6001] Loss1.550-Time9
+EPOCH[18/6001] Loss1.538-Time14
+EPOCH[19/6001] Loss1.526-Time11
+EPOCH[20/6001] Loss1.515-Time12
+[0;30;43m[Valid][0m
+{'precision': array([0.02848483]), 'recall': array([0.20854931]), 'ndcg': array([0.12296589]), 'hitratio': array([0.18196406])}
+EPOCH[21/6001] Loss1.505-Time11
+EPOCH[22/6001] Loss1.496-Time12
+EPOCH[23/6001] Loss1.487-Time14
+EPOCH[24/6001] Loss1.479-Time9
+EPOCH[25/6001] Loss1.473-Time14
+[0;30;43m[Valid][0m
+{'precision': array([0.0286188]), 'recall': array([0.20996916]), 'ndcg': array([0.12368516]), 'hitratio': array([0.18281985])}
+EPOCH[26/6001] Loss1.466-Time10
+EPOCH[27/6001] Loss1.459-Time10
+EPOCH[28/6001] Loss1.453-Time10
+EPOCH[29/6001] Loss1.447-Time10
+EPOCH[30/6001] Loss1.442-Time10
+[0;30;43m[Valid][0m
+{'precision': array([0.02868076]), 'recall': array([0.21012594]), 'ndcg': array([0.12454066]), 'hitratio': array([0.18321566])}
+EPOCH[31/6001] Loss1.437-Time10
+EPOCH[32/6001] Loss1.432-Time10
+EPOCH[33/6001] Loss1.428-Time10
+EPOCH[34/6001] Loss1.423-Time10
+EPOCH[35/6001] Loss1.420-Time10
+[0;30;43m[Valid][0m
+Patience: 1/5
+{'precision': array([0.0286841]), 'recall': array([0.21011085]), 'ndcg': array([0.12450575]), 'hitratio': array([0.18323706])}
+EPOCH[36/6001] Loss1.416-Time10
+EPOCH[37/6001] Loss1.412-Time10
+EPOCH[38/6001] Loss1.409-Time10
+EPOCH[39/6001] Loss1.406-Time10
+EPOCH[40/6001] Loss1.402-Time10
+[0;30;43m[Valid][0m
+{'precision': array([0.02878291]), 'recall': array([0.21063821]), 'ndcg': array([0.12491931]), 'hitratio': array([0.18386821])}
+EPOCH[41/6001] Loss1.399-Time10
+EPOCH[42/6001] Loss1.396-Time10
+EPOCH[43/6001] Loss1.393-Time10
+EPOCH[44/6001] Loss1.391-Time10
+EPOCH[45/6001] Loss1.388-Time10
+[0;30;43m[Valid][0m
+Patience: 1/5
+{'precision': array([0.02876951]), 'recall': array([0.21049624]), 'ndcg': array([0.12459547]), 'hitratio': array([0.18378263])}
+EPOCH[46/6001] Loss1.386-Time8
+EPOCH[47/6001] Loss1.382-Time8
+EPOCH[48/6001] Loss1.380-Time8
+EPOCH[49/6001] Loss1.379-Time8
+EPOCH[50/6001] Loss1.376-Time8
+[0;30;43m[Valid][0m
+Patience: 2/5
+{'precision': array([0.02871257]), 'recall': array([0.21021789]), 'ndcg': array([0.1249049]), 'hitratio': array([0.18341891])}
+EPOCH[51/6001] Loss1.374-Time8
+EPOCH[52/6001] Loss1.372-Time8
+EPOCH[53/6001] Loss1.370-Time8
+EPOCH[54/6001] Loss1.368-Time8
+EPOCH[55/6001] Loss1.366-Time8
+[0;30;43m[Valid][0m
+Patience: 3/5
+{'precision': array([0.02874104]), 'recall': array([0.21056324]), 'ndcg': array([0.12498283]), 'hitratio': array([0.18360077])}
+EPOCH[56/6001] Loss1.365-Time8
+EPOCH[57/6001] Loss1.362-Time11
+EPOCH[58/6001] Loss1.362-Time14
+EPOCH[59/6001] Loss1.359-Time9
+EPOCH[60/6001] Loss1.358-Time14
+[0;30;43m[Valid][0m
+Patience: 4/5
+{'precision': array([0.02872429]), 'recall': array([0.21035799]), 'ndcg': array([0.12501539]), 'hitratio': array([0.1834938])}
+EPOCH[61/6001] Loss1.356-Time9
+EPOCH[62/6001] Loss1.354-Time14
+EPOCH[63/6001] Loss1.353-Time12
+EPOCH[64/6001] Loss1.351-Time11
+EPOCH[65/6001] Loss1.351-Time14
+[0;30;43m[Valid][0m
+Patience: 5/5
+Early stop!
+[0;30;43m[Test][0m
+{'precision': array([0.04939547]), 'recall': array([0.16027866]), 'ndcg': array([0.12328995]), 'hitratio': array([0.13577945])}
+Best_hit: [0.18386820710312365], Best_ndcg: [0.12501539427345285], Best_precision: [0.028782905753901807], Best_recall: [0.21063821493723042]
+Total time:703.7034013271332

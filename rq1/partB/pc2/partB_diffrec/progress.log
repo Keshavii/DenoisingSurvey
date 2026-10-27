@@ -1,0 +1,8 @@
+nohup: ignoring input
+2026-10-19 19:15:01 start ml-1m_clean
+2026-10-19 19:15:17 end   ml-1m_clean  End. Best Epoch 010  [Valid]: Precision: 0.0689-0.0623-0.053-0.0455 Recall: 0.0641-0.1125-0.2191-0.3429 NDCG: 0.0833-0.0963-0.1319-0.1757 MRR: 0.1612-0.1726-0.1797-0.1813 [Test]: Precision: 0.0548-0.0
+2026-10-19 19:15:17 start ml-1m_noisy
+2026-10-19 19:15:33 end   ml-1m_noisy  End. Best Epoch 010  [Valid]: Precision: 0.03-0.0312-0.0328-0.0319 Recall: 0.036-0.0717-0.1629-0.2723 NDCG: 0.0371-0.05-0.082-0.1187 MRR: 0.0723-0.0841-0.0933-0.0956 [Test]: Precision: 0.0301-0.0307-0
+2026-10-19 19:15:33 start yelp_clean
+2026-10-19 19:35:39 end   yelp_clean  End. Best Epoch 095  [Valid]: Precision: 0.017-0.0144-0.011-0.0087 Recall: 0.0454-0.0752-0.1384-0.2116 NDCG: 0.0335-0.0433-0.0613-0.0788 MRR: 0.0538-0.0594-0.0638-0.0656 [Test]: Precision: 0.0132-0.01
+2026-10-19 19:35:39 start yelp_noisy

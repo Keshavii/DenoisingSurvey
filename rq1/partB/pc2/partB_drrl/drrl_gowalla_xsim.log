@@ -1,0 +1,277 @@
+>>SEED: 2023
+[0;30;43mValidTopks[20][0m
+[0;30;43mloading [./normal_data/IID_Data/Gowalla][0m
+Num_item:  40981
+Nume_user:  29858
+716648 interactions for training
+217242 interactions for testing
+93480 interactions for validing
+1027370 interactions in total
+Gowalla Sparsity : 0.0007632247752708027
+Gowalla is ready to go
+loading adjacency matrix
+XSimGCL is already to go(dropout:0)
+User_num:  29858
+Item_num:  40981
+Interaction_num:  1027370
+===========config================
+{'activate_func': 'exp',
+ 'adv_interval': 5,
+ 'adv_lr': 0.001,
+ 'alpha': 0.75,
+ 'beta': 0.8,
+ 'cl_layer': 1,
+ 'cl_rate': 0.001,
+ 'cl_temp': 0.2,
+ 'clip_grad_norm': 0.8,
+ 'constant_protect': 0,
+ 'cuda': '0',
+ 'datapath': 'IID_Data',
+ 'dataset': 'Gowalla',
+ 'diff_margin_and_topk': False,
+ 'enable_dropout': 0,
+ 'eps': 0.2,
+ 'eta_epochs': 5,
+ 'full_batch': False,
+ 'keep_prob': 0.0,
+ 'lambda_k': 10,
+ 'latent_dim_rec': 64,
+ 'learning_mode': 'personlized',
+ 'loss': 'DrRL',
+ 'lr': 0.1,
+ 'lr2': 0.0001,
+ 'mode': 'lower bound learning',
+ 'model': 'XSimGCL',
+ 'multicore': 0,
+ 'n_layers': 2,
+ 'neg_coefficient': 1,
+ 'noise_ratio': 0.125,
+ 'norm_emb': 1,
+ 'num_negative_items': 1024,
+ 'num_quantile_negative_items': None,
+ 'param_mode': 'artifical_set',
+ 'q': 5,
+ 'reg_weight': 1e-06,
+ 'renyi_margin': 0.9,
+ 'renyi_margin2': 0.7,
+ 'renyi_omega': 1.09,
+ 'resume_dir': '',
+ 'sample_method': 'random',
+ 'sample_mode': 'uniform',
+ 'sample_noise': 0,
+ 'search_optimizer': 'SGD',
+ 'shift_mode': 'others',
+ 'ssm_temp': 0.1,
+ 'ssm_temp2': 1.0,
+ 'test_u_batch_size': 1024,
+ 'train_batch': 1024,
+ 'w_emb_dim': 64,
+ 'warm_up_epochs': 0,
+ 'weight_decay': 0.0}
+Comment: 
+Test Topks: [20]
+===========end===================
+XSimGCL is already to go(dropout:0)
+EPOCH[1/6001] Loss1.060-Time9
+EPOCH[2/6001] Loss1.052-Time13
+EPOCH[3/6001] Loss1.050-Time15
+EPOCH[4/6001] Loss1.049-Time13
+EPOCH[5/6001] Loss1.048-Time15
+[0;30;43m[Valid][0m
+{'precision': array([0.02699109]), 'recall': array([0.19900226]), 'ndcg': array([0.11252268]), 'hitratio': array([0.17242191])}
+EPOCH[6/6001] Loss1.047-Time14
+EPOCH[7/6001] Loss1.047-Time14
+EPOCH[8/6001] Loss1.046-Time13
+EPOCH[9/6001] Loss1.045-Time15
+EPOCH[10/6001] Loss1.044-Time13
+[0;30;43m[Valid][0m
+{'precision': array([0.02782504]), 'recall': array([0.20608097]), 'ndcg': array([0.11884836]), 'hitratio': array([0.17774925])}
+EPOCH[11/6001] Loss1.044-Time15
+EPOCH[12/6001] Loss1.043-Time13
+EPOCH[13/6001] Loss1.042-Time13
+EPOCH[14/6001] Loss1.042-Time13
+EPOCH[15/6001] Loss1.041-Time13
+[0;30;43m[Valid][0m
+{'precision': array([0.02851999]), 'recall': array([0.21042865]), 'ndcg': array([0.12240751]), 'hitratio': array([0.1821887])}
+EPOCH[16/6001] Loss1.040-Time10
+EPOCH[17/6001] Loss1.040-Time9
+EPOCH[18/6001] Loss1.039-Time9
+EPOCH[19/6001] Loss1.038-Time9
+EPOCH[20/6001] Loss1.038-Time9
+[0;30;43m[Valid][0m
+{'precision': array([0.0288231]), 'recall': array([0.21259833]), 'ndcg': array([0.12429918]), 'hitratio': array([0.18412495])}
+EPOCH[21/6001] Loss1.037-Time9
+EPOCH[22/6001] Loss1.037-Time9
+EPOCH[23/6001] Loss1.036-Time9
+EPOCH[24/6001] Loss1.036-Time9
+EPOCH[25/6001] Loss1.035-Time9
+[0;30;43m[Valid][0m
+{'precision': array([0.02907094]), 'recall': array([0.21436086]), 'ndcg': array([0.12578049]), 'hitratio': array([0.18570817])}
+EPOCH[26/6001] Loss1.035-Time10
+EPOCH[27/6001] Loss1.034-Time16
+EPOCH[28/6001] Loss1.033-Time11
+EPOCH[29/6001] Loss1.033-Time17
+EPOCH[30/6001] Loss1.032-Time11
+[0;30;43m[Valid][0m
+{'precision': array([0.02915467]), 'recall': array([0.21459927]), 'ndcg': array([0.12676023]), 'hitratio': array([0.18624305])}
+EPOCH[31/6001] Loss1.032-Time17
+EPOCH[32/6001] Loss1.031-Time11
+EPOCH[33/6001] Loss1.031-Time17
+EPOCH[34/6001] Loss1.030-Time11
+EPOCH[35/6001] Loss1.030-Time17
+[0;30;43m[Valid][0m
+{'precision': array([0.02920323]), 'recall': array([0.21540514]), 'ndcg': array([0.12772669]), 'hitratio': array([0.18655327])}
+EPOCH[36/6001] Loss1.029-Time13
+EPOCH[37/6001] Loss1.029-Time13
+EPOCH[38/6001] Loss1.028-Time13
+EPOCH[39/6001] Loss1.028-Time13
+EPOCH[40/6001] Loss1.027-Time13
+[0;30;43m[Valid][0m
+{'precision': array([0.02932212]), 'recall': array([0.21622027]), 'ndcg': array([0.12846291]), 'hitratio': array([0.18731279])}
+EPOCH[41/6001] Loss1.027-Time9
+EPOCH[42/6001] Loss1.026-Time9
+EPOCH[43/6001] Loss1.026-Time9
+EPOCH[44/6001] Loss1.026-Time9
+EPOCH[45/6001] Loss1.025-Time9
+[0;30;43m[Valid][0m
+{'precision': array([0.02932882]), 'recall': array([0.21620931]), 'ndcg': array([0.12896267]), 'hitratio': array([0.18735558])}
+EPOCH[46/6001] Loss1.025-Time9
+EPOCH[47/6001] Loss1.024-Time9
+EPOCH[48/6001] Loss1.024-Time9
+EPOCH[49/6001] Loss1.023-Time9
+EPOCH[50/6001] Loss1.023-Time9
+[0;30;43m[Valid][0m
+{'precision': array([0.02941088]), 'recall': array([0.21699959]), 'ndcg': array([0.12931854]), 'hitratio': array([0.18787976])}
+EPOCH[51/6001] Loss1.022-Time14
+EPOCH[52/6001] Loss1.022-Time14
+EPOCH[53/6001] Loss1.021-Time14
+EPOCH[54/6001] Loss1.021-Time14
+EPOCH[55/6001] Loss1.020-Time13
+[0;30;43m[Valid][0m
+{'precision': array([0.02946447]), 'recall': array([0.21721087]), 'ndcg': array([0.12969427]), 'hitratio': array([0.18822208])}
+EPOCH[56/6001] Loss1.020-Time13
+EPOCH[57/6001] Loss1.019-Time14
+EPOCH[58/6001] Loss1.019-Time14
+EPOCH[59/6001] Loss1.019-Time14
+EPOCH[60/6001] Loss1.018-Time15
+[0;30;43m[Valid][0m
+{'precision': array([0.02949628]), 'recall': array([0.21761733]), 'ndcg': array([0.13004282]), 'hitratio': array([0.18842533])}
+EPOCH[61/6001] Loss1.018-Time13
+EPOCH[62/6001] Loss1.017-Time13
+EPOCH[63/6001] Loss1.017-Time13
+EPOCH[64/6001] Loss1.016-Time13
+EPOCH[65/6001] Loss1.016-Time10
+[0;30;43m[Valid][0m
+{'precision': array([0.02949796]), 'recall': array([0.21738999]), 'ndcg': array([0.13041871]), 'hitratio': array([0.18843603])}
+EPOCH[66/6001] Loss1.015-Time9
+EPOCH[67/6001] Loss1.015-Time9
+EPOCH[68/6001] Loss1.014-Time9
+EPOCH[69/6001] Loss1.014-Time9
+EPOCH[70/6001] Loss1.014-Time9
+[0;30;43m[Valid][0m
+Patience: 1/5
+{'precision': array([0.02955992]), 'recall': array([0.21800642]), 'ndcg': array([0.13050881]), 'hitratio': array([0.18883184])}
+EPOCH[71/6001] Loss1.013-Time9
+EPOCH[72/6001] Loss1.013-Time9
+EPOCH[73/6001] Loss1.012-Time9
+EPOCH[74/6001] Loss1.012-Time9
+EPOCH[75/6001] Loss1.011-Time9
+[0;30;43m[Valid][0m
+Patience: 2/5
+{'precision': array([0.02945442]), 'recall': array([0.21712363]), 'ndcg': array([0.13044081]), 'hitratio': array([0.18815789])}
+EPOCH[76/6001] Loss1.011-Time12
+EPOCH[77/6001] Loss1.010-Time12
+EPOCH[78/6001] Loss1.010-Time12
+EPOCH[79/6001] Loss1.010-Time12
+EPOCH[80/6001] Loss1.009-Time12
+[0;30;43m[Valid][0m
+Patience: 3/5
+{'precision': array([0.02946112]), 'recall': array([0.21741948]), 'ndcg': array([0.13054289]), 'hitratio': array([0.18820068])}
+EPOCH[81/6001] Loss1.009-Time12
+EPOCH[82/6001] Loss1.008-Time12
+EPOCH[83/6001] Loss1.008-Time12
+EPOCH[84/6001] Loss1.007-Time12
+EPOCH[85/6001] Loss1.007-Time12
+[0;30;43m[Valid][0m
+{'precision': array([0.02954317]), 'recall': array([0.2177751]), 'ndcg': array([0.13083871]), 'hitratio': array([0.18872486])}
+EPOCH[86/6001] Loss1.007-Time12
+EPOCH[87/6001] Loss1.006-Time11
+EPOCH[88/6001] Loss1.006-Time9
+EPOCH[89/6001] Loss1.005-Time9
+EPOCH[90/6001] Loss1.005-Time9
+[0;30;43m[Valid][0m
+{'precision': array([0.02956494]), 'recall': array([0.21821243]), 'ndcg': array([0.13097024]), 'hitratio': array([0.18886393])}
+EPOCH[91/6001] Loss1.004-Time9
+EPOCH[92/6001] Loss1.004-Time9
+EPOCH[93/6001] Loss1.004-Time9
+EPOCH[94/6001] Loss1.003-Time9
+EPOCH[95/6001] Loss1.003-Time9
+[0;30;43m[Valid][0m
+{'precision': array([0.02952475]), 'recall': array([0.21783695]), 'ndcg': array([0.13130319]), 'hitratio': array([0.18860719])}
+EPOCH[96/6001] Loss1.002-Time9
+EPOCH[97/6001] Loss1.002-Time9
+EPOCH[98/6001] Loss1.001-Time9
+EPOCH[99/6001] Loss1.001-Time9
+EPOCH[100/6001] Loss1.001-Time11
+[0;30;43m[Valid][0m
+Patience: 1/5
+{'precision': array([0.02949293]), 'recall': array([0.2177914]), 'ndcg': array([0.13129842]), 'hitratio': array([0.18840394])}
+EPOCH[101/6001] Loss1.000-Time12
+EPOCH[102/6001] Loss1.000-Time12
+EPOCH[103/6001] Loss0.999-Time12
+EPOCH[104/6001] Loss0.999-Time12
+EPOCH[105/6001] Loss0.999-Time12
+[0;30;43m[Valid][0m
+Patience: 2/5
+{'precision': array([0.02952308]), 'recall': array([0.21848799]), 'ndcg': array([0.13132504]), 'hitratio': array([0.18859649])}
+EPOCH[106/6001] Loss0.998-Time12
+EPOCH[107/6001] Loss0.998-Time12
+EPOCH[108/6001] Loss0.997-Time12
+EPOCH[109/6001] Loss0.997-Time12
+EPOCH[110/6001] Loss0.996-Time12
+[0;30;43m[Valid][0m
+{'precision': array([0.02962523]), 'recall': array([0.21900947]), 'ndcg': array([0.13188481]), 'hitratio': array([0.18924904])}
+EPOCH[111/6001] Loss0.996-Time10
+EPOCH[112/6001] Loss0.996-Time9
+EPOCH[113/6001] Loss0.995-Time9
+EPOCH[114/6001] Loss0.995-Time9
+EPOCH[115/6001] Loss0.994-Time9
+[0;30;43m[Valid][0m
+Patience: 1/5
+{'precision': array([0.02947786]), 'recall': array([0.21823926]), 'ndcg': array([0.13145132]), 'hitratio': array([0.18830766])}
+EPOCH[116/6001] Loss0.994-Time9
+EPOCH[117/6001] Loss0.994-Time9
+EPOCH[118/6001] Loss0.993-Time9
+EPOCH[119/6001] Loss0.993-Time9
+EPOCH[120/6001] Loss0.992-Time9
+[0;30;43m[Valid][0m
+Patience: 2/5
+{'precision': array([0.0296269]), 'recall': array([0.21906696]), 'ndcg': array([0.13175879]), 'hitratio': array([0.18925973])}
+EPOCH[121/6001] Loss0.992-Time9
+EPOCH[122/6001] Loss0.992-Time9
+EPOCH[123/6001] Loss0.991-Time9
+EPOCH[124/6001] Loss0.991-Time9
+EPOCH[125/6001] Loss0.990-Time11
+[0;30;43m[Valid][0m
+Patience: 3/5
+{'precision': array([0.02943935]), 'recall': array([0.21817505]), 'ndcg': array([0.13174234]), 'hitratio': array([0.18806162])}
+EPOCH[126/6001] Loss0.990-Time15
+EPOCH[127/6001] Loss0.989-Time12
+EPOCH[128/6001] Loss0.989-Time15
+EPOCH[129/6001] Loss0.989-Time12
+EPOCH[130/6001] Loss0.988-Time15
+[0;30;43m[Valid][0m
+Patience: 4/5
+{'precision': array([0.02949461]), 'recall': array([0.21825085]), 'ndcg': array([0.13158798]), 'hitratio': array([0.18841463])}
+EPOCH[131/6001] Loss0.988-Time12
+EPOCH[132/6001] Loss0.987-Time15
+EPOCH[133/6001] Loss0.987-Time12
+EPOCH[134/6001] Loss0.987-Time16
+EPOCH[135/6001] Loss0.986-Time11
+[0;30;43m[Valid][0m
+Patience: 5/5
+Early stop!
+[0;30;43m[Test][0m
+{'precision': array([0.05320182]), 'recall': array([0.1774915]), 'ndcg': array([0.14071382]), 'hitratio': array([0.14624244])}
+Best_hit: [0.18925973470261018], Best_ndcg: [0.13188480649611709], Best_precision: [0.029626900663138864], Best_recall: [0.21906696022495148]
+Total time:1645.031091928482

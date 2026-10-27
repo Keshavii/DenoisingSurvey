@@ -1,0 +1,174 @@
+>>SEED: 2023
+[0;30;43mValidTopks[20][0m
+[0;30;43mloading [./normal_data/IID_Data/amazonKitchen][0m
+Num_item:  23158
+Nume_user:  51552
+265611 interactions for training
+103728 interactions for testing
+58405 interactions for validing
+427744 interactions in total
+amazonKitchen Sparsity : 0.00030937028731298216
+amazonKitchen is ready to go
+loading adjacency matrix
+lgn is already to go(dropout:0)
+User_num:  51552
+Item_num:  23158
+Interaction_num:  427744
+===========config================
+{'activate_func': 'exp',
+ 'adv_interval': 5,
+ 'adv_lr': 0.001,
+ 'alpha': 0.75,
+ 'beta': 0.8,
+ 'cl_layer': 0,
+ 'cl_rate': 0.001,
+ 'cl_temp': 0.2,
+ 'clip_grad_norm': 0.8,
+ 'constant_protect': 0,
+ 'cuda': '0',
+ 'datapath': 'IID_Data',
+ 'dataset': 'amazonKitchen',
+ 'diff_margin_and_topk': False,
+ 'enable_dropout': 0,
+ 'eps': 0.1,
+ 'eta_epochs': 5,
+ 'full_batch': False,
+ 'keep_prob': 0.0,
+ 'lambda_k': 10,
+ 'latent_dim_rec': 64,
+ 'learning_mode': 'personlized',
+ 'loss': 'softmax',
+ 'lr': 0.1,
+ 'lr2': 0.001,
+ 'mode': 'lower bound learning',
+ 'model': 'lgn',
+ 'multicore': 0,
+ 'n_layers': 2,
+ 'neg_coefficient': 1,
+ 'noise_ratio': 0.125,
+ 'norm_emb': 1,
+ 'num_negative_items': 1024,
+ 'num_quantile_negative_items': None,
+ 'param_mode': 'artifical_set',
+ 'q': 5,
+ 'reg_weight': 1e-06,
+ 'renyi_margin': 0.7,
+ 'renyi_margin2': 0.7,
+ 'renyi_omega': 150,
+ 'resume_dir': '',
+ 'sample_method': 'random',
+ 'sample_mode': 'uniform',
+ 'sample_noise': 0,
+ 'search_optimizer': 'SGD',
+ 'shift_mode': 'others',
+ 'ssm_temp': 0.25,
+ 'ssm_temp2': 1.0,
+ 'test_u_batch_size': 1024,
+ 'train_batch': 1024,
+ 'w_emb_dim': 64,
+ 'warm_up_epochs': 0,
+ 'weight_decay': 0.0}
+Comment: 
+Test Topks: [20]
+===========end===================
+lgn is already to go(dropout:0)
+EPOCH[1/6001] Loss5.361-Time3
+EPOCH[2/6001] Loss4.844-Time3
+EPOCH[3/6001] Loss4.721-Time3
+EPOCH[4/6001] Loss4.656-Time3
+EPOCH[5/6001] Loss4.615-Time3
+[0;30;43m[Valid][0m
+{'precision': array([0.00223464]), 'recall': array([0.03804009]), 'ndcg': array([0.01799663]), 'hitratio': array([0.03944868])}
+EPOCH[6/6001] Loss4.586-Time3
+EPOCH[7/6001] Loss4.564-Time3
+EPOCH[8/6001] Loss4.547-Time3
+EPOCH[9/6001] Loss4.533-Time3
+EPOCH[10/6001] Loss4.522-Time3
+[0;30;43m[Valid][0m
+{'precision': array([0.0024451]), 'recall': array([0.04179199]), 'ndcg': array([0.01991422]), 'hitratio': array([0.04316411])}
+EPOCH[11/6001] Loss4.512-Time3
+EPOCH[12/6001] Loss4.504-Time3
+EPOCH[13/6001] Loss4.497-Time3
+EPOCH[14/6001] Loss4.490-Time3
+EPOCH[15/6001] Loss4.485-Time3
+[0;30;43m[Valid][0m
+{'precision': array([0.00258865]), 'recall': array([0.04434645]), 'ndcg': array([0.02101233]), 'hitratio': array([0.04569814])}
+EPOCH[16/6001] Loss4.479-Time3
+EPOCH[17/6001] Loss4.474-Time3
+EPOCH[18/6001] Loss4.470-Time3
+EPOCH[19/6001] Loss4.466-Time3
+EPOCH[20/6001] Loss4.462-Time3
+[0;30;43m[Valid][0m
+{'precision': array([0.00261387]), 'recall': array([0.04487987]), 'ndcg': array([0.02139431]), 'hitratio': array([0.04614331])}
+EPOCH[21/6001] Loss4.458-Time2
+EPOCH[22/6001] Loss4.454-Time2
+EPOCH[23/6001] Loss4.451-Time2
+EPOCH[24/6001] Loss4.448-Time2
+EPOCH[25/6001] Loss4.445-Time2
+[0;30;43m[Valid][0m
+{'precision': array([0.00264781]), 'recall': array([0.04544596]), 'ndcg': array([0.02158374]), 'hitratio': array([0.04674257])}
+EPOCH[26/6001] Loss4.442-Time2
+EPOCH[27/6001] Loss4.439-Time2
+EPOCH[28/6001] Loss4.436-Time2
+EPOCH[29/6001] Loss4.433-Time2
+EPOCH[30/6001] Loss4.431-Time2
+[0;30;43m[Valid][0m
+{'precision': array([0.0026837]), 'recall': array([0.0459943]), 'ndcg': array([0.02186182]), 'hitratio': array([0.04737608])}
+EPOCH[31/6001] Loss4.428-Time2
+EPOCH[32/6001] Loss4.426-Time2
+EPOCH[33/6001] Loss4.423-Time2
+EPOCH[34/6001] Loss4.421-Time2
+EPOCH[35/6001] Loss4.419-Time2
+[0;30;43m[Valid][0m
+{'precision': array([0.00267788]), 'recall': array([0.04601958]), 'ndcg': array([0.0220309]), 'hitratio': array([0.04727335])}
+EPOCH[36/6001] Loss4.417-Time2
+EPOCH[37/6001] Loss4.415-Time2
+EPOCH[38/6001] Loss4.413-Time2
+EPOCH[39/6001] Loss4.411-Time2
+EPOCH[40/6001] Loss4.409-Time2
+[0;30;43m[Valid][0m
+{'precision': array([0.00269922]), 'recall': array([0.04639323]), 'ndcg': array([0.02223922]), 'hitratio': array([0.04765003])}
+EPOCH[41/6001] Loss4.407-Time2
+EPOCH[42/6001] Loss4.405-Time2
+EPOCH[43/6001] Loss4.403-Time2
+EPOCH[44/6001] Loss4.402-Time2
+EPOCH[45/6001] Loss4.400-Time2
+[0;30;43m[Valid][0m
+Patience: 1/5
+{'precision': array([0.00272346]), 'recall': array([0.04683586]), 'ndcg': array([0.02229948]), 'hitratio': array([0.04807808])}
+EPOCH[46/6001] Loss4.398-Time2
+EPOCH[47/6001] Loss4.397-Time2
+EPOCH[48/6001] Loss4.396-Time2
+EPOCH[49/6001] Loss4.394-Time2
+EPOCH[50/6001] Loss4.393-Time2
+[0;30;43m[Valid][0m
+Patience: 2/5
+{'precision': array([0.00270407]), 'recall': array([0.04655391]), 'ndcg': array([0.02227718]), 'hitratio': array([0.04773564])}
+EPOCH[51/6001] Loss4.391-Time2
+EPOCH[52/6001] Loss4.390-Time2
+EPOCH[53/6001] Loss4.389-Time2
+EPOCH[54/6001] Loss4.387-Time2
+EPOCH[55/6001] Loss4.386-Time2
+[0;30;43m[Valid][0m
+Patience: 3/5
+{'precision': array([0.0027157]), 'recall': array([0.04684871]), 'ndcg': array([0.02236672]), 'hitratio': array([0.0479411])}
+EPOCH[56/6001] Loss4.385-Time4
+EPOCH[57/6001] Loss4.384-Time4
+EPOCH[58/6001] Loss4.383-Time4
+EPOCH[59/6001] Loss4.382-Time2
+EPOCH[60/6001] Loss4.381-Time2
+[0;30;43m[Valid][0m
+Patience: 4/5
+{'precision': array([0.00272443]), 'recall': array([0.04694211]), 'ndcg': array([0.02244653]), 'hitratio': array([0.0480952])}
+EPOCH[61/6001] Loss4.380-Time4
+EPOCH[62/6001] Loss4.379-Time4
+EPOCH[63/6001] Loss4.378-Time4
+EPOCH[64/6001] Loss4.377-Time4
+EPOCH[65/6001] Loss4.376-Time3
+[0;30;43m[Valid][0m
+Patience: 5/5
+Early stop!
+[0;30;43m[Test][0m
+{'precision': array([0.00476218]), 'recall': array([0.04515664]), 'ndcg': array([0.02572872]), 'hitratio': array([0.04733534])}
+Best_hit: [0.0480951973289958], Best_ndcg: [0.02244653344913538], Best_precision: [0.002724433581626319], Best_recall: [0.046942107675929816]
+Total time:244.22068190574646

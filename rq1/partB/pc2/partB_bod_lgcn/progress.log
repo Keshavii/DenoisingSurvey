@@ -1,0 +1,22 @@
+nohup: ignoring input
+2026-10-19 19:28:11 start run A (300 epochs, 2 layers)
+num.max.epoch=300
+LightGCN=-n_layer 2
+2026-10-19 21:43:00 end   run A
+Hit Ratio:0.0506220942967234
+Precision:0.025907856511304787
+Recall:0.05709346121239986
+NDCG:0.04713356099491057
+
+Running time: 8088.086904 s
+2026-10-19 21:43:00 start run B (300 epochs, 3 layers)
+num.max.epoch=300
+LightGCN=-n_layer 3
+2026-10-20 00:10:22 end   run B
+Hit Ratio:0.05159696063822895
+Precision:0.026406782872300114
+Recall:0.05826346123334332
+NDCG:0.048218831172074025
+
+Running time: 8841.915697 s
+ALL DONE

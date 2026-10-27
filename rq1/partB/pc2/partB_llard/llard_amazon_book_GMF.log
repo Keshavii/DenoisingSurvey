@@ -1,0 +1,508 @@
+saving log to  ./saved/amazon_book/LLaRD/GMF_1/
+dataset=amazon_book
+model=GMF
+runid=GMF_1
+device_id=0
+epochs=1000
+batch_size=1024
+lr=0.001
+topk=20
+early_stops=10
+num_neg=1
+gcn_layer=3
+num_user=11000
+num_item=9332
+latent_dim=64
+init_type=norm
+l2_reg=0.0001
+beta=5.0
+alpha=0.1
+sigma=0.25
+keep_rate=0.8
+noise_ratio=0.0
+prf_weight=0.01
+str_weight=1.0
+kd_temperature=0.2
+edge_bias=0.5
+data_path=./data/amazon_book/
+mlp.0.weight torch.Size([800, 1536])
+mlp.0.bias torch.Size([800])
+mlp.2.weight torch.Size([64, 800])
+mlp.2.bias torch.Size([64])
+user_embeddings.weight torch.Size([11000, 64])
+item_embeddings.weight torch.Size([9332, 64])
+user_str_embeddings.weight torch.Size([11000, 64])
+item_str_embeddings.weight torch.Size([9332, 64])
+linear_1.weight torch.Size([64, 128])
+linear_1.bias torch.Size([64])
+linear_2.weight torch.Size([1, 64])
+linear_2.bias torch.Size([1])
+prepare training data cost time:0.6304
+Epoch:0, Train_AUC:0.6395, Loss_rank:0.6926, Loss_reg:0.0000, Loss_llm:0.9511, Loss_ib:0.0097, Loss_sum:0.7974
+Current Evaluation: Epoch:0,  topk:20, recall:0.0451, ndcg:0.0275
+Best Evaluation: Epoch:0,  topk:20, recall:0.0451, ndcg:0.0275
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_0_ndcg_0.027476198512616762.ckpt
+traintime:2.4612, valtime:1.5041
+
+prepare training data cost time:0.1914
+Epoch:1, Train_AUC:0.8763, Loss_rank:0.6865, Loss_reg:0.0000, Loss_llm:0.8952, Loss_ib:0.0102, Loss_sum:0.7862
+Current Evaluation: Epoch:1,  topk:20, recall:0.0951, ndcg:0.0583
+Best Evaluation: Epoch:1,  topk:20, recall:0.0951, ndcg:0.0583
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_1_ndcg_0.05831607488496718.ckpt
+traintime:1.9207, valtime:0.9986
+
+prepare training data cost time:0.1866
+Epoch:2, Train_AUC:0.9421, Loss_rank:0.6539, Loss_reg:0.0000, Loss_llm:0.8926, Loss_ib:0.0123, Loss_sum:0.7555
+Current Evaluation: Epoch:2,  topk:20, recall:0.1087, ndcg:0.0683
+Best Evaluation: Epoch:2,  topk:20, recall:0.1087, ndcg:0.0683
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_2_ndcg_0.06830317871850065.ckpt
+traintime:1.7879, valtime:0.9550
+
+prepare training data cost time:0.1893
+Epoch:3, Train_AUC:0.9541, Loss_rank:0.5755, Loss_reg:0.0001, Loss_llm:0.8626, Loss_ib:0.0161, Loss_sum:0.6779
+Current Evaluation: Epoch:3,  topk:20, recall:0.1169, ndcg:0.0732
+Best Evaluation: Epoch:3,  topk:20, recall:0.1169, ndcg:0.0732
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_3_ndcg_0.0731917684974539.ckpt
+traintime:1.7271, valtime:1.0212
+
+prepare training data cost time:0.1960
+Epoch:4, Train_AUC:0.9585, Loss_rank:0.4780, Loss_reg:0.0001, Loss_llm:0.7863, Loss_ib:0.0194, Loss_sum:0.5761
+Current Evaluation: Epoch:4,  topk:20, recall:0.1222, ndcg:0.0764
+Best Evaluation: Epoch:4,  topk:20, recall:0.1222, ndcg:0.0764
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_4_ndcg_0.07639732525397747.ckpt
+traintime:1.7326, valtime:1.1961
+
+prepare training data cost time:0.1846
+Epoch:5, Train_AUC:0.9619, Loss_rank:0.3916, Loss_reg:0.0002, Loss_llm:0.6931, Loss_ib:0.0212, Loss_sum:0.4823
+Current Evaluation: Epoch:5,  topk:20, recall:0.1275, ndcg:0.0797
+Best Evaluation: Epoch:5,  topk:20, recall:0.1275, ndcg:0.0797
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_5_ndcg_0.07972109741008596.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_0_ndcg_0.027476198512616762.ckpt
+traintime:1.7239, valtime:1.0977
+
+prepare training data cost time:0.1938
+Epoch:6, Train_AUC:0.9654, Loss_rank:0.3241, Loss_reg:0.0003, Loss_llm:0.6117, Loss_ib:0.0218, Loss_sum:0.4074
+Current Evaluation: Epoch:6,  topk:20, recall:0.1315, ndcg:0.0825
+Best Evaluation: Epoch:6,  topk:20, recall:0.1315, ndcg:0.0825
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_6_ndcg_0.08249194791427852.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_1_ndcg_0.05831607488496718.ckpt
+traintime:1.7303, valtime:1.0919
+
+prepare training data cost time:0.1905
+Epoch:7, Train_AUC:0.9690, Loss_rank:0.2716, Loss_reg:0.0004, Loss_llm:0.5471, Loss_ib:0.0217, Loss_sum:0.3485
+Current Evaluation: Epoch:7,  topk:20, recall:0.1356, ndcg:0.0852
+Best Evaluation: Epoch:7,  topk:20, recall:0.1356, ndcg:0.0852
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_7_ndcg_0.08524667884532448.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_2_ndcg_0.06830317871850065.ckpt
+traintime:1.7236, valtime:1.1575
+
+prepare training data cost time:0.1839
+Epoch:8, Train_AUC:0.9720, Loss_rank:0.2323, Loss_reg:0.0004, Loss_llm:0.4986, Loss_ib:0.0214, Loss_sum:0.3040
+Current Evaluation: Epoch:8,  topk:20, recall:0.1391, ndcg:0.0871
+Best Evaluation: Epoch:8,  topk:20, recall:0.1391, ndcg:0.0871
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_8_ndcg_0.08714767745788847.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_3_ndcg_0.0731917684974539.ckpt
+traintime:1.7198, valtime:1.1108
+
+prepare training data cost time:0.1896
+Epoch:9, Train_AUC:0.9750, Loss_rank:0.2001, Loss_reg:0.0005, Loss_llm:0.4592, Loss_ib:0.0209, Loss_sum:0.2674
+Current Evaluation: Epoch:9,  topk:20, recall:0.1433, ndcg:0.0895
+Best Evaluation: Epoch:9,  topk:20, recall:0.1433, ndcg:0.0895
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_9_ndcg_0.08949786833573735.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_4_ndcg_0.07639732525397747.ckpt
+traintime:1.7248, valtime:1.1268
+
+prepare training data cost time:0.1924
+Epoch:10, Train_AUC:0.9777, Loss_rank:0.1751, Loss_reg:0.0006, Loss_llm:0.4289, Loss_ib:0.0203, Loss_sum:0.2389
+Current Evaluation: Epoch:10,  topk:20, recall:0.1458, ndcg:0.0911
+Best Evaluation: Epoch:10,  topk:20, recall:0.1458, ndcg:0.0911
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_10_ndcg_0.09110195218967698.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_5_ndcg_0.07972109741008596.ckpt
+traintime:1.7412, valtime:1.1440
+
+prepare training data cost time:0.1941
+Epoch:11, Train_AUC:0.9801, Loss_rank:0.1549, Loss_reg:0.0006, Loss_llm:0.4045, Loss_ib:0.0197, Loss_sum:0.2157
+Current Evaluation: Epoch:11,  topk:20, recall:0.1487, ndcg:0.0932
+Best Evaluation: Epoch:11,  topk:20, recall:0.1487, ndcg:0.0932
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_11_ndcg_0.09322164141398864.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_6_ndcg_0.08249194791427852.ckpt
+traintime:1.7298, valtime:1.2953
+
+prepare training data cost time:0.1919
+Epoch:12, Train_AUC:0.9821, Loss_rank:0.1383, Loss_reg:0.0007, Loss_llm:0.3843, Loss_ib:0.0192, Loss_sum:0.1966
+Current Evaluation: Epoch:12,  topk:20, recall:0.1504, ndcg:0.0939
+Best Evaluation: Epoch:12,  topk:20, recall:0.1504, ndcg:0.0939
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_12_ndcg_0.09386521260417291.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_7_ndcg_0.08524667884532448.ckpt
+traintime:1.7269, valtime:1.1874
+
+prepare training data cost time:0.1935
+Epoch:13, Train_AUC:0.9837, Loss_rank:0.1238, Loss_reg:0.0007, Loss_llm:0.3669, Loss_ib:0.0186, Loss_sum:0.1798
+Current Evaluation: Epoch:13,  topk:20, recall:0.1525, ndcg:0.0948
+Best Evaluation: Epoch:13,  topk:20, recall:0.1525, ndcg:0.0948
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_13_ndcg_0.09475260356788211.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_8_ndcg_0.08714767745788847.ckpt
+traintime:1.7286, valtime:1.3191
+
+prepare training data cost time:0.1983
+Epoch:14, Train_AUC:0.9852, Loss_rank:0.1124, Loss_reg:0.0007, Loss_llm:0.3532, Loss_ib:0.0181, Loss_sum:0.1666
+Current Evaluation: Epoch:14,  topk:20, recall:0.1535, ndcg:0.0952
+Best Evaluation: Epoch:14,  topk:20, recall:0.1535, ndcg:0.0952
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_14_ndcg_0.09516649392630354.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_9_ndcg_0.08949786833573735.ckpt
+traintime:1.7423, valtime:1.1068
+
+prepare training data cost time:0.1988
+Epoch:15, Train_AUC:0.9865, Loss_rank:0.1023, Loss_reg:0.0008, Loss_llm:0.3408, Loss_ib:0.0177, Loss_sum:0.1548
+Current Evaluation: Epoch:15,  topk:20, recall:0.1558, ndcg:0.0965
+Best Evaluation: Epoch:15,  topk:20, recall:0.1558, ndcg:0.0965
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_15_ndcg_0.09653596372551916.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_10_ndcg_0.09110195218967698.ckpt
+traintime:1.7396, valtime:1.1475
+
+prepare training data cost time:0.1931
+Epoch:16, Train_AUC:0.9875, Loss_rank:0.0932, Loss_reg:0.0008, Loss_llm:0.3296, Loss_ib:0.0173, Loss_sum:0.1442
+Current Evaluation: Epoch:16,  topk:20, recall:0.1561, ndcg:0.0970
+Best Evaluation: Epoch:16,  topk:20, recall:0.1561, ndcg:0.0970
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_16_ndcg_0.09698800288799163.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_11_ndcg_0.09322164141398864.ckpt
+traintime:1.7302, valtime:1.4593
+
+prepare training data cost time:0.1896
+Epoch:17, Train_AUC:0.9891, Loss_rank:0.0858, Loss_reg:0.0009, Loss_llm:0.3204, Loss_ib:0.0169, Loss_sum:0.1356
+Current Evaluation: Epoch:17,  topk:20, recall:0.1571, ndcg:0.0981
+Best Evaluation: Epoch:17,  topk:20, recall:0.1571, ndcg:0.0981
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_17_ndcg_0.09808843155100062.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_12_ndcg_0.09386521260417291.ckpt
+traintime:1.7444, valtime:1.3885
+
+prepare training data cost time:0.1921
+Epoch:18, Train_AUC:0.9895, Loss_rank:0.0793, Loss_reg:0.0009, Loss_llm:0.3124, Loss_ib:0.0165, Loss_sum:0.1279
+Current Evaluation: Epoch:18,  topk:20, recall:0.1588, ndcg:0.0989
+Best Evaluation: Epoch:18,  topk:20, recall:0.1588, ndcg:0.0989
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_18_ndcg_0.09894172233112386.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_13_ndcg_0.09475260356788211.ckpt
+traintime:1.7467, valtime:1.4867
+
+prepare training data cost time:0.1868
+Epoch:19, Train_AUC:0.9907, Loss_rank:0.0728, Loss_reg:0.0009, Loss_llm:0.3044, Loss_ib:0.0161, Loss_sum:0.1203
+Current Evaluation: Epoch:19,  topk:20, recall:0.1590, ndcg:0.0991
+Best Evaluation: Epoch:19,  topk:20, recall:0.1590, ndcg:0.0991
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_19_ndcg_0.09908209909309117.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_14_ndcg_0.09516649392630354.ckpt
+traintime:1.7311, valtime:1.4211
+
+prepare training data cost time:0.1826
+Epoch:20, Train_AUC:0.9910, Loss_rank:0.0681, Loss_reg:0.0010, Loss_llm:0.2983, Loss_ib:0.0159, Loss_sum:0.1148
+Current Evaluation: Epoch:20,  topk:20, recall:0.1598, ndcg:0.0996
+Best Evaluation: Epoch:20,  topk:20, recall:0.1598, ndcg:0.0996
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_20_ndcg_0.09955432659335012.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_15_ndcg_0.09653596372551916.ckpt
+traintime:1.7196, valtime:1.0530
+
+prepare training data cost time:0.1938
+Epoch:21, Train_AUC:0.9921, Loss_rank:0.0632, Loss_reg:0.0010, Loss_llm:0.2922, Loss_ib:0.0156, Loss_sum:0.1090
+Current Evaluation: Epoch:21,  topk:20, recall:0.1598, ndcg:0.0999
+Best Evaluation: Epoch:21,  topk:20, recall:0.1598, ndcg:0.0999
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_21_ndcg_0.0999429065173383.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_16_ndcg_0.09698800288799163.ckpt
+traintime:1.7485, valtime:1.0645
+
+prepare training data cost time:0.1845
+Epoch:22, Train_AUC:0.9923, Loss_rank:0.0592, Loss_reg:0.0010, Loss_llm:0.2870, Loss_ib:0.0153, Loss_sum:0.1043
+Current Evaluation: Epoch:22,  topk:20, recall:0.1608, ndcg:0.1006
+Best Evaluation: Epoch:22,  topk:20, recall:0.1608, ndcg:0.1006
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_22_ndcg_0.10060570549680173.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_17_ndcg_0.09808843155100062.ckpt
+traintime:1.7197, valtime:1.0855
+
+prepare training data cost time:0.1847
+Epoch:23, Train_AUC:0.9928, Loss_rank:0.0554, Loss_reg:0.0011, Loss_llm:0.2820, Loss_ib:0.0150, Loss_sum:0.0997
+Current Evaluation: Epoch:23,  topk:20, recall:0.1611, ndcg:0.1014
+Best Evaluation: Epoch:23,  topk:20, recall:0.1611, ndcg:0.1014
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_23_ndcg_0.10141496614353739.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_18_ndcg_0.09894172233112386.ckpt
+traintime:1.7387, valtime:0.9740
+
+prepare training data cost time:0.1842
+Epoch:24, Train_AUC:0.9931, Loss_rank:0.0525, Loss_reg:0.0011, Loss_llm:0.2781, Loss_ib:0.0148, Loss_sum:0.0962
+Current Evaluation: Epoch:24,  topk:20, recall:0.1619, ndcg:0.1017
+Best Evaluation: Epoch:24,  topk:20, recall:0.1619, ndcg:0.1017
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_24_ndcg_0.10170387805850452.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_19_ndcg_0.09908209909309117.ckpt
+traintime:1.7369, valtime:1.1006
+
+prepare training data cost time:0.1930
+Epoch:25, Train_AUC:0.9933, Loss_rank:0.0494, Loss_reg:0.0011, Loss_llm:0.2738, Loss_ib:0.0146, Loss_sum:0.0925
+Current Evaluation: Epoch:25,  topk:20, recall:0.1632, ndcg:0.1023
+Best Evaluation: Epoch:25,  topk:20, recall:0.1632, ndcg:0.1023
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_25_ndcg_0.10231725791111777.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_20_ndcg_0.09955432659335012.ckpt
+traintime:1.7471, valtime:1.1425
+
+prepare training data cost time:0.1941
+Epoch:26, Train_AUC:0.9938, Loss_rank:0.0465, Loss_reg:0.0011, Loss_llm:0.2701, Loss_ib:0.0144, Loss_sum:0.0890
+Current Evaluation: Epoch:26,  topk:20, recall:0.1653, ndcg:0.1034
+Best Evaluation: Epoch:26,  topk:20, recall:0.1653, ndcg:0.1034
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_26_ndcg_0.10338716805371626.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_21_ndcg_0.0999429065173383.ckpt
+traintime:1.7510, valtime:1.1997
+
+prepare training data cost time:0.1920
+Epoch:27, Train_AUC:0.9943, Loss_rank:0.0435, Loss_reg:0.0012, Loss_llm:0.2659, Loss_ib:0.0142, Loss_sum:0.0855
+Current Evaluation: Epoch:27,  topk:20, recall:0.1643, ndcg:0.1033
+Best Evaluation: Epoch:26,  topk:20, recall:0.1653, ndcg:0.1034
+traintime:1.7512, valtime:1.1332
+
+prepare training data cost time:0.1962
+Epoch:28, Train_AUC:0.9944, Loss_rank:0.0413, Loss_reg:0.0012, Loss_llm:0.2630, Loss_ib:0.0140, Loss_sum:0.0829
+Current Evaluation: Epoch:28,  topk:20, recall:0.1653, ndcg:0.1032
+Best Evaluation: Epoch:26,  topk:20, recall:0.1653, ndcg:0.1034
+traintime:1.7527, valtime:1.3523
+
+prepare training data cost time:0.1938
+Epoch:29, Train_AUC:0.9949, Loss_rank:0.0394, Loss_reg:0.0012, Loss_llm:0.2602, Loss_ib:0.0139, Loss_sum:0.0805
+Current Evaluation: Epoch:29,  topk:20, recall:0.1661, ndcg:0.1036
+Best Evaluation: Epoch:29,  topk:20, recall:0.1661, ndcg:0.1036
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_29_ndcg_0.1036279089703998.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_22_ndcg_0.10060570549680173.ckpt
+traintime:2.3655, valtime:1.2357
+
+prepare training data cost time:0.1992
+Epoch:30, Train_AUC:0.9949, Loss_rank:0.0377, Loss_reg:0.0013, Loss_llm:0.2576, Loss_ib:0.0137, Loss_sum:0.0784
+Current Evaluation: Epoch:30,  topk:20, recall:0.1667, ndcg:0.1041
+Best Evaluation: Epoch:30,  topk:20, recall:0.1667, ndcg:0.1041
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_30_ndcg_0.10411420979270021.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_23_ndcg_0.10141496614353739.ckpt
+traintime:2.4013, valtime:1.3361
+
+prepare training data cost time:0.1938
+Epoch:31, Train_AUC:0.9953, Loss_rank:0.0354, Loss_reg:0.0013, Loss_llm:0.2546, Loss_ib:0.0136, Loss_sum:0.0757
+Current Evaluation: Epoch:31,  topk:20, recall:0.1674, ndcg:0.1045
+Best Evaluation: Epoch:31,  topk:20, recall:0.1674, ndcg:0.1045
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_31_ndcg_0.10446036369349654.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_24_ndcg_0.10170387805850452.ckpt
+traintime:2.0736, valtime:1.1848
+
+prepare training data cost time:0.1947
+Epoch:32, Train_AUC:0.9956, Loss_rank:0.0341, Loss_reg:0.0013, Loss_llm:0.2526, Loss_ib:0.0134, Loss_sum:0.0741
+Current Evaluation: Epoch:32,  topk:20, recall:0.1681, ndcg:0.1049
+Best Evaluation: Epoch:32,  topk:20, recall:0.1681, ndcg:0.1049
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_32_ndcg_0.10492912279426639.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_25_ndcg_0.10231725791111777.ckpt
+traintime:1.7448, valtime:1.3611
+
+prepare training data cost time:0.1958
+Epoch:33, Train_AUC:0.9958, Loss_rank:0.0318, Loss_reg:0.0013, Loss_llm:0.2494, Loss_ib:0.0133, Loss_sum:0.0713
+Current Evaluation: Epoch:33,  topk:20, recall:0.1684, ndcg:0.1052
+Best Evaluation: Epoch:33,  topk:20, recall:0.1684, ndcg:0.1052
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_33_ndcg_0.10515695715821521.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_26_ndcg_0.10338716805371626.ckpt
+traintime:1.7525, valtime:1.5478
+
+prepare training data cost time:0.1881
+Epoch:34, Train_AUC:0.9962, Loss_rank:0.0308, Loss_reg:0.0013, Loss_llm:0.2477, Loss_ib:0.0132, Loss_sum:0.0701
+Current Evaluation: Epoch:34,  topk:20, recall:0.1687, ndcg:0.1053
+Best Evaluation: Epoch:34,  topk:20, recall:0.1687, ndcg:0.1053
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_34_ndcg_0.1052622154111754.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_29_ndcg_0.1036279089703998.ckpt
+traintime:1.8928, valtime:1.2640
+
+prepare training data cost time:0.1963
+Epoch:35, Train_AUC:0.9961, Loss_rank:0.0295, Loss_reg:0.0014, Loss_llm:0.2460, Loss_ib:0.0131, Loss_sum:0.0685
+Current Evaluation: Epoch:35,  topk:20, recall:0.1690, ndcg:0.1056
+Best Evaluation: Epoch:35,  topk:20, recall:0.1690, ndcg:0.1056
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_35_ndcg_0.10555713946433076.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_30_ndcg_0.10411420979270021.ckpt
+traintime:2.3674, valtime:1.0541
+
+prepare training data cost time:0.1933
+Epoch:36, Train_AUC:0.9961, Loss_rank:0.0283, Loss_reg:0.0014, Loss_llm:0.2442, Loss_ib:0.0130, Loss_sum:0.0671
+Current Evaluation: Epoch:36,  topk:20, recall:0.1687, ndcg:0.1058
+Best Evaluation: Epoch:36,  topk:20, recall:0.1687, ndcg:0.1058
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_36_ndcg_0.10579144184297216.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_31_ndcg_0.10446036369349654.ckpt
+traintime:2.3567, valtime:1.0608
+
+prepare training data cost time:0.1887
+Epoch:37, Train_AUC:0.9966, Loss_rank:0.0268, Loss_reg:0.0014, Loss_llm:0.2421, Loss_ib:0.0129, Loss_sum:0.0653
+Current Evaluation: Epoch:37,  topk:20, recall:0.1679, ndcg:0.1053
+Best Evaluation: Epoch:36,  topk:20, recall:0.1687, ndcg:0.1058
+traintime:1.7408, valtime:1.2171
+
+prepare training data cost time:0.1867
+Epoch:38, Train_AUC:0.9966, Loss_rank:0.0259, Loss_reg:0.0014, Loss_llm:0.2406, Loss_ib:0.0128, Loss_sum:0.0642
+Current Evaluation: Epoch:38,  topk:20, recall:0.1687, ndcg:0.1057
+Best Evaluation: Epoch:36,  topk:20, recall:0.1687, ndcg:0.1058
+traintime:1.7247, valtime:1.0258
+
+prepare training data cost time:0.1934
+Epoch:39, Train_AUC:0.9969, Loss_rank:0.0245, Loss_reg:0.0015, Loss_llm:0.2386, Loss_ib:0.0127, Loss_sum:0.0625
+Current Evaluation: Epoch:39,  topk:20, recall:0.1693, ndcg:0.1058
+Best Evaluation: Epoch:39,  topk:20, recall:0.1693, ndcg:0.1058
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_39_ndcg_0.10582264903459647.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_32_ndcg_0.10492912279426639.ckpt
+traintime:1.7315, valtime:1.1381
+
+prepare training data cost time:0.1947
+Epoch:40, Train_AUC:0.9968, Loss_rank:0.0239, Loss_reg:0.0015, Loss_llm:0.2374, Loss_ib:0.0126, Loss_sum:0.0617
+Current Evaluation: Epoch:40,  topk:20, recall:0.1694, ndcg:0.1056
+Best Evaluation: Epoch:39,  topk:20, recall:0.1693, ndcg:0.1058
+traintime:2.0926, valtime:1.0323
+
+prepare training data cost time:0.1937
+Epoch:41, Train_AUC:0.9971, Loss_rank:0.0228, Loss_reg:0.0015, Loss_llm:0.2358, Loss_ib:0.0125, Loss_sum:0.0603
+Current Evaluation: Epoch:41,  topk:20, recall:0.1688, ndcg:0.1060
+Best Evaluation: Epoch:41,  topk:20, recall:0.1688, ndcg:0.1060
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_41_ndcg_0.1059718376479381.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_33_ndcg_0.10515695715821521.ckpt
+traintime:2.3608, valtime:1.0664
+
+prepare training data cost time:0.1924
+Epoch:42, Train_AUC:0.9970, Loss_rank:0.0223, Loss_reg:0.0015, Loss_llm:0.2348, Loss_ib:0.0124, Loss_sum:0.0597
+Current Evaluation: Epoch:42,  topk:20, recall:0.1693, ndcg:0.1059
+Best Evaluation: Epoch:41,  topk:20, recall:0.1688, ndcg:0.1060
+traintime:2.3670, valtime:1.3086
+
+prepare training data cost time:0.1871
+Epoch:43, Train_AUC:0.9971, Loss_rank:0.0215, Loss_reg:0.0015, Loss_llm:0.2335, Loss_ib:0.0123, Loss_sum:0.0587
+Current Evaluation: Epoch:43,  topk:20, recall:0.1686, ndcg:0.1058
+Best Evaluation: Epoch:41,  topk:20, recall:0.1688, ndcg:0.1060
+traintime:1.7465, valtime:1.1704
+
+prepare training data cost time:0.1868
+Epoch:44, Train_AUC:0.9972, Loss_rank:0.0204, Loss_reg:0.0016, Loss_llm:0.2320, Loss_ib:0.0123, Loss_sum:0.0575
+Current Evaluation: Epoch:44,  topk:20, recall:0.1677, ndcg:0.1053
+Best Evaluation: Epoch:41,  topk:20, recall:0.1688, ndcg:0.1060
+traintime:1.7373, valtime:1.0454
+
+prepare training data cost time:0.1878
+Epoch:45, Train_AUC:0.9975, Loss_rank:0.0195, Loss_reg:0.0016, Loss_llm:0.2305, Loss_ib:0.0122, Loss_sum:0.0563
+Current Evaluation: Epoch:45,  topk:20, recall:0.1674, ndcg:0.1052
+Best Evaluation: Epoch:41,  topk:20, recall:0.1688, ndcg:0.1060
+traintime:1.7456, valtime:1.1884
+
+prepare training data cost time:0.1953
+Epoch:46, Train_AUC:0.9975, Loss_rank:0.0190, Loss_reg:0.0016, Loss_llm:0.2297, Loss_ib:0.0121, Loss_sum:0.0557
+Current Evaluation: Epoch:46,  topk:20, recall:0.1662, ndcg:0.1047
+Best Evaluation: Epoch:41,  topk:20, recall:0.1688, ndcg:0.1060
+traintime:2.3507, valtime:1.0097
+
+prepare training data cost time:0.1950
+Epoch:47, Train_AUC:0.9975, Loss_rank:0.0186, Loss_reg:0.0016, Loss_llm:0.2287, Loss_ib:0.0121, Loss_sum:0.0552
+Current Evaluation: Epoch:47,  topk:20, recall:0.1670, ndcg:0.1049
+Best Evaluation: Epoch:41,  topk:20, recall:0.1688, ndcg:0.1060
+traintime:2.3641, valtime:0.9650
+
+prepare training data cost time:0.1896
+Epoch:48, Train_AUC:0.9975, Loss_rank:0.0181, Loss_reg:0.0016, Loss_llm:0.2278, Loss_ib:0.0120, Loss_sum:0.0545
+Current Evaluation: Epoch:48,  topk:20, recall:0.1672, ndcg:0.1054
+Best Evaluation: Epoch:41,  topk:20, recall:0.1688, ndcg:0.1060
+traintime:2.3477, valtime:1.0192
+
+prepare training data cost time:0.1878
+Epoch:49, Train_AUC:0.9977, Loss_rank:0.0172, Loss_reg:0.0017, Loss_llm:0.2266, Loss_ib:0.0119, Loss_sum:0.0535
+Current Evaluation: Epoch:49,  topk:20, recall:0.1671, ndcg:0.1051
+Best Evaluation: Epoch:41,  topk:20, recall:0.1688, ndcg:0.1060
+traintime:1.7449, valtime:1.0790
+
+prepare training data cost time:0.1876
+Epoch:50, Train_AUC:0.9977, Loss_rank:0.0170, Loss_reg:0.0017, Loss_llm:0.2261, Loss_ib:0.0119, Loss_sum:0.0532
+Current Evaluation: Epoch:50,  topk:20, recall:0.1693, ndcg:0.1059
+Best Evaluation: Epoch:41,  topk:20, recall:0.1688, ndcg:0.1060
+traintime:1.7330, valtime:1.0055
+
+prepare training data cost time:0.1873
+Epoch:51, Train_AUC:0.9979, Loss_rank:0.0162, Loss_reg:0.0017, Loss_llm:0.2248, Loss_ib:0.0118, Loss_sum:0.0522
+Current Evaluation: Epoch:51,  topk:20, recall:0.1684, ndcg:0.1057
+Best Evaluation: Epoch:41,  topk:20, recall:0.1688, ndcg:0.1060
+traintime:1.7409, valtime:1.1606
+
+prepare training data cost time:0.1841
+Epoch:52, Train_AUC:0.9980, Loss_rank:0.0157, Loss_reg:0.0017, Loss_llm:0.2241, Loss_ib:0.0118, Loss_sum:0.0516
+Current Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+Best Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+Saved model to ./saved/amazon_book/LLaRD/GMF_1/models/epoch_52_ndcg_0.10611984735935469.ckpt
+Removed old model file: ./saved/amazon_book/LLaRD/GMF_1/models/epoch_34_ndcg_0.1052622154111754.ckpt
+traintime:2.3392, valtime:1.1943
+
+prepare training data cost time:0.1968
+Epoch:53, Train_AUC:0.9979, Loss_rank:0.0153, Loss_reg:0.0017, Loss_llm:0.2233, Loss_ib:0.0117, Loss_sum:0.0511
+Current Evaluation: Epoch:53,  topk:20, recall:0.1675, ndcg:0.1059
+Best Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+traintime:2.3621, valtime:1.0453
+
+prepare training data cost time:0.1927
+Epoch:54, Train_AUC:0.9979, Loss_rank:0.0149, Loss_reg:0.0018, Loss_llm:0.2226, Loss_ib:0.0117, Loss_sum:0.0506
+Current Evaluation: Epoch:54,  topk:20, recall:0.1683, ndcg:0.1058
+Best Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+traintime:2.3050, valtime:1.1469
+
+prepare training data cost time:0.1933
+Epoch:55, Train_AUC:0.9980, Loss_rank:0.0143, Loss_reg:0.0018, Loss_llm:0.2217, Loss_ib:0.0116, Loss_sum:0.0499
+Current Evaluation: Epoch:55,  topk:20, recall:0.1678, ndcg:0.1055
+Best Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+traintime:2.4831, valtime:1.0966
+
+prepare training data cost time:0.1851
+Epoch:56, Train_AUC:0.9980, Loss_rank:0.0141, Loss_reg:0.0018, Loss_llm:0.2210, Loss_ib:0.0116, Loss_sum:0.0496
+Current Evaluation: Epoch:56,  topk:20, recall:0.1677, ndcg:0.1058
+Best Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+traintime:2.4963, valtime:1.1677
+
+prepare training data cost time:0.1894
+Epoch:57, Train_AUC:0.9981, Loss_rank:0.0136, Loss_reg:0.0018, Loss_llm:0.2204, Loss_ib:0.0115, Loss_sum:0.0490
+Current Evaluation: Epoch:57,  topk:20, recall:0.1680, ndcg:0.1057
+Best Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+traintime:2.4707, valtime:1.2354
+
+prepare training data cost time:0.1870
+Epoch:58, Train_AUC:0.9983, Loss_rank:0.0131, Loss_reg:0.0018, Loss_llm:0.2195, Loss_ib:0.0115, Loss_sum:0.0484
+Current Evaluation: Epoch:58,  topk:20, recall:0.1672, ndcg:0.1052
+Best Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+traintime:2.4637, valtime:1.1132
+
+prepare training data cost time:0.1830
+Epoch:59, Train_AUC:0.9981, Loss_rank:0.0130, Loss_reg:0.0018, Loss_llm:0.2191, Loss_ib:0.0115, Loss_sum:0.0482
+Current Evaluation: Epoch:59,  topk:20, recall:0.1652, ndcg:0.1045
+Best Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+traintime:2.4564, valtime:1.3653
+
+prepare training data cost time:0.1952
+Epoch:60, Train_AUC:0.9983, Loss_rank:0.0126, Loss_reg:0.0019, Loss_llm:0.2185, Loss_ib:0.0114, Loss_sum:0.0477
+Current Evaluation: Epoch:60,  topk:20, recall:0.1656, ndcg:0.1047
+Best Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+traintime:2.5304, valtime:1.4109
+
+prepare training data cost time:0.1890
+Epoch:61, Train_AUC:0.9982, Loss_rank:0.0124, Loss_reg:0.0019, Loss_llm:0.2180, Loss_ib:0.0114, Loss_sum:0.0475
+Current Evaluation: Epoch:61,  topk:20, recall:0.1661, ndcg:0.1048
+Best Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+traintime:2.4912, valtime:1.2958
+
+prepare training data cost time:0.1882
+Epoch:62, Train_AUC:0.9981, Loss_rank:0.0119, Loss_reg:0.0019, Loss_llm:0.2171, Loss_ib:0.0113, Loss_sum:0.0469
+Current Evaluation: Epoch:62,  topk:20, recall:0.1658, ndcg:0.1047
+Best Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+traintime:1.8838, valtime:1.3473
+
+prepare training data cost time:0.1860
+Epoch:63, Train_AUC:0.9982, Loss_rank:0.0115, Loss_reg:0.0019, Loss_llm:0.2164, Loss_ib:0.0113, Loss_sum:0.0464
+Current Evaluation: Epoch:63,  topk:20, recall:0.1660, ndcg:0.1045
+Best Evaluation: Epoch:52,  topk:20, recall:0.1682, ndcg:0.1061
+traintime:1.7294, valtime:1.2475
+
+early stop: 63
+[1;32mmax_recall@20=:0.1682, max_ndcg@20=:0.1061
+[0m[1;36mTopk:  5, HR:0.0837, Recall:0.0749, NDCG:0.0753
+[0m[1;36mTopk: 10, HR:0.1163, Recall:0.1132, NDCG:0.0884
+[0m[1;36mTopk: 20, HR:0.1689, Recall:0.1682, NDCG:0.1061
+[0m[1;36mTopk: 30, HR:0.2050, Recall:0.2047, NDCG:0.1170
+[0m[1;36mTopk: 40, HR:0.2353, Recall:0.2352, NDCG:0.1254
+[0m[1;36mTopk: 50, HR:0.2610, Recall:0.2610, NDCG:0.1322
+[0m[1;36mTopk: 60, HR:0.2842, Recall:0.2842, NDCG:0.1381
+[0m[1;36mTopk: 70, HR:0.3052, Recall:0.3052, NDCG:0.1431
+[0m[1;36mTopk: 80, HR:0.3242, Recall:0.3242, NDCG:0.1476
+[0m[1;36mTopk: 90, HR:0.3403, Recall:0.3403, NDCG:0.1513
+[0m[1;36mTopk:100, HR:0.3575, Recall:0.3575, NDCG:0.1550
+[0mEND

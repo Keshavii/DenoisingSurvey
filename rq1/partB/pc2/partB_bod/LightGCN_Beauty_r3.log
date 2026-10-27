@@ -1,0 +1,249 @@
+Baseline Models:
+NCF   LightGCN   MF   NGCF   DirectAU
+--------------------------------------------------------------------------------
+Graph-Based Models:
+SGL   SimGCL
+--------------------------------------------------------------------------------
+Denoising Models:
+BOD
+================================================================================
+Please enter the model you want to run:Reading data and preprocessing...
+/home/anurag/repos/BOD/base/torch_interface.py:10: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:278.)
+  i = torch.LongTensor([coo.row, coo.col])
+/home/anurag/repos/BOD/base/torch_interface.py:12: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:641.)
+  return torch.sparse.FloatTensor(i, v, coo.shape)
+Model: LightGCN
+Training Set: /home/anurag/repos/BOD/dataset/Beauty/train.txt
+Test Set: /home/anurag/repos/BOD/dataset/Beauty/test.txt
+Embedding Dimension: 64
+Maximum Epoch: 30
+Learning Rate: 0.001
+Batch Size: 512
+Regularization Parameter: reg 0.0001
+Specific parameters: n_layer:2  
+Training Set Size: (user number: 22363, item number 12099, interaction number: 158816)
+Test Set Size: (user number: 17503, item number 10276, interaction number: 39686)
+================================================================================
+Initializing and building model...
+Training Model...
+training: 1 batch 0 batch_loss: 0.69321209192276
+training: 1 batch 100 batch_loss: 0.6557525396347046
+training: 1 batch 200 batch_loss: 0.5486306548118591
+training: 1 batch 300 batch_loss: 0.4996887743473053
+One epoch Running time: 1.007578 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.07647533135110618 | Precision:0.008669942295606468 | Recall:0.06859820649847245 | NDCG:0.037923150549664844
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.07647533135110618 | Precision:0.008669942295606468 | Recall:0.06859820649847245 | MDCG:0.037923150549664844
+------------------------------------------------------------------------------------------------------------------------
+training: 2 batch 0 batch_loss: 0.5037151575088501
+training: 2 batch 100 batch_loss: 0.4630691409111023
+training: 2 batch 200 batch_loss: 0.45519906282424927
+training: 2 batch 300 batch_loss: 0.41462767124176025
+One epoch Running time: 0.879902 s
+training: 3 batch 0 batch_loss: 0.3967028558254242
+training: 3 batch 100 batch_loss: 0.38144439458847046
+training: 3 batch 200 batch_loss: 0.3768312335014343
+training: 3 batch 300 batch_loss: 0.34997493028640747
+One epoch Running time: 0.870023 s
+training: 4 batch 0 batch_loss: 0.3545833230018616
+training: 4 batch 100 batch_loss: 0.33499184250831604
+training: 4 batch 200 batch_loss: 0.3105274736881256
+training: 4 batch 300 batch_loss: 0.3145218789577484
+One epoch Running time: 0.858534 s
+training: 5 batch 0 batch_loss: 0.29503685235977173
+training: 5 batch 100 batch_loss: 0.314644455909729
+training: 5 batch 200 batch_loss: 0.30563175678253174
+training: 5 batch 300 batch_loss: 0.29727262258529663
+One epoch Running time: 0.858467 s
+training: 6 batch 0 batch_loss: 0.2786825895309448
+training: 6 batch 100 batch_loss: 0.2847236394882202
+training: 6 batch 200 batch_loss: 0.25354185700416565
+training: 6 batch 300 batch_loss: 0.27218353748321533
+One epoch Running time: 0.858053 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 6, Hit Ratio:0.09832182633674344 | Precision:0.01114666057247329 | Recall:0.09452912647139863 | NDCG:0.05102671306271288
+*Best Performance* 
+Epoch: 6, Hit Ratio:0.09832182633674344 | Precision:0.01114666057247329 | Recall:0.09452912647139863 | MDCG:0.05102671306271288
+------------------------------------------------------------------------------------------------------------------------
+training: 7 batch 0 batch_loss: 0.2556299865245819
+training: 7 batch 100 batch_loss: 0.2543426752090454
+training: 7 batch 200 batch_loss: 0.2291620969772339
+training: 7 batch 300 batch_loss: 0.24153894186019897
+One epoch Running time: 0.865754 s
+training: 8 batch 0 batch_loss: 0.23948201537132263
+training: 8 batch 100 batch_loss: 0.25655579566955566
+training: 8 batch 200 batch_loss: 0.20917637646198273
+training: 8 batch 300 batch_loss: 0.2317872792482376
+One epoch Running time: 0.822057 s
+training: 9 batch 0 batch_loss: 0.24812772870063782
+training: 9 batch 100 batch_loss: 0.23866865038871765
+training: 9 batch 200 batch_loss: 0.2455196976661682
+training: 9 batch 300 batch_loss: 0.2103167027235031
+One epoch Running time: 0.857806 s
+training: 10 batch 0 batch_loss: 0.20734746754169464
+training: 10 batch 100 batch_loss: 0.21955353021621704
+training: 10 batch 200 batch_loss: 0.1869097203016281
+training: 10 batch 300 batch_loss: 0.2093724012374878
+One epoch Running time: 0.838167 s
+training: 11 batch 0 batch_loss: 0.1761368215084076
+training: 11 batch 100 batch_loss: 0.19235090911388397
+training: 11 batch 200 batch_loss: 0.20092810690402985
+training: 11 batch 300 batch_loss: 0.18364708125591278
+One epoch Running time: 0.851405 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 11, Hit Ratio:0.10595676057047826 | Precision:0.01201222647546135 | Recall:0.10363806006227856 | NDCG:0.05648626459546004
+*Best Performance* 
+Epoch: 11, Hit Ratio:0.10595676057047826 | Precision:0.01201222647546135 | Recall:0.10363806006227856 | MDCG:0.05648626459546004
+------------------------------------------------------------------------------------------------------------------------
+training: 12 batch 0 batch_loss: 0.20510342717170715
+training: 12 batch 100 batch_loss: 0.18081489205360413
+training: 12 batch 200 batch_loss: 0.17622005939483643
+training: 12 batch 300 batch_loss: 0.17427858710289001
+One epoch Running time: 0.818595 s
+training: 13 batch 0 batch_loss: 0.20278218388557434
+training: 13 batch 100 batch_loss: 0.17509521543979645
+training: 13 batch 200 batch_loss: 0.1825072169303894
+training: 13 batch 300 batch_loss: 0.14453324675559998
+One epoch Running time: 0.856562 s
+training: 14 batch 0 batch_loss: 0.18095730245113373
+training: 14 batch 100 batch_loss: 0.16208909451961517
+training: 14 batch 200 batch_loss: 0.16336363554000854
+training: 14 batch 300 batch_loss: 0.190009206533432
+One epoch Running time: 0.852181 s
+training: 15 batch 0 batch_loss: 0.16566702723503113
+training: 15 batch 100 batch_loss: 0.1511816680431366
+training: 15 batch 200 batch_loss: 0.13983044028282166
+training: 15 batch 300 batch_loss: 0.14395320415496826
+One epoch Running time: 0.855207 s
+training: 16 batch 0 batch_loss: 0.15903538465499878
+training: 16 batch 100 batch_loss: 0.12550131976604462
+training: 16 batch 200 batch_loss: 0.1466350555419922
+training: 16 batch 300 batch_loss: 0.16392910480499268
+One epoch Running time: 0.853679 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 16, Hit Ratio:0.11127349695106586 | Precision:0.012614980289093298 | Recall:0.10920088352968553 | NDCG:0.05976322927945206
+*Best Performance* 
+Epoch: 16, Hit Ratio:0.11127349695106586 | Precision:0.012614980289093298 | Recall:0.10920088352968553 | MDCG:0.05976322927945206
+------------------------------------------------------------------------------------------------------------------------
+training: 17 batch 0 batch_loss: 0.12951739132404327
+training: 17 batch 100 batch_loss: 0.12757639586925507
+training: 17 batch 200 batch_loss: 0.1395236849784851
+training: 17 batch 300 batch_loss: 0.11916469037532806
+One epoch Running time: 0.862955 s
+training: 18 batch 0 batch_loss: 0.13651472330093384
+training: 18 batch 100 batch_loss: 0.13220460712909698
+training: 18 batch 200 batch_loss: 0.13924193382263184
+training: 18 batch 300 batch_loss: 0.11597411334514618
+One epoch Running time: 0.861907 s
+training: 19 batch 0 batch_loss: 0.15205912292003632
+training: 19 batch 100 batch_loss: 0.11617479473352432
+training: 19 batch 200 batch_loss: 0.11804889142513275
+training: 19 batch 300 batch_loss: 0.10929515212774277
+One epoch Running time: 0.857198 s
+training: 20 batch 0 batch_loss: 0.11173504590988159
+training: 20 batch 100 batch_loss: 0.11073314398527145
+training: 20 batch 200 batch_loss: 0.11479754745960236
+training: 20 batch 300 batch_loss: 0.10889759659767151
+One epoch Running time: 0.855204 s
+training: 21 batch 0 batch_loss: 0.10762705653905869
+training: 21 batch 100 batch_loss: 0.09799064695835114
+training: 21 batch 200 batch_loss: 0.10313419997692108
+training: 21 batch 300 batch_loss: 0.09421858936548233
+One epoch Running time: 0.855603 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 21, Hit Ratio:0.11520435418031548 | Precision:0.013060618179740616 | Recall:0.11297456181980749 | NDCG:0.062075232700128755
+*Best Performance* 
+Epoch: 21, Hit Ratio:0.11520435418031548 | Precision:0.013060618179740616 | Recall:0.11297456181980749 | MDCG:0.062075232700128755
+------------------------------------------------------------------------------------------------------------------------
+training: 22 batch 0 batch_loss: 0.10763457417488098
+training: 22 batch 100 batch_loss: 0.10113700479269028
+training: 22 batch 200 batch_loss: 0.08745201677083969
+training: 22 batch 300 batch_loss: 0.1024964228272438
+One epoch Running time: 0.871981 s
+training: 23 batch 0 batch_loss: 0.08808644860982895
+training: 23 batch 100 batch_loss: 0.10812845826148987
+training: 23 batch 200 batch_loss: 0.06962095201015472
+training: 23 batch 300 batch_loss: 0.09493071585893631
+One epoch Running time: 0.857412 s
+training: 24 batch 0 batch_loss: 0.09794707596302032
+training: 24 batch 100 batch_loss: 0.08003067225217819
+training: 24 batch 200 batch_loss: 0.08567727357149124
+training: 24 batch 300 batch_loss: 0.0745646059513092
+One epoch Running time: 0.857880 s
+training: 25 batch 0 batch_loss: 0.08726520836353302
+training: 25 batch 100 batch_loss: 0.08232743293046951
+training: 25 batch 200 batch_loss: 0.07053772360086441
+training: 25 batch 300 batch_loss: 0.0765666738152504
+One epoch Running time: 0.858795 s
+training: 26 batch 0 batch_loss: 0.07641813904047012
+training: 26 batch 100 batch_loss: 0.07074829936027527
+training: 26 batch 200 batch_loss: 0.07577170431613922
+training: 26 batch 300 batch_loss: 0.0887988954782486
+One epoch Running time: 0.856050 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 26, Hit Ratio:0.11840447512976869 | Precision:0.013423413129177855 | Recall:0.1181795606320729 | NDCG:0.0650624740995872
+*Best Performance* 
+Epoch: 26, Hit Ratio:0.11840447512976869 | Precision:0.013423413129177855 | Recall:0.1181795606320729 | MDCG:0.0650624740995872
+------------------------------------------------------------------------------------------------------------------------
+training: 27 batch 0 batch_loss: 0.0595695897936821
+training: 27 batch 100 batch_loss: 0.06104157119989395
+training: 27 batch 200 batch_loss: 0.06511630862951279
+training: 27 batch 300 batch_loss: 0.06822961568832397
+One epoch Running time: 0.865494 s
+training: 28 batch 0 batch_loss: 0.06425219774246216
+training: 28 batch 100 batch_loss: 0.07964150607585907
+training: 28 batch 200 batch_loss: 0.06587740778923035
+training: 28 batch 300 batch_loss: 0.06334355473518372
+One epoch Running time: 0.855531 s
+training: 29 batch 0 batch_loss: 0.06326089799404144
+training: 29 batch 100 batch_loss: 0.08219815790653229
+training: 29 batch 200 batch_loss: 0.06363605707883835
+training: 29 batch 300 batch_loss: 0.07711118459701538
+One epoch Running time: 0.857379 s
+training: 30 batch 0 batch_loss: 0.06925296783447266
+training: 30 batch 100 batch_loss: 0.055679723620414734
+training: 30 batch 200 batch_loss: 0.0668671652674675
+training: 30 batch 300 batch_loss: 0.06059954687952995
+One epoch Running time: 0.849953 s
+Testing...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+Evaluating...
+The result has been output to  /home/anurag/repos/BOD/results .
+The result of LightGCN:
+Top 10
+Hit Ratio:0.079574661089553
+Precision:0.018042621264926013
+Recall:0.08102839356388349
+NDCG:0.05358195216325468
+Top 20
+Hit Ratio:0.11840447512976869
+Precision:0.013423413129177855
+Recall:0.1181795606320729
+NDCG:0.0650624740995872
+
+Running time: 34.337377 s
