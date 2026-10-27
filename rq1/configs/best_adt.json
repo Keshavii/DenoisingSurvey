@@ -1,0 +1,67 @@
+{
+  "adressa|rce": {
+    "alpha": 0.05,
+    "best_epoch": 57,
+    "trial": "rce_t0",
+    "valid_ndcg@20": 0.16701938211917877
+  },
+  "adressa|tce": {
+    "best_epoch": 9,
+    "drop_rate": 0.1,
+    "num_gradual": 1000,
+    "trial": "tce_t2",
+    "valid_ndcg@20": 0.16424855589866638
+  },
+  "amazon_book|rce": {
+    "alpha": 0.05,
+    "best_epoch": 98,
+    "trial": "rce_t0",
+    "valid_ndcg@20": 0.03923312947154045
+  },
+  "amazon_book|tce": {
+    "best_epoch": 100,
+    "drop_rate": 0.05,
+    "num_gradual": 30000,
+    "trial": "tce_t1",
+    "valid_ndcg@20": 0.03915723040699959
+  },
+  "gowalla|rce": {
+    "alpha": 0.05,
+    "best_epoch": 66,
+    "trial": "rce_t0",
+    "valid_ndcg@20": 0.09044517576694489
+  },
+  "gowalla|tce": {
+    "best_epoch": 94,
+    "drop_rate": 0.05,
+    "num_gradual": 30000,
+    "trial": "tce_t1",
+    "valid_ndcg@20": 0.09145060926675797
+  },
+  "ml1m|rce": {
+    "alpha": 0.05,
+    "best_epoch": 96,
+    "trial": "rce_t0",
+    "valid_ndcg@20": 0.10589833557605743
+  },
+  "ml1m|tce": {
+    "best_epoch": 90,
+    "drop_rate": 0.05,
+    "num_gradual": 30000,
+    "trial": "tce_t1",
+    "valid_ndcg@20": 0.10668712854385376
+  },
+  "yelp|rce": {
+    "alpha": 0.05,
+    "best_epoch": 99,
+    "trial": "rce_t0",
+    "valid_ndcg@20": 0.041714608669281006
+  },
+  "yelp|tce": {
+    "best_epoch": 99,
+    "drop_rate": 0.05,
+    "num_gradual": 10000,
+    "trial": "tce_t0",
+    "valid_ndcg@20": 0.042632874101400375
+  }
+}
