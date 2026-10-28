@@ -171,6 +171,24 @@ def test_legacy_queue_only_canaries():
     shutil.rmtree(root)
 
 
+def test_legacy_queue_shared_gpu():
+    root = make_root()
+    json.dump({"slots_taken_by_legacy_queue": 1}, open(os.path.join(root, "configs/partc/scheduler.json"), "w"))
+    t0 = time.time()
+    sleeper = subprocess.Popen([sys.executable, "-c", "import time; time.sleep(40)", "python -m rq1kit.queue --jobs x"])
+    partc(root, "run", "--until-idle", "--poll", "0.5")
+    sleeper.wait()
+    starts = [json.loads(line) for line in open(os.path.join(root, P.STATE)) if '"start"' in line]
+    jobs, waiting, st, canary, picks = state_of(root)
+    stage = {j["id"]: j["stage"] for j in jobs}
+    early = [r for r in starts if time.mktime(time.strptime(r["t"], "%Y-%m-%d %H:%M:%S")) < t0 + 38]
+    assert any(stage[r["job"]] != "canary" for r in early), "no tuning/final job started while the queue ran"
+    assert all(r["slots"] <= 1 for r in early), [(r["job"], r["slots"]) for r in early]
+    assert all(v["status"] == "done" for v in st.values())
+    print(f"ok  shared GPU: {len(early)} jobs started while the queue ran, none needing more than the 1 free slot")
+    shutil.rmtree(root)
+
+
 def test_canary_hold():
     root = make_root(min_ratio=1e9)
     partc(root, "run", "--until-idle", "--poll", "0.5")
@@ -188,5 +206,6 @@ if __name__ == "__main__":
     test_failure_classes()
     test_canary_hold()
     test_legacy_queue_only_canaries()
+    test_legacy_queue_shared_gpu()
     test_full_run_adoption_conflict_retry()
     print("ALL PARTC TESTS PASSED")

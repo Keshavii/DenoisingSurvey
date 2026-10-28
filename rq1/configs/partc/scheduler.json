@@ -1,0 +1,4 @@
+{
+  "_about": "Scheduling only, never part of a job command or hash. While an old rq1kit.queue runs, partc assumes it holds this many of total_slots and uses the rest. Remove the key to go back to canaries only.",
+  "slots_taken_by_legacy_queue": 2
+}

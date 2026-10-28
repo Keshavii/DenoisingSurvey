@@ -336,6 +336,14 @@ def legacy_queue_running():
     return [p for p in out if int(p) != os.getpid()]
 
 
+def scheduler_setting(key):
+    """Scheduling-only settings (configs/partc/scheduler.json). They never enter a job command or hash."""
+    try:
+        return json.load(open("configs/partc/scheduler.json")).get(key)
+    except (OSError, ValueError):
+        return None
+
+
 def kit_commit():
     try:
         return subprocess.run(["git", "rev-parse", "--short", "HEAD"], capture_output=True, text=True, timeout=10).stdout.strip() or "unknown"
@@ -429,9 +437,10 @@ def cmd_run(a):
         st = derive(jobs, read_state(), running_ids=running.keys())
         legacy = legacy_queue_running()
         ready = runnable(proto, jobs, st, canary)
-        if legacy:  # an rq1kit.queue owns the GPU: only canaries, one at a time, so new methods are checked early
+        legacy_slots = scheduler_setting("slots_taken_by_legacy_queue")
+        if legacy and legacy_slots is None:  # an rq1kit.queue owns the GPU: only canaries, one at a time, so new methods are checked early
             ready = [] if running else [(j, 1) for j, _ in ready if j["stage"] == "canary"][:1]
-        free = proto["total_slots"] - sum(r[2] for r in running.values())
+        free = proto["total_slots"] - sum(r[2] for r in running.values()) - (int(legacy_slots) if legacy and legacy_slots is not None else 0)
         env = {**os.environ, "OMP_NUM_THREADS": str(proto["threads_per_job"]), "MKL_NUM_THREADS": str(proto["threads_per_job"])}
         commit = kit_commit()
         for j, need in ready:
@@ -521,7 +530,7 @@ def render_status(proto, methods, jobs, waiting, st, canary, picks, legacy, runn
             tot["done_all"] += tdone + fdone
     L.append(f"total: {tot['done_all']} of {tot['planned']} done, {tot['running']} running, {tot['failed']} failed, "
              f"{tot['conflict']} conflicts; held: {', '.join(m for m, c in canary.items() if c[0] == 'held') or 'none'}")
-    L.append(f"GPU: {gpu_line()}" + (f"   rq1kit.queue running (pids {' '.join(legacy)}): partc runs only canaries until it ends" if legacy else ""))
+    L.append(f"GPU: {gpu_line()}" + (f"   rq1kit.queue running (pids {' '.join(legacy)}): " + ("partc runs only canaries until it ends" if scheduler_setting("slots_taken_by_legacy_queue") is None else f"partc shares the GPU, leaving it {scheduler_setting('slots_taken_by_legacy_queue')} slots") if legacy else ""))
     L.append(eta_text(proto, jobs, waiting, st))
     for j in jobs:
         s = st[j["id"]]
