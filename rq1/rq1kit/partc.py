@@ -437,6 +437,10 @@ def cmd_run(a):
         st = derive(jobs, read_state(), running_ids=running.keys())
         legacy = legacy_queue_running()
         ready = runnable(proto, jobs, st, canary)
+        if a.only:  # this driver handles only these methods (e.g. the other PC runs the rest); job identity and hashes are unchanged
+            ready = [(j, n) for j, n in ready if j["method"] in a.only.split(",")]
+        if a.skip:
+            ready = [(j, n) for j, n in ready if j["method"] not in a.skip.split(",")]
         legacy_slots = scheduler_setting("slots_taken_by_legacy_queue")
         if legacy and legacy_slots is None:  # an rq1kit.queue owns the GPU: only canaries, one at a time, so new methods are checked early
             ready = [] if running else [(j, 1) for j, _ in ready if j["stage"] == "canary"][:1]
@@ -717,6 +721,8 @@ def main():
     p = sub.add_parser("check"); p.add_argument("--write-lock", action="store_true"); p.set_defaults(f=cmd_check)
     p = sub.add_parser("plan"); p.add_argument("-n", type=int, default=5); p.set_defaults(f=cmd_plan)
     p = sub.add_parser("run"); p.add_argument("--until-idle", action="store_true"); p.add_argument("--poll", type=float, default=10)
+    p.add_argument("--only", default="", help="comma-separated method names: start only their jobs")
+    p.add_argument("--skip", default="", help="comma-separated method names: never start their jobs")
     p.set_defaults(f=cmd_run)
     sub.add_parser("status").set_defaults(f=cmd_status)
     p = sub.add_parser("show"); p.add_argument("name"); p.set_defaults(f=cmd_show)
