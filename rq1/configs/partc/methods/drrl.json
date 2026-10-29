@@ -1,0 +1,65 @@
+{
+  "name": "drrl",
+  "display": "DrRL",
+  "batch": 1,
+  "module": "rq1kit.drrl",
+  "base_args": "--lr2 0.0001",
+  "loss": "bpr",
+  "backbones": [
+    "lightgcn",
+    "mf"
+  ],
+  "datasets": [
+    "adressa",
+    "ml1m",
+    "yelp",
+    "gowalla",
+    "amazon_book"
+  ],
+  "tune_dir": "runs/tune_partc",
+  "source": "Wang et al., Advancing Loss Functions in Recommender Systems: A Comparative Study with a Renyi Divergence-Based Solution, AAAI 2025; github.com/cynthia-shengjia/AAAI-2025-DrRL @ faacdbc (optimizer/optim_DrRL.py, model/model_MF.py and model_LightGCN.py with norm_emb 1, tools/procedure.py Train)",
+  "grid_source": "The paper's Table 8 settings for its 12 (dataset, backbone) cases: gamma (renyi_omega) 1.08 to 1.27 (most 1.15 to 1.25), beta0 (renyi_margin) 0.70 to 0.90 (most 0.85 to 0.90), margin learning rate 1e-4 in 6 of 12 cases and 1e-5 in the rest (fixed here at 1e-4), learning rate 1e-5 to 1e-1 per case. 8-trial budget: lr_mult {1, 10} x gamma {1.1, 1.2} x beta0 {0.8, 0.9}. lr_mult multiplies the plain model's tuned learning rate (1 = the plain setting is always a candidate), so the same pick transfers to MF. The appendix ranges were not in our copy of the paper; the grid is read from the Table 8 values and is recorded as our choice.",
+  "grid": [
+    {
+      "lr_mult": 1,
+      "renyi_omega": 1.1,
+      "renyi_margin": 0.8
+    },
+    {
+      "lr_mult": 1,
+      "renyi_omega": 1.1,
+      "renyi_margin": 0.9
+    },
+    {
+      "lr_mult": 1,
+      "renyi_omega": 1.2,
+      "renyi_margin": 0.8
+    },
+    {
+      "lr_mult": 1,
+      "renyi_omega": 1.2,
+      "renyi_margin": 0.9
+    },
+    {
+      "lr_mult": 10,
+      "renyi_omega": 1.1,
+      "renyi_margin": 0.8
+    },
+    {
+      "lr_mult": 10,
+      "renyi_omega": 1.1,
+      "renyi_margin": 0.9
+    },
+    {
+      "lr_mult": 10,
+      "renyi_omega": 1.2,
+      "renyi_margin": 0.8
+    },
+    {
+      "lr_mult": 10,
+      "renyi_omega": 1.2,
+      "renyi_margin": 0.9
+    }
+  ],
+  "memory": "plain LightGCN/MF plus 1024 negatives per positive (2048 x 1024 x 64 floats = 0.5 GB per batch) and one margin per user (n_users floats)"
+}
