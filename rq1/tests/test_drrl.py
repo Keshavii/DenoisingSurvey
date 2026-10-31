@@ -20,7 +20,7 @@ import torch
 KIT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, KIT)
 sys.path.insert(0, os.path.join(KIT, "tests"))
-from rq1kit.drrl import RenyiMargin, sample_negatives_many  # noqa: E402
+from rq1kit.drrl import RenyiMargin, sample_negatives_many, softmax_loss  # noqa: E402
 from test_partc import make_dataset  # noqa: E402
 
 PY = [sys.executable, "-m"]
@@ -55,8 +55,7 @@ def test_loss_matches_authors():
         try:
             theirs = DrRLOptimizer(Fake(nu), cfg)
         finally:
-            torch.full = real_full
-        mine = RenyiMargin(nu, beta0, lr2, omega, K, 1.0, torch.device("cpu"))
+                mine = RenyiMargin(nu, beta0, lr2, omega, K, 1.0, torch.device("cpu"))
         g = torch.Generator().manual_seed(1)
         for step in range(3):
             users = torch.randint(0, nu, (B,), generator=g)
@@ -66,6 +65,12 @@ def test_loss_matches_authors():
             assert torch.allclose(l_theirs, l_mine, atol=1e-6), (omega, step, l_theirs.item(), l_mine.item())
             assert torch.allclose(theirs.margin_vector.detach(), mine.margin.detach(), atol=1e-7), (omega, step)
     print("ok  loss and margin updates identical to the authors' DrRLOptimizer (3 settings x 3 steps)")
+    from optimizer.optim_Softmax import SoftmaxOptimizer
+    for temp in (0.08, 0.2, 0.25):
+        sl = SoftmaxOptimizer(Fake(nu), {"lr": 1e-3, "weight_decay": 0, "ssm_temp": temp})
+        y = torch.rand(B, 1 + K, generator=torch.Generator().manual_seed(2)) * 2 - 1
+        assert torch.allclose(sl.cal_loss(y), softmax_loss(y, temp), atol=1e-6), temp
+    print("ok  softmax loss (Plain-SL) identical to the authors' SoftmaxOptimizer at tau 0.08, 0.2, 0.25")
 
 
 def test_negatives():
@@ -107,9 +112,13 @@ def test_end_to_end():
     r = json.load(open(f"{root}/results/drrl.json"))
     assert r["seen_item_leak_rate"] == 0
     run(["rq1kit.drrl", *common[:-6], "--model", "mf", "--run_dir", "runs/mf", "--no_export"], root)
+    run(["rq1kit.drrl", *common[:-6], "--loss", "sl", "--ssm_temp", "0.2", "--run_dir", "runs/sl", "--no_export"], root)
+    assert json.load(open(f"{root}/runs/sl/run.json"))["loss"] == "sl"
     grid = json.load(open(os.path.join(KIT, "configs/partc/methods/drrl.json")))["grid"]
     assert len(grid) == 8 and all(set(g) == {"lr_mult", "renyi_omega", "renyi_margin"} for g in grid)
-    print(f"ok  end to end: lr 0.005 x 10 = 0.05, reruns identical, test NDCG@20 {r['ndcg@20']:.4f}, no leak, MF runs, grid keys valid")
+    grid = json.load(open(os.path.join(KIT, "configs/partc/methods/sl.json")))["grid"]
+    assert len(grid) == 8 and all(set(g) == {"lr_mult", "ssm_temp"} for g in grid)
+    print(f"ok  end to end: lr 0.005 x 10 = 0.05, reruns identical, test NDCG@20 {r['ndcg@20']:.4f}, no leak, MF and SL runs, grid keys valid")
 
 
 if __name__ == "__main__":

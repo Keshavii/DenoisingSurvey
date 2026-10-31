@@ -1,0 +1,57 @@
+{
+  "name": "sl",
+  "display": "Plain-SL",
+  "batch": 1,
+  "module": "rq1kit.drrl",
+  "base_args": "--loss sl",
+  "loss": "bpr",
+  "backbones": [
+    "lightgcn",
+    "mf"
+  ],
+  "datasets": [
+    "adressa",
+    "ml1m",
+    "yelp",
+    "gowalla",
+    "amazon_book"
+  ],
+  "tune_dir": "runs/tune_partc",
+  "source": "Softmax loss (SL) as implemented in the DrRL authors' repository, github.com/cynthia-shengjia/AAAI-2025-DrRL @ faacdbc (optimizer/optim_Softmax.py), with the same cosine scores, 1024 uniform negatives and sampler as the DrRL adapter. A tuned reference, not a denoising method: DrRL's gain over it separates the Renyi margin from the change of loss.",
+  "grid_source": "The paper's Table 8 SL settings: temperature tau 0.07 to 0.26 and learning rate 1e-2 to 1e-1 across its 12 cases. 8-trial budget: lr_mult {1, 10} x tau {0.08, 0.12, 0.2, 0.25}; lr_mult multiplies the plain model's tuned learning rate. Our choice, read from Table 8 (appendix ranges not in our copy of the paper).",
+  "grid": [
+    {
+      "lr_mult": 1,
+      "ssm_temp": 0.08
+    },
+    {
+      "lr_mult": 1,
+      "ssm_temp": 0.12
+    },
+    {
+      "lr_mult": 1,
+      "ssm_temp": 0.2
+    },
+    {
+      "lr_mult": 1,
+      "ssm_temp": 0.25
+    },
+    {
+      "lr_mult": 10,
+      "ssm_temp": 0.08
+    },
+    {
+      "lr_mult": 10,
+      "ssm_temp": 0.12
+    },
+    {
+      "lr_mult": 10,
+      "ssm_temp": 0.2
+    },
+    {
+      "lr_mult": 10,
+      "ssm_temp": 0.25
+    }
+  ],
+  "memory": "as DrRL (1024 negatives per positive); no per-user margin"
+}

@@ -14,6 +14,7 @@ What the authors' code does, and this port does the same:
         model loss   = mean over rows of relu(1 - pos) + neg^(-1/omega*) * || eps + relu(neg - margin.detach()) ||_omega*
                        + margin.detach()
     with eps = 0.1 and neg_coefficient 1 (code defaults).
+  * --loss sl trains the authors' softmax loss instead (Plain-SL, the reference DrRL is compared with).
   * The embedding weight decay is 0 in all of the paper's settings (Table 8), so the kit's --reg is accepted but not
     used; --weight_decay (default 0) applies the authors' L2 term if wanted.
 
@@ -76,6 +77,15 @@ class RenyiMargin:
         return (torch.relu(1 - pos) + neg_loss).mean()
 
 
+def softmax_loss(y_pred, temp):
+    """Authors' SoftmaxOptimizer.cal_loss (their 'softmax' loss, SL): the denominator sums the exponentials of the
+    negative scores only, as in their code. Plain-SL in Part C is this loss with the same cosine scores, 1024
+    negatives and sampler as DrRL, so DrRL's gain over it isolates the Renyi margin."""
+    pos = torch.exp(y_pred[:, 0] / temp)
+    neg = torch.exp(y_pred[:, 1:] / temp).sum(-1)
+    return -torch.log(pos / neg).mean()
+
+
 def sample_negatives_many(users, n_neg, n_items, keys, gen, tries=20):
     """n_neg items per user, uniform over the items the user has not interacted with, with replacement
     (authors: torch.multinomial over the user's non-interaction row). Uniform draws, redrawn where they hit a
@@ -94,6 +104,8 @@ def sample_negatives_many(users, n_neg, n_items, keys, gen, tries=20):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--loss", choices=["drrl", "sl"], default="drrl", help="drrl, or sl = the authors' softmax loss (Plain-SL)")
+    ap.add_argument("--ssm_temp", type=float, default=0.2, help="SL temperature tau (paper Table 8, SL: 0.07-0.26)")
     ap.add_argument("--renyi_omega", type=float, default=1.2, help="gamma: Renyi order (paper Table 8: 1.08-1.27)")
     ap.add_argument("--renyi_margin", type=float, default=0.85, help="beta0: initial margin (paper: 0.70-0.90)")
     ap.add_argument("--lr2", type=float, default=1e-4, help="margin learning rate (paper: 1e-5 or 1e-4)")
@@ -155,7 +167,7 @@ def main():
             U, I = model.propagate()
             eu, ep, en = U[u], I[p], I[n]
             y = torch.cat([(eu * ep).sum(1, keepdim=True), torch.bmm(eu.unsqueeze(1), en.transpose(1, 2)).squeeze(1)], 1)
-            loss = drrl.loss(u, y)
+            loss = drrl.loss(u, y) if a.loss == "drrl" else softmax_loss(y, a.ssm_temp)
             if a.weight_decay:
                 reg = (model.user(u).pow(2).sum() + model.item(p).pow(2).sum() + model.item(n).pow(2).sum()) / 2
                 loss = loss + a.weight_decay * reg / len(idx)
@@ -186,7 +198,7 @@ def main():
         with torch.no_grad():
             U, I = model.propagate()
         export_topk(lambda users: U[users] @ I.T, a.data, a.run_dir, a.train_file, device=dev)
-    info = {**vars(a), "loss": "drrl", "lr_effective": lr_eff, "best_valid_ndcg@20": best, "best_epoch": best_epoch,
+    info = {**vars(a), "loss": a.loss, "lr_effective": lr_eff, "best_valid_ndcg@20": best, "best_epoch": best_epoch,
             "epochs_run": epoch, "train_seconds": round(train_seconds, 1), "export_seconds": round(time.time() - t1, 1),
             "peak_gpu_mb": round(torch.cuda.max_memory_allocated(dev) / 2 ** 20) if dev.type == "cuda" else None}
     json.dump(info, open(os.path.join(a.run_dir, "run.json"), "w"), indent=2)

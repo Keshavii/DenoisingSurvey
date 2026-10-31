@@ -47,6 +47,10 @@ def main():
     plain = plain.rename(columns={"ndcg20": "plain_ndcg20"})
     agg = agg.merge(plain, on=["part", "dataset", "backbone", "cond", "loss"], how="left")
     agg["gain_pct"] = 100 * (agg["ndcg20"] / agg["plain_ndcg20"] - 1)
+    # softmax-loss methods (Plain-SL, DrRL) are also shown against plain BPR, the kit's default reference
+    bpr = plain[plain["loss"] == "bpr"].drop(columns="loss").rename(columns={"plain_ndcg20": "plain_bpr_ndcg20"})
+    agg = agg.merge(bpr, on=["part", "dataset", "backbone", "cond"], how="left")
+    agg["gain_vs_bpr_pct"] = 100 * (agg["ndcg20"] / agg["plain_bpr_ndcg20"] - 1)
     agg.to_csv(os.path.join(a.out, "summary.csv"), index=False)
     print(agg.to_string(index=False, max_rows=60))
     if os.path.exists(a.reported):
