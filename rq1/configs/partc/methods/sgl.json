@@ -1,0 +1,64 @@
+{
+  "name": "sgl",
+  "display": "SGL",
+  "batch": 2,
+  "module": "rq1kit.sgl",
+  "base_args": "",
+  "loss": "bpr",
+  "backbones": [
+    "lightgcn"
+  ],
+  "datasets": [
+    "adressa",
+    "ml1m",
+    "yelp",
+    "gowalla",
+    "amazon_book"
+  ],
+  "tune_dir": "runs/tune_partc",
+  "source": "Wu et al., Self-supervised Graph Learning for Recommendation, SIGIR 2021 (SGL-ED); github.com/wujcan/SGL-Torch @ c563288 (model/general_recommender/SGL.py, conf/SGL.ini)",
+  "grid_source": "Paper Sec. 4.1.2: lambda1 (ssl_reg) in {0.005, 0.01, 0.05, 0.1, 0.5, 1.0}, tau (ssl_temp) in {0.1, 0.2, 0.5, 1.0}, rho (ssl_ratio) in {0, 0.1, ..., 0.5} (240 points). Repository defaults (0.1, 0.2, 0.1) are one grid point. 8-trial budget: ssl_reg {0.05, 0.1} x ssl_temp {0.2, 0.5} x ssl_ratio {0.1, 0.2}: the neighbourhood of the defaults, which the paper reports as its best region; our choice.",
+  "grid": [
+    {
+      "ssl_reg": 0.05,
+      "ssl_temp": 0.2,
+      "ssl_ratio": 0.1
+    },
+    {
+      "ssl_reg": 0.05,
+      "ssl_temp": 0.2,
+      "ssl_ratio": 0.2
+    },
+    {
+      "ssl_reg": 0.05,
+      "ssl_temp": 0.5,
+      "ssl_ratio": 0.1
+    },
+    {
+      "ssl_reg": 0.05,
+      "ssl_temp": 0.5,
+      "ssl_ratio": 0.2
+    },
+    {
+      "ssl_reg": 0.1,
+      "ssl_temp": 0.2,
+      "ssl_ratio": 0.1
+    },
+    {
+      "ssl_reg": 0.1,
+      "ssl_temp": 0.2,
+      "ssl_ratio": 0.2
+    },
+    {
+      "ssl_reg": 0.1,
+      "ssl_temp": 0.5,
+      "ssl_ratio": 0.1
+    },
+    {
+      "ssl_reg": 0.1,
+      "ssl_temp": 0.5,
+      "ssl_ratio": 0.2
+    }
+  ],
+  "memory": "plain LightGCN plus two edge-dropped sparse graphs and two batch x n_users / n_items similarity matrices (2048 x 91k floats = 0.75 GB on Amazon-Book); three propagations per batch, so about 3 to 4 times the time of Plain-BPR"
+}
