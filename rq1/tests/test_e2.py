@@ -69,4 +69,16 @@ r = e2_shift.shift(tbl)["ml1m"]
 bt = e2_shift.bootstrap_tau(sds, "ml1m", n=200)
 assert abs(bt[0] - 1 / 3) < 1e-9 and bt[1] == bt[2], bt  # identical seeds: no spread
 assert r["best_a"] == "A" and r["best_b"] == "B" and abs(r["tau"] - 1 / 3) < 1e-9, r
+
+# E7/E8 tidy table: % change vs Plain-BPR, seed averaging
+from rq1kit import e78
+r7 = os.path.join(tmp, "r7"); os.makedirs(r7 + "/ml1m")
+for sd in (1, 2):
+    for m, nd, cold, tail in (("Plain-BPR", .10, .04, .02), ("X", .12, .06, .01)):
+        json.dump({"dataset": "ml1m", "method": m, "backbone": "LightGCN", "cond": "N2_20", "seed": sd, "ndcg@20": nd,
+                   "recall@20": 2 * nd, "groups": {"cold(<5)": {"ndcg@20": cold}, "warm(5-20)": {"ndcg@20": nd},
+                   "established(>20)": {"ndcg@20": nd}, "items_tail": {"recall@20_micro": tail},
+                   "gini@20": .5, "coverage@20": .3}}, open(f"{r7}/ml1m/{m}_{sd}.json", "w"))
+x = e78.collect(r7).query("method == 'X'").iloc[0]
+assert abs(x.ndcg20_rel - 20) < 1e-6 and abs(x.ndcg20_cold_rel - 50) < 1e-6 and abs(x.recall20_tail_rel + 50) < 1e-6 and x.n_seeds == 2
 print("ALL E2 TESTS PASSED")
