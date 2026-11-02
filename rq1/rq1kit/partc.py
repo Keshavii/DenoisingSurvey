@@ -441,6 +441,8 @@ def cmd_run(a):
             ready = [(j, n) for j, n in ready if j["method"] in a.only.split(",")]
         if a.skip:
             ready = [(j, n) for j, n in ready if j["method"] not in a.skip.split(",")]
+        if a.datasets:  # this driver handles only these datasets of the selected methods
+            ready = [(j, n) for j, n in ready if j.get("dataset") in a.datasets.split(",")]
         legacy_slots = scheduler_setting("slots_taken_by_legacy_queue")
         if legacy and legacy_slots is None:  # an rq1kit.queue owns the GPU: only canaries, one at a time, so new methods are checked early
             ready = [] if running else [(j, 1) for j, _ in ready if j["stage"] == "canary"][:1]
@@ -723,6 +725,7 @@ def main():
     p = sub.add_parser("run"); p.add_argument("--until-idle", action="store_true"); p.add_argument("--poll", type=float, default=10)
     p.add_argument("--only", default="", help="comma-separated method names: start only their jobs")
     p.add_argument("--skip", default="", help="comma-separated method names: never start their jobs")
+    p.add_argument("--datasets", default="", help="comma-separated dataset names: start only jobs on these datasets")
     p.set_defaults(f=cmd_run)
     sub.add_parser("status").set_defaults(f=cmd_status)
     p = sub.add_parser("show"); p.add_argument("name"); p.set_defaults(f=cmd_show)
