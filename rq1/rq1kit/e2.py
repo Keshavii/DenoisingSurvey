@@ -84,6 +84,7 @@ def run(data_dir, methods, rho_val, run_glob, seeds=(1, 2, 3), kinds=("N1", "N2"
                 for s in seeds:
                     path = run_glob.format(method=m, rho=rho_val, seed=s)
                     if not os.path.exists(path):
+                        print(f"MISSING {path}")
                         continue
                     truth, _ = noisy_test(data_dir, rt, kind, seed=s, train_file=train_tmpl.format(rho=rho_val, seed=s))
                     vals.append(score(path, truth)[0])
