@@ -1,0 +1,60 @@
+{
+  "name": "llard",
+  "display": "LLaRD",
+  "batch": 3,
+  "module": "rq1kit.llard",
+  "base_args": "",
+  "loss": "bpr",
+  "backbones": [
+    "lightgcn"
+  ],
+  "datasets": [
+    "ml1m"
+  ],
+  "tune_dir": "runs/tune_partc",
+  "source": "Wang et al., 2025 (LLaRD); github.com/shuyao-wang/LLaRD @ 936fe15 (LLaRD.py, load_dataset.py, run_LLaRD.py); LLM knowledge rebuilt from the kit's training files by rq1kit.llard_knowledge",
+  "grid_source": "The repository fixes alpha 0.1, beta 5.0, lr 1e-3, sigma 0.25, prf_weight 0.01, kd_temperature 0.2, edge_bias 0.5 and states no search ranges. 8-trial budget: lr_mult {0.2, 1} (the kit passes the plain model's tuned learning rate; the authors' is 1e-3) x alpha {0.1, 0.5} x beta {1, 5}; everything else at the authors' values; our choice. ML-1M only: the LLM knowledge is built for the kit's ML-1M splits (natural data and each injected-noise seed) and needs data/ml1m/llard on the machine that runs it.",
+  "grid": [
+    {
+      "lr_mult": 0.2,
+      "alpha": 0.1,
+      "beta": 1.0
+    },
+    {
+      "lr_mult": 0.2,
+      "alpha": 0.1,
+      "beta": 5.0
+    },
+    {
+      "lr_mult": 0.2,
+      "alpha": 0.5,
+      "beta": 1.0
+    },
+    {
+      "lr_mult": 0.2,
+      "alpha": 0.5,
+      "beta": 5.0
+    },
+    {
+      "lr_mult": 1,
+      "alpha": 0.1,
+      "beta": 1.0
+    },
+    {
+      "lr_mult": 1,
+      "alpha": 0.1,
+      "beta": 5.0
+    },
+    {
+      "lr_mult": 1,
+      "alpha": 0.5,
+      "beta": 1.0
+    },
+    {
+      "lr_mult": 1,
+      "alpha": 0.5,
+      "beta": 5.0
+    }
+  ],
+  "memory": "Three LightGCN propagations per batch (original, denoised, knowledge graph) on ML-1M (about 10k nodes) and one gate per edge; expected 3 to 5 times the time of Plain-BPR; needs <data>/llard/<build> with the profile embeddings and the LLM knowledge (copy from the machine that built it)"
+}

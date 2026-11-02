@@ -1,0 +1,64 @@
+{
+  "name": "ddrm",
+  "display": "DDRM",
+  "batch": 2,
+  "module": "rq1kit.ddrm",
+  "base_args": "",
+  "loss": "bpr",
+  "backbones": [
+    "lightgcn"
+  ],
+  "datasets": [
+    "adressa",
+    "ml1m",
+    "yelp",
+    "gowalla",
+    "amazon_book"
+  ],
+  "tune_dir": "runs/tune_partc",
+  "source": "Zhao et al., Denoising Diffusion Recommender Model, SIGIR 2024; github.com/Polaris-JZ/DDRM @ ad4034c (DDRM_LightGCN: main.py, utils.py, model.py, diffusion.py, train*.py)",
+  "grid_source": "The authors' train.py files fix diff_lr 1e-3, alpha 0.1 (ML-1M) or 0.5 (Amazon-Book), 50 steps, sampling steps 1.25 x steps, DNN dims [200,1000 or 1100], noise scale 1e-2 on [1e-4, 1e-3] and comment out alternatives (steps 10 to 60, alpha 0.1 to 0.5, noise scale 1e-5 to 1e-3). 8-trial budget: diff_lr {1e-3, 1e-4} x alpha {0.1, 0.5} x steps {10, 50}; everything else at the authors' values; our choice. The pipeline's --lr and --reg are those of the pretrained LightGCN.",
+  "grid": [
+    {
+      "diff_lr": 0.001,
+      "alpha": 0.1,
+      "steps": 10
+    },
+    {
+      "diff_lr": 0.001,
+      "alpha": 0.1,
+      "steps": 50
+    },
+    {
+      "diff_lr": 0.001,
+      "alpha": 0.5,
+      "steps": 10
+    },
+    {
+      "diff_lr": 0.001,
+      "alpha": 0.5,
+      "steps": 50
+    },
+    {
+      "diff_lr": 0.0001,
+      "alpha": 0.1,
+      "steps": 10
+    },
+    {
+      "diff_lr": 0.0001,
+      "alpha": 0.1,
+      "steps": 50
+    },
+    {
+      "diff_lr": 0.0001,
+      "alpha": 0.5,
+      "steps": 10
+    },
+    {
+      "diff_lr": 0.0001,
+      "alpha": 0.5,
+      "steps": 50
+    }
+  ],
+  "memory": "Pretrains the kit's plain LightGCN once per training file (cached under runs/_ddrm_pretrain, about the cost of one Plain-BPR run), then trains two small conditional DNNs on frozen embeddings; evaluation runs sampling_steps reverse steps per user batch. Time to be measured on the canary"
+}
