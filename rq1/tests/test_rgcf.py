@@ -174,7 +174,31 @@ def test_end_to_end():
     print(f"ok  end to end: lr 0.005 x 2 = 0.01, reruns identical, test NDCG@20 {r['ndcg@20']:.4f}, no leak, grid keys valid")
 
 
+def test_edge_spmm():
+    """EdgeSpMM equals torch.sparse.mm (forward bitwise, gradients of values and inputs to 1e-6) and its backward never
+    builds an n x n matrix: 4000 x 4000 nodes would need 64 MB dense, so we only check numbers here, memory is by design."""
+    from rq1kit.rgcf import EdgeSpMM, sparse_sorted
+    torch.manual_seed(0)
+    n, dim, nnz = 200, 8, 900
+    pairs = torch.unique(torch.randint(0, n, (2, nnz)), dim=1)
+    order = torch.argsort(pairs[0] * n + pairs[1])
+    rows, cols = pairs[0][order], pairs[1][order]
+    vals0 = torch.rand(len(rows))
+    x0 = torch.randn(n, dim)
+    w = torch.randn(n, dim)
+    v1, x1 = vals0.clone().requires_grad_(), x0.clone().requires_grad_()
+    out1 = EdgeSpMM.apply(v1, x1, rows, cols, n)
+    (out1 * w).sum().backward()
+    v2, x2 = vals0.clone().requires_grad_(), x0.clone().requires_grad_()
+    out2 = torch.sparse.mm(sparse_sorted(torch.stack([rows, cols]), v2, (n, n)), x2)
+    (out2 * w).sum().backward()
+    assert torch.equal(out1, out2), "forward must be bitwise identical"
+    assert torch.allclose(v1.grad, v2.grad, atol=1e-6) and torch.allclose(x1.grad, x2.grad, atol=1e-6)
+    print("ok  EdgeSpMM equals torch.sparse.mm: forward bitwise, gradients to 1e-6")
+
+
 if __name__ == "__main__":
+    test_edge_spmm()
     test_matches_authors()
     test_end_to_end()
     print("ALL RGCF TESTS PASSED")

@@ -50,6 +50,30 @@ def sparse_sorted(idx, vals, size):
         return torch.sparse_coo_tensor(idx, vals, size).coalesce()
 
 
+class EdgeSpMM(torch.autograd.Function):
+    """sparse(vals) @ x with gradients for both vals and x, without the dense n x n gradient that torch.sparse.mm builds
+    when the sparse matrix requires grad (178 GiB on Adressa). Forward is the same torch.sparse.mm call; backward is
+    d vals_e = <g[row_e], x[col_e]> and d x = A^T g, exactly the matrix-product gradients."""
+
+    @staticmethod
+    def forward(ctx, vals, x, rows, cols, n):
+        ctx.save_for_backward(vals, x, rows, cols)
+        ctx.n = n
+        return torch.sparse.mm(sparse_sorted(torch.stack([rows, cols]), vals, (n, n)), x)
+
+    @staticmethod
+    def backward(ctx, g):
+        vals, x, rows, cols = ctx.saved_tensors
+        n = ctx.n
+        g = g.contiguous()
+        grad_vals = (g[rows] * x[cols]).sum(1) if ctx.needs_input_grad[0] else None
+        grad_x = None
+        if ctx.needs_input_grad[1]:
+            at = torch.sparse_coo_tensor(torch.stack([cols, rows]), vals, (n, n)).coalesce()
+            grad_x = torch.sparse.mm(at, g)
+        return grad_vals, grad_x, None, None, None
+
+
 class RGCF(nn.Module):
     def __init__(self, nu, ni, users, items, dim=64, layers=3, prune=0.02, tau=0.2, aug_ratio=0.1, device="cpu"):
         super().__init__()
@@ -95,13 +119,22 @@ class RGCF(nn.Module):
         x = torch.stack(out, dim=1).mean(1)
         return x[: self.nu], x[self.nu:]
 
+    def propagate_vals(self, vals, x):
+        """LightGCN propagation on the denoised graph; vals carries gradients (see EdgeSpMM)."""
+        n = self.nu + self.ni
+        out = [x]
+        for _ in range(self.layers):
+            x = EdgeSpMM.apply(vals, x, self.rows, self.cols, n)
+            out.append(x)
+        x = torch.stack(out, dim=1).mean(1)
+        return x[: self.nu], x[self.nu:]
+
     def forward(self, pruning=None):
         pruning = self.prune if pruning is None else pruning
         uf, itf = self.feats()
         vals = self.sim_values(uf, itf, pruning)
         self.adj_vals = vals.detach()
-        adj = sparse_sorted(torch.stack([self.rows, self.cols]), vals, (self.nu + self.ni,) * 2)
-        return self.propagate_on(adj, torch.cat([uf, itf]))
+        return self.propagate_vals(vals, torch.cat([uf, itf]))
 
     def aug_adj(self, aug_user=None, aug_item=None, gen=None):
         """Authors' get_aug_adj on the detached denoised graph."""
