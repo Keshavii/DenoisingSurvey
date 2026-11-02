@@ -81,4 +81,11 @@ for sd in (1, 2):
                    "gini@20": .5, "coverage@20": .3}}, open(f"{r7}/ml1m/{m}_{sd}.json", "w"))
 x = e78.collect(r7).query("method == 'X'").iloc[0]
 assert abs(x.ndcg20_rel - 20) < 1e-6 and abs(x.ndcg20_cold_rel - 50) < 1e-6 and abs(x.recall20_tail_rel + 50) < 1e-6 and x.n_seeds == 2
+# family baseline: T-CE is compared with Plain-BCE, not Plain-BPR
+r8 = os.path.join(tmp, "r8"); os.makedirs(r8 + "/ml1m")
+for m, nd in (("Plain-BPR", .10), ("Plain-BCE", .08), ("T-CE", .096)):
+    json.dump({"dataset": "ml1m", "method": m, "backbone": "LightGCN", "cond": "N2_20", "seed": 1, "ndcg@20": nd,
+               "recall@20": nd, "groups": {"gini@20": .5}}, open(f"{r8}/ml1m/{m}.json", "w"))
+x = e78.collect(r8).query("method == 'T-CE'").iloc[0]
+assert abs(x.ndcg20_rel + 4) < 1e-6 and abs(x.ndcg20_fam - 20) < 1e-6, (x.ndcg20_rel, x.ndcg20_fam)
 print("ALL E2 TESTS PASSED")

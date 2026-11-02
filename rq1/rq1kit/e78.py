@@ -29,6 +29,10 @@ COLS = {
     "gini": ("gini20", lambda r: r["groups"].get("gini@20")),
 }
 BASELINE = "Plain-BPR"
+# loss family of each method's training objective; "fam" columns compare with that family's plain baseline
+FAMILY = {"T-CE": "Plain-BCE", "R-CE": "Plain-BCE", "DCF": "Plain-BCE", "DeCA": "Plain-BCE", "DrRL": "Plain-SL",
+          "PLD": "Plain-BPR", "SGL": "Plain-BPR", "BOD": "Plain-BPR", "RGCF": "Plain-BPR", "DiffRec": "Plain-BPR",
+          "DDRM": "Plain-BPR", "LLaRD": "Plain-BPR"}
 
 
 def collect(results):
@@ -60,6 +64,15 @@ def collect(results):
             b = base[name].get(k) if k in base.index else None
             rel.append(None if b in (None,) or pd.isna(b) or b == 0 or pd.isna(r[name]) else 100 * (r[name] / b - 1))
         df[name + "_rel"] = rel
+    fam = df.set_index(["dataset", "backbone", "cond", "method"])
+    for name in [n for n, _ in COLS.values()]:
+        relf = []
+        for _, r in df.iterrows():
+            b = FAMILY.get(r.method)
+            k = (r.dataset, r.backbone, r.cond, b)
+            v = fam[name].get(k) if b and k in fam.index else None
+            relf.append(None if v is None or pd.isna(v) or v == 0 or pd.isna(r[name]) else 100 * (r[name] / v - 1))
+        df[name + "_fam"] = relf
     return df.sort_values(["dataset", "backbone", "cond", "method"]).reset_index(drop=True)
 
 
@@ -74,8 +87,9 @@ def main():
     sel = df[(df.backbone == "LightGCN") & (df.cond == "N2_20")]
     for ds, g in sel.groupby("dataset"):
         print(f"\n{ds}  LightGCN, 20% injected noise: % change vs {BASELINE}")
-        print(g[["method", "ndcg20_rel", "ndcg20_cold_rel", "ndcg20_established_rel", "recall20_tail_rel", "gini20"]]
-              .round(1).to_string(index=False))
+        print(g[["method", "ndcg20_rel", "ndcg20_fam", "ndcg20_cold_fam", "recall20_tail", "recall20_tail_fam", "gini20"]]
+              .round(4).to_string(index=False))
+    print("\n_rel = % vs Plain-BPR; _fam = % vs the plain baseline of the method's own loss (BCE / BPR / SL)")
 
 
 if __name__ == "__main__":
