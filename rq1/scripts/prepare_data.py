@@ -4,6 +4,7 @@
   python scripts/prepare_data.py --dataset yelp     --src ~/repos/DenoisingRec/data/yelp     --out data/yelp
   python scripts/prepare_data.py --dataset amazon_book --src ~/repos/DenoisingRec/data/amazon_book --out data/amazon_book
   python scripts/prepare_data.py --dataset ml1m     --src ~/repos/RGCF/dataset/ml-1m/ml-1m.inter --out data/ml1m
+  python scripts/prepare_data.py --dataset beauty   --src ~/repos/BOD/dataset/Beauty/ratings.txt --out data/beauty
   python scripts/prepare_data.py --dataset gowalla  --src ~/repos/PLD/data/Gowalla/data.json   --out data/gowalla
 
 Sources and rules
@@ -85,6 +86,21 @@ def gowalla(src, seed=2026):
     return tr, va, va, te, meta
 
 
+def beauty(src, seed=2026):
+    """Amazon-Beauty as shipped in the BOD repo (dataset/Beauty/ratings.txt: all interactions, already implicit and
+    filtered, no timestamps, no natural noise label). Per-user random 80/10/10 with seed 2026, like Gowalla.
+    The BOD repo's own train/test split is NOT used, so Beauty sits under the same protocol as the other datasets."""
+    df = pd.read_csv(src, sep=" ", skiprows=1, header=None, names=["user", "item", "r"])[["user", "item"]].drop_duplicates()
+    df, nu, ni, _ = reindex(df)
+    rng = np.random.default_rng(seed)
+    df = df.assign(noisy=0, ts=rng.permutation(len(df)))
+    tr, va, te = chrono_split(df, seed=seed)
+    tr = tr.assign(ts=-1); va = va.assign(ts=-1); te = te.assign(ts=-1)
+    meta = dict(n_users=nu, n_items=ni, source="BOD repo dataset/Beauty/ratings.txt (Amazon-Beauty)",
+                proxy_rule="none (no natural noise label)", split_rule="per-user random 80/10/10, seed 2026")
+    return tr, va, va, te, meta
+
+
 def sanity_yelp2018(src):
     """LightGCN's own Yelp2018 split (shipped in SGL-Torch/dataset/yelp2018). Sanity check ONLY: it has no validation
     set, so validation = test, exactly as the LightGCN paper selects. Never report these numbers in the paper."""
@@ -99,7 +115,7 @@ def sanity_yelp2018(src):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dataset", required=True, choices=["adressa", "yelp", "amazon_book", "ml1m", "gowalla", "sanity_yelp2018"])
+    ap.add_argument("--dataset", required=True, choices=["adressa", "yelp", "amazon_book", "ml1m", "gowalla", "beauty", "sanity_yelp2018"])
     ap.add_argument("--src", required=True)
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
@@ -109,6 +125,8 @@ def main():
         parts = ml1m(os.path.expanduser(a.src))
     elif a.dataset == "gowalla":
         parts = gowalla(os.path.expanduser(a.src))
+    elif a.dataset == "beauty":
+        parts = beauty(os.path.expanduser(a.src))
     else:
         parts = sanity_yelp2018(os.path.expanduser(a.src))
     tr, vc, vn, te, meta = parts
