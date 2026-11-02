@@ -1,0 +1,64 @@
+{
+  "name": "rgcf",
+  "display": "RGCF",
+  "batch": 2,
+  "module": "rq1kit.rgcf",
+  "base_args": "",
+  "loss": "bpr",
+  "backbones": [
+    "lightgcn"
+  ],
+  "datasets": [
+    "adressa",
+    "ml1m",
+    "yelp",
+    "gowalla",
+    "amazon_book"
+  ],
+  "tune_dir": "runs/tune_partc",
+  "source": "Tian et al., Learning to Denoise Unreliable Interactions for Graph Collaborative Filtering, SIGIR 2022; github.com/ChangxinTian/RGCF @ a7dec98 (rgcf.py, config/model-rgcf.yaml)",
+  "grid_source": "Paper Sec. 4.1.4: learning rate in [1e-5, 1e-3], pruning threshold beta in {0.02, 0.04, ..., 0.1}, MIM temperature tau in {0.05, 0.1, 0.2}, diversity weight lambda1 in {1e-5, 1e-6, 1e-7, 1e-8}, layers in {2, 3}. Repository defaults (beta 0.02, lambda1 1e-6, tau 0.2, aug_ratio 0.1) are one grid point. 8-trial budget: lr_mult {0.1, 1} (the kit passes the plain model's tuned learning rate; the paper's range tops out at 1e-3) x beta {0.02, 0.06} x lambda1 {1e-6, 1e-5}; tau 0.2, aug_ratio 0.1, 3 layers fixed; our choice.",
+  "grid": [
+    {
+      "lr_mult": 0.1,
+      "prune_threshold": 0.02,
+      "MIM_weight": 1e-06
+    },
+    {
+      "lr_mult": 0.1,
+      "prune_threshold": 0.02,
+      "MIM_weight": 1e-05
+    },
+    {
+      "lr_mult": 0.1,
+      "prune_threshold": 0.06,
+      "MIM_weight": 1e-06
+    },
+    {
+      "lr_mult": 0.1,
+      "prune_threshold": 0.06,
+      "MIM_weight": 1e-05
+    },
+    {
+      "lr_mult": 1,
+      "prune_threshold": 0.02,
+      "MIM_weight": 1e-06
+    },
+    {
+      "lr_mult": 1,
+      "prune_threshold": 0.02,
+      "MIM_weight": 1e-05
+    },
+    {
+      "lr_mult": 1,
+      "prune_threshold": 0.06,
+      "MIM_weight": 1e-06
+    },
+    {
+      "lr_mult": 1,
+      "prune_threshold": 0.06,
+      "MIM_weight": 1e-05
+    }
+  ],
+  "memory": "Authors' architecture (user and item representations are sparse-matrix products with n_items x dim and n_users x dim matrices) plus a denoised graph recomputed in every batch over all training edges (about 2 x edges x 64 floats per gather) and a candidate pool of about edges x 1 pairs for the diversity graph (about 3 GB extra on Amazon-Book); expected 3 to 6 times the time of Plain-BPR at the authors' batch 4096; peak GPU memory to be measured on the canary"
+}
