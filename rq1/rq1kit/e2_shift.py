@@ -20,7 +20,24 @@ def load(results, backbone):
         if r.get("backbone") != backbone or "ndcg@20" not in r:
             continue
         acc[(r["dataset"], r["cond"], r["method"])].append(r["ndcg@20"])
-    return {k: sum(v) / len(v) for k, v in acc.items()}
+    return {k: sum(v) / len(v) for k, v in acc.items()}, dict(acc)
+
+
+def bootstrap_tau(seeds, ds, a="N0", b="N2_20", n=1000, rng_seed=0):
+    """Resample the seeds of every (method, condition) cell and recompute tau. Returns (median, 2.5%, 97.5%)."""
+    import numpy as np
+    rng = np.random.default_rng(rng_seed)
+    ms = sorted({k[2] for k in seeds if k[0] == ds and k[1] == a} & {k[2] for k in seeds if k[0] == ds and k[1] == b})
+    if len(ms) < 3:
+        return None
+    taus = []
+    for _ in range(n):
+        va = [float(np.mean(rng.choice(seeds[(ds, a, m)], len(seeds[(ds, a, m)])))) for m in ms]
+        vb = [float(np.mean(rng.choice(seeds[(ds, b, m)], len(seeds[(ds, b, m)])))) for m in ms]
+        t = kendall(va, vb)
+        if t is not None:
+            taus.append(t)
+    return [float(x) for x in np.percentile(taus, [50, 2.5, 97.5])]
 
 
 def shift(table, a="N0", b="N2_20"):
@@ -44,11 +61,14 @@ def main():
     ap.add_argument("--backbone", default="LightGCN")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
-    res = shift(load(a.results, a.backbone))
+    table, seeds = load(a.results, a.backbone)
+    res = shift(table)
+    for ds in res:
+        res[ds]["tau_boot_median_lo_hi"] = bootstrap_tau(seeds, ds)
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     json.dump(res, open(a.out, "w"), indent=2)
     for ds, r in res.items():
-        print(f"{ds}: {r['n_methods']} methods, tau={r['tau']:.2f}, best N0={r['best_a']}, best N2_20={r['best_b']}")
+        print(f"{ds}: {r['n_methods']} methods, tau={r['tau']:.2f} (seed bootstrap median/2.5%/97.5%: {', '.join(f'{x:.2f}' for x in r['tau_boot_median_lo_hi'])}), best N0={r['best_a']}, best N2_20={r['best_b']}")
         print("   N0   :", " > ".join(r["rank_a"]))
         print("   N2_20:", " > ".join(r["rank_b"]))
 

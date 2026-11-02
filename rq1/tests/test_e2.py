@@ -64,6 +64,9 @@ for m, (x, y) in {"A": (.10, .07), "B": (.09, .08), "C": (.08, .05), "D": (.07, 
         for sd in (1, 2):
             json.dump(dict(dataset="ml1m", method=m, backbone="LightGCN", cond=c, seed=sd, **{"ndcg@20": val}),
                       open(f"{rd}/ml1m/{m}_{c}_{sd}.json", "w"))
-r = e2_shift.shift(e2_shift.load(rd, "LightGCN"))["ml1m"]
+tbl, sds = e2_shift.load(rd, "LightGCN")
+r = e2_shift.shift(tbl)["ml1m"]
+bt = e2_shift.bootstrap_tau(sds, "ml1m", n=200)
+assert abs(bt[0] - 1 / 3) < 1e-9 and bt[1] == bt[2], bt  # identical seeds: no spread
 assert r["best_a"] == "A" and r["best_b"] == "B" and abs(r["tau"] - 1 / 3) < 1e-9, r
 print("ALL E2 TESTS PASSED")
