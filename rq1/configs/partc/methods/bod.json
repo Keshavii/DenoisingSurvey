@@ -1,0 +1,64 @@
+{
+  "name": "bod",
+  "display": "BOD",
+  "batch": 2,
+  "module": "rq1kit.bod",
+  "base_args": "",
+  "loss": "bpr",
+  "backbones": [
+    "lightgcn"
+  ],
+  "datasets": [
+    "adressa",
+    "ml1m",
+    "yelp",
+    "gowalla",
+    "amazon_book"
+  ],
+  "tune_dir": "runs/tune_partc",
+  "source": "Wang et al., Efficient Bi-level Optimization for Recommendation Denoising, KDD 2023; github.com/CoderWZW/BOD @ bab641b (model/graph/BOD.py, util/loss_torch.py, conf/BOD.conf)",
+  "grid_source": "The paper gives no tuning ranges; it uses the recommended settings of each backbone and stresses the balance of alignment and uniformity weights. Repository defaults (generator lr 1e-3, uniformity weight 0.5) are one grid point. 8-trial budget: lr_mult {0.1, 1} (the kit passes the plain model's tuned learning rate; authors 1e-3) x generator lr {1e-3, 1e-2} x uniformity weight {0.5, 1.0}; alignment and BPR weights 1, 2 layers fixed; our choice.",
+  "grid": [
+    {
+      "lr_mult": 0.1,
+      "generator_lr": 0.001,
+      "weight_uniformity": 0.5
+    },
+    {
+      "lr_mult": 0.1,
+      "generator_lr": 0.001,
+      "weight_uniformity": 1.0
+    },
+    {
+      "lr_mult": 0.1,
+      "generator_lr": 0.01,
+      "weight_uniformity": 0.5
+    },
+    {
+      "lr_mult": 0.1,
+      "generator_lr": 0.01,
+      "weight_uniformity": 1.0
+    },
+    {
+      "lr_mult": 1,
+      "generator_lr": 0.001,
+      "weight_uniformity": 0.5
+    },
+    {
+      "lr_mult": 1,
+      "generator_lr": 0.001,
+      "weight_uniformity": 1.0
+    },
+    {
+      "lr_mult": 1,
+      "generator_lr": 0.01,
+      "weight_uniformity": 0.5
+    },
+    {
+      "lr_mult": 1,
+      "generator_lr": 0.01,
+      "weight_uniformity": 1.0
+    }
+  ],
+  "memory": "Inner pass: one LightGCN propagation per batch, as the plain model. Outer step, once per epoch: second-order gradients through the propagation of a full graph (2 x the activations of one batch); expected 1.1 to 1.5 times the time of Plain-BPR; peak GPU memory to be measured on the canary"
+}

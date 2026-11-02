@@ -1,0 +1,64 @@
+{
+  "name": "diffrec",
+  "display": "DiffRec",
+  "batch": 2,
+  "module": "rq1kit.diffrec",
+  "base_args": "",
+  "loss": "bpr",
+  "backbones": [
+    "lightgcn"
+  ],
+  "datasets": [
+    "adressa",
+    "ml1m",
+    "yelp",
+    "gowalla",
+    "amazon_book"
+  ],
+  "tune_dir": "runs/tune_partc",
+  "source": "Wang et al., Diffusion Recommender Model, SIGIR 2023; github.com/YiyanXu/DiffRec @ e42532f (DiffRec/main.py, models/DNN.py, models/gaussian_diffusion.py, inference.py)",
+  "grid_source": "The authors' released settings differ per dataset: lr 1e-5 to 1e-3, noise scale 1e-4 to 0.5, steps 5, 10 or 40, dims [1000] (ML-1M [200,600]). 8-trial budget: lr {1e-4, 1e-3} x noise scale {1e-3, 1e-2} x steps {5, 40}; dims [1000], embedding 10, noise range 1e-3 to 1e-2, reweighting on, x0 prediction fixed; our choice. The pipeline's --lr and --reg are ignored (the learning rate is diff_lr).",
+  "grid": [
+    {
+      "diff_lr": 0.0001,
+      "noise_scale": 0.001,
+      "steps": 5
+    },
+    {
+      "diff_lr": 0.0001,
+      "noise_scale": 0.001,
+      "steps": 40
+    },
+    {
+      "diff_lr": 0.0001,
+      "noise_scale": 0.01,
+      "steps": 5
+    },
+    {
+      "diff_lr": 0.0001,
+      "noise_scale": 0.01,
+      "steps": 40
+    },
+    {
+      "diff_lr": 0.001,
+      "noise_scale": 0.001,
+      "steps": 5
+    },
+    {
+      "diff_lr": 0.001,
+      "noise_scale": 0.001,
+      "steps": 40
+    },
+    {
+      "diff_lr": 0.001,
+      "noise_scale": 0.01,
+      "steps": 5
+    },
+    {
+      "diff_lr": 0.001,
+      "noise_scale": 0.01,
+      "steps": 40
+    }
+  ],
+  "memory": "Rows are built per batch from the sparse matrix (no dense users x items matrix); the first layer is items x 1000 (91.6k x 1000 on Amazon-Book, 0.4 GB with Adam states 1.1 GB); evaluation runs the reverse chain for every user (steps forward passes). Part B measured DiffRec at 47 GB host RAM on Amazon-Book with the authors' dense matrix; this adapter avoids it. Time to be measured on the canary"
+}

@@ -1,0 +1,65 @@
+{
+  "name": "deca",
+  "display": "DeCA",
+  "batch": 2,
+  "module": "rq1kit.deca",
+  "base_args": "",
+  "loss": "bce",
+  "backbones": [
+    "lightgcn",
+    "mf"
+  ],
+  "datasets": [
+    "adressa",
+    "ml1m",
+    "yelp",
+    "gowalla",
+    "amazon_book"
+  ],
+  "tune_dir": "runs/tune_partc",
+  "source": "Wang et al., Learning Robust Recommenders through Cross-Model Agreement, WWW 2022; github.com/wangyu-ustc/DeCA @ 8b04aa8 (train.py, model.py, configs.py)",
+  "grid_source": "Authors' configs.py tunes C1, C2 in {10, 100, 1000} and alpha in {0, 0.5, 1} per dataset and backbone (e.g. LightGCN Adressa C1 10, C2 1000, alpha 0). 8-trial budget: the corners C1 {10, 1000} x C2 {10, 1000} x alpha {0, 1}; the authors' per-dataset choices lie on or between these; our choice.",
+  "grid": [
+    {
+      "C_1": 10,
+      "C_2": 10,
+      "alpha": 0
+    },
+    {
+      "C_1": 10,
+      "C_2": 10,
+      "alpha": 1
+    },
+    {
+      "C_1": 10,
+      "C_2": 1000,
+      "alpha": 0
+    },
+    {
+      "C_1": 10,
+      "C_2": 1000,
+      "alpha": 1
+    },
+    {
+      "C_1": 1000,
+      "C_2": 10,
+      "alpha": 0
+    },
+    {
+      "C_1": 1000,
+      "C_2": 10,
+      "alpha": 1
+    },
+    {
+      "C_1": 1000,
+      "C_2": 1000,
+      "alpha": 0
+    },
+    {
+      "C_1": 1000,
+      "C_2": 1000,
+      "alpha": 1
+    }
+  ],
+  "memory": "Three extra MF models of 32 dimensions (about 10 MB on Amazon-Book) and their Adam states; one propagation per batch as Plain-BCE; expected 1.3 to 1.8 times the time of Plain-BCE"
+}
