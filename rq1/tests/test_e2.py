@@ -54,4 +54,16 @@ k = res["kinds"]["N1"]
 assert set(k["ndcg20"]) == {10, 20, 30, 40}
 assert k["ranking"][20][0] == "a" and abs(k["kendall_tau_vs_rho_val"][20] - 1.0) < 1e-9
 assert k["ndcg20"][10]["a"]["ndcg20"] > k["ndcg20"][40]["a"]["ndcg20"], "more test noise lowers NDCG"
+
+# training-noise shift variant: A,B,C,D -> B,A,D,C has 2 discordant pairs of 6, tau = 1/3
+import json
+from rq1kit import e2_shift
+rd = os.path.join(tmp, "res"); os.makedirs(rd + "/ml1m")
+for m, (x, y) in {"A": (.10, .07), "B": (.09, .08), "C": (.08, .05), "D": (.07, .06)}.items():
+    for c, val in (("N0", x), ("N2_20", y)):
+        for sd in (1, 2):
+            json.dump(dict(dataset="ml1m", method=m, backbone="LightGCN", cond=c, seed=sd, **{"ndcg@20": val}),
+                      open(f"{rd}/ml1m/{m}_{c}_{sd}.json", "w"))
+r = e2_shift.shift(e2_shift.load(rd, "LightGCN"))["ml1m"]
+assert r["best_a"] == "A" and r["best_b"] == "B" and abs(r["tau"] - 1 / 3) < 1e-9, r
 print("ALL E2 TESTS PASSED")
