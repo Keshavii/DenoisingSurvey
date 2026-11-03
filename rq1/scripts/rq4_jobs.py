@@ -1,4 +1,4 @@
-"""RQ4 job lists for rq1kit.queue (spec: Plan of Action doc, "RQ4 specification").
+"""RQ4 job lists for rq1kit.queue (spec: Plan of Action doc, "RQ4 specification", final design of 4 Nov 2026).
 
   python scripts/rq4_jobs.py tune  > configs/rq4/jobs_tune.csv     # 3 trials per cell, N0, seed 0, 100 epochs
   python scripts/rq4_jobs.py pick                                   # best trial per cell -> configs/rq4/best.json
@@ -13,21 +13,25 @@ import os
 import sys
 
 KIT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SIGNALS_ALL = ["L1", "L2", "L3", "L4", "P1", "P2", "R1", "R2", "R3", "R4", "R5"]
+# Detection methods: signal only and signal + foundation, in matched pairs (same measurement, anchor added)
+DET_ML = ["L1", "M1", "M2", "M1c", "L2", "L5", "L3", "L4", "P1", "P2", "R1", "R2", "R3", "R4", "R5"]
+DET_YELP = [d for d in DET_ML if d not in ("R4", "R5")]          # no item text
+PAIRS = ["L1", "M1", "L3", "L4", "R1", "R2"]                      # the three exact pairs (Blocks 2 and 3)
 GRID = {"drop": ("rate", [0.05, 0.1, 0.2]), "reweight": ("beta", [0.25, 0.5, 1.0]),
         "relabel": ("rate", [0.05, 0.1, 0.2]), "resample": ("temp", [0.05, 0.1, 0.2]),
         # variants from other families (sheet page 1): graph pruning and graph edge weights (RGCF, DA-MRS, DeMBR,
         # LLaRD), user-level reweighting (UDT), soft labels (CSRec, GUIDER)
         "graph_drop": ("rate", [0.05, 0.1, 0.2]), "graph_reweight": ("beta", [0.25, 0.5, 1.0]),
-        "user_reweight": ("beta", [0.25, 0.5, 1.0]), "soft_relabel": ("lam", [0.3, 0.5, 0.8])}
+        "user_reweight": ("beta", [0.25, 0.5, 1.0]), "soft_relabel": ("lam", [0.3, 0.5, 0.8]),
+        # reshaping (SGL-ED contrastive views), random or signal-guided
+        "reshape": ("ssl_reg", [0.05, 0.1, 0.5])}
 CORE_TREATS = ["drop", "reweight", "relabel", "resample"]
 VARIANT_TREATS = ["graph_drop", "graph_reweight", "user_reweight", "soft_relabel"]
-VARIANT_SIGNALS = ["L1", "L3", "P2", "R2", "R3", "R5"]  # one per branch of the detection tree
 DATASETS = {
-    # signals, conditions (name -> training file pattern), seeds, queue slots per job
-    "ml1m": dict(signals=SIGNALS_ALL, seeds=[1, 2, 3], slots=1,
+    # detection methods, conditions (name -> training file pattern), seeds, queue slots per job
+    "ml1m": dict(det=DET_ML, seeds=[1, 2, 3], slots=1,
                  conds={"N0": "train.tsv", "N1_20": "train_N1_20_s{seed}.tsv", "N3_20": "train_N3_20_s{seed}.tsv"}),
-    "yelp": dict(signals=[s for s in SIGNALS_ALL if s not in ("R4", "R5")], seeds=[1, 2], slots=2,
+    "yelp": dict(det=DET_YELP, seeds=[1, 2], slots=2,
                  conds={"N0": "train.tsv", "N3_20": "train_N3_20_s{seed}.tsv"}),
 }
 TUNE_DIR, FINAL_DIR, RES_DIR = "runs/rq4_tune", "runs/rq4", "results/RQ4"
@@ -40,8 +44,11 @@ def plain(ds):
 
 
 def cells(ds):
-    sig = DATASETS[ds]["signals"]
-    return [(s, t) for s in sig for t in CORE_TREATS] + [(s, t) for s in sig if s in VARIANT_SIGNALS for t in VARIANT_TREATS]
+    """Block 1: every detection method x the 4 core treatments. Block 2: the exact pairs x the 4 variant
+    treatments. Block 3: the exact pairs x signal-guided reshape, plus reshape with no detection."""
+    det = DATASETS[ds]["det"]
+    return ([(d, t) for d in det for t in CORE_TREATS] + [(d, t) for d in PAIRS for t in VARIANT_TREATS] +
+            [(d, "reshape") for d in PAIRS] + [("none", "reshape")])
 
 
 def tune_jobs():

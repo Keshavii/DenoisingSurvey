@@ -139,15 +139,22 @@ def test_end_to_end(root):
     n_train = len(pd.read_csv(f"{root}/data/tiny/{tf}", sep="\t").drop_duplicates(["user", "item"]))
     assert len(z["user"]) == int(round(0.2 * n_train)) and np.isfinite(z["p_noise"]).all()
     assert np.all(np.isclose(z["p_noise"], 0.2, atol=1e-6) | np.isclose(z["p_noise"], 0.9, atol=1e-6))
+    run(["rq1kit.rq4", "--signal", "none", "--treat", "reshape", "--epochs", "3", "--run_dir", "runs/e2e/none_reshape", *common], root)
+    assert json.load(open(f"{root}/runs/e2e/none_reshape/run.json"))["epochs_run"] == 3
     for signal in rq4.SIGNALS[1:]:
         for treat in rq4.TREATS[1:]:
             rd = f"runs/e2e/{signal}_{treat}"
-            run(["rq1kit.rq4", "--signal", signal, "--treat", treat, "--epochs", "7", "--begin_resample", "1",
+            run(["rq1kit.rq4", "--signal", signal, "--treat", treat, "--epochs", "7", "--begin_resample", "1", "--auc_every", "1",
                  "--num_gradual", "10", "--run_dir", rd, *common, *(["--no_export"] if treat != "drop" else [])], root)
             info = json.load(open(f"{root}/{rd}/run.json"))
             assert info["epochs_run"] == 7 and info["n_noisy_train"] > 0
             aucs = [h["detection_auc"] for h in hist(f"{root}/{rd}/history.jsonl") if h.get("detection_auc") is not None]
             assert aucs and all(0 <= x <= 1 for x in aucs), (signal, treat, aucs)
+            h = hist(f"{root}/{rd}/history.jsonl")
+            assert "hard_auc" in h[0] and any(x.get("stability") is not None for x in h[1:]), (signal, treat)
+            sc = np.load(f"{root}/{rd}/signal_scores.npy")
+            late = signal in ("L4", "L5", "M2", "P1") and info["best_epoch"] <= rq4.HISTORY  # signal not formed yet
+            assert sc.shape == (n_train,) and (late or np.isfinite(sc).any()), (signal, treat, info["best_epoch"])
         out = f"results/{signal}.json"
         run(["rq1kit.evaluate", "--data", "data/tiny", "--train_file", tf, "--topk", f"runs/e2e/{signal}_drop/topk_test.npy",
              "--out", out, "--tag", f"signal={signal}"], root)
@@ -158,15 +165,15 @@ def test_end_to_end(root):
     run(["rq1kit.rq4", "--signal", "P2", "--treat", "resample", "--epochs", "4", "--begin_resample", "1", "--run_dir", "runs/r2",
          "--no_export", *common], root)
     assert hist(f"{root}/runs/r1/history.jsonl")[-1]["valid_clean_ndcg@20"] == hist(f"{root}/runs/r2/history.jsonl")[-1]["valid_clean_ndcg@20"]
-    print(f"ok  all {len(rq4.SIGNALS) - 1} signals x {len(rq4.TREATS) - 1} treatments train, log detection AUC, export "
-          "with no leak; reruns identical; reference model and LLM scores built")
+    print(f"ok  all {len(rq4.SIGNALS) - 1} signals x {len(rq4.TREATS) - 1} treatments (and random reshape) train, log "
+          "detection AUC, hard AUC and stability, save scores, export with no leak; reruns identical")
 
 
 def test_jobs(root):
     sys.path.insert(0, os.path.join(KIT, "scripts"))
     import rq4_jobs as J
     t = J.tune_jobs()
-    assert len(t) == 3 * (4 * 11 + 4 * 6 + 4 * 9 + 4 * 5)
+    assert len(t) == 3 * (91 + 83)
     for k, (key, _) in J.GRID.items():
         assert key not in ("lr", "reg", "seed", "data")
     assert all("--epochs 100 --seed 0 --no_export" in j["cmd"] for j in t)
@@ -174,7 +181,7 @@ def test_jobs(root):
         assert j["cmd"].count("--lr ") == 1 and j["cmd"].count("--reg ") == 1
     fake = {f"{ds}|{s}|{x}": {J.GRID[x][0]: J.GRID[x][1][1]} for ds in J.DATASETS for s, x in J.cells(ds)}
     f = J.final_jobs(fake)
-    assert len(f) == (68 + 1) * 3 * 3 + 3 + (56 + 1) * 2 * 2 + 2
+    assert len(f) == (91 + 1) * 3 * 3 + 3 + (83 + 1) * 2 * 2 + 2
     assert any("train_N3_20_s2.tsv" in j["cmd"] and "--signal R5" in j["cmd"] for j in f)
     assert not any("--signal R5" in j["cmd"] and "data/yelp" in j["cmd"] for j in f)
     # picks from tuning folders

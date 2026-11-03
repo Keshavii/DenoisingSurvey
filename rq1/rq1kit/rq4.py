@@ -15,7 +15,11 @@ Signals (--signal)
   R3  structure, relational structure              1 - RGCF edge reliability from neighbourhood features   (RGCF, CLID)
   R4  LLM evaluation, metric space                 1 - cos in the LLM item-profile embedding space         (LLMHD)
   R5  LLM evaluation, knowledge-based              Llama P(does not fit), top 20% by loss only             (LLaRD, LLMHD)
-  none                                             plain LightGCN-BCE (no treatment)
+  M1  loss, model-based foundation (teacher)       loss under a frozen LightGCN-BCE trained on the same file  (anchored L1)
+  M1c loss, model-based, oracle-quality anchor     loss under a frozen LightGCN-BCE trained on the clean base (anchor quality)
+  M2  loss, model-based (historical checkpoint)    loss under the model's own snapshot after epoch 5          (anchored L1)
+  L5  loss, user level, distributional             loss minus the mean loss of the user's memorised positives (anchored L2)
+  none                                             no signal: plain LightGCN-BCE, or random-view reshape
 
 Treatments (--treat) act on positives only; q = the positive's suspicion rank in its batch, 0 (least) to 1 (most).
   drop      T-CE: rank [pos; neg] by suspicion (negatives below every positive), keep the lowest (1 - rate) share,
@@ -31,10 +35,17 @@ Treatments (--treat) act on positives only; q = the positive's suspicion rank in
   user_reweight   UDT style: every positive of a user gets (1 - q_user) ** --beta, q_user = rank of the user's mean
                   suspicion among users (whole epoch)
   soft_relabel    CSRec / GUIDER style: positive target 1 - --lam x q instead of a hard flip
+  reshape         SGL-ED style contrastive reshaping (rq1kit.sgl): two edge-dropout views per epoch, InfoNCE on the
+                  batch's users and items (negatives: all users / items of the other view), weight --ssl_reg; loss =
+                  mean BCE + ssl_reg x InfoNCE / batch (SGL's sum ratio). With --signal none the views drop edges at
+                  random (SGL); with a signal each edge is dropped with probability min(1, 2 ratio q) (mean = ratio)
 Interactions without a score (R5 outside the LLM subset, R1/R2/R4 for single-item users, signals before their
 history exists) are never treated. L1 with drop reproduces rq1kit.adt T-CE exactly (tests/test_rq4.py).
 
-Every 5 epochs the run logs each signal's ROC-AUC against the known noisy positives (noisy > 0 in train.tsv) for RQ3.
+Every 5 epochs the run logs, for its signal: ROC-AUC against the known noisy positives (noisy > 0 in train.tsv);
+hard_auc, the same among the 20% hardest positives (highest loss under the plain reference model of this file); and
+stability, the Spearman correlation with the previous logged scores. The scores at the selected epoch are saved as
+signal_scores.npy (float16, edges in (user, item) order), for seed stability and RQ3.
 
   python -m rq1kit.rq4 --signal L1 --treat drop --rate 0.1 --data data/ml1m --train_file train_N3_20_s1.tsv \
       --lr 1e-3 --reg 1e-5 --seed 1 --run_dir runs/rq4/ml1m/L1_drop_N3_20_s1
@@ -60,9 +71,11 @@ from .backbone import Backbone, norm_adj, sample_negatives, valid_ndcg
 from .data import load_split, to_csr
 from .export import export_topk
 from .pld import sample_candidates
+from .sgl import propagate_with
 
-SIGNALS = ["none", "L1", "L2", "L3", "L4", "P1", "P2", "R1", "R2", "R3", "R4", "R5"]
-TREATS = ["none", "drop", "reweight", "relabel", "resample", "graph_drop", "graph_reweight", "user_reweight", "soft_relabel"]
+SIGNALS = ["none", "L1", "L2", "L3", "L4", "P1", "P2", "R1", "R2", "R3", "R4", "R5", "M1", "M1c", "M2", "L5"]
+TREATS = ["none", "drop", "reweight", "relabel", "resample", "graph_drop", "graph_reweight", "user_reweight", "soft_relabel",
+          "reshape"]
 EPOCH_TREATS = ("graph_drop", "graph_reweight", "user_reweight")  # act on whole-epoch scores
 HISTORY = 5          # epochs of history for P1 and for the memorised set of L4 (SGDL's memorisation phase)
 
@@ -93,6 +106,16 @@ def row_rank(s):
     filled = torch.where(nan, torch.full_like(s, float("inf")), s)
     r = torch.argsort(torch.argsort(filled, dim=1, stable=True), dim=1).float() / (k - 1)
     return torch.where(nan, torch.full_like(r, 0.5), r)
+
+
+def spearman(a, b):
+    """Spearman rank correlation over entries finite in both; None if fewer than 3."""
+    ok = np.isfinite(a) & np.isfinite(b)
+    if ok.sum() < 3:
+        return None
+    ra, rb = np.argsort(np.argsort(a[ok], kind="mergesort")), np.argsort(np.argsort(b[ok], kind="mergesort"))
+    c = np.corrcoef(ra, rb)[0, 1]
+    return None if not np.isfinite(c) else float(c)
 
 
 def roc_auc(score, label):
@@ -131,7 +154,7 @@ class SignalState:
     """Holds what a signal needs between steps; `epoch_cache` refreshes it once per epoch from the current model,
     `batch` returns the suspicion of the given positive edges."""
 
-    def __init__(self, name, eu, ei, nu, ni, dev, ref_items=None, llm_items=None, llm_scores=None, aux=None):
+    def __init__(self, name, eu, ei, nu, ni, dev, ref_items=None, llm_items=None, llm_scores=None, aux=None, teacher=None):
         self.name, self.eu, self.ei, self.nu, self.ni, self.dev = name, eu, ei, nu, ni, dev
         self.cache = None
         self.prob_hist = []          # P1 and L4: sigmoid(score) of every edge for the last HISTORY epochs
@@ -144,14 +167,38 @@ class SignalState:
             self.static = centroid_dissimilarity(llm_items, eu, ei, nu)
         elif name == "R5":
             self.static = llm_scores
+        elif name in ("M1", "M1c"):
+            self.static = teacher
 
     @torch.no_grad()
     def epoch_cache(self, model, epoch):
-        if self.name in ("none", "L1", "P2", "R2", "R4", "R5"):
+        if self.name in ("none", "L1", "P2", "R2", "R4", "R5", "M1", "M1c"):
             return
+        if self.name == "M2" and self.cache is not None and torch.isfinite(self.cache).any():
+            return  # the snapshot is frozen once taken
         U, I = model.propagate()
         x = (U[self.eu] * I[self.ei]).sum(1)
         p = torch.sigmoid(x)
+        if self.name == "M2":  # SGDL's memorisation point: the model after HISTORY epochs, frozen as the anchor
+            self.cache = F.softplus(-x) if epoch > HISTORY else torch.full_like(x, float("nan"))
+            return
+        if self.name == "L5":
+            self.prob_hist = (self.prob_hist + [p])[-HISTORY:]
+            if self.memorised is None and len(self.prob_hist) == HISTORY:
+                m = torch.stack(self.prob_hist).gt(0.5).all(0)
+                self.memorised = m if m.any() else p.ge(p.median())
+            if self.memorised is None:
+                self.cache = torch.full_like(x, float("nan"))
+                return
+            loss = F.softplus(-x)
+            m = self.memorised.float()
+            cnt = torch.zeros(self.nu, device=self.dev).index_add_(0, self.eu, m)
+            mem_mean = torch.zeros(self.nu, device=self.dev).index_add_(0, self.eu, loss * m) / cnt.clamp(min=1)
+            all_mean = torch.zeros(self.nu, device=self.dev).index_add_(0, self.eu, loss) / \
+                torch.bincount(self.eu, minlength=self.nu).float().clamp(min=1)
+            anchor = torch.where(cnt > 0, mem_mean, all_mean)  # users with nothing memorised: their own mean
+            self.cache = loss - anchor[self.eu]
+            return
         if self.name == "L2":
             loss = F.softplus(-x)
             mean_u = torch.zeros(self.nu, device=self.dev).index_add_(0, self.eu, loss) / \
@@ -261,7 +308,7 @@ def treated_loss(treat, pos, neg, susp, rate, beta, lam=0.5, w_epoch=None):
     w_epoch = the positives' whole-epoch weights (user_reweight)."""
     if treat == "user_reweight" and w_epoch is not None:
         return 2 * torch.cat([F.softplus(-pos) * w_epoch, F.softplus(neg)]).mean()
-    if treat in ("none", "resample", "graph_drop", "graph_reweight", "user_reweight") or susp is None:
+    if treat in ("none", "resample", "graph_drop", "graph_reweight", "user_reweight", "reshape") or susp is None:
         return -(F.logsigmoid(pos) + F.logsigmoid(-neg)).mean()
     q = batch_rank(susp)
     if treat == "drop":
@@ -311,7 +358,8 @@ def reference_model(a, dev):
         meta = json.load(open(os.path.join(a.data, "meta.json")))
         _, train, *_ = load_split(a.data, a.train_file)
         csr = to_csr(train, meta["n_users"], meta["n_items"])
-        m = Backbone(meta["n_users"], meta["n_items"], a.dim, "lightgcn", a.layers, norm_adj(csr, torch.device("cpu")))
+        with torch.random.fork_rng(devices=[]):  # building the module must not move the caller's random stream
+            m = Backbone(meta["n_users"], meta["n_items"], a.dim, "lightgcn", a.layers, norm_adj(csr, torch.device("cpu")))
         m.load_state_dict(torch.load(os.path.join(tmp, "best.pt"), map_location="cpu", weights_only=True))
         with torch.no_grad():
             U, I = m.propagate()
@@ -363,6 +411,10 @@ def main(argv=None):
     ap.add_argument("--beta", type=float, default=0.5, help="reweight: exponent of (1 - q)")
     ap.add_argument("--temp", type=float, default=0.1, help="resample: softmax temperature (PLD tau)")
     ap.add_argument("--lam", type=float, default=0.5, help="soft_relabel: target 1 - lam x q")
+    ap.add_argument("--ssl_reg", type=float, default=0.1, help="reshape: weight of the InfoNCE term (SGL default 0.1)")
+    ap.add_argument("--ssl_temp", type=float, default=0.2, help="reshape: InfoNCE temperature (SGL default 0.2)")
+    ap.add_argument("--ssl_ratio", type=float, default=0.1, help="reshape: mean edge dropout per view (SGL default 0.1)")
+    ap.add_argument("--hard_share", type=float, default=0.2, help="share of hardest positives for hard_auc")
     ap.add_argument("--k", type=int, default=5, help="resample: candidates per user (PLD default 5)")
     ap.add_argument("--begin_resample", type=int, default=5, help="resample: first 0-based epoch (PLD begin_adv 5)")
     ap.add_argument("--aux_dim", type=int, default=32, help="P2: dimension of the auxiliary MF (DeCA 32)")
@@ -389,7 +441,8 @@ def main(argv=None):
     if a.make_ref:
         print(reference_model(a, torch.device(a.device))[2])
         return
-    assert (a.signal == "none") == (a.treat == "none"), "--signal and --treat are both 'none' or both set"
+    assert a.treat in ("none", "reshape") or a.signal != "none", "this treatment needs a signal"
+    assert a.treat != "none" or a.signal == "none", "a signal needs a treatment"
 
     torch.manual_seed(a.seed)
     np.random.seed(a.seed)
@@ -427,13 +480,25 @@ def main(argv=None):
         llm_items = torch.tensor(llm_item_embeddings(a.data), device=dev)
     if a.signal == "R5":
         scores = torch.tensor(llm_scores(a.data, a.train_file, keys, ni), device=dev)
-    sig = SignalState(a.signal, eu, ei, nu, ni, dev, ref_items, llm_items, scores, aux)
+    teacher = hard = None
+    if a.signal in ("M1", "M1c"):
+        ta = argparse.Namespace(**{**vars(a), "train_file": "train_clean.tsv" if a.signal == "M1c" else a.train_file})
+        U_t, I_t, _ = reference_model(ta, dev)
+        U_t, I_t = torch.tensor(U_t, device=dev), torch.tensor(I_t, device=dev)
+        teacher = F.softplus(-(U_t[eu] * I_t[ei]).sum(1))
+    if a.signal != "none":  # hard positives: the hard_share with the highest loss under this file's reference model
+        U_r, I_r, _ = reference_model(a, dev)
+        ref_loss = np.logaddexp(0, -(U_r[keys // ni] * I_r[keys % ni]).sum(1))
+        hard = np.zeros(len(keys), bool)
+        hard[np.argsort(-ref_loss, kind="mergesort")[: int(round(a.hard_share * len(keys)))]] = True
+    sig = SignalState(a.signal, eu, ei, nu, ni, dev, ref_items, llm_items, scores, aux, teacher)
+    gen = torch.Generator(device=dev).manual_seed(a.seed)  # reshape views
 
     if dev.type == "cuda":
         torch.cuda.reset_peak_memory_stats(dev)
     t0 = time.time()
     best, best_epoch, bad, it = -1.0, 0, 0, 0
-    best_graph_w = None
+    best_graph_w = best_scores = prev_scores = None
     hf = open(os.path.join(a.run_dir, "history.jsonl"), "w")
     for epoch in range(1, a.epochs + 1):
         model.train()
@@ -446,6 +511,19 @@ def main(argv=None):
                 w_epoch = epoch_weights(a.treat, sc.float(), eu, nu, r_now, a.beta)
                 if a.treat in ("graph_drop", "graph_reweight"):
                     model.adj = weighted_adj(eu, ei, w_epoch, nu, ni)
+        views = None
+        if a.treat == "reshape":
+            sc = sig.all_scores(model) if a.signal != "none" else None
+            views = []
+            for _ in range(2):
+                if sc is None:   # SGL-ED: keep int(n (1 - ratio)) edges uniformly
+                    w = torch.zeros(len(keys), device=dev)
+                    w[torch.randperm(len(keys), device=dev, generator=gen)[: int(len(keys) * (1 - a.ssl_ratio))]] = 1.0
+                else:            # signal-guided: drop probability min(1, 2 ratio q), same mean as SGL's ratio
+                    q = batch_rank(sc.float())
+                    pdrop = torch.where(torch.isfinite(q), (2 * a.ssl_ratio * q).clamp(max=1), torch.full_like(q, a.ssl_ratio))
+                    w = (torch.rand(len(keys), device=dev, generator=gen) >= pdrop).float()
+                views.append(weighted_adj(eu, ei, w, nu, ni))
         perm = rng.permutation(len(users_all))
         neg_all = sample_negatives(users_all[perm], ni, keys, rng)
         resample = a.treat == "resample" and epoch - 1 >= a.begin_resample
@@ -477,6 +555,14 @@ def main(argv=None):
                                 w_epoch[edges] if a.treat == "user_reweight" and w_epoch is not None else None)
             reg = (model.user(u).pow(2).sum() + model.item(p).pow(2).sum() + model.item(n).pow(2).sum()) / (2 * len(idx))
             loss = loss + a.reg * reg
+            if views is not None:  # rq1kit.sgl's InfoNCE on the two views, scaled per batch like SGL's sums
+                (U1, I1), (U2, I2) = (propagate_with(model, g) for g in views)
+                U1, I1, U2, I2 = (F.normalize(x, dim=1) for x in (U1, I1, U2, I2))
+                u1, u2, i1, i2 = U1[u], U2[u], I1[p], I2[p]
+                ssl_u = (u1 @ U2.T) - (u1 * u2).sum(1, keepdim=True)
+                ssl_i = (i1 @ I2.T) - (i1 * i2).sum(1, keepdim=True)
+                infonce = torch.logsumexp(ssl_u / a.ssl_temp, 1).sum() + torch.logsumexp(ssl_i / a.ssl_temp, 1).sum()
+                loss = loss + a.ssl_reg * infonce / len(idx)
             opt.zero_grad()
             loss.backward()
             opt.step()
@@ -495,13 +581,20 @@ def main(argv=None):
         if a.signal != "none" and (epoch == 1 or epoch % a.auc_every == 0):
             sc = sig.all_scores(model)
             if sc is not None:
-                rec["detection_auc"] = roc_auc(sc.float().cpu().numpy(), noisy)
+                scn = sc.float().cpu().numpy()
+                rec["detection_auc"] = roc_auc(scn, noisy)
+                rec["hard_auc"] = roc_auc(scn[hard], noisy[hard])
+                rec["stability"] = spearman(scn, prev_scores) if prev_scores is not None else None
+                prev_scores = scn
         hf.write(json.dumps(rec) + "\n"); hf.flush()
         print(rec, flush=True)
         if v[a.select] > best:
             best, best_epoch, bad = v[a.select], epoch, 0
             torch.save(model.state_dict(), os.path.join(a.run_dir, "best.pt"))
             best_graph_w = w_epoch.clone() if a.treat in ("graph_drop", "graph_reweight") and w_epoch is not None else None
+            if a.signal != "none":
+                sc = sig.all_scores(model)
+                best_scores = None if sc is None else sc.float().cpu().numpy()
         else:
             bad += 1
             if bad >= a.patience:
@@ -511,12 +604,18 @@ def main(argv=None):
     if a.treat in ("graph_drop", "graph_reweight"):  # score with the graph the best epoch was evaluated on
         model.adj = weighted_adj(eu, ei, best_graph_w, nu, ni) if best_graph_w is not None else adj
     model.eval()
+    if best_scores is not None:
+        np.save(os.path.join(a.run_dir, "signal_scores.npy"), best_scores.astype(np.float16))
     t1 = time.time()
     if not a.no_export:
         with torch.no_grad():
             U, I = model.propagate()
         export_topk(lambda users: U[users] @ I.T, a.data, a.run_dir, a.train_file, device=dev)
-    info = {**vars(a), "model": "lightgcn", "loss": "bce", "n_noisy_train": int(noisy.sum()), "best_valid_ndcg@20": best,
+    final = {}
+    if best_scores is not None:
+        final = {"detection_auc_best": roc_auc(best_scores, noisy), "hard_auc_best": roc_auc(best_scores[hard], noisy[hard])}
+    info = {**vars(a), "model": "lightgcn", "loss": "bce", "n_noisy_train": int(noisy.sum()), **final,
+            "n_noisy_hard": int(noisy[hard].sum()) if hard is not None else None, "best_valid_ndcg@20": best,
             "best_epoch": best_epoch, "epochs_run": epoch, "iterations": it, "train_seconds": round(train_seconds, 1),
             "export_seconds": round(time.time() - t1, 1),
             "peak_gpu_mb": round(torch.cuda.max_memory_allocated(dev) / 2 ** 20) if dev.type == "cuda" else None}

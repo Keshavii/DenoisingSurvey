@@ -3,7 +3,8 @@
 #   systemd-run --user --unit=rq4 --collect bash -c "bash ~/survey/rq1/scripts/rq4_run.sh > ~/rq4.log 2>&1"
 # Progress: tail ~/rq4.log ; per-job logs in logs/rq4_tune and logs/rq4_final.
 # Steps: 1 clean base and MF on it (for N3); 2 noise files N1, N3; 3 LLM item profiles in place (R4);
-# 4 reference LightGCN-BCE + Llama scores for each ML-1M training file (R5); 5 tuning; 6 picks; 7 finals.
+# 4 reference LightGCN-BCE + Llama scores for each ML-1M training file (R5), reference models for the clean bases
+# and Yelp; 5 tuning (522 trials); 6 picks; 7 finals (1,169 runs).
 set -eu
 KIT=${KIT:-$HOME/survey/rq1}
 RAW=${RAW:-$HOME/rq1-data/ml-1m}            # raw MovieLens files (titles) for the LLM prompts
@@ -44,12 +45,19 @@ say "4 reference models and Llama scores (ML-1M)"
 read LR REG < <(best "ml1m|lightgcn|bce")
 for TF in train.tsv train_N1_20_s1.tsv train_N1_20_s2.tsv train_N1_20_s3.tsv train_N3_20_s1.tsv train_N3_20_s2.tsv train_N3_20_s3.tsv; do
   B=$(basename $TF .tsv); B=${B#train_}; [ "$B" = train ] && B=N0
-  [ -f data/ml1m/rq4_llm/$B.npz ] && continue
   REF=$(python -m rq1kit.rq4 --make_ref --data data/ml1m --train_file $TF --lr $LR --reg $REG --run_dir runs/rq4_prep/unused | tail -1)
+  [ -f data/ml1m/rq4_llm/$B.npz ] && continue
   say "  scoring $TF with reference $REF"
   conda activate vllm
   python -m rq1kit.rq4_llm --data data/ml1m --train_file $TF --ref $REF --raw "$RAW" --hist 20
   conda activate rq1
+done
+
+say "4b reference models for the clean bases (teacher M1c) and the Yelp files (R2, M1, hard positives)"
+python -m rq1kit.rq4 --make_ref --data data/ml1m --train_file train_clean.tsv --lr $LR --reg $REG --run_dir runs/rq4_prep/unused > /dev/null
+read LR REG < <(best "yelp|lightgcn|bce")
+for TF in train.tsv train_N3_20_s1.tsv train_N3_20_s2.tsv train_clean.tsv; do
+  python -m rq1kit.rq4 --make_ref --data data/yelp --train_file $TF --lr $LR --reg $REG --run_dir runs/rq4_prep/unused > /dev/null
 done
 
 say "5 tuning"
