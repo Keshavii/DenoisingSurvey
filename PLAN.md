@@ -1,5 +1,8 @@
 # Project plan: read this first
 
+Full plan of action, decisions log and "mistakes not to repeat": the doc "Denoising Survey: Plan of Action",
+https://claude.ai/artifact/Uk8RBTbZPC2tkYrTdv34TY . Read it at the start of every session and after every compaction.
+
 Source of truth for the research questions: the doc "Experimental Design: 10 Research Questions for the Denoising
 Survey" (15 Oct 2026), https://claude.ai/artifact/Y6z9w3htpheGc8kKxusVjv . The September PDF ("Experiment Design for
 Our Denoising Survey", Akshada and Hiya) is NOT the plan: its 10 experiments were merged into our 10 RQs (mapping
@@ -32,7 +35,7 @@ instead of 5). E7, E8 -> RQ8. E9 -> RQ7. E10 -> benchmark deliverable.
 ## Machines
 
 - PC1 (prompt aura3@home, kit ~/rq1-kit): RQ1, then every RQ that builds on RQ1 runs (RQ2, RQ3, RQ5, RQ6, RQ7, RQ8, RQ9).
-- PC2 (prompt anurag@home, kit ~/survey/rq1): RQs independent of RQ1 (RQ4, RQ10). Do NOT run RQ1 jobs on PC2.
+- PC2 (prompt anurag@home, kit ~/survey/rq1): RQs independent of RQ1 (RQ4, RQ10, RQ7 scaling and budget runs). Do NOT run RQ1 jobs on PC2.
 - Rule agreed 3 Nov 2026 (user). Llama-3.1-8B-Instruct and the vllm env live on PC2.
 
 ## Decisions in effect (Part C as run)
