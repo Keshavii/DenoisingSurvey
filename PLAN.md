@@ -37,6 +37,17 @@ instead of 5). E7, E8 -> RQ8. E9 -> RQ7. E10 -> benchmark deliverable.
 - PC1 (prompt aura3@home, kit ~/rq1-kit): RQ1, then every RQ that builds on RQ1 runs (RQ2, RQ3, RQ5, RQ6, RQ7, RQ8, RQ9).
 - PC2 (prompt anurag@home, kit ~/survey/rq1): RQs independent of RQ1 (RQ4, RQ10, RQ7 scaling and budget runs). Do NOT run RQ1 jobs on PC2.
 - Rule agreed 3 Nov 2026 (user). Llama-3.1-8B-Instruct and the vllm env live on PC2.
+- PC3 (prompt aura1@aura-node1, kit ~/survey/rq1), added 3 Nov: RTX 4090 24 GB, i9-14900K, 62 GB RAM + 71 GB swap,
+  261 GB free disk (1.2 TB is someone else's containerd images: do not touch). rq1 env identical to PC1 (py 3.10.22,
+  torch 2.5.1+cu121, numpy 2.2.6, scipy 1.15.3, pandas 2.3.3); RGCF and RQ4 tests pass. Runs a foreign docker stack
+  ("aura" app, qdrant, postgres, redis, monitoring) and a vLLM container (Qwen3-32B-AWQ) that is crash-looping on a
+  missing model path; if its owner fixes it, it takes ~20 GB of GPU memory. Role pending the owner's answer; proposed RQ10.
+- PC4 (prompt aura@aura4), added 3 Nov: GPU device 2b85 (very likely RTX 5090, Blackwell), i9-14900K, 62 GB RAM +
+  79 GB swap, 1.7 TB free; foreign monitoring containers only. Blackwell needs torch >= 2.7 / CUDA 12.8, so NO paper
+  code at README versions and NO RQ7 cost runs on PC4 (costs stay on 4090s). Proposed: RQ4 Yelp half (own code,
+  accuracy only, all compared runs on one machine).
+- Driver note (PC3, PC4): kernel 6.8.0-147 had no nvidia module; fix is
+  `apt install linux-modules-nvidia-595-open-$(uname -r) linux-modules-nvidia-595-open-generic` (signed, Secure Boot stays on).
 
 ## Decisions in effect (Part C as run)
 
