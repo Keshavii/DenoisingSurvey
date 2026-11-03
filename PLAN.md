@@ -62,3 +62,25 @@ instead of 5). E7, E8 -> RQ8. E9 -> RQ7. E10 -> benchmark deliverable.
 - RQ2's clean vs noisy validation check can use history.jsonl (it logs both valid_clean and valid_noisy NDCG@20 each epoch).
 - rq1kit/e2.py (test-time noise) answers a question the doc says does not apply to CF; keep only as a note.
 - rq1kit/e78.py feeds RQ8; rq1kit/e2_shift.py is an N0 vs N2_20 ranking check, related to RQ2/RQ9 but not their design.
+
+## RQ10 audit (4 Nov 2026, PC3)
+
+Repos cloned and read at the commits in rq1/scripts/rq10_setup.sh. One conda env per code base at README versions;
+the 4090 forces only the CUDA build of torch (full list of deviations in the script header).
+
+| Method | Env | README versions | Home data in repo | Notes |
+|---|---|---|---|---|
+| FMLP-Rec | r10-fmlp | py3.7, torch 1.8 | Google Drive (8 datasets) | default eval uses 99 sampled negatives; full ranking needed |
+| HSD, SSDRec | r10-recbole | torch 1.12.0, RecBole 1.0.1 | RecBole atomic files | dgl/pyg imported only in unused graph export |
+| STEAM | r10-steam | torch 1.8.0+cu111 | Beauty, Sports, Yelp in repo | |
+| IADSR | r10-iadsr | pip freeze, torch 2.5.1 | raw Amazon 2014 + notebook | SASRec/GRU4Rec/Caser scripts for Beauty only; LLM = Llama-3.1-8B-Instruct via llm2vec (paper); freeze pins conflict, installed --no-deps |
+| PreferDiff | r10-preferdiff | none given | Beauty, Sports, Toys, CDs | hidden 3072, README shows 4-GPU runs: check 24 GB fit |
+| DA-MRS | r10-damrs | py3.10.9, torch 2.0.0, pyg 2.3.0 | MMRec Baby/Sports/Clothing (Drive) | |
+| GUIDER (+ FREEDOM) | r10-mmrec | py3.7.11, torch 1.11.0 (= MMRec) | MMRec (Drive) | |
+| GDMSR | r10-gdmsr | torch 1.7.1 (+dgl) | ciao, douban, yelp in repo | |
+| GBSR (+ LightGCN-S) | r10-gbsr | TF 1.15 (paper) / torch 1.10 port | douban_book, epinions, yelp in repo | TF 1.15 cannot use a 4090: authors' PyTorch port used, recorded as deviation |
+| HDSR | r10-hdsr | torch 1.13.1+cu117, pyg 2.3.1 | Douban, Epinions, Yelp2018 in repo | repo opened: usable |
+
+Social data: the design uses GBSR's release for all; GDMSR and HDSR get it converted to their input format
+(data conversion only, no code change). Lean plan (design doc): 3 sequential, 2 multimodal, 2 social datasets, 3 seeds.
+Open: common evaluation across code bases (each repo's own evaluator differs: sampled vs full ranking, splits).
