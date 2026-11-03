@@ -84,3 +84,19 @@ the 4090 forces only the CUDA build of torch (full list of deviations in the scr
 Social data: the design uses GBSR's release for all; GDMSR and HDSR get it converted to their input format
 (data conversion only, no code change). Lean plan (design doc): 3 sequential, 2 multimodal, 2 social datasets, 3 seeds.
 Open: common evaluation across code bases (each repo's own evaluator differs: sampled vs full ranking, splits).
+
+### RQ10 social track: code facts (read 4 Nov) and decisions
+- GBSR (torch port): seed fixed at 2023 in run_GBSR.py; selects the best epoch on testdata.npy (valdata = testdata in
+  rec_dataset.py); saves the best checkpoint; num_user/num_item via CLI (hard-coded only for yelp/epinions names);
+  has its own fake-tie files (attacked_user_users_<r>.npy, r in 0.2/0.5/1.0/2.0, ties added per user's tie count).
+- GDMSR: selects on validation, saves the whole model (model.ckpt); evaluates against 100 sampled negatives.
+- HDSR: seed fixed at 2024; dataset name and device ('cuda:1', fails on a one-GPU machine) are set in run_HDSR.py,
+  which its README tells users to edit; selects on validation, saves a checkpoint.
+Decisions (common protocol, no change to any training code):
+- Each specialist trains on our files written in its own input format (variant data folders). Where a code base selects
+  on "test" (GBSR), our validation split is given as its test file.
+- Every method is scored by one evaluator (full ranking, Recall/NDCG@20, our test split) from its saved best
+  checkpoint, loaded through a wrapper that imports the authors' classes unchanged.
+- Seeds: where the code fixes the seed (GBSR, HDSR), the 3 repeats differ by noise draw only; recorded as a deviation.
+- HDSR: only the README-sanctioned config lines (dataset, device) are set; recorded.
+- Social noise levels follow the design (0, 25, 50% fake ties per user's real ties, GBSR's own procedure).
