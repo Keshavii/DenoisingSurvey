@@ -79,7 +79,24 @@ def test_treatments():
     m2 = 2 * torch.nn.functional.binary_cross_entropy_with_logits(
         torch.cat([pos[keep2], neg]), torch.cat([torch.ones(160), torch.zeros(200)]))
     assert torch.allclose(l2, m2, atol=1e-6)
-    print("ok  treatments: ranks, no-effect settings = plain BCE, drop removes the most suspicious, unscored kept")
+    assert torch.allclose(plain, rq4.treated_loss("soft_relabel", pos, neg, susp, 0, 0, lam=0.0), atol=1e-6)
+    # whole-epoch treatments
+    eu, ei = torch.tensor([0, 0, 1, 1, 2]), torch.tensor([0, 1, 1, 2, 0])
+    from rq1kit.backbone import norm_adj
+    import scipy.sparse as sp
+    csr = sp.csr_matrix((np.ones(5, np.float32), (eu.numpy(), ei.numpy())), shape=(3, 3))
+    A0, A1 = norm_adj(csr, torch.device("cpu")).to_dense(), rq4.weighted_adj(eu, ei, torch.ones(5), 3, 3).to_dense()
+    assert torch.allclose(A0, A1, atol=1e-6), "unit weights must give LightGCN's own graph"
+    sc = torch.tensor([0.1, 0.9, 0.5, float("nan"), 0.2])
+    w = rq4.epoch_weights("graph_drop", sc, eu, 3, 0.25, 0)
+    assert w.tolist() == [1, 0, 1, 1, 1], w
+    assert rq4.weighted_adj(eu, ei, w, 3, 3).to_dense()[0, 3 + 1] == 0
+    wu = rq4.epoch_weights("user_reweight", sc, eu, 3, 0, 1.0)
+    assert wu[0] == wu[1] and wu[2] == wu[3] and wu[0] < wu[4], wu  # same weight within a user; less suspicious user, higher weight
+    wr = rq4.epoch_weights("graph_reweight", sc, eu, 3, 0, 1.0)
+    assert wr[3] == 1 and wr[1] == 0 and wr[0] == 1
+    print("ok  treatments: ranks, no-effect settings = plain BCE, drop removes the most suspicious, unscored kept, "
+          "graph and user weights")
 
 
 def test_auc():
@@ -149,7 +166,7 @@ def test_jobs(root):
     sys.path.insert(0, os.path.join(KIT, "scripts"))
     import rq4_jobs as J
     t = J.tune_jobs()
-    assert len(t) == 3 * 4 * (11 + 9)
+    assert len(t) == 3 * (4 * 11 + 4 * 6 + 4 * 9 + 4 * 5)
     for k, (key, _) in J.GRID.items():
         assert key not in ("lr", "reg", "seed", "data")
     assert all("--epochs 100 --seed 0 --no_export" in j["cmd"] for j in t)
@@ -157,7 +174,7 @@ def test_jobs(root):
         assert j["cmd"].count("--lr ") == 1 and j["cmd"].count("--reg ") == 1
     fake = {f"{ds}|{s}|{x}": {J.GRID[x][0]: J.GRID[x][1][1]} for ds in J.DATASETS for s, x in J.cells(ds)}
     f = J.final_jobs(fake)
-    assert len(f) == (44 + 1) * 3 * 3 + 3 + (36 + 1) * 2 * 2 + 2
+    assert len(f) == (68 + 1) * 3 * 3 + 3 + (56 + 1) * 2 * 2 + 2
     assert any("train_N3_20_s2.tsv" in j["cmd"] and "--signal R5" in j["cmd"] for j in f)
     assert not any("--signal R5" in j["cmd"] and "data/yelp" in j["cmd"] for j in f)
     # picks from tuning folders

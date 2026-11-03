@@ -15,7 +15,14 @@ import sys
 KIT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SIGNALS_ALL = ["L1", "L2", "L3", "L4", "P1", "P2", "R1", "R2", "R3", "R4", "R5"]
 GRID = {"drop": ("rate", [0.05, 0.1, 0.2]), "reweight": ("beta", [0.25, 0.5, 1.0]),
-        "relabel": ("rate", [0.05, 0.1, 0.2]), "resample": ("temp", [0.05, 0.1, 0.2])}
+        "relabel": ("rate", [0.05, 0.1, 0.2]), "resample": ("temp", [0.05, 0.1, 0.2]),
+        # variants from other families (sheet page 1): graph pruning and graph edge weights (RGCF, DA-MRS, DeMBR,
+        # LLaRD), user-level reweighting (UDT), soft labels (CSRec, GUIDER)
+        "graph_drop": ("rate", [0.05, 0.1, 0.2]), "graph_reweight": ("beta", [0.25, 0.5, 1.0]),
+        "user_reweight": ("beta", [0.25, 0.5, 1.0]), "soft_relabel": ("lam", [0.3, 0.5, 0.8])}
+CORE_TREATS = ["drop", "reweight", "relabel", "resample"]
+VARIANT_TREATS = ["graph_drop", "graph_reweight", "user_reweight", "soft_relabel"]
+VARIANT_SIGNALS = ["L1", "L3", "P2", "R2", "R3", "R5"]  # one per branch of the detection tree
 DATASETS = {
     # signals, conditions (name -> training file pattern), seeds, queue slots per job
     "ml1m": dict(signals=SIGNALS_ALL, seeds=[1, 2, 3], slots=1,
@@ -33,7 +40,8 @@ def plain(ds):
 
 
 def cells(ds):
-    return [(s, t) for s in DATASETS[ds]["signals"] for t in GRID]
+    sig = DATASETS[ds]["signals"]
+    return [(s, t) for s in sig for t in CORE_TREATS] + [(s, t) for s in sig if s in VARIANT_SIGNALS for t in VARIANT_TREATS]
 
 
 def tune_jobs():

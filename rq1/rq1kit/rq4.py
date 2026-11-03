@@ -24,6 +24,13 @@ Treatments (--treat) act on positives only; q = the positive's suspicion rank in
   relabel   DCF style: the top rate share of positives (by q) get target 0 for this step, same schedule as drop
   resample  PLD style: each sampled user picks 1 of --k candidate positives with softmax(-q_cand / --temp),
             from epoch --begin_resample (PLD: 5); q_cand = rank within the user's candidates
+  graph_drop      RGCF / DA-MRS / DeMBR style: the top rate share of edges (whole-epoch ranking) is removed from the
+                  LightGCN propagation graph for that epoch, same schedule as drop; the loss is untouched
+  graph_reweight  RGCF / LLaRD graph-gate style: edge weight (1 - q) ** --beta in the propagation graph, symmetric
+                  normalisation by weighted degree; the loss is untouched
+  user_reweight   UDT style: every positive of a user gets (1 - q_user) ** --beta, q_user = rank of the user's mean
+                  suspicion among users (whole epoch)
+  soft_relabel    CSRec / GUIDER style: positive target 1 - --lam x q instead of a hard flip
 Interactions without a score (R5 outside the LLM subset, R1/R2/R4 for single-item users, signals before their
 history exists) are never treated. L1 with drop reproduces rq1kit.adt T-CE exactly (tests/test_rq4.py).
 
@@ -55,7 +62,8 @@ from .export import export_topk
 from .pld import sample_candidates
 
 SIGNALS = ["none", "L1", "L2", "L3", "L4", "P1", "P2", "R1", "R2", "R3", "R4", "R5"]
-TREATS = ["none", "drop", "reweight", "relabel", "resample"]
+TREATS = ["none", "drop", "reweight", "relabel", "resample", "graph_drop", "graph_reweight", "user_reweight", "soft_relabel"]
+EPOCH_TREATS = ("graph_drop", "graph_reweight", "user_reweight")  # act on whole-epoch scores
 HISTORY = 5          # epochs of history for P1 and for the memorised set of L4 (SGDL's memorisation phase)
 
 
@@ -213,9 +221,47 @@ class SignalState:
 
 
 # ----------------------------------------------------------------------------------------------- treatments
-def treated_loss(treat, pos, neg, susp, rate, beta):
-    """Loss of one batch of (positive, negative) logits under a treatment; susp = suspicion of the positives."""
-    if treat in ("none", "resample") or susp is None:
+def weighted_adj(eu, ei, w, nu, ni):
+    """LightGCN's symmetric normalised adjacency with edge weights w (0 removes an edge)."""
+    r = torch.cat([eu, ei + nu])
+    c = torch.cat([ei + nu, eu])
+    ww = torch.cat([w, w])
+    deg = torch.zeros(nu + ni, device=w.device).index_add_(0, r, ww)
+    dinv = torch.where(deg > 0, deg.pow(-0.5), torch.zeros_like(deg))
+    keep = ww > 0
+    return torch.sparse_coo_tensor(torch.stack([r[keep], c[keep]]), (dinv[r] * ww * dinv[c])[keep],
+                                   (nu + ni, nu + ni)).coalesce()
+
+
+def epoch_weights(treat, scores, eu, nu, rate, beta):
+    """Per-edge weights for the whole-epoch treatments from every edge's suspicion (NaN = unscored = weight 1)."""
+    q = batch_rank(scores)
+    if treat == "graph_drop":
+        n = int(rate * int(torch.isfinite(q).sum()))
+        w = torch.ones_like(scores)
+        if n > 0:
+            qq = torch.where(torch.isfinite(q), q, torch.full_like(q, -1.0))
+            w[torch.argsort(qq, descending=True, stable=True)[:n]] = 0.0
+        return w
+    if treat == "graph_reweight":
+        return torch.where(torch.isfinite(q), (1 - q).clamp(min=0) ** beta, torch.ones_like(q))
+    if treat == "user_reweight":
+        ok = torch.isfinite(scores)
+        tot = torch.zeros(nu, device=scores.device).index_add_(0, eu[ok], scores[ok])
+        cnt = torch.zeros(nu, device=scores.device).index_add_(0, eu[ok], torch.ones_like(scores[ok]))
+        m = torch.where(cnt > 0, tot / cnt.clamp(min=1), torch.full_like(tot, float("nan")))
+        qu = batch_rank(m)
+        wu = torch.where(torch.isfinite(qu), (1 - qu).clamp(min=0) ** beta, torch.ones_like(qu))
+        return wu[eu]
+    raise ValueError(treat)
+
+
+def treated_loss(treat, pos, neg, susp, rate, beta, lam=0.5, w_epoch=None):
+    """Loss of one batch of (positive, negative) logits under a treatment; susp = suspicion of the positives,
+    w_epoch = the positives' whole-epoch weights (user_reweight)."""
+    if treat == "user_reweight" and w_epoch is not None:
+        return 2 * torch.cat([F.softplus(-pos) * w_epoch, F.softplus(neg)]).mean()
+    if treat in ("none", "resample", "graph_drop", "graph_reweight", "user_reweight") or susp is None:
         return -(F.logsigmoid(pos) + F.logsigmoid(-neg)).mean()
     q = batch_rank(susp)
     if treat == "drop":
@@ -238,6 +284,9 @@ def treated_loss(treat, pos, neg, susp, rate, beta):
         if n_flip > 0:
             qq = torch.where(torch.isfinite(q), q, torch.full_like(q, -1.0))
             target[torch.argsort(qq, descending=True, stable=True)[:n_flip]] = 0.0
+        return F.binary_cross_entropy_with_logits(pos, target) + F.softplus(neg).mean()
+    if treat == "soft_relabel":
+        target = torch.where(torch.isfinite(q), 1 - lam * q, torch.ones_like(q))
         return F.binary_cross_entropy_with_logits(pos, target) + F.softplus(neg).mean()
     raise ValueError(treat)
 
@@ -313,6 +362,7 @@ def main(argv=None):
     ap.add_argument("--num_gradual", type=int, default=30000, help="drop / relabel: iterations to reach --rate (T-CE)")
     ap.add_argument("--beta", type=float, default=0.5, help="reweight: exponent of (1 - q)")
     ap.add_argument("--temp", type=float, default=0.1, help="resample: softmax temperature (PLD tau)")
+    ap.add_argument("--lam", type=float, default=0.5, help="soft_relabel: target 1 - lam x q")
     ap.add_argument("--k", type=int, default=5, help="resample: candidates per user (PLD default 5)")
     ap.add_argument("--begin_resample", type=int, default=5, help="resample: first 0-based epoch (PLD begin_adv 5)")
     ap.add_argument("--aux_dim", type=int, default=32, help="P2: dimension of the auxiliary MF (DeCA 32)")
@@ -383,10 +433,19 @@ def main(argv=None):
         torch.cuda.reset_peak_memory_stats(dev)
     t0 = time.time()
     best, best_epoch, bad, it = -1.0, 0, 0, 0
+    best_graph_w = None
     hf = open(os.path.join(a.run_dir, "history.jsonl"), "w")
     for epoch in range(1, a.epochs + 1):
         model.train()
         sig.epoch_cache(model, epoch)
+        w_epoch = None
+        if a.treat in EPOCH_TREATS:
+            sc = sig.all_scores(model)
+            if sc is not None:
+                r_now = drop_rate_schedule(it, a.rate, 1.0, a.num_gradual)
+                w_epoch = epoch_weights(a.treat, sc.float(), eu, nu, r_now, a.beta)
+                if a.treat in ("graph_drop", "graph_reweight"):
+                    model.adj = weighted_adj(eu, ei, w_epoch, nu, ni)
         perm = rng.permutation(len(users_all))
         neg_all = sample_negatives(users_all[perm], ni, keys, rng)
         resample = a.treat == "resample" and epoch - 1 >= a.begin_resample
@@ -414,7 +473,8 @@ def main(argv=None):
             pos, negs = (su * sp).sum(1), (su * sn).sum(1)
             susp = sig.batch(edges, pos, u, p)
             rate = drop_rate_schedule(it, a.rate, 1.0, a.num_gradual) if a.treat in ("drop", "relabel") else 0.0
-            loss = treated_loss(a.treat, pos, negs, susp, rate, a.beta)
+            loss = treated_loss(a.treat, pos, negs, susp, rate, a.beta, a.lam,
+                                w_epoch[edges] if a.treat == "user_reweight" and w_epoch is not None else None)
             reg = (model.user(u).pow(2).sum() + model.item(p).pow(2).sum() + model.item(n).pow(2).sum()) / (2 * len(idx))
             loss = loss + a.reg * reg
             opt.zero_grad()
@@ -441,12 +501,15 @@ def main(argv=None):
         if v[a.select] > best:
             best, best_epoch, bad = v[a.select], epoch, 0
             torch.save(model.state_dict(), os.path.join(a.run_dir, "best.pt"))
+            best_graph_w = w_epoch.clone() if a.treat in ("graph_drop", "graph_reweight") and w_epoch is not None else None
         else:
             bad += 1
             if bad >= a.patience:
                 break
     train_seconds = time.time() - t0
     model.load_state_dict(torch.load(os.path.join(a.run_dir, "best.pt"), map_location=dev, weights_only=True))
+    if a.treat in ("graph_drop", "graph_reweight"):  # score with the graph the best epoch was evaluated on
+        model.adj = weighted_adj(eu, ei, best_graph_w, nu, ni) if best_graph_w is not None else adj
     model.eval()
     t1 = time.time()
     if not a.no_export:
