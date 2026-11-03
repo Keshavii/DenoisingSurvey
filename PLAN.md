@@ -42,10 +42,10 @@ instead of 5). E7, E8 -> RQ8. E9 -> RQ7. E10 -> benchmark deliverable.
   torch 2.5.1+cu121, numpy 2.2.6, scipy 1.15.3, pandas 2.3.3); RGCF and RQ4 tests pass. Runs a foreign docker stack
   ("aura" app, qdrant, postgres, redis, monitoring) and a vLLM container (Qwen3-32B-AWQ) that is crash-looping on a
   missing model path; if its owner fixes it, it takes ~20 GB of GPU memory. Role pending the owner's answer; proposed RQ10.
-- PC4 (prompt aura@aura4), added 3 Nov: GPU device 2b85 (very likely RTX 5090, Blackwell), i9-14900K, 62 GB RAM +
-  79 GB swap, 1.7 TB free; foreign monitoring containers only. Blackwell needs torch >= 2.7 / CUDA 12.8, so NO paper
-  code at README versions and NO RQ7 cost runs on PC4 (costs stay on 4090s). Proposed: RQ4 Yelp half (own code,
-  accuracy only, all compared runs on one machine).
+- PC4 (prompt aura@aura4), added 3 Nov: RTX 5090 32 GB (Blackwell, driver 595.99), i9-14900K, 62 GB RAM + 79 GB swap,
+  1.7 TB free; foreign monitoring containers only. USER RULE (3 Nov): every reported result comes from an RTX 4090.
+  PC4 produces NO reported results (no GPU training of any kind). At most a staging box for CPU-only, seeded,
+  machine-independent work (RQ10 data preparation, noise files, dry runs of job lists).
 - Driver note (PC3, PC4): kernel 6.8.0-147 had no nvidia module; fix is
   `apt install linux-modules-nvidia-595-open-$(uname -r) linux-modules-nvidia-595-open-generic` (signed, Secure Boot stays on).
 
