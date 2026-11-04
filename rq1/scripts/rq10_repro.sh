@@ -12,7 +12,7 @@ LIMIT=${LIMIT:-3h}
 mkdir -p "$L"
 say() { echo "$(date '+%F %T') $*"; }
 
-say "waiting for rq10setup to finish"
+say "waiting for rq10setup to finish"; rm -f $L/repro_summary.tsv.tmp
 while systemctl --user is-active --quiet rq10setup; do sleep 60; done
 say "setup finished; envs ready: $(ls $ROOT/envs_ok 2>/dev/null | tr '\n' ' ')"
 
@@ -24,7 +24,8 @@ run() {  # name env dir command...
   local peak=$L/repro_$n.gpu t0=$(date +%s)
   ( while true; do nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits; sleep 5; done ) > $peak &
   local mon=$!
-  (cd "$dir" && PATH=~/miniconda3/envs/r10-$env/bin:$PATH timeout $LIMIT "$@") > "$L/repro_$n.log" 2>&1
+  (cd "$dir" && PATH=~/miniconda3/envs/r10-$env/bin:$PATH LD_LIBRARY_PATH=~/miniconda3/envs/r10-$env/lib timeout $LIMIT "$@") \
+    > "$L/repro_$n.log" 2>&1
   local rc=$?
   kill $mon 2>/dev/null
   local mins=$(( ($(date +%s) - t0) / 60 )) mib=$(sort -n $peak | tail -1)
@@ -35,7 +36,10 @@ run() {  # name env dir command...
 
 # README commands, verbatim (first dataset each README shows)
 run gbsr    gbsr       $R/gbsr/torch_version python run_GBSR.py --dataset douban_book --runid 40+2.5sigma --beta 40 --sigma 2.5
-run hdsr    hdsr       $R/hdsr/src           python run_HDSR.py
+# HDSR: run_HDSR.py sets dataset and device in code (README: edit them); device 'cuda:1' does not exist on PC3, so a
+# copy with only that line set to cuda:0 is run (recorded deviation; the repository file stays unchanged)
+sed "s/config\['device'\] = 'cuda:1'/config['device'] = 'cuda:0'/" $R/hdsr/src/run_HDSR.py > $R/hdsr/src/run_HDSR_pc3.py
+run hdsr    hdsr       $R/hdsr/src           python run_HDSR_pc3.py
 run gdmsr   gdmsr      $R/gdmsr              bash run.sh
 run steam   steam      $R/steam              bash -c "python main.py -m=train && python main.py -m=valid && python main.py -m=test"
 run fmlp    fmlp       $R/fmlp               python main.py --data_name=Beauty

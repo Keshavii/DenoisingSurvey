@@ -43,7 +43,10 @@ hdsr|laowangzi/HDSR|9721276|hdsr
 #          unlisted imports (torchvision, sklearn, matplotlib, pillow) added
 # mmrec    GUIDER requirements (= MMRec's): python 3.7.11, torch 1.11.0 -> torch 1.11.0+cu113; unlisted imports added
 #          (torch_geometric 2.0.4, torch_scatter, geomloss, lmdb, sklearn, matplotlib, pillow). FREEDOM runs here too.
-# gdmsr    README: PyTorch 1.7.1 (+ dgl, unlisted)                    -> torch 1.7.1+cu110, dgl-cu110 0.6.1
+# gdmsr    README: PyTorch 1.7.1 (+ dgl, unlisted)                    -> torch 1.7.1+cu110, dgl-cu110 0.6.1 (needs the
+#          CUDA 11.0 runtime libraries: conda cudatoolkit 11.0; runs with LD_LIBRARY_PATH=<env>/lib)
+# gbsr     evaluate.py and rec_dataset.py import sklearn (unlisted)    -> scikit-learn 1.0.2 (last for py3.7)
+# preferdiff latest transformers needs torch >= 2.6 -> transformers 4.47.1, accelerate 1.2.1 (versions of the repo's date)
 # gbsr     paper numbers are from the TF 1.15 code (CUDA 10, cannot use a 4090); we run the authors' PyTorch port
 #          (torch_version/) with requirements' torch 1.10.0 built for cu113 instead of cudatoolkit 10.2
 # hdsr     requirements: torch 1.13.1+cu117 and the pt113cu117 PyG wheels -> as written
@@ -76,16 +79,18 @@ build_all() {
                                   pipn --no-deps -r $ROOT/iadsr_req_nodeps.txt &&
                                   pipn --no-deps info-nce-pytorch==0.1.4 &&
                                   pipn --no-deps https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.2.post1/flash_attn-2.7.2.post1+cu12torch2.5cxx11abiFALSE-cp39-cp39-linux_x86_64.whl"
-  N=preferdiff; mkenv $N 3.10   pipn torch==2.5.1+cu121 --extra-index-url $W/cu121 accelerate transformers numpy pyyaml tqdm
+  N=preferdiff; mkenv $N 3.10   pipn torch==2.5.1+cu121 --extra-index-url $W/cu121 accelerate==1.2.1 transformers==4.47.1 numpy \
+                                     pyyaml tqdm
   N=damrs;      mkenv $N 3.10.9 pipn torch==2.0.0+cu118 torchvision==0.15.1+cu118 --extra-index-url $W/cu118 numpy==1.23.5 \
                                      pandas==1.5.3 scipy==1.10.0 pyyaml==6.0 torch_geometric==2.3.0 networkx==2.8.4 tqdm==4.65.0 \
                                      lmdb==1.4.0 scikit-learn matplotlib pillow torch_scatter -f $PYG/torch-2.0.0+cu118.html
   N=mmrec;      mkenv $N 3.7.11 pipn torch==1.11.0+cu113 torchvision==0.12.0+cu113 --extra-index-url $W/cu113 numpy==1.21.5 \
-                                     pandas==1.3.5 scipy==1.7.3 pyyaml==6.0 torch_geometric==2.0.4 geomloss lmdb scikit-learn \
-                                     matplotlib pillow torch_scatter -f $PYG/torch-1.11.0+cu113.html
-  N=gdmsr;      mkenv $N 3.7    pipn torch==1.7.1+cu110 -f $TS dgl-cu110==0.6.1 numpy pandas tqdm setproctitle
+                                     pandas==1.3.5 scipy==1.7.3 pyyaml==6.0 torch_geometric==2.0.4 geomloss==0.2.6 lmdb==1.4.1 \
+                                     scikit-learn==1.0.2 matplotlib==3.5.3 pillow==9.5.0 torch_scatter==2.0.9 -f $PYG/torch-1.11.0+cu113.html
+  N=gdmsr;      mkenv $N 3.7    bash -c "~/miniconda3/bin/conda install -y -q -n r10-gdmsr cudatoolkit=11.0 > /dev/null &&
+                                  ~/miniconda3/envs/r10-gdmsr/bin/pip install -q torch==1.7.1+cu110 -f $TS dgl-cu110==0.6.1 numpy pandas tqdm setproctitle"
   N=gbsr;       mkenv $N 3.7    pipn torch==1.10.0+cu113 -f $TS numpy==1.19.2 faiss-cpu==1.7.1.post2 numba==0.56.2 scipy==1.3.0 \
-                                     tqdm==4.62.3
+                                     tqdm==4.62.3 scikit-learn==1.0.2
   N=hdsr;       mkenv $N 3.8    pipn torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1+cu117 --extra-index-url $W/cu117 \
                                      torch-scatter==2.1.1 torch-sparse==0.6.17 torch-cluster==1.6.1 torch-spline-conv==1.2.2 \
                                      -f $PYG/torch-1.13.1+cu117.html torch-geometric==2.3.1 numpy==1.18.0 pandas==1.1.5 \
@@ -97,12 +102,15 @@ check_all() {  # every env must run a real kernel on the 4090 (old CUDA builds c
     PY=~/miniconda3/envs/r10-$n/bin/python
     [ -x $PY ] || { echo "$n: no env"; continue; }
     printf "%-11s " $n
-    $PY -c "import torch,numpy;x=torch.randn(512,512,device='cuda');y=(x@x).sum().item();print(torch.__version__,'numpy',numpy.__version__,'gpu ok')" 2>&1 | tail -1
+    case $n in gdmsr) X="import dgl;";; gbsr) X="import sklearn,faiss,numba;";; preferdiff) X="import transformers.trainer,accelerate;";;
+      mmrec|damrs) X="import torch_scatter,torch_geometric,lmdb;";; hdsr) X="import torch_geometric,torch_sparse;";; *) X="";; esac
+    LD_LIBRARY_PATH=~/miniconda3/envs/r10-$n/lib $PY -c "${X}import torch,numpy;x=torch.randn(512,512,device='cuda');y=(x@x).sum().item();print(torch.__version__,'numpy',numpy.__version__,'gpu ok')" 2>&1 | tail -1
   done
 }
 
 case "${1:-all}" in
   check) check_all ;;
   clone) clone_all ;;
+  rebuild) shift; for n in "$@"; do rm -f "$OK/$n"; done; build_all; check_all ;;
   *) say "RQ10 setup start"; clone_all; build_all; say "RQ10 setup end"; check_all ;;
 esac
