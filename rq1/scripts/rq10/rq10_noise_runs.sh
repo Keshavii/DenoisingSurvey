@@ -62,23 +62,15 @@ for DS in Beauty Sports Yelp; do
 done
 
 # ── FMLP-Rec: Beauty/Sports × {N0, N2_20, N3_30} ────────────────────────────
-# FMLP uses --data_name; needs RecBole atomic format in its data/ directory.
-# For each noise level, symlink or copy the RecBole data into fmlp/data/.
+# FMLP uses --data_name=<X> and loads repos/fmlp/data/<X>.txt (space-sep seqs).
+# rq10_data_prep.sh writes Beauty_N2_20.txt etc. directly into fmlp/data/.
 say "=== FMLP-Rec noise runs ==="
-FMLP_DATA=$R/fmlp/data
 for DS in Beauty Sports; do
   for LEVEL in N0 N2_20 N3_30; do
-    RB_DIR=$DATA/recbole/${DS}_${LEVEL}
-    [ -d "$RB_DIR" ] || { say "skip: $RB_DIR not found"; continue; }
-    # Stage RecBole data into fmlp/data/<Dataset>_<Level>/
-    DSN="${DS}_${LEVEL}"
-    FMLP_DS_DIR=$FMLP_DATA/$DSN
-    mkdir -p "$FMLP_DS_DIR"
-    cp -f "$RB_DIR/$DSN.inter" "$FMLP_DS_DIR/$DSN.inter" 2>/dev/null || true
-    cp -f "$RB_DIR/$DSN.user"  "$FMLP_DS_DIR/$DSN.user"  2>/dev/null || true
-    cp -f "$RB_DIR/$DSN.item"  "$FMLP_DS_DIR/$DSN.item"  2>/dev/null || true
+    TXT=$R/fmlp/data/${DS}_${LEVEL}.txt
+    [ -f "$TXT" ] || { say "skip fmlp ${DS}_${LEVEL}: $TXT not found (data prep may have skipped it)"; continue; }
     NAME="fmlp_${DS,,}_${LEVEL,,}"
-    run $NAME fmlp $R/fmlp python main.py --data_name="$DSN"
+    run $NAME fmlp $R/fmlp python main.py --data_name="${DS}_${LEVEL}"
   done
 done
 
