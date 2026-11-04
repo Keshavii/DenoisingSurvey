@@ -72,13 +72,18 @@ done
 # ── FMLP-Rec: Beauty/Sports × {N0, N2_20, N3_30} ────────────────────────────
 # FMLP uses --data_name=<X> and loads repos/fmlp/data/<X>.txt (space-sep seqs).
 # rq10_data_prep.sh writes Beauty_N2_20.txt etc. directly into fmlp/data/.
+# Noise variants (Beauty_N0 etc.) are not in FMLP's hardcoded sequential_data_list;
+# run_fmlp_noise.py patches utils.get_seq_dic at runtime to handle them.
 say "=== FMLP-Rec noise runs ==="
+# Copy the runtime-patch wrapper into the fmlp repo
+cp "$HOME/survey/rq1/scripts/rq10/run_fmlp_noise.py" "$R/fmlp/" 2>/dev/null \
+  && say "copied run_fmlp_noise.py to fmlp repo"
 for DS in Beauty Sports; do
   for LEVEL in N0 N2_20 N3_30; do
     TXT=$R/fmlp/data/${DS}_${LEVEL}.txt
     [ -f "$TXT" ] || { say "skip fmlp ${DS}_${LEVEL}: $TXT not found (data prep may have skipped it)"; continue; }
     NAME="fmlp_${DS,,}_${LEVEL,,}"
-    run $NAME fmlp $R/fmlp python main.py --data_name="${DS}_${LEVEL}"
+    run $NAME fmlp $R/fmlp python run_fmlp_noise.py --data_name="${DS}_${LEVEL}"
   done
 done
 
