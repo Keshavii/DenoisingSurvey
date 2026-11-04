@@ -277,9 +277,22 @@ def canary_state(proto, m, jobs, st, best_plain):
     plain = best_plain[f"{cj['dataset']}|{proto['tune']['model']}|{m['loss']}"]["valid_ndcg@20"]
     need = proto["canary"]["min_ratio_to_plain"] * plain
     got = rj.get("best_valid_ndcg@20", -1)
-    if got < need:
-        return "held", f"canary valid NDCG@20 {got:.4f} < {need:.4f} ({proto['canary']['min_ratio_to_plain']} x plain {plain:.4f})"
-    return "passed", f"valid NDCG@20 {got:.4f} (plain {plain:.4f})"
+    if got >= need:
+        return "passed", f"valid NDCG@20 {got:.4f} (plain {plain:.4f})"
+    # t0 is one grid point; a slow or poor setting there is not evidence of broken code. Run the method's other trials
+    # on the canary dataset, then pass if any reaches the bar, hold if none does (rule added 4 Nov 2026, RGCF).
+    low = f"canary t0 valid NDCG@20 {got:.4f} < {need:.4f} ({proto['canary']['min_ratio_to_plain']} x plain {plain:.4f})"
+    rest = [j for j in jobs if j["method"] == m["name"] and j["dataset"] == cj["dataset"] and j["stage"] == "tune"]
+    best = (got, 0)
+    for j in rest:
+        r = load_json(os.path.join(j["run_dir"], "run.json")) if st[j["id"]]["status"] == "done" else None
+        if r is not None and r.get("best_valid_ndcg@20", -1) > best[0]:
+            best = (r["best_valid_ndcg@20"], j["trial"])
+    if best[0] >= need:
+        return "passed", f"{low}; trial t{best[1]} reaches {best[0]:.4f}"
+    if all(st[j["id"]]["status"] in ("done", "failed", "conflict") for j in rest):
+        return "held", f"{low}; best of {len(rest) + 1} trials {best[0]:.4f}"
+    return "checking", f"{low}; running the other {cj['dataset']} trials before deciding"
 
 
 def compute_picks(proto, methods, jobs, st):
@@ -385,7 +398,10 @@ def runnable(proto, jobs, st, canary):
             continue
         if canary[j["method"]][0] == "held" and j["stage"] != "canary":
             continue
-        if j["stage"] != "canary" and canary[j["method"]][0] != "passed":
+        cs = canary[j["method"]][0]
+        cds = next((c["dataset"] for c in jobs if c["method"] == j["method"] and c["stage"] == "canary"), None)
+        on_canary_ds = cs == "checking" and j["stage"] == "tune" and j["dataset"] == cds
+        if j["stage"] != "canary" and cs != "passed" and not on_canary_ds:
             continue
         if any(d not in done for d in j["deps"]):
             continue
@@ -545,6 +561,8 @@ def render_status(proto, methods, jobs, waiting, st, canary, picks, legacy, runn
     for m, (c, why) in canary.items():
         if c == "held":
             L.append(f"  HELD     {m}: {why}  (fix, then: partc retry {m})")
+        elif c == "checking":
+            L.append(f"  CHECKING {m}: {why}")
     return "\n".join(L) + "\n"
 
 

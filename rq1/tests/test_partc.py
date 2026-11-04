@@ -195,15 +195,53 @@ def test_canary_hold():
     starts = [json.loads(line) for line in open(os.path.join(root, P.STATE)) if '"start"' in line]
     jobs, waiting, st, canary, picks = state_of(root)
     ran = {r["job"] for r in starts}
-    assert ran == {"tune_tinya_tce_t0", "tune_tinya_rce_t0"}, ran
+    # t0 below the bar: the other canary-dataset trials run (grid has 2), nothing on tinyb, then the method is held
+    assert ran == {"tune_tinya_tce_t0", "tune_tinya_rce_t0", "tune_tinya_tce_t1", "tune_tinya_rce_t1"}, ran
     assert canary["tce"][0] == "held" and canary["rce"][0] == "held", canary
+    assert "best of 2 trials" in canary["tce"][1], canary
     assert "HELD" in partc(root, "status")
-    print("ok  canary hold: only the two canaries ran; both methods held:", canary["tce"][1][:70])
+    print("ok  canary hold: canary-dataset trials only, then held:", canary["tce"][1][-60:])
+    shutil.rmtree(root)
+
+
+def test_canary_rescue():
+    """canary_state alone: t0 below the bar, another canary-dataset trial above it -> passed; still running -> checking."""
+    root = tempfile.mkdtemp(prefix="partc_canary_")
+    proto = {"canary": {"dataset": "a", "min_ratio_to_plain": 0.5}, "tune": {"model": "lightgcn"}}
+    m = {"name": "x", "loss": "bpr"}
+    bp = {"a|lightgcn|bpr": {"valid_ndcg@20": 0.2}}
+    jobs, st = [], {}
+    for k, (stage, val) in enumerate([("canary", 0.05), ("tune", 0.08), ("tune", 0.12)]):
+        rd = os.path.join(root, f"t{k}")
+        os.makedirs(rd)
+        for f in ("history.jsonl", "best.pt"):
+            open(os.path.join(rd, f), "w").close()
+        json.dump({"best_valid_ndcg@20": val}, open(os.path.join(rd, "run.json"), "w"))
+        jobs.append(dict(id=f"j{k}", method="x", dataset="a", stage=stage, run_dir=rd, trial=k))
+        st[f"j{k}"] = {"status": "done"}
+    jobs.append(dict(id="jb", method="x", dataset="b", stage="tune", run_dir=os.path.join(root, "b"), trial=0))
+    st["jb"] = {"status": "todo"}
+    c = P.canary_state(proto, m, jobs, st, bp)
+    assert c[0] == "passed" and "trial t2 reaches 0.1200" in c[1], c
+    st["j2"] = {"status": "running"}
+    c = P.canary_state(proto, m, jobs, st, bp)
+    assert c[0] == "checking", c
+    st["j2"] = {"status": "failed"}
+    c = P.canary_state(proto, m, jobs, st, bp)
+    assert c[0] == "held" and "best of 3 trials 0.0800" in c[1], c
+    # runnable: while checking, only the canary-dataset trials may start
+    st["j2"] = {"status": "todo"}
+    for j in jobs:
+        j.update(deps=[], slots=1, batch=1, order=0)
+    ready = [j["id"] for j, _ in P.runnable({"total_slots": 2}, jobs, st, {"x": ("checking", "")})]
+    assert ready == ["j2"], ready
+    print("ok  canary rescue: passed via t2; checking while running; held when none reaches the bar; tinyb waits")
     shutil.rmtree(root)
 
 
 if __name__ == "__main__":
     test_failure_classes()
+    test_canary_rescue()
     test_canary_hold()
     test_legacy_queue_only_canaries()
     test_legacy_queue_shared_gpu()
