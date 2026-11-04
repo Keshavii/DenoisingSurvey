@@ -14,6 +14,8 @@ cd "$KIT"
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate rq1
 export OMP_NUM_THREADS=8 MKL_NUM_THREADS=8
+# vLLM 0.32 JIT-builds a FlashInfer sampler (needs nvcc, absent on PC2); same setting as run_llard_ml1m.sh
+export VLLM_USE_FLASHINFER_SAMPLER=0
 say() { echo "$(date '+%F %T') $*"; }
 best() { python -c "import json;b=json.load(open('configs/best_plain.json'))['$1'];print(b['lr'],b['reg'])"; }
 
@@ -49,7 +51,8 @@ for TF in train.tsv train_N1_20_s1.tsv train_N1_20_s2.tsv train_N1_20_s3.tsv tra
   [ -f data/ml1m/rq4_llm/$B.npz ] && continue
   say "  scoring $TF with reference $REF"
   conda activate vllm
-  python -m rq1kit.rq4_llm --data data/ml1m --train_file $TF --ref $REF --raw "$RAW" --hist 20
+  python -m rq1kit.rq4_llm --data data/ml1m --train_file $TF --ref $REF --raw "$RAW" --hist 20 \
+    || say "  R5 scoring FAILED for $TF (its R5 cells will fail; everything else continues)"
   conda activate rq1
 done
 
