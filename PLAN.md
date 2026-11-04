@@ -100,3 +100,8 @@ Decisions (common protocol, no change to any training code):
 - Seeds: where the code fixes the seed (GBSR, HDSR), the 3 repeats differ by noise draw only; recorded as a deviation.
 - HDSR: only the README-sanctioned config lines (dataset, device) are set; recorded.
 - Social noise levels follow the design (0, 25, 50% fake ties per user's real ties, GBSR's own procedure).
+
+## Lessons (4 Nov)
+- Every script that starts vLLM on PC2 must export VLLM_USE_FLASHINFER_SAMPLER=0 (no nvcc there). Missing it in
+  rq4_run.sh stopped RQ4 at 03:31 on 4 Nov and left PC2 idle ~15 h.
+- Long unattended pipelines must not let one optional step (R5 scoring) stop the rest.
