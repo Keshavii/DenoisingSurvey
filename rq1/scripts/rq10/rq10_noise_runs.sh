@@ -23,6 +23,14 @@ while systemctl --user is-active --quiet rq10data 2>/dev/null; do sleep 60; done
 [ -f "$DATA/.done_prep" ] || { say "ERROR: data prep not done ($DATA/.done_prep missing); abort"; exit 1; }
 say "data ready"
 
+# ── Wait for baseline GPU jobs (GBSR/HDSR/GDMSR) to free GPU memory ──────────
+# STEAM needs ~3.5 GiB; GBSR uses ~12 GiB while running; they cannot share.
+say "waiting for baseline GPU jobs (GBSR/HDSR/GDMSR) to finish..."
+while pgrep -f "run_GBSR\.py|run_HDSR_pc3\.py|gdmsr/main\.py" > /dev/null 2>&1; do
+  sleep 60
+done
+say "baseline GPU jobs done; GPU free for noise runs"
+
 run() {  # run <name> <env> <dir> <cmd...>
   local n=$1 env=$2 dir=$3; shift 3
   [ -f "$L/run_${n}.done" ] && { say "$n: already done, skip"; return 0; }
