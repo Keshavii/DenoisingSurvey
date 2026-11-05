@@ -14,6 +14,7 @@ KIT=$REPO/rq1; [ "$PC" = pc1 ] && [ -d "$HOME/rq1-kit" ] && KIT=$HOME/rq1-kit
 say() { echo "$(date '+%F %T') $*" >> "$LOG"; }
 exec 9> "$HOME/.survey_snapshot.lock"
 flock -n 9 || { say "previous snapshot still running; skipped"; exit 0; }
+export GIT_TERMINAL_PROMPT=0   # never wait for a password prompt (no terminal under systemd)
 export GIT_AUTHOR_NAME="$PC snapshot" GIT_AUTHOR_EMAIL="$PC@denoising-survey.invalid"
 export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME" GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 

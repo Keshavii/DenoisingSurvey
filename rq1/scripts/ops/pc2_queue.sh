@@ -8,6 +8,7 @@ set -u
 REPO=${REPO:-$HOME/survey}
 KIT=$REPO/rq1
 WAIT=${WAIT:-1200}
+export GIT_TERMINAL_PROMPT=0
 say() { echo "$(date '+%F %T') [pc2-queue] $*"; }
 say "start, code $(git -C "$REPO" log -1 --format=%h 2>/dev/null)"
 
