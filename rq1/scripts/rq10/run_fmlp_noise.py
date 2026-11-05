@@ -6,7 +6,8 @@ The original utils.get_seq_dic only recognises hardcoded names like 'Beauty',
 'Beauty_N0' fall through both branches and leave seq_dic unbound.
 
 This wrapper:
-  1. Patches utils.get_seq_dic to handle any name matching <Base>_(N0|N2_20|N3_30).
+  1. Patches utils.get_seq_dic to handle any name matching <Base>_<level>[_s<seed>], level N0, I10, I20 (stage 2)
+     or N2_20, N3_30 (5 Nov).
      Noise variants are also added to sequential_data_list at runtime so the
      downstream functions get_dataloder() and get_rating_matrix() take the
      right sequential path.
@@ -28,7 +29,8 @@ import utils as _u
 
 _original_get_seq_dic = _u.get_seq_dic
 
-_NOISE_PAT = re.compile(r'_(N0|N2_20|N3_30)$')
+# 5 Nov names (Beauty_N2_20) and RQ10 stage-2 names (Beauty_I10_s1, Sports_and_Outdoors_N0_s2): <base>_<level>[_s<seed>]
+_NOISE_PAT = re.compile(r'_(N0|N2_20|N3_30|I10|I20)(_s\d+)?$')
 
 
 def _patched_get_seq_dic(args):

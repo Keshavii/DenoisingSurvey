@@ -120,4 +120,8 @@ Decisions (common protocol, no change to any training code):
   targets (results retired, .invalid); noise levels 20/30% did not follow the design (10/20% of training positions,
   STEAM protocol); STEAM's Yelp (16,552 items) is not the design's Yelp (FMLP's, 20,033); PreferDiff's code has no
   Beauty (C, O, T only), its Sports run is the 4 Nov reproduction; no common evaluator yet. Stage 1 fixes the
-  reproduction runs (rq10_stage1.sh); stage 2 (noise per design + common full-ranking evaluator) is next.
+  reproduction runs (rq10_stage1.sh). Stage 2 (rq10_stage2.sh, run right after stage 1): seq_noise.py builds N0/I10/I20
+  (insertion before training items with p 0.1/0.2, validation and test untouched, same noisy sequences in FMLP,
+  STEAM and RecBole format, injected positions saved); scoring = full ranking, leave-one-out, Recall@10/NDCG@10 via
+  FMLP --full_sort, RecBole full mode (HSD) and steam_full_eval.py (best validation epoch, corrected sequence;
+  reproduces STEAM's own sampled numbers exactly); table results/stage2_summary.tsv. One noise draw (seed 1) for now.

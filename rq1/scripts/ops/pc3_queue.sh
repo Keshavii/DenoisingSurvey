@@ -4,7 +4,7 @@
 #   1. RQ10 re-runs of 5 Nov (scripts/rq10/rq10_rerun_failed.sh): wait for the running copy (unit rq10rerun), or, if it
 #      was cut off (reboot), finish it here; its jobs keep their .done markers, so nothing finished runs twice.
 #   2. RQ4 Yelp: tuning (249 trials) and picks (PC2 reads them for its Yelp seed-2 finals).
-#   3. RQ10 stage 1: the fixed reproduction runs (scripts/rq10/rq10_stage1.sh).
+#   3. RQ10 stage 1 (fixed reproduction runs) and stage 2 (design noise, full-ranking scores): rq10_stage1.sh.
 #   4. RQ4 Yelp finals of seed 1.
 set -u
 REPO=${REPO:-$HOME/survey}

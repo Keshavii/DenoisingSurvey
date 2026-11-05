@@ -120,7 +120,10 @@ if [ "$PC" = pc3 ]; then
   hr "RQ10 (specialists)"
   R10=$HOME/survey/rq10
   echo "  .done markers: $(find "$R10/logs" -maxdepth 1 -name '*.done' 2>/dev/null | wc -l)  ($(find "$R10/logs" -maxdepth 1 -name '*.done' -printf '%f ' 2>/dev/null | sed 's/run_//g;s/\.done//g'))"
-  [ -s "$HOME/rq10_rerun.log" ] && { echo "  last lines of ~/rq10_rerun.log:"; tail -3 "$HOME/rq10_rerun.log" | cut -c1-140 | sed 's/^/    /'; }
+  for f in "$HOME/rq10_stage1.log" "$HOME/rq10_rerun.log"; do
+    [ -s "$f" ] && { echo "  last lines of ~/${f##*/}:"; tail -3 "$f" | cut -c1-140 | sed 's/^/    /'; break; }
+  done
+  [ $FULL = 1 ] && [ -f "$R10/results/stage2_summary.tsv" ] && { echo "  stage 2 (full ranking, Recall@10 / NDCG@10):"; column -t "$R10/results/stage2_summary.tsv" | cut -c1-110 | sed 's/^/    /'; }
   if [ $FULL = 1 ] && [ -f "$R10/results/run_summary.tsv" ]; then
     echo "  run_summary.tsv (name, exit code, minutes, peak MiB):"; sed 's/^/    /' "$R10/results/run_summary.tsv"
   fi

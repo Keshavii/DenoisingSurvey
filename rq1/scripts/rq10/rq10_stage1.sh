@@ -94,7 +94,11 @@ for DS in Beauty Sports Yelp; do
   run "hsd_${DS,,}_sasrec" recbole "$R/hsd" python run_hsd_survey.py --dataset "$DS" --sub_model SASRec
 done
 
+# Stage 2 runs right after stage 1 (same log): the design's noise and full-ranking scores (rq10_stage2.sh)
+say "=== stage 2 (log continues below) ==="
+bash "$SCRIPTS/rq10_stage2.sh"
+
 JOBS="gdmsr_yelp gdmsr_ciao gdmsr_douban steam_sports steam_yelp fmlp_sports_and_outdoors fmlp_yelp hsd_beauty_sasrec hsd_sports_sasrec hsd_yelp_sasrec"
 OK=0; MISSING=""
 for n in $JOBS; do if [ -f "$L/run_${n}.done" ]; then OK=$((OK + 1)); else MISSING="$MISSING $n"; fi; done
-say "stage 1 complete: $OK of 10 jobs have results${MISSING:+; without:$MISSING}"
+say "stage 1 complete: $OK of 10 jobs have results${MISSING:+; without:$MISSING} (stage 2: see results/stage2_summary.tsv)"
