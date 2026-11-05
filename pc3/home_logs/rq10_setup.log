@@ -1,0 +1,84 @@
+2026-11-03 23:14:55 RQ10 setup start
+2026-11-03 23:14:56 repo fmlp at 51acc8c
+2026-11-03 23:14:58 repo hsd at 9c146a0
+2026-11-03 23:15:02 repo steam at 3ae6de2
+2026-11-03 23:15:04 repo ssdrec at 299421e
+2026-11-03 23:15:05 repo iadsr at 3ffc9a8
+2026-11-03 23:15:08 repo preferdiff at fdf45b0
+2026-11-03 23:15:09 repo damrs at 7dee19e
+2026-11-03 23:15:10 repo guider at fb0ee56
+2026-11-03 23:15:15 repo gdmsr at 0916e29
+2026-11-03 23:15:17 repo gbsr at 881d712
+2026-11-03 23:15:19 repo hdsr at 9721276
+2026-11-03 23:17:36 env fmlp: ok
+2026-11-03 23:19:18 env steam: ok
+2026-11-03 23:21:33 env recbole: ok
+WARNING: The candidate selected for download or install is a yanked version: 'protobuf' candidate (version 5.29.0 at https://files.pythonhosted.org/packages/ee/2e/cc46181ddce0940647d21a8341bf2eddad247a5d030e8c30c7a342793978/protobuf-5.29.0-cp38-abi3-manylinux2014_x86_64.whl (from https://pypi.org/simple/protobuf/) (requires-python:>=3.8))
+Reason for being yanked: https://github.com/protocolbuffers/protobuf/issues/19430#issuecomment-2518458119
+WARNING: The candidate selected for download or install is a yanked version: 'rpds-py' candidate (version 0.22.1 at https://files.pythonhosted.org/packages/2e/16/fcf13729d2dd9d149ac04454bf10c6bc07515b4805726c3b36a63180c1fd/rpds_py-0.22.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from https://pypi.org/simple/rpds-py/) (requires-python:>=3.9))
+Reason for being yanked: https://github.com/PyO3/pyo3/issues/4757
+
+[notice] A new release of pip is available: 24.2 -> 26.0.1
+[notice] To update, run: /home/aura1/miniconda3/envs/r10-iadsr/bin/python3.9 -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 24.2 -> 26.0.1
+[notice] To update, run: /home/aura1/miniconda3/envs/r10-iadsr/bin/python3.9 -m pip install --upgrade pip
+2026-11-03 23:25:42 env iadsr: ok
+2026-11-03 23:27:37 env preferdiff: ok
+2026-11-03 23:30:18 env damrs: ok
+  error: subprocess-exited-with-error
+  
+  × python setup.py egg_info did not run successfully.
+  │ exit code: 1
+  ╰─> [6 lines of output]
+      Traceback (most recent call last):
+        File "<string>", line 36, in <module>
+        File "<pip-setuptools-caller>", line 34, in <module>
+        File "/tmp/pip-install-0mupt7rp/torch-scatter_bc52d7c819624c0b886dc16865359e59/setup.py", line 8, in <module>
+          import torch
+      ModuleNotFoundError: No module named 'torch'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> See above for output.
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.
+2026-11-03 23:32:03 env mmrec: FAILED
+2026-11-03 23:34:00 env gdmsr: ok
+2026-11-03 23:36:14 env gbsr: ok
+2026-11-03 23:38:40 env hdsr: ok
+2026-11-03 23:38:40 RQ10 setup end
+fmlp        1.8.0+cu111 numpy 1.21.6 gpu ok
+steam       1.8.0+cu111 numpy 1.19.4 gpu ok
+recbole     1.12.0+cu116 numpy 1.20.3 gpu ok
+iadsr       2.5.1+cu124 numpy 1.23.1 gpu ok
+preferdiff  2.5.1+cu121 numpy 2.2.6 gpu ok
+damrs       2.0.0+cu118 numpy 1.23.5 gpu ok
+mmrec       ModuleNotFoundError: No module named 'torch'
+gdmsr       1.7.1+cu110 numpy 1.21.6 gpu ok
+gbsr        1.10.0+cu113 numpy 1.19.2 gpu ok
+hdsr        1.13.1+cu117 numpy 1.18.0 gpu ok
+2026-11-04 13:18:44 env fmlp: done before
+2026-11-04 13:18:44 env steam: done before
+2026-11-04 13:18:44 env recbole: done before
+2026-11-04 13:18:44 env iadsr: done before
+2026-11-04 13:20:25 env preferdiff: ok
+2026-11-04 13:20:25 env damrs: done before
+2026-11-04 13:21:34 env mmrec: ok
+2026-11-04 13:22:51 env gdmsr: ok
+2026-11-04 13:23:39 env gbsr: ok
+2026-11-04 13:23:39 env hdsr: done before
+fmlp        1.8.0+cu111 numpy 1.21.6 gpu ok
+steam       1.8.0+cu111 numpy 1.19.4 gpu ok
+recbole     1.12.0+cu116 numpy 1.20.3 gpu ok
+iadsr       2.5.1+cu124 numpy 1.23.1 gpu ok
+preferdiff  2.5.1+cu121 numpy 2.2.6 gpu ok
+damrs       2.0.0+cu118 numpy 1.23.5 gpu ok
+mmrec       ModuleNotFoundError: No module named 'torch_sparse'
+gdmsr       1.7.1+cu110 numpy 1.21.6 gpu ok
+gbsr        1.10.0+cu113 numpy 1.19.2 gpu ok
+hdsr        1.13.1+cu117 numpy 1.18.0 gpu ok

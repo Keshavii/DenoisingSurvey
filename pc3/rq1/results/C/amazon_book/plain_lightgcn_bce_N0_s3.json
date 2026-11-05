@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.04571864097413192,
+  "recall@20": 0.07293519857019631,
+  "recall@50": 0.1293925816576683,
+  "ndcg@10": 0.031928830475804915,
+  "ndcg@20": 0.04012033738806567,
+  "ndcg@50": 0.054628607176112814,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1028,
+      "ndcg@20": 0.026722862302782344,
+      "recall@20": 0.06614785992217899
+    },
+    "warm(5-20)": {
+      "n_users": 40291,
+      "ndcg@20": 0.035043921069146285,
+      "recall@20": 0.07665483606760815
+    },
+    "established(>20)": {
+      "n_users": 39030,
+      "ndcg@20": 0.045713637267472566,
+      "recall@20": 0.06927415500683329
+    },
+    "user_q1": {
+      "n_users": 15911,
+      "ndcg@20": 0.0273812569571373,
+      "recall@20": 0.0657092577462133
+    },
+    "user_q2": {
+      "n_users": 12228,
+      "ndcg@20": 0.03621357258366385,
+      "recall@20": 0.0798577036310108
+    },
+    "user_q3": {
+      "n_users": 19634,
+      "ndcg@20": 0.0428582122135521,
+      "recall@20": 0.08556585514923092
+    },
+    "user_q4": {
+      "n_users": 15987,
+      "ndcg@20": 0.04262395213110503,
+      "recall@20": 0.07454077271116115
+    },
+    "user_q5": {
+      "n_users": 16589,
+      "ndcg@20": 0.04956531330850424,
+      "recall@20": 0.058266739199672714
+    },
+    "items_head": {
+      "n_truth": 187957,
+      "recall@20_micro": 0.08977053262182308
+    },
+    "items_mid": {
+      "n_truth": 56939,
+      "recall@20_micro": 0.010274153040973674
+    },
+    "items_tail": {
+      "n_truth": 39016,
+      "recall@20_micro": 0.006868976830018454
+    },
+    "coverage@20": 0.35829034187081277,
+    "gini@20": 0.9573047009112349
+  },
+  "part": "C",
+  "dataset": "amazon_book",
+  "method": "Plain-BCE",
+  "backbone": "LightGCN",
+  "cond": "N0",
+  "seed": "3",
+  "train_file": "train.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/amazon_book/plain_lightgcn_bce_N0_s3/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-10-20 19:51:17"
+}

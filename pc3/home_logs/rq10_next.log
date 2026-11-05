@@ -1,0 +1,65 @@
+2026-11-03 23:21:27 waiting for rq10repro to finish
+2026-11-04 01:53:28 smoke reproductions finished
+2026-11-04 19:24:18 READY found at a8ad200; starting rq10_run.sh
+2026-11-04 19:24:18 === GBSR social track ===
+2026-11-04 19:24:18 gbsr_douban_r1: starting  dir=/home/aura1/survey/rq10/repos/gbsr/torch_version  cmd=python run_GBSR.py --dataset douban_book --runid run1 --beta 40 --sigma 2.5
+2026-11-04 19:32:54 gbsr_douban_r1: exit 0  8 min  peak 3642 MiB  (rc=124 means time limit)
+2026-11-04 19:32:54 gbsr_epinions_r1: starting  dir=/home/aura1/survey/rq10/repos/gbsr/torch_version  cmd=python run_GBSR.py --dataset epinions --runid run1 --beta 40 --sigma 2.5
+2026-11-04 19:41:34 gbsr_epinions_r1: exit 0  8 min  peak 20896 MiB  (rc=124 means time limit)
+2026-11-04 19:41:34 gbsr_yelp_r1: starting  dir=/home/aura1/survey/rq10/repos/gbsr/torch_version  cmd=python run_GBSR.py --dataset yelp --runid run1 --beta 40 --sigma 2.5
+2026-11-04 19:53:34 gbsr_yelp_r1: exit 0  12 min  peak 11993 MiB  (rc=124 means time limit)
+2026-11-04 19:53:34 gbsr_douban_r2: starting  dir=/home/aura1/survey/rq10/repos/gbsr/torch_version  cmd=python run_GBSR.py --dataset douban_book --runid run2 --beta 40 --sigma 2.5
+2026-11-04 20:04:54 gbsr_douban_r2: exit 0  11 min  peak 10986 MiB  (rc=124 means time limit)
+2026-11-04 20:04:54 gbsr_epinions_r2: starting  dir=/home/aura1/survey/rq10/repos/gbsr/torch_version  cmd=python run_GBSR.py --dataset epinions --runid run2 --beta 40 --sigma 2.5
+2026-11-04 20:14:20 gbsr_epinions_r2: exit 0  9 min  peak 11823 MiB  (rc=124 means time limit)
+2026-11-04 20:14:20 gbsr_yelp_r2: starting  dir=/home/aura1/survey/rq10/repos/gbsr/torch_version  cmd=python run_GBSR.py --dataset yelp --runid run2 --beta 40 --sigma 2.5
+2026-11-04 20:27:32 gbsr_yelp_r2: exit 0  13 min  peak 11924 MiB  (rc=124 means time limit)
+2026-11-04 20:27:32 === HDSR social track ===
+2026-11-04 20:27:32 hdsr_default: starting  dir=/home/aura1/survey/rq10/repos/hdsr/src  cmd=python run_HDSR_pc3.py
+2026-11-04 20:33:33 hdsr_default: exit 0  6 min  peak 9675 MiB  (rc=124 means time limit)
+2026-11-04 20:33:33 === GDMSR social track ===
+2026-11-04 20:33:33 gdmsr_yelp: starting  dir=/home/aura1/survey/rq10/repos/gdmsr  cmd=bash run.sh
+2026-11-04 20:33:35 gdmsr_yelp: exit 1  0 min  peak 8032 MiB  (rc=124 means time limit)
+2026-11-04 20:33:35 gdmsr_ciao: starting  dir=/home/aura1/survey/rq10/repos/gdmsr  cmd=bash -c mkdir -p log/ciao   && python main.py --dataset_name=ciao
+2026-11-04 20:33:36 gdmsr_ciao: exit 1  0 min  peak 8032 MiB  (rc=124 means time limit)
+2026-11-04 20:33:36 gdmsr_douban: starting  dir=/home/aura1/survey/rq10/repos/gdmsr  cmd=bash -c mkdir -p log/douban && python main.py --dataset_name=douban
+2026-11-04 20:33:36 gdmsr_douban: exit 1  0 min  peak 8032 MiB  (rc=124 means time limit)
+2026-11-04 20:33:36 === STEAM sequential track ===
+2026-11-04 20:33:36 steam_beauty: starting  dir=/home/aura1/survey/rq10/repos/steam  cmd=bash -c python main.py -m=train && python main.py -m=valid && python main.py -m=test
+2026-11-04 20:33:41 steam_beauty: exit 1  0 min  peak 8040 MiB  (rc=124 means time limit)
+2026-11-04 20:33:41 steam_sports: starting  dir=/home/aura1/survey/rq10/repos/steam  cmd=bash -c python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat            -vn ./Sports/valid_neg.dat -en ./Sports/test_neg.dat -m=train &&            python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat            -vn ./Sports/valid_neg.dat -en ./Sports/test_neg.dat -m=valid &&            python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat            -vn ./Sports/valid_neg.dat -en ./Sports/test_neg.dat -m=test
+2026-11-04 20:33:44 steam_sports: exit 1  0 min  peak 8032 MiB  (rc=124 means time limit)
+2026-11-04 20:33:44 steam_yelp: starting  dir=/home/aura1/survey/rq10/repos/steam  cmd=bash -c python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat            -vn ./Yelp/valid_neg.dat -en ./Yelp/test_neg.dat -m=train &&            python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat            -vn ./Yelp/valid_neg.dat -en ./Yelp/test_neg.dat -m=valid &&            python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat            -vn ./Yelp/valid_neg.dat -en ./Yelp/test_neg.dat -m=test
+2026-11-04 20:33:47 steam_yelp: exit 1  0 min  peak 8032 MiB  (rc=124 means time limit)
+2026-11-04 20:33:47 === FMLP-Rec sequential track ===
+2026-11-04 20:33:47 fmlp_beauty: starting  dir=/home/aura1/survey/rq10/repos/fmlp  cmd=python main.py --data_name=Beauty
+2026-11-04 20:34:59 fmlp_beauty: exit 1  1 min  peak 23821 MiB  (rc=124 means time limit)
+2026-11-04 20:34:59 fmlp_sports: starting  dir=/home/aura1/survey/rq10/repos/fmlp  cmd=python main.py --data_name=Sports
+2026-11-04 20:35:00 fmlp_sports: exit 1  0 min  peak 8563 MiB  (rc=124 means time limit)
+2026-11-04 20:35:00 fmlp_yelp: starting  dir=/home/aura1/survey/rq10/repos/fmlp  cmd=python main.py --data_name=Yelp
+2026-11-04 20:35:00 fmlp_yelp: exit 1  0 min  peak 8631 MiB  (rc=124 means time limit)
+2026-11-04 20:35:00 === PreferDiff sequential track ===
+2026-11-04 20:35:00 preferdiff_beauty: starting  dir=/home/aura1/survey/rq10/repos/preferdiff  cmd=python main.py --model=PreferDiff --sd=O --td=O --loss_type=cosine --lamda=0.4 --w=2 --hidden_size=3072 --ab=iids
+2026-11-04 20:35:16 preferdiff_beauty: exit 1  0 min  peak 11311 MiB  (rc=124 means time limit)
+2026-11-04 20:35:16 === RQ10 baseline runs complete ===
+
+2026-11-04 20:35:16 Summary (name  exit  minutes  peak_MiB):
+gbsr_douban_r1     0  8   3642
+gbsr_epinions_r1   0  8   20896
+gbsr_yelp_r1       0  12  11993
+hsd_beauty_sasrec  1  15  11981
+gbsr_douban_r2     0  11  10986
+gbsr_epinions_r2   0  9   11823
+gbsr_yelp_r2       0  13  11924
+hdsr_default       0  6   9675
+gdmsr_yelp         1  0   8032
+gdmsr_ciao         1  0   8032
+gdmsr_douban       1  0   8032
+steam_beauty       1  0   8040
+steam_sports       1  0   8032
+steam_yelp         1  0   8032
+fmlp_beauty        1  1   23821
+fmlp_sports        1  0   8563
+hsd_sports_sasrec  1  30  11924
+fmlp_yelp          1  0   8631
+preferdiff_beauty  1  0   11311

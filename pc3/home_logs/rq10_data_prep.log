@@ -1,0 +1,46 @@
+2026-11-04 19:36:43 RQ10 data prep start
+2026-11-04 19:36:43 --- STEAM format noise injection ---
+  Beauty: 22362 users, 149958 train interactions
+    N0: 149958 -> 149958 train interactions (+0)
+    written -> /home/aura1/survey/rq10/data/Beauty_N0
+    N2_20: 149958 -> 180469 train interactions (+30511)
+    written -> /home/aura1/survey/rq10/data/Beauty_N2_20
+    N3_30: 149958 -> 189633 train interactions (+39675)
+    written -> /home/aura1/survey/rq10/data/Beauty_N3_30
+  Sports: 35597 users, 223289 train interactions
+    N0: 223289 -> 223289 train interactions (+0)
+    written -> /home/aura1/survey/rq10/data/Sports_N0
+    N2_20: 223289 -> 268905 train interactions (+45616)
+    written -> /home/aura1/survey/rq10/data/Sports_N2_20
+    N3_30: 223289 -> 281822 train interactions (+58533)
+    written -> /home/aura1/survey/rq10/data/Sports_N3_30
+  Yelp: 22844 users, 191311 train interactions
+    N0: 191311 -> 191311 train interactions (+0)
+    written -> /home/aura1/survey/rq10/data/Yelp_N0
+    N2_20: 191311 -> 228487 train interactions (+37176)
+    written -> /home/aura1/survey/rq10/data/Yelp_N2_20
+    N3_30: 191311 -> 242422 train interactions (+51111)
+    written -> /home/aura1/survey/rq10/data/Yelp_N3_30
+2026-11-04 19:36:44 --- FMLP format noise injection ---
+2026-11-04 19:36:44 FMLP datasets found: Beauty
+  Beauty: 22363 users, 198502 train interactions (FMLP)
+    N0: 198502 -> 198502 (+0)
+    written -> /home/aura1/survey/rq10/repos/fmlp/data/Beauty_N0.txt
+    N2_20: 198502 -> 232444 (+33942)
+    written -> /home/aura1/survey/rq10/repos/fmlp/data/Beauty_N2_20.txt
+    N3_30: 198502 -> 247160 (+48658)
+    written -> /home/aura1/survey/rq10/repos/fmlp/data/Beauty_N3_30.txt
+2026-11-04 19:36:44 --- verification ---
+2026-11-04 19:36:44   STEAM Beauty_N0: 22362 train users
+2026-11-04 19:36:44   FMLP  Beauty_N0: 22363 users
+2026-11-04 19:36:44   STEAM Beauty_N2_20: 22362 train users
+2026-11-04 19:36:44   FMLP  Beauty_N2_20: 22363 users
+2026-11-04 19:36:44   STEAM Beauty_N3_30: 22362 train users
+2026-11-04 19:36:44   FMLP  Beauty_N3_30: 22363 users
+2026-11-04 19:36:44   STEAM Sports_N0: 35597 train users
+2026-11-04 19:36:44   STEAM Sports_N2_20: 35597 train users
+2026-11-04 19:36:44   STEAM Sports_N3_30: 35597 train users
+2026-11-04 19:36:44   STEAM Yelp_N0: 22844 train users
+2026-11-04 19:36:44   STEAM Yelp_N2_20: 22844 train users
+2026-11-04 19:36:44   STEAM Yelp_N3_30: 22844 train users
+2026-11-04 19:36:44 RQ10 data prep complete

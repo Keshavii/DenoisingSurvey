@@ -1,0 +1,881 @@
+Baseline Models:
+NCF   LightGCN   MF   NGCF   DirectAU
+--------------------------------------------------------------------------------
+Graph-Based Models:
+SGL   SimGCL
+--------------------------------------------------------------------------------
+Denoising Models:
+BOD
+================================================================================
+Please enter the model you want to run:Reading data and preprocessing...
+/home/anurag/repos/BOD/base/torch_interface.py:10: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:278.)
+  i = torch.LongTensor([coo.row, coo.col])
+/home/anurag/repos/BOD/base/torch_interface.py:12: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:641.)
+  return torch.sparse.FloatTensor(i, v, coo.shape)
+/home/anurag/miniconda3/envs/bod/lib/python3.10/site-packages/torch/cuda/__init__.py:654: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+Model: LightGCN
+Training Set: /home/anurag/repos/BOD/dataset/iFashion/train.txt
+Test Set: /home/anurag/repos/BOD/dataset/iFashion/test.txt
+Embedding Dimension: 64
+Maximum Epoch: 30
+Learning Rate: 0.001
+Batch Size: 512
+Regularization Parameter: reg 0.0001
+Specific parameters: n_layer:2  
+Training Set Size: (user number: 300000, item number 81614, interaction number: 1255447)
+Test Set Size: (user number: 268847, item number 48483, interaction number: 352366)
+================================================================================
+Initializing and building model...
+Training Model...
+training: 1 batch 0 batch_loss: 0.6931919455528259
+training: 1 batch 100 batch_loss: 0.6887163519859314
+training: 1 batch 200 batch_loss: 0.5203599333763123
+training: 1 batch 300 batch_loss: 0.42466017603874207
+training: 1 batch 400 batch_loss: 0.38334235548973083
+training: 1 batch 500 batch_loss: 0.3372364938259125
+training: 1 batch 600 batch_loss: 0.33970126509666443
+training: 1 batch 700 batch_loss: 0.34207528829574585
+training: 1 batch 800 batch_loss: 0.320472776889801
+training: 1 batch 900 batch_loss: 0.3247351050376892
+training: 1 batch 1000 batch_loss: 0.2954385280609131
+training: 1 batch 1100 batch_loss: 0.31021004915237427
+training: 1 batch 1200 batch_loss: 0.29493868350982666
+training: 1 batch 1300 batch_loss: 0.2755279541015625
+training: 1 batch 1400 batch_loss: 0.3180132508277893
+training: 1 batch 1500 batch_loss: 0.2833956182003021
+training: 1 batch 1600 batch_loss: 0.2811577618122101
+training: 1 batch 1700 batch_loss: 0.2910274565219879
+training: 1 batch 1800 batch_loss: 0.276622474193573
+training: 1 batch 1900 batch_loss: 0.2583337128162384
+training: 1 batch 2000 batch_loss: 0.30554628372192383
+training: 1 batch 2100 batch_loss: 0.26438677310943604
+training: 1 batch 2200 batch_loss: 0.2686798572540283
+training: 1 batch 2300 batch_loss: 0.27964848279953003
+training: 1 batch 2400 batch_loss: 0.2533022463321686
+One epoch Running time: 47.739801 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.026994658962555977 | Precision:0.0017690359200586206 | Recall:0.02843526156101836 | NDCG:0.013044629355602258
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.026994658962555977 | Precision:0.0017690359200586206 | Recall:0.02843526156101836 | MDCG:0.013044629355602258
+------------------------------------------------------------------------------------------------------------------------
+training: 2 batch 0 batch_loss: 0.3156692385673523
+training: 2 batch 100 batch_loss: 0.2959880828857422
+training: 2 batch 200 batch_loss: 0.27411869168281555
+training: 2 batch 300 batch_loss: 0.23415106534957886
+training: 2 batch 400 batch_loss: 0.2388179898262024
+training: 2 batch 500 batch_loss: 0.30761346220970154
+training: 2 batch 600 batch_loss: 0.25919681787490845
+training: 2 batch 700 batch_loss: 0.311310738325119
+training: 2 batch 800 batch_loss: 0.23229938745498657
+training: 2 batch 900 batch_loss: 0.27507802844047546
+training: 2 batch 1000 batch_loss: 0.25148046016693115
+training: 2 batch 1100 batch_loss: 0.24405205249786377
+training: 2 batch 1200 batch_loss: 0.2404341995716095
+training: 2 batch 1300 batch_loss: 0.2777136564254761
+training: 2 batch 1400 batch_loss: 0.2566469609737396
+training: 2 batch 1500 batch_loss: 0.25597232580184937
+training: 2 batch 1600 batch_loss: 0.23075346648693085
+training: 2 batch 1700 batch_loss: 0.23537427186965942
+training: 2 batch 1800 batch_loss: 0.22429253160953522
+training: 2 batch 1900 batch_loss: 0.2499363273382187
+training: 2 batch 2000 batch_loss: 0.25971683859825134
+training: 2 batch 2100 batch_loss: 0.22062379121780396
+training: 2 batch 2200 batch_loss: 0.23495334386825562
+training: 2 batch 2300 batch_loss: 0.26579615473747253
+training: 2 batch 2400 batch_loss: 0.22472010552883148
+One epoch Running time: 47.671001 s
+training: 3 batch 0 batch_loss: 0.22720544040203094
+training: 3 batch 100 batch_loss: 0.17971643805503845
+training: 3 batch 200 batch_loss: 0.22230754792690277
+training: 3 batch 300 batch_loss: 0.25424066185951233
+training: 3 batch 400 batch_loss: 0.20671451091766357
+training: 3 batch 500 batch_loss: 0.1975741982460022
+training: 3 batch 600 batch_loss: 0.20340490341186523
+training: 3 batch 700 batch_loss: 0.22477659583091736
+training: 3 batch 800 batch_loss: 0.23777112364768982
+training: 3 batch 900 batch_loss: 0.22758705914020538
+training: 3 batch 1000 batch_loss: 0.21438953280448914
+training: 3 batch 1100 batch_loss: 0.24923719465732574
+training: 3 batch 1200 batch_loss: 0.1902124285697937
+training: 3 batch 1300 batch_loss: 0.20658640563488007
+training: 3 batch 1400 batch_loss: 0.20046664774417877
+training: 3 batch 1500 batch_loss: 0.2001088261604309
+training: 3 batch 1600 batch_loss: 0.2020091414451599
+training: 3 batch 1700 batch_loss: 0.21656252443790436
+training: 3 batch 1800 batch_loss: 0.24649886786937714
+training: 3 batch 1900 batch_loss: 0.1773528754711151
+training: 3 batch 2000 batch_loss: 0.2521710693836212
+training: 3 batch 2100 batch_loss: 0.2090122401714325
+training: 3 batch 2200 batch_loss: 0.2183866649866104
+training: 3 batch 2300 batch_loss: 0.20100918412208557
+training: 3 batch 2400 batch_loss: 0.2622557282447815
+One epoch Running time: 47.687471 s
+training: 4 batch 0 batch_loss: 0.19204294681549072
+training: 4 batch 100 batch_loss: 0.16971272230148315
+training: 4 batch 200 batch_loss: 0.19237473607063293
+training: 4 batch 300 batch_loss: 0.19857190549373627
+training: 4 batch 400 batch_loss: 0.17787444591522217
+training: 4 batch 500 batch_loss: 0.1840478777885437
+training: 4 batch 600 batch_loss: 0.17043855786323547
+training: 4 batch 700 batch_loss: 0.17675688862800598
+training: 4 batch 800 batch_loss: 0.21758727729320526
+training: 4 batch 900 batch_loss: 0.2054620087146759
+training: 4 batch 1000 batch_loss: 0.20113195478916168
+training: 4 batch 1100 batch_loss: 0.2033059149980545
+training: 4 batch 1200 batch_loss: 0.21810951828956604
+training: 4 batch 1300 batch_loss: 0.19172042608261108
+training: 4 batch 1400 batch_loss: 0.21582427620887756
+training: 4 batch 1500 batch_loss: 0.19379842281341553
+training: 4 batch 1600 batch_loss: 0.1739746630191803
+training: 4 batch 1700 batch_loss: 0.21839278936386108
+training: 4 batch 1800 batch_loss: 0.18798239529132843
+training: 4 batch 1900 batch_loss: 0.1609618365764618
+training: 4 batch 2000 batch_loss: 0.1836632490158081
+training: 4 batch 2100 batch_loss: 0.16753368079662323
+training: 4 batch 2200 batch_loss: 0.20093385875225067
+training: 4 batch 2300 batch_loss: 0.1717005968093872
+training: 4 batch 2400 batch_loss: 0.172902449965477
+One epoch Running time: 47.683385 s
+training: 5 batch 0 batch_loss: 0.18116642534732819
+training: 5 batch 100 batch_loss: 0.17845261096954346
+training: 5 batch 200 batch_loss: 0.15862230956554413
+training: 5 batch 300 batch_loss: 0.18505859375
+training: 5 batch 400 batch_loss: 0.20697827637195587
+training: 5 batch 500 batch_loss: 0.15487885475158691
+training: 5 batch 600 batch_loss: 0.1884937882423401
+training: 5 batch 700 batch_loss: 0.1714635193347931
+training: 5 batch 800 batch_loss: 0.1827928125858307
+training: 5 batch 900 batch_loss: 0.17939744889736176
+training: 5 batch 1000 batch_loss: 0.17042720317840576
+training: 5 batch 1100 batch_loss: 0.15876518189907074
+training: 5 batch 1200 batch_loss: 0.16980218887329102
+training: 5 batch 1300 batch_loss: 0.1564697027206421
+training: 5 batch 1400 batch_loss: 0.16083167493343353
+training: 5 batch 1500 batch_loss: 0.16861216723918915
+training: 5 batch 1600 batch_loss: 0.16391897201538086
+training: 5 batch 1700 batch_loss: 0.1503477543592453
+training: 5 batch 1800 batch_loss: 0.15072637796401978
+training: 5 batch 1900 batch_loss: 0.17496469616889954
+training: 5 batch 2000 batch_loss: 0.15190431475639343
+training: 5 batch 2100 batch_loss: 0.1592891663312912
+training: 5 batch 2200 batch_loss: 0.1496255248785019
+training: 5 batch 2300 batch_loss: 0.15308989584445953
+training: 5 batch 2400 batch_loss: 0.15355682373046875
+One epoch Running time: 47.688421 s
+training: 6 batch 0 batch_loss: 0.1238950863480568
+training: 6 batch 100 batch_loss: 0.14436651766300201
+training: 6 batch 200 batch_loss: 0.12266844511032104
+training: 6 batch 300 batch_loss: 0.15034648776054382
+training: 6 batch 400 batch_loss: 0.16048571467399597
+training: 6 batch 500 batch_loss: 0.15873287618160248
+training: 6 batch 600 batch_loss: 0.17049521207809448
+training: 6 batch 700 batch_loss: 0.1545843929052353
+training: 6 batch 800 batch_loss: 0.14344331622123718
+training: 6 batch 900 batch_loss: 0.10913307219743729
+training: 6 batch 1000 batch_loss: 0.12212415039539337
+training: 6 batch 1100 batch_loss: 0.16785217821598053
+training: 6 batch 1200 batch_loss: 0.1264897733926773
+training: 6 batch 1300 batch_loss: 0.15874548256397247
+training: 6 batch 1400 batch_loss: 0.14990019798278809
+training: 6 batch 1500 batch_loss: 0.13850608468055725
+training: 6 batch 1600 batch_loss: 0.11346867680549622
+training: 6 batch 1700 batch_loss: 0.1340450644493103
+training: 6 batch 1800 batch_loss: 0.13412810862064362
+training: 6 batch 1900 batch_loss: 0.16604310274124146
+training: 6 batch 2000 batch_loss: 0.13751624524593353
+training: 6 batch 2100 batch_loss: 0.15249305963516235
+training: 6 batch 2200 batch_loss: 0.11584741622209549
+training: 6 batch 2300 batch_loss: 0.1217859536409378
+training: 6 batch 2400 batch_loss: 0.15334121882915497
+One epoch Running time: 47.589995 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 6, Hit Ratio:0.051386910201324756 | Precision:0.003367528743114113 | Recall:0.053652568474494865 | NDCG:0.024245669779109615
+*Best Performance* 
+Epoch: 6, Hit Ratio:0.051386910201324756 | Precision:0.003367528743114113 | Recall:0.053652568474494865 | MDCG:0.024245669779109615
+------------------------------------------------------------------------------------------------------------------------
+training: 7 batch 0 batch_loss: 0.11300753802061081
+training: 7 batch 100 batch_loss: 0.1105777844786644
+training: 7 batch 200 batch_loss: 0.09245115518569946
+training: 7 batch 300 batch_loss: 0.1085643619298935
+training: 7 batch 400 batch_loss: 0.13753804564476013
+training: 7 batch 500 batch_loss: 0.10885212570428848
+training: 7 batch 600 batch_loss: 0.13906067609786987
+training: 7 batch 700 batch_loss: 0.11824962496757507
+training: 7 batch 800 batch_loss: 0.13603273034095764
+training: 7 batch 900 batch_loss: 0.136124849319458
+training: 7 batch 1000 batch_loss: 0.1267649531364441
+training: 7 batch 1100 batch_loss: 0.1024695634841919
+training: 7 batch 1200 batch_loss: 0.10651891678571701
+training: 7 batch 1300 batch_loss: 0.1082397922873497
+training: 7 batch 1400 batch_loss: 0.10564123094081879
+training: 7 batch 1500 batch_loss: 0.11830757558345795
+training: 7 batch 1600 batch_loss: 0.1229427233338356
+training: 7 batch 1700 batch_loss: 0.13510294258594513
+training: 7 batch 1800 batch_loss: 0.11160127073526382
+training: 7 batch 1900 batch_loss: 0.10969460755586624
+training: 7 batch 2000 batch_loss: 0.1548301726579666
+training: 7 batch 2100 batch_loss: 0.12288776785135269
+training: 7 batch 2200 batch_loss: 0.10553823411464691
+training: 7 batch 2300 batch_loss: 0.12045380473136902
+training: 7 batch 2400 batch_loss: 0.08724456280469894
+One epoch Running time: 47.535370 s
+training: 8 batch 0 batch_loss: 0.1035369336605072
+training: 8 batch 100 batch_loss: 0.09783633053302765
+training: 8 batch 200 batch_loss: 0.12987154722213745
+training: 8 batch 300 batch_loss: 0.10070419311523438
+training: 8 batch 400 batch_loss: 0.11507274210453033
+training: 8 batch 500 batch_loss: 0.10050972551107407
+training: 8 batch 600 batch_loss: 0.10317667573690414
+training: 8 batch 700 batch_loss: 0.10518819838762283
+training: 8 batch 800 batch_loss: 0.1169435977935791
+training: 8 batch 900 batch_loss: 0.11139429360628128
+training: 8 batch 1000 batch_loss: 0.12590505182743073
+training: 8 batch 1100 batch_loss: 0.09017668664455414
+training: 8 batch 1200 batch_loss: 0.12224923819303513
+training: 8 batch 1300 batch_loss: 0.1189015731215477
+training: 8 batch 1400 batch_loss: 0.11613313108682632
+training: 8 batch 1500 batch_loss: 0.1229424998164177
+training: 8 batch 1600 batch_loss: 0.12253905087709427
+training: 8 batch 1700 batch_loss: 0.10164550691843033
+training: 8 batch 1800 batch_loss: 0.1238054558634758
+training: 8 batch 1900 batch_loss: 0.09440483897924423
+training: 8 batch 2000 batch_loss: 0.09349416941404343
+training: 8 batch 2100 batch_loss: 0.1012306809425354
+training: 8 batch 2200 batch_loss: 0.10732977837324142
+training: 8 batch 2300 batch_loss: 0.07672963291406631
+training: 8 batch 2400 batch_loss: 0.07952671498060226
+One epoch Running time: 47.394425 s
+training: 9 batch 0 batch_loss: 0.10231948643922806
+training: 9 batch 100 batch_loss: 0.06743108481168747
+training: 9 batch 200 batch_loss: 0.08575940132141113
+training: 9 batch 300 batch_loss: 0.08585259318351746
+training: 9 batch 400 batch_loss: 0.10910843312740326
+training: 9 batch 500 batch_loss: 0.10318684577941895
+training: 9 batch 600 batch_loss: 0.0924680083990097
+training: 9 batch 700 batch_loss: 0.10729113966226578
+training: 9 batch 800 batch_loss: 0.10587998479604721
+training: 9 batch 900 batch_loss: 0.10881776362657547
+training: 9 batch 1000 batch_loss: 0.08443182706832886
+training: 9 batch 1100 batch_loss: 0.10555624961853027
+training: 9 batch 1200 batch_loss: 0.07631763070821762
+training: 9 batch 1300 batch_loss: 0.07411018013954163
+training: 9 batch 1400 batch_loss: 0.076475128531456
+training: 9 batch 1500 batch_loss: 0.08592482656240463
+training: 9 batch 1600 batch_loss: 0.10668395459651947
+training: 9 batch 1700 batch_loss: 0.11048579961061478
+training: 9 batch 1800 batch_loss: 0.08306511491537094
+training: 9 batch 1900 batch_loss: 0.08527491986751556
+training: 9 batch 2000 batch_loss: 0.09286778420209885
+training: 9 batch 2100 batch_loss: 0.07438304275274277
+training: 9 batch 2200 batch_loss: 0.0992702916264534
+training: 9 batch 2300 batch_loss: 0.0979401245713234
+training: 9 batch 2400 batch_loss: 0.08170323818922043
+One epoch Running time: 47.423453 s
+training: 10 batch 0 batch_loss: 0.07753228396177292
+training: 10 batch 100 batch_loss: 0.07741885632276535
+training: 10 batch 200 batch_loss: 0.0672566369175911
+training: 10 batch 300 batch_loss: 0.09043000638484955
+training: 10 batch 400 batch_loss: 0.08437808603048325
+training: 10 batch 500 batch_loss: 0.08158808946609497
+training: 10 batch 600 batch_loss: 0.07974421977996826
+training: 10 batch 700 batch_loss: 0.0643937736749649
+training: 10 batch 800 batch_loss: 0.06642335653305054
+training: 10 batch 900 batch_loss: 0.095716692507267
+training: 10 batch 1000 batch_loss: 0.07709190994501114
+training: 10 batch 1100 batch_loss: 0.06528078019618988
+training: 10 batch 1200 batch_loss: 0.1289498507976532
+training: 10 batch 1300 batch_loss: 0.08268482238054276
+training: 10 batch 1400 batch_loss: 0.07987885177135468
+training: 10 batch 1500 batch_loss: 0.083826445043087
+training: 10 batch 1600 batch_loss: 0.07141277939081192
+training: 10 batch 1700 batch_loss: 0.07130885124206543
+training: 10 batch 1800 batch_loss: 0.07490862160921097
+training: 10 batch 1900 batch_loss: 0.08603556454181671
+training: 10 batch 2000 batch_loss: 0.07028696686029434
+training: 10 batch 2100 batch_loss: 0.07944627106189728
+training: 10 batch 2200 batch_loss: 0.06376471370458603
+training: 10 batch 2300 batch_loss: 0.10179885476827621
+training: 10 batch 2400 batch_loss: 0.08515296131372452
+One epoch Running time: 47.660362 s
+training: 11 batch 0 batch_loss: 0.09099870175123215
+training: 11 batch 100 batch_loss: 0.08341677486896515
+training: 11 batch 200 batch_loss: 0.06862057745456696
+training: 11 batch 300 batch_loss: 0.05160696059465408
+training: 11 batch 400 batch_loss: 0.06970014423131943
+training: 11 batch 500 batch_loss: 0.07730632275342941
+training: 11 batch 600 batch_loss: 0.07159223407506943
+training: 11 batch 700 batch_loss: 0.06111234053969383
+training: 11 batch 800 batch_loss: 0.09908215701580048
+training: 11 batch 900 batch_loss: 0.06938551366329193
+training: 11 batch 1000 batch_loss: 0.07095020264387131
+training: 11 batch 1100 batch_loss: 0.05702260881662369
+training: 11 batch 1200 batch_loss: 0.06358890980482101
+training: 11 batch 1300 batch_loss: 0.06148526817560196
+training: 11 batch 1400 batch_loss: 0.09336952865123749
+training: 11 batch 1500 batch_loss: 0.06713767349720001
+training: 11 batch 1600 batch_loss: 0.06915134191513062
+training: 11 batch 1700 batch_loss: 0.07846313714981079
+training: 11 batch 1800 batch_loss: 0.06839796155691147
+training: 11 batch 1900 batch_loss: 0.05554335564374924
+training: 11 batch 2000 batch_loss: 0.07511008530855179
+training: 11 batch 2100 batch_loss: 0.05653814971446991
+training: 11 batch 2200 batch_loss: 0.10989336669445038
+training: 11 batch 2300 batch_loss: 0.08633913099765778
+training: 11 batch 2400 batch_loss: 0.08784542232751846
+One epoch Running time: 47.662169 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 11, Hit Ratio:0.06647633426607562 | Precision:0.004356381138714585 | Recall:0.06962428802006256 | NDCG:0.03224733371142491
+*Best Performance* 
+Epoch: 11, Hit Ratio:0.06647633426607562 | Precision:0.004356381138714585 | Recall:0.06962428802006256 | MDCG:0.03224733371142491
+------------------------------------------------------------------------------------------------------------------------
+training: 12 batch 0 batch_loss: 0.05618748068809509
+training: 12 batch 100 batch_loss: 0.07733356952667236
+training: 12 batch 200 batch_loss: 0.06583933532238007
+training: 12 batch 300 batch_loss: 0.0639009103178978
+training: 12 batch 400 batch_loss: 0.05419274419546127
+training: 12 batch 500 batch_loss: 0.04373878985643387
+training: 12 batch 600 batch_loss: 0.06820140033960342
+training: 12 batch 700 batch_loss: 0.06968388706445694
+training: 12 batch 800 batch_loss: 0.07395130395889282
+training: 12 batch 900 batch_loss: 0.05967631936073303
+training: 12 batch 1000 batch_loss: 0.06964351236820221
+training: 12 batch 1100 batch_loss: 0.05718935281038284
+training: 12 batch 1200 batch_loss: 0.0567367821931839
+training: 12 batch 1300 batch_loss: 0.06184306740760803
+training: 12 batch 1400 batch_loss: 0.047056153416633606
+training: 12 batch 1500 batch_loss: 0.04797762632369995
+training: 12 batch 1600 batch_loss: 0.06196707487106323
+training: 12 batch 1700 batch_loss: 0.046039730310440063
+training: 12 batch 1800 batch_loss: 0.07785187661647797
+training: 12 batch 1900 batch_loss: 0.0549098365008831
+training: 12 batch 2000 batch_loss: 0.0431697741150856
+training: 12 batch 2100 batch_loss: 0.06091541796922684
+training: 12 batch 2200 batch_loss: 0.05671750381588936
+training: 12 batch 2300 batch_loss: 0.06227894872426987
+training: 12 batch 2400 batch_loss: 0.06230420619249344
+One epoch Running time: 47.646975 s
+training: 13 batch 0 batch_loss: 0.04848272353410721
+training: 13 batch 100 batch_loss: 0.047947466373443604
+training: 13 batch 200 batch_loss: 0.05332185700535774
+training: 13 batch 300 batch_loss: 0.05157693475484848
+training: 13 batch 400 batch_loss: 0.06291326880455017
+training: 13 batch 500 batch_loss: 0.051544249057769775
+training: 13 batch 600 batch_loss: 0.0630996972322464
+training: 13 batch 700 batch_loss: 0.05343371629714966
+training: 13 batch 800 batch_loss: 0.05927020683884621
+training: 13 batch 900 batch_loss: 0.04954115301370621
+training: 13 batch 1000 batch_loss: 0.054034728556871414
+training: 13 batch 1100 batch_loss: 0.05277158319950104
+training: 13 batch 1200 batch_loss: 0.05372914299368858
+training: 13 batch 1300 batch_loss: 0.05545344203710556
+training: 13 batch 1400 batch_loss: 0.05042834207415581
+training: 13 batch 1500 batch_loss: 0.05786586552858353
+training: 13 batch 1600 batch_loss: 0.0420006699860096
+training: 13 batch 1700 batch_loss: 0.051582738757133484
+training: 13 batch 1800 batch_loss: 0.0395694337785244
+training: 13 batch 1900 batch_loss: 0.05512939393520355
+training: 13 batch 2000 batch_loss: 0.04020976275205612
+training: 13 batch 2100 batch_loss: 0.059448231011629105
+training: 13 batch 2200 batch_loss: 0.05225439369678497
+training: 13 batch 2300 batch_loss: 0.0437786839902401
+training: 13 batch 2400 batch_loss: 0.06403911858797073
+One epoch Running time: 47.692009 s
+training: 14 batch 0 batch_loss: 0.05983027070760727
+training: 14 batch 100 batch_loss: 0.05941072851419449
+training: 14 batch 200 batch_loss: 0.052075762301683426
+training: 14 batch 300 batch_loss: 0.04159688949584961
+training: 14 batch 400 batch_loss: 0.039925117045640945
+training: 14 batch 500 batch_loss: 0.04442766308784485
+training: 14 batch 600 batch_loss: 0.03613833710551262
+training: 14 batch 700 batch_loss: 0.05198962241411209
+training: 14 batch 800 batch_loss: 0.05778520181775093
+training: 14 batch 900 batch_loss: 0.04919271916151047
+training: 14 batch 1000 batch_loss: 0.05053986981511116
+training: 14 batch 1100 batch_loss: 0.03616899624466896
+training: 14 batch 1200 batch_loss: 0.04553285613656044
+training: 14 batch 1300 batch_loss: 0.032832734286785126
+training: 14 batch 1400 batch_loss: 0.04459616169333458
+training: 14 batch 1500 batch_loss: 0.04537636786699295
+training: 14 batch 1600 batch_loss: 0.043158307671546936
+training: 14 batch 1700 batch_loss: 0.042848940938711166
+training: 14 batch 1800 batch_loss: 0.05425401031970978
+training: 14 batch 1900 batch_loss: 0.04424285516142845
+training: 14 batch 2000 batch_loss: 0.02877170965075493
+training: 14 batch 2100 batch_loss: 0.03643075376749039
+training: 14 batch 2200 batch_loss: 0.04475299268960953
+training: 14 batch 2300 batch_loss: 0.04136934503912926
+training: 14 batch 2400 batch_loss: 0.05334470048546791
+One epoch Running time: 47.535243 s
+training: 15 batch 0 batch_loss: 0.04813307523727417
+training: 15 batch 100 batch_loss: 0.04199625924229622
+training: 15 batch 200 batch_loss: 0.03853178396821022
+training: 15 batch 300 batch_loss: 0.05053059384226799
+training: 15 batch 400 batch_loss: 0.0538262277841568
+training: 15 batch 500 batch_loss: 0.05711401253938675
+training: 15 batch 600 batch_loss: 0.040027815848588943
+training: 15 batch 700 batch_loss: 0.034112598747015
+training: 15 batch 800 batch_loss: 0.04627767205238342
+training: 15 batch 900 batch_loss: 0.04909813776612282
+training: 15 batch 1000 batch_loss: 0.04274136573076248
+training: 15 batch 1100 batch_loss: 0.037007223814725876
+training: 15 batch 1200 batch_loss: 0.04412202909588814
+training: 15 batch 1300 batch_loss: 0.038290224969387054
+training: 15 batch 1400 batch_loss: 0.039164021611213684
+training: 15 batch 1500 batch_loss: 0.033630870282649994
+training: 15 batch 1600 batch_loss: 0.03672590106725693
+training: 15 batch 1700 batch_loss: 0.0410865843296051
+training: 15 batch 1800 batch_loss: 0.041688889265060425
+training: 15 batch 1900 batch_loss: 0.05699500814080238
+training: 15 batch 2000 batch_loss: 0.038666605949401855
+training: 15 batch 2100 batch_loss: 0.04507195204496384
+training: 15 batch 2200 batch_loss: 0.03370760753750801
+training: 15 batch 2300 batch_loss: 0.050825782120227814
+training: 15 batch 2400 batch_loss: 0.037325844168663025
+One epoch Running time: 47.689723 s
+training: 16 batch 0 batch_loss: 0.03559041768312454
+training: 16 batch 100 batch_loss: 0.03288876265287399
+training: 16 batch 200 batch_loss: 0.04280755668878555
+training: 16 batch 300 batch_loss: 0.032359883189201355
+training: 16 batch 400 batch_loss: 0.033713582903146744
+training: 16 batch 500 batch_loss: 0.036716919392347336
+training: 16 batch 600 batch_loss: 0.04427822679281235
+training: 16 batch 700 batch_loss: 0.03272596001625061
+training: 16 batch 800 batch_loss: 0.031391941010951996
+training: 16 batch 900 batch_loss: 0.05004195123910904
+training: 16 batch 1000 batch_loss: 0.03524952754378319
+training: 16 batch 1100 batch_loss: 0.02963741309940815
+training: 16 batch 1200 batch_loss: 0.03404318168759346
+training: 16 batch 1300 batch_loss: 0.03247443586587906
+training: 16 batch 1400 batch_loss: 0.04081330448389053
+training: 16 batch 1500 batch_loss: 0.03395361453294754
+training: 16 batch 1600 batch_loss: 0.03562196344137192
+training: 16 batch 1700 batch_loss: 0.037249766290187836
+training: 16 batch 1800 batch_loss: 0.04581436887383461
+training: 16 batch 1900 batch_loss: 0.03308307006955147
+training: 16 batch 2000 batch_loss: 0.04323013871908188
+training: 16 batch 2100 batch_loss: 0.038830794394016266
+training: 16 batch 2200 batch_loss: 0.02904655784368515
+training: 16 batch 2300 batch_loss: 0.04393726587295532
+training: 16 batch 2400 batch_loss: 0.03749006241559982
+One epoch Running time: 47.657317 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 16, Hit Ratio:0.07352866054046077 | Precision:0.004818539913036039 | Recall:0.07696628199362514 | NDCG:0.03589265188250982
+*Best Performance* 
+Epoch: 16, Hit Ratio:0.07352866054046077 | Precision:0.004818539913036039 | Recall:0.07696628199362514 | MDCG:0.03589265188250982
+------------------------------------------------------------------------------------------------------------------------
+training: 17 batch 0 batch_loss: 0.047987356781959534
+training: 17 batch 100 batch_loss: 0.03493295609951019
+training: 17 batch 200 batch_loss: 0.03299646079540253
+training: 17 batch 300 batch_loss: 0.035157497972249985
+training: 17 batch 400 batch_loss: 0.038116320967674255
+training: 17 batch 500 batch_loss: 0.03096991777420044
+training: 17 batch 600 batch_loss: 0.03675500303506851
+training: 17 batch 700 batch_loss: 0.03720910847187042
+training: 17 batch 800 batch_loss: 0.03800934553146362
+training: 17 batch 900 batch_loss: 0.039954449981451035
+training: 17 batch 1000 batch_loss: 0.042845916002988815
+training: 17 batch 1100 batch_loss: 0.04281196743249893
+training: 17 batch 1200 batch_loss: 0.02760710008442402
+training: 17 batch 1300 batch_loss: 0.04170443117618561
+training: 17 batch 1400 batch_loss: 0.041918084025382996
+training: 17 batch 1500 batch_loss: 0.03351728990674019
+training: 17 batch 1600 batch_loss: 0.034389860928058624
+training: 17 batch 1700 batch_loss: 0.03660133108496666
+training: 17 batch 1800 batch_loss: 0.044438254088163376
+training: 17 batch 1900 batch_loss: 0.043998897075653076
+training: 17 batch 2000 batch_loss: 0.03101709485054016
+training: 17 batch 2100 batch_loss: 0.03291826695203781
+training: 17 batch 2200 batch_loss: 0.037296414375305176
+training: 17 batch 2300 batch_loss: 0.02927122265100479
+training: 17 batch 2400 batch_loss: 0.033805496990680695
+One epoch Running time: 47.542423 s
+training: 18 batch 0 batch_loss: 0.03317444771528244
+training: 18 batch 100 batch_loss: 0.03650149703025818
+training: 18 batch 200 batch_loss: 0.030586158856749535
+training: 18 batch 300 batch_loss: 0.03495127335190773
+training: 18 batch 400 batch_loss: 0.02915547788143158
+training: 18 batch 500 batch_loss: 0.04363420233130455
+training: 18 batch 600 batch_loss: 0.028750665485858917
+training: 18 batch 700 batch_loss: 0.03673306852579117
+training: 18 batch 800 batch_loss: 0.03753984719514847
+training: 18 batch 900 batch_loss: 0.04945816099643707
+training: 18 batch 1000 batch_loss: 0.04092547297477722
+training: 18 batch 1100 batch_loss: 0.040175165981054306
+training: 18 batch 1200 batch_loss: 0.03433597460389137
+training: 18 batch 1300 batch_loss: 0.030255481600761414
+training: 18 batch 1400 batch_loss: 0.033875755965709686
+training: 18 batch 1500 batch_loss: 0.03964804857969284
+training: 18 batch 1600 batch_loss: 0.028491372242569923
+training: 18 batch 1700 batch_loss: 0.035289570689201355
+training: 18 batch 1800 batch_loss: 0.03321295604109764
+training: 18 batch 1900 batch_loss: 0.03260636702179909
+training: 18 batch 2000 batch_loss: 0.029973722994327545
+training: 18 batch 2100 batch_loss: 0.037719156593084335
+training: 18 batch 2200 batch_loss: 0.03051672875881195
+training: 18 batch 2300 batch_loss: 0.03637654706835747
+training: 18 batch 2400 batch_loss: 0.03062530606985092
+One epoch Running time: 47.430945 s
+training: 19 batch 0 batch_loss: 0.03322412446141243
+training: 19 batch 100 batch_loss: 0.029515467584133148
+training: 19 batch 200 batch_loss: 0.0257886815816164
+training: 19 batch 300 batch_loss: 0.03570011258125305
+training: 19 batch 400 batch_loss: 0.0482109859585762
+training: 19 batch 500 batch_loss: 0.027197906747460365
+training: 19 batch 600 batch_loss: 0.03597452491521835
+training: 19 batch 700 batch_loss: 0.03171166777610779
+training: 19 batch 800 batch_loss: 0.03701130300760269
+training: 19 batch 900 batch_loss: 0.03952488303184509
+training: 19 batch 1000 batch_loss: 0.038016997277736664
+training: 19 batch 1100 batch_loss: 0.0310803335160017
+training: 19 batch 1200 batch_loss: 0.033168382942676544
+training: 19 batch 1300 batch_loss: 0.029998116195201874
+training: 19 batch 1400 batch_loss: 0.035748690366744995
+training: 19 batch 1500 batch_loss: 0.0342131108045578
+training: 19 batch 1600 batch_loss: 0.028281424194574356
+training: 19 batch 1700 batch_loss: 0.029432259500026703
+training: 19 batch 1800 batch_loss: 0.0325615368783474
+training: 19 batch 1900 batch_loss: 0.02931312285363674
+training: 19 batch 2000 batch_loss: 0.03082849085330963
+training: 19 batch 2100 batch_loss: 0.03062586300075054
+training: 19 batch 2200 batch_loss: 0.03193708136677742
+training: 19 batch 2300 batch_loss: 0.030376994982361794
+training: 19 batch 2400 batch_loss: 0.041810959577560425
+One epoch Running time: 47.389795 s
+training: 20 batch 0 batch_loss: 0.02438637986779213
+training: 20 batch 100 batch_loss: 0.031293224543333054
+training: 20 batch 200 batch_loss: 0.028423288837075233
+training: 20 batch 300 batch_loss: 0.02369544468820095
+training: 20 batch 400 batch_loss: 0.02638223022222519
+training: 20 batch 500 batch_loss: 0.026622295379638672
+training: 20 batch 600 batch_loss: 0.030610952526330948
+training: 20 batch 700 batch_loss: 0.03384421393275261
+training: 20 batch 800 batch_loss: 0.03213866800069809
+training: 20 batch 900 batch_loss: 0.025988399982452393
+training: 20 batch 1000 batch_loss: 0.04661623388528824
+training: 20 batch 1100 batch_loss: 0.027707315981388092
+training: 20 batch 1200 batch_loss: 0.026169434189796448
+training: 20 batch 1300 batch_loss: 0.030541887506842613
+training: 20 batch 1400 batch_loss: 0.02627483755350113
+training: 20 batch 1500 batch_loss: 0.0282219760119915
+training: 20 batch 1600 batch_loss: 0.028966149315238
+training: 20 batch 1700 batch_loss: 0.028031393885612488
+training: 20 batch 1800 batch_loss: 0.033637262880802155
+training: 20 batch 1900 batch_loss: 0.025753412395715714
+training: 20 batch 2000 batch_loss: 0.029643123969435692
+training: 20 batch 2100 batch_loss: 0.037766389548778534
+training: 20 batch 2200 batch_loss: 0.03664754703640938
+training: 20 batch 2300 batch_loss: 0.03047812543809414
+training: 20 batch 2400 batch_loss: 0.025932859629392624
+One epoch Running time: 47.411417 s
+training: 21 batch 0 batch_loss: 0.027757013216614723
+training: 21 batch 100 batch_loss: 0.029870441183447838
+training: 21 batch 200 batch_loss: 0.030062410980463028
+training: 21 batch 300 batch_loss: 0.030447576195001602
+training: 21 batch 400 batch_loss: 0.028124017640948296
+training: 21 batch 500 batch_loss: 0.025083959102630615
+training: 21 batch 600 batch_loss: 0.024279087781906128
+training: 21 batch 700 batch_loss: 0.03612929582595825
+training: 21 batch 800 batch_loss: 0.02962849661707878
+training: 21 batch 900 batch_loss: 0.026871714740991592
+training: 21 batch 1000 batch_loss: 0.03223612532019615
+training: 21 batch 1100 batch_loss: 0.03137616068124771
+training: 21 batch 1200 batch_loss: 0.02439907193183899
+training: 21 batch 1300 batch_loss: 0.027877580374479294
+training: 21 batch 1400 batch_loss: 0.027847912162542343
+training: 21 batch 1500 batch_loss: 0.03132801875472069
+training: 21 batch 1600 batch_loss: 0.025266412645578384
+training: 21 batch 1700 batch_loss: 0.028026660904288292
+training: 21 batch 1800 batch_loss: 0.025675298646092415
+training: 21 batch 1900 batch_loss: 0.03215017169713974
+training: 21 batch 2000 batch_loss: 0.02923131361603737
+training: 21 batch 2100 batch_loss: 0.02401304990053177
+training: 21 batch 2200 batch_loss: 0.030464300885796547
+training: 21 batch 2300 batch_loss: 0.027648285031318665
+training: 21 batch 2400 batch_loss: 0.0266349446028471
+One epoch Running time: 47.587017 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 21, Hit Ratio:0.07428639539569652 | Precision:0.004868196409110014 | Recall:0.07745298270670474 | NDCG:0.03628392933954403
+*Best Performance* 
+Epoch: 21, Hit Ratio:0.07428639539569652 | Precision:0.004868196409110014 | Recall:0.07745298270670474 | MDCG:0.03628392933954403
+------------------------------------------------------------------------------------------------------------------------
+training: 22 batch 0 batch_loss: 0.028911985456943512
+training: 22 batch 100 batch_loss: 0.026852859184145927
+training: 22 batch 200 batch_loss: 0.02376432716846466
+training: 22 batch 300 batch_loss: 0.030596718192100525
+training: 22 batch 400 batch_loss: 0.03800766170024872
+training: 22 batch 500 batch_loss: 0.030291493982076645
+training: 22 batch 600 batch_loss: 0.0330985002219677
+training: 22 batch 700 batch_loss: 0.025552671402692795
+training: 22 batch 800 batch_loss: 0.0336521714925766
+training: 22 batch 900 batch_loss: 0.030201880261301994
+training: 22 batch 1000 batch_loss: 0.023110462352633476
+training: 22 batch 1100 batch_loss: 0.05066025257110596
+training: 22 batch 1200 batch_loss: 0.029489118605852127
+training: 22 batch 1300 batch_loss: 0.024485040456056595
+training: 22 batch 1400 batch_loss: 0.027787327766418457
+training: 22 batch 1500 batch_loss: 0.023896293714642525
+training: 22 batch 1600 batch_loss: 0.028432482853531837
+training: 22 batch 1700 batch_loss: 0.02937239222228527
+training: 22 batch 1800 batch_loss: 0.023660173639655113
+training: 22 batch 1900 batch_loss: 0.02399100735783577
+training: 22 batch 2000 batch_loss: 0.034098830074071884
+training: 22 batch 2100 batch_loss: 0.03236968815326691
+training: 22 batch 2200 batch_loss: 0.029651816934347153
+training: 22 batch 2300 batch_loss: 0.022509707137942314
+training: 22 batch 2400 batch_loss: 0.026745133101940155
+One epoch Running time: 47.502521 s
+training: 23 batch 0 batch_loss: 0.02389598824083805
+training: 23 batch 100 batch_loss: 0.02319188043475151
+training: 23 batch 200 batch_loss: 0.027945926412940025
+training: 23 batch 300 batch_loss: 0.028603559359908104
+training: 23 batch 400 batch_loss: 0.030981577932834625
+training: 23 batch 500 batch_loss: 0.03224961832165718
+training: 23 batch 600 batch_loss: 0.026136834174394608
+training: 23 batch 700 batch_loss: 0.03749541565775871
+training: 23 batch 800 batch_loss: 0.02423415705561638
+training: 23 batch 900 batch_loss: 0.02581993117928505
+training: 23 batch 1000 batch_loss: 0.033841200172901154
+training: 23 batch 1100 batch_loss: 0.02987811714410782
+training: 23 batch 1200 batch_loss: 0.02661794051527977
+training: 23 batch 1300 batch_loss: 0.04114122316241264
+training: 23 batch 1400 batch_loss: 0.03575503081083298
+training: 23 batch 1500 batch_loss: 0.020786307752132416
+training: 23 batch 1600 batch_loss: 0.026802564039826393
+training: 23 batch 1700 batch_loss: 0.024606026709079742
+training: 23 batch 1800 batch_loss: 0.027648985385894775
+training: 23 batch 1900 batch_loss: 0.03582907095551491
+training: 23 batch 2000 batch_loss: 0.022003576159477234
+training: 23 batch 2100 batch_loss: 0.02336253970861435
+training: 23 batch 2200 batch_loss: 0.024616874754428864
+training: 23 batch 2300 batch_loss: 0.024081114679574966
+training: 23 batch 2400 batch_loss: 0.02741112746298313
+One epoch Running time: 47.424124 s
+training: 24 batch 0 batch_loss: 0.03043961152434349
+training: 24 batch 100 batch_loss: 0.025942493230104446
+training: 24 batch 200 batch_loss: 0.023906145244836807
+training: 24 batch 300 batch_loss: 0.023076016455888748
+training: 24 batch 400 batch_loss: 0.028057120740413666
+training: 24 batch 500 batch_loss: 0.025621609762310982
+training: 24 batch 600 batch_loss: 0.03127121552824974
+training: 24 batch 700 batch_loss: 0.027752120047807693
+training: 24 batch 800 batch_loss: 0.021713189780712128
+training: 24 batch 900 batch_loss: 0.025021620094776154
+training: 24 batch 1000 batch_loss: 0.021072451025247574
+training: 24 batch 1100 batch_loss: 0.03586528077721596
+training: 24 batch 1200 batch_loss: 0.024521514773368835
+training: 24 batch 1300 batch_loss: 0.027149120345711708
+training: 24 batch 1400 batch_loss: 0.02351003885269165
+training: 24 batch 1500 batch_loss: 0.02335517667233944
+training: 24 batch 1600 batch_loss: 0.02543005719780922
+training: 24 batch 1700 batch_loss: 0.03581193834543228
+training: 24 batch 1800 batch_loss: 0.023829493671655655
+training: 24 batch 1900 batch_loss: 0.02421874925494194
+training: 24 batch 2000 batch_loss: 0.023776236921548843
+training: 24 batch 2100 batch_loss: 0.03822700306773186
+training: 24 batch 2200 batch_loss: 0.02214096486568451
+training: 24 batch 2300 batch_loss: 0.022425290197134018
+training: 24 batch 2400 batch_loss: 0.023576965555548668
+One epoch Running time: 47.408845 s
+training: 25 batch 0 batch_loss: 0.02276267483830452
+training: 25 batch 100 batch_loss: 0.029179038479924202
+training: 25 batch 200 batch_loss: 0.024141274392604828
+training: 25 batch 300 batch_loss: 0.03232100233435631
+training: 25 batch 400 batch_loss: 0.025863030925393105
+training: 25 batch 500 batch_loss: 0.022831350564956665
+training: 25 batch 600 batch_loss: 0.028680600225925446
+training: 25 batch 700 batch_loss: 0.03156642988324165
+training: 25 batch 800 batch_loss: 0.023647066205739975
+training: 25 batch 900 batch_loss: 0.02920420467853546
+training: 25 batch 1000 batch_loss: 0.02624141238629818
+training: 25 batch 1100 batch_loss: 0.02074884995818138
+training: 25 batch 1200 batch_loss: 0.024645954370498657
+training: 25 batch 1300 batch_loss: 0.023761507123708725
+training: 25 batch 1400 batch_loss: 0.02541399374604225
+training: 25 batch 1500 batch_loss: 0.02140973135828972
+training: 25 batch 1600 batch_loss: 0.02581174671649933
+training: 25 batch 1700 batch_loss: 0.02139945700764656
+training: 25 batch 1800 batch_loss: 0.030090104788541794
+training: 25 batch 1900 batch_loss: 0.024341266602277756
+training: 25 batch 2000 batch_loss: 0.022937733680009842
+training: 25 batch 2100 batch_loss: 0.025198830291628838
+training: 25 batch 2200 batch_loss: 0.021372999995946884
+training: 25 batch 2300 batch_loss: 0.02059118263423443
+training: 25 batch 2400 batch_loss: 0.028187189251184464
+One epoch Running time: 47.416770 s
+training: 26 batch 0 batch_loss: 0.024620693176984787
+training: 26 batch 100 batch_loss: 0.02432931400835514
+training: 26 batch 200 batch_loss: 0.021728642284870148
+training: 26 batch 300 batch_loss: 0.02114209160208702
+training: 26 batch 400 batch_loss: 0.0256744883954525
+training: 26 batch 500 batch_loss: 0.022282151505351067
+training: 26 batch 600 batch_loss: 0.02177990972995758
+training: 26 batch 700 batch_loss: 0.02895994484424591
+training: 26 batch 800 batch_loss: 0.03317289426922798
+training: 26 batch 900 batch_loss: 0.02012484520673752
+training: 26 batch 1000 batch_loss: 0.026258284226059914
+training: 26 batch 1100 batch_loss: 0.02934488095343113
+training: 26 batch 1200 batch_loss: 0.02239498682320118
+training: 26 batch 1300 batch_loss: 0.025107230991125107
+training: 26 batch 1400 batch_loss: 0.025322671979665756
+training: 26 batch 1500 batch_loss: 0.026471402496099472
+training: 26 batch 1600 batch_loss: 0.027831528335809708
+training: 26 batch 1700 batch_loss: 0.02206333726644516
+training: 26 batch 1800 batch_loss: 0.028069959953427315
+training: 26 batch 1900 batch_loss: 0.02346484363079071
+training: 26 batch 2000 batch_loss: 0.02858983352780342
+training: 26 batch 2100 batch_loss: 0.026260994374752045
+training: 26 batch 2200 batch_loss: 0.02847200259566307
+training: 26 batch 2300 batch_loss: 0.020074140280485153
+training: 26 batch 2400 batch_loss: 0.024117562919855118
+One epoch Running time: 47.637757 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 26, Hit Ratio:0.07353149849872008 | Precision:0.0048187258924220835 | Recall:0.0765613528248976 | NDCG:0.03556762168568569
+*Best Performance* 
+Epoch: 21, Hit Ratio:0.07428639539569652 | Precision:0.004868196409110014 | Recall:0.07745298270670474 | MDCG:0.03628392933954403
+------------------------------------------------------------------------------------------------------------------------
+training: 27 batch 0 batch_loss: 0.023442327976226807
+training: 27 batch 100 batch_loss: 0.028354637324810028
+training: 27 batch 200 batch_loss: 0.02200203388929367
+training: 27 batch 300 batch_loss: 0.026047201827168465
+training: 27 batch 400 batch_loss: 0.027735929936170578
+training: 27 batch 500 batch_loss: 0.021788643673062325
+training: 27 batch 600 batch_loss: 0.024203741922974586
+training: 27 batch 700 batch_loss: 0.02208782359957695
+training: 27 batch 800 batch_loss: 0.023401781916618347
+training: 27 batch 900 batch_loss: 0.02334734983742237
+training: 27 batch 1000 batch_loss: 0.02588433399796486
+training: 27 batch 1100 batch_loss: 0.027008987963199615
+training: 27 batch 1200 batch_loss: 0.025678759440779686
+training: 27 batch 1300 batch_loss: 0.026152921840548515
+training: 27 batch 1400 batch_loss: 0.022885922342538834
+training: 27 batch 1500 batch_loss: 0.02429797872900963
+training: 27 batch 1600 batch_loss: 0.02289646863937378
+training: 27 batch 1700 batch_loss: 0.023005712777376175
+training: 27 batch 1800 batch_loss: 0.026984896510839462
+training: 27 batch 1900 batch_loss: 0.033647142350673676
+training: 27 batch 2000 batch_loss: 0.023984335362911224
+training: 27 batch 2100 batch_loss: 0.025794483721256256
+training: 27 batch 2200 batch_loss: 0.021087825298309326
+training: 27 batch 2300 batch_loss: 0.027943318709731102
+training: 27 batch 2400 batch_loss: 0.023159120231866837
+One epoch Running time: 47.652607 s
+training: 28 batch 0 batch_loss: 0.02664787508547306
+training: 28 batch 100 batch_loss: 0.025643453001976013
+training: 28 batch 200 batch_loss: 0.022361598908901215
+training: 28 batch 300 batch_loss: 0.019878704100847244
+training: 28 batch 400 batch_loss: 0.023883512243628502
+training: 28 batch 500 batch_loss: 0.02159152738749981
+training: 28 batch 600 batch_loss: 0.021842610090970993
+training: 28 batch 700 batch_loss: 0.023077137768268585
+training: 28 batch 800 batch_loss: 0.020852044224739075
+training: 28 batch 900 batch_loss: 0.02174808643758297
+training: 28 batch 1000 batch_loss: 0.02324673905968666
+training: 28 batch 1100 batch_loss: 0.02463470585644245
+training: 28 batch 1200 batch_loss: 0.02329574152827263
+training: 28 batch 1300 batch_loss: 0.022315144538879395
+training: 28 batch 1400 batch_loss: 0.022848762571811676
+training: 28 batch 1500 batch_loss: 0.021110909059643745
+training: 28 batch 1600 batch_loss: 0.02601540833711624
+training: 28 batch 1700 batch_loss: 0.021692609414458275
+training: 28 batch 1800 batch_loss: 0.021383827552199364
+training: 28 batch 1900 batch_loss: 0.023213360458612442
+training: 28 batch 2000 batch_loss: 0.024457568302750587
+training: 28 batch 2100 batch_loss: 0.022269729524850845
+training: 28 batch 2200 batch_loss: 0.0244061928242445
+training: 28 batch 2300 batch_loss: 0.01985291950404644
+training: 28 batch 2400 batch_loss: 0.023403819650411606
+One epoch Running time: 47.700389 s
+training: 29 batch 0 batch_loss: 0.029208198189735413
+training: 29 batch 100 batch_loss: 0.020070532336831093
+training: 29 batch 200 batch_loss: 0.023335672914981842
+training: 29 batch 300 batch_loss: 0.031987547874450684
+training: 29 batch 400 batch_loss: 0.023292437195777893
+training: 29 batch 500 batch_loss: 0.02130110189318657
+training: 29 batch 600 batch_loss: 0.02058582752943039
+training: 29 batch 700 batch_loss: 0.02836543694138527
+training: 29 batch 800 batch_loss: 0.03616310656070709
+training: 29 batch 900 batch_loss: 0.02081124670803547
+training: 29 batch 1000 batch_loss: 0.0259558092802763
+training: 29 batch 1100 batch_loss: 0.025327062234282494
+training: 29 batch 1200 batch_loss: 0.024387182667851448
+training: 29 batch 1300 batch_loss: 0.025723561644554138
+training: 29 batch 1400 batch_loss: 0.021351298317313194
+training: 29 batch 1500 batch_loss: 0.02172938548028469
+training: 29 batch 1600 batch_loss: 0.021323125809431076
+training: 29 batch 1700 batch_loss: 0.024807926267385483
+training: 29 batch 1800 batch_loss: 0.024704914540052414
+training: 29 batch 1900 batch_loss: 0.023132532835006714
+training: 29 batch 2000 batch_loss: 0.024526450783014297
+training: 29 batch 2100 batch_loss: 0.020877281203866005
+training: 29 batch 2200 batch_loss: 0.021773403510451317
+training: 29 batch 2300 batch_loss: 0.02225080505013466
+training: 29 batch 2400 batch_loss: 0.022752821445465088
+One epoch Running time: 47.685886 s
+training: 30 batch 0 batch_loss: 0.0242582019418478
+training: 30 batch 100 batch_loss: 0.02342616207897663
+training: 30 batch 200 batch_loss: 0.021146360784769058
+training: 30 batch 300 batch_loss: 0.02031133696436882
+training: 30 batch 400 batch_loss: 0.03456196188926697
+training: 30 batch 500 batch_loss: 0.025161415338516235
+training: 30 batch 600 batch_loss: 0.02353244461119175
+training: 30 batch 700 batch_loss: 0.028214536607265472
+training: 30 batch 800 batch_loss: 0.02561277709901333
+training: 30 batch 900 batch_loss: 0.022692719474434853
+training: 30 batch 1000 batch_loss: 0.02181226946413517
+training: 30 batch 1100 batch_loss: 0.02596510760486126
+training: 30 batch 1200 batch_loss: 0.020684489980340004
+training: 30 batch 1300 batch_loss: 0.023259807378053665
+training: 30 batch 1400 batch_loss: 0.030469583347439766
+training: 30 batch 1500 batch_loss: 0.0211566761136055
+training: 30 batch 1600 batch_loss: 0.02272479422390461
+training: 30 batch 1700 batch_loss: 0.02181171625852585
+training: 30 batch 1800 batch_loss: 0.02243860997259617
+training: 30 batch 1900 batch_loss: 0.0221681110560894
+training: 30 batch 2000 batch_loss: 0.02394406870007515
+training: 30 batch 2100 batch_loss: 0.023038972169160843
+training: 30 batch 2200 batch_loss: 0.02199948951601982
+training: 30 batch 2300 batch_loss: 0.02386028692126274
+training: 30 batch 2400 batch_loss: 0.028731105849146843
+One epoch Running time: 47.683321 s
+Testing...
+Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [+                                                 ]2%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [++                                                ]4%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [++++                                              ]8%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [+++++                                             ]10%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [+++++++                                           ]14%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [++++++++                                          ]16%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [+++++++++                                         ]18%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [++++++++++                                        ]20%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++                                      ]24%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [+++++++++++++                                     ]26%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++                                   ]30%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [++++++++++++++++                                  ]32%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++                                ]36%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++                              ]40%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [+++++++++++++++++++++                             ]42%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++                           ]46%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [++++++++++++++++++++++++                          ]48%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [+++++++++++++++++++++++++++                       ]54%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [++++++++++++++++++++++++++++++                    ]60%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [++++++++++++++++++++++++++++++++                  ]64%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [+++++++++++++++++++++++++++++++++++               ]70%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [++++++++++++++++++++++++++++++++++++++            ]76%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [++++++++++++++++++++++++++++++++++++++++          ]80%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [+++++++++++++++++++++++++++++++++++++++++++       ]86%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [++++++++++++++++++++++++++++++++++++++++++++++    ]92%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++++ ]98%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+Evaluating...
+The result has been output to  /home/anurag/repos/BOD/results .
+The result of LightGCN:
+Top 10
+Hit Ratio:0.04851489644290312
+Precision:0.0063586352088734486
+Recall:0.051075767023300994
+NDCG:0.029207118568697777
+Top 20
+Hit Ratio:0.07428639539569652
+Precision:0.004868196409110014
+Recall:0.07745298270670474
+NDCG:0.03628392933954403
+
+Running time: 1660.111379 s

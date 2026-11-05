@@ -1,0 +1,726 @@
+Baseline Models:
+NCF   LightGCN   MF   NGCF   DirectAU
+--------------------------------------------------------------------------------
+Graph-Based Models:
+SGL   SimGCL
+--------------------------------------------------------------------------------
+Denoising Models:
+BOD
+================================================================================
+Please enter the model you want to run:Reading data and preprocessing...
+/home/anurag/repos/BOD/base/torch_interface.py:10: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:278.)
+  i = torch.LongTensor([coo.row, coo.col])
+/home/anurag/repos/BOD/base/torch_interface.py:12: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:641.)
+  return torch.sparse.FloatTensor(i, v, coo.shape)
+/home/anurag/miniconda3/envs/bod/lib/python3.10/site-packages/torch/cuda/__init__.py:654: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+Model: BOD
+Training Set: /home/anurag/repos/BOD/dataset/Beauty/train.txt
+Test Set: /home/anurag/repos/BOD/dataset/Beauty/test.txt
+Embedding Dimension: 64
+Maximum Epoch: 100
+Learning Rate: 0.001
+Batch Size: 512
+Regularization Parameter: reg 1.0000
+Training Set Size: (user number: 22363, item number 12099, interaction number: 158816)
+Test Set Size: (user number: 17503, item number 10276, interaction number: 39686)
+================================================================================
+Initializing and building model...
+Training Model...
+start model training...
+epoch: 0 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.3351585865020752
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.13684926674393993 | Precision:0.015514483231446038 | Recall:0.13041923463416868 | NDCG:0.07442814692490653
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.13684926674393993 | Precision:0.015514483231446038 | Recall:0.13041923463416868 | MDCG:0.07442814692490653
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 0 outer_training_iter: 0 loss_real: 0.6913661956787109 loss_syn: 0.44273024797439575
+start model training...
+epoch: 1 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.7710800170898438
+start generator training...
+epoch: 1 outer_training_iter: 0 loss_real: 0.6901906728744507 loss_syn: 0.39791563153266907
+start model training...
+epoch: 2 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.7963327169418335
+start generator training...
+epoch: 2 outer_training_iter: 0 loss_real: 0.6891282796859741 loss_syn: 0.3973938524723053
+start model training...
+epoch: 3 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.7951556444168091
+start generator training...
+epoch: 3 outer_training_iter: 0 loss_real: 0.6879521608352661 loss_syn: 0.3857201337814331
+start model training...
+epoch: 4 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8148448467254639
+start generator training...
+epoch: 4 outer_training_iter: 0 loss_real: 0.6871674060821533 loss_syn: 0.3992776870727539
+start model training...
+epoch: 5 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8094165325164795
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.15211913521140957 | Precision:0.017245615037422155 | Recall:0.14596503739361233 | NDCG:0.08347066500702528
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.15211913521140957 | Precision:0.017245615037422155 | Recall:0.14596503739361233 | MDCG:0.08347066500702528
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 5 outer_training_iter: 0 loss_real: 0.6849139928817749 loss_syn: 0.4023442268371582
+start model training...
+epoch: 6 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8193669319152832
+start generator training...
+epoch: 6 outer_training_iter: 0 loss_real: 0.6828729510307312 loss_syn: 0.39905476570129395
+start model training...
+epoch: 7 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8263111114501953
+start generator training...
+epoch: 7 outer_training_iter: 0 loss_real: 0.6815296411514282 loss_syn: 0.4018832743167877
+start model training...
+epoch: 8 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8185880184173584
+start generator training...
+epoch: 8 outer_training_iter: 0 loss_real: 0.679874062538147 loss_syn: 0.40250205993652344
+start model training...
+epoch: 9 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8363502025604248
+start generator training...
+epoch: 9 outer_training_iter: 0 loss_real: 0.6741435527801514 loss_syn: 0.4013974666595459
+start model training...
+epoch: 10 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.822352409362793
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.14224159653278234 | Precision:0.016125807004513514 | Recall:0.13563323916778444 | NDCG:0.0754593308344717
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.15211913521140957 | Precision:0.017245615037422155 | Recall:0.14596503739361233 | MDCG:0.08347066500702528
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 10 outer_training_iter: 0 loss_real: 0.669766366481781 loss_syn: 0.40680772066116333
+start model training...
+epoch: 11 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8111569881439209
+start generator training...
+epoch: 11 outer_training_iter: 0 loss_real: 0.6625638008117676 loss_syn: 0.4013482332229614
+start model training...
+epoch: 12 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8189631700515747
+start generator training...
+epoch: 12 outer_training_iter: 0 loss_real: 0.6594889163970947 loss_syn: 0.40214550495147705
+start model training...
+epoch: 13 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.822922945022583
+start generator training...
+epoch: 13 outer_training_iter: 0 loss_real: 0.6536161303520203 loss_syn: 0.4241732656955719
+start model training...
+epoch: 14 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8460501432418823
+start generator training...
+epoch: 14 outer_training_iter: 0 loss_real: 0.6392727494239807 loss_syn: 0.41500118374824524
+start model training...
+epoch: 15 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8136024475097656
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.1279544423726251 | Precision:0.014506084671199224 | Recall:0.12018092833015664 | NDCG:0.06630177879439798
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.15211913521140957 | Precision:0.017245615037422155 | Recall:0.14596503739361233 | MDCG:0.08347066500702528
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 15 outer_training_iter: 0 loss_real: 0.6430400609970093 loss_syn: 0.41821032762527466
+start model training...
+epoch: 16 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8412669897079468
+start generator training...
+epoch: 16 outer_training_iter: 0 loss_real: 0.6313894391059875 loss_syn: 0.42638444900512695
+start model training...
+epoch: 17 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8281290531158447
+start generator training...
+epoch: 17 outer_training_iter: 0 loss_real: 0.6196331977844238 loss_syn: 0.4270468056201935
+start model training...
+epoch: 18 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.828391432762146
+start generator training...
+epoch: 18 outer_training_iter: 0 loss_real: 0.6196602582931519 loss_syn: 0.4324193000793457
+start model training...
+epoch: 19 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8548990488052368
+start generator training...
+epoch: 19 outer_training_iter: 0 loss_real: 0.6061516404151917 loss_syn: 0.43667110800743103
+start model training...
+epoch: 20 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8630146980285645
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.1311797611248299 | Precision:0.014871736273781638 | Recall:0.12280081467077326 | NDCG:0.06864686627340809
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.15211913521140957 | Precision:0.017245615037422155 | Recall:0.14596503739361233 | MDCG:0.08347066500702528
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 20 outer_training_iter: 0 loss_real: 0.5972884893417358 loss_syn: 0.4367620050907135
+start model training...
+epoch: 21 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8523367643356323
+start generator training...
+epoch: 21 outer_training_iter: 0 loss_real: 0.5783880949020386 loss_syn: 0.451294481754303
+start model training...
+epoch: 22 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8752824068069458
+start generator training...
+epoch: 22 outer_training_iter: 0 loss_real: 0.5662983655929565 loss_syn: 0.45186302065849304
+start model training...
+epoch: 23 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8741446733474731
+start generator training...
+epoch: 23 outer_training_iter: 0 loss_real: 0.5509732365608215 loss_syn: 0.45678770542144775
+start model training...
+epoch: 24 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.885683000087738
+start generator training...
+epoch: 24 outer_training_iter: 0 loss_real: 0.5302254557609558 loss_syn: 0.4649737477302551
+start model training...
+epoch: 25 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.8975434899330139
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.13732802499622032 | Precision:0.015568759641204365 | Recall:0.12989480353367625 | NDCG:0.07291250576140917
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.15211913521140957 | Precision:0.017245615037422155 | Recall:0.14596503739361233 | MDCG:0.08347066500702528
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 25 outer_training_iter: 0 loss_real: 0.5072007179260254 loss_syn: 0.4638248085975647
+start model training...
+epoch: 26 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.9167149066925049
+start generator training...
+epoch: 26 outer_training_iter: 0 loss_real: 0.47483187913894653 loss_syn: 0.45707494020462036
+start model training...
+epoch: 27 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.9453266859054565
+start generator training...
+epoch: 27 outer_training_iter: 0 loss_real: 0.45543134212493896 loss_syn: 0.46125054359436035
+start model training...
+epoch: 28 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.9674318432807922
+start generator training...
+epoch: 28 outer_training_iter: 0 loss_real: 0.42450374364852905 loss_syn: 0.463841050863266
+start model training...
+epoch: 29 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -0.9579062461853027
+start generator training...
+epoch: 29 outer_training_iter: 0 loss_real: 0.39480340480804443 loss_syn: 0.4826107919216156
+start model training...
+epoch: 30 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.0170729160308838
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.14425742075291034 | Precision:0.01635433925612752 | Recall:0.13722905077486583 | NDCG:0.07768989411728582
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.15211913521140957 | Precision:0.017245615037422155 | Recall:0.14596503739361233 | MDCG:0.08347066500702528
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 30 outer_training_iter: 0 loss_real: 0.35509926080703735 loss_syn: 0.4929059147834778
+start model training...
+epoch: 31 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.0225855112075806
+start generator training...
+epoch: 31 outer_training_iter: 0 loss_real: 0.3142578601837158 loss_syn: 0.48681676387786865
+start model training...
+epoch: 32 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.0666134357452393
+start generator training...
+epoch: 32 outer_training_iter: 0 loss_real: 0.31569457054138184 loss_syn: 0.5165833830833435
+start model training...
+epoch: 33 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.0628116130828857
+start generator training...
+epoch: 33 outer_training_iter: 0 loss_real: 0.2820751667022705 loss_syn: 0.5067694187164307
+start model training...
+epoch: 34 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.089609146118164
+start generator training...
+epoch: 34 outer_training_iter: 0 loss_real: 0.23713040351867676 loss_syn: 0.5174248218536377
+start model training...
+epoch: 35 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.1051526069641113
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.15116161870684877 | Precision:0.0171370622179055 | Recall:0.14363603943752384 | NDCG:0.0811391768572966
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.15211913521140957 | Precision:0.017245615037422155 | Recall:0.14596503739361233 | MDCG:0.08347066500702528
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 35 outer_training_iter: 0 loss_real: 0.22909565269947052 loss_syn: 0.5384403467178345
+start model training...
+epoch: 36 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.1023162603378296
+start generator training...
+epoch: 36 outer_training_iter: 0 loss_real: 0.1915121078491211 loss_syn: 0.5360049605369568
+start model training...
+epoch: 37 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.1350237131118774
+start generator training...
+epoch: 37 outer_training_iter: 0 loss_real: 0.16625100374221802 loss_syn: 0.546023428440094
+start model training...
+epoch: 38 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.1367685794830322
+start generator training...
+epoch: 38 outer_training_iter: 0 loss_real: 0.15829560160636902 loss_syn: 0.5376813411712646
+start model training...
+epoch: 39 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.1521333456039429
+start generator training...
+epoch: 39 outer_training_iter: 0 loss_real: 0.1332266926765442 loss_syn: 0.57843416929245
+start model training...
+epoch: 40 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.1661550998687744
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.15557123418837876 | Precision:0.017636976518311146 | Recall:0.1478591766576152 | NDCG:0.08344525267423746
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.15557123418837876 | Precision:0.017636976518311146 | Recall:0.1478591766576152 | MDCG:0.08344525267423746
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 40 outer_training_iter: 0 loss_real: 0.11373471468687057 loss_syn: 0.5628916025161743
+start model training...
+epoch: 41 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.172208309173584
+start generator training...
+epoch: 41 outer_training_iter: 0 loss_real: 0.10354761779308319 loss_syn: 0.5932431221008301
+start model training...
+epoch: 42 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.183716058731079
+start generator training...
+epoch: 42 outer_training_iter: 0 loss_real: 0.10227960348129272 loss_syn: 0.5890610218048096
+start model training...
+epoch: 43 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.1796116828918457
+start generator training...
+epoch: 43 outer_training_iter: 0 loss_real: 0.09327341616153717 loss_syn: 0.587585985660553
+start model training...
+epoch: 44 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2217345237731934
+start generator training...
+epoch: 44 outer_training_iter: 0 loss_real: 0.08216145634651184 loss_syn: 0.606865406036377
+start model training...
+epoch: 45 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.203850269317627
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.15700750894521998 | Precision:0.017799805747586127 | Recall:0.14948655584386744 | NDCG:0.08480317522675809
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.15700750894521998 | Precision:0.017799805747586127 | Recall:0.14948655584386744 | MDCG:0.08480317522675809
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 45 outer_training_iter: 0 loss_real: 0.0739697813987732 loss_syn: 0.6184589862823486
+start model training...
+epoch: 46 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2295384407043457
+start generator training...
+epoch: 46 outer_training_iter: 0 loss_real: 0.0664859488606453 loss_syn: 0.6109209060668945
+start model training...
+epoch: 47 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2193337678909302
+start generator training...
+epoch: 47 outer_training_iter: 0 loss_real: 0.057653166353702545 loss_syn: 0.5989862680435181
+start model training...
+epoch: 48 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2170228958129883
+start generator training...
+epoch: 48 outer_training_iter: 0 loss_real: 0.05700013414025307 loss_syn: 0.6026462912559509
+start model training...
+epoch: 49 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2459346055984497
+start generator training...
+epoch: 49 outer_training_iter: 0 loss_real: 0.05880805850028992 loss_syn: 0.6045184135437012
+start model training...
+epoch: 50 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2171308994293213
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.1580910144635388 | Precision:0.017922641832828656 | Recall:0.14988369464952456 | NDCG:0.08546434475855852
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.1580910144635388 | Precision:0.017922641832828656 | Recall:0.14988369464952456 | MDCG:0.08546434475855852
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 50 outer_training_iter: 0 loss_real: 0.04350022226572037 loss_syn: 0.6223722696304321
+start model training...
+epoch: 51 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2406755685806274
+start generator training...
+epoch: 51 outer_training_iter: 0 loss_real: 0.040618136525154114 loss_syn: 0.6046245098114014
+start model training...
+epoch: 52 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2226879596710205
+start generator training...
+epoch: 52 outer_training_iter: 0 loss_real: 0.04165638983249664 loss_syn: 0.6003556251525879
+start model training...
+epoch: 53 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.21061110496521
+start generator training...
+epoch: 53 outer_training_iter: 0 loss_real: 0.03228326886892319 loss_syn: 0.5936077833175659
+start model training...
+epoch: 54 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2162963151931763
+start generator training...
+epoch: 54 outer_training_iter: 0 loss_real: 0.029769007116556168 loss_syn: 0.6173853874206543
+start model training...
+epoch: 55 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2441561222076416
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.15864536612407398 | Precision:0.01798548820202251 | Recall:0.15090798172969103 | NDCG:0.08612131627114933
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.15864536612407398 | Precision:0.01798548820202251 | Recall:0.15090798172969103 | MDCG:0.08612131627114933
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 55 outer_training_iter: 0 loss_real: 0.03554488345980644 loss_syn: 0.6200054883956909
+start model training...
+epoch: 56 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.232926368713379
+start generator training...
+epoch: 56 outer_training_iter: 0 loss_real: 0.03319624066352844 loss_syn: 0.6176424026489258
+start model training...
+epoch: 57 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.247107982635498
+start generator training...
+epoch: 57 outer_training_iter: 0 loss_real: 0.034698229283094406 loss_syn: 0.6082513928413391
+start model training...
+epoch: 58 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2548387050628662
+start generator training...
+epoch: 58 outer_training_iter: 0 loss_real: 0.02672392874956131 loss_syn: 0.623325526714325
+start model training...
+epoch: 59 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2375361919403076
+start generator training...
+epoch: 59 outer_training_iter: 0 loss_real: 0.030167676508426666 loss_syn: 0.6065675020217896
+start model training...
+epoch: 60 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2608535289764404
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.15945169581212518 | Precision:0.018076901102668113 | Recall:0.15188677294119823 | NDCG:0.08658053679488628
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.15945169581212518 | Precision:0.018076901102668113 | Recall:0.15188677294119823 | MDCG:0.08658053679488628
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 60 outer_training_iter: 0 loss_real: 0.021516423672437668 loss_syn: 0.5957236886024475
+start model training...
+epoch: 61 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2382678985595703
+start generator training...
+epoch: 61 outer_training_iter: 0 loss_real: 0.02229674533009529 loss_syn: 0.6258798241615295
+start model training...
+epoch: 62 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2320915460586548
+start generator training...
+epoch: 62 outer_training_iter: 0 loss_real: 0.019902020692825317 loss_syn: 0.6143565773963928
+start model training...
+epoch: 63 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2621997594833374
+start generator training...
+epoch: 63 outer_training_iter: 0 loss_real: 0.03345877677202225 loss_syn: 0.607409656047821
+start model training...
+epoch: 64 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.238783597946167
+start generator training...
+epoch: 64 outer_training_iter: 0 loss_real: 0.019710145890712738 loss_syn: 0.6011312007904053
+start model training...
+epoch: 65 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2725484371185303
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.15942649800937359 | Precision:0.01807404444952294 | Recall:0.1516986172665665 | NDCG:0.08679243652607904
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.15945169581212518 | Precision:0.018076901102668113 | Recall:0.15188677294119823 | MDCG:0.08658053679488628
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 65 outer_training_iter: 0 loss_real: 0.01783697120845318 loss_syn: 0.5816903710365295
+start model training...
+epoch: 66 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2708019018173218
+start generator training...
+epoch: 66 outer_training_iter: 0 loss_real: 0.019590575248003006 loss_syn: 0.6033355593681335
+start model training...
+epoch: 67 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.259389877319336
+start generator training...
+epoch: 67 outer_training_iter: 0 loss_real: 0.02272360399365425 loss_syn: 0.6140714883804321
+start model training...
+epoch: 68 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.256685495376587
+start generator training...
+epoch: 68 outer_training_iter: 0 loss_real: 0.02224280685186386 loss_syn: 0.5855934619903564
+start model training...
+epoch: 69 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2809569835662842
+start generator training...
+epoch: 69 outer_training_iter: 0 loss_real: 0.014802475459873676 loss_syn: 0.5652418732643127
+start model training...
+epoch: 70 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2635035514831543
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.16008164088091517 | Precision:0.01814831743129749 | Recall:0.15227535066352493 | NDCG:0.08732601967620686
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.16008164088091517 | Precision:0.01814831743129749 | Recall:0.15227535066352493 | MDCG:0.08732601967620686
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 70 outer_training_iter: 0 loss_real: 0.020704837515950203 loss_syn: 0.5946535468101501
+start model training...
+epoch: 71 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2810750007629395
+start generator training...
+epoch: 71 outer_training_iter: 0 loss_real: 0.014477783814072609 loss_syn: 0.5592303276062012
+start model training...
+epoch: 72 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.2970678806304932
+start generator training...
+epoch: 72 outer_training_iter: 0 loss_real: 0.028571318835020065 loss_syn: 0.5707151889801025
+start model training...
+epoch: 73 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3175568580627441
+start generator training...
+epoch: 73 outer_training_iter: 0 loss_real: 0.020541083067655563 loss_syn: 0.5480883121490479
+start model training...
+epoch: 74 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3418924808502197
+start generator training...
+epoch: 74 outer_training_iter: 0 loss_real: 0.01992209628224373 loss_syn: 0.539211630821228
+start model training...
+epoch: 75 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3380851745605469
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.16023282769742478 | Precision:0.018165457350168543 | Recall:0.15233710082747567 | NDCG:0.08766321209209259
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.16023282769742478 | Precision:0.018165457350168543 | Recall:0.15233710082747567 | MDCG:0.08766321209209259
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 75 outer_training_iter: 0 loss_real: 0.016575118526816368 loss_syn: 0.5462371110916138
+start model training...
+epoch: 76 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3599576950073242
+start generator training...
+epoch: 76 outer_training_iter: 0 loss_real: 0.020065462216734886 loss_syn: 0.5217657089233398
+start model training...
+epoch: 77 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3417547941207886
+start generator training...
+epoch: 77 outer_training_iter: 0 loss_real: 0.019482016563415527 loss_syn: 0.5191343426704407
+start model training...
+epoch: 78 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3484971523284912
+start generator training...
+epoch: 78 outer_training_iter: 0 loss_real: 0.023699652403593063 loss_syn: 0.5116440057754517
+start model training...
+epoch: 79 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3625749349594116
+start generator training...
+epoch: 79 outer_training_iter: 0 loss_real: 0.023362725973129272 loss_syn: 0.5244266986846924
+start model training...
+epoch: 80 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3581831455230713
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.1606107947386988 | Precision:0.01820830714734617 | Recall:0.15271572350135776 | NDCG:0.08813767270900172
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.1606107947386988 | Precision:0.01820830714734617 | Recall:0.15271572350135776 | MDCG:0.08813767270900172
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 80 outer_training_iter: 0 loss_real: 0.023172276094555855 loss_syn: 0.516232967376709
+start model training...
+epoch: 81 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3745830059051514
+start generator training...
+epoch: 81 outer_training_iter: 0 loss_real: 0.02209319919347763 loss_syn: 0.5267372131347656
+start model training...
+epoch: 82 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3664313554763794
+start generator training...
+epoch: 82 outer_training_iter: 0 loss_real: 0.02068568766117096 loss_syn: 0.5344045758247375
+start model training...
+epoch: 83 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3538610935211182
+start generator training...
+epoch: 83 outer_training_iter: 0 loss_real: 0.027147481217980385 loss_syn: 0.5186009407043457
+start model training...
+epoch: 84 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3870576620101929
+start generator training...
+epoch: 84 outer_training_iter: 0 loss_real: 0.024735383689403534 loss_syn: 0.5146459937095642
+start model training...
+epoch: 85 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3834295272827148
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.16108955299097918 | Precision:0.018262583557104497 | Recall:0.15287643720504174 | NDCG:0.08830523528731404
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.16108955299097918 | Precision:0.018262583557104497 | Recall:0.15287643720504174 | MDCG:0.08830523528731404
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 85 outer_training_iter: 0 loss_real: 0.022063007578253746 loss_syn: 0.49787139892578125
+start model training...
+epoch: 86 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3683879375457764
+start generator training...
+epoch: 86 outer_training_iter: 0 loss_real: 0.018307708203792572 loss_syn: 0.49101686477661133
+start model training...
+epoch: 87 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3931580781936646
+start generator training...
+epoch: 87 outer_training_iter: 0 loss_real: 0.02585427463054657 loss_syn: 0.49591654539108276
+start model training...
+epoch: 88 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.3807182312011719
+start generator training...
+epoch: 88 outer_training_iter: 0 loss_real: 0.019485600292682648 loss_syn: 0.47535157203674316
+start model training...
+epoch: 89 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.4005346298217773
+start generator training...
+epoch: 89 outer_training_iter: 0 loss_real: 0.024600572884082794 loss_syn: 0.48419249057769775
+start model training...
+epoch: 90 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.4219471216201782
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.1612407398074888 | Precision:0.01827972347597555 | Recall:0.1531839482967731 | NDCG:0.08859084408340158
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.1612407398074888 | Precision:0.01827972347597555 | Recall:0.1531839482967731 | MDCG:0.08859084408340158
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 90 outer_training_iter: 0 loss_real: 0.019987888634204865 loss_syn: 0.4702627658843994
+start model training...
+epoch: 91 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.4291716814041138
+start generator training...
+epoch: 91 outer_training_iter: 0 loss_real: 0.022981127724051476 loss_syn: 0.46032947301864624
+start model training...
+epoch: 92 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.4193215370178223
+start generator training...
+epoch: 92 outer_training_iter: 0 loss_real: 0.028732847422361374 loss_syn: 0.4580143690109253
+start model training...
+epoch: 93 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.4208943843841553
+start generator training...
+epoch: 93 outer_training_iter: 0 loss_real: 0.029549606144428253 loss_syn: 0.436514675617218
+start model training...
+epoch: 94 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.4331110715866089
+start generator training...
+epoch: 94 outer_training_iter: 0 loss_real: 0.02302340231835842 loss_syn: 0.4457627832889557
+start model training...
+epoch: 95 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.4406906366348267
+evaluating the model...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.1613415310184952 | Precision:0.018291150088556248 | Recall:0.1532528296087947 | NDCG:0.08895499861697898
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.1613415310184952 | Precision:0.018291150088556248 | Recall:0.1532528296087947 | MDCG:0.08895499861697898
+------------------------------------------------------------------------------------------------------------------------
+start generator training...
+epoch: 95 outer_training_iter: 0 loss_real: 0.02090468816459179 loss_syn: 0.4238731861114502
+start model training...
+epoch: 96 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.4326521158218384
+start generator training...
+epoch: 96 outer_training_iter: 0 loss_real: 0.024022594094276428 loss_syn: 0.44651925563812256
+start model training...
+epoch: 97 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.4531261920928955
+start generator training...
+epoch: 97 outer_training_iter: 0 loss_real: 0.020674843341112137 loss_syn: 0.4304382801055908
+start model training...
+epoch: 98 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.4556314945220947
+start generator training...
+epoch: 98 outer_training_iter: 0 loss_real: 0.023624833673238754 loss_syn: 0.42163902521133423
+start model training...
+epoch: 99 inner_training_iter: 0 inner_batch： 0
+inner_batch_loss: -1.4532965421676636
+start generator training...
+epoch: 99 outer_training_iter: 0 loss_real: 0.028637856245040894 loss_syn: 0.41632452607154846
+Testing...
+Progress: [                                                  ]0%Progress: [++                                                ]4%Progress: [+++++                                             ]10%Progress: [++++++++                                          ]16%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++++                                 ]34%Progress: [+++++++++++++++++++                               ]38%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+Evaluating...
+The result has been output to  /home/anurag/repos/BOD/results .
+The result of BOD:
+Top 10
+Hit Ratio:0.11253338708864587
+Precision:0.02551562589270411
+Recall:0.10924410172202696
+NDCG:0.07532209999014934
+Top 20
+Hit Ratio:0.1613415310184952
+Precision:0.018291150088556248
+Recall:0.1532528296087947
+NDCG:0.08895499861697898
+
+Running time: 965.286453 s

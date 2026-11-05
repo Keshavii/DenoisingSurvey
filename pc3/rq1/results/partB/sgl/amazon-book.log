@@ -1,0 +1,295 @@
+/home/aura3/repos/SGL-Torch/data/dataset.py:317: UserWarning: /home/aura3/repos/SGL-Torch/dataset/amazon-book/amazon-book.valid does not exist.
+  warnings.warn("%s does not exist." % valid_file)
+/home/aura3/repos/SGL-Torch/data/dataset.py:331: UserWarning: /home/aura3/repos/SGL-Torch/dataset/amazon-book/amazon-book.user2id does not exist.
+  warnings.warn("%s does not exist." % user2id_file)
+/home/aura3/repos/SGL-Torch/data/dataset.py:339: UserWarning: /home/aura3/repos/SGL-Torch/dataset/amazon-book/amazon-book.item2id does not exist.
+  warnings.warn("%s does not exist." % item2id_file)
+set pytorch seed
+Item degree grouping...
+User degree grouping...
+Data loading finished
+2026-10-18 01:52:16.332: my pid: 484311
+2026-10-18 01:52:16.332: model: model.general_recommender.SGL
+2026-10-18 01:52:16.332: Dataset statistics:
+Name: amazon-book
+The number of users: 52643
+The number of items: 91599
+The number of ratings: 2984108
+Average actions of users: 56.69
+Average actions of items: 32.58
+The sparsity of the dataset: 99.938115%
+
+The number of training: 2380730
+The number of validation: 0
+The number of testing: 603378
+2026-10-18 01:52:16.332: NeuRec:[NeuRec]:
+recommender=SGL
+dataset=amazon-book
+file_column=UI
+sep=','
+gpu_id=0
+gpu_mem=0.99
+metric=["Precision", "Recall", "NDCG"]
+top_k=[20]
+test_thread=8
+test_batch_size=128
+seed=2021
+start_testing_epoch=0
+
+SGL:[hyperparameters]:
+aug_type=ED
+reg=1e-4
+embed_size=64
+n_layers=3
+ssl_reg=0.5
+ssl_ratio=0.1
+ssl_temp=0.2
+ssl_mode=both_side
+lr=0.001
+learner=adam
+adj_type=pre
+epochs=1000
+batch_size=2048
+num_negatives=1
+param_init=xavier_uniform
+stddev=0.01
+verbose=1
+stop_cnt=10
+pretrain_flag=0
+save_flag=0
+
+Command line:
+recommender=SGL
+dataset=amazon-book
+aug_type=ED
+reg=1e-4
+n_layers=3
+ssl_reg=0.5
+ssl_ratio=0.1
+ssl_temp=0.2
+create_adj_mat function cost: 0.138122s
+2026-10-18 01:52:18.383: metrics:	Precision@20	Recall@20   	NDCG@20     
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.600937s
+create_adj_mat function cost: 0.543454s
+2026-10-18 01:55:10.905: [iter 1 : loss : 7.0297 = 0.6931 + 6.3367 + 0.0000, time: 172.521863]
+2026-10-18 01:55:20.295: epoch 1:	0.00191494  	0.00403024  	0.00315970  
+2026-10-18 01:55:20.295: Find a better model.
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.595592s
+create_adj_mat function cost: 0.585734s
+2026-10-18 01:58:09.946: [iter 2 : loss : 7.0207 = 0.6929 + 6.3278 + 0.0000, time: 169.633477]
+2026-10-18 01:58:19.019: epoch 2:	0.00250673  	0.00538202  	0.00432568  
+2026-10-18 01:58:19.019: Find a better model.
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.653358s
+create_adj_mat function cost: 0.743021s
+2026-10-18 02:01:12.150: [iter 3 : loss : 7.0194 = 0.6927 + 6.3267 + 0.0000, time: 173.103048]
+2026-10-18 02:01:21.641: epoch 3:	0.00283920  	0.00615285  	0.00486406  
+2026-10-18 02:01:21.641: Find a better model.
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.604706s
+create_adj_mat function cost: 0.587007s
+2026-10-18 02:03:50.150: [iter 4 : loss : 7.0186 = 0.6923 + 6.3263 + 0.0000, time: 148.482056]
+2026-10-18 02:04:00.051: epoch 4:	0.00306432  	0.00688504  	0.00538436  
+2026-10-18 02:04:00.051: Find a better model.
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.627389s
+create_adj_mat function cost: 0.882276s
+2026-10-18 02:06:08.335: [iter 5 : loss : 7.0178 = 0.6917 + 6.3261 + 0.0000, time: 128.267404]
+2026-10-18 02:06:18.495: epoch 5:	0.00185700  	0.00428926  	0.00321517  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.871352s
+create_adj_mat function cost: 0.761840s
+2026-10-18 02:08:26.778: [iter 6 : loss : 7.0165 = 0.6903 + 6.3261 + 0.0000, time: 128.261791]
+2026-10-18 02:08:37.015: epoch 6:	0.00107999  	0.00260170  	0.00194568  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.876474s
+create_adj_mat function cost: 0.769126s
+2026-10-18 02:10:45.174: [iter 7 : loss : 7.0141 = 0.6874 + 6.3267 + 0.0000, time: 128.139515]
+2026-10-18 02:10:55.661: epoch 7:	0.00129562  	0.00309155  	0.00242730  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.893177s
+create_adj_mat function cost: 0.795792s
+2026-10-18 02:13:04.200: [iter 8 : loss : 7.0074 = 0.6790 + 6.3284 + 0.0001, time: 128.507475]
+2026-10-18 02:13:14.291: epoch 8:	0.00274419  	0.00668096  	0.00521562  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.820568s
+create_adj_mat function cost: 0.810957s
+2026-10-18 02:15:22.010: [iter 9 : loss : 6.9840 = 0.6503 + 6.3336 + 0.0002, time: 127.700115]
+2026-10-18 02:15:32.275: epoch 9:	0.00519964  	0.01272039  	0.01004640  
+2026-10-18 02:15:32.275: Find a better model.
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.956367s
+create_adj_mat function cost: 0.646432s
+2026-10-18 02:17:40.858: [iter 10 : loss : 6.9223 = 0.5793 + 6.3426 + 0.0004, time: 128.536194]
+2026-10-18 02:17:51.179: epoch 10:	0.01085075  	0.02578627  	0.02110581  
+2026-10-18 02:17:51.179: Find a better model.
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.765337s
+create_adj_mat function cost: 0.748702s
+2026-10-18 02:19:59.479: [iter 11 : loss : 6.8134 = 0.4585 + 6.3540 + 0.0009, time: 128.268358]
+2026-10-18 02:20:09.566: epoch 11:	0.01603433  	0.03777181  	0.03084583  
+2026-10-18 02:20:09.566: Find a better model.
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.883483s
+create_adj_mat function cost: 0.791455s
+2026-10-18 02:22:17.627: [iter 12 : loss : 6.6976 = 0.3342 + 6.3618 + 0.0016, time: 128.026853]
+2026-10-18 02:22:27.502: epoch 12:	0.01864222  	0.04379121  	0.03551562  
+2026-10-18 02:22:27.503: Find a better model.
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.846607s
+create_adj_mat function cost: 0.744798s
+2026-10-18 02:24:35.485: [iter 13 : loss : 6.6060 = 0.2397 + 6.3640 + 0.0023, time: 127.963055]
+2026-10-18 02:24:45.847: epoch 13:	0.01941244  	0.04601647  	0.03692412  
+2026-10-18 02:24:45.847: Find a better model.
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.759686s
+create_adj_mat function cost: 0.740088s
+2026-10-18 02:26:53.831: [iter 14 : loss : 6.5411 = 0.1755 + 6.3626 + 0.0030, time: 127.940964]
+2026-10-18 02:27:03.845: epoch 14:	0.01972215  	0.04716628  	0.03739579  
+2026-10-18 02:27:03.845: Find a better model.
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.780513s
+create_adj_mat function cost: 0.886178s
+2026-10-18 02:29:11.844: [iter 15 : loss : 6.4959 = 0.1326 + 6.3596 + 0.0037, time: 127.957276]
+2026-10-18 02:29:21.761: epoch 15:	0.01974399  	0.04744560  	0.03755326  
+2026-10-18 02:29:21.761: Find a better model.
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.849905s
+create_adj_mat function cost: 0.891454s
+2026-10-18 02:31:29.678: [iter 16 : loss : 6.4642 = 0.1038 + 6.3561 + 0.0043, time: 127.894419]
+2026-10-18 02:31:39.680: epoch 16:	0.01977152  	0.04773949  	0.03760076  
+2026-10-18 02:31:39.680: Find a better model.
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.785700s
+create_adj_mat function cost: 0.742388s
+2026-10-18 02:33:47.510: [iter 17 : loss : 6.4411 = 0.0834 + 6.3528 + 0.0049, time: 127.804109]
+2026-10-18 02:33:57.592: epoch 17:	0.01967364  	0.04768681  	0.03746396  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.635908s
+create_adj_mat function cost: 0.646073s
+2026-10-18 02:36:05.619: [iter 18 : loss : 6.4243 = 0.0689 + 6.3500 + 0.0055, time: 128.009987]
+2026-10-18 02:36:15.517: epoch 18:	0.01952920  	0.04735593  	0.03723339  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.836637s
+create_adj_mat function cost: 0.811213s
+2026-10-18 02:38:23.570: [iter 19 : loss : 6.4116 = 0.0580 + 6.3476 + 0.0060, time: 128.014840]
+2026-10-18 02:38:33.518: epoch 19:	0.01945794  	0.04721026  	0.03709739  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.714754s
+create_adj_mat function cost: 0.727654s
+2026-10-18 02:40:41.044: [iter 20 : loss : 6.4020 = 0.0500 + 6.3455 + 0.0065, time: 127.499974]
+2026-10-18 02:40:50.875: epoch 20:	0.01928984  	0.04680523  	0.03678720  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.781461s
+create_adj_mat function cost: 0.846732s
+2026-10-18 02:42:59.059: [iter 21 : loss : 6.3945 = 0.0437 + 6.3439 + 0.0070, time: 128.167657]
+2026-10-18 02:43:09.331: epoch 21:	0.01918821  	0.04654382  	0.03658900  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.777122s
+create_adj_mat function cost: 0.631050s
+2026-10-18 02:45:17.710: [iter 22 : loss : 6.3887 = 0.0388 + 6.3425 + 0.0074, time: 128.344591]
+2026-10-18 02:45:27.469: epoch 22:	0.01901630  	0.04610489  	0.03629472  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.889653s
+create_adj_mat function cost: 0.784994s
+2026-10-18 02:47:35.624: [iter 23 : loss : 6.3838 = 0.0347 + 6.3413 + 0.0078, time: 128.133308]
+2026-10-18 02:47:45.562: epoch 23:	0.01888047  	0.04568027  	0.03600198  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.789360s
+create_adj_mat function cost: 0.809850s
+2026-10-18 02:49:53.700: [iter 24 : loss : 6.3799 = 0.0315 + 6.3403 + 0.0081, time: 128.113358]
+2026-10-18 02:50:04.107: epoch 24:	0.01869053  	0.04521955  	0.03563717  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.840980s
+create_adj_mat function cost: 0.639660s
+2026-10-18 02:52:12.349: [iter 25 : loss : 6.3766 = 0.0288 + 6.3393 + 0.0085, time: 128.209312]
+2026-10-18 02:52:22.258: epoch 25:	0.01856989  	0.04484069  	0.03535876  
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/home/aura3/repos/SGL-Torch/model/general_recommender/SGL.py:237: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+create_adj_mat function cost: 0.744243s
+create_adj_mat function cost: 0.731809s
+2026-10-18 02:54:29.647: [iter 26 : loss : 6.3742 = 0.0268 + 6.3386 + 0.0088, time: 127.368686]
+2026-10-18 02:54:39.642: epoch 26:	0.01841508  	0.04449211  	0.03506603  
+2026-10-18 02:54:39.642: Early stopping is trigger at epoch: 26
+2026-10-18 02:54:39.642: best_result@epoch 16:
+
+2026-10-18 02:54:39.642: 		0.0198      	0.0477      	0.0376      

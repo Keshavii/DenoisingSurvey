@@ -1,0 +1,8 @@
+bash: /home/aura1/miniconda3/envs/r10-gdmsr/lib/libtinfo.so.6: no version information available (required by bash)
+Using backend: pytorch
+Traceback (most recent call last):
+  File "main.py", line 341, in <module>
+    log_dir_exp = init_log(args)
+  File "/home/aura1/survey/rq10/repos/gdmsr/utils.py", line 12, in init_log
+    os.mkdir(os.path.join(args.log_dir, args.dataset_name))
+FileNotFoundError: [Errno 2] No such file or directory: './log/yelp'

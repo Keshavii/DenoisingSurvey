@@ -1,0 +1,44 @@
+2026-11-03 23:17:55 waiting for rq10setup to finish
+2026-11-03 23:39:55 setup finished; envs ready: damrs fmlp gbsr gdmsr hdsr iadsr preferdiff recbole steam 
+2026-11-03 23:39:55 gbsr: start (python run_GBSR.py --dataset douban_book --runid 40+2.5sigma --beta 40 --sigma 2.5)
+2026-11-03 23:39:56 gbsr: exit 1 after 0 min, peak GPU 447 MiB (124 = time limit)
+2026-11-03 23:39:56 hdsr: start (python run_HDSR.py)
+2026-11-03 23:39:59 hdsr: exit 1 after 0 min, peak GPU 447 MiB (124 = time limit)
+2026-11-03 23:39:59 gdmsr: start (bash run.sh)
+2026-11-03 23:39:59 gdmsr: exit 1 after 0 min, peak GPU 819 MiB (124 = time limit)
+2026-11-03 23:39:59 steam: start (bash -c python main.py -m=train && python main.py -m=valid && python main.py -m=test)
+2026-11-04 01:48:56 steam: exit 0 after 128 min, peak GPU 22992 MiB (124 = time limit)
+2026-11-04 01:48:56 fmlp: start (python main.py --data_name=Beauty)
+2026-11-04 01:52:52 fmlp: exit 0 after 3 min, peak GPU 2620 MiB (124 = time limit)
+2026-11-04 01:52:52 preferdiff: start (python main.py --model=PreferDiff --sd=O --td=O --loss_type=cosine --lamda=0.4 --w=2 --hidden_size=3072 --ab=iids)
+2026-11-04 01:52:53 preferdiff: exit 1 after 0 min, peak GPU 472 MiB (124 = time limit)
+2026-11-04 01:52:53 RQ10 smoke reproductions finished
+gbsr        1  0    447
+hdsr        1  0    447
+gdmsr       1  0    819
+steam       0  128  22992
+fmlp        0  3    2620
+preferdiff  1  0    472
+2026-11-04 13:18:44 waiting for rq10setup to finish
+2026-11-04 13:24:44 setup finished; envs ready: damrs fmlp gbsr gdmsr hdsr iadsr mmrec preferdiff recbole steam 
+2026-11-04 13:24:44 gbsr: start (python run_GBSR.py --dataset douban_book --runid 40+2.5sigma --beta 40 --sigma 2.5)
+2026-11-04 13:33:17 gbsr: exit 0 after 8 min, peak GPU 3538 MiB (124 = time limit)
+2026-11-04 13:33:17 hdsr: start (python run_HDSR_pc3.py)
+2026-11-04 13:33:32 hdsr: exit 1 after 0 min, peak GPU 2092 MiB (124 = time limit)
+2026-11-04 13:33:32 gdmsr: start (bash run.sh)
+2026-11-04 13:33:33 gdmsr: exit 1 after 0 min, peak GPU 460 MiB (124 = time limit)
+2026-11-04 13:33:33 steam: done before
+2026-11-04 13:33:33 fmlp: done before
+2026-11-04 13:33:33 preferdiff: start (python main.py --model=PreferDiff --sd=O --td=O --loss_type=cosine --lamda=0.4 --w=2 --hidden_size=3072 --ab=iids)
+2026-11-04 13:39:32 preferdiff: exit 0 after 5 min, peak GPU 7698 MiB (124 = time limit)
+2026-11-04 13:39:32 RQ10 smoke reproductions finished
+gbsr        1  0    447
+hdsr        1  0    447
+gdmsr       1  0    819
+steam       0  128  22992
+fmlp        0  3    2620
+preferdiff  1  0    472
+gbsr        0  8    3538
+hdsr        1  0    2092
+gdmsr       1  0    460
+preferdiff  0  5    7698

@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.059952205338863966,
+  "recall@20": 0.09158699085805254,
+  "recall@50": 0.15533460472569346,
+  "ndcg@10": 0.04218270404351116,
+  "ndcg@20": 0.051820051561499936,
+  "ndcg@50": 0.06847959455892891,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1726,
+      "ndcg@20": 0.03643263829454933,
+      "recall@20": 0.06894553881807648
+    },
+    "warm(5-20)": {
+      "n_users": 43680,
+      "ndcg@20": 0.04515511825888139,
+      "recall@20": 0.09443108974358974
+    },
+    "established(>20)": {
+      "n_users": 34943,
+      "ndcg@20": 0.06091151371292181,
+      "recall@20": 0.08915013388815109
+    },
+    "user_q1": {
+      "n_users": 14909,
+      "ndcg@20": 0.033372153469745834,
+      "recall@20": 0.07297605473204105
+    },
+    "user_q2": {
+      "n_users": 14908,
+      "ndcg@20": 0.042515139647910025,
+      "recall@20": 0.09349566228423217
+    },
+    "user_q3": {
+      "n_users": 17634,
+      "ndcg@20": 0.05715042352281795,
+      "recall@20": 0.11114419114589238
+    },
+    "user_q4": {
+      "n_users": 16779,
+      "ndcg@20": 0.05953628554378835,
+      "recall@20": 0.10202251113211241
+    },
+    "user_q5": {
+      "n_users": 16119,
+      "ndcg@20": 0.06362542846472354,
+      "recall@20": 0.07477743124064454
+    },
+    "items_head": {
+      "n_truth": 189435,
+      "recall@20_micro": 0.1093514925964051
+    },
+    "items_mid": {
+      "n_truth": 55310,
+      "recall@20_micro": 0.023106129090580366
+    },
+    "items_tail": {
+      "n_truth": 39167,
+      "recall@20_micro": 0.009319069624939362
+    },
+    "coverage@20": 0.520468666065293,
+    "gini@20": 0.899591721357803
+  },
+  "part": "C",
+  "dataset": "amazon_book",
+  "method": "Oracle-BPR",
+  "backbone": "LightGCN",
+  "cond": "N0",
+  "seed": "1",
+  "train_file": "train_clean.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/amazon_book/plain_lightgcn_bpr_oracle_s1/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-10-19 18:01:55"
+}

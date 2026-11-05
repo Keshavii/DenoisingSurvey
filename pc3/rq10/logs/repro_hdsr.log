@@ -1,0 +1,48 @@
+dataset: Douban
+save_path: ./ckpts/log_Douban_1.pt
+device: cuda:0
+dim: 64
+num_epoch: 300
+feature_range: [0.0, 0.8]
+gcl_temp: 0.15
+sg_weight: 0.3
+cf_weight: 1.5
+gcl_inter_weight: 0.2
+dropout: 0.2
+layer: 3
+layer_sg: 4
+patience: 1
+trainbatch: 1024
+lr: 0.002
+l2_reg: 1e-05
+seed: 2024
+users num=10091, item num=22291, ratings=591296, sparse=0.002628700955795998
+link user=12748, link num=169150
+Valid Performance
++-----------+---------+--------------+--------------+
+| recall@20 | ndcg@20 | precision@20 | hit_ratio@20 |
++-----------+---------+--------------+--------------+
+|   0.0136  |  0.007  |    0.0024    |    0.0449    |
++-----------+---------+--------------+--------------+
++-----------+---------+--------------+--------------+
+| recall@50 | ndcg@50 | precision@50 | hit_ratio@50 |
++-----------+---------+--------------+--------------+
+|   0.0234  |  0.0099 |    0.0019    |    0.0827    |
++-----------+---------+--------------+--------------+
++------------+----------+---------------+---------------+
+| recall@100 | ndcg@100 | precision@100 | hit_ratio@100 |
++------------+----------+---------------+---------------+
+|   0.0369   |  0.0131  |     0.0016    |     0.1303    |
++------------+----------+---------------+---------------+
+Traceback (most recent call last):
+  File "run_HDSR_pc3.py", line 112, in <module>
+    save(model, config)
+  File "/home/aura1/survey/rq10/repos/hdsr/src/Data.py", line 155, in save
+    torch.save(model.state_dict(),config['save_path'])
+  File "/home/aura1/miniconda3/envs/r10-hdsr/lib/python3.8/site-packages/torch/serialization.py", line 422, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+  File "/home/aura1/miniconda3/envs/r10-hdsr/lib/python3.8/site-packages/torch/serialization.py", line 309, in _open_zipfile_writer
+    return container(name_or_buffer)
+  File "/home/aura1/miniconda3/envs/r10-hdsr/lib/python3.8/site-packages/torch/serialization.py", line 287, in __init__
+    super(_open_zipfile_writer_file, self).__init__(torch._C.PyTorchFileWriter(str(name)))
+RuntimeError: Parent directory ./ckpts does not exist.

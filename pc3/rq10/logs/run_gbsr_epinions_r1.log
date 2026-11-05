@@ -1,0 +1,2943 @@
+saving log to  ../saved/epinions/GBSR/run1/
+dataset=epinions
+runid=run1
+device_id=0
+epochs=1000
+batch_size=2048
+lr=0.001
+topk=20
+early_stops=10
+num_neg=1
+gcn_layer=3
+num_user=18202
+num_item=47449
+latent_dim=64
+init_type=norm
+l2_reg=0.0001
+beta=40.0
+sigma=2.5
+edge_bias=0.5
+social_noise_ratio=0
+data_path=../datasets/epinions/
+successfull load social networks
+user_embeddings.weight torch.Size([18202, 64])
+item_embeddings.weight torch.Size([47449, 64])
+linear_1.weight torch.Size([64, 128])
+linear_1.bias torch.Size([64])
+linear_2.weight torch.Size([1, 64])
+linear_2.bias torch.Size([1])
+[1;35mTrain:[0m:   0%|[33m          [0m| 0/1000 [00:00<?, ?it/s]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  1.04it/s][A
+All_batch: 4it [00:01,  4.76it/s][A
+All_batch: 7it [00:01,  8.65it/s][A
+All_batch: 11it [00:01, 13.53it/s][A
+All_batch: 14it [00:01, 16.73it/s][A
+All_batch: 17it [00:01, 19.56it/s][A
+All_batch: 20it [00:01, 21.99it/s][A
+All_batch: 23it [00:01, 23.95it/s][A
+All_batch: 26it [00:01, 25.53it/s][A
+All_batch: 29it [00:01, 26.71it/s][A
+All_batch: 33it [00:02, 27.82it/s][A
+All_batch: 37it [00:02, 28.54it/s][A
+All_batch: 40it [00:02, 28.91it/s][A
+All_batch: 43it [00:02, 29.20it/s][A
+All_batch: 47it [00:02, 29.50it/s][A
+All_batch: 50it [00:02, 29.63it/s][A
+All_batch: 54it [00:02, 29.73it/s][A
+All_batch: 58it [00:02, 29.88it/s][A
+All_batch: 62it [00:03, 30.04it/s][A
+All_batch: 66it [00:03, 30.09it/s][A
+All_batch: 70it [00:03, 30.02it/s][A
+All_batch: 74it [00:03, 30.04it/s][A
+All_batch: 78it [00:03, 30.09it/s][A
+All_batch: 82it [00:03, 30.24it/s][A
+All_batch: 86it [00:03, 30.29it/s][A
+All_batch: 90it [00:03, 30.11it/s][A
+All_batch: 94it [00:04, 29.88it/s][A
+All_batch: 97it [00:04, 29.80it/s][A
+All_batch: 100it [00:04, 29.74it/s][A
+All_batch: 103it [00:04, 29.73it/s][A
+All_batch: 106it [00:04, 29.79it/s][A
+All_batch: 110it [00:04, 29.85it/s][A
+All_batch: 113it [00:04, 29.88it/s][A
+All_batch: 117it [00:04, 29.92it/s][A
+All_batch: 121it [00:04, 29.97it/s][A
+All_batch: 125it [00:05, 29.98it/s][A
+All_batch: 129it [00:05, 30.01it/s][A
+All_batch: 133it [00:05, 30.10it/s][AAll_batch: 134it [00:05, 24.79it/s]prepare training data cost time:0.9072
+[1;34mEpoch:0, Train_AUC:0.7601, Loss_rank:0.6931, Loss_reg:0.0000, Loss_ib:0.6696, Loss_sum:1.3626
+[0m[1;32mCurrent Evaluation: Epoch:0,  topk:20, recall:0.0009, ndcg:0.0004
+[0m[1;31mBest Evaluation: Epoch:0,  topk:20, recall:0.0009, ndcg:0.0004
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_0_ndcg_0.0004096175376383372.ckpt
+traintime:5.4054, valtime:3.5360
+
+
+[1;35mTrain:[0m:   0%|[33m          [0m| 1/1000 [00:08<2:28:52,  8.94s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.42it/s][A
+All_batch: 4it [00:00,  9.47it/s][A
+All_batch: 8it [00:00, 16.20it/s][A
+All_batch: 12it [00:00, 20.70it/s][A
+All_batch: 15it [00:00, 23.04it/s][A
+All_batch: 18it [00:00, 24.79it/s][A
+All_batch: 21it [00:01, 26.16it/s][A
+All_batch: 24it [00:01, 27.24it/s][A
+All_batch: 28it [00:01, 28.22it/s][A
+All_batch: 32it [00:01, 28.83it/s][A
+All_batch: 35it [00:01, 29.10it/s][A
+All_batch: 39it [00:01, 29.48it/s][A
+All_batch: 43it [00:01, 29.69it/s][A
+All_batch: 47it [00:01, 29.88it/s][A
+All_batch: 51it [00:02, 29.93it/s][A
+All_batch: 55it [00:02, 29.94it/s][A
+All_batch: 59it [00:02, 29.91it/s][A
+All_batch: 62it [00:02, 29.93it/s][A
+All_batch: 65it [00:02, 29.86it/s][A
+All_batch: 68it [00:02, 29.82it/s][A
+All_batch: 72it [00:02, 29.92it/s][A
+All_batch: 75it [00:02, 29.92it/s][A
+All_batch: 79it [00:03, 30.10it/s][A
+All_batch: 83it [00:03, 30.26it/s][A
+All_batch: 87it [00:03, 30.34it/s][A
+All_batch: 91it [00:03, 30.33it/s][A
+All_batch: 95it [00:03, 30.32it/s][A
+All_batch: 99it [00:03, 30.45it/s][A
+All_batch: 103it [00:03, 30.56it/s][A
+All_batch: 107it [00:03, 30.54it/s][A
+All_batch: 111it [00:04, 30.45it/s][A
+All_batch: 115it [00:04, 30.24it/s][A
+All_batch: 119it [00:04, 30.08it/s][A
+All_batch: 123it [00:04, 29.98it/s][A
+All_batch: 126it [00:04, 29.88it/s][A
+All_batch: 129it [00:04, 28.94it/s][A
+All_batch: 133it [00:04, 29.31it/s][AAll_batch: 134it [00:04, 27.65it/s]prepare training data cost time:0.3783
+[1;34mEpoch:1, Train_AUC:0.7848, Loss_rank:0.6930, Loss_reg:0.0000, Loss_ib:0.6575, Loss_sum:1.3505
+[0m[1;32mCurrent Evaluation: Epoch:1,  topk:20, recall:0.0009, ndcg:0.0004
+[0m[1;31mBest Evaluation: Epoch:1,  topk:20, recall:0.0009, ndcg:0.0004
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_1_ndcg_0.00040963880948211083.ckpt
+traintime:4.8468, valtime:3.2553
+
+
+[1;35mTrain:[0m:   0%|[33m          [0m| 2/1000 [00:17<2:20:30,  8.45s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.42it/s][A
+All_batch: 5it [00:00, 11.16it/s][A
+All_batch: 9it [00:00, 17.08it/s][A
+All_batch: 13it [00:00, 21.11it/s][A
+All_batch: 16it [00:00, 22.88it/s][A
+All_batch: 20it [00:01, 25.45it/s][A
+All_batch: 24it [00:01, 27.01it/s][A
+All_batch: 28it [00:01, 28.05it/s][A
+All_batch: 32it [00:01, 28.91it/s][A
+All_batch: 36it [00:01, 29.51it/s][A
+All_batch: 40it [00:01, 29.91it/s][A
+All_batch: 44it [00:01, 30.02it/s][A
+All_batch: 48it [00:01, 30.04it/s][A
+All_batch: 52it [00:02, 30.07it/s][A
+All_batch: 56it [00:02, 30.09it/s][A
+All_batch: 60it [00:02, 30.14it/s][A
+All_batch: 64it [00:02, 30.32it/s][A
+All_batch: 68it [00:02, 30.28it/s][A
+All_batch: 72it [00:02, 30.22it/s][A
+All_batch: 76it [00:02, 30.09it/s][A
+All_batch: 80it [00:03, 30.06it/s][A
+All_batch: 84it [00:03, 30.02it/s][A
+All_batch: 88it [00:03, 29.92it/s][A
+All_batch: 92it [00:03, 30.10it/s][A
+All_batch: 96it [00:03, 30.00it/s][A
+All_batch: 100it [00:03, 30.01it/s][A
+All_batch: 104it [00:03, 30.03it/s][A
+All_batch: 108it [00:03, 30.17it/s][A
+All_batch: 112it [00:04, 30.35it/s][A
+All_batch: 116it [00:04, 30.60it/s][A
+All_batch: 120it [00:04, 30.65it/s][A
+All_batch: 124it [00:04, 30.71it/s][A
+All_batch: 128it [00:04, 30.75it/s][A
+All_batch: 132it [00:04, 30.87it/s][AAll_batch: 134it [00:04, 27.94it/s]prepare training data cost time:0.3771
+[1;34mEpoch:2, Train_AUC:0.7974, Loss_rank:0.6930, Loss_reg:0.0000, Loss_ib:0.6687, Loss_sum:1.3617
+[0m[1;32mCurrent Evaluation: Epoch:2,  topk:20, recall:0.0010, ndcg:0.0005
+[0m[1;31mBest Evaluation: Epoch:2,  topk:20, recall:0.0010, ndcg:0.0005
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_2_ndcg_0.00046670815758982474.ckpt
+traintime:4.7963, valtime:2.9434
+
+
+[1;35mTrain:[0m:   0%|[33m          [0m| 3/1000 [00:24<2:15:00,  8.12s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.40it/s][A
+All_batch: 4it [00:00,  9.43it/s][A
+All_batch: 8it [00:00, 16.19it/s][A
+All_batch: 11it [00:00, 19.76it/s][A
+All_batch: 15it [00:00, 23.19it/s][A
+All_batch: 18it [00:00, 24.92it/s][A
+All_batch: 22it [00:01, 26.63it/s][A
+All_batch: 25it [00:01, 27.49it/s][A
+All_batch: 29it [00:01, 28.34it/s][A
+All_batch: 33it [00:01, 28.89it/s][A
+All_batch: 36it [00:01, 29.15it/s][A
+All_batch: 40it [00:01, 29.43it/s][A
+All_batch: 43it [00:01, 29.47it/s][A
+All_batch: 47it [00:01, 29.76it/s][A
+All_batch: 50it [00:02, 29.78it/s][A
+All_batch: 54it [00:02, 30.02it/s][A
+All_batch: 58it [00:02, 30.34it/s][A
+All_batch: 62it [00:02, 30.66it/s][A
+All_batch: 66it [00:02, 30.62it/s][A
+All_batch: 70it [00:02, 30.66it/s][A
+All_batch: 74it [00:02, 30.72it/s][A
+All_batch: 78it [00:02, 30.91it/s][A
+All_batch: 82it [00:03, 30.71it/s][A
+All_batch: 86it [00:03, 30.60it/s][A
+All_batch: 90it [00:03, 30.34it/s][A
+All_batch: 94it [00:03, 30.24it/s][A
+All_batch: 98it [00:03, 30.18it/s][A
+All_batch: 102it [00:03, 30.11it/s][A
+All_batch: 106it [00:03, 29.98it/s][A
+All_batch: 109it [00:03, 29.97it/s][A
+All_batch: 113it [00:04, 30.00it/s][A
+All_batch: 117it [00:04, 30.06it/s][A
+All_batch: 121it [00:04, 30.06it/s][A
+All_batch: 125it [00:04, 29.98it/s][A
+All_batch: 129it [00:04, 29.97it/s][A
+All_batch: 132it [00:04, 29.95it/s][AAll_batch: 134it [00:04, 27.78it/s]prepare training data cost time:0.3804
+[1;34mEpoch:3, Train_AUC:0.8068, Loss_rank:0.6929, Loss_reg:0.0000, Loss_ib:0.6632, Loss_sum:1.3561
+[0m[1;32mCurrent Evaluation: Epoch:3,  topk:20, recall:0.0007, ndcg:0.0005
+[0m[1;31mBest Evaluation: Epoch:3,  topk:20, recall:0.0007, ndcg:0.0005
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_3_ndcg_0.0004848529001203454.ckpt
+traintime:4.8235, valtime:2.9791
+
+
+[1;35mTrain:[0m:   0%|[33m          [0m| 4/1000 [00:32<2:12:45,  8.00s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.40it/s][A
+All_batch: 5it [00:00, 11.06it/s][A
+All_batch: 9it [00:00, 16.97it/s][A
+All_batch: 13it [00:00, 21.11it/s][A
+All_batch: 17it [00:00, 23.91it/s][A
+All_batch: 21it [00:01, 25.96it/s][A
+All_batch: 25it [00:01, 27.45it/s][A
+All_batch: 29it [00:01, 28.34it/s][A
+All_batch: 33it [00:01, 28.92it/s][A
+All_batch: 36it [00:01, 29.13it/s][A
+All_batch: 40it [00:01, 29.50it/s][A
+All_batch: 44it [00:01, 29.85it/s][A
+All_batch: 48it [00:01, 29.95it/s][A
+All_batch: 52it [00:02, 29.85it/s][A
+All_batch: 56it [00:02, 30.04it/s][A
+All_batch: 60it [00:02, 30.00it/s][A
+All_batch: 64it [00:02, 29.99it/s][A
+All_batch: 68it [00:02, 29.98it/s][A
+All_batch: 72it [00:02, 29.93it/s][A
+All_batch: 76it [00:02, 30.03it/s][A
+All_batch: 80it [00:03, 30.06it/s][A
+All_batch: 84it [00:03, 30.00it/s][A
+All_batch: 88it [00:03, 30.07it/s][A
+All_batch: 92it [00:03, 30.42it/s][A
+All_batch: 96it [00:03, 30.65it/s][A
+All_batch: 100it [00:03, 30.62it/s][A
+All_batch: 104it [00:03, 30.71it/s][A
+All_batch: 108it [00:03, 30.77it/s][A
+All_batch: 112it [00:04, 30.90it/s][A
+All_batch: 116it [00:04, 30.75it/s][A
+All_batch: 120it [00:04, 30.42it/s][A
+All_batch: 124it [00:04, 30.28it/s][A
+All_batch: 128it [00:04, 30.17it/s][A
+All_batch: 132it [00:04, 30.10it/s][AAll_batch: 134it [00:04, 27.90it/s]prepare training data cost time:0.3818
+[1;34mEpoch:4, Train_AUC:0.8141, Loss_rank:0.6928, Loss_reg:0.0000, Loss_ib:0.6700, Loss_sum:1.3629
+[0m[1;32mCurrent Evaluation: Epoch:4,  topk:20, recall:0.0009, ndcg:0.0005
+[0m[1;31mBest Evaluation: Epoch:4,  topk:20, recall:0.0009, ndcg:0.0005
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_4_ndcg_0.0004998926063908782.ckpt
+traintime:4.8038, valtime:3.1097
+
+
+[1;35mTrain:[0m:   0%|[33m          [0m| 5/1000 [00:40<2:12:07,  7.97s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.31it/s][A
+All_batch: 4it [00:00,  9.12it/s][A
+All_batch: 7it [00:00, 14.54it/s][A
+All_batch: 11it [00:00, 19.75it/s][A
+All_batch: 15it [00:00, 23.10it/s][A
+All_batch: 18it [00:01, 24.85it/s][A
+All_batch: 22it [00:01, 26.55it/s][A
+All_batch: 25it [00:01, 27.44it/s][A
+All_batch: 29it [00:01, 28.31it/s][A
+All_batch: 32it [00:01, 28.66it/s][A
+All_batch: 36it [00:01, 29.24it/s][A
+All_batch: 40it [00:01, 29.59it/s][A
+All_batch: 44it [00:01, 29.92it/s][A
+All_batch: 48it [00:01, 30.32it/s][A
+All_batch: 52it [00:02, 30.38it/s][A
+All_batch: 56it [00:02, 30.52it/s][A
+All_batch: 60it [00:02, 30.37it/s][A
+All_batch: 64it [00:02, 30.27it/s][A
+All_batch: 68it [00:02, 30.19it/s][A
+All_batch: 72it [00:02, 30.15it/s][A
+All_batch: 76it [00:02, 30.07it/s][A
+All_batch: 80it [00:03, 30.03it/s][A
+All_batch: 84it [00:03, 30.07it/s][A
+All_batch: 88it [00:03, 30.03it/s][A
+All_batch: 92it [00:03, 29.91it/s][A
+All_batch: 96it [00:03, 30.07it/s][A
+All_batch: 100it [00:03, 30.02it/s][A
+All_batch: 104it [00:03, 30.12it/s][A
+All_batch: 108it [00:03, 30.13it/s][A
+All_batch: 112it [00:04, 29.99it/s][A
+All_batch: 115it [00:04, 29.79it/s][A
+All_batch: 118it [00:04, 29.83it/s][A
+All_batch: 122it [00:04, 30.12it/s][A
+All_batch: 126it [00:04, 30.21it/s][A
+All_batch: 130it [00:04, 30.17it/s][A
+All_batch: 134it [00:04, 30.29it/s][AAll_batch: 134it [00:04, 27.66it/s]prepare training data cost time:0.3969
+[1;34mEpoch:5, Train_AUC:0.8234, Loss_rank:0.6928, Loss_reg:0.0000, Loss_ib:0.6632, Loss_sum:1.3560
+[0m[1;32mCurrent Evaluation: Epoch:5,  topk:20, recall:0.0011, ndcg:0.0006
+[0m[1;31mBest Evaluation: Epoch:5,  topk:20, recall:0.0011, ndcg:0.0006
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_5_ndcg_0.000633864021376126.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_0_ndcg_0.0004096175376383372.ckpt
+traintime:4.8453, valtime:3.1351
+
+
+[1;35mTrain:[0m:   1%|[33m          [0m| 6/1000 [00:48<2:12:03,  7.97s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.42it/s][A
+All_batch: 5it [00:00, 11.17it/s][A
+All_batch: 9it [00:00, 17.16it/s][A
+All_batch: 13it [00:00, 21.16it/s][A
+All_batch: 16it [00:00, 23.35it/s][A
+All_batch: 20it [00:01, 25.49it/s][A
+All_batch: 23it [00:01, 26.64it/s][A
+All_batch: 26it [00:01, 27.54it/s][A
+All_batch: 30it [00:01, 28.38it/s][A
+All_batch: 33it [00:01, 28.80it/s][A
+All_batch: 37it [00:01, 29.24it/s][A
+All_batch: 41it [00:01, 29.63it/s][A
+All_batch: 45it [00:01, 29.93it/s][A
+All_batch: 49it [00:02, 29.87it/s][A
+All_batch: 53it [00:02, 30.01it/s][A
+All_batch: 57it [00:02, 29.98it/s][A
+All_batch: 61it [00:02, 30.02it/s][A
+All_batch: 65it [00:02, 30.30it/s][A
+All_batch: 69it [00:02, 30.66it/s][A
+All_batch: 73it [00:02, 30.76it/s][A
+All_batch: 77it [00:02, 30.78it/s][A
+All_batch: 81it [00:03, 30.82it/s][A
+All_batch: 85it [00:03, 31.02it/s][A
+All_batch: 89it [00:03, 31.01it/s][A
+All_batch: 93it [00:03, 30.72it/s][A
+All_batch: 97it [00:03, 30.50it/s][A
+All_batch: 101it [00:03, 30.33it/s][A
+All_batch: 105it [00:03, 30.16it/s][A
+All_batch: 109it [00:03, 30.10it/s][A
+All_batch: 113it [00:04, 30.16it/s][A
+All_batch: 117it [00:04, 30.09it/s][A
+All_batch: 121it [00:04, 30.10it/s][A
+All_batch: 125it [00:04, 30.08it/s][A
+All_batch: 129it [00:04, 30.04it/s][A
+All_batch: 133it [00:04, 30.01it/s][AAll_batch: 134it [00:04, 27.90it/s]prepare training data cost time:0.3788
+[1;34mEpoch:6, Train_AUC:0.8311, Loss_rank:0.6927, Loss_reg:0.0000, Loss_ib:0.6681, Loss_sum:1.3608
+[0m[1;32mCurrent Evaluation: Epoch:6,  topk:20, recall:0.0013, ndcg:0.0008
+[0m[1;31mBest Evaluation: Epoch:6,  topk:20, recall:0.0013, ndcg:0.0008
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_6_ndcg_0.0008019487473159178.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_1_ndcg_0.00040963880948211083.ckpt
+traintime:4.8031, valtime:3.1051
+
+
+[1;35mTrain:[0m:   1%|[33m          [0m| 7/1000 [00:56<2:11:35,  7.95s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.40it/s][A
+All_batch: 4it [00:00,  9.44it/s][A
+All_batch: 8it [00:00, 16.30it/s][A
+All_batch: 12it [00:00, 20.88it/s][A
+All_batch: 16it [00:00, 24.03it/s][A
+All_batch: 20it [00:01, 26.20it/s][A
+All_batch: 24it [00:01, 27.60it/s][A
+All_batch: 28it [00:01, 28.57it/s][A
+All_batch: 32it [00:01, 29.05it/s][A
+All_batch: 36it [00:01, 29.26it/s][A
+All_batch: 39it [00:01, 29.39it/s][A
+All_batch: 42it [00:01, 29.42it/s][A
+All_batch: 46it [00:01, 29.74it/s][A
+All_batch: 50it [00:02, 29.82it/s][A
+All_batch: 53it [00:02, 29.86it/s][A
+All_batch: 56it [00:02, 29.88it/s][A
+All_batch: 59it [00:02, 29.79it/s][A
+All_batch: 62it [00:02, 29.76it/s][A
+All_batch: 65it [00:02, 29.83it/s][A
+All_batch: 69it [00:02, 29.99it/s][A
+All_batch: 73it [00:02, 30.10it/s][A
+All_batch: 77it [00:02, 30.07it/s][A
+All_batch: 81it [00:03, 30.06it/s][A
+All_batch: 85it [00:03, 30.03it/s][A
+All_batch: 89it [00:03, 30.02it/s][A
+All_batch: 93it [00:03, 29.99it/s][A
+All_batch: 97it [00:03, 30.26it/s][A
+All_batch: 101it [00:03, 30.62it/s][A
+All_batch: 105it [00:03, 30.73it/s][A
+All_batch: 109it [00:03, 30.74it/s][A
+All_batch: 113it [00:04, 30.80it/s][A
+All_batch: 117it [00:04, 30.97it/s][A
+All_batch: 121it [00:04, 30.91it/s][A
+All_batch: 125it [00:04, 30.87it/s][A
+All_batch: 129it [00:04, 30.61it/s][A
+All_batch: 133it [00:04, 30.40it/s][AAll_batch: 134it [00:04, 27.95it/s]prepare training data cost time:0.3807
+[1;34mEpoch:7, Train_AUC:0.8397, Loss_rank:0.6925, Loss_reg:0.0000, Loss_ib:0.6679, Loss_sum:1.3605
+[0m[1;32mCurrent Evaluation: Epoch:7,  topk:20, recall:0.0014, ndcg:0.0008
+[0m[1;31mBest Evaluation: Epoch:7,  topk:20, recall:0.0014, ndcg:0.0008
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_7_ndcg_0.0008427111683981899.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_2_ndcg_0.00046670815758982474.ckpt
+traintime:4.7948, valtime:3.1370
+
+
+[1;35mTrain:[0m:   1%|[33m          [0m| 8/1000 [01:04<2:11:21,  7.94s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.41it/s][A
+All_batch: 4it [00:00,  9.45it/s][A
+All_batch: 8it [00:00, 16.19it/s][A
+All_batch: 12it [00:00, 20.63it/s][A
+All_batch: 15it [00:00, 22.83it/s][A
+All_batch: 19it [00:01, 25.23it/s][A
+All_batch: 23it [00:01, 26.84it/s][A
+All_batch: 27it [00:01, 27.99it/s][A
+All_batch: 30it [00:01, 28.37it/s][A
+All_batch: 34it [00:01, 28.92it/s][A
+All_batch: 38it [00:01, 29.38it/s][A
+All_batch: 42it [00:01, 29.64it/s][A
+All_batch: 46it [00:01, 29.88it/s][A
+All_batch: 50it [00:02, 30.28it/s][A
+All_batch: 54it [00:02, 30.47it/s][A
+All_batch: 58it [00:02, 30.69it/s][A
+All_batch: 62it [00:02, 30.69it/s][A
+All_batch: 66it [00:02, 30.68it/s][A
+All_batch: 70it [00:02, 30.68it/s][A
+All_batch: 74it [00:02, 30.60it/s][A
+All_batch: 78it [00:02, 30.46it/s][A
+All_batch: 82it [00:03, 30.33it/s][A
+All_batch: 86it [00:03, 30.27it/s][A
+All_batch: 90it [00:03, 30.47it/s][A
+All_batch: 94it [00:03, 30.24it/s][A
+All_batch: 98it [00:03, 30.17it/s][A
+All_batch: 102it [00:03, 30.20it/s][A
+All_batch: 106it [00:03, 30.17it/s][A
+All_batch: 110it [00:04, 30.10it/s][A
+All_batch: 114it [00:04, 30.04it/s][A
+All_batch: 118it [00:04, 30.05it/s][A
+All_batch: 122it [00:04, 30.04it/s][A
+All_batch: 126it [00:04, 29.92it/s][A
+All_batch: 130it [00:04, 30.18it/s][A
+All_batch: 134it [00:04, 30.41it/s][AAll_batch: 134it [00:04, 27.88it/s]prepare training data cost time:0.3799
+[1;34mEpoch:8, Train_AUC:0.8473, Loss_rank:0.6924, Loss_reg:0.0000, Loss_ib:0.6664, Loss_sum:1.3588
+[0m[1;32mCurrent Evaluation: Epoch:8,  topk:20, recall:0.0016, ndcg:0.0010
+[0m[1;31mBest Evaluation: Epoch:8,  topk:20, recall:0.0016, ndcg:0.0010
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_8_ndcg_0.0009755848737701725.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_3_ndcg_0.0004848529001203454.ckpt
+traintime:4.8072, valtime:3.1428
+
+
+[1;35mTrain:[0m:   1%|[33m          [0m| 9/1000 [01:12<2:11:15,  7.95s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.48it/s][A
+All_batch: 5it [00:00, 11.33it/s][A
+All_batch: 9it [00:00, 17.23it/s][A
+All_batch: 13it [00:00, 21.28it/s][A
+All_batch: 17it [00:00, 24.10it/s][A
+All_batch: 21it [00:01, 26.02it/s][A
+All_batch: 24it [00:01, 26.99it/s][A
+All_batch: 28it [00:01, 27.97it/s][A
+All_batch: 31it [00:01, 28.33it/s][A
+All_batch: 35it [00:01, 29.01it/s][A
+All_batch: 38it [00:01, 29.23it/s][A
+All_batch: 42it [00:01, 29.52it/s][A
+All_batch: 45it [00:01, 29.52it/s][A
+All_batch: 49it [00:01, 29.79it/s][A
+All_batch: 53it [00:02, 29.86it/s][A
+All_batch: 56it [00:02, 29.86it/s][A
+All_batch: 60it [00:02, 29.93it/s][A
+All_batch: 64it [00:02, 29.86it/s][A
+All_batch: 68it [00:02, 29.96it/s][A
+All_batch: 72it [00:02, 30.17it/s][A
+All_batch: 76it [00:02, 30.41it/s][A
+All_batch: 80it [00:03, 30.64it/s][A
+All_batch: 84it [00:03, 30.79it/s][A
+All_batch: 88it [00:03, 30.83it/s][A
+All_batch: 92it [00:03, 30.98it/s][A
+All_batch: 96it [00:03, 30.86it/s][A
+All_batch: 100it [00:03, 30.71it/s][A
+All_batch: 104it [00:03, 30.63it/s][A
+All_batch: 108it [00:03, 30.54it/s][A
+All_batch: 112it [00:04, 30.36it/s][A
+All_batch: 116it [00:04, 30.28it/s][A
+All_batch: 120it [00:04, 30.20it/s][A
+All_batch: 124it [00:04, 30.14it/s][A
+All_batch: 128it [00:04, 30.02it/s][A
+All_batch: 132it [00:04, 30.00it/s][AAll_batch: 134it [00:04, 27.94it/s]prepare training data cost time:0.3687
+[1;34mEpoch:9, Train_AUC:0.8547, Loss_rank:0.6922, Loss_reg:0.0000, Loss_ib:0.6661, Loss_sum:1.3583
+[0m[1;32mCurrent Evaluation: Epoch:9,  topk:20, recall:0.0018, ndcg:0.0011
+[0m[1;31mBest Evaluation: Epoch:9,  topk:20, recall:0.0018, ndcg:0.0011
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_9_ndcg_0.0011183096582337724.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_4_ndcg_0.0004998926063908782.ckpt
+traintime:4.7964, valtime:2.9472
+
+
+[1;35mTrain:[0m:   1%|[33m          [0m| 10/1000 [01:20<2:10:05,  7.88s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.42it/s][A
+All_batch: 5it [00:00, 11.15it/s][A
+All_batch: 9it [00:00, 17.15it/s][A
+All_batch: 12it [00:00, 20.37it/s][A
+All_batch: 16it [00:00, 23.58it/s][A
+All_batch: 20it [00:01, 25.78it/s][A
+All_batch: 24it [00:01, 27.37it/s][A
+All_batch: 28it [00:01, 28.43it/s][A
+All_batch: 32it [00:01, 29.27it/s][A
+All_batch: 36it [00:01, 29.64it/s][A
+All_batch: 40it [00:01, 30.12it/s][A
+All_batch: 44it [00:01, 30.02it/s][A
+All_batch: 48it [00:01, 30.03it/s][A
+All_batch: 52it [00:02, 30.00it/s][A
+All_batch: 56it [00:02, 29.99it/s][A
+All_batch: 60it [00:02, 30.00it/s][A
+All_batch: 64it [00:02, 30.00it/s][A
+All_batch: 68it [00:02, 30.00it/s][A
+All_batch: 72it [00:02, 29.95it/s][A
+All_batch: 76it [00:02, 29.99it/s][A
+All_batch: 80it [00:03, 29.40it/s][A
+All_batch: 84it [00:03, 29.76it/s][A
+All_batch: 88it [00:03, 29.87it/s][A
+All_batch: 92it [00:03, 29.94it/s][A
+All_batch: 96it [00:03, 29.95it/s][A
+All_batch: 100it [00:03, 29.98it/s][A
+All_batch: 104it [00:03, 30.01it/s][A
+All_batch: 108it [00:03, 30.36it/s][A
+All_batch: 112it [00:04, 30.42it/s][A
+All_batch: 116it [00:04, 30.58it/s][A
+All_batch: 120it [00:04, 30.71it/s][A
+All_batch: 124it [00:04, 30.70it/s][A
+All_batch: 128it [00:04, 30.77it/s][A
+All_batch: 132it [00:04, 30.81it/s][AAll_batch: 134it [00:04, 27.94it/s]prepare training data cost time:0.3786
+[1;34mEpoch:10, Train_AUC:0.8634, Loss_rank:0.6919, Loss_reg:0.0000, Loss_ib:0.6650, Loss_sum:1.3570
+[0m[1;32mCurrent Evaluation: Epoch:10,  topk:20, recall:0.0019, ndcg:0.0012
+[0m[1;31mBest Evaluation: Epoch:10,  topk:20, recall:0.0019, ndcg:0.0012
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_10_ndcg_0.0011502963254057931.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_5_ndcg_0.000633864021376126.ckpt
+traintime:4.7953, valtime:3.0715
+
+
+[1;35mTrain:[0m:   1%|[33m          [0m| 11/1000 [01:27<2:09:52,  7.88s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.38it/s][A
+All_batch: 4it [00:00,  9.37it/s][A
+All_batch: 8it [00:00, 16.15it/s][A
+All_batch: 11it [00:00, 19.72it/s][A
+All_batch: 15it [00:00, 23.11it/s][A
+All_batch: 19it [00:01, 25.42it/s][A
+All_batch: 22it [00:01, 26.59it/s][A
+All_batch: 25it [00:01, 27.36it/s][A
+All_batch: 29it [00:01, 28.39it/s][A
+All_batch: 33it [00:01, 28.92it/s][A
+All_batch: 37it [00:01, 29.25it/s][A
+All_batch: 41it [00:01, 29.50it/s][A
+All_batch: 44it [00:01, 29.62it/s][A
+All_batch: 47it [00:01, 29.69it/s][A
+All_batch: 51it [00:02, 29.96it/s][A
+All_batch: 55it [00:02, 30.32it/s][A
+All_batch: 59it [00:02, 30.53it/s][A
+All_batch: 63it [00:02, 30.72it/s][A
+All_batch: 67it [00:02, 30.69it/s][A
+All_batch: 71it [00:02, 30.76it/s][A
+All_batch: 75it [00:02, 30.91it/s][A
+All_batch: 79it [00:02, 30.65it/s][A
+All_batch: 83it [00:03, 30.43it/s][A
+All_batch: 87it [00:03, 30.31it/s][A
+All_batch: 91it [00:03, 30.20it/s][A
+All_batch: 95it [00:03, 30.18it/s][A
+All_batch: 99it [00:03, 30.22it/s][A
+All_batch: 103it [00:03, 30.37it/s][A
+All_batch: 107it [00:03, 30.29it/s][A
+All_batch: 111it [00:04, 30.21it/s][A
+All_batch: 115it [00:04, 30.14it/s][A
+All_batch: 119it [00:04, 29.97it/s][A
+All_batch: 123it [00:04, 30.10it/s][A
+All_batch: 127it [00:04, 30.08it/s][A
+All_batch: 131it [00:04, 30.06it/s][AAll_batch: 134it [00:04, 27.81it/s]prepare training data cost time:0.3849
+[1;34mEpoch:11, Train_AUC:0.8702, Loss_rank:0.6915, Loss_reg:0.0000, Loss_ib:0.6639, Loss_sum:1.3554
+[0m[1;32mCurrent Evaluation: Epoch:11,  topk:20, recall:0.0020, ndcg:0.0013
+[0m[1;31mBest Evaluation: Epoch:11,  topk:20, recall:0.0020, ndcg:0.0013
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_11_ndcg_0.0012682982277349565.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_6_ndcg_0.0008019487473159178.ckpt
+traintime:4.8190, valtime:3.0082
+
+
+[1;35mTrain:[0m:   1%|[33m          [0m| 12/1000 [01:35<2:09:28,  7.86s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.35it/s][A
+All_batch: 5it [00:00, 10.95it/s][A
+All_batch: 9it [00:00, 16.85it/s][A
+All_batch: 13it [00:00, 21.00it/s][A
+All_batch: 17it [00:00, 23.99it/s][A
+All_batch: 21it [00:01, 25.89it/s][A
+All_batch: 24it [00:01, 26.86it/s][A
+All_batch: 28it [00:01, 27.97it/s][A
+All_batch: 32it [00:01, 28.66it/s][A
+All_batch: 36it [00:01, 29.26it/s][A
+All_batch: 40it [00:01, 29.64it/s][A
+All_batch: 44it [00:01, 29.60it/s][A
+All_batch: 48it [00:01, 29.86it/s][A
+All_batch: 52it [00:02, 29.86it/s][A
+All_batch: 56it [00:02, 29.94it/s][A
+All_batch: 60it [00:02, 30.00it/s][A
+All_batch: 64it [00:02, 30.01it/s][A
+All_batch: 68it [00:02, 29.93it/s][A
+All_batch: 72it [00:02, 29.95it/s][A
+All_batch: 75it [00:02, 29.94it/s][A
+All_batch: 78it [00:02, 29.87it/s][A
+All_batch: 82it [00:03, 30.03it/s][A
+All_batch: 86it [00:03, 30.11it/s][A
+All_batch: 90it [00:03, 30.38it/s][A
+All_batch: 94it [00:03, 30.66it/s][A
+All_batch: 98it [00:03, 30.56it/s][A
+All_batch: 102it [00:03, 30.72it/s][A
+All_batch: 106it [00:03, 30.56it/s][A
+All_batch: 110it [00:04, 30.39it/s][A
+All_batch: 114it [00:04, 30.16it/s][A
+All_batch: 118it [00:04, 30.14it/s][A
+All_batch: 122it [00:04, 30.09it/s][A
+All_batch: 126it [00:04, 30.19it/s][A
+All_batch: 130it [00:04, 30.55it/s][A
+All_batch: 134it [00:04, 30.66it/s][AAll_batch: 134it [00:04, 27.84it/s]prepare training data cost time:0.3917
+[1;34mEpoch:12, Train_AUC:0.8797, Loss_rank:0.6910, Loss_reg:0.0000, Loss_ib:0.6611, Loss_sum:1.3521
+[0m[1;32mCurrent Evaluation: Epoch:12,  topk:20, recall:0.0021, ndcg:0.0014
+[0m[1;31mBest Evaluation: Epoch:12,  topk:20, recall:0.0021, ndcg:0.0014
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_12_ndcg_0.0013969486945009087.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_7_ndcg_0.0008427111683981899.ckpt
+traintime:4.8131, valtime:2.8692
+
+
+[1;35mTrain:[0m:   1%|[33m▏         [0m| 13/1000 [01:43<2:08:26,  7.81s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.53it/s][A
+All_batch: 5it [00:00, 11.83it/s][A
+All_batch: 9it [00:00, 18.26it/s][A
+All_batch: 13it [00:00, 22.75it/s][A
+All_batch: 17it [00:00, 25.91it/s][A
+All_batch: 21it [00:00, 28.09it/s][A
+All_batch: 25it [00:01, 29.57it/s][A
+All_batch: 29it [00:01, 30.60it/s][A
+All_batch: 33it [00:01, 31.32it/s][A
+All_batch: 37it [00:01, 31.88it/s][A
+All_batch: 41it [00:01, 32.34it/s][A
+All_batch: 45it [00:01, 32.60it/s][A
+All_batch: 49it [00:01, 32.73it/s][A
+All_batch: 53it [00:01, 32.88it/s][A
+All_batch: 57it [00:02, 32.95it/s][A
+All_batch: 61it [00:02, 33.02it/s][A
+All_batch: 65it [00:02, 32.98it/s][A
+All_batch: 69it [00:02, 32.83it/s][A
+All_batch: 73it [00:02, 32.86it/s][A
+All_batch: 77it [00:02, 32.93it/s][A
+All_batch: 81it [00:02, 32.98it/s][A
+All_batch: 85it [00:02, 32.91it/s][A
+All_batch: 89it [00:03, 32.95it/s][A
+All_batch: 93it [00:03, 32.99it/s][A
+All_batch: 97it [00:03, 33.09it/s][A
+All_batch: 101it [00:03, 33.01it/s][A
+All_batch: 105it [00:03, 33.06it/s][A
+All_batch: 109it [00:03, 33.08it/s][A
+All_batch: 113it [00:03, 33.06it/s][A
+All_batch: 117it [00:03, 33.12it/s][A
+All_batch: 121it [00:04, 33.12it/s][A
+All_batch: 125it [00:04, 32.81it/s][A
+All_batch: 129it [00:04, 32.84it/s][A
+All_batch: 133it [00:04, 32.92it/s][AAll_batch: 134it [00:04, 30.32it/s]prepare training data cost time:0.3620
+[1;34mEpoch:13, Train_AUC:0.8866, Loss_rank:0.6901, Loss_reg:0.0000, Loss_ib:0.6618, Loss_sum:1.3520
+[0m[1;32mCurrent Evaluation: Epoch:13,  topk:20, recall:0.0023, ndcg:0.0015
+[0m[1;31mBest Evaluation: Epoch:13,  topk:20, recall:0.0023, ndcg:0.0015
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_13_ndcg_0.0015166698498404543.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_8_ndcg_0.0009755848737701725.ckpt
+traintime:4.4204, valtime:2.8281
+
+
+[1;35mTrain:[0m:   1%|[33m▏         [0m| 14/1000 [01:50<2:05:32,  7.64s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.45it/s][A
+All_batch: 5it [00:00, 11.50it/s][A
+All_batch: 9it [00:00, 17.84it/s][A
+All_batch: 13it [00:00, 22.37it/s][A
+All_batch: 17it [00:00, 25.49it/s][A
+All_batch: 21it [00:01, 27.74it/s][A
+All_batch: 25it [00:01, 29.34it/s][A
+All_batch: 29it [00:01, 30.39it/s][A
+All_batch: 33it [00:01, 31.16it/s][A
+All_batch: 37it [00:01, 31.71it/s][A
+All_batch: 41it [00:01, 32.13it/s][A
+All_batch: 45it [00:01, 32.38it/s][A
+All_batch: 49it [00:01, 32.57it/s][A
+All_batch: 53it [00:01, 32.77it/s][A
+All_batch: 57it [00:02, 32.84it/s][A
+All_batch: 61it [00:02, 32.92it/s][A
+All_batch: 65it [00:02, 32.99it/s][A
+All_batch: 69it [00:02, 32.97it/s][A
+All_batch: 73it [00:02, 32.98it/s][A
+All_batch: 77it [00:02, 33.02it/s][A
+All_batch: 81it [00:02, 33.00it/s][A
+All_batch: 85it [00:02, 32.84it/s][A
+All_batch: 89it [00:03, 32.85it/s][A
+All_batch: 93it [00:03, 32.91it/s][A
+All_batch: 97it [00:03, 32.74it/s][A
+All_batch: 101it [00:03, 32.87it/s][A
+All_batch: 105it [00:03, 32.89it/s][A
+All_batch: 109it [00:03, 32.94it/s][A
+All_batch: 113it [00:03, 32.99it/s][A
+All_batch: 117it [00:03, 32.92it/s][A
+All_batch: 121it [00:04, 32.52it/s][A
+All_batch: 125it [00:04, 32.67it/s][A
+All_batch: 129it [00:04, 32.76it/s][A
+All_batch: 133it [00:04, 32.79it/s][AAll_batch: 134it [00:04, 30.11it/s]prepare training data cost time:0.3753
+[1;34mEpoch:14, Train_AUC:0.8941, Loss_rank:0.6890, Loss_reg:0.0000, Loss_ib:0.6676, Loss_sum:1.3566
+[0m[1;32mCurrent Evaluation: Epoch:14,  topk:20, recall:0.0025, ndcg:0.0016
+[0m[1;31mBest Evaluation: Epoch:14,  topk:20, recall:0.0025, ndcg:0.0016
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_14_ndcg_0.0016481042267918493.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_9_ndcg_0.0011183096582337724.ckpt
+traintime:4.4508, valtime:2.8535
+
+
+[1;35mTrain:[0m:   2%|[33m▏         [0m| 15/1000 [01:57<2:03:45,  7.54s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.48it/s][A
+All_batch: 5it [00:00, 11.62it/s][A
+All_batch: 9it [00:00, 18.02it/s][A
+All_batch: 13it [00:00, 22.51it/s][A
+All_batch: 17it [00:00, 25.67it/s][A
+All_batch: 21it [00:01, 27.86it/s][A
+All_batch: 25it [00:01, 29.46it/s][A
+All_batch: 29it [00:01, 30.59it/s][A
+All_batch: 33it [00:01, 31.35it/s][A
+All_batch: 37it [00:01, 31.91it/s][A
+All_batch: 41it [00:01, 32.25it/s][A
+All_batch: 45it [00:01, 32.44it/s][A
+All_batch: 49it [00:01, 32.61it/s][A
+All_batch: 53it [00:01, 32.73it/s][A
+All_batch: 57it [00:02, 32.82it/s][A
+All_batch: 61it [00:02, 32.86it/s][A
+All_batch: 65it [00:02, 32.86it/s][A
+All_batch: 69it [00:02, 32.89it/s][A
+All_batch: 73it [00:02, 32.94it/s][A
+All_batch: 77it [00:02, 33.06it/s][A
+All_batch: 81it [00:02, 33.10it/s][A
+All_batch: 85it [00:02, 32.75it/s][A
+All_batch: 89it [00:03, 32.71it/s][A
+All_batch: 93it [00:03, 32.88it/s][A
+All_batch: 97it [00:03, 32.90it/s][A
+All_batch: 101it [00:03, 32.99it/s][A
+All_batch: 105it [00:03, 33.01it/s][A
+All_batch: 109it [00:03, 33.01it/s][A
+All_batch: 113it [00:03, 33.06it/s][A
+All_batch: 117it [00:03, 33.06it/s][A
+All_batch: 121it [00:04, 33.05it/s][A
+All_batch: 125it [00:04, 32.68it/s][A
+All_batch: 129it [00:04, 32.82it/s][A
+All_batch: 133it [00:04, 32.91it/s][AAll_batch: 134it [00:04, 30.20it/s]prepare training data cost time:0.3710
+[1;34mEpoch:15, Train_AUC:0.8995, Loss_rank:0.6873, Loss_reg:0.0000, Loss_ib:0.6686, Loss_sum:1.3559
+[0m[1;32mCurrent Evaluation: Epoch:15,  topk:20, recall:0.0029, ndcg:0.0018
+[0m[1;31mBest Evaluation: Epoch:15,  topk:20, recall:0.0029, ndcg:0.0018
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_15_ndcg_0.0018016958668462199.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_10_ndcg_0.0011502963254057931.ckpt
+traintime:4.4368, valtime:2.8672
+
+
+[1;35mTrain:[0m:   2%|[33m▏         [0m| 16/1000 [02:05<2:02:28,  7.47s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.54it/s][A
+All_batch: 5it [00:00, 11.76it/s][A
+All_batch: 9it [00:00, 18.03it/s][A
+All_batch: 13it [00:00, 22.46it/s][A
+All_batch: 17it [00:00, 25.57it/s][A
+All_batch: 21it [00:01, 27.80it/s][A
+All_batch: 25it [00:01, 29.39it/s][A
+All_batch: 29it [00:01, 30.52it/s][A
+All_batch: 33it [00:01, 31.25it/s][A
+All_batch: 37it [00:01, 31.78it/s][A
+All_batch: 41it [00:01, 32.12it/s][A
+All_batch: 45it [00:01, 32.37it/s][A
+All_batch: 49it [00:01, 32.55it/s][A
+All_batch: 53it [00:01, 32.67it/s][A
+All_batch: 57it [00:02, 32.64it/s][A
+All_batch: 61it [00:02, 32.71it/s][A
+All_batch: 65it [00:02, 32.81it/s][A
+All_batch: 69it [00:02, 32.92it/s][A
+All_batch: 73it [00:02, 32.92it/s][A
+All_batch: 77it [00:02, 33.00it/s][A
+All_batch: 81it [00:02, 33.06it/s][A
+All_batch: 85it [00:02, 33.02it/s][A
+All_batch: 89it [00:03, 33.03it/s][A
+All_batch: 93it [00:03, 33.08it/s][A
+All_batch: 97it [00:03, 33.11it/s][A
+All_batch: 101it [00:03, 33.14it/s][A
+All_batch: 105it [00:03, 33.09it/s][A
+All_batch: 109it [00:03, 33.10it/s][A
+All_batch: 113it [00:03, 33.02it/s][A
+All_batch: 117it [00:03, 33.06it/s][A
+All_batch: 121it [00:04, 33.04it/s][A
+All_batch: 125it [00:04, 33.04it/s][A
+All_batch: 129it [00:04, 33.05it/s][A
+All_batch: 133it [00:04, 33.09it/s][AAll_batch: 134it [00:04, 30.26it/s]prepare training data cost time:0.3615
+[1;34mEpoch:16, Train_AUC:0.9050, Loss_rank:0.6850, Loss_reg:0.0000, Loss_ib:0.6621, Loss_sum:1.3471
+[0m[1;32mCurrent Evaluation: Epoch:16,  topk:20, recall:0.0030, ndcg:0.0019
+[0m[1;31mBest Evaluation: Epoch:16,  topk:20, recall:0.0030, ndcg:0.0019
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_16_ndcg_0.0019323811084265604.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_11_ndcg_0.0012682982277349565.ckpt
+traintime:4.4285, valtime:2.8683
+
+
+[1;35mTrain:[0m:   2%|[33m▏         [0m| 17/1000 [02:12<2:01:30,  7.42s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.54it/s][A
+All_batch: 5it [00:00, 11.82it/s][A
+All_batch: 9it [00:00, 18.21it/s][A
+All_batch: 13it [00:00, 22.70it/s][A
+All_batch: 17it [00:00, 25.81it/s][A
+All_batch: 21it [00:01, 28.04it/s][A
+All_batch: 25it [00:01, 29.53it/s][A
+All_batch: 29it [00:01, 30.63it/s][A
+All_batch: 33it [00:01, 31.39it/s][A
+All_batch: 37it [00:01, 31.94it/s][A
+All_batch: 41it [00:01, 32.37it/s][A
+All_batch: 45it [00:01, 32.65it/s][A
+All_batch: 49it [00:01, 32.85it/s][A
+All_batch: 53it [00:01, 32.95it/s][A
+All_batch: 57it [00:02, 32.94it/s][A
+All_batch: 61it [00:02, 32.97it/s][A
+All_batch: 65it [00:02, 33.05it/s][A
+All_batch: 69it [00:02, 33.05it/s][A
+All_batch: 73it [00:02, 33.08it/s][A
+All_batch: 77it [00:02, 33.10it/s][A
+All_batch: 81it [00:02, 33.10it/s][A
+All_batch: 85it [00:02, 33.12it/s][A
+All_batch: 89it [00:03, 33.13it/s][A
+All_batch: 93it [00:03, 33.08it/s][A
+All_batch: 97it [00:03, 33.09it/s][A
+All_batch: 101it [00:03, 32.98it/s][A
+All_batch: 105it [00:03, 32.97it/s][A
+All_batch: 109it [00:03, 32.96it/s][A
+All_batch: 113it [00:03, 32.99it/s][A
+All_batch: 117it [00:03, 32.98it/s][A
+All_batch: 121it [00:04, 32.99it/s][A
+All_batch: 125it [00:04, 33.02it/s][A
+All_batch: 129it [00:04, 32.98it/s][A
+All_batch: 133it [00:04, 32.86it/s][AAll_batch: 134it [00:04, 30.34it/s]prepare training data cost time:0.3611
+[1;34mEpoch:17, Train_AUC:0.9104, Loss_rank:0.6819, Loss_reg:0.0000, Loss_ib:0.6615, Loss_sum:1.3434
+[0m[1;32mCurrent Evaluation: Epoch:17,  topk:20, recall:0.0032, ndcg:0.0021
+[0m[1;31mBest Evaluation: Epoch:17,  topk:20, recall:0.0032, ndcg:0.0021
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_17_ndcg_0.00211231298383546.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_12_ndcg_0.0013969486945009087.ckpt
+traintime:4.4172, valtime:2.8610
+
+
+[1;35mTrain:[0m:   2%|[33m▏         [0m| 18/1000 [02:19<2:00:42,  7.37s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.50it/s][A
+All_batch: 5it [00:00, 11.69it/s][A
+All_batch: 9it [00:00, 18.09it/s][A
+All_batch: 13it [00:00, 22.52it/s][A
+All_batch: 17it [00:00, 25.68it/s][A
+All_batch: 21it [00:01, 27.97it/s][A
+All_batch: 25it [00:01, 29.43it/s][A
+All_batch: 29it [00:01, 30.46it/s][A
+All_batch: 33it [00:01, 31.26it/s][A
+All_batch: 37it [00:01, 31.80it/s][A
+All_batch: 41it [00:01, 32.22it/s][A
+All_batch: 45it [00:01, 32.52it/s][A
+All_batch: 49it [00:01, 32.72it/s][A
+All_batch: 53it [00:01, 32.81it/s][A
+All_batch: 57it [00:02, 32.86it/s][A
+All_batch: 61it [00:02, 32.99it/s][A
+All_batch: 65it [00:02, 32.98it/s][A
+All_batch: 69it [00:02, 33.01it/s][A
+All_batch: 73it [00:02, 33.04it/s][A
+All_batch: 77it [00:02, 33.00it/s][A
+All_batch: 81it [00:02, 33.06it/s][A
+All_batch: 85it [00:02, 33.08it/s][A
+All_batch: 89it [00:03, 33.12it/s][A
+All_batch: 93it [00:03, 33.09it/s][A
+All_batch: 97it [00:03, 32.96it/s][A
+All_batch: 101it [00:03, 32.99it/s][A
+All_batch: 105it [00:03, 33.10it/s][A
+All_batch: 109it [00:03, 33.14it/s][A
+All_batch: 113it [00:03, 33.01it/s][A
+All_batch: 117it [00:03, 33.04it/s][A
+All_batch: 121it [00:04, 33.08it/s][A
+All_batch: 125it [00:04, 33.04it/s][A
+All_batch: 129it [00:04, 33.04it/s][A
+All_batch: 133it [00:04, 32.87it/s][AAll_batch: 134it [00:04, 30.27it/s]prepare training data cost time:0.3674
+[1;34mEpoch:18, Train_AUC:0.9140, Loss_rank:0.6779, Loss_reg:0.0000, Loss_ib:0.6626, Loss_sum:1.3405
+[0m[1;32mCurrent Evaluation: Epoch:18,  topk:20, recall:0.0037, ndcg:0.0024
+[0m[1;31mBest Evaluation: Epoch:18,  topk:20, recall:0.0037, ndcg:0.0024
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_18_ndcg_0.0024294813552415305.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_13_ndcg_0.0015166698498404543.ckpt
+traintime:4.4274, valtime:2.8901
+
+
+[1;35mTrain:[0m:   2%|[33m▏         [0m| 19/1000 [02:27<2:00:17,  7.36s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.43it/s][A
+All_batch: 5it [00:00, 11.39it/s][A
+All_batch: 9it [00:00, 17.64it/s][A
+All_batch: 13it [00:00, 22.04it/s][A
+All_batch: 17it [00:00, 25.17it/s][A
+All_batch: 21it [00:01, 26.86it/s][A
+All_batch: 25it [00:01, 28.41it/s][A
+All_batch: 29it [00:01, 29.52it/s][A
+All_batch: 33it [00:01, 30.30it/s][A
+All_batch: 37it [00:01, 30.82it/s][A
+All_batch: 41it [00:01, 31.17it/s][A
+All_batch: 45it [00:01, 31.44it/s][A
+All_batch: 49it [00:01, 31.56it/s][A
+All_batch: 53it [00:02, 31.76it/s][A
+All_batch: 57it [00:02, 31.92it/s][A
+All_batch: 61it [00:02, 32.09it/s][A
+All_batch: 65it [00:02, 32.40it/s][A
+All_batch: 69it [00:02, 32.54it/s][A
+All_batch: 73it [00:02, 32.71it/s][A
+All_batch: 77it [00:02, 32.84it/s][A
+All_batch: 81it [00:02, 32.94it/s][A
+All_batch: 85it [00:03, 33.04it/s][A
+All_batch: 89it [00:03, 33.00it/s][A
+All_batch: 93it [00:03, 32.88it/s][A
+All_batch: 97it [00:03, 32.96it/s][A
+All_batch: 101it [00:03, 33.05it/s][A
+All_batch: 105it [00:03, 33.06it/s][A
+All_batch: 109it [00:03, 33.11it/s][A
+All_batch: 113it [00:03, 32.95it/s][A
+All_batch: 117it [00:03, 32.86it/s][A
+All_batch: 121it [00:04, 32.94it/s][A
+All_batch: 125it [00:04, 32.97it/s][A
+All_batch: 129it [00:04, 33.02it/s][A
+All_batch: 133it [00:04, 33.08it/s][AAll_batch: 134it [00:04, 29.82it/s]prepare training data cost time:0.3783
+[1;34mEpoch:19, Train_AUC:0.9199, Loss_rank:0.6728, Loss_reg:0.0001, Loss_ib:0.6626, Loss_sum:1.3355
+[0m[1;32mCurrent Evaluation: Epoch:19,  topk:20, recall:0.0044, ndcg:0.0028
+[0m[1;31mBest Evaluation: Epoch:19,  topk:20, recall:0.0044, ndcg:0.0028
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_19_ndcg_0.002784384258169055.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_14_ndcg_0.0016481042267918493.ckpt
+traintime:4.4931, valtime:2.8452
+
+
+[1;35mTrain:[0m:   2%|[33m▏         [0m| 20/1000 [02:34<2:00:04,  7.35s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.53it/s][A
+All_batch: 5it [00:00, 11.80it/s][A
+All_batch: 9it [00:00, 18.19it/s][A
+All_batch: 13it [00:00, 22.69it/s][A
+All_batch: 17it [00:00, 25.82it/s][A
+All_batch: 21it [00:01, 28.06it/s][A
+All_batch: 25it [00:01, 29.60it/s][A
+All_batch: 29it [00:01, 30.68it/s][A
+All_batch: 33it [00:01, 31.44it/s][A
+All_batch: 37it [00:01, 31.89it/s][A
+All_batch: 41it [00:01, 32.11it/s][A
+All_batch: 45it [00:01, 32.36it/s][A
+All_batch: 49it [00:01, 32.57it/s][A
+All_batch: 53it [00:01, 32.74it/s][A
+All_batch: 57it [00:02, 32.84it/s][A
+All_batch: 61it [00:02, 32.96it/s][A
+All_batch: 65it [00:02, 33.08it/s][A
+All_batch: 69it [00:02, 33.09it/s][A
+All_batch: 73it [00:02, 33.10it/s][A
+All_batch: 77it [00:02, 33.16it/s][A
+All_batch: 81it [00:02, 33.20it/s][A
+All_batch: 85it [00:02, 33.16it/s][A
+All_batch: 89it [00:03, 33.17it/s][A
+All_batch: 93it [00:03, 33.18it/s][A
+All_batch: 97it [00:03, 33.18it/s][A
+All_batch: 101it [00:03, 33.16it/s][A
+All_batch: 105it [00:03, 33.15it/s][A
+All_batch: 109it [00:03, 33.19it/s][A
+All_batch: 113it [00:03, 33.09it/s][A
+All_batch: 117it [00:03, 32.98it/s][A
+All_batch: 121it [00:04, 33.01it/s][A
+All_batch: 125it [00:04, 33.04it/s][A
+All_batch: 129it [00:04, 33.08it/s][A
+All_batch: 133it [00:04, 33.06it/s][AAll_batch: 134it [00:04, 30.36it/s]prepare training data cost time:0.3626
+[1;34mEpoch:20, Train_AUC:0.9235, Loss_rank:0.6663, Loss_reg:0.0001, Loss_ib:0.6712, Loss_sum:1.3375
+[0m[1;32mCurrent Evaluation: Epoch:20,  topk:20, recall:0.0055, ndcg:0.0034
+[0m[1;31mBest Evaluation: Epoch:20,  topk:20, recall:0.0055, ndcg:0.0034
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_20_ndcg_0.0034058495669267806.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_15_ndcg_0.0018016958668462199.ckpt
+traintime:4.4140, valtime:2.8690
+
+
+[1;35mTrain:[0m:   2%|[33m▏         [0m| 21/1000 [02:41<1:59:37,  7.33s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.45it/s][A
+All_batch: 5it [00:00, 11.54it/s][A
+All_batch: 9it [00:00, 17.97it/s][A
+All_batch: 13it [00:00, 22.50it/s][A
+All_batch: 17it [00:00, 25.67it/s][A
+All_batch: 21it [00:01, 27.91it/s][A
+All_batch: 25it [00:01, 29.46it/s][A
+All_batch: 29it [00:01, 30.41it/s][A
+All_batch: 33it [00:01, 31.17it/s][A
+All_batch: 37it [00:01, 31.80it/s][A
+All_batch: 41it [00:01, 32.18it/s][A
+All_batch: 45it [00:01, 32.48it/s][A
+All_batch: 49it [00:01, 32.72it/s][A
+All_batch: 53it [00:01, 32.89it/s][A
+All_batch: 57it [00:02, 32.92it/s][A
+All_batch: 61it [00:02, 32.97it/s][A
+All_batch: 65it [00:02, 32.84it/s][A
+All_batch: 69it [00:02, 32.89it/s][A
+All_batch: 73it [00:02, 32.95it/s][A
+All_batch: 77it [00:02, 32.99it/s][A
+All_batch: 81it [00:02, 33.06it/s][A
+All_batch: 85it [00:02, 32.96it/s][A
+All_batch: 89it [00:03, 33.01it/s][A
+All_batch: 93it [00:03, 33.08it/s][A
+All_batch: 97it [00:03, 33.10it/s][A
+All_batch: 101it [00:03, 33.10it/s][A
+All_batch: 105it [00:03, 33.09it/s][A
+All_batch: 109it [00:03, 33.08it/s][A
+All_batch: 113it [00:03, 33.06it/s][A
+All_batch: 117it [00:03, 33.09it/s][A
+All_batch: 121it [00:04, 33.07it/s][A
+All_batch: 125it [00:04, 33.10it/s][A
+All_batch: 129it [00:04, 33.01it/s][A
+All_batch: 133it [00:04, 32.75it/s][AAll_batch: 134it [00:04, 30.21it/s]prepare training data cost time:0.3754
+[1;34mEpoch:21, Train_AUC:0.9293, Loss_rank:0.6581, Loss_reg:0.0001, Loss_ib:0.6673, Loss_sum:1.3255
+[0m[1;32mCurrent Evaluation: Epoch:21,  topk:20, recall:0.0072, ndcg:0.0045
+[0m[1;31mBest Evaluation: Epoch:21,  topk:20, recall:0.0072, ndcg:0.0045
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_21_ndcg_0.004456080584354386.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_16_ndcg_0.0019323811084265604.ckpt
+traintime:4.4355, valtime:2.8501
+
+
+[1;35mTrain:[0m:   2%|[33m▏         [0m| 22/1000 [02:49<1:59:16,  7.32s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.53it/s][A
+All_batch: 5it [00:00, 11.79it/s][A
+All_batch: 9it [00:00, 18.10it/s][A
+All_batch: 13it [00:00, 22.50it/s][A
+All_batch: 17it [00:00, 25.68it/s][A
+All_batch: 21it [00:01, 27.86it/s][A
+All_batch: 25it [00:01, 29.40it/s][A
+All_batch: 29it [00:01, 30.45it/s][A
+All_batch: 33it [00:01, 31.23it/s][A
+All_batch: 37it [00:01, 31.75it/s][A
+All_batch: 41it [00:01, 32.11it/s][A
+All_batch: 45it [00:01, 32.40it/s][A
+All_batch: 49it [00:01, 32.55it/s][A
+All_batch: 53it [00:01, 32.67it/s][A
+All_batch: 57it [00:02, 32.60it/s][A
+All_batch: 61it [00:02, 32.64it/s][A
+All_batch: 65it [00:02, 32.75it/s][A
+All_batch: 69it [00:02, 32.79it/s][A
+All_batch: 73it [00:02, 32.85it/s][A
+All_batch: 77it [00:02, 32.94it/s][A
+All_batch: 81it [00:02, 32.94it/s][A
+All_batch: 85it [00:02, 32.92it/s][A
+All_batch: 89it [00:03, 32.97it/s][A
+All_batch: 93it [00:03, 33.01it/s][A
+All_batch: 97it [00:03, 33.03it/s][A
+All_batch: 101it [00:03, 33.06it/s][A
+All_batch: 105it [00:03, 32.99it/s][A
+All_batch: 109it [00:03, 33.00it/s][A
+All_batch: 113it [00:03, 33.05it/s][A
+All_batch: 117it [00:03, 32.94it/s][A
+All_batch: 121it [00:04, 32.99it/s][A
+All_batch: 125it [00:04, 32.99it/s][A
+All_batch: 129it [00:04, 32.99it/s][A
+All_batch: 133it [00:04, 33.01it/s][AAll_batch: 134it [00:04, 30.22it/s]prepare training data cost time:0.3628
+[1;34mEpoch:22, Train_AUC:0.9338, Loss_rank:0.6480, Loss_reg:0.0001, Loss_ib:0.6708, Loss_sum:1.3190
+[0m[1;32mCurrent Evaluation: Epoch:22,  topk:20, recall:0.0096, ndcg:0.0060
+[0m[1;31mBest Evaluation: Epoch:22,  topk:20, recall:0.0096, ndcg:0.0060
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_22_ndcg_0.006002877120270126.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_17_ndcg_0.00211231298383546.ckpt
+traintime:4.4339, valtime:2.8209
+
+
+[1;35mTrain:[0m:   2%|[33m▏         [0m| 23/1000 [02:56<1:58:50,  7.30s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.46it/s][A
+All_batch: 5it [00:00, 11.57it/s][A
+All_batch: 9it [00:00, 17.96it/s][A
+All_batch: 13it [00:00, 22.51it/s][A
+All_batch: 17it [00:00, 25.73it/s][A
+All_batch: 21it [00:01, 27.98it/s][A
+All_batch: 25it [00:01, 29.53it/s][A
+All_batch: 29it [00:01, 30.64it/s][A
+All_batch: 33it [00:01, 31.38it/s][A
+All_batch: 37it [00:01, 31.91it/s][A
+All_batch: 41it [00:01, 32.31it/s][A
+All_batch: 45it [00:01, 32.63it/s][A
+All_batch: 49it [00:01, 32.86it/s][A
+All_batch: 53it [00:01, 33.00it/s][A
+All_batch: 57it [00:02, 32.89it/s][A
+All_batch: 61it [00:02, 32.96it/s][A
+All_batch: 65it [00:02, 33.07it/s][A
+All_batch: 69it [00:02, 33.08it/s][A
+All_batch: 73it [00:02, 33.12it/s][A
+All_batch: 77it [00:02, 33.18it/s][A
+All_batch: 81it [00:02, 33.18it/s][A
+All_batch: 85it [00:02, 33.16it/s][A
+All_batch: 89it [00:03, 33.20it/s][A
+All_batch: 93it [00:03, 33.22it/s][A
+All_batch: 97it [00:03, 33.22it/s][A
+All_batch: 101it [00:03, 33.19it/s][A
+All_batch: 105it [00:03, 33.07it/s][A
+All_batch: 109it [00:03, 33.05it/s][A
+All_batch: 113it [00:03, 33.12it/s][A
+All_batch: 117it [00:03, 33.16it/s][A
+All_batch: 121it [00:04, 33.15it/s][A
+All_batch: 125it [00:04, 33.09it/s][A
+All_batch: 129it [00:04, 33.13it/s][A
+All_batch: 133it [00:04, 33.15it/s][AAll_batch: 134it [00:04, 30.33it/s]prepare training data cost time:0.3739
+[1;34mEpoch:23, Train_AUC:0.9390, Loss_rank:0.6357, Loss_reg:0.0002, Loss_ib:0.6724, Loss_sum:1.3082
+[0m[1;32mCurrent Evaluation: Epoch:23,  topk:20, recall:0.0121, ndcg:0.0076
+[0m[1;31mBest Evaluation: Epoch:23,  topk:20, recall:0.0121, ndcg:0.0076
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_23_ndcg_0.007631444186749088.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_18_ndcg_0.0024294813552415305.ckpt
+traintime:4.4177, valtime:2.8630
+
+
+[1;35mTrain:[0m:   2%|[33m▏         [0m| 24/1000 [03:03<1:58:38,  7.29s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.49it/s][A
+All_batch: 5it [00:00, 11.67it/s][A
+All_batch: 9it [00:00, 18.13it/s][A
+All_batch: 13it [00:00, 22.64it/s][A
+All_batch: 17it [00:00, 25.76it/s][A
+All_batch: 21it [00:01, 27.96it/s][A
+All_batch: 25it [00:01, 29.53it/s][A
+All_batch: 29it [00:01, 30.60it/s][A
+All_batch: 33it [00:01, 31.35it/s][A
+All_batch: 37it [00:01, 31.80it/s][A
+All_batch: 41it [00:01, 32.17it/s][A
+All_batch: 45it [00:01, 32.44it/s][A
+All_batch: 49it [00:01, 32.62it/s][A
+All_batch: 53it [00:01, 32.74it/s][A
+All_batch: 57it [00:02, 32.78it/s][A
+All_batch: 61it [00:02, 32.88it/s][A
+All_batch: 65it [00:02, 32.90it/s][A
+All_batch: 69it [00:02, 32.93it/s][A
+All_batch: 73it [00:02, 32.83it/s][A
+All_batch: 77it [00:02, 32.76it/s][A
+All_batch: 81it [00:02, 32.84it/s][A
+All_batch: 85it [00:02, 32.92it/s][A
+All_batch: 89it [00:03, 32.93it/s][A
+All_batch: 93it [00:03, 32.97it/s][A
+All_batch: 97it [00:03, 33.03it/s][A
+All_batch: 101it [00:03, 32.98it/s][A
+All_batch: 105it [00:03, 32.94it/s][A
+All_batch: 109it [00:03, 32.95it/s][A
+All_batch: 113it [00:03, 32.95it/s][A
+All_batch: 117it [00:03, 32.98it/s][A
+All_batch: 121it [00:04, 33.04it/s][A
+All_batch: 125it [00:04, 33.09it/s][A
+All_batch: 129it [00:04, 33.15it/s][A
+All_batch: 133it [00:04, 33.20it/s][AAll_batch: 134it [00:04, 30.26it/s]prepare training data cost time:0.3690
+[1;34mEpoch:24, Train_AUC:0.9449, Loss_rank:0.6209, Loss_reg:0.0002, Loss_ib:0.6672, Loss_sum:1.2883
+[0m[1;32mCurrent Evaluation: Epoch:24,  topk:20, recall:0.0166, ndcg:0.0105
+[0m[1;31mBest Evaluation: Epoch:24,  topk:20, recall:0.0166, ndcg:0.0105
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_24_ndcg_0.010458902750786758.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_19_ndcg_0.002784384258169055.ckpt
+traintime:4.4286, valtime:2.8592
+
+
+[1;35mTrain:[0m:   2%|[33m▎         [0m| 25/1000 [03:10<1:58:29,  7.29s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.44it/s][A
+All_batch: 5it [00:00, 11.44it/s][A
+All_batch: 9it [00:00, 17.82it/s][A
+All_batch: 13it [00:00, 22.38it/s][A
+All_batch: 17it [00:00, 25.60it/s][A
+All_batch: 21it [00:01, 27.89it/s][A
+All_batch: 25it [00:01, 29.48it/s][A
+All_batch: 29it [00:01, 30.60it/s][A
+All_batch: 33it [00:01, 31.36it/s][A
+All_batch: 37it [00:01, 31.89it/s][A
+All_batch: 41it [00:01, 32.30it/s][A
+All_batch: 45it [00:01, 32.59it/s][A
+All_batch: 49it [00:01, 32.81it/s][A
+All_batch: 53it [00:01, 32.93it/s][A
+All_batch: 57it [00:02, 33.09it/s][A
+All_batch: 61it [00:02, 33.11it/s][A
+All_batch: 65it [00:02, 33.08it/s][A
+All_batch: 69it [00:02, 33.12it/s][A
+All_batch: 73it [00:02, 33.13it/s][A
+All_batch: 77it [00:02, 33.11it/s][A
+All_batch: 81it [00:02, 33.22it/s][A
+All_batch: 85it [00:02, 33.18it/s][A
+All_batch: 89it [00:03, 33.25it/s][A
+All_batch: 93it [00:03, 33.27it/s][A
+All_batch: 97it [00:03, 33.25it/s][A
+All_batch: 101it [00:03, 33.22it/s][A
+All_batch: 105it [00:03, 33.25it/s][A
+All_batch: 109it [00:03, 33.22it/s][A
+All_batch: 113it [00:03, 33.18it/s][A
+All_batch: 117it [00:03, 33.22it/s][A
+All_batch: 121it [00:04, 33.23it/s][A
+All_batch: 125it [00:04, 33.21it/s][A
+All_batch: 129it [00:04, 33.24it/s][A
+All_batch: 133it [00:04, 33.24it/s][AAll_batch: 134it [00:04, 30.33it/s]prepare training data cost time:0.3772
+[1;34mEpoch:25, Train_AUC:0.9492, Loss_rank:0.6036, Loss_reg:0.0003, Loss_ib:0.6669, Loss_sum:1.2708
+[0m[1;32mCurrent Evaluation: Epoch:25,  topk:20, recall:0.0212, ndcg:0.0133
+[0m[1;31mBest Evaluation: Epoch:25,  topk:20, recall:0.0212, ndcg:0.0133
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_25_ndcg_0.013294239853227651.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_20_ndcg_0.0034058495669267806.ckpt
+traintime:4.4180, valtime:2.8610
+
+
+[1;35mTrain:[0m:   3%|[33m▎         [0m| 26/1000 [03:18<1:58:18,  7.29s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.49it/s][A
+All_batch: 5it [00:00, 11.51it/s][A
+All_batch: 9it [00:00, 17.56it/s][A
+All_batch: 13it [00:00, 21.65it/s][A
+All_batch: 17it [00:00, 24.48it/s][A
+All_batch: 21it [00:01, 26.65it/s][A
+All_batch: 25it [00:01, 28.00it/s][A
+All_batch: 29it [00:01, 28.84it/s][A
+All_batch: 33it [00:01, 29.47it/s][A
+All_batch: 37it [00:01, 29.93it/s][A
+All_batch: 41it [00:01, 30.42it/s][A
+All_batch: 45it [00:01, 30.95it/s][A
+All_batch: 49it [00:01, 31.55it/s][A
+All_batch: 53it [00:02, 31.67it/s][A
+All_batch: 57it [00:02, 31.54it/s][A
+All_batch: 61it [00:02, 31.48it/s][A
+All_batch: 65it [00:02, 31.59it/s][A
+All_batch: 69it [00:02, 31.65it/s][A
+All_batch: 73it [00:02, 31.86it/s][A
+All_batch: 77it [00:02, 31.80it/s][A
+All_batch: 81it [00:02, 32.16it/s][A
+All_batch: 85it [00:03, 32.12it/s][A
+All_batch: 89it [00:03, 32.22it/s][A
+All_batch: 93it [00:03, 32.21it/s][A
+All_batch: 97it [00:03, 32.44it/s][A
+All_batch: 101it [00:03, 32.59it/s][A
+All_batch: 105it [00:03, 32.71it/s][A
+All_batch: 109it [00:03, 32.81it/s][A
+All_batch: 113it [00:03, 32.95it/s][A
+All_batch: 117it [00:04, 32.96it/s][A
+All_batch: 121it [00:04, 32.58it/s][A
+All_batch: 125it [00:04, 31.96it/s][A
+All_batch: 129it [00:04, 31.34it/s][A
+All_batch: 133it [00:04, 31.21it/s][AAll_batch: 134it [00:04, 29.22it/s]prepare training data cost time:0.3690
+[1;34mEpoch:26, Train_AUC:0.9548, Loss_rank:0.5837, Loss_reg:0.0004, Loss_ib:0.6657, Loss_sum:1.2498
+[0m[1;32mCurrent Evaluation: Epoch:26,  topk:20, recall:0.0260, ndcg:0.0167
+[0m[1;31mBest Evaluation: Epoch:26,  topk:20, recall:0.0260, ndcg:0.0167
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_26_ndcg_0.016746177645598707.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_21_ndcg_0.004456080584354386.ckpt
+traintime:4.5865, valtime:2.9154
+
+
+[1;35mTrain:[0m:   3%|[33m▎         [0m| 27/1000 [03:25<1:59:13,  7.35s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.42it/s][A
+All_batch: 5it [00:00, 11.34it/s][A
+All_batch: 9it [00:00, 17.37it/s][A
+All_batch: 13it [00:00, 21.80it/s][A
+All_batch: 17it [00:00, 24.79it/s][A
+All_batch: 21it [00:01, 26.59it/s][A
+All_batch: 25it [00:01, 27.68it/s][A
+All_batch: 28it [00:01, 28.18it/s][A
+All_batch: 31it [00:01, 28.50it/s][A
+All_batch: 34it [00:01, 28.82it/s][A
+All_batch: 38it [00:01, 29.47it/s][A
+All_batch: 42it [00:01, 30.30it/s][A
+All_batch: 46it [00:01, 30.89it/s][A
+All_batch: 50it [00:01, 31.40it/s][A
+All_batch: 54it [00:02, 31.89it/s][A
+All_batch: 58it [00:02, 32.20it/s][A
+All_batch: 62it [00:02, 32.38it/s][A
+All_batch: 66it [00:02, 32.51it/s][A
+All_batch: 70it [00:02, 32.56it/s][A
+All_batch: 74it [00:02, 32.68it/s][A
+All_batch: 78it [00:02, 32.70it/s][A
+All_batch: 82it [00:02, 32.64it/s][A
+All_batch: 86it [00:03, 32.77it/s][A
+All_batch: 90it [00:03, 32.82it/s][A
+All_batch: 94it [00:03, 32.84it/s][A
+All_batch: 98it [00:03, 32.95it/s][A
+All_batch: 102it [00:03, 32.91it/s][A
+All_batch: 106it [00:03, 32.70it/s][A
+All_batch: 110it [00:03, 32.37it/s][A
+All_batch: 114it [00:03, 32.18it/s][A
+All_batch: 118it [00:04, 31.78it/s][A
+All_batch: 122it [00:04, 31.25it/s][A
+All_batch: 126it [00:04, 31.25it/s][A
+All_batch: 130it [00:04, 31.31it/s][A
+All_batch: 134it [00:04, 31.18it/s][AAll_batch: 134it [00:04, 29.17it/s]prepare training data cost time:0.3799
+[1;34mEpoch:27, Train_AUC:0.9601, Loss_rank:0.5611, Loss_reg:0.0005, Loss_ib:0.6684, Loss_sum:1.2299
+[0m[1;32mCurrent Evaluation: Epoch:27,  topk:20, recall:0.0316, ndcg:0.0200
+[0m[1;31mBest Evaluation: Epoch:27,  topk:20, recall:0.0316, ndcg:0.0200
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_27_ndcg_0.020048022159906028.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_22_ndcg_0.006002877120270126.ckpt
+traintime:4.5934, valtime:2.8404
+
+
+[1;35mTrain:[0m:   3%|[33m▎         [0m| 28/1000 [03:33<1:59:30,  7.38s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.17it/s][A
+All_batch: 5it [00:00, 10.39it/s][A
+All_batch: 9it [00:00, 16.53it/s][A
+All_batch: 13it [00:00, 21.05it/s][A
+All_batch: 17it [00:00, 24.35it/s][A
+All_batch: 21it [00:01, 26.66it/s][A
+All_batch: 25it [00:01, 28.38it/s][A
+All_batch: 29it [00:01, 29.56it/s][A
+All_batch: 33it [00:01, 29.75it/s][A
+All_batch: 37it [00:01, 29.58it/s][A
+All_batch: 41it [00:01, 30.05it/s][A
+All_batch: 45it [00:01, 30.80it/s][A
+All_batch: 49it [00:01, 31.20it/s][A
+All_batch: 53it [00:02, 31.58it/s][A
+All_batch: 57it [00:02, 31.82it/s][A
+All_batch: 61it [00:02, 31.96it/s][A
+All_batch: 65it [00:02, 32.11it/s][A
+All_batch: 69it [00:02, 32.18it/s][A
+All_batch: 73it [00:02, 32.14it/s][A
+All_batch: 77it [00:02, 32.07it/s][A
+All_batch: 81it [00:02, 31.93it/s][A
+All_batch: 85it [00:03, 32.09it/s][A
+All_batch: 89it [00:03, 32.26it/s][A
+All_batch: 93it [00:03, 32.41it/s][A
+All_batch: 97it [00:03, 32.45it/s][A
+All_batch: 101it [00:03, 32.56it/s][A
+All_batch: 105it [00:03, 32.64it/s][A
+All_batch: 109it [00:03, 32.60it/s][A
+All_batch: 113it [00:03, 31.79it/s][A
+All_batch: 117it [00:04, 31.78it/s][A
+All_batch: 121it [00:04, 32.00it/s][A
+All_batch: 125it [00:04, 32.26it/s][A
+All_batch: 129it [00:04, 32.50it/s][A
+All_batch: 133it [00:04, 32.66it/s][AAll_batch: 134it [00:04, 29.10it/s]prepare training data cost time:0.4266
+[1;34mEpoch:28, Train_AUC:0.9640, Loss_rank:0.5365, Loss_reg:0.0006, Loss_ib:0.6724, Loss_sum:1.2095
+[0m[1;32mCurrent Evaluation: Epoch:28,  topk:20, recall:0.0373, ndcg:0.0233
+[0m[1;31mBest Evaluation: Epoch:28,  topk:20, recall:0.0373, ndcg:0.0233
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_28_ndcg_0.02334837300378682.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_23_ndcg_0.007631444186749088.ckpt
+traintime:4.6055, valtime:2.8492
+
+
+[1;35mTrain:[0m:   3%|[33m▎         [0m| 29/1000 [03:40<1:59:45,  7.40s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.46it/s][A
+All_batch: 5it [00:00, 11.28it/s][A
+All_batch: 9it [00:00, 17.34it/s][A
+All_batch: 13it [00:00, 21.61it/s][A
+All_batch: 17it [00:00, 24.81it/s][A
+All_batch: 21it [00:01, 26.80it/s][A
+All_batch: 25it [00:01, 28.61it/s][A
+All_batch: 29it [00:01, 29.73it/s][A
+All_batch: 33it [00:01, 30.72it/s][A
+All_batch: 37it [00:01, 31.27it/s][A
+All_batch: 41it [00:01, 31.81it/s][A
+All_batch: 45it [00:01, 32.08it/s][A
+All_batch: 49it [00:01, 31.80it/s][A
+All_batch: 53it [00:02, 31.59it/s][A
+All_batch: 57it [00:02, 31.66it/s][A
+All_batch: 61it [00:02, 32.01it/s][A
+All_batch: 65it [00:02, 32.38it/s][A
+All_batch: 69it [00:02, 32.59it/s][A
+All_batch: 73it [00:02, 32.78it/s][A
+All_batch: 77it [00:02, 32.97it/s][A
+All_batch: 81it [00:02, 32.85it/s][A
+All_batch: 85it [00:03, 32.92it/s][A
+All_batch: 89it [00:03, 33.00it/s][A
+All_batch: 93it [00:03, 33.02it/s][A
+All_batch: 97it [00:03, 33.07it/s][A
+All_batch: 101it [00:03, 33.08it/s][A
+All_batch: 105it [00:03, 33.13it/s][A
+All_batch: 109it [00:03, 33.20it/s][A
+All_batch: 113it [00:03, 33.16it/s][A
+All_batch: 117it [00:03, 33.15it/s][A
+All_batch: 121it [00:04, 33.16it/s][A
+All_batch: 125it [00:04, 33.17it/s][A
+All_batch: 129it [00:04, 33.08it/s][A
+All_batch: 133it [00:04, 33.10it/s][AAll_batch: 134it [00:04, 29.88it/s]prepare training data cost time:0.3705
+[1;34mEpoch:29, Train_AUC:0.9684, Loss_rank:0.5103, Loss_reg:0.0007, Loss_ib:0.6677, Loss_sum:1.1787
+[0m[1;32mCurrent Evaluation: Epoch:29,  topk:20, recall:0.0438, ndcg:0.0270
+[0m[1;31mBest Evaluation: Epoch:29,  topk:20, recall:0.0438, ndcg:0.0270
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_29_ndcg_0.027019700496381093.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_24_ndcg_0.010458902750786758.ckpt
+traintime:4.4847, valtime:2.8536
+
+
+[1;35mTrain:[0m:   3%|[33m▎         [0m| 30/1000 [03:47<1:59:20,  7.38s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.41it/s][A
+All_batch: 5it [00:00, 11.13it/s][A
+All_batch: 8it [00:00, 15.87it/s][A
+All_batch: 11it [00:00, 19.55it/s][A
+All_batch: 15it [00:00, 23.34it/s][A
+All_batch: 19it [00:01, 26.01it/s][A
+All_batch: 23it [00:01, 27.74it/s][A
+All_batch: 27it [00:01, 29.01it/s][A
+All_batch: 31it [00:01, 29.96it/s][A
+All_batch: 35it [00:01, 30.61it/s][A
+All_batch: 39it [00:01, 31.06it/s][A
+All_batch: 43it [00:01, 31.50it/s][A
+All_batch: 47it [00:01, 31.85it/s][A
+All_batch: 51it [00:01, 31.91it/s][A
+All_batch: 55it [00:02, 32.17it/s][A
+All_batch: 59it [00:02, 32.30it/s][A
+All_batch: 63it [00:02, 32.54it/s][A
+All_batch: 67it [00:02, 32.66it/s][A
+All_batch: 71it [00:02, 32.78it/s][A
+All_batch: 75it [00:02, 32.78it/s][A
+All_batch: 79it [00:02, 32.86it/s][A
+All_batch: 83it [00:02, 32.96it/s][A
+All_batch: 87it [00:03, 33.01it/s][A
+All_batch: 91it [00:03, 33.00it/s][A
+All_batch: 95it [00:03, 32.98it/s][A
+All_batch: 99it [00:03, 33.04it/s][A
+All_batch: 103it [00:03, 32.97it/s][A
+All_batch: 107it [00:03, 32.93it/s][A
+All_batch: 111it [00:03, 33.02it/s][A
+All_batch: 115it [00:03, 32.98it/s][A
+All_batch: 119it [00:04, 33.05it/s][A
+All_batch: 123it [00:04, 33.08it/s][A
+All_batch: 127it [00:04, 33.10it/s][A
+All_batch: 131it [00:04, 33.05it/s][AAll_batch: 134it [00:04, 29.69it/s]prepare training data cost time:0.3807
+[1;34mEpoch:30, Train_AUC:0.9725, Loss_rank:0.4825, Loss_reg:0.0008, Loss_ib:0.6729, Loss_sum:1.1562
+[0m[1;32mCurrent Evaluation: Epoch:30,  topk:20, recall:0.0495, ndcg:0.0302
+[0m[1;31mBest Evaluation: Epoch:30,  topk:20, recall:0.0495, ndcg:0.0302
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_30_ndcg_0.03022745882276207.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_25_ndcg_0.013294239853227651.ckpt
+traintime:4.5136, valtime:2.9140
+
+
+[1;35mTrain:[0m:   3%|[33m▎         [0m| 31/1000 [03:55<1:59:26,  7.40s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.47it/s][A
+All_batch: 5it [00:00, 11.32it/s][A
+All_batch: 9it [00:00, 17.24it/s][A
+All_batch: 13it [00:00, 21.45it/s][A
+All_batch: 17it [00:00, 24.32it/s][A
+All_batch: 21it [00:01, 26.41it/s][A
+All_batch: 25it [00:01, 27.80it/s][A
+All_batch: 29it [00:01, 28.64it/s][A
+All_batch: 33it [00:01, 29.24it/s][A
+All_batch: 37it [00:01, 29.65it/s][A
+All_batch: 41it [00:01, 29.65it/s][A
+All_batch: 45it [00:01, 29.78it/s][A
+All_batch: 49it [00:01, 29.86it/s][A
+All_batch: 53it [00:02, 29.90it/s][A
+All_batch: 57it [00:02, 30.06it/s][A
+All_batch: 61it [00:02, 30.02it/s][A
+All_batch: 65it [00:02, 30.03it/s][A
+All_batch: 69it [00:02, 30.01it/s][A
+All_batch: 73it [00:02, 29.98it/s][A
+All_batch: 77it [00:02, 29.91it/s][A
+All_batch: 81it [00:03, 30.06it/s][A
+All_batch: 85it [00:03, 29.94it/s][A
+All_batch: 89it [00:03, 30.11it/s][A
+All_batch: 93it [00:03, 30.23it/s][A
+All_batch: 97it [00:03, 30.52it/s][A
+All_batch: 101it [00:03, 30.73it/s][A
+All_batch: 105it [00:03, 30.79it/s][A
+All_batch: 109it [00:03, 30.71it/s][A
+All_batch: 113it [00:04, 30.86it/s][A
+All_batch: 117it [00:04, 30.84it/s][A
+All_batch: 121it [00:04, 30.88it/s][A
+All_batch: 125it [00:04, 30.61it/s][A
+All_batch: 129it [00:04, 30.40it/s][A
+All_batch: 133it [00:04, 30.28it/s][AAll_batch: 134it [00:04, 28.06it/s]prepare training data cost time:0.3688
+[1;34mEpoch:31, Train_AUC:0.9762, Loss_rank:0.4539, Loss_reg:0.0009, Loss_ib:0.6718, Loss_sum:1.1266
+[0m[1;32mCurrent Evaluation: Epoch:31,  topk:20, recall:0.0545, ndcg:0.0332
+[0m[1;31mBest Evaluation: Epoch:31,  topk:20, recall:0.0545, ndcg:0.0332
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_31_ndcg_0.0332427778792034.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_26_ndcg_0.016746177645598707.ckpt
+traintime:4.7757, valtime:2.8784
+
+
+[1;35mTrain:[0m:   3%|[33m▎         [0m| 32/1000 [04:02<2:00:33,  7.47s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.35it/s][A
+All_batch: 4it [00:00,  9.28it/s][A
+All_batch: 8it [00:00, 16.04it/s][A
+All_batch: 12it [00:00, 20.64it/s][A
+All_batch: 15it [00:00, 23.00it/s][A
+All_batch: 18it [00:00, 24.78it/s][A
+All_batch: 22it [00:01, 26.57it/s][A
+All_batch: 26it [00:01, 27.68it/s][A
+All_batch: 30it [00:01, 28.39it/s][A
+All_batch: 34it [00:01, 29.01it/s][A
+All_batch: 37it [00:01, 29.15it/s][A
+All_batch: 41it [00:01, 29.62it/s][A
+All_batch: 45it [00:01, 29.86it/s][A
+All_batch: 49it [00:02, 30.01it/s][A
+All_batch: 53it [00:02, 30.21it/s][A
+All_batch: 57it [00:02, 30.42it/s][A
+All_batch: 61it [00:02, 30.58it/s][A
+All_batch: 65it [00:02, 30.51it/s][A
+All_batch: 69it [00:02, 30.35it/s][A
+All_batch: 73it [00:02, 30.21it/s][A
+All_batch: 77it [00:02, 30.09it/s][A
+All_batch: 81it [00:03, 30.06it/s][A
+All_batch: 85it [00:03, 30.00it/s][A
+All_batch: 89it [00:03, 30.13it/s][A
+All_batch: 93it [00:03, 29.89it/s][A
+All_batch: 97it [00:03, 30.14it/s][A
+All_batch: 101it [00:03, 30.06it/s][A
+All_batch: 105it [00:03, 29.94it/s][A
+All_batch: 109it [00:04, 30.07it/s][A
+All_batch: 113it [00:04, 30.04it/s][A
+All_batch: 117it [00:04, 29.84it/s][A
+All_batch: 121it [00:04, 30.00it/s][A
+All_batch: 125it [00:04, 29.99it/s][A
+All_batch: 129it [00:04, 30.04it/s][A
+All_batch: 133it [00:04, 30.17it/s][AAll_batch: 134it [00:04, 27.70it/s]prepare training data cost time:0.3907
+[1;34mEpoch:32, Train_AUC:0.9801, Loss_rank:0.4245, Loss_reg:0.0011, Loss_ib:0.6704, Loss_sum:1.0959
+[0m[1;32mCurrent Evaluation: Epoch:32,  topk:20, recall:0.0594, ndcg:0.0356
+[0m[1;31mBest Evaluation: Epoch:32,  topk:20, recall:0.0594, ndcg:0.0356
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_32_ndcg_0.035561632869731755.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_27_ndcg_0.020048022159906028.ckpt
+traintime:4.8370, valtime:2.9157
+
+
+[1;35mTrain:[0m:   3%|[33m▎         [0m| 33/1000 [04:10<2:01:47,  7.56s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.44it/s][A
+All_batch: 5it [00:00, 11.27it/s][A
+All_batch: 9it [00:00, 17.37it/s][A
+All_batch: 13it [00:00, 21.42it/s][A
+All_batch: 16it [00:00, 23.51it/s][A
+All_batch: 19it [00:01, 25.17it/s][A
+All_batch: 23it [00:01, 26.81it/s][A
+All_batch: 26it [00:01, 27.62it/s][A
+All_batch: 29it [00:01, 28.24it/s][A
+All_batch: 33it [00:01, 28.90it/s][A
+All_batch: 36it [00:01, 29.19it/s][A
+All_batch: 39it [00:01, 29.37it/s][A
+All_batch: 43it [00:01, 29.61it/s][A
+All_batch: 47it [00:01, 29.74it/s][A
+All_batch: 50it [00:02, 29.77it/s][A
+All_batch: 54it [00:02, 29.91it/s][A
+All_batch: 58it [00:02, 29.90it/s][A
+All_batch: 62it [00:02, 29.97it/s][A
+All_batch: 66it [00:02, 29.98it/s][A
+All_batch: 70it [00:02, 29.96it/s][A
+All_batch: 74it [00:02, 29.99it/s][A
+All_batch: 78it [00:02, 30.11it/s][A
+All_batch: 82it [00:03, 30.53it/s][A
+All_batch: 86it [00:03, 30.68it/s][A
+All_batch: 90it [00:03, 30.77it/s][A
+All_batch: 94it [00:03, 30.68it/s][A
+All_batch: 98it [00:03, 30.81it/s][A
+All_batch: 102it [00:03, 30.88it/s][A
+All_batch: 106it [00:03, 30.67it/s][A
+All_batch: 110it [00:04, 30.69it/s][A
+All_batch: 114it [00:04, 30.51it/s][A
+All_batch: 118it [00:04, 30.39it/s][A
+All_batch: 122it [00:04, 30.16it/s][A
+All_batch: 126it [00:04, 30.22it/s][A
+All_batch: 130it [00:04, 30.12it/s][A
+All_batch: 134it [00:04, 30.12it/s][AAll_batch: 134it [00:04, 27.91it/s]prepare training data cost time:0.3761
+[1;34mEpoch:33, Train_AUC:0.9826, Loss_rank:0.3952, Loss_reg:0.0012, Loss_ib:0.6747, Loss_sum:1.0712
+[0m[1;32mCurrent Evaluation: Epoch:33,  topk:20, recall:0.0637, ndcg:0.0377
+[0m[1;31mBest Evaluation: Epoch:33,  topk:20, recall:0.0637, ndcg:0.0377
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_33_ndcg_0.037687400384204005.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_28_ndcg_0.02334837300378682.ckpt
+traintime:4.8011, valtime:3.0729
+
+
+[1;35mTrain:[0m:   3%|[33m▎         [0m| 34/1000 [04:18<2:03:11,  7.65s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.34it/s][A
+All_batch: 4it [00:00,  9.24it/s][A
+All_batch: 8it [00:00, 16.00it/s][A
+All_batch: 11it [00:00, 19.59it/s][A
+All_batch: 14it [00:00, 22.38it/s][A
+All_batch: 18it [00:00, 24.99it/s][A
+All_batch: 22it [00:01, 26.78it/s][A
+All_batch: 26it [00:01, 28.14it/s][A
+All_batch: 30it [00:01, 29.04it/s][A
+All_batch: 34it [00:01, 29.68it/s][A
+All_batch: 38it [00:01, 30.16it/s][A
+All_batch: 42it [00:01, 30.48it/s][A
+All_batch: 46it [00:01, 30.35it/s][A
+All_batch: 50it [00:02, 30.16it/s][A
+All_batch: 54it [00:02, 30.11it/s][A
+All_batch: 58it [00:02, 30.09it/s][A
+All_batch: 62it [00:02, 30.03it/s][A
+All_batch: 66it [00:02, 30.04it/s][A
+All_batch: 70it [00:02, 30.07it/s][A
+All_batch: 74it [00:02, 30.06it/s][A
+All_batch: 78it [00:02, 30.03it/s][A
+All_batch: 82it [00:03, 30.08it/s][A
+All_batch: 86it [00:03, 30.18it/s][A
+All_batch: 90it [00:03, 30.35it/s][A
+All_batch: 94it [00:03, 30.28it/s][A
+All_batch: 98it [00:03, 30.18it/s][A
+All_batch: 102it [00:03, 30.08it/s][A
+All_batch: 106it [00:03, 29.98it/s][A
+All_batch: 110it [00:04, 30.13it/s][A
+All_batch: 114it [00:04, 30.20it/s][A
+All_batch: 118it [00:04, 30.15it/s][A
+All_batch: 122it [00:04, 30.16it/s][A
+All_batch: 126it [00:04, 30.44it/s][A
+All_batch: 130it [00:04, 30.50it/s][A
+All_batch: 134it [00:04, 30.35it/s][AAll_batch: 134it [00:04, 27.82it/s]prepare training data cost time:0.3915
+[1;34mEpoch:34, Train_AUC:0.9850, Loss_rank:0.3657, Loss_reg:0.0014, Loss_ib:0.6818, Loss_sum:1.0489
+[0m[1;32mCurrent Evaluation: Epoch:34,  topk:20, recall:0.0676, ndcg:0.0397
+[0m[1;31mBest Evaluation: Epoch:34,  topk:20, recall:0.0676, ndcg:0.0397
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_34_ndcg_0.03967990812692788.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_29_ndcg_0.027019700496381093.ckpt
+traintime:4.8166, valtime:2.9175
+
+
+[1;35mTrain:[0m:   4%|[33m▎         [0m| 35/1000 [04:26<2:03:28,  7.68s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.37it/s][A
+All_batch: 5it [00:00, 11.01it/s][A
+All_batch: 9it [00:00, 17.01it/s][A
+All_batch: 13it [00:00, 21.06it/s][A
+All_batch: 16it [00:00, 23.28it/s][A
+All_batch: 20it [00:01, 25.50it/s][A
+All_batch: 24it [00:01, 27.05it/s][A
+All_batch: 28it [00:01, 28.06it/s][A
+All_batch: 32it [00:01, 28.76it/s][A
+All_batch: 36it [00:01, 29.16it/s][A
+All_batch: 39it [00:01, 29.35it/s][A
+All_batch: 42it [00:01, 29.52it/s][A
+All_batch: 45it [00:01, 29.63it/s][A
+All_batch: 48it [00:01, 29.72it/s][A
+All_batch: 52it [00:02, 29.86it/s][A
+All_batch: 55it [00:02, 29.85it/s][A
+All_batch: 59it [00:02, 30.02it/s][A
+All_batch: 63it [00:02, 30.18it/s][A
+All_batch: 67it [00:02, 30.50it/s][A
+All_batch: 71it [00:02, 30.53it/s][A
+All_batch: 75it [00:02, 30.72it/s][A
+All_batch: 79it [00:02, 30.83it/s][A
+All_batch: 83it [00:03, 30.89it/s][A
+All_batch: 87it [00:03, 30.60it/s][A
+All_batch: 91it [00:03, 30.49it/s][A
+All_batch: 95it [00:03, 30.34it/s][A
+All_batch: 99it [00:03, 30.18it/s][A
+All_batch: 103it [00:03, 30.13it/s][A
+All_batch: 107it [00:03, 30.18it/s][A
+All_batch: 111it [00:04, 30.17it/s][A
+All_batch: 115it [00:04, 30.23it/s][A
+All_batch: 119it [00:04, 30.18it/s][A
+All_batch: 123it [00:04, 30.13it/s][A
+All_batch: 127it [00:04, 30.24it/s][A
+All_batch: 131it [00:04, 30.13it/s][AAll_batch: 134it [00:04, 27.85it/s]prepare training data cost time:0.3868
+[1;34mEpoch:35, Train_AUC:0.9875, Loss_rank:0.3365, Loss_reg:0.0015, Loss_ib:0.6790, Loss_sum:1.0170
+[0m[1;32mCurrent Evaluation: Epoch:35,  topk:20, recall:0.0698, ndcg:0.0408
+[0m[1;31mBest Evaluation: Epoch:35,  topk:20, recall:0.0698, ndcg:0.0408
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_35_ndcg_0.0407986500482163.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_30_ndcg_0.03022745882276207.ckpt
+traintime:4.8114, valtime:3.0471
+
+
+[1;35mTrain:[0m:   4%|[33m▎         [0m| 36/1000 [04:34<2:04:12,  7.73s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.37it/s][A
+All_batch: 4it [00:00,  9.13it/s][A
+All_batch: 7it [00:00, 14.18it/s][A
+All_batch: 10it [00:00, 17.47it/s][A
+All_batch: 13it [00:00, 20.03it/s][A
+All_batch: 16it [00:00, 21.76it/s][A
+All_batch: 19it [00:01, 23.08it/s][A
+All_batch: 22it [00:01, 23.90it/s][A
+All_batch: 25it [00:01, 24.58it/s][A
+All_batch: 28it [00:01, 24.94it/s][A
+All_batch: 31it [00:01, 25.13it/s][A
+All_batch: 34it [00:01, 25.70it/s][A
+All_batch: 37it [00:01, 25.85it/s][A
+All_batch: 40it [00:01, 25.87it/s][A
+All_batch: 43it [00:02, 25.99it/s][A
+All_batch: 46it [00:02, 26.09it/s][A
+All_batch: 49it [00:02, 26.54it/s][A
+All_batch: 52it [00:02, 27.36it/s][A
+All_batch: 56it [00:02, 28.02it/s][A
+All_batch: 59it [00:02, 27.67it/s][A
+All_batch: 62it [00:02, 27.18it/s][A
+All_batch: 65it [00:02, 23.15it/s][A
+All_batch: 68it [00:03, 20.72it/s][A
+All_batch: 72it [00:03, 23.40it/s][A
+All_batch: 76it [00:03, 25.42it/s][A
+All_batch: 79it [00:03, 26.47it/s][A
+All_batch: 82it [00:03, 26.53it/s][A
+All_batch: 85it [00:03, 27.08it/s][A
+All_batch: 89it [00:03, 28.18it/s][A
+All_batch: 92it [00:03, 28.30it/s][A
+All_batch: 95it [00:04, 27.46it/s][A
+All_batch: 98it [00:04, 27.33it/s][A
+All_batch: 101it [00:04, 26.94it/s][A
+All_batch: 104it [00:04, 26.58it/s][A
+All_batch: 107it [00:04, 26.27it/s][A
+All_batch: 110it [00:04, 26.09it/s][A
+All_batch: 113it [00:04, 25.63it/s][A
+All_batch: 116it [00:04, 25.81it/s][A
+All_batch: 119it [00:04, 25.52it/s][A
+All_batch: 122it [00:05, 25.43it/s][A
+All_batch: 125it [00:05, 25.46it/s][A
+All_batch: 128it [00:05, 25.73it/s][A
+All_batch: 131it [00:05, 25.83it/s][A
+All_batch: 134it [00:05, 25.86it/s][AAll_batch: 134it [00:05, 24.27it/s]prepare training data cost time:0.3826
+[1;34mEpoch:36, Train_AUC:0.9891, Loss_rank:0.3082, Loss_reg:0.0017, Loss_ib:0.6844, Loss_sum:0.9943
+[0m[1;32mCurrent Evaluation: Epoch:36,  topk:20, recall:0.0713, ndcg:0.0417
+[0m[1;31mBest Evaluation: Epoch:36,  topk:20, recall:0.0713, ndcg:0.0417
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_36_ndcg_0.04173990433460608.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_31_ndcg_0.0332427778792034.ckpt
+traintime:5.5214, valtime:3.5649
+
+
+[1;35mTrain:[0m:   4%|[33m▎         [0m| 37/1000 [04:43<2:10:36,  8.14s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.38it/s][A
+All_batch: 4it [00:00,  9.03it/s][A
+All_batch: 7it [00:00, 13.87it/s][A
+All_batch: 10it [00:00, 17.70it/s][A
+All_batch: 13it [00:00, 20.31it/s][A
+All_batch: 17it [00:01, 23.74it/s][A
+All_batch: 21it [00:01, 25.80it/s][A
+All_batch: 24it [00:01, 25.87it/s][A
+All_batch: 27it [00:01, 25.71it/s][A
+All_batch: 30it [00:01, 19.82it/s][A
+All_batch: 33it [00:01, 21.37it/s][A
+All_batch: 37it [00:01, 24.01it/s][A
+All_batch: 40it [00:01, 25.32it/s][A
+All_batch: 43it [00:02, 25.77it/s][A
+All_batch: 46it [00:02, 26.39it/s][A
+All_batch: 49it [00:02, 27.06it/s][A
+All_batch: 53it [00:02, 27.98it/s][A
+All_batch: 56it [00:02, 27.34it/s][A
+All_batch: 59it [00:02, 27.00it/s][A
+All_batch: 62it [00:02, 26.54it/s][A
+All_batch: 65it [00:02, 26.54it/s][A
+All_batch: 68it [00:02, 25.97it/s][A
+All_batch: 71it [00:03, 25.82it/s][A
+All_batch: 74it [00:03, 25.95it/s][A
+All_batch: 77it [00:03, 26.16it/s][A
+All_batch: 80it [00:03, 26.21it/s][A
+All_batch: 83it [00:03, 26.14it/s][A
+All_batch: 86it [00:03, 26.17it/s][A
+All_batch: 89it [00:03, 26.38it/s][A
+All_batch: 92it [00:03, 26.43it/s][A
+All_batch: 95it [00:04, 26.63it/s][A
+All_batch: 98it [00:04, 26.41it/s][A
+All_batch: 101it [00:04, 26.51it/s][A
+All_batch: 104it [00:04, 26.42it/s][A
+All_batch: 107it [00:04, 26.20it/s][A
+All_batch: 110it [00:04, 26.26it/s][A
+All_batch: 113it [00:04, 26.31it/s][A
+All_batch: 116it [00:04, 26.30it/s][A
+All_batch: 119it [00:04, 26.63it/s][A
+All_batch: 123it [00:05, 27.22it/s][A
+All_batch: 126it [00:05, 26.15it/s][A
+All_batch: 130it [00:05, 27.37it/s][A
+All_batch: 134it [00:05, 28.25it/s][AAll_batch: 134it [00:05, 24.56it/s]prepare training data cost time:0.3802
+[1;34mEpoch:37, Train_AUC:0.9906, Loss_rank:0.2814, Loss_reg:0.0018, Loss_ib:0.6859, Loss_sum:0.9692
+[0m[1;32mCurrent Evaluation: Epoch:37,  topk:20, recall:0.0727, ndcg:0.0424
+[0m[1;31mBest Evaluation: Epoch:37,  topk:20, recall:0.0727, ndcg:0.0424
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_37_ndcg_0.042351321674960515.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_32_ndcg_0.035561632869731755.ckpt
+traintime:5.4564, valtime:3.2523
+
+
+[1;35mTrain:[0m:   4%|[33m▍         [0m| 38/1000 [04:51<2:13:13,  8.31s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.38it/s][A
+All_batch: 4it [00:00,  8.98it/s][A
+All_batch: 7it [00:00, 13.86it/s][A
+All_batch: 10it [00:00, 17.41it/s][A
+All_batch: 13it [00:00, 20.16it/s][A
+All_batch: 16it [00:00, 21.97it/s][A
+All_batch: 19it [00:01, 23.36it/s][A
+All_batch: 22it [00:01, 24.45it/s][A
+All_batch: 25it [00:01, 24.99it/s][A
+All_batch: 28it [00:01, 25.46it/s][A
+All_batch: 31it [00:01, 25.93it/s][A
+All_batch: 34it [00:01, 25.99it/s][A
+All_batch: 37it [00:01, 26.07it/s][A
+All_batch: 40it [00:01, 26.05it/s][A
+All_batch: 43it [00:02, 26.08it/s][A
+All_batch: 46it [00:02, 26.07it/s][A
+All_batch: 49it [00:02, 26.14it/s][A
+All_batch: 52it [00:02, 26.04it/s][A
+All_batch: 55it [00:02, 26.30it/s][A
+All_batch: 58it [00:02, 25.81it/s][A
+All_batch: 61it [00:02, 26.88it/s][A
+All_batch: 64it [00:02, 27.02it/s][A
+All_batch: 67it [00:02, 25.24it/s][A
+All_batch: 71it [00:03, 26.81it/s][A
+All_batch: 74it [00:03, 27.63it/s][A
+All_batch: 77it [00:03, 27.88it/s][A
+All_batch: 80it [00:03, 28.40it/s][A
+All_batch: 84it [00:03, 29.13it/s][A
+All_batch: 88it [00:03, 29.68it/s][A
+All_batch: 91it [00:03, 28.85it/s][A
+All_batch: 94it [00:03, 27.97it/s][A
+All_batch: 97it [00:03, 27.59it/s][A
+All_batch: 100it [00:04, 27.11it/s][A
+All_batch: 103it [00:04, 26.82it/s][A
+All_batch: 106it [00:04, 26.95it/s][A
+All_batch: 109it [00:04, 26.44it/s][A
+All_batch: 112it [00:04, 26.32it/s][A
+All_batch: 115it [00:04, 26.10it/s][A
+All_batch: 118it [00:04, 25.94it/s][A
+All_batch: 121it [00:04, 26.06it/s][A
+All_batch: 124it [00:05, 25.78it/s][A
+All_batch: 127it [00:05, 25.76it/s][A
+All_batch: 130it [00:05, 25.70it/s][A
+All_batch: 133it [00:05, 25.52it/s][AAll_batch: 134it [00:05, 24.75it/s]prepare training data cost time:0.3789
+[1;34mEpoch:38, Train_AUC:0.9915, Loss_rank:0.2565, Loss_reg:0.0020, Loss_ib:0.6876, Loss_sum:0.9461
+[0m[1;32mCurrent Evaluation: Epoch:38,  topk:20, recall:0.0735, ndcg:0.0429
+[0m[1;31mBest Evaluation: Epoch:38,  topk:20, recall:0.0735, ndcg:0.0429
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_38_ndcg_0.042938196733859645.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_33_ndcg_0.037687400384204005.ckpt
+traintime:5.4140, valtime:3.0748
+
+
+[1;35mTrain:[0m:   4%|[33m▍         [0m| 39/1000 [05:00<2:13:56,  8.36s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.34it/s][A
+All_batch: 4it [00:00,  8.61it/s][A
+All_batch: 8it [00:00, 15.24it/s][A
+All_batch: 12it [00:00, 19.67it/s][A
+All_batch: 15it [00:00, 22.01it/s][A
+All_batch: 18it [00:01, 24.07it/s][A
+All_batch: 21it [00:01, 25.64it/s][A
+All_batch: 24it [00:01, 26.70it/s][A
+All_batch: 27it [00:01, 26.88it/s][A
+All_batch: 30it [00:01, 26.84it/s][A
+All_batch: 33it [00:01, 26.95it/s][A
+All_batch: 36it [00:01, 26.85it/s][A
+All_batch: 39it [00:01, 26.81it/s][A
+All_batch: 42it [00:01, 26.96it/s][A
+All_batch: 45it [00:02, 26.86it/s][A
+All_batch: 48it [00:02, 26.73it/s][A
+All_batch: 51it [00:02, 26.52it/s][A
+All_batch: 54it [00:02, 26.53it/s][A
+All_batch: 57it [00:02, 26.63it/s][A
+All_batch: 60it [00:02, 26.29it/s][A
+All_batch: 63it [00:02, 26.19it/s][A
+All_batch: 66it [00:02, 26.48it/s][A
+All_batch: 69it [00:02, 26.48it/s][A
+All_batch: 72it [00:03, 26.09it/s][A
+All_batch: 75it [00:03, 26.10it/s][A
+All_batch: 78it [00:03, 25.88it/s][A
+All_batch: 81it [00:03, 26.18it/s][A
+All_batch: 84it [00:03, 26.28it/s][A
+All_batch: 87it [00:03, 26.83it/s][A
+All_batch: 91it [00:03, 28.02it/s][A
+All_batch: 94it [00:03, 25.78it/s][A
+All_batch: 98it [00:04, 27.26it/s][A
+All_batch: 102it [00:04, 28.18it/s][A
+All_batch: 106it [00:04, 29.01it/s][A
+All_batch: 110it [00:04, 29.57it/s][A
+All_batch: 114it [00:04, 29.71it/s][A
+All_batch: 117it [00:04, 29.30it/s][A
+All_batch: 121it [00:04, 29.84it/s][A
+All_batch: 125it [00:04, 29.96it/s][A
+All_batch: 128it [00:05, 29.70it/s][A
+All_batch: 131it [00:05, 29.18it/s][AAll_batch: 134it [00:05, 25.73it/s]prepare training data cost time:0.3914
+[1;34mEpoch:39, Train_AUC:0.9922, Loss_rank:0.2340, Loss_reg:0.0022, Loss_ib:0.6917, Loss_sum:0.9279
+[0m[1;32mCurrent Evaluation: Epoch:39,  topk:20, recall:0.0741, ndcg:0.0432
+[0m[1;31mBest Evaluation: Epoch:39,  topk:20, recall:0.0741, ndcg:0.0432
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_39_ndcg_0.04323979062371825.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_34_ndcg_0.03967990812692788.ckpt
+traintime:5.2084, valtime:3.3915
+
+
+[1;35mTrain:[0m:   4%|[33m▍         [0m| 40/1000 [05:09<2:14:56,  8.43s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.33it/s][A
+All_batch: 5it [00:00, 10.86it/s][A
+All_batch: 9it [00:00, 16.80it/s][A
+All_batch: 13it [00:00, 20.91it/s][A
+All_batch: 17it [00:00, 23.80it/s][A
+All_batch: 21it [00:01, 25.94it/s][A
+All_batch: 25it [00:01, 27.22it/s][A
+All_batch: 29it [00:01, 28.08it/s][A
+All_batch: 32it [00:01, 28.55it/s][A
+All_batch: 36it [00:01, 29.10it/s][A
+All_batch: 40it [00:01, 29.60it/s][A
+All_batch: 44it [00:01, 30.09it/s][A
+All_batch: 48it [00:01, 30.54it/s][A
+All_batch: 52it [00:02, 30.71it/s][A
+All_batch: 56it [00:02, 30.76it/s][A
+All_batch: 60it [00:02, 30.79it/s][A
+All_batch: 64it [00:02, 30.53it/s][A
+All_batch: 68it [00:02, 30.34it/s][A
+All_batch: 72it [00:02, 30.41it/s][A
+All_batch: 76it [00:02, 30.49it/s][A
+All_batch: 80it [00:03, 30.32it/s][A
+All_batch: 84it [00:03, 30.18it/s][A
+All_batch: 88it [00:03, 30.17it/s][A
+All_batch: 92it [00:03, 30.10it/s][A
+All_batch: 96it [00:03, 29.94it/s][A
+All_batch: 100it [00:03, 30.12it/s][A
+All_batch: 104it [00:03, 30.05it/s][A
+All_batch: 108it [00:03, 30.07it/s][A
+All_batch: 112it [00:04, 30.04it/s][A
+All_batch: 116it [00:04, 30.04it/s][A
+All_batch: 120it [00:04, 30.02it/s][A
+All_batch: 124it [00:04, 30.01it/s][A
+All_batch: 128it [00:04, 30.11it/s][A
+All_batch: 132it [00:04, 30.31it/s][AAll_batch: 134it [00:04, 27.86it/s]prepare training data cost time:0.3931
+[1;34mEpoch:40, Train_AUC:0.9928, Loss_rank:0.2137, Loss_reg:0.0023, Loss_ib:0.6908, Loss_sum:0.9068
+[0m[1;32mCurrent Evaluation: Epoch:40,  topk:20, recall:0.0755, ndcg:0.0437
+[0m[1;31mBest Evaluation: Epoch:40,  topk:20, recall:0.0755, ndcg:0.0437
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_40_ndcg_0.04374993328087716.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_35_ndcg_0.0407986500482163.ckpt
+traintime:4.8105, valtime:2.8510
+
+
+[1;35mTrain:[0m:   4%|[33m▍         [0m| 41/1000 [05:16<2:11:06,  8.20s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.37it/s][A
+All_batch: 5it [00:00, 11.04it/s][A
+All_batch: 9it [00:00, 17.04it/s][A
+All_batch: 12it [00:00, 20.12it/s][A
+All_batch: 15it [00:00, 22.61it/s][A
+All_batch: 18it [00:00, 24.51it/s][A
+All_batch: 22it [00:01, 26.31it/s][A
+All_batch: 26it [00:01, 27.51it/s][A
+All_batch: 30it [00:01, 28.38it/s][A
+All_batch: 34it [00:01, 28.91it/s][A
+All_batch: 37it [00:01, 29.07it/s][A
+All_batch: 41it [00:01, 29.44it/s][A
+All_batch: 45it [00:01, 29.66it/s][A
+All_batch: 48it [00:01, 29.72it/s][A
+All_batch: 52it [00:02, 29.82it/s][A
+All_batch: 55it [00:02, 29.85it/s][A
+All_batch: 59it [00:02, 29.89it/s][A
+All_batch: 63it [00:02, 29.96it/s][A
+All_batch: 66it [00:02, 29.95it/s][A
+All_batch: 69it [00:02, 29.87it/s][A
+All_batch: 73it [00:02, 29.99it/s][A
+All_batch: 77it [00:02, 30.04it/s][A
+All_batch: 81it [00:03, 30.28it/s][A
+All_batch: 85it [00:03, 30.47it/s][A
+All_batch: 89it [00:03, 30.49it/s][A
+All_batch: 93it [00:03, 30.67it/s][A
+All_batch: 97it [00:03, 30.82it/s][A
+All_batch: 101it [00:03, 30.73it/s][A
+All_batch: 105it [00:03, 30.68it/s][A
+All_batch: 109it [00:03, 30.64it/s][A
+All_batch: 113it [00:04, 30.46it/s][A
+All_batch: 117it [00:04, 30.54it/s][A
+All_batch: 121it [00:04, 30.46it/s][A
+All_batch: 125it [00:04, 30.47it/s][A
+All_batch: 129it [00:04, 30.31it/s][A
+All_batch: 133it [00:04, 30.21it/s][AAll_batch: 134it [00:04, 27.79it/s]prepare training data cost time:0.3872
+[1;34mEpoch:41, Train_AUC:0.9932, Loss_rank:0.1960, Loss_reg:0.0025, Loss_ib:0.6921, Loss_sum:0.8906
+[0m[1;32mCurrent Evaluation: Epoch:41,  topk:20, recall:0.0759, ndcg:0.0440
+[0m[1;31mBest Evaluation: Epoch:41,  topk:20, recall:0.0759, ndcg:0.0440
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_41_ndcg_0.044019096501248495.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_36_ndcg_0.04173990433460608.ckpt
+traintime:4.8220, valtime:2.9288
+
+
+[1;35mTrain:[0m:   4%|[33m▍         [0m| 42/1000 [05:24<2:08:48,  8.07s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.40it/s][A
+All_batch: 4it [00:00,  9.43it/s][A
+All_batch: 7it [00:00, 14.81it/s][A
+All_batch: 10it [00:00, 18.88it/s][A
+All_batch: 14it [00:00, 22.74it/s][A
+All_batch: 18it [00:00, 25.11it/s][A
+All_batch: 22it [00:01, 26.70it/s][A
+All_batch: 26it [00:01, 27.83it/s][A
+All_batch: 30it [00:01, 28.61it/s][A
+All_batch: 34it [00:01, 29.33it/s][A
+All_batch: 38it [00:01, 29.73it/s][A
+All_batch: 42it [00:01, 30.11it/s][A
+All_batch: 46it [00:01, 30.21it/s][A
+All_batch: 50it [00:02, 30.16it/s][A
+All_batch: 54it [00:02, 30.11it/s][A
+All_batch: 58it [00:02, 30.06it/s][A
+All_batch: 62it [00:02, 30.07it/s][A
+All_batch: 66it [00:02, 30.09it/s][A
+All_batch: 70it [00:02, 30.02it/s][A
+All_batch: 74it [00:02, 30.12it/s][A
+All_batch: 78it [00:02, 30.12it/s][A
+All_batch: 82it [00:03, 30.21it/s][A
+All_batch: 86it [00:03, 30.42it/s][A
+All_batch: 90it [00:03, 30.50it/s][A
+All_batch: 94it [00:03, 30.57it/s][A
+All_batch: 98it [00:03, 30.46it/s][A
+All_batch: 102it [00:03, 30.41it/s][A
+All_batch: 106it [00:03, 30.31it/s][A
+All_batch: 110it [00:04, 30.21it/s][A
+All_batch: 114it [00:04, 30.22it/s][A
+All_batch: 118it [00:04, 30.57it/s][A
+All_batch: 122it [00:04, 30.73it/s][A
+All_batch: 126it [00:04, 30.84it/s][A
+All_batch: 130it [00:04, 30.74it/s][A
+All_batch: 134it [00:04, 30.77it/s][AAll_batch: 134it [00:04, 27.92it/s]prepare training data cost time:0.3803
+[1;34mEpoch:42, Train_AUC:0.9937, Loss_rank:0.1804, Loss_reg:0.0026, Loss_ib:0.6981, Loss_sum:0.8811
+[0m[1;32mCurrent Evaluation: Epoch:42,  topk:20, recall:0.0760, ndcg:0.0442
+[0m[1;31mBest Evaluation: Epoch:42,  topk:20, recall:0.0760, ndcg:0.0442
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_42_ndcg_0.044183252773990704.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_37_ndcg_0.042351321674960515.ckpt
+traintime:4.7988, valtime:2.8803
+
+
+[1;35mTrain:[0m:   4%|[33m▍         [0m| 43/1000 [05:32<2:06:48,  7.95s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.34it/s][A
+All_batch: 5it [00:00, 10.88it/s][A
+All_batch: 9it [00:00, 16.80it/s][A
+All_batch: 13it [00:00, 20.85it/s][A
+All_batch: 16it [00:00, 23.04it/s][A
+All_batch: 20it [00:01, 25.25it/s][A
+All_batch: 24it [00:01, 26.82it/s][A
+All_batch: 28it [00:01, 27.81it/s][A
+All_batch: 31it [00:01, 28.34it/s][A
+All_batch: 34it [00:01, 28.67it/s][A
+All_batch: 38it [00:01, 29.22it/s][A
+All_batch: 42it [00:01, 29.47it/s][A
+All_batch: 45it [00:01, 29.60it/s][A
+All_batch: 48it [00:01, 29.68it/s][A
+All_batch: 52it [00:02, 29.71it/s][A
+All_batch: 56it [00:02, 29.92it/s][A
+All_batch: 60it [00:02, 29.80it/s][A
+All_batch: 64it [00:02, 30.08it/s][A
+All_batch: 68it [00:02, 30.29it/s][A
+All_batch: 72it [00:02, 30.52it/s][A
+All_batch: 76it [00:02, 30.68it/s][A
+All_batch: 80it [00:03, 30.74it/s][A
+All_batch: 84it [00:03, 30.86it/s][A
+All_batch: 88it [00:03, 30.89it/s][A
+All_batch: 92it [00:03, 30.81it/s][A
+All_batch: 96it [00:03, 30.62it/s][A
+All_batch: 100it [00:03, 30.46it/s][A
+All_batch: 104it [00:03, 30.52it/s][A
+All_batch: 108it [00:03, 30.28it/s][A
+All_batch: 112it [00:04, 30.27it/s][A
+All_batch: 116it [00:04, 30.22it/s][A
+All_batch: 120it [00:04, 30.13it/s][A
+All_batch: 124it [00:04, 30.01it/s][A
+All_batch: 128it [00:04, 30.10it/s][A
+All_batch: 132it [00:04, 30.06it/s][AAll_batch: 134it [00:04, 27.77it/s]prepare training data cost time:0.3926
+[1;34mEpoch:43, Train_AUC:0.9943, Loss_rank:0.1660, Loss_reg:0.0028, Loss_ib:0.6941, Loss_sum:0.8629
+[0m[1;32mCurrent Evaluation: Epoch:43,  topk:20, recall:0.0765, ndcg:0.0444
+[0m[1;31mBest Evaluation: Epoch:43,  topk:20, recall:0.0765, ndcg:0.0444
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_43_ndcg_0.04443755901581825.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_38_ndcg_0.042938196733859645.ckpt
+traintime:4.8250, valtime:2.9633
+
+
+[1;35mTrain:[0m:   4%|[33m▍         [0m| 44/1000 [05:39<2:05:54,  7.90s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.37it/s][A
+All_batch: 5it [00:00, 10.97it/s][A
+All_batch: 9it [00:00, 16.88it/s][A
+All_batch: 13it [00:00, 20.98it/s][A
+All_batch: 17it [00:00, 23.78it/s][A
+All_batch: 21it [00:01, 25.75it/s][A
+All_batch: 25it [00:01, 27.32it/s][A
+All_batch: 29it [00:01, 28.29it/s][A
+All_batch: 33it [00:01, 29.11it/s][A
+All_batch: 37it [00:01, 29.52it/s][A
+All_batch: 41it [00:01, 29.65it/s][A
+All_batch: 45it [00:01, 29.68it/s][A
+All_batch: 49it [00:02, 29.86it/s][A
+All_batch: 53it [00:02, 29.89it/s][A
+All_batch: 57it [00:02, 29.82it/s][A
+All_batch: 61it [00:02, 29.97it/s][A
+All_batch: 65it [00:02, 29.97it/s][A
+All_batch: 69it [00:02, 30.00it/s][A
+All_batch: 73it [00:02, 29.90it/s][A
+All_batch: 77it [00:02, 29.71it/s][A
+All_batch: 80it [00:03, 29.62it/s][A
+All_batch: 84it [00:03, 29.72it/s][A
+All_batch: 87it [00:03, 29.79it/s][A
+All_batch: 91it [00:03, 29.93it/s][A
+All_batch: 95it [00:03, 30.05it/s][A
+All_batch: 99it [00:03, 30.33it/s][A
+All_batch: 103it [00:03, 30.42it/s][A
+All_batch: 107it [00:03, 30.46it/s][A
+All_batch: 111it [00:04, 30.67it/s][A
+All_batch: 115it [00:04, 30.78it/s][A
+All_batch: 119it [00:04, 30.80it/s][A
+All_batch: 123it [00:04, 31.05it/s][A
+All_batch: 127it [00:04, 31.11it/s][A
+All_batch: 131it [00:04, 31.03it/s][AAll_batch: 134it [00:04, 27.89it/s]prepare training data cost time:0.3866
+[1;34mEpoch:44, Train_AUC:0.9945, Loss_rank:0.1538, Loss_reg:0.0029, Loss_ib:0.6904, Loss_sum:0.8471
+[0m[1;32mCurrent Evaluation: Epoch:44,  topk:20, recall:0.0766, ndcg:0.0444
+[0m[1;31mBest Evaluation: Epoch:43,  topk:20, recall:0.0765, ndcg:0.0444
+[0mtraintime:4.8049, valtime:2.9933
+
+
+[1;35mTrain:[0m:   4%|[33m▍         [0m| 45/1000 [05:47<2:05:16,  7.87s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.41it/s][A
+All_batch: 5it [00:00, 11.12it/s][A
+All_batch: 9it [00:00, 17.03it/s][A
+All_batch: 13it [00:00, 21.05it/s][A
+All_batch: 16it [00:00, 23.27it/s][A
+All_batch: 19it [00:01, 25.02it/s][A
+All_batch: 23it [00:01, 26.73it/s][A
+All_batch: 26it [00:01, 27.58it/s][A
+All_batch: 29it [00:01, 28.21it/s][A
+All_batch: 33it [00:01, 28.83it/s][A
+All_batch: 36it [00:01, 29.14it/s][A
+All_batch: 39it [00:01, 29.35it/s][A
+All_batch: 42it [00:01, 29.52it/s][A
+All_batch: 46it [00:01, 29.72it/s][A
+All_batch: 50it [00:02, 30.02it/s][A
+All_batch: 54it [00:02, 30.17it/s][A
+All_batch: 58it [00:02, 30.25it/s][A
+All_batch: 62it [00:02, 30.38it/s][A
+All_batch: 66it [00:02, 30.59it/s][A
+All_batch: 70it [00:02, 29.90it/s][A
+All_batch: 73it [00:02, 29.69it/s][A
+All_batch: 76it [00:02, 29.77it/s][A
+All_batch: 80it [00:03, 29.88it/s][A
+All_batch: 84it [00:03, 29.95it/s][A
+All_batch: 88it [00:03, 30.13it/s][A
+All_batch: 92it [00:03, 30.11it/s][A
+All_batch: 96it [00:03, 30.10it/s][A
+All_batch: 100it [00:03, 30.04it/s][A
+All_batch: 104it [00:03, 30.03it/s][A
+All_batch: 108it [00:03, 29.90it/s][A
+All_batch: 112it [00:04, 30.06it/s][A
+All_batch: 116it [00:04, 29.96it/s][A
+All_batch: 120it [00:04, 30.05it/s][A
+All_batch: 124it [00:04, 30.01it/s][A
+All_batch: 128it [00:04, 29.74it/s][A
+All_batch: 132it [00:04, 29.88it/s][AAll_batch: 134it [00:04, 27.68it/s]prepare training data cost time:0.3804
+[1;34mEpoch:45, Train_AUC:0.9948, Loss_rank:0.1425, Loss_reg:0.0030, Loss_ib:0.6916, Loss_sum:0.8372
+[0m[1;32mCurrent Evaluation: Epoch:45,  topk:20, recall:0.0765, ndcg:0.0447
+[0m[1;31mBest Evaluation: Epoch:45,  topk:20, recall:0.0765, ndcg:0.0447
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_45_ndcg_0.044698597552754876.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_39_ndcg_0.04323979062371825.ckpt
+traintime:4.8416, valtime:2.9244
+
+
+[1;35mTrain:[0m:   5%|[33m▍         [0m| 46/1000 [05:55<2:04:38,  7.84s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.42it/s][A
+All_batch: 5it [00:00, 11.24it/s][A
+All_batch: 9it [00:00, 17.26it/s][A
+All_batch: 13it [00:00, 21.37it/s][A
+All_batch: 17it [00:00, 24.34it/s][A
+All_batch: 21it [00:01, 26.17it/s][A
+All_batch: 25it [00:01, 27.37it/s][A
+All_batch: 29it [00:01, 28.36it/s][A
+All_batch: 33it [00:01, 28.91it/s][A
+All_batch: 37it [00:01, 29.39it/s][A
+All_batch: 41it [00:01, 29.64it/s][A
+All_batch: 45it [00:01, 29.77it/s][A
+All_batch: 49it [00:01, 29.80it/s][A
+All_batch: 53it [00:02, 29.89it/s][A
+All_batch: 57it [00:02, 29.88it/s][A
+All_batch: 60it [00:02, 29.69it/s][A
+All_batch: 63it [00:02, 29.39it/s][A
+All_batch: 67it [00:02, 29.60it/s][A
+All_batch: 70it [00:02, 29.68it/s][A
+All_batch: 73it [00:02, 29.75it/s][A
+All_batch: 77it [00:02, 29.87it/s][A
+All_batch: 81it [00:03, 29.53it/s][A
+All_batch: 84it [00:03, 29.64it/s][A
+All_batch: 88it [00:03, 29.99it/s][A
+All_batch: 92it [00:03, 30.19it/s][A
+All_batch: 96it [00:03, 30.31it/s][A
+All_batch: 100it [00:03, 30.51it/s][A
+All_batch: 104it [00:03, 30.60it/s][A
+All_batch: 108it [00:03, 30.58it/s][A
+All_batch: 112it [00:04, 30.55it/s][A
+All_batch: 116it [00:04, 30.49it/s][A
+All_batch: 120it [00:04, 30.35it/s][A
+All_batch: 124it [00:04, 30.25it/s][A
+All_batch: 128it [00:04, 30.19it/s][A
+All_batch: 132it [00:04, 30.13it/s][AAll_batch: 134it [00:04, 27.84it/s]prepare training data cost time:0.3785
+[1;34mEpoch:46, Train_AUC:0.9952, Loss_rank:0.1324, Loss_reg:0.0032, Loss_ib:0.6928, Loss_sum:0.8284
+[0m[1;32mCurrent Evaluation: Epoch:46,  topk:20, recall:0.0764, ndcg:0.0447
+[0m[1;31mBest Evaluation: Epoch:46,  topk:20, recall:0.0764, ndcg:0.0447
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_46_ndcg_0.044717723774947093.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_40_ndcg_0.04374993328087716.ckpt
+traintime:4.8125, valtime:3.0423
+
+
+[1;35mTrain:[0m:   5%|[33m▍         [0m| 47/1000 [06:03<2:04:35,  7.84s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.43it/s][A
+All_batch: 5it [00:00, 11.16it/s][A
+All_batch: 9it [00:00, 17.09it/s][A
+All_batch: 13it [00:00, 21.11it/s][A
+All_batch: 17it [00:00, 23.86it/s][A
+All_batch: 21it [00:01, 25.75it/s][A
+All_batch: 25it [00:01, 27.05it/s][A
+All_batch: 29it [00:01, 28.09it/s][A
+All_batch: 33it [00:01, 28.88it/s][A
+All_batch: 37it [00:01, 29.44it/s][A
+All_batch: 41it [00:01, 29.69it/s][A
+All_batch: 45it [00:01, 30.09it/s][A
+All_batch: 49it [00:01, 30.25it/s][A
+All_batch: 53it [00:02, 30.29it/s][A
+All_batch: 57it [00:02, 30.31it/s][A
+All_batch: 61it [00:02, 30.26it/s][A
+All_batch: 65it [00:02, 30.16it/s][A
+All_batch: 69it [00:02, 30.11it/s][A
+All_batch: 73it [00:02, 30.07it/s][A
+All_batch: 77it [00:02, 30.03it/s][A
+All_batch: 81it [00:03, 30.04it/s][A
+All_batch: 85it [00:03, 30.00it/s][A
+All_batch: 89it [00:03, 29.99it/s][A
+All_batch: 93it [00:03, 30.00it/s][A
+All_batch: 97it [00:03, 29.94it/s][A
+All_batch: 101it [00:03, 30.00it/s][A
+All_batch: 105it [00:03, 30.10it/s][A
+All_batch: 109it [00:03, 30.15it/s][A
+All_batch: 113it [00:04, 30.22it/s][A
+All_batch: 117it [00:04, 30.21it/s][A
+All_batch: 121it [00:04, 30.35it/s][A
+All_batch: 125it [00:04, 30.67it/s][A
+All_batch: 129it [00:04, 30.73it/s][A
+All_batch: 133it [00:04, 30.76it/s][AAll_batch: 134it [00:04, 27.92it/s]prepare training data cost time:0.3757
+[1;34mEpoch:47, Train_AUC:0.9955, Loss_rank:0.1238, Loss_reg:0.0033, Loss_ib:0.6885, Loss_sum:0.8155
+[0m[1;32mCurrent Evaluation: Epoch:47,  topk:20, recall:0.0764, ndcg:0.0446
+[0m[1;31mBest Evaluation: Epoch:46,  topk:20, recall:0.0764, ndcg:0.0447
+[0mtraintime:4.7993, valtime:2.8830
+
+
+[1;35mTrain:[0m:   5%|[33m▍         [0m| 48/1000 [06:11<2:03:41,  7.80s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.40it/s][A
+All_batch: 4it [00:00,  9.42it/s][A
+All_batch: 7it [00:00, 14.90it/s][A
+All_batch: 10it [00:00, 19.06it/s][A
+All_batch: 13it [00:00, 22.06it/s][A
+All_batch: 17it [00:00, 24.94it/s][A
+All_batch: 21it [00:01, 26.64it/s][A
+All_batch: 24it [00:01, 27.51it/s][A
+All_batch: 28it [00:01, 28.34it/s][A
+All_batch: 32it [00:01, 28.88it/s][A
+All_batch: 35it [00:01, 29.16it/s][A
+All_batch: 38it [00:01, 29.26it/s][A
+All_batch: 42it [00:01, 29.64it/s][A
+All_batch: 46it [00:01, 29.76it/s][A
+All_batch: 50it [00:02, 29.86it/s][A
+All_batch: 53it [00:02, 29.86it/s][A
+All_batch: 57it [00:02, 29.90it/s][A
+All_batch: 61it [00:02, 29.95it/s][A
+All_batch: 64it [00:02, 29.93it/s][A
+All_batch: 68it [00:02, 30.08it/s][A
+All_batch: 72it [00:02, 30.26it/s][A
+All_batch: 76it [00:02, 30.65it/s][A
+All_batch: 80it [00:03, 30.90it/s][A
+All_batch: 84it [00:03, 31.16it/s][A
+All_batch: 88it [00:03, 31.24it/s][A
+All_batch: 92it [00:03, 31.24it/s][A
+All_batch: 96it [00:03, 30.97it/s][A
+All_batch: 100it [00:03, 30.78it/s][A
+All_batch: 104it [00:03, 30.73it/s][A
+All_batch: 108it [00:03, 30.65it/s][A
+All_batch: 112it [00:04, 30.62it/s][A
+All_batch: 116it [00:04, 30.57it/s][A
+All_batch: 120it [00:04, 30.54it/s][A
+All_batch: 124it [00:04, 30.46it/s][A
+All_batch: 128it [00:04, 30.35it/s][A
+All_batch: 132it [00:04, 30.16it/s][AAll_batch: 134it [00:04, 27.91it/s]prepare training data cost time:0.3807
+[1;34mEpoch:48, Train_AUC:0.9957, Loss_rank:0.1155, Loss_reg:0.0034, Loss_ib:0.6884, Loss_sum:0.8074
+[0m[1;32mCurrent Evaluation: Epoch:48,  topk:20, recall:0.0764, ndcg:0.0447
+[0m[1;31mBest Evaluation: Epoch:46,  topk:20, recall:0.0764, ndcg:0.0447
+[0mtraintime:4.8009, valtime:3.0240
+
+
+[1;35mTrain:[0m:   5%|[33m▍         [0m| 49/1000 [06:18<2:03:42,  7.80s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.33it/s][A
+All_batch: 5it [00:00, 10.85it/s][A
+All_batch: 9it [00:00, 16.71it/s][A
+All_batch: 13it [00:00, 20.91it/s][A
+All_batch: 17it [00:00, 23.98it/s][A
+All_batch: 21it [00:01, 26.07it/s][A
+All_batch: 25it [00:01, 27.52it/s][A
+All_batch: 29it [00:01, 28.52it/s][A
+All_batch: 33it [00:01, 29.25it/s][A
+All_batch: 37it [00:01, 29.77it/s][A
+All_batch: 41it [00:01, 30.01it/s][A
+All_batch: 45it [00:01, 30.01it/s][A
+All_batch: 49it [00:01, 30.07it/s][A
+All_batch: 53it [00:02, 30.18it/s][A
+All_batch: 57it [00:02, 30.05it/s][A
+All_batch: 61it [00:02, 30.10it/s][A
+All_batch: 65it [00:02, 30.09it/s][A
+All_batch: 69it [00:02, 30.10it/s][A
+All_batch: 73it [00:02, 30.07it/s][A
+All_batch: 77it [00:02, 30.07it/s][A
+All_batch: 81it [00:03, 30.06it/s][A
+All_batch: 85it [00:03, 30.01it/s][A
+All_batch: 89it [00:03, 30.02it/s][A
+All_batch: 93it [00:03, 29.87it/s][A
+All_batch: 97it [00:03, 30.04it/s][A
+All_batch: 101it [00:03, 30.04it/s][A
+All_batch: 105it [00:03, 30.21it/s][A
+All_batch: 109it [00:03, 30.56it/s][A
+All_batch: 113it [00:04, 30.77it/s][A
+All_batch: 117it [00:04, 30.80it/s][A
+All_batch: 121it [00:04, 30.97it/s][A
+All_batch: 125it [00:04, 31.04it/s][A
+All_batch: 129it [00:04, 31.07it/s][A
+All_batch: 133it [00:04, 30.69it/s][AAll_batch: 134it [00:04, 27.96it/s]prepare training data cost time:0.3927
+[1;34mEpoch:49, Train_AUC:0.9960, Loss_rank:0.1080, Loss_reg:0.0036, Loss_ib:0.6957, Loss_sum:0.8073
+[0m[1;32mCurrent Evaluation: Epoch:49,  topk:20, recall:0.0768, ndcg:0.0449
+[0m[1;31mBest Evaluation: Epoch:49,  topk:20, recall:0.0768, ndcg:0.0449
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_49_ndcg_0.044925676928561996.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_41_ndcg_0.044019096501248495.ckpt
+traintime:4.7932, valtime:2.8263
+
+
+[1;35mTrain:[0m:   5%|[33m▌         [0m| 50/1000 [06:26<2:02:41,  7.75s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.42it/s][A
+All_batch: 5it [00:00, 11.12it/s][A
+All_batch: 9it [00:00, 17.08it/s][A
+All_batch: 13it [00:00, 21.18it/s][A
+All_batch: 17it [00:00, 24.01it/s][A
+All_batch: 20it [00:01, 25.38it/s][A
+All_batch: 24it [00:01, 26.95it/s][A
+All_batch: 28it [00:01, 27.93it/s][A
+All_batch: 31it [00:01, 28.35it/s][A
+All_batch: 35it [00:01, 28.98it/s][A
+All_batch: 38it [00:01, 29.08it/s][A
+All_batch: 42it [00:01, 29.54it/s][A
+All_batch: 46it [00:01, 29.70it/s][A
+All_batch: 49it [00:02, 29.77it/s][A
+All_batch: 52it [00:02, 29.79it/s][A
+All_batch: 56it [00:02, 30.11it/s][A
+All_batch: 60it [00:02, 30.41it/s][A
+All_batch: 64it [00:02, 30.69it/s][A
+All_batch: 68it [00:02, 30.81it/s][A
+All_batch: 72it [00:02, 30.75it/s][A
+All_batch: 76it [00:02, 30.92it/s][A
+All_batch: 80it [00:03, 31.04it/s][A
+All_batch: 84it [00:03, 30.84it/s][A
+All_batch: 88it [00:03, 30.52it/s][A
+All_batch: 92it [00:03, 30.44it/s][A
+All_batch: 96it [00:03, 30.30it/s][A
+All_batch: 100it [00:03, 30.19it/s][A
+All_batch: 104it [00:03, 30.16it/s][A
+All_batch: 108it [00:03, 29.97it/s][A
+All_batch: 112it [00:04, 30.12it/s][A
+All_batch: 116it [00:04, 29.96it/s][A
+All_batch: 120it [00:04, 30.11it/s][A
+All_batch: 124it [00:04, 29.96it/s][A
+All_batch: 128it [00:04, 30.08it/s][A
+All_batch: 132it [00:04, 29.95it/s][AAll_batch: 134it [00:04, 27.88it/s]prepare training data cost time:0.3784
+[1;34mEpoch:50, Train_AUC:0.9961, Loss_rank:0.1016, Loss_reg:0.0037, Loss_ib:0.6905, Loss_sum:0.7958
+[0m[1;32mCurrent Evaluation: Epoch:50,  topk:20, recall:0.0771, ndcg:0.0451
+[0m[1;31mBest Evaluation: Epoch:50,  topk:20, recall:0.0771, ndcg:0.0451
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_50_ndcg_0.045119779138293827.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_42_ndcg_0.044183252773990704.ckpt
+traintime:4.8067, valtime:2.9589
+
+
+[1;35mTrain:[0m:   5%|[33m▌         [0m| 51/1000 [06:34<2:02:38,  7.75s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.45it/s][A
+All_batch: 5it [00:00, 11.23it/s][A
+All_batch: 9it [00:00, 17.18it/s][A
+All_batch: 13it [00:00, 21.19it/s][A
+All_batch: 17it [00:00, 24.17it/s][A
+All_batch: 21it [00:01, 26.37it/s][A
+All_batch: 25it [00:01, 27.84it/s][A
+All_batch: 29it [00:01, 28.70it/s][A
+All_batch: 33it [00:01, 29.30it/s][A
+All_batch: 37it [00:01, 29.68it/s][A
+All_batch: 41it [00:01, 29.98it/s][A
+All_batch: 45it [00:01, 30.12it/s][A
+All_batch: 49it [00:01, 30.11it/s][A
+All_batch: 53it [00:02, 30.02it/s][A
+All_batch: 57it [00:02, 30.07it/s][A
+All_batch: 61it [00:02, 29.92it/s][A
+All_batch: 65it [00:02, 29.94it/s][A
+All_batch: 69it [00:02, 29.98it/s][A
+All_batch: 73it [00:02, 30.10it/s][A
+All_batch: 77it [00:02, 30.08it/s][A
+All_batch: 81it [00:03, 29.93it/s][A
+All_batch: 85it [00:03, 30.06it/s][A
+All_batch: 89it [00:03, 29.92it/s][A
+All_batch: 93it [00:03, 30.16it/s][A
+All_batch: 97it [00:03, 30.37it/s][A
+All_batch: 101it [00:03, 30.60it/s][A
+All_batch: 105it [00:03, 30.81it/s][A
+All_batch: 109it [00:03, 30.79it/s][A
+All_batch: 113it [00:04, 30.85it/s][A
+All_batch: 117it [00:04, 30.95it/s][A
+All_batch: 121it [00:04, 30.87it/s][A
+All_batch: 125it [00:04, 30.75it/s][A
+All_batch: 129it [00:04, 30.51it/s][A
+All_batch: 133it [00:04, 30.28it/s][AAll_batch: 134it [00:04, 28.06it/s]prepare training data cost time:0.3734
+[1;34mEpoch:51, Train_AUC:0.9964, Loss_rank:0.0956, Loss_reg:0.0038, Loss_ib:0.6891, Loss_sum:0.7885
+[0m[1;32mCurrent Evaluation: Epoch:51,  topk:20, recall:0.0768, ndcg:0.0452
+[0m[1;31mBest Evaluation: Epoch:51,  topk:20, recall:0.0768, ndcg:0.0452
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_51_ndcg_0.0451875895658506.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_43_ndcg_0.04443755901581825.ckpt
+traintime:4.7748, valtime:2.8850
+
+
+[1;35mTrain:[0m:   5%|[33m▌         [0m| 52/1000 [06:41<2:02:04,  7.73s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.39it/s][A
+All_batch: 5it [00:00, 11.12it/s][A
+All_batch: 8it [00:00, 15.88it/s][A
+All_batch: 11it [00:00, 19.56it/s][A
+All_batch: 15it [00:00, 23.05it/s][A
+All_batch: 19it [00:01, 25.42it/s][A
+All_batch: 22it [00:01, 26.58it/s][A
+All_batch: 25it [00:01, 27.39it/s][A
+All_batch: 29it [00:01, 28.31it/s][A
+All_batch: 33it [00:01, 28.80it/s][A
+All_batch: 37it [00:01, 29.33it/s][A
+All_batch: 41it [00:01, 29.61it/s][A
+All_batch: 45it [00:01, 29.96it/s][A
+All_batch: 49it [00:02, 30.34it/s][A
+All_batch: 53it [00:02, 30.20it/s][A
+All_batch: 57it [00:02, 30.49it/s][A
+All_batch: 61it [00:02, 30.66it/s][A
+All_batch: 65it [00:02, 30.64it/s][A
+All_batch: 69it [00:02, 29.37it/s][A
+All_batch: 73it [00:02, 29.56it/s][A
+All_batch: 77it [00:02, 29.78it/s][A
+All_batch: 81it [00:03, 29.90it/s][A
+All_batch: 85it [00:03, 29.95it/s][A
+All_batch: 89it [00:03, 30.02it/s][A
+All_batch: 93it [00:03, 29.99it/s][A
+All_batch: 97it [00:03, 29.97it/s][A
+All_batch: 101it [00:03, 29.99it/s][A
+All_batch: 105it [00:03, 30.00it/s][A
+All_batch: 109it [00:04, 29.98it/s][A
+All_batch: 113it [00:04, 30.00it/s][A
+All_batch: 117it [00:04, 30.00it/s][A
+All_batch: 121it [00:04, 30.03it/s][A
+All_batch: 125it [00:04, 30.09it/s][A
+All_batch: 129it [00:04, 30.06it/s][A
+All_batch: 133it [00:04, 30.31it/s][AAll_batch: 134it [00:04, 27.73it/s]prepare training data cost time:0.3823
+[1;34mEpoch:52, Train_AUC:0.9963, Loss_rank:0.0899, Loss_reg:0.0040, Loss_ib:0.6847, Loss_sum:0.7785
+[0m[1;32mCurrent Evaluation: Epoch:52,  topk:20, recall:0.0766, ndcg:0.0451
+[0m[1;31mBest Evaluation: Epoch:51,  topk:20, recall:0.0768, ndcg:0.0452
+[0mtraintime:4.8333, valtime:3.0999
+
+
+[1;35mTrain:[0m:   5%|[33m▌         [0m| 53/1000 [06:49<2:02:55,  7.79s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.42it/s][A
+All_batch: 5it [00:00, 11.17it/s][A
+All_batch: 9it [00:00, 17.10it/s][A
+All_batch: 13it [00:00, 21.24it/s][A
+All_batch: 17it [00:00, 24.02it/s][A
+All_batch: 21it [00:01, 25.98it/s][A
+All_batch: 24it [00:01, 26.92it/s][A
+All_batch: 27it [00:01, 27.66it/s][A
+All_batch: 30it [00:01, 28.12it/s][A
+All_batch: 34it [00:01, 28.81it/s][A
+All_batch: 38it [00:01, 29.18it/s][A
+All_batch: 41it [00:01, 29.39it/s][A
+All_batch: 45it [00:01, 29.63it/s][A
+All_batch: 49it [00:02, 29.87it/s][A
+All_batch: 53it [00:02, 30.17it/s][A
+All_batch: 57it [00:02, 30.34it/s][A
+All_batch: 61it [00:02, 30.25it/s][A
+All_batch: 65it [00:02, 30.18it/s][A
+All_batch: 69it [00:02, 30.16it/s][A
+All_batch: 73it [00:02, 30.29it/s][A
+All_batch: 77it [00:02, 30.53it/s][A
+All_batch: 81it [00:03, 30.66it/s][A
+All_batch: 85it [00:03, 30.74it/s][A
+All_batch: 89it [00:03, 30.70it/s][A
+All_batch: 93it [00:03, 30.71it/s][A
+All_batch: 97it [00:03, 30.86it/s][A
+All_batch: 101it [00:03, 30.76it/s][A
+All_batch: 105it [00:03, 30.56it/s][A
+All_batch: 109it [00:03, 30.52it/s][A
+All_batch: 113it [00:04, 30.34it/s][A
+All_batch: 117it [00:04, 30.38it/s][A
+All_batch: 121it [00:04, 30.23it/s][A
+All_batch: 125it [00:04, 30.17it/s][A
+All_batch: 129it [00:04, 30.13it/s][A
+All_batch: 133it [00:04, 30.07it/s][AAll_batch: 134it [00:04, 27.93it/s]prepare training data cost time:0.3779
+[1;34mEpoch:53, Train_AUC:0.9968, Loss_rank:0.0845, Loss_reg:0.0041, Loss_ib:0.6846, Loss_sum:0.7732
+[0m[1;32mCurrent Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0m[1;31mBest Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0mSaved model to ../saved/epinions/GBSR/run1/models/epoch_53_ndcg_0.045189280148949164.ckpt
+Removed old model file: ../saved/epinions/GBSR/run1/models/epoch_45_ndcg_0.044698597552754876.ckpt
+traintime:4.7979, valtime:2.8623
+
+
+[1;35mTrain:[0m:   5%|[33m▌         [0m| 54/1000 [06:57<2:02:11,  7.75s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.34it/s][A
+All_batch: 5it [00:00, 10.95it/s][A
+All_batch: 9it [00:00, 16.92it/s][A
+All_batch: 12it [00:00, 20.12it/s][A
+All_batch: 15it [00:00, 22.70it/s][A
+All_batch: 19it [00:01, 25.25it/s][A
+All_batch: 22it [00:01, 26.44it/s][A
+All_batch: 26it [00:01, 27.83it/s][A
+All_batch: 30it [00:01, 28.67it/s][A
+All_batch: 34it [00:01, 29.42it/s][A
+All_batch: 38it [00:01, 29.91it/s][A
+All_batch: 42it [00:01, 30.24it/s][A
+All_batch: 46it [00:01, 30.39it/s][A
+All_batch: 50it [00:02, 30.64it/s][A
+All_batch: 54it [00:02, 30.66it/s][A
+All_batch: 58it [00:02, 30.71it/s][A
+All_batch: 62it [00:02, 30.53it/s][A
+All_batch: 66it [00:02, 30.24it/s][A
+All_batch: 70it [00:02, 30.18it/s][A
+All_batch: 74it [00:02, 30.24it/s][A
+All_batch: 78it [00:02, 30.19it/s][A
+All_batch: 82it [00:03, 29.98it/s][A
+All_batch: 86it [00:03, 30.14it/s][A
+All_batch: 90it [00:03, 30.12it/s][A
+All_batch: 94it [00:03, 29.87it/s][A
+All_batch: 98it [00:03, 30.08it/s][A
+All_batch: 102it [00:03, 30.02it/s][A
+All_batch: 106it [00:03, 29.97it/s][A
+All_batch: 110it [00:04, 30.07it/s][A
+All_batch: 114it [00:04, 30.15it/s][A
+All_batch: 118it [00:04, 30.33it/s][A
+All_batch: 122it [00:04, 30.67it/s][A
+All_batch: 126it [00:04, 30.93it/s][A
+All_batch: 130it [00:04, 31.03it/s][A
+All_batch: 134it [00:04, 31.13it/s][AAll_batch: 134it [00:04, 27.96it/s]prepare training data cost time:0.3928
+[1;34mEpoch:54, Train_AUC:0.9969, Loss_rank:0.0797, Loss_reg:0.0042, Loss_ib:0.6843, Loss_sum:0.7681
+[0m[1;32mCurrent Evaluation: Epoch:54,  topk:20, recall:0.0762, ndcg:0.0449
+[0m[1;31mBest Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0mtraintime:4.7923, valtime:2.8805
+
+
+[1;35mTrain:[0m:   6%|[33m▌         [0m| 55/1000 [07:05<2:01:41,  7.73s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.35it/s][A
+All_batch: 5it [00:00, 10.86it/s][A
+All_batch: 8it [00:00, 15.59it/s][A
+All_batch: 11it [00:00, 19.31it/s][A
+All_batch: 15it [00:00, 22.92it/s][A
+All_batch: 19it [00:01, 25.37it/s][A
+All_batch: 23it [00:01, 27.13it/s][A
+All_batch: 27it [00:01, 28.50it/s][A
+All_batch: 31it [00:01, 29.62it/s][A
+All_batch: 35it [00:01, 30.66it/s][A
+All_batch: 39it [00:01, 31.40it/s][A
+All_batch: 43it [00:01, 31.87it/s][A
+All_batch: 47it [00:01, 31.67it/s][A
+All_batch: 51it [00:02, 31.53it/s][A
+All_batch: 55it [00:02, 31.41it/s][A
+All_batch: 59it [00:02, 31.59it/s][A
+All_batch: 63it [00:02, 31.94it/s][A
+All_batch: 67it [00:02, 32.28it/s][A
+All_batch: 71it [00:02, 32.57it/s][A
+All_batch: 75it [00:02, 32.74it/s][A
+All_batch: 79it [00:02, 32.72it/s][A
+All_batch: 83it [00:03, 32.88it/s][A
+All_batch: 87it [00:03, 32.92it/s][A
+All_batch: 91it [00:03, 32.93it/s][A
+All_batch: 95it [00:03, 32.93it/s][A
+All_batch: 99it [00:03, 32.95it/s][A
+All_batch: 103it [00:03, 32.98it/s][A
+All_batch: 107it [00:03, 33.04it/s][A
+All_batch: 111it [00:03, 32.91it/s][A
+All_batch: 115it [00:03, 32.90it/s][A
+All_batch: 119it [00:04, 32.98it/s][A
+All_batch: 123it [00:04, 33.05it/s][A
+All_batch: 127it [00:04, 33.12it/s][A
+All_batch: 131it [00:04, 33.11it/s][AAll_batch: 134it [00:04, 29.48it/s]prepare training data cost time:0.3902
+[1;34mEpoch:55, Train_AUC:0.9969, Loss_rank:0.0756, Loss_reg:0.0043, Loss_ib:0.6865, Loss_sum:0.7664
+[0m[1;32mCurrent Evaluation: Epoch:55,  topk:20, recall:0.0762, ndcg:0.0450
+[0m[1;31mBest Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0mtraintime:4.5464, valtime:3.0319
+
+
+[1;35mTrain:[0m:   6%|[33m▌         [0m| 56/1000 [07:12<2:00:52,  7.68s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.43it/s][A
+All_batch: 4it [00:00,  9.50it/s][A
+All_batch: 8it [00:00, 16.25it/s][A
+All_batch: 12it [00:00, 20.76it/s][A
+All_batch: 16it [00:00, 24.01it/s][A
+All_batch: 20it [00:01, 26.53it/s][A
+All_batch: 24it [00:01, 28.39it/s][A
+All_batch: 28it [00:01, 29.71it/s][A
+All_batch: 32it [00:01, 30.73it/s][A
+All_batch: 36it [00:01, 31.44it/s][A
+All_batch: 40it [00:01, 31.94it/s][A
+All_batch: 44it [00:01, 32.32it/s][A
+All_batch: 48it [00:01, 32.57it/s][A
+All_batch: 52it [00:01, 32.61it/s][A
+All_batch: 56it [00:02, 32.70it/s][A
+All_batch: 60it [00:02, 32.69it/s][A
+All_batch: 64it [00:02, 32.73it/s][A
+All_batch: 68it [00:02, 32.77it/s][A
+All_batch: 72it [00:02, 32.79it/s][A
+All_batch: 76it [00:02, 32.83it/s][A
+All_batch: 80it [00:02, 32.67it/s][A
+All_batch: 84it [00:02, 32.70it/s][A
+All_batch: 88it [00:03, 32.75it/s][A
+All_batch: 92it [00:03, 32.76it/s][A
+All_batch: 96it [00:03, 32.82it/s][A
+All_batch: 100it [00:03, 32.62it/s][A
+All_batch: 104it [00:03, 32.43it/s][A
+All_batch: 108it [00:03, 32.38it/s][A
+All_batch: 112it [00:03, 32.59it/s][A
+All_batch: 116it [00:03, 32.62it/s][A
+All_batch: 120it [00:04, 32.46it/s][A
+All_batch: 124it [00:04, 32.52it/s][A
+All_batch: 128it [00:04, 32.67it/s][A
+All_batch: 132it [00:04, 32.67it/s][AAll_batch: 134it [00:04, 29.73it/s]prepare training data cost time:0.3769
+[1;34mEpoch:56, Train_AUC:0.9972, Loss_rank:0.0713, Loss_reg:0.0044, Loss_ib:0.6830, Loss_sum:0.7587
+[0m[1;32mCurrent Evaluation: Epoch:56,  topk:20, recall:0.0760, ndcg:0.0451
+[0m[1;31mBest Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0mtraintime:4.5071, valtime:2.8253
+
+
+[1;35mTrain:[0m:   6%|[33m▌         [0m| 57/1000 [07:20<1:59:05,  7.58s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.54it/s][A
+All_batch: 5it [00:00, 11.70it/s][A
+All_batch: 9it [00:00, 17.79it/s][A
+All_batch: 13it [00:00, 21.80it/s][A
+All_batch: 17it [00:00, 25.10it/s][A
+All_batch: 21it [00:01, 27.15it/s][A
+All_batch: 25it [00:01, 28.43it/s][A
+All_batch: 29it [00:01, 29.28it/s][A
+All_batch: 33it [00:01, 30.33it/s][A
+All_batch: 37it [00:01, 31.10it/s][A
+All_batch: 41it [00:01, 31.69it/s][A
+All_batch: 45it [00:01, 32.11it/s][A
+All_batch: 49it [00:01, 32.28it/s][A
+All_batch: 53it [00:02, 32.36it/s][A
+All_batch: 57it [00:02, 32.47it/s][A
+All_batch: 61it [00:02, 32.29it/s][A
+All_batch: 65it [00:02, 32.01it/s][A
+All_batch: 69it [00:02, 31.48it/s][A
+All_batch: 73it [00:02, 31.35it/s][A
+All_batch: 77it [00:02, 31.32it/s][A
+All_batch: 81it [00:02, 31.29it/s][A
+All_batch: 85it [00:03, 31.51it/s][A
+All_batch: 89it [00:03, 31.63it/s][A
+All_batch: 93it [00:03, 32.11it/s][A
+All_batch: 97it [00:03, 32.31it/s][A
+All_batch: 101it [00:03, 32.42it/s][A
+All_batch: 105it [00:03, 32.39it/s][A
+All_batch: 109it [00:03, 32.38it/s][A
+All_batch: 113it [00:03, 32.41it/s][A
+All_batch: 117it [00:04, 32.11it/s][A
+All_batch: 121it [00:04, 32.27it/s][A
+All_batch: 125it [00:04, 32.56it/s][A
+All_batch: 129it [00:04, 32.72it/s][A
+All_batch: 133it [00:04, 32.79it/s][AAll_batch: 134it [00:04, 29.57it/s]prepare training data cost time:0.3593
+[1;34mEpoch:57, Train_AUC:0.9972, Loss_rank:0.0675, Loss_reg:0.0045, Loss_ib:0.6806, Loss_sum:0.7527
+[0m[1;32mCurrent Evaluation: Epoch:57,  topk:20, recall:0.0756, ndcg:0.0447
+[0m[1;31mBest Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0mtraintime:4.5311, valtime:2.9860
+
+
+[1;35mTrain:[0m:   6%|[33m▌         [0m| 58/1000 [07:27<1:58:40,  7.56s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.39it/s][A
+All_batch: 5it [00:00, 11.05it/s][A
+All_batch: 9it [00:00, 17.06it/s][A
+All_batch: 13it [00:00, 21.40it/s][A
+All_batch: 17it [00:00, 24.45it/s][A
+All_batch: 21it [00:01, 26.51it/s][A
+All_batch: 25it [00:01, 27.88it/s][A
+All_batch: 29it [00:01, 28.86it/s][A
+All_batch: 33it [00:01, 29.32it/s][A
+All_batch: 37it [00:01, 29.89it/s][A
+All_batch: 41it [00:01, 30.41it/s][A
+All_batch: 45it [00:01, 31.13it/s][A
+All_batch: 49it [00:01, 31.68it/s][A
+All_batch: 53it [00:02, 31.66it/s][A
+All_batch: 57it [00:02, 31.55it/s][A
+All_batch: 61it [00:02, 31.46it/s][A
+All_batch: 65it [00:02, 31.32it/s][A
+All_batch: 69it [00:02, 31.34it/s][A
+All_batch: 73it [00:02, 31.66it/s][A
+All_batch: 77it [00:02, 32.09it/s][A
+All_batch: 81it [00:02, 32.37it/s][A
+All_batch: 85it [00:03, 32.09it/s][A
+All_batch: 89it [00:03, 32.11it/s][A
+All_batch: 93it [00:03, 32.38it/s][A
+All_batch: 97it [00:03, 32.50it/s][A
+All_batch: 101it [00:03, 32.37it/s][A
+All_batch: 105it [00:03, 32.43it/s][A
+All_batch: 109it [00:03, 32.65it/s][A
+All_batch: 113it [00:03, 32.74it/s][A
+All_batch: 117it [00:04, 32.85it/s][A
+All_batch: 121it [00:04, 32.95it/s][A
+All_batch: 125it [00:04, 32.99it/s][A
+All_batch: 129it [00:04, 32.70it/s][A
+All_batch: 133it [00:04, 32.63it/s][AAll_batch: 134it [00:04, 29.28it/s]prepare training data cost time:0.3834
+[1;34mEpoch:58, Train_AUC:0.9972, Loss_rank:0.0643, Loss_reg:0.0047, Loss_ib:0.6896, Loss_sum:0.7585
+[0m[1;32mCurrent Evaluation: Epoch:58,  topk:20, recall:0.0758, ndcg:0.0449
+[0m[1;31mBest Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0mtraintime:4.5761, valtime:2.8366
+
+
+[1;35mTrain:[0m:   6%|[33m▌         [0m| 59/1000 [07:35<1:57:51,  7.52s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.38it/s][A
+All_batch: 5it [00:00, 11.31it/s][A
+All_batch: 9it [00:00, 17.30it/s][A
+All_batch: 12it [00:00, 20.48it/s][A
+All_batch: 16it [00:00, 23.64it/s][A
+All_batch: 20it [00:01, 25.85it/s][A
+All_batch: 24it [00:01, 27.50it/s][A
+All_batch: 28it [00:01, 28.99it/s][A
+All_batch: 32it [00:01, 30.07it/s][A
+All_batch: 36it [00:01, 30.89it/s][A
+All_batch: 40it [00:01, 31.60it/s][A
+All_batch: 44it [00:01, 32.02it/s][A
+All_batch: 48it [00:01, 32.14it/s][A
+All_batch: 52it [00:02, 31.72it/s][A
+All_batch: 56it [00:02, 31.36it/s][A
+All_batch: 60it [00:02, 31.24it/s][A
+All_batch: 64it [00:02, 31.71it/s][A
+All_batch: 68it [00:02, 31.86it/s][A
+All_batch: 72it [00:02, 32.15it/s][A
+All_batch: 76it [00:02, 32.33it/s][A
+All_batch: 80it [00:02, 32.41it/s][A
+All_batch: 84it [00:03, 32.67it/s][A
+All_batch: 88it [00:03, 32.80it/s][A
+All_batch: 92it [00:03, 32.42it/s][A
+All_batch: 96it [00:03, 32.42it/s][A
+All_batch: 100it [00:03, 32.31it/s][A
+All_batch: 104it [00:03, 32.05it/s][A
+All_batch: 108it [00:03, 31.91it/s][A
+All_batch: 112it [00:03, 32.14it/s][A
+All_batch: 116it [00:04, 32.04it/s][A
+All_batch: 120it [00:04, 32.29it/s][A
+All_batch: 124it [00:04, 32.58it/s][A
+All_batch: 128it [00:04, 32.68it/s][A
+All_batch: 132it [00:04, 32.84it/s][AAll_batch: 134it [00:04, 29.39it/s]prepare training data cost time:0.3855
+[1;34mEpoch:59, Train_AUC:0.9975, Loss_rank:0.0608, Loss_reg:0.0048, Loss_ib:0.6823, Loss_sum:0.7479
+[0m[1;32mCurrent Evaluation: Epoch:59,  topk:20, recall:0.0752, ndcg:0.0447
+[0m[1;31mBest Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0mtraintime:4.5595, valtime:2.8274
+
+
+[1;35mTrain:[0m:   6%|[33m▌         [0m| 60/1000 [07:42<1:57:08,  7.48s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.40it/s][A
+All_batch: 5it [00:00, 11.32it/s][A
+All_batch: 9it [00:00, 17.48it/s][A
+All_batch: 13it [00:00, 21.91it/s][A
+All_batch: 17it [00:00, 25.15it/s][A
+All_batch: 21it [00:01, 27.45it/s][A
+All_batch: 25it [00:01, 29.06it/s][A
+All_batch: 29it [00:01, 30.02it/s][A
+All_batch: 33it [00:01, 30.37it/s][A
+All_batch: 37it [00:01, 30.64it/s][A
+All_batch: 41it [00:01, 30.72it/s][A
+All_batch: 45it [00:01, 30.96it/s][A
+All_batch: 49it [00:01, 31.19it/s][A
+All_batch: 53it [00:02, 31.35it/s][A
+All_batch: 57it [00:02, 31.51it/s][A
+All_batch: 61it [00:02, 31.93it/s][A
+All_batch: 65it [00:02, 32.16it/s][A
+All_batch: 69it [00:02, 31.92it/s][A
+All_batch: 73it [00:02, 31.70it/s][A
+All_batch: 77it [00:02, 31.53it/s][A
+All_batch: 81it [00:02, 31.21it/s][A
+All_batch: 85it [00:03, 30.91it/s][A
+All_batch: 89it [00:03, 31.11it/s][A
+All_batch: 93it [00:03, 31.29it/s][A
+All_batch: 97it [00:03, 31.57it/s][A
+All_batch: 101it [00:03, 31.79it/s][A
+All_batch: 105it [00:03, 31.87it/s][A
+All_batch: 109it [00:03, 31.83it/s][A
+All_batch: 113it [00:03, 31.89it/s][A
+All_batch: 117it [00:04, 32.05it/s][A
+All_batch: 121it [00:04, 32.21it/s][A
+All_batch: 125it [00:04, 32.28it/s][A
+All_batch: 129it [00:04, 32.33it/s][A
+All_batch: 133it [00:04, 32.49it/s][AAll_batch: 134it [00:04, 29.24it/s]prepare training data cost time:0.3844
+[1;34mEpoch:60, Train_AUC:0.9975, Loss_rank:0.0578, Loss_reg:0.0049, Loss_ib:0.6799, Loss_sum:0.7426
+[0m[1;32mCurrent Evaluation: Epoch:60,  topk:20, recall:0.0753, ndcg:0.0446
+[0m[1;31mBest Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0mtraintime:4.5828, valtime:3.0024
+
+
+[1;35mTrain:[0m:   6%|[33m▌         [0m| 61/1000 [07:49<1:57:31,  7.51s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.44it/s][A
+All_batch: 5it [00:00, 11.42it/s][A
+All_batch: 9it [00:00, 17.68it/s][A
+All_batch: 13it [00:00, 22.07it/s][A
+All_batch: 17it [00:00, 25.16it/s][A
+All_batch: 21it [00:01, 27.34it/s][A
+All_batch: 25it [00:01, 28.78it/s][A
+All_batch: 29it [00:01, 29.78it/s][A
+All_batch: 33it [00:01, 30.08it/s][A
+All_batch: 37it [00:01, 30.21it/s][A
+All_batch: 41it [00:01, 30.31it/s][A
+All_batch: 45it [00:01, 30.44it/s][A
+All_batch: 49it [00:01, 31.01it/s][A
+All_batch: 53it [00:02, 31.34it/s][A
+All_batch: 57it [00:02, 31.59it/s][A
+All_batch: 61it [00:02, 31.81it/s][A
+All_batch: 65it [00:02, 31.91it/s][A
+All_batch: 69it [00:02, 31.38it/s][A
+All_batch: 73it [00:02, 29.34it/s][A
+All_batch: 76it [00:02, 29.34it/s][A
+All_batch: 80it [00:02, 30.12it/s][A
+All_batch: 84it [00:03, 30.68it/s][A
+All_batch: 88it [00:03, 31.07it/s][A
+All_batch: 92it [00:03, 31.28it/s][A
+All_batch: 96it [00:03, 31.27it/s][A
+All_batch: 100it [00:03, 30.96it/s][A
+All_batch: 104it [00:03, 30.88it/s][A
+All_batch: 108it [00:03, 30.98it/s][A
+All_batch: 112it [00:03, 31.15it/s][A
+All_batch: 116it [00:04, 31.64it/s][A
+All_batch: 120it [00:04, 32.05it/s][A
+All_batch: 124it [00:04, 31.78it/s][A
+All_batch: 128it [00:04, 31.38it/s][A
+All_batch: 132it [00:04, 31.36it/s][AAll_batch: 134it [00:04, 28.79it/s]prepare training data cost time:0.3760
+[1;34mEpoch:61, Train_AUC:0.9977, Loss_rank:0.0547, Loss_reg:0.0050, Loss_ib:0.6823, Loss_sum:0.7420
+[0m[1;32mCurrent Evaluation: Epoch:61,  topk:20, recall:0.0754, ndcg:0.0446
+[0m[1;31mBest Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0mtraintime:4.6542, valtime:2.8805
+
+
+[1;35mTrain:[0m:   6%|[33m▌         [0m| 62/1000 [07:57<1:57:30,  7.52s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.35it/s][A
+All_batch: 5it [00:00, 10.95it/s][A
+All_batch: 9it [00:00, 16.90it/s][A
+All_batch: 13it [00:00, 21.19it/s][A
+All_batch: 17it [00:00, 24.03it/s][A
+All_batch: 21it [00:01, 26.14it/s][A
+All_batch: 25it [00:01, 27.66it/s][A
+All_batch: 29it [00:01, 28.68it/s][A
+All_batch: 33it [00:01, 29.29it/s][A
+All_batch: 37it [00:01, 29.85it/s][A
+All_batch: 41it [00:01, 30.12it/s][A
+All_batch: 45it [00:01, 30.36it/s][A
+All_batch: 49it [00:01, 30.19it/s][A
+All_batch: 53it [00:02, 30.14it/s][A
+All_batch: 57it [00:02, 30.05it/s][A
+All_batch: 61it [00:02, 30.19it/s][A
+All_batch: 65it [00:02, 30.02it/s][A
+All_batch: 69it [00:02, 30.09it/s][A
+All_batch: 73it [00:02, 30.08it/s][A
+All_batch: 77it [00:02, 30.03it/s][A
+All_batch: 81it [00:03, 29.97it/s][A
+All_batch: 84it [00:03, 29.92it/s][A
+All_batch: 88it [00:03, 29.96it/s][A
+All_batch: 92it [00:03, 30.10it/s][A
+All_batch: 96it [00:03, 30.07it/s][A
+All_batch: 100it [00:03, 29.99it/s][A
+All_batch: 104it [00:03, 30.19it/s][A
+All_batch: 108it [00:03, 30.41it/s][A
+All_batch: 112it [00:04, 30.67it/s][A
+All_batch: 116it [00:04, 30.82it/s][A
+All_batch: 120it [00:04, 30.76it/s][A
+All_batch: 124it [00:04, 30.95it/s][A
+All_batch: 128it [00:04, 30.93it/s][A
+All_batch: 132it [00:04, 30.77it/s][AAll_batch: 134it [00:04, 28.00it/s]prepare training data cost time:0.3913
+[1;34mEpoch:62, Train_AUC:0.9976, Loss_rank:0.0525, Loss_reg:0.0051, Loss_ib:0.6752, Loss_sum:0.7328
+[0m[1;32mCurrent Evaluation: Epoch:62,  topk:20, recall:0.0740, ndcg:0.0441
+[0m[1;31mBest Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0mtraintime:4.7854, valtime:2.8351
+
+
+[1;35mTrain:[0m:   6%|[33m▋         [0m| 63/1000 [08:05<1:57:52,  7.55s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.43it/s][A
+All_batch: 5it [00:00, 11.14it/s][A
+All_batch: 8it [00:00, 15.86it/s][A
+All_batch: 12it [00:00, 20.54it/s][A
+All_batch: 15it [00:00, 22.98it/s][A
+All_batch: 18it [00:00, 24.71it/s][A
+All_batch: 22it [00:01, 26.50it/s][A
+All_batch: 26it [00:01, 27.81it/s][A
+All_batch: 30it [00:01, 28.54it/s][A
+All_batch: 33it [00:01, 28.88it/s][A
+All_batch: 36it [00:01, 28.57it/s][A
+All_batch: 39it [00:01, 28.64it/s][A
+All_batch: 43it [00:01, 29.31it/s][A
+All_batch: 47it [00:01, 29.64it/s][A
+All_batch: 51it [00:02, 29.98it/s][A
+All_batch: 55it [00:02, 30.48it/s][A
+All_batch: 59it [00:02, 30.59it/s][A
+All_batch: 63it [00:02, 30.72it/s][A
+All_batch: 67it [00:02, 30.89it/s][A
+All_batch: 71it [00:02, 30.73it/s][A
+All_batch: 75it [00:02, 30.73it/s][A
+All_batch: 79it [00:02, 30.82it/s][A
+All_batch: 83it [00:03, 30.82it/s][A
+All_batch: 87it [00:03, 30.81it/s][A
+All_batch: 91it [00:03, 30.68it/s][A
+All_batch: 95it [00:03, 30.46it/s][A
+All_batch: 99it [00:03, 30.34it/s][A
+All_batch: 103it [00:03, 30.13it/s][A
+All_batch: 107it [00:03, 30.18it/s][A
+All_batch: 111it [00:04, 30.04it/s][A
+All_batch: 115it [00:04, 30.01it/s][A
+All_batch: 119it [00:04, 30.09it/s][A
+All_batch: 123it [00:04, 30.08it/s][A
+All_batch: 127it [00:04, 29.96it/s][A
+All_batch: 131it [00:04, 30.08it/s][AAll_batch: 134it [00:04, 27.85it/s]prepare training data cost time:0.3761
+[1;34mEpoch:63, Train_AUC:0.9975, Loss_rank:0.0503, Loss_reg:0.0052, Loss_ib:0.6797, Loss_sum:0.7352
+[0m[1;32mCurrent Evaluation: Epoch:63,  topk:20, recall:0.0742, ndcg:0.0442
+[0m[1;31mBest Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0mtraintime:4.8117, valtime:2.8933
+
+
+[1;35mTrain:[0m:   6%|[33m▋         [0m| 64/1000 [08:12<1:58:29,  7.60s/it]
+All_batch: 0it [00:00, ?it/s][A
+All_batch: 1it [00:00,  2.35it/s][A
+All_batch: 5it [00:00, 10.90it/s][A
+All_batch: 9it [00:00, 16.85it/s][A
+All_batch: 13it [00:00, 20.94it/s][A
+All_batch: 17it [00:00, 23.86it/s][A
+All_batch: 21it [00:01, 25.95it/s][A
+All_batch: 25it [00:01, 27.43it/s][A
+All_batch: 29it [00:01, 28.34it/s][A
+All_batch: 33it [00:01, 28.84it/s][A
+All_batch: 36it [00:01, 29.12it/s][A
+All_batch: 40it [00:01, 29.56it/s][A
+All_batch: 44it [00:01, 29.56it/s][A
+All_batch: 47it [00:01, 29.60it/s][A
+All_batch: 51it [00:02, 29.78it/s][A
+All_batch: 55it [00:02, 29.81it/s][A
+All_batch: 59it [00:02, 29.93it/s][A
+All_batch: 63it [00:02, 29.93it/s][A
+All_batch: 67it [00:02, 29.96it/s][A
+All_batch: 71it [00:02, 30.00it/s][A
+All_batch: 75it [00:02, 30.15it/s][A
+All_batch: 79it [00:03, 30.14it/s][A
+All_batch: 83it [00:03, 30.08it/s][A
+All_batch: 87it [00:03, 29.91it/s][A
+All_batch: 90it [00:03, 29.88it/s][A
+All_batch: 94it [00:03, 30.09it/s][A
+All_batch: 98it [00:03, 30.16it/s][A
+All_batch: 102it [00:03, 30.22it/s][A
+All_batch: 106it [00:03, 30.40it/s][A
+All_batch: 110it [00:04, 30.60it/s][A
+All_batch: 114it [00:04, 30.62it/s][A
+All_batch: 118it [00:04, 30.58it/s][A
+All_batch: 122it [00:04, 30.26it/s][A
+All_batch: 126it [00:04, 30.23it/s][A
+All_batch: 130it [00:04, 30.14it/s][A
+All_batch: 134it [00:04, 29.86it/s][AAll_batch: 134it [00:04, 27.75it/s]prepare training data cost time:0.3920
+[1;34mEpoch:64, Train_AUC:0.9978, Loss_rank:0.0478, Loss_reg:0.0053, Loss_ib:0.6761, Loss_sum:0.7292
+[0m[1;32mCurrent Evaluation: Epoch:64,  topk:20, recall:0.0737, ndcg:0.0439
+[0m[1;31mBest Evaluation: Epoch:53,  topk:20, recall:0.0768, ndcg:0.0452
+[0mtraintime:4.8294, valtime:2.9265
+
+early stop: 64
+[1;32mmax_recall@20=:0.0768, max_ndcg@20=:0.0452
+[0m
+[1;35mTrain:[0m:   6%|[33m▋         [0m| 64/1000 [08:20<2:02:01,  7.82s/it][1;36mTopk:  5, HR:0.0393, Recall:0.0343, NDCG:0.0329
+[0m[1;36mTopk: 10, HR:0.0537, Recall:0.0517, NDCG:0.0379
+[0m[1;36mTopk: 20, HR:0.0769, Recall:0.0762, NDCG:0.0451
+[0m[1;36mTopk: 30, HR:0.0965, Recall:0.0962, NDCG:0.0505
+[0m[1;36mTopk: 40, HR:0.1121, Recall:0.1120, NDCG:0.0546
+[0m[1;36mTopk: 50, HR:0.1242, Recall:0.1241, NDCG:0.0575
+[0m[1;36mTopk: 60, HR:0.1360, Recall:0.1360, NDCG:0.0603
+[0m[1;36mTopk: 70, HR:0.1470, Recall:0.1470, NDCG:0.0627
+[0m[1;36mTopk: 80, HR:0.1557, Recall:0.1557, NDCG:0.0646
+[0m[1;36mTopk: 90, HR:0.1637, Recall:0.1637, NDCG:0.0663
+[0m[1;36mTopk:100, HR:0.1714, Recall:0.1714, NDCG:0.0679
+[0m
+END

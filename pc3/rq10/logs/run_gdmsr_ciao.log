@@ -1,0 +1,11 @@
+Using backend: pytorch
+Traceback (most recent call last):
+  File "gdmsr_patch.py", line 58, in <module>
+    _spec.loader.exec_module(_mod)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/aura1/survey/rq10/repos/gdmsr/main.py", line 339, in <module>
+    torch.cuda.set_device(args.gpu_id)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/torch/cuda/__init__.py", line 263, in set_device
+    torch._C._cuda_setDevice(device)
+RuntimeError: CUDA error: invalid device ordinal

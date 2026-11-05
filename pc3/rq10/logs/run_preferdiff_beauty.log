@@ -1,0 +1,16 @@
+/home/aura1/miniconda3/envs/r10-preferdiff/lib/python3.10/site-packages/accelerate/accelerator.py:453: UserWarning: `log_with=wandb` was passed but no supported trackers are currently installed.
+  warnings.warn(f"`log_with={log_with}` was passed but no supported trackers are currently installed.")
+Traceback (most recent call last):
+  File "/home/aura1/survey/rq10/repos/preferdiff/main.py", line 25, in <module>
+    runner = Runner(
+  File "/home/aura1/survey/rq10/repos/preferdiff/runner.py", line 46, in __init__
+    self.model = get_model(model_name)(self.config)
+  File "/home/aura1/survey/rq10/repos/preferdiff/models/PreferDiff/_model.py", line 11, in __init__
+    super().__init__(config)
+  File "/home/aura1/survey/rq10/repos/preferdiff/models/SASRec/_model.py", line 14, in __init__
+    self.load_item_embeddings()
+  File "/home/aura1/survey/rq10/repos/preferdiff/models/PreferDiff/_model.py", line 68, in load_item_embeddings
+    self.item_embeddings = diagonalize_and_scale(torch.cat([
+  File "/home/aura1/survey/rq10/repos/preferdiff/models/PreferDiff/_model.py", line 71, in <listcomp>
+    open(
+FileNotFoundError: [Errno 2] No such file or directory: './data/CDs_and_Vinyl/openai_item_embedding.pkl'

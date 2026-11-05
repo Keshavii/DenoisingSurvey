@@ -1,0 +1,42 @@
+user, item num
+944 1611
+data loaded! user_num:944, item_num:1611 train_data_len:79619 test_user_num:707
+seed: 2020
+method: DeCA
+model: NeuMF-end, dataset: ml-100k
+h_model: MF
+alpha: 1
+C_1 used in DP: 1000, C_2 used in DN: 10
+epochs: 100, early_stop: False, early_stop_rounds: 2
+regularization lambda: 0.01
+negative sampling rate: 1
+epoch: 5, iter: 200, loss:11.455252647399902
+epoch: 10, iter: 400, loss:10.211603164672852
+Eval: epoch: 12, iter: 500, Eval loss:8.88491439819336
+epoch: 15, iter: 600, loss:10.0796480178833
+epoch: 20, iter: 800, loss:10.043365478515625
+epoch: 25, iter: 1000, loss:10.027762413024902
+Eval: epoch: 25, iter: 1000, Eval loss:11.357675552368164
+epoch: 30, iter: 1200, loss:10.019020080566406
+epoch: 35, iter: 1400, loss:10.014059066772461
+Eval: epoch: 38, iter: 1500, Eval loss:13.053945541381836
+epoch: 41, iter: 1600, loss:10.010972023010254
+epoch: 46, iter: 1800, loss:10.008950233459473
+epoch: 51, iter: 2000, loss:10.00763988494873
+Eval: epoch: 51, iter: 2000, Eval loss:14.363962173461914
+epoch: 56, iter: 2200, loss:10.00659465789795
+epoch: 61, iter: 2400, loss:10.005864143371582
+Eval: epoch: 64, iter: 2500, Eval loss:15.2103853225708
+epoch: 66, iter: 2600, loss:10.005329132080078
+epoch: 71, iter: 2800, loss:10.004900932312012
+epoch: 76, iter: 3000, loss:10.00455093383789
+Eval: epoch: 76, iter: 3000, Eval loss:15.93272590637207
+epoch: 82, iter: 3200, loss:10.004273414611816
+epoch: 87, iter: 3400, loss:10.004035949707031
+Eval: epoch: 89, iter: 3500, Eval loss:16.686986923217773
+epoch: 92, iter: 3600, loss:10.0038423538208
+epoch: 97, iter: 3800, loss:10.003673553466797
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0215-0.0322-0.0598-0.0956
+NDCG 0.0349-0.0370-0.0466-0.0586
