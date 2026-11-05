@@ -1,0 +1,48 @@
+user, item num
+1157633 9560
+data loaded! user_num:1157633, item_num:9560 train_data_len:1034363 test_user_num:74888
+seed: 2021
+method: None
+model: NeuMF-end, dataset: electronics
+epochs: 10, early_stop: False, early_stop_rounds: 2
+regularization lambda: 100
+negative sampling rate: 1
+epoch: 0, iter: 200, loss:0.8922056555747986
+epoch: 0, iter: 400, loss:0.9189392328262329
+Eval: epoch: 0, iter: 500, Eval loss:53.58985900878906
+epoch: 1, iter: 600, loss:0.946908712387085
+epoch: 1, iter: 800, loss:0.8984054327011108
+epoch: 1, iter: 1000, loss:0.9014120101928711
+Eval: epoch: 1, iter: 1000, Eval loss:53.320594787597656
+epoch: 2, iter: 1200, loss:0.9602785706520081
+epoch: 2, iter: 1400, loss:1.0977199077606201
+Eval: epoch: 2, iter: 1500, Eval loss:59.57267761230469
+epoch: 3, iter: 1600, loss:1.1900427341461182
+epoch: 3, iter: 1800, loss:1.1684017181396484
+epoch: 3, iter: 2000, loss:1.171986699104309
+Eval: epoch: 3, iter: 2000, Eval loss:59.20289993286133
+epoch: 4, iter: 2200, loss:0.997818112373352
+epoch: 4, iter: 2400, loss:1.0401326417922974
+Eval: epoch: 4, iter: 2500, Eval loss:64.88141632080078
+epoch: 5, iter: 2600, loss:0.9594672918319702
+epoch: 5, iter: 2800, loss:0.9927952885627747
+epoch: 5, iter: 3000, loss:1.0577983856201172
+Eval: epoch: 5, iter: 3000, Eval loss:71.1015396118164
+epoch: 6, iter: 3200, loss:0.9534565210342407
+epoch: 6, iter: 3400, loss:1.004927158355713
+Eval: epoch: 6, iter: 3500, Eval loss:95.72344207763672
+epoch: 7, iter: 3600, loss:0.9710185527801514
+epoch: 7, iter: 3800, loss:0.9789425134658813
+epoch: 7, iter: 4000, loss:1.0045995712280273
+Eval: epoch: 7, iter: 4000, Eval loss:103.24002075195312
+epoch: 8, iter: 4200, loss:0.9468036890029907
+epoch: 8, iter: 4400, loss:1.0128117799758911
+Eval: epoch: 8, iter: 4500, Eval loss:119.48651123046875
+epoch: 9, iter: 4600, loss:0.9762619733810425
+epoch: 9, iter: 4800, loss:0.938649594783783
+epoch: 9, iter: 5000, loss:0.9897661209106445
+Eval: epoch: 9, iter: 5000, Eval loss:127.46681213378906
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0532-0.0733-0.1063-0.1865
+NDCG 0.0405-0.0469-0.0552-0.0710

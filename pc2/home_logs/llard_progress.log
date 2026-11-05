@@ -1,0 +1,26 @@
+2026-10-29 02:54:06 start --stage users --build N0 --train_file train.tsv
+2026-10-29 03:59:34 end   --stage users --build N0 --train_file train.tsv
+2026-10-29 03:59:34 start --stage knowledge --build N0 --train_file train.tsv
+2026-10-29 04:20:30 end   --stage knowledge --build N0 --train_file train.tsv
+2026-10-29 04:20:30 start --stage embed --build N0
+2026-10-29 04:21:04 end   --stage embed --build N0
+2026-10-29 04:21:04 start --stage users --build N2_20_s1 --train_file train_N2_20_s1.tsv
+2026-10-29 05:26:30 end   --stage users --build N2_20_s1 --train_file train_N2_20_s1.tsv
+2026-10-29 05:26:30 start --stage knowledge --build N2_20_s1 --train_file train_N2_20_s1.tsv
+2026-10-29 05:47:34 end   --stage knowledge --build N2_20_s1 --train_file train_N2_20_s1.tsv
+2026-10-29 05:47:34 start --stage embed --build N2_20_s1
+2026-10-29 05:47:46 end   --stage embed --build N2_20_s1
+2026-10-29 05:47:46 start --stage users --build N2_20_s2 --train_file train_N2_20_s2.tsv
+2026-10-29 06:53:36 end   --stage users --build N2_20_s2 --train_file train_N2_20_s2.tsv
+2026-10-29 06:53:36 start --stage knowledge --build N2_20_s2 --train_file train_N2_20_s2.tsv
+2026-10-29 07:14:34 end   --stage knowledge --build N2_20_s2 --train_file train_N2_20_s2.tsv
+2026-10-29 07:14:34 start --stage embed --build N2_20_s2
+2026-10-29 07:14:46 end   --stage embed --build N2_20_s2
+2026-10-29 07:14:46 start --stage users --build N2_20_s3 --train_file train_N2_20_s3.tsv
+2026-10-29 08:20:19 end   --stage users --build N2_20_s3 --train_file train_N2_20_s3.tsv
+2026-10-29 08:20:19 start --stage knowledge --build N2_20_s3 --train_file train_N2_20_s3.tsv
+2026-10-29 08:41:12 end   --stage knowledge --build N2_20_s3 --train_file train_N2_20_s3.tsv
+2026-10-29 08:41:12 start --stage embed --build N2_20_s3
+2026-10-29 08:41:24 end   --stage embed --build N2_20_s3
+2026-10-29 08:41:24 ALL DONE
+2026-11-03 02:29:35 ALL DONE

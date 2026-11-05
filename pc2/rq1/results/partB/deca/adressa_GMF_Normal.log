@@ -1,0 +1,23 @@
+user, item num
+212231 6596
+data loaded! user_num:212231, item_num:6596 train_data_len:419491 test_user_num:10380
+seed: 2020
+method: None
+model: GMF, dataset: adressa
+epochs: 10, early_stop: True, early_stop_rounds: 2
+regularization lambda: 0.01
+negative sampling rate: 1
+epoch: 0, iter: 200, loss:1.3646045923233032
+epoch: 1, iter: 400, loss:0.9884227514266968
+Eval: epoch: 2, iter: 500, Eval loss:26.746274948120117
+epoch: 2, iter: 600, loss:0.5308288931846619
+epoch: 3, iter: 800, loss:0.3144024610519409
+epoch: 4, iter: 1000, loss:0.22549887001514435
+Eval: epoch: 4, iter: 1000, Eval loss:30.230140686035156
+epoch: 5, iter: 1200, loss:0.21563021838665009
+epoch: 6, iter: 1400, loss:0.1592991203069687
+Eval: epoch: 7, iter: 1500, Eval loss:34.23720932006836
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0608-0.1016-0.1820-0.2112
+NDCG 0.0523-0.0702-0.1002-0.1089

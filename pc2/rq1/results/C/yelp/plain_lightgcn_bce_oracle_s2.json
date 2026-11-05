@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.04636861035118692,
+  "recall@20": 0.0763963580877827,
+  "recall@50": 0.14012911547973117,
+  "ndcg@10": 0.03404894355097489,
+  "ndcg@20": 0.04344315679814229,
+  "ndcg@50": 0.060535168390703636,
+  "n_eval_users": 45525,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 455,
+      "ndcg@20": 0.00796680411228105,
+      "recall@20": 0.017582417582417582
+    },
+    "warm(5-20)": {
+      "n_users": 24387,
+      "ndcg@20": 0.0353503301676376,
+      "recall@20": 0.07625374174765244
+    },
+    "established(>20)": {
+      "n_users": 20683,
+      "ndcg@20": 0.05376571655785728,
+      "recall@20": 0.0778583475291934
+    },
+    "user_q1": {
+      "n_users": 8484,
+      "ndcg@20": 0.026493899333619113,
+      "recall@20": 0.060997171145685994
+    },
+    "user_q2": {
+      "n_users": 9417,
+      "ndcg@20": 0.03774653962367956,
+      "recall@20": 0.08133340412728751
+    },
+    "user_q3": {
+      "n_users": 8231,
+      "ndcg@20": 0.04017608912667511,
+      "recall@20": 0.08234172784652677
+    },
+    "user_q4": {
+      "n_users": 10278,
+      "ndcg@20": 0.04668658543690277,
+      "recall@20": 0.08176062602507436
+    },
+    "user_q5": {
+      "n_users": 9115,
+      "ndcg@20": 0.06439738814379194,
+      "recall@20": 0.07421141624675417
+    },
+    "items_head": {
+      "n_truth": 123176,
+      "recall@20_micro": 0.09855816068065207
+    },
+    "items_mid": {
+      "n_truth": 26814,
+      "recall@20_micro": 0.00063399716565973
+    },
+    "items_tail": {
+      "n_truth": 12444,
+      "recall@20_micro": 8.036001285760205e-05
+    },
+    "coverage@20": 0.26512300508746256,
+    "gini@20": 0.9764981031391959
+  },
+  "part": "C",
+  "dataset": "yelp",
+  "method": "Oracle-BCE",
+  "backbone": "LightGCN",
+  "cond": "N0",
+  "seed": "2",
+  "train_file": "train_clean.tsv",
+  "data": "data/yelp",
+  "topk": "runs/yelp/plain_lightgcn_bce_oracle_s2/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-10-19 10:05:15"
+}

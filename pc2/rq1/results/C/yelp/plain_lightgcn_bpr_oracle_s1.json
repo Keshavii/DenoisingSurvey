@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.051134613083645086,
+  "recall@20": 0.08285882935218257,
+  "recall@50": 0.15156907433334582,
+  "ndcg@10": 0.037692853401114536,
+  "ndcg@20": 0.047518094715152996,
+  "ndcg@50": 0.06590369871492527,
+  "n_eval_users": 45525,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 455,
+      "ndcg@20": 0.013805178201101047,
+      "recall@20": 0.03736263736263736
+    },
+    "warm(5-20)": {
+      "n_users": 24387,
+      "ndcg@20": 0.03804839707215996,
+      "recall@20": 0.08116414483126255
+    },
+    "established(>20)": {
+      "n_users": 20683,
+      "ndcg@20": 0.05942530805139845,
+      "recall@20": 0.08585786424880873
+    },
+    "user_q1": {
+      "n_users": 8484,
+      "ndcg@20": 0.02818639084902987,
+      "recall@20": 0.06567263869244067
+    },
+    "user_q2": {
+      "n_users": 9417,
+      "ndcg@20": 0.04066954141106994,
+      "recall@20": 0.08681993557750167
+    },
+    "user_q3": {
+      "n_users": 8231,
+      "ndcg@20": 0.04448997758968464,
+      "recall@20": 0.08831074162139646
+    },
+    "user_q4": {
+      "n_users": 10278,
+      "ndcg@20": 0.05153143441062091,
+      "recall@20": 0.08978898525746161
+    },
+    "user_q5": {
+      "n_users": 9115,
+      "ndcg@20": 0.07079602436237728,
+      "recall@20": 0.08202537591839894
+    },
+    "items_head": {
+      "n_truth": 123176,
+      "recall@20_micro": 0.10570240956030395
+    },
+    "items_mid": {
+      "n_truth": 26814,
+      "recall@20_micro": 0.005109271276199001
+    },
+    "items_tail": {
+      "n_truth": 12444,
+      "recall@20_micro": 0.0003214400514304082
+    },
+    "coverage@20": 0.3724127116872256,
+    "gini@20": 0.931645395353445
+  },
+  "part": "C",
+  "dataset": "yelp",
+  "method": "Oracle-BPR",
+  "backbone": "LightGCN",
+  "cond": "N0",
+  "seed": "1",
+  "train_file": "train_clean.tsv",
+  "data": "data/yelp",
+  "topk": "runs/yelp/plain_lightgcn_bpr_oracle_s1/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-10-19 04:31:52"
+}

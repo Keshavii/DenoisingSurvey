@@ -1,0 +1,131 @@
+{'seed': 2024, 'model': 'MF', 'dataset': 'Yelp', 'min_interaction': 10, 'noise': 0.0, 'add_p': 1.0, 'out_dim': 64, 'use_gpu': True, 'device': device(type='cuda'), 'device_id': [0], 'batch_size': 2048, 'test_batch_size': 2048, 'patience': 100, 'val_interval': 20, 'lr': 0.001, 'weight_decay': 0.0001, 'min_epochs': 40, 'n_epochs': 100, 'rec_top_k': [20, 50], 'method': 'PLD', 'temp': 0.1, 'item_num': 5, 'main_file': '2026101823'}
+MF
+{'device': device(type='cuda'), 'dim': 64, 'denoise_config': {'begin_adv': 5, 'item_num': 5, 'temperature': 0.1}}
+#User: 31668, #Item: 38048, #Ratings: 1561406, AvgLen: 49.3, Sparsity: 99.88
+Create Dataloader with batch_size:2048
+Epoch 0: Rec Loss: 0.6835, Time: 6.13
+Epoch 1: Rec Loss: 0.6556, Time: 6.20
+Epoch 2: Rec Loss: 0.6111, Time: 5.88
+Epoch 3: Rec Loss: 0.5315, Time: 5.94
+Epoch 4: Rec Loss: 0.4184, Time: 5.98
+Epoch 5: Rec Loss: 0.2049, Time: 6.95
+Epoch 6: Rec Loss: 0.1180, Time: 6.72
+Epoch 7: Rec Loss: 0.0789, Time: 7.18
+Epoch 8: Rec Loss: 0.0586, Time: 6.86
+Epoch 9: Rec Loss: 0.0466, Time: 6.73
+Epoch 10: Rec Loss: 0.0389, Time: 7.19
+Epoch 11: Rec Loss: 0.0334, Time: 7.14
+Epoch 12: Rec Loss: 0.0297, Time: 7.11
+Epoch 13: Rec Loss: 0.0264, Time: 6.96
+Epoch 14: Rec Loss: 0.0241, Time: 7.10
+Epoch 15: Rec Loss: 0.0223, Time: 7.22
+Epoch 16: Rec Loss: 0.0209, Time: 7.11
+Epoch 17: Rec Loss: 0.0195, Time: 7.03
+Epoch 18: Rec Loss: 0.0186, Time: 7.19
+Epoch 19: Rec Loss: 0.0177, Time: 7.17
+Validation - Time: 156.09
+Recommendation Performanceat Epoch 19:
+Recall@20: 0.0523, NDCG@20: 0.0340;
+Recall@50: 0.0999, NDCG@50: 0.0497;
+Epoch 20: Rec Loss: 0.0171, Time: 6.95
+Epoch 21: Rec Loss: 0.0164, Time: 6.98
+Epoch 22: Rec Loss: 0.0158, Time: 6.75
+Epoch 23: Rec Loss: 0.0154, Time: 7.02
+Epoch 24: Rec Loss: 0.0149, Time: 7.08
+Epoch 25: Rec Loss: 0.0146, Time: 6.82
+Epoch 26: Rec Loss: 0.0142, Time: 7.21
+Epoch 27: Rec Loss: 0.0140, Time: 7.08
+Epoch 28: Rec Loss: 0.0137, Time: 6.98
+Epoch 29: Rec Loss: 0.0135, Time: 6.75
+Epoch 30: Rec Loss: 0.0133, Time: 7.25
+Epoch 31: Rec Loss: 0.0130, Time: 6.95
+Epoch 32: Rec Loss: 0.0129, Time: 7.06
+Epoch 33: Rec Loss: 0.0128, Time: 6.97
+Epoch 34: Rec Loss: 0.0125, Time: 6.98
+Epoch 35: Rec Loss: 0.0125, Time: 7.09
+Epoch 36: Rec Loss: 0.0124, Time: 6.97
+Epoch 37: Rec Loss: 0.0122, Time: 7.05
+Epoch 38: Rec Loss: 0.0120, Time: 6.93
+Epoch 39: Rec Loss: 0.0119, Time: 6.83
+Validation - Time: 158.16
+Recommendation Performanceat Epoch 39:
+Recall@20: 0.0556, NDCG@20: 0.0360;
+Recall@50: 0.1064, NDCG@50: 0.0529;
+Epoch 40: Rec Loss: 0.0118, Time: 6.92
+Epoch 41: Rec Loss: 0.0117, Time: 6.84
+Epoch 42: Rec Loss: 0.0116, Time: 6.92
+Epoch 43: Rec Loss: 0.0114, Time: 7.23
+Epoch 44: Rec Loss: 0.0114, Time: 6.93
+Epoch 45: Rec Loss: 0.0113, Time: 6.85
+Epoch 46: Rec Loss: 0.0113, Time: 7.20
+Epoch 47: Rec Loss: 0.0112, Time: 6.86
+Epoch 48: Rec Loss: 0.0111, Time: 6.84
+Epoch 49: Rec Loss: 0.0109, Time: 6.89
+Epoch 50: Rec Loss: 0.0110, Time: 7.07
+Epoch 51: Rec Loss: 0.0109, Time: 6.96
+Epoch 52: Rec Loss: 0.0110, Time: 6.91
+Epoch 53: Rec Loss: 0.0108, Time: 6.95
+Epoch 54: Rec Loss: 0.0109, Time: 6.97
+Epoch 55: Rec Loss: 0.0106, Time: 6.95
+Epoch 56: Rec Loss: 0.0106, Time: 6.73
+Epoch 57: Rec Loss: 0.0107, Time: 7.10
+Epoch 58: Rec Loss: 0.0105, Time: 6.98
+Epoch 59: Rec Loss: 0.0104, Time: 7.19
+Validation - Time: 156.63
+Recommendation Performanceat Epoch 59:
+Recall@20: 0.0579, NDCG@20: 0.0378;
+Recall@50: 0.1119, NDCG@50: 0.0556;
+Epoch 60: Rec Loss: 0.0105, Time: 7.35
+Epoch 61: Rec Loss: 0.0104, Time: 6.83
+Epoch 62: Rec Loss: 0.0103, Time: 7.15
+Epoch 63: Rec Loss: 0.0104, Time: 6.88
+Epoch 64: Rec Loss: 0.0103, Time: 7.48
+Epoch 65: Rec Loss: 0.0102, Time: 6.69
+Epoch 66: Rec Loss: 0.0102, Time: 7.17
+Epoch 67: Rec Loss: 0.0102, Time: 7.31
+Epoch 68: Rec Loss: 0.0102, Time: 6.85
+Epoch 69: Rec Loss: 0.0102, Time: 6.88
+Epoch 70: Rec Loss: 0.0100, Time: 7.16
+Epoch 71: Rec Loss: 0.0101, Time: 6.98
+Epoch 72: Rec Loss: 0.0100, Time: 6.72
+Epoch 73: Rec Loss: 0.0101, Time: 7.08
+Epoch 74: Rec Loss: 0.0101, Time: 6.91
+Epoch 75: Rec Loss: 0.0099, Time: 6.96
+Epoch 76: Rec Loss: 0.0100, Time: 6.85
+Epoch 77: Rec Loss: 0.0099, Time: 7.05
+Epoch 78: Rec Loss: 0.0098, Time: 6.95
+Epoch 79: Rec Loss: 0.0098, Time: 6.76
+Validation - Time: 158.27
+Recommendation Performanceat Epoch 79:
+Recall@20: 0.0606, NDCG@20: 0.0397;
+Recall@50: 0.1163, NDCG@50: 0.0581;
+Epoch 80: Rec Loss: 0.0098, Time: 7.13
+Epoch 81: Rec Loss: 0.0098, Time: 6.77
+Epoch 82: Rec Loss: 0.0098, Time: 7.55
+Epoch 83: Rec Loss: 0.0098, Time: 6.97
+Epoch 84: Rec Loss: 0.0097, Time: 6.89
+Epoch 85: Rec Loss: 0.0097, Time: 6.84
+Epoch 86: Rec Loss: 0.0096, Time: 7.23
+Epoch 87: Rec Loss: 0.0096, Time: 7.50
+Epoch 88: Rec Loss: 0.0095, Time: 7.28
+Epoch 89: Rec Loss: 0.0096, Time: 7.08
+Epoch 90: Rec Loss: 0.0096, Time: 7.05
+Epoch 91: Rec Loss: 0.0096, Time: 7.03
+Epoch 92: Rec Loss: 0.0095, Time: 6.98
+Epoch 93: Rec Loss: 0.0094, Time: 7.38
+Epoch 94: Rec Loss: 0.0095, Time: 6.98
+Epoch 95: Rec Loss: 0.0095, Time: 6.97
+Epoch 96: Rec Loss: 0.0095, Time: 6.86
+Epoch 97: Rec Loss: 0.0094, Time: 7.26
+Epoch 98: Rec Loss: 0.0095, Time: 7.02
+Epoch 99: Rec Loss: 0.0095, Time: 6.84
+Validation - Time: 156.74
+Recommendation Performanceat Epoch 99:
+Recall@20: 0.0624, NDCG@20: 0.0413;
+Recall@50: 0.1201, NDCG@50: 0.0604;
+/home/aura3/repos/PLD/utls/trainer.py:52: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path)
+Test - Time: 253.37
+Recommendation Performance:
+Recall@20: 0.0644, NDCG@20: 0.0502;
+Recall@50: 0.1228, NDCG@50: 0.0730;

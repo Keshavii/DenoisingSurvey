@@ -1,0 +1,29 @@
+arguments: Namespace(dataset='adressa', model='NeuMF-end', drop_rate=0.0, num_gradual=30000, exponent=1, lr=0.001, dropout=0.0, batch_size=1024, epochs=10, eval_freq=2000, top_k=[5, 10, 20, 50], factor_num=32, num_layers=3, num_ng=1, out=True, gpu='0', time_step=3, co_lambda=0.0001, epoch_decay_start=10, relabel_ratio=0.0) 
+config model NeuMF-end
+config data path ../data/adressa/
+config model path ../models/adressa/
+user, item num
+212231 6596
+already create adjacency matrix (218827, 218827) 21.687881469726562
+generate single-normalized adjacency matrix.
+data loaded! user_num:212231, item_num:6596 train_data_len:419491 test_user_num:10380
+Time step initializing...
+epoch: 2, iter: 2000, loss:0.05807294696569443
+################### EVAL ######################
+Eval loss:91.08953857421875
+Time step initializing...
+epoch: 4, iter: 4000, loss:0.02844861149787903
+################### EVAL ######################
+Eval loss:161.02764892578125
+Time step initializing...
+epoch: 7, iter: 6000, loss:0.004172937944531441
+################### EVAL ######################
+Eval loss:281.9532165527344
+Time step initializing...
+epoch: 9, iter: 8000, loss:0.0031900862231850624
+################### EVAL ######################
+Eval loss:321.80267333984375
+############################## Training End. ##############################
+################### TEST ######################
+Recall 0.1938-0.2853-0.3076-0.3634
+NDCG 0.1441-0.1787-0.1854-0.1993

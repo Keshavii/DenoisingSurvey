@@ -1,0 +1,881 @@
+Baseline Models:
+NCF   LightGCN   MF   NGCF   DirectAU
+--------------------------------------------------------------------------------
+Graph-Based Models:
+SGL   SimGCL
+--------------------------------------------------------------------------------
+Denoising Models:
+BOD
+================================================================================
+Please enter the model you want to run:Reading data and preprocessing...
+/home/anurag/repos/BOD/base/torch_interface.py:10: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:278.)
+  i = torch.LongTensor([coo.row, coo.col])
+/home/anurag/repos/BOD/base/torch_interface.py:12: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:641.)
+  return torch.sparse.FloatTensor(i, v, coo.shape)
+/home/anurag/miniconda3/envs/bod/lib/python3.10/site-packages/torch/cuda/__init__.py:654: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+Model: LightGCN
+Training Set: /home/anurag/repos/BOD/dataset/yelp2018/train.txt
+Test Set: /home/anurag/repos/BOD/dataset/yelp2018/test.txt
+Embedding Dimension: 64
+Maximum Epoch: 30
+Learning Rate: 0.001
+Batch Size: 512
+Regularization Parameter: reg 0.0001
+Specific parameters: n_layer:2  
+Training Set Size: (user number: 31668, item number 38048, interaction number: 1237259)
+Test Set Size: (user number: 31668, item number 36073, interaction number: 324147)
+================================================================================
+Initializing and building model...
+Training Model...
+training: 1 batch 0 batch_loss: 0.6932332515716553
+training: 1 batch 100 batch_loss: 0.5937572717666626
+training: 1 batch 200 batch_loss: 0.39650759100914
+training: 1 batch 300 batch_loss: 0.3184390664100647
+training: 1 batch 400 batch_loss: 0.26201122999191284
+training: 1 batch 500 batch_loss: 0.23337754607200623
+training: 1 batch 600 batch_loss: 0.21178747713565826
+training: 1 batch 700 batch_loss: 0.18969854712486267
+training: 1 batch 800 batch_loss: 0.20663727819919586
+training: 1 batch 900 batch_loss: 0.17401312291622162
+training: 1 batch 1000 batch_loss: 0.1979069858789444
+training: 1 batch 1100 batch_loss: 0.2053700089454651
+training: 1 batch 1200 batch_loss: 0.19020365178585052
+training: 1 batch 1300 batch_loss: 0.19212208688259125
+training: 1 batch 1400 batch_loss: 0.17677877843379974
+training: 1 batch 1500 batch_loss: 0.196312814950943
+training: 1 batch 1600 batch_loss: 0.15603221952915192
+training: 1 batch 1700 batch_loss: 0.1522064507007599
+training: 1 batch 1800 batch_loss: 0.20302587747573853
+training: 1 batch 1900 batch_loss: 0.18109872937202454
+training: 1 batch 2000 batch_loss: 0.1782752275466919
+training: 1 batch 2100 batch_loss: 0.18622389435768127
+training: 1 batch 2200 batch_loss: 0.11601858586072922
+training: 1 batch 2300 batch_loss: 0.18185512721538544
+training: 1 batch 2400 batch_loss: 0.1658378541469574
+One epoch Running time: 26.695094 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++++                                         ]18%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 1, Hit Ratio:0.03044606305164015 | Precision:0.0155819754957686 | Recall:0.03293465677731605 | NDCG:0.027650498955058726
+*Best Performance* 
+Epoch: 1, Hit Ratio:0.03044606305164015 | Precision:0.0155819754957686 | Recall:0.03293465677731605 | MDCG:0.027650498955058726
+------------------------------------------------------------------------------------------------------------------------
+training: 2 batch 0 batch_loss: 0.19334836304187775
+training: 2 batch 100 batch_loss: 0.1581544727087021
+training: 2 batch 200 batch_loss: 0.20459610223770142
+training: 2 batch 300 batch_loss: 0.1587592512369156
+training: 2 batch 400 batch_loss: 0.1864756941795349
+training: 2 batch 500 batch_loss: 0.15798257291316986
+training: 2 batch 600 batch_loss: 0.13154838979244232
+training: 2 batch 700 batch_loss: 0.198179692029953
+training: 2 batch 800 batch_loss: 0.16842816770076752
+training: 2 batch 900 batch_loss: 0.2049979716539383
+training: 2 batch 1000 batch_loss: 0.14647354185581207
+training: 2 batch 1100 batch_loss: 0.15614596009254456
+training: 2 batch 1200 batch_loss: 0.17494748532772064
+training: 2 batch 1300 batch_loss: 0.1477959156036377
+training: 2 batch 1400 batch_loss: 0.16955825686454773
+training: 2 batch 1500 batch_loss: 0.17299267649650574
+training: 2 batch 1600 batch_loss: 0.12367808073759079
+training: 2 batch 1700 batch_loss: 0.17050987482070923
+training: 2 batch 1800 batch_loss: 0.16250772774219513
+training: 2 batch 1900 batch_loss: 0.14906369149684906
+training: 2 batch 2000 batch_loss: 0.19218115508556366
+training: 2 batch 2100 batch_loss: 0.1486852616071701
+training: 2 batch 2200 batch_loss: 0.1758873164653778
+training: 2 batch 2300 batch_loss: 0.18721194565296173
+training: 2 batch 2400 batch_loss: 0.15379443764686584
+One epoch Running time: 26.484357 s
+training: 3 batch 0 batch_loss: 0.13928598165512085
+training: 3 batch 100 batch_loss: 0.15612711012363434
+training: 3 batch 200 batch_loss: 0.18676172196865082
+training: 3 batch 300 batch_loss: 0.1428145468235016
+training: 3 batch 400 batch_loss: 0.1504671722650528
+training: 3 batch 500 batch_loss: 0.12587623298168182
+training: 3 batch 600 batch_loss: 0.130522221326828
+training: 3 batch 700 batch_loss: 0.13627628982067108
+training: 3 batch 800 batch_loss: 0.13120578229427338
+training: 3 batch 900 batch_loss: 0.15529824793338776
+training: 3 batch 1000 batch_loss: 0.1560928225517273
+training: 3 batch 1100 batch_loss: 0.1334819793701172
+training: 3 batch 1200 batch_loss: 0.14976711571216583
+training: 3 batch 1300 batch_loss: 0.13372884690761566
+training: 3 batch 1400 batch_loss: 0.12133664637804031
+training: 3 batch 1500 batch_loss: 0.14253894984722137
+training: 3 batch 1600 batch_loss: 0.13731688261032104
+training: 3 batch 1700 batch_loss: 0.13055483996868134
+training: 3 batch 1800 batch_loss: 0.11524192988872528
+training: 3 batch 1900 batch_loss: 0.15044806897640228
+training: 3 batch 2000 batch_loss: 0.16106873750686646
+training: 3 batch 2100 batch_loss: 0.1383393406867981
+training: 3 batch 2200 batch_loss: 0.16039733588695526
+training: 3 batch 2300 batch_loss: 0.15131635963916779
+training: 3 batch 2400 batch_loss: 0.13820132613182068
+One epoch Running time: 26.416884 s
+training: 4 batch 0 batch_loss: 0.12198491394519806
+training: 4 batch 100 batch_loss: 0.1509166955947876
+training: 4 batch 200 batch_loss: 0.13673028349876404
+training: 4 batch 300 batch_loss: 0.13273337483406067
+training: 4 batch 400 batch_loss: 0.1137399822473526
+training: 4 batch 500 batch_loss: 0.16500324010849
+training: 4 batch 600 batch_loss: 0.15033939480781555
+training: 4 batch 700 batch_loss: 0.11487771570682526
+training: 4 batch 800 batch_loss: 0.14132829010486603
+training: 4 batch 900 batch_loss: 0.12075798958539963
+training: 4 batch 1000 batch_loss: 0.10032277554273605
+training: 4 batch 1100 batch_loss: 0.12991805374622345
+training: 4 batch 1200 batch_loss: 0.13395783305168152
+training: 4 batch 1300 batch_loss: 0.1248735785484314
+training: 4 batch 1400 batch_loss: 0.1308729648590088
+training: 4 batch 1500 batch_loss: 0.13236606121063232
+training: 4 batch 1600 batch_loss: 0.1397644430398941
+training: 4 batch 1700 batch_loss: 0.1052480936050415
+training: 4 batch 1800 batch_loss: 0.16426019370555878
+training: 4 batch 1900 batch_loss: 0.11134427040815353
+training: 4 batch 2000 batch_loss: 0.13195179402828217
+training: 4 batch 2100 batch_loss: 0.16417159140110016
+training: 4 batch 2200 batch_loss: 0.1594426929950714
+training: 4 batch 2300 batch_loss: 0.15126758813858032
+training: 4 batch 2400 batch_loss: 0.15966659784317017
+One epoch Running time: 26.354314 s
+training: 5 batch 0 batch_loss: 0.14178168773651123
+training: 5 batch 100 batch_loss: 0.15965332090854645
+training: 5 batch 200 batch_loss: 0.14900459349155426
+training: 5 batch 300 batch_loss: 0.14864173531532288
+training: 5 batch 400 batch_loss: 0.15300054848194122
+training: 5 batch 500 batch_loss: 0.10587422549724579
+training: 5 batch 600 batch_loss: 0.13227829337120056
+training: 5 batch 700 batch_loss: 0.11922907829284668
+training: 5 batch 800 batch_loss: 0.10233476758003235
+training: 5 batch 900 batch_loss: 0.13020823895931244
+training: 5 batch 1000 batch_loss: 0.12375699728727341
+training: 5 batch 1100 batch_loss: 0.1367693990468979
+training: 5 batch 1200 batch_loss: 0.12337532639503479
+training: 5 batch 1300 batch_loss: 0.12774737179279327
+training: 5 batch 1400 batch_loss: 0.12376300990581512
+training: 5 batch 1500 batch_loss: 0.14172857999801636
+training: 5 batch 1600 batch_loss: 0.15372997522354126
+training: 5 batch 1700 batch_loss: 0.1228151023387909
+training: 5 batch 1800 batch_loss: 0.10607856512069702
+training: 5 batch 1900 batch_loss: 0.11433036625385284
+training: 5 batch 2000 batch_loss: 0.14461171627044678
+training: 5 batch 2100 batch_loss: 0.12706059217453003
+training: 5 batch 2200 batch_loss: 0.11874362081289291
+training: 5 batch 2300 batch_loss: 0.10959972441196442
+training: 5 batch 2400 batch_loss: 0.14081421494483948
+One epoch Running time: 26.405826 s
+training: 6 batch 0 batch_loss: 0.14758868515491486
+training: 6 batch 100 batch_loss: 0.1186869814991951
+training: 6 batch 200 batch_loss: 0.11766040325164795
+training: 6 batch 300 batch_loss: 0.12588679790496826
+training: 6 batch 400 batch_loss: 0.13064032793045044
+training: 6 batch 500 batch_loss: 0.11080623418092728
+training: 6 batch 600 batch_loss: 0.11220850050449371
+training: 6 batch 700 batch_loss: 0.13714736700057983
+training: 6 batch 800 batch_loss: 0.13864901661872864
+training: 6 batch 900 batch_loss: 0.11124197393655777
+training: 6 batch 1000 batch_loss: 0.10131638497114182
+training: 6 batch 1100 batch_loss: 0.12184282392263412
+training: 6 batch 1200 batch_loss: 0.14736256003379822
+training: 6 batch 1300 batch_loss: 0.11724673211574554
+training: 6 batch 1400 batch_loss: 0.11907091736793518
+training: 6 batch 1500 batch_loss: 0.13161367177963257
+training: 6 batch 1600 batch_loss: 0.10258722305297852
+training: 6 batch 1700 batch_loss: 0.15429091453552246
+training: 6 batch 1800 batch_loss: 0.11957881599664688
+training: 6 batch 1900 batch_loss: 0.11691629886627197
+training: 6 batch 2000 batch_loss: 0.1218688115477562
+training: 6 batch 2100 batch_loss: 0.12332190573215485
+training: 6 batch 2200 batch_loss: 0.13800707459449768
+training: 6 batch 2300 batch_loss: 0.13260400295257568
+training: 6 batch 2400 batch_loss: 0.12889017164707184
+One epoch Running time: 26.429491 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++++                                         ]18%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 6, Hit Ratio:0.036165690257815124 | Precision:0.01850922066439308 | Recall:0.03975427416114018 | NDCG:0.03364811216056636
+*Best Performance* 
+Epoch: 6, Hit Ratio:0.036165690257815124 | Precision:0.01850922066439308 | Recall:0.03975427416114018 | MDCG:0.03364811216056636
+------------------------------------------------------------------------------------------------------------------------
+training: 7 batch 0 batch_loss: 0.12006184458732605
+training: 7 batch 100 batch_loss: 0.12794657051563263
+training: 7 batch 200 batch_loss: 0.10977154970169067
+training: 7 batch 300 batch_loss: 0.0921413004398346
+training: 7 batch 400 batch_loss: 0.10105369985103607
+training: 7 batch 500 batch_loss: 0.11143838614225388
+training: 7 batch 600 batch_loss: 0.11046275496482849
+training: 7 batch 700 batch_loss: 0.10899422317743301
+training: 7 batch 800 batch_loss: 0.10828635096549988
+training: 7 batch 900 batch_loss: 0.10759759694337845
+training: 7 batch 1000 batch_loss: 0.1027519553899765
+training: 7 batch 1100 batch_loss: 0.11878171563148499
+training: 7 batch 1200 batch_loss: 0.11103727668523788
+training: 7 batch 1300 batch_loss: 0.10047826170921326
+training: 7 batch 1400 batch_loss: 0.11086570471525192
+training: 7 batch 1500 batch_loss: 0.120750293135643
+training: 7 batch 1600 batch_loss: 0.1179378479719162
+training: 7 batch 1700 batch_loss: 0.12202078104019165
+training: 7 batch 1800 batch_loss: 0.12264737486839294
+training: 7 batch 1900 batch_loss: 0.09606114774942398
+training: 7 batch 2000 batch_loss: 0.12243863940238953
+training: 7 batch 2100 batch_loss: 0.09622474014759064
+training: 7 batch 2200 batch_loss: 0.1464885026216507
+training: 7 batch 2300 batch_loss: 0.12224829941987991
+training: 7 batch 2400 batch_loss: 0.11177200824022293
+One epoch Running time: 26.401022 s
+training: 8 batch 0 batch_loss: 0.07718261331319809
+training: 8 batch 100 batch_loss: 0.12055855989456177
+training: 8 batch 200 batch_loss: 0.10053462535142899
+training: 8 batch 300 batch_loss: 0.0970209613442421
+training: 8 batch 400 batch_loss: 0.09231306612491608
+training: 8 batch 500 batch_loss: 0.1107616201043129
+training: 8 batch 600 batch_loss: 0.13797660171985626
+training: 8 batch 700 batch_loss: 0.1441834270954132
+training: 8 batch 800 batch_loss: 0.1011173352599144
+training: 8 batch 900 batch_loss: 0.12453417479991913
+training: 8 batch 1000 batch_loss: 0.11334286630153656
+training: 8 batch 1100 batch_loss: 0.08262022584676743
+training: 8 batch 1200 batch_loss: 0.1140126883983612
+training: 8 batch 1300 batch_loss: 0.12398236244916916
+training: 8 batch 1400 batch_loss: 0.1391080766916275
+training: 8 batch 1500 batch_loss: 0.11608639359474182
+training: 8 batch 1600 batch_loss: 0.11156406253576279
+training: 8 batch 1700 batch_loss: 0.11456327140331268
+training: 8 batch 1800 batch_loss: 0.11293262243270874
+training: 8 batch 1900 batch_loss: 0.0845421776175499
+training: 8 batch 2000 batch_loss: 0.10765761882066727
+training: 8 batch 2100 batch_loss: 0.1141124963760376
+training: 8 batch 2200 batch_loss: 0.1154266893863678
+training: 8 batch 2300 batch_loss: 0.1299157291650772
+training: 8 batch 2400 batch_loss: 0.1131570041179657
+One epoch Running time: 26.351367 s
+training: 9 batch 0 batch_loss: 0.12293942272663116
+training: 9 batch 100 batch_loss: 0.10371164977550507
+training: 9 batch 200 batch_loss: 0.10496434569358826
+training: 9 batch 300 batch_loss: 0.10395056009292603
+training: 9 batch 400 batch_loss: 0.09327907115221024
+training: 9 batch 500 batch_loss: 0.07449524104595184
+training: 9 batch 600 batch_loss: 0.13217513263225555
+training: 9 batch 700 batch_loss: 0.10559115558862686
+training: 9 batch 800 batch_loss: 0.1113850399851799
+training: 9 batch 900 batch_loss: 0.09210482239723206
+training: 9 batch 1000 batch_loss: 0.10009896755218506
+training: 9 batch 1100 batch_loss: 0.10438183695077896
+training: 9 batch 1200 batch_loss: 0.085406094789505
+training: 9 batch 1300 batch_loss: 0.09862159192562103
+training: 9 batch 1400 batch_loss: 0.1106349378824234
+training: 9 batch 1500 batch_loss: 0.10241736471652985
+training: 9 batch 1600 batch_loss: 0.09542451798915863
+training: 9 batch 1700 batch_loss: 0.1024407297372818
+training: 9 batch 1800 batch_loss: 0.09864799678325653
+training: 9 batch 1900 batch_loss: 0.10911145061254501
+training: 9 batch 2000 batch_loss: 0.1378806233406067
+training: 9 batch 2100 batch_loss: 0.09431589394807816
+training: 9 batch 2200 batch_loss: 0.09936866909265518
+training: 9 batch 2300 batch_loss: 0.08796301484107971
+training: 9 batch 2400 batch_loss: 0.08699369430541992
+One epoch Running time: 26.388913 s
+training: 10 batch 0 batch_loss: 0.10335307568311691
+training: 10 batch 100 batch_loss: 0.08957605063915253
+training: 10 batch 200 batch_loss: 0.10745171457529068
+training: 10 batch 300 batch_loss: 0.09948704391717911
+training: 10 batch 400 batch_loss: 0.09408353269100189
+training: 10 batch 500 batch_loss: 0.0872868001461029
+training: 10 batch 600 batch_loss: 0.11401987820863724
+training: 10 batch 700 batch_loss: 0.08753044903278351
+training: 10 batch 800 batch_loss: 0.09618115425109863
+training: 10 batch 900 batch_loss: 0.10642268508672714
+training: 10 batch 1000 batch_loss: 0.08831354975700378
+training: 10 batch 1100 batch_loss: 0.08157480508089066
+training: 10 batch 1200 batch_loss: 0.09387169778347015
+training: 10 batch 1300 batch_loss: 0.1125262901186943
+training: 10 batch 1400 batch_loss: 0.0930996686220169
+training: 10 batch 1500 batch_loss: 0.06516113877296448
+training: 10 batch 1600 batch_loss: 0.09088896214962006
+training: 10 batch 1700 batch_loss: 0.07728900760412216
+training: 10 batch 1800 batch_loss: 0.08058243244886398
+training: 10 batch 1900 batch_loss: 0.09171026945114136
+training: 10 batch 2000 batch_loss: 0.09712066501379013
+training: 10 batch 2100 batch_loss: 0.09956907480955124
+training: 10 batch 2200 batch_loss: 0.09281797707080841
+training: 10 batch 2300 batch_loss: 0.10671065002679825
+training: 10 batch 2400 batch_loss: 0.09711495786905289
+One epoch Running time: 26.484216 s
+training: 11 batch 0 batch_loss: 0.08489517867565155
+training: 11 batch 100 batch_loss: 0.09080851823091507
+training: 11 batch 200 batch_loss: 0.09677848219871521
+training: 11 batch 300 batch_loss: 0.0951324999332428
+training: 11 batch 400 batch_loss: 0.097832590341568
+training: 11 batch 500 batch_loss: 0.08063986897468567
+training: 11 batch 600 batch_loss: 0.10305854678153992
+training: 11 batch 700 batch_loss: 0.11640225350856781
+training: 11 batch 800 batch_loss: 0.09721098095178604
+training: 11 batch 900 batch_loss: 0.12532341480255127
+training: 11 batch 1000 batch_loss: 0.09306874871253967
+training: 11 batch 1100 batch_loss: 0.09324119240045547
+training: 11 batch 1200 batch_loss: 0.09378921985626221
+training: 11 batch 1300 batch_loss: 0.09390595555305481
+training: 11 batch 1400 batch_loss: 0.09643524885177612
+training: 11 batch 1500 batch_loss: 0.11412778496742249
+training: 11 batch 1600 batch_loss: 0.09630341827869415
+training: 11 batch 1700 batch_loss: 0.09033592790365219
+training: 11 batch 1800 batch_loss: 0.0980500727891922
+training: 11 batch 1900 batch_loss: 0.07190258800983429
+training: 11 batch 2000 batch_loss: 0.07769142836332321
+training: 11 batch 2100 batch_loss: 0.0935187116265297
+training: 11 batch 2200 batch_loss: 0.10737468302249908
+training: 11 batch 2300 batch_loss: 0.10529685020446777
+training: 11 batch 2400 batch_loss: 0.10880216956138611
+One epoch Running time: 26.423278 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++++                                         ]18%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 11, Hit Ratio:0.039124224503080396 | Precision:0.02002336743716054 | Recall:0.04320774151824368 | NDCG:0.03659008233838166
+*Best Performance* 
+Epoch: 11, Hit Ratio:0.039124224503080396 | Precision:0.02002336743716054 | Recall:0.04320774151824368 | MDCG:0.03659008233838166
+------------------------------------------------------------------------------------------------------------------------
+training: 12 batch 0 batch_loss: 0.09309300035238266
+training: 12 batch 100 batch_loss: 0.12343849241733551
+training: 12 batch 200 batch_loss: 0.0957932099699974
+training: 12 batch 300 batch_loss: 0.10019528865814209
+training: 12 batch 400 batch_loss: 0.09833532571792603
+training: 12 batch 500 batch_loss: 0.09424295276403427
+training: 12 batch 600 batch_loss: 0.07776833325624466
+training: 12 batch 700 batch_loss: 0.08725777268409729
+training: 12 batch 800 batch_loss: 0.10207507014274597
+training: 12 batch 900 batch_loss: 0.11889780312776566
+training: 12 batch 1000 batch_loss: 0.10517474263906479
+training: 12 batch 1100 batch_loss: 0.06568635255098343
+training: 12 batch 1200 batch_loss: 0.09339092671871185
+training: 12 batch 1300 batch_loss: 0.09025067090988159
+training: 12 batch 1400 batch_loss: 0.0815902054309845
+training: 12 batch 1500 batch_loss: 0.0855005532503128
+training: 12 batch 1600 batch_loss: 0.11035238206386566
+training: 12 batch 1700 batch_loss: 0.07741379737854004
+training: 12 batch 1800 batch_loss: 0.06689415127038956
+training: 12 batch 1900 batch_loss: 0.08586935698986053
+training: 12 batch 2000 batch_loss: 0.11659025400876999
+training: 12 batch 2100 batch_loss: 0.08306978642940521
+training: 12 batch 2200 batch_loss: 0.07959022372961044
+training: 12 batch 2300 batch_loss: 0.09056147933006287
+training: 12 batch 2400 batch_loss: 0.07641840726137161
+One epoch Running time: 26.452396 s
+training: 13 batch 0 batch_loss: 0.08111116290092468
+training: 13 batch 100 batch_loss: 0.08343353867530823
+training: 13 batch 200 batch_loss: 0.08963748812675476
+training: 13 batch 300 batch_loss: 0.10483535379171371
+training: 13 batch 400 batch_loss: 0.09520325064659119
+training: 13 batch 500 batch_loss: 0.0995757058262825
+training: 13 batch 600 batch_loss: 0.10489907115697861
+training: 13 batch 700 batch_loss: 0.0812588706612587
+training: 13 batch 800 batch_loss: 0.07152654230594635
+training: 13 batch 900 batch_loss: 0.08407740294933319
+training: 13 batch 1000 batch_loss: 0.08402727544307709
+training: 13 batch 1100 batch_loss: 0.08904089778661728
+training: 13 batch 1200 batch_loss: 0.07561900466680527
+training: 13 batch 1300 batch_loss: 0.09067239612340927
+training: 13 batch 1400 batch_loss: 0.1027446836233139
+training: 13 batch 1500 batch_loss: 0.08979234099388123
+training: 13 batch 1600 batch_loss: 0.0792224332690239
+training: 13 batch 1700 batch_loss: 0.1026310920715332
+training: 13 batch 1800 batch_loss: 0.08773450553417206
+training: 13 batch 1900 batch_loss: 0.09007231146097183
+training: 13 batch 2000 batch_loss: 0.08206380903720856
+training: 13 batch 2100 batch_loss: 0.08503958582878113
+training: 13 batch 2200 batch_loss: 0.07015291601419449
+training: 13 batch 2300 batch_loss: 0.08111792057752609
+training: 13 batch 2400 batch_loss: 0.08532997965812683
+One epoch Running time: 26.381414 s
+training: 14 batch 0 batch_loss: 0.07199310511350632
+training: 14 batch 100 batch_loss: 0.07151782512664795
+training: 14 batch 200 batch_loss: 0.07873662561178207
+training: 14 batch 300 batch_loss: 0.08261225372552872
+training: 14 batch 400 batch_loss: 0.0872698724269867
+training: 14 batch 500 batch_loss: 0.12745916843414307
+training: 14 batch 600 batch_loss: 0.08592560887336731
+training: 14 batch 700 batch_loss: 0.07402957230806351
+training: 14 batch 800 batch_loss: 0.08082666993141174
+training: 14 batch 900 batch_loss: 0.06550102680921555
+training: 14 batch 1000 batch_loss: 0.08213852345943451
+training: 14 batch 1100 batch_loss: 0.08251307159662247
+training: 14 batch 1200 batch_loss: 0.06542246043682098
+training: 14 batch 1300 batch_loss: 0.07194738835096359
+training: 14 batch 1400 batch_loss: 0.09328970313072205
+training: 14 batch 1500 batch_loss: 0.09654204547405243
+training: 14 batch 1600 batch_loss: 0.06889902055263519
+training: 14 batch 1700 batch_loss: 0.0749407410621643
+training: 14 batch 1800 batch_loss: 0.10048026591539383
+training: 14 batch 1900 batch_loss: 0.08806340396404266
+training: 14 batch 2000 batch_loss: 0.08818729221820831
+training: 14 batch 2100 batch_loss: 0.08963124454021454
+training: 14 batch 2200 batch_loss: 0.06901820749044418
+training: 14 batch 2300 batch_loss: 0.09589070081710815
+training: 14 batch 2400 batch_loss: 0.08288095146417618
+One epoch Running time: 26.307421 s
+training: 15 batch 0 batch_loss: 0.10970957577228546
+training: 15 batch 100 batch_loss: 0.06891059875488281
+training: 15 batch 200 batch_loss: 0.08580569922924042
+training: 15 batch 300 batch_loss: 0.06515999138355255
+training: 15 batch 400 batch_loss: 0.05660945549607277
+training: 15 batch 500 batch_loss: 0.07513347268104553
+training: 15 batch 600 batch_loss: 0.07034686207771301
+training: 15 batch 700 batch_loss: 0.09139086306095123
+training: 15 batch 800 batch_loss: 0.10477897524833679
+training: 15 batch 900 batch_loss: 0.07474318891763687
+training: 15 batch 1000 batch_loss: 0.09942160546779633
+training: 15 batch 1100 batch_loss: 0.08001978695392609
+training: 15 batch 1200 batch_loss: 0.1128380075097084
+training: 15 batch 1300 batch_loss: 0.08721785992383957
+training: 15 batch 1400 batch_loss: 0.06774643063545227
+training: 15 batch 1500 batch_loss: 0.08752380311489105
+training: 15 batch 1600 batch_loss: 0.0787714272737503
+training: 15 batch 1700 batch_loss: 0.08038004487752914
+training: 15 batch 1800 batch_loss: 0.11530038714408875
+training: 15 batch 1900 batch_loss: 0.10224215686321259
+training: 15 batch 2000 batch_loss: 0.05660988762974739
+training: 15 batch 2100 batch_loss: 0.08513323962688446
+training: 15 batch 2200 batch_loss: 0.078764408826828
+training: 15 batch 2300 batch_loss: 0.07175494730472565
+training: 15 batch 2400 batch_loss: 0.08681651949882507
+One epoch Running time: 26.360290 s
+training: 16 batch 0 batch_loss: 0.06068432331085205
+training: 16 batch 100 batch_loss: 0.10227125138044357
+training: 16 batch 200 batch_loss: 0.06652399897575378
+training: 16 batch 300 batch_loss: 0.10585799813270569
+training: 16 batch 400 batch_loss: 0.10022925585508347
+training: 16 batch 500 batch_loss: 0.08859113603830338
+training: 16 batch 600 batch_loss: 0.08837258815765381
+training: 16 batch 700 batch_loss: 0.09573463350534439
+training: 16 batch 800 batch_loss: 0.07112622261047363
+training: 16 batch 900 batch_loss: 0.06326115876436234
+training: 16 batch 1000 batch_loss: 0.10373944044113159
+training: 16 batch 1100 batch_loss: 0.09314321726560593
+training: 16 batch 1200 batch_loss: 0.1021396741271019
+training: 16 batch 1300 batch_loss: 0.10049588233232498
+training: 16 batch 1400 batch_loss: 0.07543188333511353
+training: 16 batch 1500 batch_loss: 0.07935579121112823
+training: 16 batch 1600 batch_loss: 0.10339096188545227
+training: 16 batch 1700 batch_loss: 0.08077265322208405
+training: 16 batch 1800 batch_loss: 0.07202944159507751
+training: 16 batch 1900 batch_loss: 0.0607939139008522
+training: 16 batch 2000 batch_loss: 0.08625932037830353
+training: 16 batch 2100 batch_loss: 0.09318436682224274
+training: 16 batch 2200 batch_loss: 0.06490060687065125
+training: 16 batch 2300 batch_loss: 0.056755367666482925
+training: 16 batch 2400 batch_loss: 0.08474503457546234
+One epoch Running time: 26.339870 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++++                                         ]18%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 16, Hit Ratio:0.041138742607520665 | Precision:0.021054376657824933 | Recall:0.04599155508827408 | NDCG:0.038316042117236
+*Best Performance* 
+Epoch: 16, Hit Ratio:0.041138742607520665 | Precision:0.021054376657824933 | Recall:0.04599155508827408 | MDCG:0.038316042117236
+------------------------------------------------------------------------------------------------------------------------
+training: 17 batch 0 batch_loss: 0.08538122475147247
+training: 17 batch 100 batch_loss: 0.06527357548475266
+training: 17 batch 200 batch_loss: 0.08441653847694397
+training: 17 batch 300 batch_loss: 0.07790304720401764
+training: 17 batch 400 batch_loss: 0.10220008343458176
+training: 17 batch 500 batch_loss: 0.06379970908164978
+training: 17 batch 600 batch_loss: 0.07044611871242523
+training: 17 batch 700 batch_loss: 0.08738350123167038
+training: 17 batch 800 batch_loss: 0.08811785280704498
+training: 17 batch 900 batch_loss: 0.09015049785375595
+training: 17 batch 1000 batch_loss: 0.08922799676656723
+training: 17 batch 1100 batch_loss: 0.09636402130126953
+training: 17 batch 1200 batch_loss: 0.0846334770321846
+training: 17 batch 1300 batch_loss: 0.10065940022468567
+training: 17 batch 1400 batch_loss: 0.10096777975559235
+training: 17 batch 1500 batch_loss: 0.06407180428504944
+training: 17 batch 1600 batch_loss: 0.07086203247308731
+training: 17 batch 1700 batch_loss: 0.0781460553407669
+training: 17 batch 1800 batch_loss: 0.06984207779169083
+training: 17 batch 1900 batch_loss: 0.07919824868440628
+training: 17 batch 2000 batch_loss: 0.0879351869225502
+training: 17 batch 2100 batch_loss: 0.07745397835969925
+training: 17 batch 2200 batch_loss: 0.08582516014575958
+training: 17 batch 2300 batch_loss: 0.09134119749069214
+training: 17 batch 2400 batch_loss: 0.0719321072101593
+One epoch Running time: 26.311920 s
+training: 18 batch 0 batch_loss: 0.07428697496652603
+training: 18 batch 100 batch_loss: 0.09135732054710388
+training: 18 batch 200 batch_loss: 0.08046359568834305
+training: 18 batch 300 batch_loss: 0.07356293499469757
+training: 18 batch 400 batch_loss: 0.08552125096321106
+training: 18 batch 500 batch_loss: 0.092421755194664
+training: 18 batch 600 batch_loss: 0.08808699250221252
+training: 18 batch 700 batch_loss: 0.06196398660540581
+training: 18 batch 800 batch_loss: 0.06730907410383224
+training: 18 batch 900 batch_loss: 0.07142037153244019
+training: 18 batch 1000 batch_loss: 0.06812615692615509
+training: 18 batch 1100 batch_loss: 0.053545303642749786
+training: 18 batch 1200 batch_loss: 0.07363180816173553
+training: 18 batch 1300 batch_loss: 0.08729163557291031
+training: 18 batch 1400 batch_loss: 0.08912692964076996
+training: 18 batch 1500 batch_loss: 0.08978104591369629
+training: 18 batch 1600 batch_loss: 0.08280722796916962
+training: 18 batch 1700 batch_loss: 0.08959165960550308
+training: 18 batch 1800 batch_loss: 0.07186958193778992
+training: 18 batch 1900 batch_loss: 0.0953882709145546
+training: 18 batch 2000 batch_loss: 0.0762270987033844
+training: 18 batch 2100 batch_loss: 0.08119276165962219
+training: 18 batch 2200 batch_loss: 0.07383983582258224
+training: 18 batch 2300 batch_loss: 0.07202397286891937
+training: 18 batch 2400 batch_loss: 0.10858552902936935
+One epoch Running time: 26.344495 s
+training: 19 batch 0 batch_loss: 0.08322741091251373
+training: 19 batch 100 batch_loss: 0.08188777416944504
+training: 19 batch 200 batch_loss: 0.09006091207265854
+training: 19 batch 300 batch_loss: 0.09457354247570038
+training: 19 batch 400 batch_loss: 0.06488843262195587
+training: 19 batch 500 batch_loss: 0.07526516914367676
+training: 19 batch 600 batch_loss: 0.05850692093372345
+training: 19 batch 700 batch_loss: 0.06624701619148254
+training: 19 batch 800 batch_loss: 0.0852380245923996
+training: 19 batch 900 batch_loss: 0.06773205101490021
+training: 19 batch 1000 batch_loss: 0.09096412360668182
+training: 19 batch 1100 batch_loss: 0.08656089007854462
+training: 19 batch 1200 batch_loss: 0.06272349506616592
+training: 19 batch 1300 batch_loss: 0.08101050555706024
+training: 19 batch 1400 batch_loss: 0.0841340646147728
+training: 19 batch 1500 batch_loss: 0.07000382244586945
+training: 19 batch 1600 batch_loss: 0.06250091642141342
+training: 19 batch 1700 batch_loss: 0.05975886806845665
+training: 19 batch 1800 batch_loss: 0.07576526701450348
+training: 19 batch 1900 batch_loss: 0.07768827676773071
+training: 19 batch 2000 batch_loss: 0.06951145082712173
+training: 19 batch 2100 batch_loss: 0.06611236929893494
+training: 19 batch 2200 batch_loss: 0.05659746751189232
+training: 19 batch 2300 batch_loss: 0.08069533109664917
+training: 19 batch 2400 batch_loss: 0.07741416990756989
+One epoch Running time: 26.537468 s
+training: 20 batch 0 batch_loss: 0.07229423522949219
+training: 20 batch 100 batch_loss: 0.05581948161125183
+training: 20 batch 200 batch_loss: 0.06194421276450157
+training: 20 batch 300 batch_loss: 0.08929373323917389
+training: 20 batch 400 batch_loss: 0.07065349072217941
+training: 20 batch 500 batch_loss: 0.09083839505910873
+training: 20 batch 600 batch_loss: 0.09722275286912918
+training: 20 batch 700 batch_loss: 0.07484458386898041
+training: 20 batch 800 batch_loss: 0.07963302731513977
+training: 20 batch 900 batch_loss: 0.07746285945177078
+training: 20 batch 1000 batch_loss: 0.08493629842996597
+training: 20 batch 1100 batch_loss: 0.08313202857971191
+training: 20 batch 1200 batch_loss: 0.07405175268650055
+training: 20 batch 1300 batch_loss: 0.050152674317359924
+training: 20 batch 1400 batch_loss: 0.07352067530155182
+training: 20 batch 1500 batch_loss: 0.06389827281236649
+training: 20 batch 1600 batch_loss: 0.08421136438846588
+training: 20 batch 1700 batch_loss: 0.08548184484243393
+training: 20 batch 1800 batch_loss: 0.0852568969130516
+training: 20 batch 1900 batch_loss: 0.06812723726034164
+training: 20 batch 2000 batch_loss: 0.07119064033031464
+training: 20 batch 2100 batch_loss: 0.08876197040081024
+training: 20 batch 2200 batch_loss: 0.05058976262807846
+training: 20 batch 2300 batch_loss: 0.07783932983875275
+training: 20 batch 2400 batch_loss: 0.09688455611467361
+One epoch Running time: 26.494635 s
+training: 21 batch 0 batch_loss: 0.05718156695365906
+training: 21 batch 100 batch_loss: 0.07683344185352325
+training: 21 batch 200 batch_loss: 0.06069502234458923
+training: 21 batch 300 batch_loss: 0.08087043464183807
+training: 21 batch 400 batch_loss: 0.0548267588019371
+training: 21 batch 500 batch_loss: 0.09006109088659286
+training: 21 batch 600 batch_loss: 0.06666986644268036
+training: 21 batch 700 batch_loss: 0.06552865356206894
+training: 21 batch 800 batch_loss: 0.06547214835882187
+training: 21 batch 900 batch_loss: 0.08371447026729584
+training: 21 batch 1000 batch_loss: 0.08678339421749115
+training: 21 batch 1100 batch_loss: 0.08061542361974716
+training: 21 batch 1200 batch_loss: 0.09922732412815094
+training: 21 batch 1300 batch_loss: 0.07394182682037354
+training: 21 batch 1400 batch_loss: 0.07113077491521835
+training: 21 batch 1500 batch_loss: 0.08280320465564728
+training: 21 batch 1600 batch_loss: 0.09291354566812515
+training: 21 batch 1700 batch_loss: 0.07920369505882263
+training: 21 batch 1800 batch_loss: 0.0789916142821312
+training: 21 batch 1900 batch_loss: 0.05845243111252785
+training: 21 batch 2000 batch_loss: 0.07658956944942474
+training: 21 batch 2100 batch_loss: 0.09180944412946701
+training: 21 batch 2200 batch_loss: 0.07685815542936325
+training: 21 batch 2300 batch_loss: 0.057992123067379
+training: 21 batch 2400 batch_loss: 0.08423846960067749
+One epoch Running time: 26.403174 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++++                                         ]18%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 21, Hit Ratio:0.042736783002773435 | Precision:0.021872236958443855 | Recall:0.04825173499346939 | NDCG:0.03996987970678038
+*Best Performance* 
+Epoch: 21, Hit Ratio:0.042736783002773435 | Precision:0.021872236958443855 | Recall:0.04825173499346939 | MDCG:0.03996987970678038
+------------------------------------------------------------------------------------------------------------------------
+training: 22 batch 0 batch_loss: 0.06546613574028015
+training: 22 batch 100 batch_loss: 0.07127135246992111
+training: 22 batch 200 batch_loss: 0.07660584896802902
+training: 22 batch 300 batch_loss: 0.08443892747163773
+training: 22 batch 400 batch_loss: 0.09166693687438965
+training: 22 batch 500 batch_loss: 0.09610845148563385
+training: 22 batch 600 batch_loss: 0.05180729180574417
+training: 22 batch 700 batch_loss: 0.069488525390625
+training: 22 batch 800 batch_loss: 0.0696432814002037
+training: 22 batch 900 batch_loss: 0.07246416807174683
+training: 22 batch 1000 batch_loss: 0.07408411055803299
+training: 22 batch 1100 batch_loss: 0.07759798318147659
+training: 22 batch 1200 batch_loss: 0.07618614286184311
+training: 22 batch 1300 batch_loss: 0.08623151481151581
+training: 22 batch 1400 batch_loss: 0.07230043411254883
+training: 22 batch 1500 batch_loss: 0.08967535942792892
+training: 22 batch 1600 batch_loss: 0.06525897234678268
+training: 22 batch 1700 batch_loss: 0.07051040232181549
+training: 22 batch 1800 batch_loss: 0.08855642378330231
+training: 22 batch 1900 batch_loss: 0.05062734708189964
+training: 22 batch 2000 batch_loss: 0.06867677718400955
+training: 22 batch 2100 batch_loss: 0.08097153156995773
+training: 22 batch 2200 batch_loss: 0.06201248988509178
+training: 22 batch 2300 batch_loss: 0.08340699970722198
+training: 22 batch 2400 batch_loss: 0.06692985445261002
+One epoch Running time: 26.473962 s
+training: 23 batch 0 batch_loss: 0.0653015673160553
+training: 23 batch 100 batch_loss: 0.058648183941841125
+training: 23 batch 200 batch_loss: 0.07815796136856079
+training: 23 batch 300 batch_loss: 0.09254491329193115
+training: 23 batch 400 batch_loss: 0.06907930970191956
+training: 23 batch 500 batch_loss: 0.06090520694851875
+training: 23 batch 600 batch_loss: 0.07782711088657379
+training: 23 batch 700 batch_loss: 0.07540126144886017
+training: 23 batch 800 batch_loss: 0.051681116223335266
+training: 23 batch 900 batch_loss: 0.05983767658472061
+training: 23 batch 1000 batch_loss: 0.05025187507271767
+training: 23 batch 1100 batch_loss: 0.0758877843618393
+training: 23 batch 1200 batch_loss: 0.06835554540157318
+training: 23 batch 1300 batch_loss: 0.06808359920978546
+training: 23 batch 1400 batch_loss: 0.07606427371501923
+training: 23 batch 1500 batch_loss: 0.0773085281252861
+training: 23 batch 1600 batch_loss: 0.07629406452178955
+training: 23 batch 1700 batch_loss: 0.08324867486953735
+training: 23 batch 1800 batch_loss: 0.06687318533658981
+training: 23 batch 1900 batch_loss: 0.08264065533876419
+training: 23 batch 2000 batch_loss: 0.07506249845027924
+training: 23 batch 2100 batch_loss: 0.07847633957862854
+training: 23 batch 2200 batch_loss: 0.08114521205425262
+training: 23 batch 2300 batch_loss: 0.058073971420526505
+training: 23 batch 2400 batch_loss: 0.07530307024717331
+One epoch Running time: 26.299031 s
+training: 24 batch 0 batch_loss: 0.051840972155332565
+training: 24 batch 100 batch_loss: 0.049294084310531616
+training: 24 batch 200 batch_loss: 0.09300059080123901
+training: 24 batch 300 batch_loss: 0.045759670436382294
+training: 24 batch 400 batch_loss: 0.08486837893724442
+training: 24 batch 500 batch_loss: 0.06414468586444855
+training: 24 batch 600 batch_loss: 0.06418427079916
+training: 24 batch 700 batch_loss: 0.08660352975130081
+training: 24 batch 800 batch_loss: 0.07337755709886551
+training: 24 batch 900 batch_loss: 0.08314785361289978
+training: 24 batch 1000 batch_loss: 0.05785490944981575
+training: 24 batch 1100 batch_loss: 0.08316736668348312
+training: 24 batch 1200 batch_loss: 0.06482695788145065
+training: 24 batch 1300 batch_loss: 0.07902128994464874
+training: 24 batch 1400 batch_loss: 0.05714543163776398
+training: 24 batch 1500 batch_loss: 0.07032918930053711
+training: 24 batch 1600 batch_loss: 0.07588505744934082
+training: 24 batch 1700 batch_loss: 0.06518895924091339
+training: 24 batch 1800 batch_loss: 0.05628997087478638
+training: 24 batch 1900 batch_loss: 0.0763898715376854
+training: 24 batch 2000 batch_loss: 0.06219276413321495
+training: 24 batch 2100 batch_loss: 0.05889931693673134
+training: 24 batch 2200 batch_loss: 0.07976637035608292
+training: 24 batch 2300 batch_loss: 0.0697379857301712
+training: 24 batch 2400 batch_loss: 0.10077998787164688
+One epoch Running time: 26.312036 s
+training: 25 batch 0 batch_loss: 0.07784614711999893
+training: 25 batch 100 batch_loss: 0.044653087854385376
+training: 25 batch 200 batch_loss: 0.05853268504142761
+training: 25 batch 300 batch_loss: 0.05255449190735817
+training: 25 batch 400 batch_loss: 0.07017259299755096
+training: 25 batch 500 batch_loss: 0.06475049257278442
+training: 25 batch 600 batch_loss: 0.09077456593513489
+training: 25 batch 700 batch_loss: 0.06080719828605652
+training: 25 batch 800 batch_loss: 0.08381160348653793
+training: 25 batch 900 batch_loss: 0.060201264917850494
+training: 25 batch 1000 batch_loss: 0.08365967869758606
+training: 25 batch 1100 batch_loss: 0.06191243231296539
+training: 25 batch 1200 batch_loss: 0.07321528345346451
+training: 25 batch 1300 batch_loss: 0.07368128001689911
+training: 25 batch 1400 batch_loss: 0.09043827652931213
+training: 25 batch 1500 batch_loss: 0.07805551588535309
+training: 25 batch 1600 batch_loss: 0.07057002931833267
+training: 25 batch 1700 batch_loss: 0.05958154425024986
+training: 25 batch 1800 batch_loss: 0.0630241185426712
+training: 25 batch 1900 batch_loss: 0.08239921927452087
+training: 25 batch 2000 batch_loss: 0.07805617153644562
+training: 25 batch 2100 batch_loss: 0.05989957973361015
+training: 25 batch 2200 batch_loss: 0.07920066267251968
+training: 25 batch 2300 batch_loss: 0.05979615077376366
+training: 25 batch 2400 batch_loss: 0.053902871906757355
+One epoch Running time: 26.394105 s
+training: 26 batch 0 batch_loss: 0.06702464818954468
+training: 26 batch 100 batch_loss: 0.06140608340501785
+training: 26 batch 200 batch_loss: 0.06050650402903557
+training: 26 batch 300 batch_loss: 0.05497020483016968
+training: 26 batch 400 batch_loss: 0.0524885319173336
+training: 26 batch 500 batch_loss: 0.06557489186525345
+training: 26 batch 600 batch_loss: 0.07512198388576508
+training: 26 batch 700 batch_loss: 0.05184285715222359
+training: 26 batch 800 batch_loss: 0.0753147155046463
+training: 26 batch 900 batch_loss: 0.055762793868780136
+training: 26 batch 1000 batch_loss: 0.06826000660657883
+training: 26 batch 1100 batch_loss: 0.08972056210041046
+training: 26 batch 1200 batch_loss: 0.08498411625623703
+training: 26 batch 1300 batch_loss: 0.07519577443599701
+training: 26 batch 1400 batch_loss: 0.05542256310582161
+training: 26 batch 1500 batch_loss: 0.07624725997447968
+training: 26 batch 1600 batch_loss: 0.0696912556886673
+training: 26 batch 1700 batch_loss: 0.062089793384075165
+training: 26 batch 1800 batch_loss: 0.067306749522686
+training: 26 batch 1900 batch_loss: 0.06170114502310753
+training: 26 batch 2000 batch_loss: 0.07098539173603058
+training: 26 batch 2100 batch_loss: 0.0497538223862648
+training: 26 batch 2200 batch_loss: 0.06649839878082275
+training: 26 batch 2300 batch_loss: 0.06790323555469513
+training: 26 batch 2400 batch_loss: 0.06100403517484665
+One epoch Running time: 26.547111 s
+evaluating the model...
+Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++++                                         ]18%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+------------------------------------------------------------------------------------------------------------------------
+Quick Ranking Performance  (Top-20 Item Recommendation)
+*Current Performance*
+Epoch: 26, Hit Ratio:0.044387268739183146 | Precision:0.022716938234179612 | Recall:0.05001670490613201 | NDCG:0.04182369655353123
+*Best Performance* 
+Epoch: 26, Hit Ratio:0.044387268739183146 | Precision:0.022716938234179612 | Recall:0.05001670490613201 | MDCG:0.04182369655353123
+------------------------------------------------------------------------------------------------------------------------
+training: 27 batch 0 batch_loss: 0.06633760035037994
+training: 27 batch 100 batch_loss: 0.07969842106103897
+training: 27 batch 200 batch_loss: 0.0659022107720375
+training: 27 batch 300 batch_loss: 0.08209486305713654
+training: 27 batch 400 batch_loss: 0.07483542710542679
+training: 27 batch 500 batch_loss: 0.0693097934126854
+training: 27 batch 600 batch_loss: 0.05459216982126236
+training: 27 batch 700 batch_loss: 0.06913763284683228
+training: 27 batch 800 batch_loss: 0.08714354783296585
+training: 27 batch 900 batch_loss: 0.06709785759449005
+training: 27 batch 1000 batch_loss: 0.0529482439160347
+training: 27 batch 1100 batch_loss: 0.05280723422765732
+training: 27 batch 1200 batch_loss: 0.04859960824251175
+training: 27 batch 1300 batch_loss: 0.05759773775935173
+training: 27 batch 1400 batch_loss: 0.054681722074747086
+training: 27 batch 1500 batch_loss: 0.09273102134466171
+training: 27 batch 1600 batch_loss: 0.06223231181502342
+training: 27 batch 1700 batch_loss: 0.08125297725200653
+training: 27 batch 1800 batch_loss: 0.07182252407073975
+training: 27 batch 1900 batch_loss: 0.043173059821128845
+training: 27 batch 2000 batch_loss: 0.0649619847536087
+training: 27 batch 2100 batch_loss: 0.08337375521659851
+training: 27 batch 2200 batch_loss: 0.08139234781265259
+training: 27 batch 2300 batch_loss: 0.08223284780979156
+training: 27 batch 2400 batch_loss: 0.058090001344680786
+One epoch Running time: 26.527909 s
+training: 28 batch 0 batch_loss: 0.05628349259495735
+training: 28 batch 100 batch_loss: 0.06519236415624619
+training: 28 batch 200 batch_loss: 0.056161560118198395
+training: 28 batch 300 batch_loss: 0.0724155455827713
+training: 28 batch 400 batch_loss: 0.0963418036699295
+training: 28 batch 500 batch_loss: 0.06857017427682877
+training: 28 batch 600 batch_loss: 0.05155080556869507
+training: 28 batch 700 batch_loss: 0.06451992690563202
+training: 28 batch 800 batch_loss: 0.06314049661159515
+training: 28 batch 900 batch_loss: 0.06109097972512245
+training: 28 batch 1000 batch_loss: 0.0916658267378807
+training: 28 batch 1100 batch_loss: 0.050023455172777176
+training: 28 batch 1200 batch_loss: 0.06296365708112717
+training: 28 batch 1300 batch_loss: 0.06915025413036346
+training: 28 batch 1400 batch_loss: 0.07225305587053299
+training: 28 batch 1500 batch_loss: 0.0576956570148468
+training: 28 batch 1600 batch_loss: 0.05971114709973335
+training: 28 batch 1700 batch_loss: 0.06254278123378754
+training: 28 batch 1800 batch_loss: 0.04863244295120239
+training: 28 batch 1900 batch_loss: 0.06584064662456512
+training: 28 batch 2000 batch_loss: 0.06614059209823608
+training: 28 batch 2100 batch_loss: 0.040897056460380554
+training: 28 batch 2200 batch_loss: 0.06328615546226501
+training: 28 batch 2300 batch_loss: 0.06851130723953247
+training: 28 batch 2400 batch_loss: 0.06706444174051285
+One epoch Running time: 26.357822 s
+training: 29 batch 0 batch_loss: 0.08328944444656372
+training: 29 batch 100 batch_loss: 0.07996741682291031
+training: 29 batch 200 batch_loss: 0.11611208319664001
+training: 29 batch 300 batch_loss: 0.047525011003017426
+training: 29 batch 400 batch_loss: 0.06424600630998611
+training: 29 batch 500 batch_loss: 0.07460489124059677
+training: 29 batch 600 batch_loss: 0.04004502668976784
+training: 29 batch 700 batch_loss: 0.05239863693714142
+training: 29 batch 800 batch_loss: 0.05857725441455841
+training: 29 batch 900 batch_loss: 0.05375087633728981
+training: 29 batch 1000 batch_loss: 0.06704411655664444
+training: 29 batch 1100 batch_loss: 0.0775514766573906
+training: 29 batch 1200 batch_loss: 0.06191287189722061
+training: 29 batch 1300 batch_loss: 0.06750588119029999
+training: 29 batch 1400 batch_loss: 0.06070905178785324
+training: 29 batch 1500 batch_loss: 0.06117623671889305
+training: 29 batch 1600 batch_loss: 0.07163107395172119
+training: 29 batch 1700 batch_loss: 0.0563666932284832
+training: 29 batch 1800 batch_loss: 0.04217402637004852
+training: 29 batch 1900 batch_loss: 0.067172110080719
+training: 29 batch 2000 batch_loss: 0.07681816816329956
+training: 29 batch 2100 batch_loss: 0.051424525678157806
+training: 29 batch 2200 batch_loss: 0.05138257145881653
+training: 29 batch 2300 batch_loss: 0.0650942251086235
+training: 29 batch 2400 batch_loss: 0.07138602435588837
+One epoch Running time: 26.298554 s
+training: 30 batch 0 batch_loss: 0.0632409155368805
+training: 30 batch 100 batch_loss: 0.04679577797651291
+training: 30 batch 200 batch_loss: 0.0465179942548275
+training: 30 batch 300 batch_loss: 0.059211988002061844
+training: 30 batch 400 batch_loss: 0.04372513294219971
+training: 30 batch 500 batch_loss: 0.09527198225259781
+training: 30 batch 600 batch_loss: 0.06437943130731583
+training: 30 batch 700 batch_loss: 0.0656891018152237
+training: 30 batch 800 batch_loss: 0.0538061186671257
+training: 30 batch 900 batch_loss: 0.07237096130847931
+training: 30 batch 1000 batch_loss: 0.07277249544858932
+training: 30 batch 1100 batch_loss: 0.05973245948553085
+training: 30 batch 1200 batch_loss: 0.04977184906601906
+training: 30 batch 1300 batch_loss: 0.05869771167635918
+training: 30 batch 1400 batch_loss: 0.0779794305562973
+training: 30 batch 1500 batch_loss: 0.0550309456884861
+training: 30 batch 1600 batch_loss: 0.05686917528510094
+training: 30 batch 1700 batch_loss: 0.06564714014530182
+training: 30 batch 1800 batch_loss: 0.08993395417928696
+training: 30 batch 1900 batch_loss: 0.04560914263129234
+training: 30 batch 2000 batch_loss: 0.053170736879110336
+training: 30 batch 2100 batch_loss: 0.07722996175289154
+training: 30 batch 2200 batch_loss: 0.061092309653759
+training: 30 batch 2300 batch_loss: 0.07413782924413681
+training: 30 batch 2400 batch_loss: 0.07093503326177597
+One epoch Running time: 20.161653 s
+Testing...
+Progress: [                                                  ]0%Progress: [+                                                 ]2%Progress: [+++                                               ]6%Progress: [++++                                              ]8%Progress: [++++++                                            ]12%Progress: [+++++++                                           ]14%Progress: [+++++++++                                         ]18%Progress: [+++++++++++                                       ]22%Progress: [++++++++++++                                      ]24%Progress: [++++++++++++++                                    ]28%Progress: [+++++++++++++++                                   ]30%Progress: [+++++++++++++++++                                 ]34%Progress: [++++++++++++++++++                                ]36%Progress: [++++++++++++++++++++                              ]40%Progress: [++++++++++++++++++++++                            ]44%Progress: [+++++++++++++++++++++++                           ]46%Progress: [+++++++++++++++++++++++++                         ]50%Progress: [++++++++++++++++++++++++++                        ]52%Progress: [++++++++++++++++++++++++++++                      ]56%Progress: [+++++++++++++++++++++++++++++                     ]58%Progress: [+++++++++++++++++++++++++++++++                   ]62%Progress: [+++++++++++++++++++++++++++++++++                 ]66%Progress: [++++++++++++++++++++++++++++++++++                ]68%Progress: [++++++++++++++++++++++++++++++++++++              ]72%Progress: [+++++++++++++++++++++++++++++++++++++             ]74%Progress: [+++++++++++++++++++++++++++++++++++++++           ]78%Progress: [+++++++++++++++++++++++++++++++++++++++++         ]82%Progress: [++++++++++++++++++++++++++++++++++++++++++        ]84%Progress: [++++++++++++++++++++++++++++++++++++++++++++      ]88%Progress: [+++++++++++++++++++++++++++++++++++++++++++++     ]90%Progress: [+++++++++++++++++++++++++++++++++++++++++++++++   ]94%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++  ]96%Progress: [++++++++++++++++++++++++++++++++++++++++++++++++++]100%
+Evaluating...
+The result has been output to  /home/anurag/repos/BOD/results .
+The result of LightGCN:
+Top 10
+Hit Ratio:0.025710557247174894
+Precision:0.026316786661614248
+Recall:0.029164887726922845
+NDCG:0.034048007892575144
+Top 20
+Hit Ratio:0.044387268739183146
+Precision:0.022716938234179612
+Recall:0.05001670490613201
+NDCG:0.04182369655353123
+
+Running time: 820.504525 s

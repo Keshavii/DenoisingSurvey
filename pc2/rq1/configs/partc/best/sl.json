@@ -1,0 +1,37 @@
+{
+  "adressa": {
+    "best_epoch": 100,
+    "lr_mult": 10,
+    "ssm_temp": 0.12,
+    "trial": "sl_t5",
+    "valid_ndcg@20": 0.11297988146543503
+  },
+  "amazon_book": {
+    "best_epoch": 100,
+    "lr_mult": 10,
+    "ssm_temp": 0.08,
+    "trial": "sl_t4",
+    "valid_ndcg@20": 0.09296288341283798
+  },
+  "gowalla": {
+    "best_epoch": 90,
+    "lr_mult": 10,
+    "ssm_temp": 0.08,
+    "trial": "sl_t4",
+    "valid_ndcg@20": 0.1289573758840561
+  },
+  "ml1m": {
+    "best_epoch": 97,
+    "lr_mult": 10,
+    "ssm_temp": 0.12,
+    "trial": "sl_t5",
+    "valid_ndcg@20": 0.11986100673675537
+  },
+  "yelp": {
+    "best_epoch": 98,
+    "lr_mult": 10,
+    "ssm_temp": 0.12,
+    "trial": "sl_t5",
+    "valid_ndcg@20": 0.05891059711575508
+  }
+}
