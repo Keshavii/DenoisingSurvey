@@ -1,23 +1,23 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-06 02:44:59 IST  up since 2026-11-05 14:24:20
-code c440502 05 Nov 21:02  linger yes  disk free 950G  ram used 7/62 GB swap 0 GB 
-gpu 10 %, 21716 MiB, 24564 MiB, 55
+pc2 (anurag@home)  2026-11-06 03:15:33 IST  up since 2026-11-05 14:24:20
+code c440502 05 Nov 21:02  linger yes  disk free 950G  ram used 10/62 GB swap 0 GB 
+gpu 87 %, 22420 MiB, 24564 MiB, 58
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-06 02:33:20 push ok (43c6d1c; pc2 pc3)
+  last snapshot: 2026-11-06 02:45:02 push ok (aa7d786; pc2 pc3)
 ---- gpu jobs ----
-  31:20       python -m rq1kit.rq4 --signal R4 --treat drop --rate 0.1 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --seed 0 
-  31:11       python -m rq1kit.rq4 --signal L4 --treat graph_drop --rate 0.1 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --s
-  31:08       python -m rq1kit.rq4 --signal L4 --treat graph_drop --rate 0.2 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --s
-  03:25       python -m rq1kit.rq4 --signal L4 --treat user_reweight --beta 0.25 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100
+  01:01:54    python -m rq1kit.rq4 --signal R4 --treat drop --rate 0.1 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --seed 0 
+  01:01:45    python -m rq1kit.rq4 --signal L4 --treat graph_drop --rate 0.1 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --s
+  01:01:42    python -m rq1kit.rq4 --signal L4 --treat graph_drop --rate 0.2 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --s
+  03:41       python -m rq1kit.rq4 --signal R1 --treat graph_drop --rate 0.2 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --s
 ---- RQ4 (signal x treatment) ----
-  tune ml1m: 209/273 done, 11 failed so far, median 14 min/job, ~4 h left at 4 in parallel
-    failed rq4tune_ml1m_R4_resample_t0 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
+  tune ml1m: 216/273 done, 12 failed so far, median 14 min/job, ~3 h left at 4 in parallel
     failed rq4tune_ml1m_R4_resample_t1 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
     failed rq4tune_ml1m_R4_resample_t2 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
+    failed rq4tune_ml1m_R1_graph_drop_t0 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 196.00 MiB. GPU 0 has a total capacity of 23.52 
   final: not started
 ---- queue log (~/survey_queue.log) ----
   2026-11-06 02:13:30 [pc2-queue] start, code c6d3c86
@@ -30,12 +30,12 @@ gpu 10 %, 21716 MiB, 24564 MiB, 55
   2026-11-06 02:13:38 5 tuning [ml1m]
   273 of 522 jobs kept (datasets ml1m)
 ---- recent service log lines ----
-2026-11-06T02:13:25+05:30 home systemd[2034]: Stopped rq4run.service - /usr/bin/bash -c "bash ~/survey/rq1/scripts/rq4_run.sh > ~/rq4_run.log 2>&1".
-2026-11-06T02:13:25+05:30 home systemd[2034]: rq4run.service: Consumed 2d 1h 14min 57.602s CPU time, 6.0G memory peak, 0B memory swap peak.
 2026-11-06T02:13:25+05:30 home systemd[2034]: rq4run.service: Failed to open /run/user/1001/systemd/transient/rq4run.service: No such file or directory
 2026-11-06T02:13:25+05:30 home systemd[2034]: rq4run.service: Failed to open /run/user/1001/systemd/transient/rq4run.service: No such file or directory
 2026-11-06T02:13:30+05:30 home systemd[2034]: Started survey-queue.service - Survey unattended queue (pc2).
 2026-11-06T02:13:31+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-06T02:13:31+05:30 home systemd[2034]: survey-snapshot.service: Consumed 1.395s CPU time, 76.5M memory peak, 0B memory swap peak.
 2026-11-06T02:44:59+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-06T02:45:02+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-06T03:15:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```

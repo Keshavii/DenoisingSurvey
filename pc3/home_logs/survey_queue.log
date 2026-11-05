@@ -2,3 +2,9 @@
 2026-11-05 20:45:29 [pc3-queue] RQ10 re-runs complete
 2026-11-05 20:45:29 [pc3-queue] waiting for data/yelp from PC2 (see scripts/ops/README.md); next look in 10 min
 2026-11-05 20:55:29 [pc3-queue] waiting for data/yelp from PC2 (see scripts/ops/README.md); next look in 10 min
+2026-11-05 21:05:29 RQ4 start: datasets [yelp], tune 1, final seeds [1], picks from this PC
+2026-11-05 21:05:29 1 clean base and MF-BPR on it
+2026-11-05 21:05:29 2 noise files
+2026-11-05 21:05:29 4b reference models for the clean bases (teacher M1c) and the Yelp files (R2, M1, hard positives)
+2026-11-05 21:05:33 5 tuning [yelp]
+249 of 522 jobs kept (datasets yelp)
