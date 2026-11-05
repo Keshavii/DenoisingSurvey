@@ -1,20 +1,20 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-06 04:17:33 IST  up since 2026-11-05 14:24:20
-code c440502 05 Nov 21:02  linger yes  disk free 950G  ram used 10/62 GB swap 0 GB 
-gpu 89 %, 22269 MiB, 24564 MiB, 59
+pc2 (anurag@home)  2026-11-06 04:48:33 IST  up since 2026-11-05 14:24:20
+code c440502 05 Nov 21:02  linger yes  disk free 950G  ram used 9/62 GB swap 0 GB 
+gpu 0 %, 22269 MiB, 24564 MiB, 55
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-06 03:46:36 push ok (40d0d67; pc2 pc3)
+  last snapshot: 2026-11-06 04:17:36 push ok (d3f755b; pc2 pc3)
 ---- gpu jobs ----
-  02:03:54    python -m rq1kit.rq4 --signal R4 --treat drop --rate 0.1 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --seed 0 
-  02:03:45    python -m rq1kit.rq4 --signal L4 --treat graph_drop --rate 0.1 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --s
-  02:03:42    python -m rq1kit.rq4 --signal L4 --treat graph_drop --rate 0.2 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --s
-  00:53       python -m rq1kit.rq4 --signal R2 --treat graph_reweight --beta 0.5 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100
+  02:34:54    python -m rq1kit.rq4 --signal R4 --treat drop --rate 0.1 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --seed 0 
+  02:34:45    python -m rq1kit.rq4 --signal L4 --treat graph_drop --rate 0.1 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --s
+  02:34:42    python -m rq1kit.rq4 --signal L4 --treat graph_drop --rate 0.2 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --s
+  01:13       python -m rq1kit.rq4 --signal R2 --treat soft_relabel --lam 0.5 --data data/ml1m --lr 0.001 --reg 1e-05 --epochs 100 --
 ---- RQ4 (signal x treatment) ----
-  tune ml1m: 230/273 done, 12 failed so far, median 14 min/job, ~3 h left at 4 in parallel
+  tune ml1m: 236/273 done, 12 failed so far, median 14 min/job, ~2 h left at 4 in parallel
     failed rq4tune_ml1m_R4_resample_t1 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
     failed rq4tune_ml1m_R4_resample_t2 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
     failed rq4tune_ml1m_R1_graph_drop_t0 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 196.00 MiB. GPU 0 has a total capacity of 23.52 
@@ -30,11 +30,11 @@ gpu 89 %, 22269 MiB, 24564 MiB, 59
   2026-11-06 02:13:38 5 tuning [ml1m]
   273 of 522 jobs kept (datasets ml1m)
 ---- recent service log lines ----
-2026-11-06T02:44:59+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-06T02:45:02+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-06T03:15:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-06T03:15:36+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-06T03:46:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-06T03:46:36+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-06T04:17:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-06T04:17:36+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-06T04:48:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
