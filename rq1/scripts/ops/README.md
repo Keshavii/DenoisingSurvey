@@ -12,6 +12,10 @@ Every PC: `survey-snapshot.timer` pushes status and all small result files every
 
 All services start at boot (linger is on) and resume where they stopped: nothing to do after a reboot.
 
+PC3 has no GitHub login, so it only stages its folder (`~/.survey_snapshot_relay_only`); PC2 fetches it over SSH every
+30 min and pushes it with its own (`~/.survey_relay` on PC2 holds `pc3 aura1@10.100.97.71`). PC2 also reads PC3's Yelp
+picks over SSH if they are not on GitHub yet. If PC2 is off, PC3's status on GitHub stops updating; PC3 keeps running.
+
 ## Commands (on the PC itself)
 
     bash ~/survey/rq1/scripts/ops/status.sh          # one screen

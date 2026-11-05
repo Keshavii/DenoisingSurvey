@@ -2,7 +2,7 @@
 # PC2 (anurag@home) unattended queue. Run by the systemd user service survey-queue (install: scripts/ops/install.sh pc2);
 # after a reboot or an error the service starts it again and every step skips what is already done.
 #   1. RQ4 ML-1M: tuning, picks and all 831 finals (R4 and R5 need the Llama files that only PC2 has).
-#   2. RQ4 Yelp finals of seed 2, from the Yelp picks that PC3 publishes on the GitHub branch "status"
+#   2. RQ4 Yelp finals of seed 2, from the Yelp picks PC3 makes (read from the GitHub branch "status", or over SSH)
 #      (PC3 tunes Yelp and runs seed 1, so the two PCs share Yelp's 338 finals).
 set -u
 REPO=${REPO:-$HOME/survey}
@@ -18,7 +18,12 @@ P=$KIT/configs/rq4/picks_yelp_from_pc3.json
 until [ -s "$P" ]; do
   if git -C "$REPO" fetch -q origin status 2>/dev/null \
      && git -C "$REPO" show origin/status:pc3/rq1/configs/rq4/picks_yelp.json > "$P.tmp" 2>/dev/null && [ -s "$P.tmp" ]; then
-    mv "$P.tmp" "$P"; say "got PC3's Yelp picks"; break
+    mv "$P.tmp" "$P"; say "got PC3's Yelp picks (GitHub)"; break
+  fi
+  H=$(awk '$1 == "pc3" {print $2}' "$HOME/.survey_relay" 2>/dev/null)   # or straight from PC3 over SSH
+  if [ -n "$H" ] && timeout 120 ssh -o BatchMode=yes -o ConnectTimeout=15 "$H" "cat survey/rq1/configs/rq4/picks_yelp.json" > "$P.tmp" 2>/dev/null \
+     && python3 -c "import json,sys; assert json.load(open(sys.argv[1]))" "$P.tmp" 2>/dev/null; then
+    mv "$P.tmp" "$P"; say "got PC3's Yelp picks (ssh $H)"; break
   fi
   rm -f "$P.tmp"
   say "waiting for PC3's Yelp picks (pc3/rq1/configs/rq4/picks_yelp.json on branch status); next look in $((WAIT / 60)) min"

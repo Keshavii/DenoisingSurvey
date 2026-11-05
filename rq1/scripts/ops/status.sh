@@ -26,6 +26,7 @@ done
 if [ "$PC" != pc1 ] && ! systemctl --user cat survey-queue > /dev/null 2>&1; then echo "  (survey-queue not installed yet)"; fi
 [ -s "$HOME/survey_snapshot.log" ] && echo "  last snapshot: $(tail -1 "$HOME/survey_snapshot.log")"
 tail -1 "$HOME/survey_snapshot.log" 2>/dev/null | grep -q FAILED && echo "ALERT: GitHub snapshot is failing (see ~/survey_snapshot.log)"
+tail -4 "$HOME/survey_snapshot.log" 2>/dev/null | grep -q "relay .*FAILED" && echo "ALERT: could not fetch another PC's status over SSH (see ~/survey_snapshot.log)"
 hr "gpu jobs"
 ps -eo pid,etime,args --no-headers 2>/dev/null | grep -E 'rq1kit\.(rq4|backbone|partc run|adt|sgl|bod|deca|dcf|pld|diffrec|ddrm|rgcf|llard|drrl|noise)|main\.py|run_GBSR|run_HDSR|gdmsr|run_hsd|run_ssdrec|run_fmlp|vllm' \
   | grep -v grep | grep -v 'partc status' | awk '{a=""; for(i=3;i<=NF;i++) a=a" "$i; printf "  %-11s%s\n", $2, substr(a,1,120)}' | head -12

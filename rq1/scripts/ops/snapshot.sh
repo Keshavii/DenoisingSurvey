@@ -5,6 +5,8 @@
 # experiments: it never touches ~/survey's own checkout (main) and never starts or stops a job.
 # Copied: result JSON/TSV/CSV, run.json and history.jsonl of every run, queue state files, picks, job lists, RQ10
 # results and logs; nothing bigger than 20 MB and no model or array files (.pt .npy .npz .pkl).
+# A PC with no GitHub login (PC3) only stages its folder (marker file ~/.survey_snapshot_relay_only); a PC that can push
+# (PC2) fetches it over SSH and pushes it with its own: one line "<folder> <user@host>" per PC in ~/.survey_relay.
 set -u
 REPO=${REPO:-$HOME/survey}
 WT=${WT:-$HOME/survey-status}
@@ -12,19 +14,22 @@ LOG=${LOG:-$HOME/survey_snapshot.log}
 case "$(whoami)" in aura3) PC=pc1 ;; anurag) PC=pc2 ;; aura1) PC=pc3 ;; *) PC=${PC:-$(whoami)} ;; esac
 KIT=$REPO/rq1; [ "$PC" = pc1 ] && [ -d "$HOME/rq1-kit" ] && KIT=$HOME/rq1-kit
 say() { echo "$(date '+%F %T') $*" >> "$LOG"; }
+RELAY_ONLY=0; [ -f "$HOME/.survey_snapshot_relay_only" ] && RELAY_ONLY=1
 exec 9> "$HOME/.survey_snapshot.lock"
 flock -n 9 || { say "previous snapshot still running; skipped"; exit 0; }
 export GIT_TERMINAL_PROMPT=0   # never wait for a password prompt (no terminal under systemd)
 export GIT_AUTHOR_NAME="$PC snapshot" GIT_AUTHOR_EMAIL="$PC@denoising-survey.invalid"
 export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME" GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 
-if [ ! -e "$WT/.git" ]; then
+if [ $RELAY_ONLY = 1 ]; then
+  mkdir -p "$WT"        # a plain staging folder is enough: the relaying PC copies $WT/$PC as it is
+elif [ ! -e "$WT/.git" ]; then
   git -C "$REPO" fetch -q origin status 2>> "$LOG" || { say "push FAILED: cannot fetch branch status"; exit 1; }
   git -C "$REPO" worktree prune
   git -C "$REPO" worktree add -q --detach "$WT" origin/status 2>> "$LOG" || { say "push FAILED: cannot create $WT"; exit 1; }
 fi
 cd "$WT" || exit 1
-git fetch -q origin status 2>> "$LOG" && git reset -q --hard origin/status
+[ $RELAY_ONLY = 1 ] || { git fetch -q origin status 2>> "$LOG" && git reset -q --hard origin/status; }
 
 mkdir -p "$PC"
 {
@@ -82,11 +87,27 @@ for src, pats, sub in specs:
 print(n)
 EOF
 
-git add -A "$PC"
+if [ $RELAY_ONLY = 1 ]; then say "staged $WT/$PC for relay (this PC has no GitHub login; a relaying PC pushes it)"; exit 0; fi
+
+# folders of PCs without a GitHub login, fetched over SSH (lines "<folder> <user@host>" in ~/.survey_relay)
+DIRS=("$PC")
+while read -r name host _; do
+  case "$name" in pc[0-9]) ;; *) continue ;; esac
+  tmp=$(mktemp -d)
+  if timeout 600 ssh -o BatchMode=yes -o ConnectTimeout=15 "$host" "tar czf - -C survey-status $name" 2>> "$LOG" | tar xzf - -C "$tmp" 2>> "$LOG" \
+     && [ -f "$tmp/$name/STATUS.md" ]; then
+    rm -rf "${WT:?}/$name" && mv "$tmp/$name" "$WT/$name" && DIRS+=("$name")
+  else
+    say "relay $name FAILED (ssh $host)"
+  fi
+  rm -rf "$tmp"
+done < <(grep -v '^#' "$HOME/.survey_relay" 2>/dev/null)
+
+git add -A "${DIRS[@]}"
 if git diff --cached --quiet; then say "nothing new"; exit 0; fi
-git commit -q -m "$PC snapshot $(date '+%F %H:%M %Z')"
+git commit -q -m "${DIRS[*]} snapshot $(date '+%F %H:%M %Z')"
 for i in 1 2 3; do
-  if git push -q origin HEAD:status 2>> "$LOG"; then say "push ok ($(git log -1 --format=%h))"; exit 0; fi
+  if git push -q origin HEAD:status 2>> "$LOG"; then say "push ok ($(git log -1 --format=%h); ${DIRS[*]})"; exit 0; fi
   git fetch -q origin status 2>> "$LOG" && git rebase -q origin/status 2>> "$LOG" || git rebase --abort 2>/dev/null
   sleep $((i * 20))
 done
