@@ -21,10 +21,17 @@ LIMIT=${LIMIT:-12h}
 mkdir -p "$L" "$RES"
 say() { echo "$(date '+%F %T') $*"; }
 
-# ── Wait for rq10run (baseline) to finish ────────────────────────────────────
-say "waiting for rq10run to finish..."
-while systemctl --user is-active --quiet rq10run 2>/dev/null; do sleep 60; done
-say "rq10run done (or never started as a unit); proceeding"
+# ── Wait for baseline GPU jobs to finish ─────────────────────────────────────
+# rq10_run.sh runs under whatever unit name launched it (rq10next, rq10rerun,
+# etc.) — we cannot reliably check by unit name. Instead wait for the actual
+# training processes that rq10_run.sh spawns; they all load their models into
+# GPU memory and appear in pgrep.
+say "waiting for baseline GPU jobs (GBSR/HDSR/GDMSR/STEAM/FMLP/PreferDiff) to finish..."
+while pgrep -f "run_GBSR\.py|run_HDSR_pc3\.py|gdmsr/main\.py|gdmsr_patch\.py|\
+steam/main\.py|fmlp/main\.py|preferdiff/main\.py" > /dev/null 2>&1; do
+  sleep 60
+done
+say "baseline GPU jobs done; GPU free for HSD/SSDRec"
 
 # Python from recbole env (RecBole 1.0.1 installed)
 PY=~/miniconda3/envs/r10-recbole/bin/python

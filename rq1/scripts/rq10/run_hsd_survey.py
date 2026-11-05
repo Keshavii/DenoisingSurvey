@@ -6,11 +6,25 @@ Place this file alongside run_hsd.py in the hsd repo root and run from there:
 
 The original run_hsd.py has no argparse; this wrapper imports its main()
 using importlib so the __main__ guard fires for the wrapper, not the original.
+
+Patches openpyxl.load_workbook to handle missing result files gracefully —
+run_hsd.py tries to open/append 'denoising-ml.xlsx' which may not exist;
+we intercept and return a fresh workbook instead of crashing.
 """
 import argparse
 import importlib.util
 import os
 import sys
+
+# ── Patch openpyxl before run_hsd.py imports it ─────────────────────────────
+import openpyxl as _opx
+_orig_load_workbook = _opx.load_workbook
+def _safe_load_workbook(filename, *args, **kwargs):
+    try:
+        return _orig_load_workbook(filename, *args, **kwargs)
+    except (FileNotFoundError, KeyError):
+        return _opx.Workbook()
+_opx.load_workbook = _safe_load_workbook
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--dataset",   default="Beauty",
