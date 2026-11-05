@@ -3,7 +3,9 @@
 # after a reboot or an error the service starts it again and every step skips what is already done.
 #   1. RQ10 re-runs of 5 Nov (scripts/rq10/rq10_rerun_failed.sh): wait for the running copy (unit rq10rerun), or, if it
 #      was cut off (reboot), finish it here; its jobs keep their .done markers, so nothing finished runs twice.
-#   2. RQ4 Yelp: tuning (249 trials), picks (published on the GitHub branch "status" for PC2), finals of seed 1.
+#   2. RQ4 Yelp: tuning (249 trials) and picks (PC2 reads them for its Yelp seed-2 finals).
+#   3. RQ10 stage 1: the fixed reproduction runs (scripts/rq10/rq10_stage1.sh).
+#   4. RQ4 Yelp finals of seed 1.
 set -u
 REPO=${REPO:-$HOME/survey}
 KIT=$REPO/rq1
@@ -27,5 +29,14 @@ until [ -f "$KIT/data/yelp/train.tsv" ] && [ -f "$KIT/data/yelp/train_N3_20_s1.t
   sleep "$WAIT"
 done
 
-DATASETS=yelp FINAL_SEEDS=1 bash "$KIT/scripts/rq4_run.sh" || { say "RQ4 Yelp stopped with an error (see above); the service will retry"; exit 1; }
+# Yelp tuning and picks first: PC2 waits for these picks to run Yelp seed 2
+DATASETS=yelp STOP_AFTER_PICKS=1 bash "$KIT/scripts/rq4_run.sh" || { say "RQ4 Yelp tuning stopped with an error (see above); the service will retry"; exit 1; }
+
+# RQ10 stage 1 (fixed reproduction runs), one job at a time, alone on the GPU
+if ! grep -q "stage 1 complete" "$HOME/rq10_stage1.log" 2>/dev/null; then
+  say "RQ10 stage 1 (log ~/rq10_stage1.log)"
+  bash "$KIT/scripts/rq10/rq10_stage1.sh" >> "$HOME/rq10_stage1.log" 2>&1
+fi
+
+DATASETS=yelp FINAL_SEEDS=1 bash "$KIT/scripts/rq4_run.sh" || { say "RQ4 Yelp finals stopped with an error (see above); the service will retry"; exit 1; }
 say "PC3 queue complete: nothing left to run"

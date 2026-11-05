@@ -5,6 +5,7 @@
 #   DATASETS=ml1m bash ~/survey/rq1/scripts/rq4_run.sh                    # ML-1M only: tune, pick, all finals
 #   DATASETS=yelp FINAL_SEEDS=1 bash ...                                  # Yelp: tune, pick, finals of seed 1
 #   DATASETS=yelp TUNE=0 PICKS_FROM=picks_yelp.json FINAL_SEEDS=2 bash ...   # Yelp finals of seed 2 from picks made elsewhere
+#   STOP_AFTER_PICKS=1 ...                                                 # tune and pick only (finals in a later call)
 # Steps: 1 clean base and MF on it (for N3); 2 noise files N1, N3; 3 LLM item profiles (R4, ML-1M); 4 reference
 # LightGCN-BCE + Llama scores per ML-1M training file (R5); 4b reference models for the clean bases and Yelp;
 # 5 tuning (522 trials in all); 6 picks; 7 finals (1,169 runs in all).
@@ -115,6 +116,8 @@ else
     python scripts/ops/rq4_select.py merge configs/rq4/best.json "$PICKS_FROM" $DS
   done
 fi
+
+if [ "${STOP_AFTER_PICKS:-0}" = 1 ]; then say "stopping after the picks (STOP_AFTER_PICKS=1); finals come in a later call"; exit 0; fi
 
 say "7 finals [$DATASETS] seeds [${FINAL_SEEDS:-all}]"
 python scripts/rq4_jobs.py final > configs/rq4/jobs_final.csv
