@@ -105,3 +105,19 @@ Decisions (common protocol, no change to any training code):
 - Every script that starts vLLM on PC2 must export VLLM_USE_FLASHINFER_SAMPLER=0 (no nvcc there). Missing it in
   rq4_run.sh stopped RQ4 at 03:31 on 4 Nov and left PC2 idle ~15 h.
 - Long unattended pipelines must not let one optional step (R5 scoring) stop the rest.
+
+## Unattended operation and decisions (5-6 Nov)
+- All three PCs run systemd user service `survey-queue` (rq1/scripts/ops/pcN_queue.sh) and timer `survey-snapshot`
+  (status + small result files to branch `status`, https://github.com/Keshavii/DenoisingSurvey/tree/status). PC3 has
+  no GitHub login: PC2 relays its folder over SSH (~/.survey_relay). Details: rq1/scripts/ops/README.md.
+- RQ4 split: PC2 = ML-1M (tune, picks, 831 finals) then Yelp seed 2; PC3 = Yelp tune + picks, RQ10 stage 1, Yelp seed 1.
+  Yelp inputs (data/yelp incl. N3 files, MF, reference models) copied from PC2 to PC3, so both PCs use identical files.
+  Every queue pass is followed by a pass that reruns failed jobs alone (11 ML-1M trials had run out of GPU memory).
+- RQ2 lean (Claude, 5 Nov; user may overrule): Part C picks reused (no per-condition tuning), Adressa/Yelp/Amazon-Book/
+  ML-1M, N1/N2/N3 at rho* (rate rho*/(1-rho*)), 3 seeds, LightGCN, all Part C methods with a pick except LLaRD, plus
+  Plain-BPR/BCE. Starts on PC1 only when Part C has nothing left (scheduler.json slots_taken_by_legacy_queue = 4).
+- RQ10 findings 5-6 Nov: FMLP noise files of 5 Nov inserted noise at any position and replaced 14.6% / 18.2% of test
+  targets (results retired, .invalid); noise levels 20/30% did not follow the design (10/20% of training positions,
+  STEAM protocol); STEAM's Yelp (16,552 items) is not the design's Yelp (FMLP's, 20,033); PreferDiff's code has no
+  Beauty (C, O, T only), its Sports run is the 4 Nov reproduction; no common evaluator yet. Stage 1 fixes the
+  reproduction runs (rq10_stage1.sh); stage 2 (noise per design + common full-ranking evaluator) is next.

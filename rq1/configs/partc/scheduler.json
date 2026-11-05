@@ -1,4 +1,4 @@
 {
-  "_about": "Scheduling only, never part of a job command or hash. While an old rq1kit.queue runs, partc assumes it holds this many of total_slots and uses the rest. Remove the key to go back to canaries only.",
-  "slots_taken_by_legacy_queue": 2
+  "_about": "Scheduling only, never part of a job command or hash. While an rq1kit.queue runs, partc assumes it holds this many of total_slots and uses the rest. 4 (since 6 Nov 2026): partc starts nothing while PC1's RQ2 queue (scripts/ops/pc1_queue.sh) runs, which only starts after Part C has nothing left. Set 2 to let partc share the GPU with a queue; remove the key to go back to canaries only.",
+  "slots_taken_by_legacy_queue": 4
 }

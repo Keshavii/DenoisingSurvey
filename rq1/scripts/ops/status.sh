@@ -51,9 +51,15 @@ for line in (open(state) if os.path.isfile(state) else []):
         r = json.loads(line); last[r["job_id"]] = r
     except Exception:
         pass
+def ds_of(job_id):
+    rest = job_id.split("_", 1)[1]
+    for d in ("amazon_book", "adressa", "ml1m", "yelp", "gowalla"):
+        if rest.startswith(d + "_"):
+            return d
+    return rest.split("_")[0]
 meds = []
-for ds in sorted({j["job_id"].split("_")[1] for j in jobs}):
-    js = [j for j in jobs if j["job_id"].split("_")[1] == ds]
+for ds in sorted({ds_of(j["job_id"]) for j in jobs}):
+    js = [j for j in jobs if ds_of(j["job_id"]) == ds]
     ok = [last[j["job_id"]] for j in js if j["job_id"] in last and last[j["job_id"]]["status"] == "ok"]
     bad = [last[j["job_id"]] for j in js if j["job_id"] in last and last[j["job_id"]]["status"] != "ok"]
     left = len(js) - len(ok)
@@ -90,6 +96,14 @@ pc1)
       echo "  failed/held: $(grep -cE '^  (FAILED|CONFLICT|HELD)' "$S")"; grep -E '^  (FAILED|CONFLICT|HELD)' "$S" | cut -c1-130 | head -6
     fi
   else echo "  no $S"; fi
+  hr "RQ2 (after Part C)"
+  if [ -f "$KIT/configs/rq2/started" ]; then
+    echo "  started $(cat "$KIT/configs/rq2/started")"
+    [ -f "$KIT/configs/rq2/rho.json" ] && python3 -c "import json;r=json.load(open('$KIT/configs/rq2/rho.json'));print('  rho*: '+', '.join(f'{k} {v[\"rho_star\"]:.3f}' for k,v in r.items()))"
+    queue_progress "$KIT/configs/rq2/jobs.csv" "$KIT/logs/rq2" rq2
+  else
+    echo "  waits until Part C has nothing left to run"
+  fi
   ;;
 pc2|pc3)
   hr "RQ4 (signal x treatment)"
