@@ -1,0 +1,102 @@
+===== PC 1 2026-10-21 12:43:41
+== Amazon-Book baselines
+done 24/24, failed 0
+== DeCA Electronics (6 runs + SGL line)
+nohup: ignoring input
+12:53:37 DeCA electronics GMF Normal
+   Recall 0.0147-0.0224-0.0347-0.0621
+13:01:32 DeCA electronics GMF DeCA
+   Recall 0.0262-0.0433-0.0688-0.1045
+13:15:17 DeCA electronics GMF DeCAp
+   Recall 0.0266-0.0423-0.0656-0.1094
+13:29:43 DeCA electronics NeuMF-end Normal
+   Recall 0.0536-0.0711-0.1106-0.1947
+13:40:52 DeCA electronics NeuMF-end DeCA
+   Recall 0.0417-0.0590-0.0956-0.1921
+13:50:23 DeCA electronics NeuMF-end DeCAp
+   Recall 0.0519-0.0766-0.1109-0.1989
+13:57:23 SGL ifashion
+13:57:35 ALL DONE
+== DeCA Electronics seeds
+nohup: ignoring input
+13:58:38 DeCA electronics GMF Normal seed 2021
+   Recall 0.0145-0.0216-0.0342-0.0623
+14:02:35 DeCA electronics GMF DeCA seed 2021
+   Recall 0.0272-0.0450-0.0691-0.1027
+14:11:04 DeCA electronics GMF DeCAp seed 2021
+   Recall 0.0269-0.0431-0.0682-0.1131
+14:17:13 DeCA electronics NeuMF-end Normal seed 2021
+   Recall 0.0532-0.0733-0.1063-0.1865
+14:23:44 DeCA electronics NeuMF-end DeCA seed 2021
+   Recall 0.0449-0.0687-0.1028-0.1919
+14:33:20 DeCA electronics NeuMF-end DeCAp seed 2021
+   Recall 0.0524-0.0764-0.1132-0.2001
+14:37:17 DeCA electronics GMF Normal seed 2022
+   Recall 0.0152-0.0230-0.0353-0.0625
+14:41:26 DeCA electronics GMF DeCA seed 2022
+   Recall 0.0284-0.0460-0.0710-0.1038
+14:55:12 DeCA electronics GMF DeCAp seed 2022
+   Recall 0.0267-0.0431-0.0668-0.1122
+15:06:54 DeCA electronics NeuMF-end Normal seed 2022
+   Recall 0.0509-0.0732-0.1074-0.1896
+15:19:15 DeCA electronics NeuMF-end DeCA seed 2022
+   Recall 0.0520-0.0714-0.1075-0.1975
+15:35:49 DeCA electronics NeuMF-end DeCAp seed 2022
+   Recall 0.0519-0.0734-0.1132-0.1998
+15:45:36 ALL DONE
+== DeCA NDCG lines
+deca_electronics_GMF_DeCA.log: Recall 0.0262-0.0433-0.0688-0.1045 NDCG 0.0169-0.0224-0.0288-0.0359 
+deca_electronics_GMF_DeCAp.log: Recall 0.0266-0.0423-0.0656-0.1094 NDCG 0.0182-0.0233-0.0291-0.0378 
+deca_electronics_GMF_DeCAp_s2021.log: Recall 0.0269-0.0431-0.0682-0.1131 NDCG 0.0184-0.0236-0.0300-0.0389 
+deca_electronics_GMF_DeCAp_s2022.log: Recall 0.0267-0.0431-0.0668-0.1122 NDCG 0.0183-0.0235-0.0295-0.0384 
+deca_electronics_GMF_DeCA_s2021.log: Recall 0.0272-0.0450-0.0691-0.1027 NDCG 0.0183-0.0240-0.0301-0.0368 
+deca_electronics_GMF_DeCA_s2022.log: Recall 0.0284-0.0460-0.0710-0.1038 NDCG 0.0185-0.0241-0.0304-0.0370 
+deca_electronics_GMF_Normal.log: Recall 0.0147-0.0224-0.0347-0.0621 NDCG 0.0102-0.0127-0.0158-0.0211 
+deca_electronics_GMF_Normal_s2021.log: Recall 0.0145-0.0216-0.0342-0.0623 NDCG 0.0099-0.0121-0.0153-0.0208 
+deca_electronics_GMF_Normal_s2022.log: Recall 0.0152-0.0230-0.0353-0.0625 NDCG 0.0103-0.0129-0.0160-0.0213 
+deca_electronics_NeuMF-end_DeCA.log: Recall 0.0417-0.0590-0.0956-0.1921 NDCG 0.0336-0.0391-0.0483-0.0675 
+deca_electronics_NeuMF-end_DeCAp.log: Recall 0.0519-0.0766-0.1109-0.1989 NDCG 0.0400-0.0479-0.0565-0.0738 
+deca_electronics_NeuMF-end_DeCAp_s2021.log: Recall 0.0524-0.0764-0.1132-0.2001 NDCG 0.0400-0.0477-0.0569-0.0739 
+deca_electronics_NeuMF-end_DeCAp_s2022.log: Recall 0.0519-0.0734-0.1132-0.1998 NDCG 0.0401-0.0470-0.0569-0.0740 
+deca_electronics_NeuMF-end_DeCA_s2021.log: Recall 0.0449-0.0687-0.1028-0.1919 NDCG 0.0356-0.0433-0.0518-0.0694 
+deca_electronics_NeuMF-end_DeCA_s2022.log: Recall 0.0520-0.0714-0.1075-0.1975 NDCG 0.0398-0.0461-0.0551-0.0729 
+deca_electronics_NeuMF-end_Normal.log: Recall 0.0536-0.0711-0.1106-0.1947 NDCG 0.0407-0.0463-0.0562-0.0727 
+deca_electronics_NeuMF-end_Normal_s2021.log: Recall 0.0532-0.0733-0.1063-0.1865 NDCG 0.0405-0.0469-0.0552-0.0710 
+deca_electronics_NeuMF-end_Normal_s2022.log: Recall 0.0509-0.0732-0.1074-0.1896 NDCG 0.0393-0.0466-0.0552-0.0713 
+== DCF
+nohup: ignoring input
+13:28:15 DCF adressa GMF
+   ################### TEST ###################### Recall 0.1254-0.1888-0.2133-0.2554 NDCG 0.0908-0.1141-0.1214-0.1318 
+13:36:48 DCF adressa NeuMF-end
+   ################### TEST ###################### Recall 0.1898-0.2858-0.3081-0.3639 NDCG 0.1421-0.1783-0.1850-0.1990 
+13:40:53 DCF yelp GMF
+   ################### TEST ###################### Recall 0.0142-0.0247-0.0421-0.0807 NDCG 0.0143-0.0178-0.0233-0.0337 
+14:34:58 DCF yelp NeuMF-end
+   ################### TEST ###################### Recall 0.0131-0.0231-0.0400-0.0780 NDCG 0.0129-0.0163-0.0216-0.0319 
+16:39:18 ALL DONE
+--- dcf_adressa_GMF.log
+data loaded! user_num:212231, item_num:6596 train_data_len:419491 test_user_num:10380
+################### TEST ######################
+Recall 0.1254-0.1888-0.2133-0.2554
+NDCG 0.0908-0.1141-0.1214-0.1318
+--- dcf_adressa_NeuMF-end.log
+data loaded! user_num:212231, item_num:6596 train_data_len:419491 test_user_num:10380
+################### TEST ######################
+Recall 0.1898-0.2858-0.3081-0.3639
+NDCG 0.1421-0.1783-0.1850-0.1990
+--- dcf_yelp_GMF.log
+data loaded! user_num:45548, item_num:57396 train_data_len:1672520 test_user_num:45525
+################### TEST ######################
+Recall 0.0142-0.0247-0.0421-0.0807
+NDCG 0.0143-0.0178-0.0233-0.0337
+--- dcf_yelp_NeuMF-end.log
+data loaded! user_num:45548, item_num:57396 train_data_len:1672520 test_user_num:45525
+################### TEST ######################
+Recall 0.0131-0.0231-0.0400-0.0780
+NDCG 0.0129-0.0163-0.0216-0.0319
+tail: option used in invalid context -- 3
+== Machine
+0 %, 931 MiB
+Mem:            62Gi       5.7Gi       8.3Gi       197Mi        48Gi        56Gi
+Swap:          135Gi       5.0Mi       135Gi
+/dev/mapper/ubuntu--vg-ubuntu--lv  1.6T  256G  1.3T  18% /

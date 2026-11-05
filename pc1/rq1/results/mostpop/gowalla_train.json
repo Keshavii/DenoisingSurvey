@@ -1,0 +1,15 @@
+{
+  "dataset": "gowalla",
+  "train_file": "train.tsv",
+  "method": "MostPop",
+  "valid_clean": {
+    "recall@20": 0.030169402671050487,
+    "ndcg@20": 0.01638078411374657,
+    "seen_item_leak_rate": 0.0
+  },
+  "test": {
+    "recall@20": 0.030186808607532506,
+    "ndcg@20": 0.01677885778817224,
+    "seen_item_leak_rate": 0.0
+  }
+}

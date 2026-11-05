@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.09878659216749396,
+  "recall@20": 0.14153095158265536,
+  "recall@50": 0.2206158875647239,
+  "ndcg@10": 0.07309191875225231,
+  "ndcg@20": 0.0859783447613435,
+  "ndcg@50": 0.10654014860624932,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1028,
+      "ndcg@20": 0.10428474501394755,
+      "recall@20": 0.18968871595330739
+    },
+    "warm(5-20)": {
+      "n_users": 40291,
+      "ndcg@20": 0.07505900072233643,
+      "recall@20": 0.14548741240806465
+    },
+    "established(>20)": {
+      "n_users": 39030,
+      "ndcg@20": 0.09676830917886736,
+      "recall@20": 0.13617824994571975
+    },
+    "user_q1": {
+      "n_users": 15911,
+      "ndcg@20": 0.0665753456013657,
+      "recall@20": 0.13679215636980704
+    },
+    "user_q2": {
+      "n_users": 12228,
+      "ndcg@20": 0.07618772241410283,
+      "recall@20": 0.14789826627412495
+    },
+    "user_q3": {
+      "n_users": 19634,
+      "ndcg@20": 0.08937490020767923,
+      "recall@20": 0.15957862211809448
+    },
+    "user_q4": {
+      "n_users": 15987,
+      "ndcg@20": 0.09422017293564455,
+      "recall@20": 0.14823815183169659
+    },
+    "user_q5": {
+      "n_users": 16589,
+      "ndcg@20": 0.09984239763014562,
+      "recall@20": 0.11355840790371786
+    },
+    "items_head": {
+      "n_truth": 187957,
+      "recall@20_micro": 0.1490287672180339
+    },
+    "items_mid": {
+      "n_truth": 56939,
+      "recall@20_micro": 0.0719541965963575
+    },
+    "items_tail": {
+      "n_truth": 39016,
+      "recall@20_micro": 0.044238261226163623
+    },
+    "coverage@20": 0.7904280226630044,
+    "gini@20": 0.7975064593708356
+  },
+  "part": "C",
+  "dataset": "amazon_book",
+  "method": "DrRL",
+  "backbone": "LightGCN",
+  "cond": "N0",
+  "seed": "1",
+  "train_file": "train.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/amazon_book/drrl_lightgcn_N0_s1/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-10-31 04:42:14"
+}

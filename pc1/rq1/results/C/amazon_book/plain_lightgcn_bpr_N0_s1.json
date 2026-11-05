@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.05834170969491597,
+  "recall@20": 0.09094506009274063,
+  "recall@50": 0.1546641777672749,
+  "ndcg@10": 0.041507016453033084,
+  "ndcg@20": 0.05140597788650305,
+  "ndcg@50": 0.06792165718856795,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1028,
+      "ndcg@20": 0.05749171764810551,
+      "recall@20": 0.10603112840466926
+    },
+    "warm(5-20)": {
+      "n_users": 40291,
+      "ndcg@20": 0.04402721103499518,
+      "recall@20": 0.09294466092510321
+    },
+    "established(>20)": {
+      "n_users": 39030,
+      "ndcg@20": 0.058862850926194976,
+      "recall@20": 0.08848350755978177
+    },
+    "user_q1": {
+      "n_users": 15911,
+      "ndcg@20": 0.03688230856072852,
+      "recall@20": 0.08239582678649991
+    },
+    "user_q2": {
+      "n_users": 12228,
+      "ndcg@20": 0.04554597770735893,
+      "recall@20": 0.09674517500817795
+    },
+    "user_q3": {
+      "n_users": 19634,
+      "ndcg@20": 0.05376944603254249,
+      "recall@20": 0.10471630844453499
+    },
+    "user_q4": {
+      "n_users": 15987,
+      "ndcg@20": 0.056251690806678994,
+      "recall@20": 0.09616459206438564
+    },
+    "user_q5": {
+      "n_users": 16589,
+      "ndcg@20": 0.06218839025607212,
+      "recall@20": 0.0735403761563857
+    },
+    "items_head": {
+      "n_truth": 187957,
+      "recall@20_micro": 0.10873763679990636
+    },
+    "items_mid": {
+      "n_truth": 56939,
+      "recall@20_micro": 0.023094891023727148
+    },
+    "items_tail": {
+      "n_truth": 39016,
+      "recall@20_micro": 0.009893377076071356
+    },
+    "coverage@20": 0.5145799337137529,
+    "gini@20": 0.9020912866987277
+  },
+  "part": "C",
+  "dataset": "amazon_book",
+  "method": "Plain-BPR",
+  "backbone": "LightGCN",
+  "cond": "N0",
+  "seed": "1",
+  "train_file": "train.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/amazon_book/plain_lightgcn_bpr_N0_s1/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-10-19 14:44:22"
+}

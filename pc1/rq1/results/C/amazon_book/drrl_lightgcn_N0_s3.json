@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.09906334300488089,
+  "recall@20": 0.1426056988261175,
+  "recall@50": 0.221126638383603,
+  "ndcg@10": 0.07324058014234597,
+  "ndcg@20": 0.08635371360356818,
+  "ndcg@50": 0.10674269947564799,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1028,
+      "ndcg@20": 0.10722306342429679,
+      "recall@20": 0.19747081712062256
+    },
+    "warm(5-20)": {
+      "n_users": 40291,
+      "ndcg@20": 0.07579105307177426,
+      "recall@20": 0.14756397210295102
+    },
+    "established(>20)": {
+      "n_users": 39030,
+      "ndcg@20": 0.09670796581650183,
+      "recall@20": 0.13604215462412803
+    },
+    "user_q1": {
+      "n_users": 15911,
+      "ndcg@20": 0.06784976455515489,
+      "recall@20": 0.13974608761234367
+    },
+    "user_q2": {
+      "n_users": 12228,
+      "ndcg@20": 0.07714083750670934,
+      "recall@20": 0.15100588812561336
+    },
+    "user_q3": {
+      "n_users": 19634,
+      "ndcg@20": 0.08935861095941165,
+      "recall@20": 0.15933245051101833
+    },
+    "user_q4": {
+      "n_users": 15987,
+      "ndcg@20": 0.09396661158601288,
+      "recall@20": 0.1484821000396155
+    },
+    "user_q5": {
+      "n_users": 16589,
+      "ndcg@20": 0.09999925145947998,
+      "recall@20": 0.11369634265555792
+    },
+    "items_head": {
+      "n_truth": 187957,
+      "recall@20_micro": 0.15019924770027188
+    },
+    "items_mid": {
+      "n_truth": 56939,
+      "recall@20_micro": 0.07167319412002318
+    },
+    "items_tail": {
+      "n_truth": 39016,
+      "recall@20_micro": 0.044289522247283164
+    },
+    "coverage@20": 0.7860494815685718,
+    "gini@20": 0.7987958456618076
+  },
+  "part": "C",
+  "dataset": "amazon_book",
+  "method": "DrRL",
+  "backbone": "LightGCN",
+  "cond": "N0",
+  "seed": "3",
+  "train_file": "train.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/amazon_book/drrl_lightgcn_N0_s3/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-01 07:02:28"
+}

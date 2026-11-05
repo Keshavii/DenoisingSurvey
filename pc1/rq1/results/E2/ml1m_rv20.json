@@ -1,0 +1,422 @@
+{
+  "rho_val": 20,
+  "kinds": {
+    "N1": {
+      "ndcg20": {
+        "10": {
+          "plain_lightgcn_bpr": {
+            "ndcg20": 0.08614019890991716,
+            "n_seeds": 3
+          },
+          "plain_lightgcn_bce": {
+            "ndcg20": 0.08378553822852064,
+            "n_seeds": 3
+          },
+          "tce_lightgcn": {
+            "ndcg20": 0.08450416871856585,
+            "n_seeds": 3
+          },
+          "rce_lightgcn": {
+            "ndcg20": 0.08283182687628686,
+            "n_seeds": 3
+          },
+          "dcf_lightgcn": {
+            "ndcg20": 0.0847442711494271,
+            "n_seeds": 3
+          },
+          "pld_lightgcn": {
+            "ndcg20": 0.08301796853918512,
+            "n_seeds": 3
+          },
+          "sl_lightgcn": {
+            "ndcg20": 0.08891703391735371,
+            "n_seeds": 3
+          },
+          "drrl_lightgcn": {
+            "ndcg20": 0.08893289858925135,
+            "n_seeds": 3
+          },
+          "sgl_lightgcn": {
+            "ndcg20": 0.08135775286204298,
+            "n_seeds": 3
+          }
+        },
+        "20": {
+          "plain_lightgcn_bpr": {
+            "ndcg20": 0.08358819023196397,
+            "n_seeds": 3
+          },
+          "plain_lightgcn_bce": {
+            "ndcg20": 0.08128633121075952,
+            "n_seeds": 3
+          },
+          "tce_lightgcn": {
+            "ndcg20": 0.08191905827011957,
+            "n_seeds": 3
+          },
+          "rce_lightgcn": {
+            "ndcg20": 0.08038668042357651,
+            "n_seeds": 3
+          },
+          "dcf_lightgcn": {
+            "ndcg20": 0.08221215118905091,
+            "n_seeds": 3
+          },
+          "pld_lightgcn": {
+            "ndcg20": 0.08067559725788699,
+            "n_seeds": 3
+          },
+          "sl_lightgcn": {
+            "ndcg20": 0.08613033818354927,
+            "n_seeds": 3
+          },
+          "drrl_lightgcn": {
+            "ndcg20": 0.08610300978423553,
+            "n_seeds": 3
+          },
+          "sgl_lightgcn": {
+            "ndcg20": 0.07884602775629457,
+            "n_seeds": 3
+          }
+        },
+        "30": {
+          "plain_lightgcn_bpr": {
+            "ndcg20": 0.08144993390128043,
+            "n_seeds": 3
+          },
+          "plain_lightgcn_bce": {
+            "ndcg20": 0.07924341263050545,
+            "n_seeds": 3
+          },
+          "tce_lightgcn": {
+            "ndcg20": 0.07979256558392896,
+            "n_seeds": 3
+          },
+          "rce_lightgcn": {
+            "ndcg20": 0.07835596104924164,
+            "n_seeds": 3
+          },
+          "dcf_lightgcn": {
+            "ndcg20": 0.08003587197269656,
+            "n_seeds": 3
+          },
+          "pld_lightgcn": {
+            "ndcg20": 0.0788144031239558,
+            "n_seeds": 3
+          },
+          "sl_lightgcn": {
+            "ndcg20": 0.08374824415067067,
+            "n_seeds": 3
+          },
+          "drrl_lightgcn": {
+            "ndcg20": 0.08388304123830015,
+            "n_seeds": 3
+          },
+          "sgl_lightgcn": {
+            "ndcg20": 0.07674270210152702,
+            "n_seeds": 3
+          }
+        },
+        "40": {
+          "plain_lightgcn_bpr": {
+            "ndcg20": 0.07951103391288218,
+            "n_seeds": 3
+          },
+          "plain_lightgcn_bce": {
+            "ndcg20": 0.07738674581187353,
+            "n_seeds": 3
+          },
+          "tce_lightgcn": {
+            "ndcg20": 0.07794540293841552,
+            "n_seeds": 3
+          },
+          "rce_lightgcn": {
+            "ndcg20": 0.07658734415737045,
+            "n_seeds": 3
+          },
+          "dcf_lightgcn": {
+            "ndcg20": 0.0781457251693037,
+            "n_seeds": 3
+          },
+          "pld_lightgcn": {
+            "ndcg20": 0.07705363627810197,
+            "n_seeds": 3
+          },
+          "sl_lightgcn": {
+            "ndcg20": 0.08159886419568475,
+            "n_seeds": 3
+          },
+          "drrl_lightgcn": {
+            "ndcg20": 0.08174166495310055,
+            "n_seeds": 3
+          },
+          "sgl_lightgcn": {
+            "ndcg20": 0.07496840248608784,
+            "n_seeds": 3
+          }
+        }
+      },
+      "kendall_tau_vs_rho_val": {
+        "10": 0.9444444444444445,
+        "20": 1.0,
+        "30": 0.9444444444444445,
+        "40": 0.9444444444444445
+      },
+      "ranking": {
+        "10": [
+          "drrl_lightgcn",
+          "sl_lightgcn",
+          "plain_lightgcn_bpr",
+          "dcf_lightgcn",
+          "tce_lightgcn",
+          "plain_lightgcn_bce",
+          "pld_lightgcn",
+          "rce_lightgcn",
+          "sgl_lightgcn"
+        ],
+        "20": [
+          "sl_lightgcn",
+          "drrl_lightgcn",
+          "plain_lightgcn_bpr",
+          "dcf_lightgcn",
+          "tce_lightgcn",
+          "plain_lightgcn_bce",
+          "pld_lightgcn",
+          "rce_lightgcn",
+          "sgl_lightgcn"
+        ],
+        "30": [
+          "drrl_lightgcn",
+          "sl_lightgcn",
+          "plain_lightgcn_bpr",
+          "dcf_lightgcn",
+          "tce_lightgcn",
+          "plain_lightgcn_bce",
+          "pld_lightgcn",
+          "rce_lightgcn",
+          "sgl_lightgcn"
+        ],
+        "40": [
+          "drrl_lightgcn",
+          "sl_lightgcn",
+          "plain_lightgcn_bpr",
+          "dcf_lightgcn",
+          "tce_lightgcn",
+          "plain_lightgcn_bce",
+          "pld_lightgcn",
+          "rce_lightgcn",
+          "sgl_lightgcn"
+        ]
+      }
+    },
+    "N2": {
+      "ndcg20": {
+        "10": {
+          "plain_lightgcn_bpr": {
+            "ndcg20": 0.08969574494355557,
+            "n_seeds": 3
+          },
+          "plain_lightgcn_bce": {
+            "ndcg20": 0.08726050266544882,
+            "n_seeds": 3
+          },
+          "tce_lightgcn": {
+            "ndcg20": 0.08798003472871262,
+            "n_seeds": 3
+          },
+          "rce_lightgcn": {
+            "ndcg20": 0.08637534578291883,
+            "n_seeds": 3
+          },
+          "dcf_lightgcn": {
+            "ndcg20": 0.08824259287274916,
+            "n_seeds": 3
+          },
+          "pld_lightgcn": {
+            "ndcg20": 0.08685211321193541,
+            "n_seeds": 3
+          },
+          "sl_lightgcn": {
+            "ndcg20": 0.09188025899704318,
+            "n_seeds": 3
+          },
+          "drrl_lightgcn": {
+            "ndcg20": 0.09203988936305535,
+            "n_seeds": 3
+          },
+          "sgl_lightgcn": {
+            "ndcg20": 0.0842918281787467,
+            "n_seeds": 3
+          }
+        },
+        "20": {
+          "plain_lightgcn_bpr": {
+            "ndcg20": 0.0895991196691172,
+            "n_seeds": 3
+          },
+          "plain_lightgcn_bce": {
+            "ndcg20": 0.0875304842769871,
+            "n_seeds": 3
+          },
+          "tce_lightgcn": {
+            "ndcg20": 0.08822456908605297,
+            "n_seeds": 3
+          },
+          "rce_lightgcn": {
+            "ndcg20": 0.08675064934186173,
+            "n_seeds": 3
+          },
+          "dcf_lightgcn": {
+            "ndcg20": 0.08833873467129826,
+            "n_seeds": 3
+          },
+          "pld_lightgcn": {
+            "ndcg20": 0.08791947206021322,
+            "n_seeds": 3
+          },
+          "sl_lightgcn": {
+            "ndcg20": 0.09109155003345547,
+            "n_seeds": 3
+          },
+          "drrl_lightgcn": {
+            "ndcg20": 0.09161184136853377,
+            "n_seeds": 3
+          },
+          "sgl_lightgcn": {
+            "ndcg20": 0.08371388368261867,
+            "n_seeds": 3
+          }
+        },
+        "30": {
+          "plain_lightgcn_bpr": {
+            "ndcg20": 0.09111353872854588,
+            "n_seeds": 3
+          },
+          "plain_lightgcn_bce": {
+            "ndcg20": 0.08884097748381946,
+            "n_seeds": 3
+          },
+          "tce_lightgcn": {
+            "ndcg20": 0.08964564181216161,
+            "n_seeds": 3
+          },
+          "rce_lightgcn": {
+            "ndcg20": 0.08810590493002572,
+            "n_seeds": 3
+          },
+          "dcf_lightgcn": {
+            "ndcg20": 0.08974310003386138,
+            "n_seeds": 3
+          },
+          "pld_lightgcn": {
+            "ndcg20": 0.08998808577711703,
+            "n_seeds": 3
+          },
+          "sl_lightgcn": {
+            "ndcg20": 0.09178393974710924,
+            "n_seeds": 3
+          },
+          "drrl_lightgcn": {
+            "ndcg20": 0.09259072880888565,
+            "n_seeds": 3
+          },
+          "sgl_lightgcn": {
+            "ndcg20": 0.08444577158757251,
+            "n_seeds": 3
+          }
+        },
+        "40": {
+          "plain_lightgcn_bpr": {
+            "ndcg20": 0.09220754262247588,
+            "n_seeds": 3
+          },
+          "plain_lightgcn_bce": {
+            "ndcg20": 0.09023278245708373,
+            "n_seeds": 3
+          },
+          "tce_lightgcn": {
+            "ndcg20": 0.09106701628349086,
+            "n_seeds": 3
+          },
+          "rce_lightgcn": {
+            "ndcg20": 0.08948323906941559,
+            "n_seeds": 3
+          },
+          "dcf_lightgcn": {
+            "ndcg20": 0.09109768944772312,
+            "n_seeds": 3
+          },
+          "pld_lightgcn": {
+            "ndcg20": 0.0922422139579915,
+            "n_seeds": 3
+          },
+          "sl_lightgcn": {
+            "ndcg20": 0.09247944942453556,
+            "n_seeds": 3
+          },
+          "drrl_lightgcn": {
+            "ndcg20": 0.09334933773494618,
+            "n_seeds": 3
+          },
+          "sgl_lightgcn": {
+            "ndcg20": 0.08512923268156573,
+            "n_seeds": 3
+          }
+        }
+      },
+      "kendall_tau_vs_rho_val": {
+        "10": 0.9444444444444445,
+        "20": 1.0,
+        "30": 0.8888888888888888,
+        "40": 0.8333333333333334
+      },
+      "ranking": {
+        "10": [
+          "drrl_lightgcn",
+          "sl_lightgcn",
+          "plain_lightgcn_bpr",
+          "dcf_lightgcn",
+          "tce_lightgcn",
+          "plain_lightgcn_bce",
+          "pld_lightgcn",
+          "rce_lightgcn",
+          "sgl_lightgcn"
+        ],
+        "20": [
+          "drrl_lightgcn",
+          "sl_lightgcn",
+          "plain_lightgcn_bpr",
+          "dcf_lightgcn",
+          "tce_lightgcn",
+          "pld_lightgcn",
+          "plain_lightgcn_bce",
+          "rce_lightgcn",
+          "sgl_lightgcn"
+        ],
+        "30": [
+          "drrl_lightgcn",
+          "sl_lightgcn",
+          "plain_lightgcn_bpr",
+          "pld_lightgcn",
+          "dcf_lightgcn",
+          "tce_lightgcn",
+          "plain_lightgcn_bce",
+          "rce_lightgcn",
+          "sgl_lightgcn"
+        ],
+        "40": [
+          "drrl_lightgcn",
+          "sl_lightgcn",
+          "pld_lightgcn",
+          "plain_lightgcn_bpr",
+          "dcf_lightgcn",
+          "tce_lightgcn",
+          "plain_lightgcn_bce",
+          "rce_lightgcn",
+          "sgl_lightgcn"
+        ]
+      }
+    }
+  },
+  "data": "data/ml1m"
+}

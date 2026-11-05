@@ -1,0 +1,23 @@
+user, item num
+44784 1020
+data loaded! user_num:44784, item_num:1020 train_data_len:79914 test_user_num:4303
+seed: 2021
+method: None
+model: GMF, dataset: modcloth
+epochs: 40, early_stop: True, early_stop_rounds: 2
+regularization lambda: 0.1
+negative sampling rate: 1
+epoch: 5, iter: 200, loss:1.2975687980651855
+epoch: 10, iter: 400, loss:1.0013763904571533
+Eval: epoch: 12, iter: 500, Eval loss:5.461781024932861
+epoch: 15, iter: 600, loss:0.845151960849762
+epoch: 20, iter: 800, loss:0.8258805274963379
+epoch: 25, iter: 1000, loss:0.7964474558830261
+Eval: epoch: 25, iter: 1000, Eval loss:5.431917667388916
+epoch: 30, iter: 1200, loss:0.765764057636261
+epoch: 35, iter: 1400, loss:0.7532191276550293
+Eval: epoch: 37, iter: 1500, Eval loss:5.535044193267822
+############################## Training End. ##############################
+################### CLEAN TEST ######################
+Recall 0.0360-0.0497-0.0849-0.1427
+NDCG 0.0310-0.0360-0.0476-0.0633

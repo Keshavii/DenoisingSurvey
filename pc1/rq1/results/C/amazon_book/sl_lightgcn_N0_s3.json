@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.10192164419758909,
+  "recall@20": 0.14547090010045546,
+  "recall@50": 0.22268845635144907,
+  "ndcg@10": 0.0768340265102517,
+  "ndcg@20": 0.08981755774116494,
+  "ndcg@50": 0.10990779581094448,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1028,
+      "ndcg@20": 0.11128369048170898,
+      "recall@20": 0.20817120622568094
+    },
+    "warm(5-20)": {
+      "n_users": 40291,
+      "ndcg@20": 0.07686824461459742,
+      "recall@20": 0.1475474258105615
+    },
+    "established(>20)": {
+      "n_users": 39030,
+      "ndcg@20": 0.10261985317353114,
+      "recall@20": 0.14167583958078822
+    },
+    "user_q1": {
+      "n_users": 15911,
+      "ndcg@20": 0.06590809527721396,
+      "recall@20": 0.13518949154672869
+    },
+    "user_q2": {
+      "n_users": 12228,
+      "ndcg@20": 0.07895984853161063,
+      "recall@20": 0.15264147857376512
+    },
+    "user_q3": {
+      "n_users": 19634,
+      "ndcg@20": 0.09321056135020972,
+      "recall@20": 0.16415401853926861
+    },
+    "user_q4": {
+      "n_users": 15987,
+      "ndcg@20": 0.09902144046872202,
+      "recall@20": 0.15372594399616354
+    },
+    "user_q5": {
+      "n_users": 16589,
+      "ndcg@20": 0.1078675197312134,
+      "recall@20": 0.11997858131923751
+    },
+    "items_head": {
+      "n_truth": 187957,
+      "recall@20_micro": 0.1557324281617604
+    },
+    "items_mid": {
+      "n_truth": 56939,
+      "recall@20_micro": 0.07692442789652083
+    },
+    "items_tail": {
+      "n_truth": 39016,
+      "recall@20_micro": 0.04828788189460734
+    },
+    "coverage@20": 0.9058715019814926,
+    "gini@20": 0.7027463816676368
+  },
+  "part": "C",
+  "dataset": "amazon_book",
+  "method": "Plain-SL",
+  "backbone": "LightGCN",
+  "cond": "N0",
+  "seed": "3",
+  "train_file": "train.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/amazon_book/sl_lightgcn_N0_s3/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-02 02:09:00"
+}

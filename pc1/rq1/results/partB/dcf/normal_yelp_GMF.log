@@ -1,0 +1,65 @@
+arguments: Namespace(dataset='yelp', model='GMF', drop_rate=0.0, num_gradual=30000, exponent=1, lr=0.001, dropout=0.0, batch_size=1024, epochs=10, eval_freq=2000, top_k=[5, 10, 20, 50], factor_num=32, num_layers=3, num_ng=1, out=True, gpu='0', time_step=3, co_lambda=0.0001, epoch_decay_start=10, relabel_ratio=0.0) 
+config model GMF
+config data path ../data/yelp/
+config model path ../models/yelp/
+user, item num
+45548 57396
+already create adjacency matrix (102944, 102944) 49.72816061973572
+generate single-normalized adjacency matrix.
+data loaded! user_num:45548, item_num:57396 train_data_len:1672520 test_user_num:45525
+Time step initializing...
+epoch: 0, iter: 2000, loss:0.4983755946159363
+################### EVAL ######################
+Eval loss:190.2815399169922
+epoch: 1, iter: 4000, loss:0.29189231991767883
+################### EVAL ######################
+Eval loss:133.84817504882812
+epoch: 1, iter: 6000, loss:0.273894339799881
+################### EVAL ######################
+Eval loss:116.77759552001953
+epoch: 2, iter: 8000, loss:0.2573443651199341
+################### EVAL ######################
+Eval loss:110.10726165771484
+Time step initializing...
+epoch: 3, iter: 10000, loss:0.2121981978416443
+################### EVAL ######################
+Eval loss:105.75473022460938
+epoch: 3, iter: 12000, loss:0.2624017596244812
+################### EVAL ######################
+Eval loss:103.47734832763672
+epoch: 4, iter: 14000, loss:0.2021767795085907
+################### EVAL ######################
+Eval loss:103.1489486694336
+epoch: 4, iter: 16000, loss:0.17423531413078308
+################### EVAL ######################
+Eval loss:102.1144790649414
+epoch: 5, iter: 18000, loss:0.17644110321998596
+################### EVAL ######################
+Eval loss:103.92170715332031
+Time step initializing...
+epoch: 6, iter: 20000, loss:0.14341919124126434
+################### EVAL ######################
+Eval loss:105.62115478515625
+epoch: 6, iter: 22000, loss:0.1943081021308899
+################### EVAL ######################
+Eval loss:105.65391540527344
+epoch: 7, iter: 24000, loss:0.16304215788841248
+################### EVAL ######################
+Eval loss:108.89570617675781
+epoch: 7, iter: 26000, loss:0.16758471727371216
+################### EVAL ######################
+Eval loss:108.35765075683594
+epoch: 8, iter: 28000, loss:0.16302791237831116
+################### EVAL ######################
+Eval loss:111.91049194335938
+Time step initializing...
+epoch: 9, iter: 30000, loss:0.10113160312175751
+################### EVAL ######################
+Eval loss:115.68074798583984
+epoch: 9, iter: 32000, loss:0.16317474842071533
+################### EVAL ######################
+Eval loss:116.49969482421875
+############################## Training End. ##############################
+################### TEST ######################
+Recall 0.0157-0.0261-0.0439-0.0859
+NDCG 0.0158-0.0193-0.0250-0.0362
