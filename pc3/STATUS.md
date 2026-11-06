@@ -1,18 +1,18 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-06 17:24:48 UTC  up since 2026-11-03 22:15:42
-code 7f48e30 05 Nov 21:52  linger yes  disk free 101G  ram used 9/62 GB swap 1 GB 
-gpu 96 %, 5500 MiB, 24564 MiB, 66
+pc3 (aura1@aura-node1)  2026-11-06 18:25:17 UTC  up since 2026-11-03 22:15:42
+code 7f48e30 05 Nov 21:52  linger yes  disk free 100G  ram used 9/62 GB swap 1 GB 
+gpu 90 %, 5504 MiB, 24564 MiB, 65
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-06 16:54:25 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-06 17:55:01 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  28:05       python -m rq1kit.rq4 --signal L5 --treat relabel --rate 0.05 --data data/yelp --lr 0.005 --reg 0.001 --epochs 100 --see
-  01:48       python -m rq1kit.rq4 --signal L5 --treat relabel --rate 0.1 --data data/yelp --lr 0.005 --reg 0.001 --epochs 100 --seed
+  35:27       python -m rq1kit.rq4 --signal L5 --treat resample --temp 0.05 --data data/yelp --lr 0.005 --reg 0.001 --epochs 100 --se
+  31:41       python -m rq1kit.rq4 --signal L5 --treat resample --temp 0.1 --data data/yelp --lr 0.005 --reg 0.001 --epochs 100 --see
 ---- RQ4 (signal x treatment) ----
-  tune yelp: 66/249 done, 0 failed so far, median 37 min/job, ~56 h left at 2 in parallel
+  tune yelp: 69/249 done, 0 failed so far, median 37 min/job, ~55 h left at 2 in parallel
   final: not started
 ---- RQ10 (specialists) ----
   .done markers: 19  (gbsr_yelp_r2 fmlp_beauty gbsr_epinions_r1 fmlp_beauty_n0 hdsr_default steam_beauty gbsr_douban_r1 repro_fmlp fmlp_beauty_n2_20 steam_beauty_n2_20 gbsr_douban_r2 repro_gbsr fmlp_beauty_n3_30 steam_beauty_n3_30 repro_preferdiff gbsr_epinions_r2 steam_beauty_n0 gbsr_yelp_r1 repro_steam )
@@ -81,11 +81,11 @@ gpu 96 %, 5500 MiB, 24564 MiB, 66
   249 of 522 jobs kept (datasets yelp)
   249 jobs to run, 0 already done
 ---- recent service log lines ----
-2026-11-06T15:54:10+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-06T15:54:10+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-06T16:24:23+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-06T16:24:23+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-06T16:54:25+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-06T16:54:25+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-06T17:24:48+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-06T17:24:48+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-06T17:55:01+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-06T17:55:01+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-06T18:25:17+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
