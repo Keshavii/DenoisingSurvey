@@ -7,3 +7,54 @@
 2026-11-06 02:13:37 4b reference models for the clean bases (teacher M1c) and the Yelp files (R2, M1, hard positives)
 2026-11-06 02:13:38 5 tuning [ml1m]
 273 of 522 jobs kept (datasets ml1m)
+68 jobs to run, 205 already done
+{'job_id': 'rq4tune_ml1m_R4_reweight_t0', 'status': 'exit 1', 'seconds': 2.3, 'peak_gpu_mb_while_running': 21743, 'slots': 1, 'finished': '2026-11-06 02:13:40'}
+{'job_id': 'rq4tune_ml1m_R4_reweight_t1', 'status': 'exit 1', 'seconds': 2.4, 'peak_gpu_mb_while_running': 21743, 'slots': 1, 'finished': '2026-11-06 02:13:40'}
+{'job_id': 'rq4tune_ml1m_R4_drop_t2', 'status': 'exit 1', 'seconds': 2.4, 'peak_gpu_mb_while_running': 21743, 'slots': 1, 'finished': '2026-11-06 02:13:40'}
+{'job_id': 'rq4tune_ml1m_R4_reweight_t2', 'status': 'exit 1', 'seconds': 2.1, 'peak_gpu_mb_while_running': 17775, 'slots': 1, 'finished': '2026-11-06 02:13:43'}
+{'job_id': 'rq4tune_ml1m_R4_relabel_t1', 'status': 'exit 1', 'seconds': 2.3, 'peak_gpu_mb_while_running': 17775, 'slots': 1, 'finished': '2026-11-06 02:13:43'}
+{'job_id': 'rq4tune_ml1m_R4_relabel_t0', 'status': 'exit 1', 'seconds': 2.3, 'peak_gpu_mb_while_running': 17775, 'slots': 1, 'finished': '2026-11-06 02:13:43'}
+{'job_id': 'rq4tune_ml1m_R4_resample_t1', 'status': 'exit 1', 'seconds': 2.3, 'peak_gpu_mb_while_running': 21771, 'slots': 1, 'finished': '2026-11-06 02:13:46'}
+{'job_id': 'rq4tune_ml1m_R4_resample_t0', 'status': 'exit 1', 'seconds': 2.4, 'peak_gpu_mb_while_running': 21771, 'slots': 1, 'finished': '2026-11-06 02:13:46'}
+{'job_id': 'rq4tune_ml1m_R4_relabel_t2', 'status': 'exit 1', 'seconds': 2.4, 'peak_gpu_mb_while_running': 21771, 'slots': 1, 'finished': '2026-11-06 02:13:46'}
+{'job_id': 'rq4tune_ml1m_R4_resample_t2', 'status': 'exit 1', 'seconds': 2.3, 'peak_gpu_mb_while_running': 17795, 'slots': 1, 'finished': '2026-11-06 02:13:49'}
+{'job_id': 'rq4tune_ml1m_L4_graph_drop_t0', 'status': 'ok', 'seconds': 721.9, 'peak_gpu_mb_while_running': 22080, 'slots': 1, 'finished': '2026-11-06 02:25:49'}
+{'job_id': 'rq4tune_ml1m_L4_graph_reweight_t0', 'status': 'ok', 'seconds': 314.9, 'peak_gpu_mb_while_running': 21836, 'slots': 1, 'finished': '2026-11-06 02:31:04'}
+{'job_id': 'rq4tune_ml1m_L4_graph_reweight_t1', 'status': 'ok', 'seconds': 309.3, 'peak_gpu_mb_while_running': 21845, 'slots': 1, 'finished': '2026-11-06 02:36:14'}
+{'job_id': 'rq4tune_ml1m_L4_graph_reweight_t2', 'status': 'ok', 'seconds': 319.7, 'peak_gpu_mb_while_running': 21832, 'slots': 1, 'finished': '2026-11-06 02:41:34'}
+{'job_id': 'rq4tune_ml1m_L4_user_reweight_t0', 'status': 'ok', 'seconds': 312.1, 'peak_gpu_mb_while_running': 22349, 'slots': 1, 'finished': '2026-11-06 02:46:46'}
+{'job_id': 'rq4tune_ml1m_L4_user_reweight_t1', 'status': 'ok', 'seconds': 310.3, 'peak_gpu_mb_while_running': 22474, 'slots': 1, 'finished': '2026-11-06 02:51:57'}
+{'job_id': 'rq4tune_ml1m_L4_user_reweight_t2', 'status': 'ok', 'seconds': 321.2, 'peak_gpu_mb_while_running': 23883, 'slots': 1, 'finished': '2026-11-06 02:57:18'}
+{'job_id': 'rq4tune_ml1m_L4_soft_relabel_t0', 'status': 'ok', 'seconds': 283.5, 'peak_gpu_mb_while_running': 23940, 'slots': 1, 'finished': '2026-11-06 03:02:02'}
+{'job_id': 'rq4tune_ml1m_L4_soft_relabel_t1', 'status': 'ok', 'seconds': 161.7, 'peak_gpu_mb_while_running': 23580, 'slots': 1, 'finished': '2026-11-06 03:04:44'}
+{'job_id': 'rq4tune_ml1m_L4_soft_relabel_t2', 'status': 'ok', 'seconds': 81.2, 'peak_gpu_mb_while_running': 23622, 'slots': 1, 'finished': '2026-11-06 03:06:06'}
+{'job_id': 'rq4tune_ml1m_R1_graph_drop_t0', 'status': 'exit 1', 'seconds': 6.1, 'peak_gpu_mb_while_running': 23939, 'slots': 1, 'finished': '2026-11-06 03:06:13'}
+{'job_id': 'rq4tune_ml1m_R1_graph_drop_t1', 'status': 'ok', 'seconds': 336.4, 'peak_gpu_mb_while_running': 23846, 'slots': 1, 'finished': '2026-11-06 03:11:50'}
+{'job_id': 'rq4tune_ml1m_R1_graph_drop_t2', 'status': 'ok', 'seconds': 293.1, 'peak_gpu_mb_while_running': 22487, 'slots': 1, 'finished': '2026-11-06 03:16:44'}
+{'job_id': 'rq4tune_ml1m_R1_graph_reweight_t0', 'status': 'ok', 'seconds': 309.9, 'peak_gpu_mb_while_running': 22646, 'slots': 1, 'finished': '2026-11-06 03:21:54'}
+{'job_id': 'rq4tune_ml1m_R1_graph_reweight_t1', 'status': 'ok', 'seconds': 313.8, 'peak_gpu_mb_while_running': 22610, 'slots': 1, 'finished': '2026-11-06 03:27:09'}
+{'job_id': 'rq4tune_ml1m_R1_graph_reweight_t2', 'status': 'ok', 'seconds': 314.3, 'peak_gpu_mb_while_running': 22670, 'slots': 1, 'finished': '2026-11-06 03:32:23'}
+{'job_id': 'rq4tune_ml1m_R1_user_reweight_t0', 'status': 'ok', 'seconds': 306.1, 'peak_gpu_mb_while_running': 22668, 'slots': 1, 'finished': '2026-11-06 03:37:30'}
+{'job_id': 'rq4tune_ml1m_R1_user_reweight_t1', 'status': 'ok', 'seconds': 306.2, 'peak_gpu_mb_while_running': 22663, 'slots': 1, 'finished': '2026-11-06 03:42:36'}
+{'job_id': 'rq4tune_ml1m_R1_user_reweight_t2', 'status': 'ok', 'seconds': 304.0, 'peak_gpu_mb_while_running': 22397, 'slots': 1, 'finished': '2026-11-06 03:47:40'}
+{'job_id': 'rq4tune_ml1m_R1_soft_relabel_t0', 'status': 'ok', 'seconds': 277.0, 'peak_gpu_mb_while_running': 22309, 'slots': 1, 'finished': '2026-11-06 03:52:17'}
+{'job_id': 'rq4tune_ml1m_R1_soft_relabel_t1', 'status': 'ok', 'seconds': 151.9, 'peak_gpu_mb_while_running': 22309, 'slots': 1, 'finished': '2026-11-06 03:54:50'}
+{'job_id': 'rq4tune_ml1m_R1_soft_relabel_t2', 'status': 'ok', 'seconds': 111.1, 'peak_gpu_mb_while_running': 22309, 'slots': 1, 'finished': '2026-11-06 03:56:41'}
+{'job_id': 'rq4tune_ml1m_R2_graph_drop_t0', 'status': 'ok', 'seconds': 300.3, 'peak_gpu_mb_while_running': 22269, 'slots': 1, 'finished': '2026-11-06 04:01:42'}
+{'job_id': 'rq4tune_ml1m_R2_graph_drop_t1', 'status': 'ok', 'seconds': 298.1, 'peak_gpu_mb_while_running': 22269, 'slots': 1, 'finished': '2026-11-06 04:06:40'}
+{'job_id': 'rq4tune_ml1m_R2_graph_drop_t2', 'status': 'ok', 'seconds': 290.6, 'peak_gpu_mb_while_running': 22269, 'slots': 1, 'finished': '2026-11-06 04:11:31'}
+{'job_id': 'rq4tune_ml1m_R2_graph_reweight_t0', 'status': 'ok', 'seconds': 306.7, 'peak_gpu_mb_while_running': 22269, 'slots': 1, 'finished': '2026-11-06 04:16:39'}
+{'job_id': 'rq4tune_ml1m_R2_graph_reweight_t1', 'status': 'ok', 'seconds': 303.7, 'peak_gpu_mb_while_running': 22269, 'slots': 1, 'finished': '2026-11-06 04:21:43'}
+{'job_id': 'rq4tune_ml1m_R2_graph_reweight_t2', 'status': 'ok', 'seconds': 307.0, 'peak_gpu_mb_while_running': 22269, 'slots': 1, 'finished': '2026-11-06 04:26:51'}
+{'job_id': 'rq4tune_ml1m_R2_user_reweight_t0', 'status': 'ok', 'seconds': 301.3, 'peak_gpu_mb_while_running': 22269, 'slots': 1, 'finished': '2026-11-06 04:31:52'}
+{'job_id': 'rq4tune_ml1m_R2_user_reweight_t1', 'status': 'ok', 'seconds': 308.9, 'peak_gpu_mb_while_running': 22269, 'slots': 1, 'finished': '2026-11-06 04:37:02'}
+{'job_id': 'rq4tune_ml1m_R2_user_reweight_t2', 'status': 'ok', 'seconds': 303.3, 'peak_gpu_mb_while_running': 22269, 'slots': 1, 'finished': '2026-11-06 04:42:06'}
+{'job_id': 'rq4tune_ml1m_R2_soft_relabel_t0', 'status': 'ok', 'seconds': 312.4, 'peak_gpu_mb_while_running': 22269, 'slots': 1, 'finished': '2026-11-06 04:47:18'}
+{'job_id': 'rq4tune_ml1m_R2_soft_relabel_t1', 'status': 'ok', 'seconds': 304.0, 'peak_gpu_mb_while_running': 22269, 'slots': 1, 'finished': '2026-11-06 04:52:23'}
+{'job_id': 'rq4tune_ml1m_R2_soft_relabel_t2', 'status': 'ok', 'seconds': 185.2, 'peak_gpu_mb_while_running': 22269, 'slots': 1, 'finished': '2026-11-06 04:55:29'}
+{'job_id': 'rq4tune_ml1m_L1_reshape_t0', 'status': 'ok', 'seconds': 446.7, 'peak_gpu_mb_while_running': 22129, 'slots': 1, 'finished': '2026-11-06 05:02:57'}
+{'job_id': 'rq4tune_ml1m_L1_reshape_t1', 'status': 'ok', 'seconds': 566.5, 'peak_gpu_mb_while_running': 22129, 'slots': 1, 'finished': '2026-11-06 05:12:24'}
+{'job_id': 'rq4tune_ml1m_L1_reshape_t2', 'status': 'ok', 'seconds': 620.7, 'peak_gpu_mb_while_running': 22129, 'slots': 1, 'finished': '2026-11-06 05:22:45'}
+{'job_id': 'rq4tune_ml1m_M1_reshape_t0', 'status': 'ok', 'seconds': 442.6, 'peak_gpu_mb_while_running': 21501, 'slots': 1, 'finished': '2026-11-06 05:30:08'}
+{'job_id': 'rq4tune_ml1m_M1_reshape_t1', 'status': 'ok', 'seconds': 444.5, 'peak_gpu_mb_while_running': 21501, 'slots': 1, 'finished': '2026-11-06 05:37:34'}
+{'job_id': 'rq4tune_ml1m_M1_reshape_t2', 'status': 'ok', 'seconds': 621.1, 'peak_gpu_mb_while_running': 21501, 'slots': 1, 'finished': '2026-11-06 05:47:56'}
