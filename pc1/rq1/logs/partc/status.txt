@@ -1,4 +1,4 @@
-Part C status 2026-11-07 06:54  kit 7f48e30
+Part C status 2026-11-07 07:24  kit 7f48e30
 method   b dataset      canary  tune   pick  finals  run fail confl
 DCF      1 adressa      passed   8/8   yes     9/9     0    0     0
 DCF      1 ml1m                  8/8   yes     9/9     0    0     0
@@ -63,5 +63,5 @@ SGL      2 amazon_book           8/8   yes     2/6     2    0     0
 LLaRD    3 ml1m         pending  0/8   -       0/6     0    0     0
 total: 875 of 954 done, 2 running, 0 failed, 0 conflicts; held: rgcf
 GPU: 100 %, 12797 MiB, 24564 MiB
-rough finish: Sun 08 Nov 10:25 (27.5 h of known work)
+rough finish: Sun 08 Nov 10:55 (27.5 h of known work)
   HELD     rgcf: canary valid NDCG@20 0.0777 < 0.0810 (0.5 x plain 0.1620)  (fix, then: partc retry rgcf)
