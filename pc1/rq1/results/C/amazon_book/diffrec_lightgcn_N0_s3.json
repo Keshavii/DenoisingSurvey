@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.0788885375245412,
+  "recall@20": 0.11356829208578897,
+  "recall@50": 0.17355054998010302,
+  "ndcg@10": 0.06301371865601471,
+  "ndcg@20": 0.0731525827838718,
+  "ndcg@50": 0.08904756832642233,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1028,
+      "ndcg@20": 0.013846646138551475,
+      "recall@20": 0.032101167315175094
+    },
+    "warm(5-20)": {
+      "n_users": 40291,
+      "ndcg@20": 0.05455947063031114,
+      "recall@20": 0.10442778784343897
+    },
+    "established(>20)": {
+      "n_users": 39030,
+      "ndcg@20": 0.09390845223430741,
+      "recall@20": 0.12514985141688595
+    },
+    "user_q1": {
+      "n_users": 15911,
+      "ndcg@20": 0.03207898610090243,
+      "recall@20": 0.06784614417698448
+    },
+    "user_q2": {
+      "n_users": 12228,
+      "ndcg@20": 0.05873872318357415,
+      "recall@20": 0.1143686620870134
+    },
+    "user_q3": {
+      "n_users": 19634,
+      "ndcg@20": 0.07654568205541266,
+      "recall@20": 0.1346643577467658
+    },
+    "user_q4": {
+      "n_users": 15987,
+      "ndcg@20": 0.08611731034266573,
+      "recall@20": 0.13191134463418192
+    },
+    "user_q5": {
+      "n_users": 16589,
+      "ndcg@20": 0.10666198428096586,
+      "recall@20": 0.11418602894293764
+    },
+    "items_head": {
+      "n_truth": 187957,
+      "recall@20_micro": 0.15950988789989198
+    },
+    "items_mid": {
+      "n_truth": 56939,
+      "recall@20_micro": 0.02079418324873988
+    },
+    "items_tail": {
+      "n_truth": 39016,
+      "recall@20_micro": 0.0038958376050850932
+    },
+    "coverage@20": 0.23810344303335598,
+    "gini@20": 0.9588331564956255
+  },
+  "part": "C",
+  "dataset": "amazon_book",
+  "method": "DiffRec",
+  "backbone": "LightGCN",
+  "cond": "N0",
+  "seed": "3",
+  "train_file": "train.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/amazon_book/diffrec_lightgcn_N0_s3/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-07 03:26:21"
+}
