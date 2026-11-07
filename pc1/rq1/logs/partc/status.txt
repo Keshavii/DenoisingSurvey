@@ -1,4 +1,4 @@
-Part C status 2026-11-07 16:54  kit 7f48e30
+Part C status 2026-11-07 17:24  kit 7f48e30
 method   b dataset      canary  tune   pick  finals  run fail confl
 DCF      1 adressa      passed   8/8   yes     9/9     0    0     0
 DCF      1 ml1m                  8/8   yes     9/9     0    0     0
@@ -60,8 +60,8 @@ SGL      2 ml1m                  8/8   yes     6/6     0    0     0
 SGL      2 yelp                  8/8   yes     6/6     0    0     0
 SGL      2 gowalla               8/8   yes     6/6     0    0     0
 SGL      2 amazon_book           8/8   yes     6/6     0    0     0
-LLaRD    3 ml1m         passed   8/8   yes     2/6     4    0     0
-total: 894 of 954 done, 4 running, 0 failed, 0 conflicts; held: rgcf
-GPU: 100 %, 15683 MiB, 24564 MiB
-rough finish: Sun 08 Nov 15:03 (22.1 h of known work)
+LLaRD    3 ml1m         passed   8/8   yes     4/6     2    0     0
+total: 896 of 954 done, 2 running, 0 failed, 0 conflicts; held: rgcf
+GPU: 100 %, 8205 MiB, 24564 MiB
+rough finish: Sun 08 Nov 15:23 (22.0 h of known work)
   HELD     rgcf: canary valid NDCG@20 0.0777 < 0.0810 (0.5 x plain 0.1620)  (fix, then: partc retry rgcf)
