@@ -1,7 +1,7 @@
 # pc1 status
 
 ```
-pc1 (aura3@home)  2026-11-07 08:55:00 UTC  up since 2026-09-30 13:27:10
+pc1 (aura3@home)  2026-11-07 09:25:00 UTC  up since 2026-09-30 13:27:10
 code 7f48e30 05 Nov 21:52  linger yes  disk free 1.2T  ram used 10/62 GB swap 0 GB 
 gpu 100 %, 12797 MiB, 24564 MiB, 67
 ---- services ----
@@ -9,16 +9,16 @@ gpu 100 %, 12797 MiB, 24564 MiB, 67
   partc.service                active running
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-07 08:25:02 push ok (cd27475; pc1)
+  last snapshot: 2026-11-07 08:55:02 push ok (be1ad96; pc1)
 ---- gpu jobs ----
-  4-16:01:58  python -u -m rq1kit.partc run --skip dcf,pld,sl
-  01:02:12    bash -c python -m rq1kit.sgl --ssl_reg 0.1 --ssl_temp 0.2 --ssl_ratio 0.2 --data data/amazon_book --train_file train.ts
-  01:02:12    python -m rq1kit.sgl --ssl_reg 0.1 --ssl_temp 0.2 --ssl_ratio 0.2 --data data/amazon_book --train_file train.tsv --mode
-  28:11       bash -c python -m rq1kit.sgl --ssl_reg 0.1 --ssl_temp 0.2 --ssl_ratio 0.2 --data data/amazon_book --train_file train_N2
-  28:11       python -m rq1kit.sgl --ssl_reg 0.1 --ssl_temp 0.2 --ssl_ratio 0.2 --data data/amazon_book --train_file train_N2_20_s3.t
+  4-16:31:58  python -u -m rq1kit.partc run --skip dcf,pld,sl
+  01:32:12    bash -c python -m rq1kit.sgl --ssl_reg 0.1 --ssl_temp 0.2 --ssl_ratio 0.2 --data data/amazon_book --train_file train.ts
+  01:32:12    python -m rq1kit.sgl --ssl_reg 0.1 --ssl_temp 0.2 --ssl_ratio 0.2 --data data/amazon_book --train_file train.tsv --mode
+  58:11       bash -c python -m rq1kit.sgl --ssl_reg 0.1 --ssl_temp 0.2 --ssl_ratio 0.2 --data data/amazon_book --train_file train_N2
+  58:11       python -m rq1kit.sgl --ssl_reg 0.1 --ssl_temp 0.2 --ssl_ratio 0.2 --data data/amazon_book --train_file train_N2_20_s3.t
 ---- RQ1 Part C (partc driver status, refreshed every minute) ----
-  status file written 2026-11-07 08:54:17
-Part C status 2026-11-07 08:54  kit 7f48e30
+  status file written 2026-11-07 09:24:27
+Part C status 2026-11-07 09:24  kit 7f48e30
 method   b dataset      canary  tune   pick  finals  run fail confl
 DCF      1 adressa      passed   8/8   yes     9/9     0    0     0
 DCF      1 ml1m                  8/8   yes     9/9     0    0     0
@@ -83,14 +83,11 @@ SGL      2 amazon_book           8/8   yes     4/6     2    0     0
 LLaRD    3 ml1m         pending  0/8   -       0/6     0    0     0
 total: 877 of 954 done, 2 running, 0 failed, 0 conflicts; held: rgcf
 GPU: 100 %, 12797 MiB, 24564 MiB
-rough finish: Sun 08 Nov 10:13 (25.3 h of known work)
+rough finish: Sun 08 Nov 10:44 (25.3 h of known work)
   HELD     rgcf: canary valid NDCG@20 0.0777 < 0.0810 (0.5 x plain 0.1620)  (fix, then: partc retry rgcf)
 ---- RQ2 (after Part C) ----
   waits until Part C has nothing left to run
 ---- queue log (~/survey_queue.log) ----
-  2026-11-07 06:34:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
-  2026-11-07 06:44:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
-  2026-11-07 06:54:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
   2026-11-07 07:04:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
   2026-11-07 07:14:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
   2026-11-07 07:24:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
@@ -103,13 +100,16 @@ rough finish: Sun 08 Nov 10:13 (25.3 h of known work)
   2026-11-07 08:34:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
   2026-11-07 08:44:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
   2026-11-07 08:54:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
+  2026-11-07 09:04:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
+  2026-11-07 09:14:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
+  2026-11-07 09:24:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
 ---- recent service log lines ----
-2026-11-07T06:55:01+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-07T07:24:59+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-07T07:25:02+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-07T07:54:59+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-07T07:55:02+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-07T08:24:59+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-07T08:25:02+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-07T08:54:59+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-07T08:55:02+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-07T09:24:59+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
