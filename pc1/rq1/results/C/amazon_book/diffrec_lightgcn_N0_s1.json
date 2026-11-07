@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.07825984153064072,
+  "recall@20": 0.11307007743853441,
+  "recall@50": 0.17459507721306,
+  "ndcg@10": 0.06238278929265674,
+  "ndcg@20": 0.0725679910638394,
+  "ndcg@50": 0.08877605043733065,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1028,
+      "ndcg@20": 0.014194697272360864,
+      "recall@20": 0.03696498054474708
+    },
+    "warm(5-20)": {
+      "n_users": 40291,
+      "ndcg@20": 0.05471719494104172,
+      "recall@20": 0.10492417661512497
+    },
+    "established(>20)": {
+      "n_users": 39030,
+      "ndcg@20": 0.09253299676717741,
+      "recall@20": 0.12348367030768127
+    },
+    "user_q1": {
+      "n_users": 15911,
+      "ndcg@20": 0.03257426927019113,
+      "recall@20": 0.0693545345987053
+    },
+    "user_q2": {
+      "n_users": 12228,
+      "ndcg@20": 0.05891301328655689,
+      "recall@20": 0.11481844946025516
+    },
+    "user_q3": {
+      "n_users": 19634,
+      "ndcg@20": 0.07616751383235824,
+      "recall@20": 0.13373060337509762
+    },
+    "user_q4": {
+      "n_users": 15987,
+      "ndcg@20": 0.08510707399682482,
+      "recall@20": 0.1306040324430266
+    },
+    "user_q5": {
+      "n_users": 16589,
+      "ndcg@20": 0.1046481542341699,
+      "recall@20": 0.11235965511938434
+    },
+    "items_head": {
+      "n_truth": 187957,
+      "recall@20_micro": 0.1572380916911847
+    },
+    "items_mid": {
+      "n_truth": 56939,
+      "recall@20_micro": 0.021461564130033896
+    },
+    "items_tail": {
+      "n_truth": 39016,
+      "recall@20_micro": 0.004613491900758663
+    },
+    "coverage@20": 0.23773856460881992,
+    "gini@20": 0.9599434701453361
+  },
+  "part": "C",
+  "dataset": "amazon_book",
+  "method": "DiffRec",
+  "backbone": "LightGCN",
+  "cond": "N0",
+  "seed": "1",
+  "train_file": "train.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/amazon_book/diffrec_lightgcn_N0_s1/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-07 02:43:52"
+}
