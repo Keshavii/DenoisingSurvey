@@ -1,23 +1,28 @@
 # pc1 status
 
 ```
-pc1 (aura3@home)  2026-11-07 14:25:00 UTC  up since 2026-09-30 13:27:10
-code 7f48e30 05 Nov 21:52  linger yes  disk free 1.2T  ram used 12/62 GB swap 0 GB 
-gpu 100 %, 11898 MiB, 24564 MiB, 67
+pc1 (aura3@home)  2026-11-07 14:55:00 UTC  up since 2026-09-30 13:27:10
+code 7f48e30 05 Nov 21:52  linger yes  disk free 1.2T  ram used 13/62 GB swap 0 GB 
+gpu 100 %, 15725 MiB, 24564 MiB, 67
 ---- services ----
   partc-resume.service         active running
   partc.service                active running
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-07 13:55:02 push ok (b4162b7; pc1)
+  last snapshot: 2026-11-07 14:25:02 push ok (ed3b42b; pc1)
 ---- gpu jobs ----
-  4-21:31:58  python -u -m rq1kit.partc run --skip dcf,pld,sl
-  01:11:48    python -m rq1kit.llard --lr_mult 1 --alpha 0.1 --beta 5.0 --data data/ml1m --model lightgcn --lr 0.005 --reg 0.001 --ep
-  01:11:18    python -m rq1kit.llard --lr_mult 1 --alpha 0.5 --beta 1.0 --data data/ml1m --model lightgcn --lr 0.005 --reg 0.001 --ep
-  01:11:18    python -m rq1kit.llard --lr_mult 1 --alpha 0.5 --beta 5.0 --data data/ml1m --model lightgcn --lr 0.005 --reg 0.001 --ep
+  4-22:01:58  python -u -m rq1kit.partc run --skip dcf,pld,sl
+  05:37       bash -c python -m rq1kit.llard --lr_mult 0.2 --alpha 0.1 --beta 5.0 --data data/ml1m --train_file train.tsv --model lig
+  05:37       bash -c python -m rq1kit.llard --lr_mult 0.2 --alpha 0.1 --beta 5.0 --data data/ml1m --train_file train_N2_20_s1.tsv --
+  05:37       python -m rq1kit.llard --lr_mult 0.2 --alpha 0.1 --beta 5.0 --data data/ml1m --train_file train.tsv --model lightgcn --
+  05:37       bash -c python -m rq1kit.llard --lr_mult 0.2 --alpha 0.1 --beta 5.0 --data data/ml1m --train_file train.tsv --model lig
+  05:37       python -m rq1kit.llard --lr_mult 0.2 --alpha 0.1 --beta 5.0 --data data/ml1m --train_file train_N2_20_s1.tsv --model li
+  05:37       bash -c python -m rq1kit.llard --lr_mult 0.2 --alpha 0.1 --beta 5.0 --data data/ml1m --train_file train_N2_20_s2.tsv --
+  05:37       python -m rq1kit.llard --lr_mult 0.2 --alpha 0.1 --beta 5.0 --data data/ml1m --train_file train.tsv --model lightgcn --
+  05:37       python -m rq1kit.llard --lr_mult 0.2 --alpha 0.1 --beta 5.0 --data data/ml1m --train_file train_N2_20_s2.tsv --model li
 ---- RQ1 Part C (partc driver status, refreshed every minute) ----
-  status file written 2026-11-07 14:24:04
-Part C status 2026-11-07 14:24  kit 7f48e30
+  status file written 2026-11-07 14:54:14
+Part C status 2026-11-07 14:54  kit 7f48e30
 method   b dataset      canary  tune   pick  finals  run fail confl
 DCF      1 adressa      passed   8/8   yes     9/9     0    0     0
 DCF      1 ml1m                  8/8   yes     9/9     0    0     0
@@ -79,17 +84,14 @@ SGL      2 ml1m                  8/8   yes     6/6     0    0     0
 SGL      2 yelp                  8/8   yes     6/6     0    0     0
 SGL      2 gowalla               8/8   yes     6/6     0    0     0
 SGL      2 amazon_book           8/8   yes     6/6     0    0     0
-LLaRD    3 ml1m         passed   5/8   -       0/6     3    0     0
-total: 889 of 954 done, 3 running, 0 failed, 0 conflicts; held: rgcf
-GPU: 100 %, 11898 MiB, 24564 MiB
-rough finish: Sun 08 Nov 12:49 (22.4 h of known work)
+LLaRD    3 ml1m         passed   8/8   yes     0/6     4    0     0
+total: 892 of 954 done, 4 running, 0 failed, 0 conflicts; held: rgcf
+GPU: 100 %, 15725 MiB, 24564 MiB
+rough finish: Sun 08 Nov 13:09 (22.2 h of known work)
   HELD     rgcf: canary valid NDCG@20 0.0777 < 0.0810 (0.5 x plain 0.1620)  (fix, then: partc retry rgcf)
 ---- RQ2 (after Part C) ----
   waits until Part C has nothing left to run
 ---- queue log (~/survey_queue.log) ----
-  2026-11-07 12:04:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
-  2026-11-07 12:14:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
-  2026-11-07 12:24:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
   2026-11-07 12:34:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
   2026-11-07 12:44:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
   2026-11-07 12:54:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
@@ -102,13 +104,16 @@ rough finish: Sun 08 Nov 12:49 (22.4 h of known work)
   2026-11-07 14:04:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
   2026-11-07 14:14:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
   2026-11-07 14:24:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
+  2026-11-07 14:34:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
+  2026-11-07 14:44:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
+  2026-11-07 14:54:59 [pc1-queue] waiting for Part C to finish (partc-resume has not restarted partc yet; idle checks 0/3); next look in 10 min
 ---- recent service log lines ----
-2026-11-07T12:25:03+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-07T12:54:59+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-07T12:55:02+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-07T13:24:59+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-07T13:25:03+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-07T13:54:59+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-07T13:55:02+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-07T14:24:59+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-07T14:25:02+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-07T14:54:59+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
