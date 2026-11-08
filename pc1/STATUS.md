@@ -1,21 +1,23 @@
 # pc1 status
 
 ```
-pc1 (aura3@home)  2026-11-08 13:55:13 UTC  up since 2026-09-30 13:27:10
+pc1 (aura3@home)  2026-11-08 14:25:14 UTC  up since 2026-09-30 13:27:10
 code 7f48e30 05 Nov 21:52  linger yes  disk free 1.2T  ram used 10/62 GB swap 0 GB 
-gpu 100 %, 15051 MiB, 24564 MiB, 68
+gpu 100 %, 14543 MiB, 24564 MiB, 68
 ---- services ----
   partc.service                active running
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-08 13:25:15 push ok (498cf2a; pc1)
+  last snapshot: 2026-11-08 13:55:15 push ok (9daeb36; pc1)
 ---- gpu jobs ----
-  19:49:56    python -u -m rq1kit.partc run --skip dcf,pld,sl
-  05:01:26    python -m rq1kit.rgcf --lr_mult 1 --prune_threshold 0.06 --MIM_weight 1e-06 --data data/amazon_book --model lightgcn --
-  04:39       python -m rq1kit.rgcf --lr_mult 1 --prune_threshold 0.06 --MIM_weight 1e-05 --data data/ml1m --model lightgcn --lr 0.00
+  20:19:56    python -u -m rq1kit.partc run --skip dcf,pld,sl
+  23:16       bash -c python -m rq1kit.rgcf --lr_mult 0.1 --prune_threshold 0.06 --MIM_weight 1e-05 --data data/yelp --train_file tra
+  23:16       python -m rq1kit.rgcf --lr_mult 0.1 --prune_threshold 0.06 --MIM_weight 1e-05 --data data/yelp --train_file train.tsv -
+  04:09       bash -c python -m rq1kit.rgcf --lr_mult 0.1 --prune_threshold 0.06 --MIM_weight 1e-05 --data data/yelp --train_file tra
+  04:09       python -m rq1kit.rgcf --lr_mult 0.1 --prune_threshold 0.06 --MIM_weight 1e-05 --data data/yelp --train_file train_N2_20
 ---- RQ1 Part C (partc driver status, refreshed every minute) ----
-  status file written 2026-11-08 13:54:45
-Part C status 2026-11-08 13:54  kit 7f48e30
+  status file written 2026-11-08 14:24:55
+Part C status 2026-11-08 14:24  kit 7f48e30
 method   b dataset      canary  tune   pick  finals  run fail confl
 DCF      1 adressa      passed   8/8   yes     9/9     0    0     0
 DCF      1 ml1m                  8/8   yes     9/9     0    0     0
@@ -68,25 +70,22 @@ DiffRec  2 yelp                  8/8   yes     6/6     0    0     0
 DiffRec  2 gowalla               8/8   yes     6/6     0    0     0
 DiffRec  2 amazon_book           8/8   yes     6/6     0    0     0
 RGCF     2 adressa      passed   8/8   yes     6/6     0    0     0
-RGCF     2 ml1m                  7/8   -       0/6     1    0     0
-RGCF     2 yelp                  8/8   yes     0/6     0    0     0
+RGCF     2 ml1m                  8/8   yes     0/6     0    0     0
+RGCF     2 yelp                  8/8   yes     0/6     2    0     0
 RGCF     2 gowalla               8/8   yes     0/6     0    0     0
-RGCF     2 amazon_book           7/8   -       0/6     1    0     0
+RGCF     2 amazon_book           8/8   yes     0/6     0    0     0
 SGL      2 adressa      passed   8/8   yes     6/6     0    0     0
 SGL      2 ml1m                  8/8   yes     6/6     0    0     0
 SGL      2 yelp                  8/8   yes     6/6     0    0     0
 SGL      2 gowalla               8/8   yes     6/6     0    0     0
 SGL      2 amazon_book           8/8   yes     6/6     0    0     0
 LLaRD    3 ml1m         passed   8/8   yes     6/6     0    0     0
-total: 928 of 954 done, 2 running, 0 failed, 0 conflicts; held: none
-GPU: 100 %, 15051 MiB, 24564 MiB
-rough finish: Mon 09 Nov 00:40 (10.8 h of known work)
+total: 930 of 954 done, 2 running, 0 failed, 0 conflicts; held: none
+GPU: 100 %, 14543 MiB, 24564 MiB
+rough finish: Sun 08 Nov 23:59 (9.6 h of known work)
 ---- RQ2 (after Part C) ----
   waits until Part C has nothing left to run
 ---- queue log (~/survey_queue.log) ----
-  2026-11-08 11:35:11 [pc1-queue] waiting for Part C to finish (Part C running: 2; idle checks 0/3); next look in 10 min
-  2026-11-08 11:45:11 [pc1-queue] waiting for Part C to finish (Part C running: 2; idle checks 0/3); next look in 10 min
-  2026-11-08 11:55:11 [pc1-queue] waiting for Part C to finish (Part C running: 2; idle checks 0/3); next look in 10 min
   2026-11-08 12:05:11 [pc1-queue] waiting for Part C to finish (Part C running: 2; idle checks 0/3); next look in 10 min
   2026-11-08 12:15:11 [pc1-queue] waiting for Part C to finish (Part C running: 2; idle checks 0/3); next look in 10 min
   2026-11-08 12:25:11 [pc1-queue] waiting for Part C to finish (Part C running: 2; idle checks 0/3); next look in 10 min
@@ -99,13 +98,16 @@ rough finish: Mon 09 Nov 00:40 (10.8 h of known work)
   2026-11-08 13:35:12 [pc1-queue] waiting for Part C to finish (Part C running: 3; idle checks 0/3); next look in 10 min
   2026-11-08 13:45:12 [pc1-queue] waiting for Part C to finish (Part C running: 3; idle checks 0/3); next look in 10 min
   2026-11-08 13:55:12 [pc1-queue] waiting for Part C to finish (Part C running: 2; idle checks 0/3); next look in 10 min
+  2026-11-08 14:05:13 [pc1-queue] waiting for Part C to finish (Part C running: 2; idle checks 0/3); next look in 10 min
+  2026-11-08 14:15:13 [pc1-queue] waiting for Part C to finish (Part C running: 2; idle checks 0/3); next look in 10 min
+  2026-11-08 14:25:13 [pc1-queue] waiting for Part C to finish (Part C running: 2; idle checks 0/3); next look in 10 min
 ---- recent service log lines ----
-2026-11-08T13:25:15+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-08T13:35:12+00:00 home systemd[3714]: partc-resume.service: Failed to open /run/user/1000/systemd/transient/partc-resume.service: No such file or directory
-2026-11-08T13:35:12+00:00 home systemd[3714]: partc-resume.service: Failed to open /run/user/1000/systemd/transient/partc-resume.service: No such file or directory
-2026-11-08T13:45:12+00:00 home systemd[3714]: partc-resume.service: Failed to open /run/user/1000/systemd/transient/partc-resume.service: No such file or directory
-2026-11-08T13:45:12+00:00 home systemd[3714]: partc-resume.service: Failed to open /run/user/1000/systemd/transient/partc-resume.service: No such file or directory
-2026-11-08T13:55:12+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-08T13:55:12+00:00 home systemd[3714]: partc-resume.service: Failed to open /run/user/1000/systemd/transient/partc-resume.service: No such file or directory
-2026-11-08T13:55:12+00:00 home systemd[3714]: partc-resume.service: Failed to open /run/user/1000/systemd/transient/partc-resume.service: No such file or directory
+2026-11-08T13:55:15+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-08T14:05:12+00:00 home systemd[3714]: partc-resume.service: Failed to open /run/user/1000/systemd/transient/partc-resume.service: No such file or directory
+2026-11-08T14:05:12+00:00 home systemd[3714]: partc-resume.service: Failed to open /run/user/1000/systemd/transient/partc-resume.service: No such file or directory
+2026-11-08T14:15:13+00:00 home systemd[3714]: partc-resume.service: Failed to open /run/user/1000/systemd/transient/partc-resume.service: No such file or directory
+2026-11-08T14:15:13+00:00 home systemd[3714]: partc-resume.service: Failed to open /run/user/1000/systemd/transient/partc-resume.service: No such file or directory
+2026-11-08T14:25:13+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-08T14:25:13+00:00 home systemd[3714]: partc-resume.service: Failed to open /run/user/1000/systemd/transient/partc-resume.service: No such file or directory
+2026-11-08T14:25:13+00:00 home systemd[3714]: partc-resume.service: Failed to open /run/user/1000/systemd/transient/partc-resume.service: No such file or directory
 ```
