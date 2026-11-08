@@ -7,6 +7,14 @@
     "trial": "rgcf_t5",
     "valid_ndcg@20": 0.10302381217479706
   },
+  "gowalla": {
+    "MIM_weight": 1e-06,
+    "best_epoch": 53,
+    "lr_mult": 0.1,
+    "prune_threshold": 0.06,
+    "trial": "rgcf_t2",
+    "valid_ndcg@20": 0.09783609956502914
+  },
   "yelp": {
     "MIM_weight": 1e-05,
     "best_epoch": 6,
