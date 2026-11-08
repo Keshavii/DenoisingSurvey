@@ -1,11 +1,60 @@
 Using backend: pytorch
+./log/ciao/log-GDMSR-Nov08_22-18-08-lr0.0001-reg0.0001-alpha0.0-emb8-gcn2-beta0.5-droprate0.5_1.0-0
+  0%|          | 0/97 [00:00<?, ?it/s]  0%|          | 0/97 [00:00<?, ?it/s]
 Traceback (most recent call last):
   File "gdmsr_patch.py", line 58, in <module>
     _spec.loader.exec_module(_mod)
   File "<frozen importlib._bootstrap_external>", line 728, in exec_module
   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/home/aura1/survey/rq10/repos/gdmsr/main.py", line 339, in <module>
-    torch.cuda.set_device(args.gpu_id)
-  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/torch/cuda/__init__.py", line 263, in set_device
-    torch._C._cuda_setDevice(device)
-RuntimeError: CUDA error: invalid device ordinal
+  File "/home/aura1/survey/rq10/repos/gdmsr/main.py", line 352, in <module>
+    interaction_GCN_model, log_dir_exp, args)
+  File "/home/aura1/survey/rq10/repos/gdmsr/main.py", line 177, in train_model
+    edge_weight, trust_dict, args.gpu_id, args)
+  File "/home/aura1/survey/rq10/repos/gdmsr/main.py", line 36, in train_epoch
+    h_user, h_item = interaction_GCN_model(edge_weight)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/aura1/survey/rq10/repos/gdmsr/models.py", line 68, in forward
+    features = layer(self.g, features, mod_kwargs={'trust': {'edge_weight': norm_edge_weight}})
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/nn/pytorch/hetero.py", line 193, in forward
+    **mod_kwargs.get(etype, {}))
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/nn/pytorch/conv/graphconv.py", line 423, in forward
+    graph.update_all(aggregate_fn, fn.sum(msg='m', out='h'))
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/heterograph.py", line 4686, in update_all
+    ndata = core.message_passing(g, message_func, reduce_func, apply_node_func)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/core.py", line 283, in message_passing
+    ndata = invoke_gspmm(g, mfunc, rfunc)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/core.py", line 258, in invoke_gspmm
+    z = op(graph, x)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/ops/spmm.py", line 170, in func
+    return gspmm(g, 'copy_lhs', reduce_op, x, None)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/ops/spmm.py", line 64, in gspmm
+    lhs_data, rhs_data)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/backend/pytorch/sparse.py", line 307, in gspmm
+    return GSpMM.apply(gidx, op, reduce_op, lhs_data, rhs_data)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/torch/cuda/amp/autocast_mode.py", line 213, in decorate_fwd
+    return fwd(*args, **kwargs)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/backend/pytorch/sparse.py", line 87, in forward
+    out, (argX, argY) = _gspmm(gidx, op, reduce_op, X, Y)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/sparse.py", line 162, in _gspmm
+    arg_e_nd)
+  File "dgl/_ffi/_cython/./function.pxi", line 287, in dgl._ffi._cy3.core.FunctionBase.__call__
+  File "dgl/_ffi/_cython/./function.pxi", line 232, in dgl._ffi._cy3.core.FuncCall
+  File "dgl/_ffi/_cython/./base.pxi", line 155, in dgl._ffi._cy3.core.CALL
+dgl._ffi.base.DGLError: [22:18:11] /opt/dgl/src/array/cuda/spmm.cu:213: Check failed: e == CUSPARSE_STATUS_SUCCESS: CUSPARSE ERROR: 10
+Stack trace:
+  [bt] (0) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(dmlc::LogMessageFatal::~LogMessageFatal()+0x4f) [0x76126754b16f]
+  [bt] (1) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(void dgl::aten::cusparse::CusparseCsrmm2<float, long>(DLContext const&, dgl::aten::CSRMatrix const&, float const*, float const*, float*, int)+0x762) [0x761268153052]
+  [bt] (2) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(void dgl::aten::SpMMCsr<2, long, 32>(std::string const&, std::string const&, dgl::BcastOff const&, dgl::aten::CSRMatrix const&, dgl::runtime::NDArray, dgl::runtime::NDArray, dgl::runtime::NDArray, std::vector<dgl::runtime::NDArray, std::allocator<dgl::runtime::NDArray> >)+0xdc) [0x76126819c0ac]
+  [bt] (3) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(dgl::aten::SpMM(std::string const&, std::string const&, std::shared_ptr<dgl::BaseHeteroGraph>, dgl::runtime::NDArray, dgl::runtime::NDArray, dgl::runtime::NDArray, std::vector<dgl::runtime::NDArray, std::allocator<dgl::runtime::NDArray> >)+0x2633) [0x7612676aa3d3]
+  [bt] (4) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(+0x6b6678) [0x7612676b6678]
+  [bt] (5) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(+0x6b6c11) [0x7612676b6c11]
+  [bt] (6) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(DGLFuncCall+0x48) [0x761267c4f378]
+  [bt] (7) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/_ffi/_cy3/core.cpython-37m-x86_64-linux-gnu.so(+0x163da) [0x76123fa163da]
+  [bt] (8) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/_ffi/_cy3/core.cpython-37m-x86_64-linux-gnu.so(+0x1694b) [0x76123fa1694b]
+
+

@@ -1,11 +1,47 @@
 Using backend: pytorch
+./log/yelp/log-GDMSR-Nov08_22-17-59-lr0.0001-reg0.0001-alpha0.0-emb8-gcn2-beta0.5-droprate0.5_1.0-0
+  0%|          | 0/409 [00:00<?, ?it/s]  0%|          | 0/409 [00:00<?, ?it/s]
 Traceback (most recent call last):
   File "gdmsr_patch.py", line 58, in <module>
     _spec.loader.exec_module(_mod)
   File "<frozen importlib._bootstrap_external>", line 728, in exec_module
   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/home/aura1/survey/rq10/repos/gdmsr/main.py", line 339, in <module>
-    torch.cuda.set_device(args.gpu_id)
-  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/torch/cuda/__init__.py", line 263, in set_device
-    torch._C._cuda_setDevice(device)
-RuntimeError: CUDA error: invalid device ordinal
+  File "/home/aura1/survey/rq10/repos/gdmsr/main.py", line 352, in <module>
+    interaction_GCN_model, log_dir_exp, args)
+  File "/home/aura1/survey/rq10/repos/gdmsr/main.py", line 177, in train_model
+    edge_weight, trust_dict, args.gpu_id, args)
+  File "/home/aura1/survey/rq10/repos/gdmsr/main.py", line 36, in train_epoch
+    h_user, h_item = interaction_GCN_model(edge_weight)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/aura1/survey/rq10/repos/gdmsr/models.py", line 68, in forward
+    features = layer(self.g, features, mod_kwargs={'trust': {'edge_weight': norm_edge_weight}})
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/nn/pytorch/hetero.py", line 193, in forward
+    **mod_kwargs.get(etype, {}))
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/nn/pytorch/conv/graphconv.py", line 399, in forward
+    degs = graph.out_degrees().float().clamp(min=1)
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/heterograph.py", line 3510, in out_degrees
+    deg = self._graph.out_degrees(etid, utils.prepare_tensor(self, u, 'u'))
+  File "/home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/heterograph_index.py", line 597, in out_degrees
+    self, int(etype), F.to_dgl_nd(v)))
+  File "dgl/_ffi/_cython/./function.pxi", line 287, in dgl._ffi._cy3.core.FunctionBase.__call__
+  File "dgl/_ffi/_cython/./function.pxi", line 222, in dgl._ffi._cy3.core.FuncCall
+  File "dgl/_ffi/_cython/./function.pxi", line 211, in dgl._ffi._cy3.core.FuncCall3
+  File "dgl/_ffi/_cython/./base.pxi", line 155, in dgl._ffi._cy3.core.CALL
+dgl._ffi.base.DGLError: [22:18:06] /opt/dgl/src/array/cuda/coo2csr.cu:28: Check failed: e == CUSPARSE_STATUS_SUCCESS: CUSPARSE ERROR: 10
+Stack trace:
+  [bt] (0) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(dmlc::LogMessageFatal::~LogMessageFatal()+0x4f) [0x7ab758b4b16f]
+  [bt] (1) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(dgl::aten::CSRMatrix dgl::aten::impl::COOToCSR<(DLDeviceType)2, int>(dgl::aten::COOMatrix)+0x885) [0x7ab7593dd095]
+  [bt] (2) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(dgl::aten::COOToCSR(dgl::aten::COOMatrix)+0x43b) [0x7ab758b2ea4b]
+  [bt] (3) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(dgl::UnitGraph::GetOutCSR(bool) const+0xa6) [0x7ab759384fc6]
+  [bt] (4) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(dgl::UnitGraph::GetFormat(dgl::SparseFormat) const+0x7d) [0x7ab7593859ad]
+  [bt] (5) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(dgl::UnitGraph::OutDegrees(unsigned long, dgl::runtime::NDArray) const+0x32) [0x7ab759387082]
+  [bt] (6) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(dgl::HeteroGraph::OutDegrees(unsigned long, dgl::runtime::NDArray) const+0x46) [0x7ab7592b7486]
+  [bt] (7) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(+0xcc01a9) [0x7ab7592c01a9]
+  [bt] (8) /home/aura1/miniconda3/envs/r10-gdmsr/lib/python3.7/site-packages/dgl/libdgl.so(DGLFuncCall+0x48) [0x7ab75924f378]
+
+

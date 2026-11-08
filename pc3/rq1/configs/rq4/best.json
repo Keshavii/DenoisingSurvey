@@ -1,0 +1,500 @@
+{
+ "yelp|L1|drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.042674481868743896
+ },
+ "yelp|L1|graph_drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04254332184791565
+ },
+ "yelp|L1|graph_reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04188818112015724
+ },
+ "yelp|L1|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.0417117103934288
+ },
+ "yelp|L1|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.040937766432762146
+ },
+ "yelp|L1|reshape": {
+  "complete": true,
+  "ssl_reg": 0.5,
+  "trial": 2,
+  "valid_ndcg@20": 0.04916584864258766
+ },
+ "yelp|L1|reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04281526803970337
+ },
+ "yelp|L1|soft_relabel": {
+  "complete": true,
+  "lam": 0.3,
+  "trial": 0,
+  "valid_ndcg@20": 0.03779875114560127
+ },
+ "yelp|L1|user_reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04246903955936432
+ },
+ "yelp|L2|drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04262832924723625
+ },
+ "yelp|L2|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04179736226797104
+ },
+ "yelp|L2|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.04100814461708069
+ },
+ "yelp|L2|reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.042793456465005875
+ },
+ "yelp|L3|drop": {
+  "complete": true,
+  "rate": 0.1,
+  "trial": 1,
+  "valid_ndcg@20": 0.04300224408507347
+ },
+ "yelp|L3|graph_drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04144437238574028
+ },
+ "yelp|L3|graph_reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04316176101565361
+ },
+ "yelp|L3|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.03807065263390541
+ },
+ "yelp|L3|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.04139269143342972
+ },
+ "yelp|L3|reshape": {
+  "complete": true,
+  "ssl_reg": 0.5,
+  "trial": 2,
+  "valid_ndcg@20": 0.04922384023666382
+ },
+ "yelp|L3|reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.042964331805706024
+ },
+ "yelp|L3|soft_relabel": {
+  "complete": true,
+  "lam": 0.3,
+  "trial": 0,
+  "valid_ndcg@20": 0.03607993200421333
+ },
+ "yelp|L3|user_reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.042600564658641815
+ },
+ "yelp|L4|drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.0425570048391819
+ },
+ "yelp|L4|graph_drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.041782911866903305
+ },
+ "yelp|L4|graph_reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04302697628736496
+ },
+ "yelp|L4|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.03755510598421097
+ },
+ "yelp|L4|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.04071904718875885
+ },
+ "yelp|L4|reshape": {
+  "complete": true,
+  "ssl_reg": 0.5,
+  "trial": 2,
+  "valid_ndcg@20": 0.048942405730485916
+ },
+ "yelp|L4|reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04266627877950668
+ },
+ "yelp|L4|soft_relabel": {
+  "complete": true,
+  "lam": 0.3,
+  "trial": 0,
+  "valid_ndcg@20": 0.03626561909914017
+ },
+ "yelp|L4|user_reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.042564019560813904
+ },
+ "yelp|L5|drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04263363033533096
+ },
+ "yelp|L5|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04186601936817169
+ },
+ "yelp|L5|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.04097462445497513
+ },
+ "yelp|L5|reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.042958006262779236
+ },
+ "yelp|M1c|drop": {
+  "complete": true,
+  "rate": 0.1,
+  "trial": 1,
+  "valid_ndcg@20": 0.04308929666876793
+ },
+ "yelp|M1c|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04115311801433563
+ },
+ "yelp|M1c|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.042463820427656174
+ },
+ "yelp|M1c|reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04313284531235695
+ },
+ "yelp|M1|drop": {
+  "complete": true,
+  "rate": 0.1,
+  "trial": 1,
+  "valid_ndcg@20": 0.04316576197743416
+ },
+ "yelp|M1|graph_drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04258042946457863
+ },
+ "yelp|M1|graph_reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.042299188673496246
+ },
+ "yelp|M1|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.042019832879304886
+ },
+ "yelp|M1|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.04256318882107735
+ },
+ "yelp|M1|reshape": {
+  "complete": true,
+  "ssl_reg": 0.5,
+  "trial": 2,
+  "valid_ndcg@20": 0.04951610043644905
+ },
+ "yelp|M1|reweight": {
+  "beta": 0.5,
+  "complete": true,
+  "trial": 1,
+  "valid_ndcg@20": 0.04307878762483597
+ },
+ "yelp|M1|soft_relabel": {
+  "complete": true,
+  "lam": 0.3,
+  "trial": 0,
+  "valid_ndcg@20": 0.04101937264204025
+ },
+ "yelp|M1|user_reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04251040518283844
+ },
+ "yelp|M2|drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04257119446992874
+ },
+ "yelp|M2|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.041423652321100235
+ },
+ "yelp|M2|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.03975763916969299
+ },
+ "yelp|M2|reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.042626816779375076
+ },
+ "yelp|P1|drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04261546581983566
+ },
+ "yelp|P1|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.03953220695257187
+ },
+ "yelp|P1|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.04152504727244377
+ },
+ "yelp|P1|reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04282769188284874
+ },
+ "yelp|P2|drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.042563144117593765
+ },
+ "yelp|P2|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04113822802901268
+ },
+ "yelp|P2|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.04165714234113693
+ },
+ "yelp|P2|reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04268014803528786
+ },
+ "yelp|R1|drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04264878109097481
+ },
+ "yelp|R1|graph_drop": {
+  "complete": true,
+  "rate": 0.1,
+  "trial": 1,
+  "valid_ndcg@20": 0.042465150356292725
+ },
+ "yelp|R1|graph_reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.042394571006298065
+ },
+ "yelp|R1|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.0425570011138916
+ },
+ "yelp|R1|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.04093533754348755
+ },
+ "yelp|R1|reshape": {
+  "complete": true,
+  "ssl_reg": 0.5,
+  "trial": 2,
+  "valid_ndcg@20": 0.04936612397432327
+ },
+ "yelp|R1|reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04278761148452759
+ },
+ "yelp|R1|soft_relabel": {
+  "complete": true,
+  "lam": 0.3,
+  "trial": 0,
+  "valid_ndcg@20": 0.03472689539194107
+ },
+ "yelp|R1|user_reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04249642789363861
+ },
+ "yelp|R2|drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04281429946422577
+ },
+ "yelp|R2|graph_drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04241078346967697
+ },
+ "yelp|R2|graph_reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04235101118683815
+ },
+ "yelp|R2|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.041574008762836456
+ },
+ "yelp|R2|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.04157128185033798
+ },
+ "yelp|R2|reshape": {
+  "complete": true,
+  "ssl_reg": 0.5,
+  "trial": 2,
+  "valid_ndcg@20": 0.04942535236477852
+ },
+ "yelp|R2|reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.04281969368457794
+ },
+ "yelp|R2|soft_relabel": {
+  "complete": true,
+  "lam": 0.3,
+  "trial": 0,
+  "valid_ndcg@20": 0.03900615870952606
+ },
+ "yelp|R2|user_reweight": {
+  "beta": 0.25,
+  "complete": true,
+  "trial": 0,
+  "valid_ndcg@20": 0.042655691504478455
+ },
+ "yelp|R3|drop": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.04234025254845619
+ },
+ "yelp|R3|relabel": {
+  "complete": true,
+  "rate": 0.05,
+  "trial": 0,
+  "valid_ndcg@20": 0.041032128036022186
+ },
+ "yelp|R3|resample": {
+  "complete": true,
+  "temp": 0.2,
+  "trial": 2,
+  "valid_ndcg@20": 0.04137347638607025
+ },
+ "yelp|R3|reweight": {
+  "beta": 0.5,
+  "complete": true,
+  "trial": 1,
+  "valid_ndcg@20": 0.04281026870012283
+ },
+ "yelp|none|reshape": {
+  "complete": true,
+  "ssl_reg": 0.5,
+  "trial": 2,
+  "valid_ndcg@20": 0.04989273101091385
+ }
+}

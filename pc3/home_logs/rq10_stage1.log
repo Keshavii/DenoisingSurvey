@@ -1,0 +1,23 @@
+2026-11-08 22:17:58 [rq10-stage1] start
+2026-11-08 22:17:58 [rq10-stage1] fmlp_beauty_n2_20: retired (test targets overwritten by noise)
+2026-11-08 22:17:58 [rq10-stage1] fmlp_beauty_n3_30: retired (test targets overwritten by noise)
+2026-11-08 22:17:58 [rq10-stage1] === GDMSR (README settings, GPU 0, per-dataset data folder) ===
+2026-11-08 22:17:58 [rq10-stage1] gdmsr_yelp: start  cmd=python gdmsr_patch.py --lr 0.0001 --gpu_id 0 --early_stop 20 --epochs 200 --data_loader_workers 10 --l2_reg 0.0001 --dataset_name yelp --data_dir ./data/yelp
+2026-11-08 22:18:07 [rq10-stage1] gdmsr_yelp: exit 1  0 min  peak 2041 MiB  (log /home/aura1/survey/rq10/logs/run_gdmsr_yelp.log)
+2026-11-08 22:18:07 [rq10-stage1] gdmsr_ciao: start  cmd=python gdmsr_patch.py --lr 0.0001 --gpu_id 0 --early_stop 20 --epochs 200 --data_loader_workers 10 --l2_reg 0.0001 --dataset_name ciao --data_dir ./data/ciao
+2026-11-08 22:18:11 [rq10-stage1] gdmsr_ciao: exit 1  0 min  peak 507 MiB  (log /home/aura1/survey/rq10/logs/run_gdmsr_ciao.log)
+2026-11-08 22:18:11 [rq10-stage1] gdmsr_douban: start  cmd=python gdmsr_patch.py --lr 0.0001 --gpu_id 0 --early_stop 20 --epochs 200 --data_loader_workers 10 --l2_reg 0.0001 --dataset_name douban --data_dir ./data/douban
+2026-11-08 22:18:15 [rq10-stage1] gdmsr_douban: exit 1  0 min  peak 507 MiB  (log /home/aura1/survey/rq10/logs/run_gdmsr_douban.log)
+2026-11-08 22:18:15 [rq10-stage1] === STEAM Sports and Yelp (item count per dataset) ===
+2026-11-08 22:18:15 [rq10-stage1] steam_sports: start  cmd=bash -c python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Sports/test_neg.dat -n 18360 -o ./save_steam_sports/ -m=train && python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Sports/test_neg.dat -n 18360 -o ./save_steam_sports/ -m=valid && python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Sports/test_neg.dat -n 18360 -o ./save_steam_sports/ -m=test
+2026-11-08 22:18:18 [rq10-stage1] steam_sports: exit 1  0 min  peak 507 MiB  (log /home/aura1/survey/rq10/logs/run_steam_sports.log)
+2026-11-08 22:18:18 [rq10-stage1] steam_yelp: start  cmd=bash -c python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat -vn ./Yelp/valid_neg.dat -en ./Yelp/test_neg.dat -n 16555 -o ./save_steam_yelp/ -m=train && python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat -vn ./Yelp/valid_neg.dat -en ./Yelp/test_neg.dat -n 16555 -o ./save_steam_yelp/ -m=valid && python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat -vn ./Yelp/valid_neg.dat -en ./Yelp/test_neg.dat -n 16555 -o ./save_steam_yelp/ -m=test
+2026-11-08 22:18:21 [rq10-stage1] steam_yelp: exit 1  0 min  peak 507 MiB  (log /home/aura1/survey/rq10/logs/run_steam_yelp.log)
+2026-11-08 22:18:21 [rq10-stage1] === FMLP Sports and Yelp (authors' Google Drive data) ===
+2026-11-08 22:18:29 [rq10-stage1] Google Drive download returned an error (see /home/aura1/survey/rq10/logs/fmlp_drive_download.log)
+2026-11-08 22:18:29 [rq10-stage1] fmlp_sports_and_outdoors: no Sports_and_Outdoors.txt / Sports_and_Outdoors_sample.txt (Drive download failed); skipped
+2026-11-08 22:18:29 [rq10-stage1] fmlp_yelp: no Yelp.txt / Yelp_sample.txt (Drive download failed); skipped
+2026-11-08 22:18:29 [rq10-stage1] === HSD Beauty, Sports, Yelp (SASRec; result saved as JSON) ===
+2026-11-08 22:18:29 [rq10-stage1] hsd_beauty_sasrec: start  cmd=python run_hsd_survey.py --dataset Beauty --sub_model SASRec
+2026-11-08 22:26:36 [rq10-stage1] hsd_beauty_sasrec: exit 0  8 min  peak 7881 MiB  (log /home/aura1/survey/rq10/logs/run_hsd_beauty_sasrec.log)
+2026-11-08 22:26:36 [rq10-stage1] hsd_sports_sasrec: start  cmd=python run_hsd_survey.py --dataset Sports --sub_model SASRec

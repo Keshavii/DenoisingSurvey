@@ -1,25 +1,26 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-08 21:56:58 UTC  up since 2026-11-03 22:15:42
-code 7f48e30 05 Nov 21:52  linger yes  disk free 95G  ram used 9/62 GB swap 1 GB 
-gpu 100 %, 9798 MiB, 24564 MiB, 67
+pc3 (aura1@aura-node1)  2026-11-08 22:26:59 UTC  up since 2026-11-03 22:15:42
+code 7f48e30 05 Nov 21:52  linger yes  disk free 94G  ram used 11/62 GB swap 1 GB 
+gpu 49 %, 3097 MiB, 24564 MiB, 49
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-08 21:26:58 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-08 21:56:59 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  32:15       python -m rq1kit.rq4 --signal none --treat reshape --ssl_reg 0.1 --data data/yelp --lr 0.005 --reg 0.001 --epochs 100 -
-  00:19       python -m rq1kit.rq4 --signal none --treat reshape --ssl_reg 0.5 --data data/yelp --lr 0.005 --reg 0.001 --epochs 100 -
+  00:23       timeout 12h python run_hsd_survey.py --dataset Sports --sub_model SASRec
+  00:23       python run_hsd_survey.py --dataset Sports --sub_model SASRec
 ---- RQ4 (signal x treatment) ----
-  tune yelp: 247/249 done, 0 failed so far, median 36 min/job, ~1 h left at 2 in parallel
+  tune yelp: 249/249 done, 0 failed so far
+  picks: picks_yelp.json (83 cells)
   final: not started
 ---- RQ10 (specialists) ----
-  .done markers: 19  (gbsr_yelp_r2 fmlp_beauty gbsr_epinions_r1 fmlp_beauty_n0 hdsr_default steam_beauty gbsr_douban_r1 repro_fmlp fmlp_beauty_n2_20 steam_beauty_n2_20 gbsr_douban_r2 repro_gbsr fmlp_beauty_n3_30 steam_beauty_n3_30 repro_preferdiff gbsr_epinions_r2 steam_beauty_n0 gbsr_yelp_r1 repro_steam )
-  last lines of ~/rq10_rerun.log:
-    hsd_sports_sasrec     1  16   7827
-    hsd_yelp_sasrec       1  9    7809
-    hsd_beauty_sasrec     1  8    7843
+  .done markers: 18  (gbsr_yelp_r2 fmlp_beauty gbsr_epinions_r1 fmlp_beauty_n0 hdsr_default steam_beauty gbsr_douban_r1 repro_fmlp hsd_beauty_sasrec steam_beauty_n2_20 gbsr_douban_r2 repro_gbsr steam_beauty_n3_30 repro_preferdiff gbsr_epinions_r2 steam_beauty_n0 gbsr_yelp_r1 repro_steam )
+  last lines of ~/rq10_stage1.log:
+    2026-11-08 22:18:29 [rq10-stage1] hsd_beauty_sasrec: start  cmd=python run_hsd_survey.py --dataset Beauty --sub_model SASRec
+    2026-11-08 22:26:36 [rq10-stage1] hsd_beauty_sasrec: exit 0  8 min  peak 7881 MiB  (log /home/aura1/survey/rq10/logs/run_hsd_beauty_sasrec.l
+    2026-11-08 22:26:36 [rq10-stage1] hsd_sports_sasrec: start  cmd=python run_hsd_survey.py --dataset Sports --sub_model SASRec
   run_summary.tsv (name, exit code, minutes, peak MiB):
     gbsr_douban_r1	0	8	3642
     gbsr_epinions_r1	0	8	20896
@@ -64,14 +65,13 @@ gpu 100 %, 9798 MiB, 24564 MiB, 67
     hsd_sports_sasrec	1	16	7827
     hsd_yelp_sasrec	1	9	7809
     hsd_beauty_sasrec	1	8	7843
+    gdmsr_yelp	1	0	2041
+    gdmsr_ciao	1	0	507
+    gdmsr_douban	1	0	507
+    steam_sports	1	0	507
+    steam_yelp	1	0	507
+    hsd_beauty_sasrec	0	8	7881
 ---- queue log (~/survey_queue.log) ----
-  2026-11-05 21:19:43 RQ4 start: datasets [yelp], tune 1, final seeds [all], picks from this PC
-  2026-11-05 21:19:43 1 clean base and MF-BPR on it
-  2026-11-05 21:19:43 2 noise files
-  2026-11-05 21:19:43 4b reference models for the clean bases (teacher M1c) and the Yelp files (R2, M1, hard positives)
-  2026-11-05 21:19:47 5 tuning [yelp]
-  249 of 522 jobs kept (datasets yelp)
-  2026-11-05 21:32:53 [pc3-queue] start, code dedb518
   2026-11-05 21:32:53 [pc3-queue] RQ10 re-runs complete
   2026-11-05 21:32:53 RQ4 start: datasets [yelp], tune 1, final seeds [all], picks from this PC
   2026-11-05 21:32:53 1 clean base and MF-BPR on it
@@ -80,12 +80,19 @@ gpu 100 %, 9798 MiB, 24564 MiB, 67
   2026-11-05 21:32:56 5 tuning [yelp]
   249 of 522 jobs kept (datasets yelp)
   249 jobs to run, 0 already done
+  2026-11-08 22:17:58   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
+  0 jobs to run, 249 already done
+  2026-11-08 22:17:58 6 picks
+  83 cells picked -> /home/aura1/survey/rq1/configs/rq4/best.json; incomplete: ml1m|L1|drop (0/3), ml1m|L1|reweight (0/3), ml1m|L1|relabel (0/3), ml1m|L1|resample
+  83 yelp picks -> configs/rq4/picks_yelp.json
+  2026-11-08 22:17:58 stopping after the picks (STOP_AFTER_PICKS=1); finals come in a later call
+  2026-11-08 22:17:58 [pc3-queue] RQ10 stage 1 (log ~/rq10_stage1.log)
 ---- recent service log lines ----
-2026-11-08T20:26:57+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-08T20:26:58+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-08T20:56:58+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-08T20:56:58+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-08T21:26:58+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-08T21:26:58+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-08T21:56:58+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-08T21:56:59+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-08T22:26:59+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
