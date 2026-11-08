@@ -1,16 +1,16 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-08 15:26:54 UTC  up since 2026-11-03 22:15:42
+pc3 (aura1@aura-node1)  2026-11-08 15:56:54 UTC  up since 2026-11-03 22:15:42
 code 7f48e30 05 Nov 21:52  linger yes  disk free 96G  ram used 9/62 GB swap 1 GB 
-gpu 100 %, 10672 MiB, 24564 MiB, 67
+gpu 99 %, 11122 MiB, 24564 MiB, 68
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-08 14:56:54 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-08 15:26:54 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  01:27:05    python -m rq1kit.rq4 --signal L1 --treat reshape --ssl_reg 0.05 --data data/yelp --lr 0.005 --reg 0.001 --epochs 100 --
-  10:15       python -m rq1kit.rq4 --signal M1 --treat reshape --ssl_reg 0.05 --data data/yelp --lr 0.005 --reg 0.001 --epochs 100 --
+  01:57:06    python -m rq1kit.rq4 --signal L1 --treat reshape --ssl_reg 0.05 --data data/yelp --lr 0.005 --reg 0.001 --epochs 100 --
+  40:15       python -m rq1kit.rq4 --signal M1 --treat reshape --ssl_reg 0.05 --data data/yelp --lr 0.005 --reg 0.001 --epochs 100 --
 ---- RQ4 (signal x treatment) ----
   tune yelp: 230/249 done, 0 failed so far, median 36 min/job, ~6 h left at 2 in parallel
   final: not started
@@ -81,11 +81,11 @@ gpu 100 %, 10672 MiB, 24564 MiB, 67
   249 of 522 jobs kept (datasets yelp)
   249 jobs to run, 0 already done
 ---- recent service log lines ----
-2026-11-08T13:56:53+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-08T13:56:53+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-08T14:26:53+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-08T14:26:53+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-08T14:56:53+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-08T14:56:54+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-08T15:26:54+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-08T15:26:54+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-08T15:56:54+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
