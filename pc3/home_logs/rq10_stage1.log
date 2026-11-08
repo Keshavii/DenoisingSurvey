@@ -21,3 +21,12 @@
 2026-11-08 22:18:29 [rq10-stage1] hsd_beauty_sasrec: start  cmd=python run_hsd_survey.py --dataset Beauty --sub_model SASRec
 2026-11-08 22:26:36 [rq10-stage1] hsd_beauty_sasrec: exit 0  8 min  peak 7881 MiB  (log /home/aura1/survey/rq10/logs/run_hsd_beauty_sasrec.log)
 2026-11-08 22:26:36 [rq10-stage1] hsd_sports_sasrec: start  cmd=python run_hsd_survey.py --dataset Sports --sub_model SASRec
+2026-11-08 22:43:17 [rq10-stage1] hsd_sports_sasrec: exit 0  16 min  peak 7865 MiB  (log /home/aura1/survey/rq10/logs/run_hsd_sports_sasrec.log)
+2026-11-08 22:43:17 [rq10-stage1] hsd_yelp_sasrec: start  cmd=python run_hsd_survey.py --dataset Yelp --sub_model SASRec
+2026-11-08 22:53:11 [rq10-stage1] hsd_yelp_sasrec: exit 0  9 min  peak 7847 MiB  (log /home/aura1/survey/rq10/logs/run_hsd_yelp_sasrec.log)
+2026-11-08 22:53:11 [rq10-stage1] === stage 2 (log continues below) ===
+2026-11-08 22:53:11 [rq10-stage2] start (datasets [Beauty Sports_and_Outdoors Yelp], levels [N0 I10 I20], seeds [1])
+2026-11-08 22:53:12 [rq10-stage2] Sports_and_Outdoors: built from STEAM's Sports (Drive copy missing)
+2026-11-08 22:53:12 [rq10-stage2] Yelp: no FMLP files (/home/aura1/survey/rq10/repos/fmlp/data/Yelp.txt); skipped
+2026-11-08 22:53:12 [rq10-stage2] noise files [ Beauty Sports_and_Outdoors ]
+2026-11-08 22:53:14 [rq10-stage2] s2_fmlp_beauty_n0_s1: start
