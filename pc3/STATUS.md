@@ -1,26 +1,31 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-08 22:56:59 UTC  up since 2026-11-03 22:15:42
+pc3 (aura1@aura-node1)  2026-11-08 23:27:00 UTC  up since 2026-11-03 22:15:42
 code 7f48e30 05 Nov 21:52  linger yes  disk free 94G  ram used 10/62 GB swap 1 GB 
-gpu 52 %, 2655 MiB, 24564 MiB, 49
+gpu 90 %, 22679 MiB, 24564 MiB, 65
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-08 22:26:59 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-08 22:56:59 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  03:44       timeout 12h python run_fmlp_noise.py --data_name=Beauty_N0_s1 --full_sort
-  03:44       python run_fmlp_noise.py --data_name=Beauty_N0_s1 --full_sort
+  21:45       timeout 12h bash -c python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_N0_s1/train.dat -vf /home/aura1/survey/rq
+  21:45       bash -c python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/B
+  21:45       python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Beauty_N0
+  00:03       python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Beauty_N0
+  00:03       python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Beauty_N0
+  00:03       python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Beauty_N0
+  00:03       python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Beauty_N0
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
   final: not started
 ---- RQ10 (specialists) ----
-  .done markers: 20  (hsd_sports_sasrec gbsr_yelp_r2 fmlp_beauty gbsr_epinions_r1 fmlp_beauty_n0 hdsr_default steam_beauty gbsr_douban_r1 repro_fmlp hsd_beauty_sasrec steam_beauty_n2_20 gbsr_douban_r2 repro_gbsr steam_beauty_n3_30 repro_preferdiff gbsr_epinions_r2 steam_beauty_n0 gbsr_yelp_r1 hsd_yelp_sasrec repro_steam )
+  .done markers: 22  (hsd_sports_sasrec gbsr_yelp_r2 fmlp_beauty gbsr_epinions_r1 fmlp_beauty_n0 hdsr_default s2_hsd_beauty_n0_s1 steam_beauty gbsr_douban_r1 repro_fmlp hsd_beauty_sasrec steam_beauty_n2_20 s2_fmlp_beauty_n0_s1 gbsr_douban_r2 repro_gbsr steam_beauty_n3_30 repro_preferdiff gbsr_epinions_r2 steam_beauty_n0 gbsr_yelp_r1 hsd_yelp_sasrec repro_steam )
   last lines of ~/rq10_stage1.log:
-    2026-11-08 22:53:12 [rq10-stage2] Yelp: no FMLP files (/home/aura1/survey/rq10/repos/fmlp/data/Yelp.txt); skipped
-    2026-11-08 22:53:12 [rq10-stage2] noise files [ Beauty Sports_and_Outdoors ]
-    2026-11-08 22:53:14 [rq10-stage2] s2_fmlp_beauty_n0_s1: start
+    2026-11-08 22:57:06 [rq10-stage2] s2_hsd_beauty_n0_s1: start
+    2026-11-08 23:05:15 [rq10-stage2] s2_hsd_beauty_n0_s1: exit 0  8 min  peak 7881 MiB
+    2026-11-08 23:05:15 [rq10-stage2] s2_steam_beauty_n0_s1: start
   run_summary.tsv (name, exit code, minutes, peak MiB):
     gbsr_douban_r1	0	8	3642
     gbsr_epinions_r1	0	8	20896
@@ -73,6 +78,8 @@ gpu 52 %, 2655 MiB, 24564 MiB, 49
     hsd_beauty_sasrec	0	8	7881
     hsd_sports_sasrec	0	16	7865
     hsd_yelp_sasrec	0	9	7847
+    s2_fmlp_beauty_n0_s1	0	3	2655
+    s2_hsd_beauty_n0_s1	0	8	7881
 ---- queue log (~/survey_queue.log) ----
   2026-11-05 21:32:53 [pc3-queue] RQ10 re-runs complete
   2026-11-05 21:32:53 RQ4 start: datasets [yelp], tune 1, final seeds [all], picks from this PC
@@ -90,11 +97,11 @@ gpu 52 %, 2655 MiB, 24564 MiB, 49
   2026-11-08 22:17:58 stopping after the picks (STOP_AFTER_PICKS=1); finals come in a later call
   2026-11-08 22:17:58 [pc3-queue] RQ10 stage 1 (log ~/rq10_stage1.log)
 ---- recent service log lines ----
-2026-11-08T21:26:58+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-08T21:26:58+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-08T21:56:58+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-08T21:56:59+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-08T22:26:59+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-08T22:26:59+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-08T22:56:59+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-08T22:56:59+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-08T23:27:00+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
