@@ -1,18 +1,18 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-09 09:27:06 UTC  up since 2026-11-03 22:15:42
+pc3 (aura1@aura-node1)  2026-11-09 09:57:07 UTC  up since 2026-11-03 22:15:42
 code 7f48e30 05 Nov 21:52  linger yes  disk free 86G  ram used 10/62 GB swap 1 GB 
-gpu 98 %, 5242 MiB, 24564 MiB, 67
+gpu 99 %, 5242 MiB, 24564 MiB, 66
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-09 08:57:06 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-09 09:27:06 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  17:09       bash -c python -m rq1kit.rq4 --signal M1 --treat resample --temp 0.2 --data data/yelp --train_file train.tsv --lr 0.005
-  17:09       python -m rq1kit.rq4 --signal M1 --treat resample --temp 0.2 --data data/yelp --train_file train.tsv --lr 0.005 --reg 0
-  17:05       bash -c python -m rq1kit.rq4 --signal M2 --treat drop --rate 0.05 --data data/yelp --train_file train.tsv --lr 0.005 --
-  17:05       python -m rq1kit.rq4 --signal M2 --treat drop --rate 0.05 --data data/yelp --train_file train.tsv --lr 0.005 --reg 0.00
+  47:10       bash -c python -m rq1kit.rq4 --signal M1 --treat resample --temp 0.2 --data data/yelp --train_file train.tsv --lr 0.005
+  47:10       python -m rq1kit.rq4 --signal M1 --treat resample --temp 0.2 --data data/yelp --train_file train.tsv --lr 0.005 --reg 0
+  47:06       bash -c python -m rq1kit.rq4 --signal M2 --treat drop --rate 0.05 --data data/yelp --train_file train.tsv --lr 0.005 --
+  47:06       python -m rq1kit.rq4 --signal M2 --treat drop --rate 0.05 --data data/yelp --train_file train.tsv --lr 0.005 --reg 0.00
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
@@ -127,11 +127,11 @@ gpu 98 %, 5242 MiB, 24564 MiB, 67
   2026-11-09 05:43:11 7 finals [yelp] seeds [1]
   169 of 350 jobs kept (datasets yelp, seeds 1)
 ---- recent service log lines ----
-2026-11-09T07:57:05+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-09T07:57:05+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-09T08:27:05+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-09T08:27:05+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-09T08:57:06+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-09T08:57:06+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-09T09:27:06+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-09T09:27:06+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-09T09:57:07+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
