@@ -1,0 +1,133 @@
+{
+ "dataset": "Sports_and_Outdoors_I10_s1",
+ "model": "HSD",
+ "sub_model": "SASRec",
+ "finished": "2026-11-09 03:18:30",
+ "note": "hyper-parameter analysis, embedding size:[100]",
+ "parameters": {
+  "gpu_id": 0.0,
+  "seed": 42.0,
+  "weight_decay": 0.0,
+  "loss_type": "BPR",
+  "sub_model": "SASRec",
+  "MAX_ITEM_LIST_LENGTH": 50.0,
+  "data_augmentation": 1.0,
+  "user_inter_num_interval": "(4, inf)",
+  "item_inter_num_interval": "(4, inf)",
+  "initializer_range": 0.02,
+  "learning_rate": 0.001,
+  "scheduler": 0.0,
+  "step_size": 4.0,
+  "gamma": 0.1,
+  "load_col": {
+   "inter": [
+    "user_id",
+    "item_id",
+    "rating",
+    "timestamp"
+   ]
+  },
+  "USER_ID_FIELD": "user_id",
+  "ITEM_ID_FIELD": "item_id",
+  "RATING_FIELD": "rating",
+  "TIME_FIELD": "timestamp",
+  "our_att_drop_out": 0.2,
+  "our_ae_drop_out": 0.3,
+  "gumbel_temperature": 0.5,
+  "is_gumbel_tau_anneal": 1.0,
+  "long_tail_rate": 0.95,
+  "neg_sampling": {
+   "uniform": 5.0
+  },
+  "pre_train_model_dict": {
+   "amazon-sports-outdoors": {
+    "GRU4Rec": "saved/GRU4Rec-May-17-2022_13-14-44.pth",
+    "NARM": "saved/NARM-May-17-2022_13-16-07.pth",
+    "Caser": "saved/Caser-May-17-2022_13-17-42.pth",
+    "BERT4Rec": "saved/BERT4Rec-May-17-2022_13-20-26.pth",
+    "SASRec": "saved/SASRec-May-17-2022_13-27-07.pth",
+    "STAMP": "saved/STAMP-May-17-2022_14-20-57.pth",
+    "DSAN": "saved/DSAN-May-19-2022_23-25-56.pth"
+   },
+   "ml-100k": {
+    "GRU4Rec": "saved/GRU4Rec-May-17-2022_13-13-42.pth",
+    "NARM": "saved/NARM-May-19-2022_19-31-33.pth",
+    "Caser": "saved/Caser-May-17-2022_13-13-56.pth",
+    "BERT4Rec": "saved/BERT4Rec-May-17-2022_13-14-04.pth",
+    "SASRec": "saved/SASRec-May-17-2022_13-14-14.pth",
+    "STAMP": "saved/STAMP-May-17-2022_13-14-49.pth"
+   },
+   "yelp": {
+    "GRU4Rec": "saved/GRU4Rec-May-17-2022_13-15-01.pth",
+    "NARM": "saved/NARM-May-17-2022_13-17-59.pth",
+    "Caser": "saved/Caser-May-17-2022_13-26-00.pth",
+    "BERT4Rec": "saved/BERT4Rec-May-17-2022_13-30-05.pth",
+    "SASRec": "saved/SASRec-May-17-2022_13-45-49.pth",
+    "STAMP": "saved/STAMP-May-17-2022_14-27-11.pth"
+   },
+   "amazon-beauty": {
+    "GRU4Rec": "saved/GRU4Rec-May-17-2022_13-13-26.pth",
+    "NARM": "saved/NARM-May-17-2022_13-14-20.pth",
+    "Caser": "saved/Caser-May-17-2022_13-16-13.pth",
+    "BERT4Rec": "saved/BERT4Rec-May-17-2022_13-17-49.pth",
+    "SASRec": "saved/SASRec-May-17-2022_13-21-48.pth",
+    "STAMP": "saved/STAMP-May-17-2022_14-05-50.pth"
+   },
+   "amazon-clothing-shoes-jewelry": {
+    "GRU4Rec": "saved/GRU4Rec-May-17-2022_13-32-16.pth",
+    "NARM": "saved/NARM-May-17-2022_13-34-29.pth",
+    "Caser": "saved/Caser-May-17-2022_13-37-12.pth",
+    "BERT4Rec": "saved/BERT4Rec-May-17-2022_13-40-44.pth",
+    "SASRec": "saved/SASRec-May-17-2022_13-46-02.pth",
+    "STAMP": "saved/STAMP-May-17-2022_15-03-23.pth"
+   },
+   "ml-1m": {
+    "GRU4Rec": "saved/GRU4Rec-May-17-2022_13-13-41.pth",
+    "NARM": "saved/NARM-May-17-2022_13-14-36.pth",
+    "Caser": "saved/Caser-May-17-2022_13-15-33.pth",
+    "BERT4Rec": "saved/BERT4Rec-May-17-2022_13-16-38.pth",
+    "SASRec": "saved/SASRec-May-17-2022_13-27-12.pth",
+    "STAMP": "saved/STAMP-May-17-2022_13-39-43.pth"
+   }
+  },
+  "load_pre_train_emb": 0.0,
+  "n_layers": 2.0,
+  "n_heads": 2.0,
+  "hidden_size": 100.0,
+  "inner_size": 100.0,
+  "hidden_dropout_prob": 0.5,
+  "attn_dropout_prob": 0.5,
+  "hidden_act": "gelu",
+  "layer_norm_eps": 1e-12
+ },
+ "best_valid_score": 0.0422,
+ "valid_score_bigger": 1.0,
+ "best_valid_result": {
+  "hit@1": 0.0006,
+  "hit@5": 0.0141,
+  "hit@10": 0.0268,
+  "hit@20": 0.0422,
+  "ndcg@1": 0.0006,
+  "ndcg@5": 0.0075,
+  "ndcg@10": 0.0116,
+  "ndcg@20": 0.0154,
+  "mrr@1": 0.0006,
+  "mrr@5": 0.0053,
+  "mrr@10": 0.007,
+  "mrr@20": 0.008
+ },
+ "test_result": {
+  "hit@1": 0.0007,
+  "hit@5": 0.0123,
+  "hit@10": 0.0204,
+  "hit@20": 0.0324,
+  "ndcg@1": 0.0007,
+  "ndcg@5": 0.0064,
+  "ndcg@10": 0.0091,
+  "ndcg@20": 0.0121,
+  "mrr@1": 0.0007,
+  "mrr@5": 0.0045,
+  "mrr@10": 0.0056,
+  "mrr@20": 0.0064
+ }
+}

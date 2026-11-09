@@ -1,0 +1,16 @@
+method	dataset	level	seed	recall10	ndcg10	source
+FMLP-Rec	Beauty	N0	1	0.0562	0.0294	logs/run_s2_fmlp_beauty_n0_s1.log
+FMLP-Rec	Beauty	I10	1	0.0527	0.0274	logs/run_s2_fmlp_beauty_i10_s1.log
+FMLP-Rec	Beauty	I20	1	0.0511	0.0269	logs/run_s2_fmlp_beauty_i20_s1.log
+HSD (SASRec)	Beauty	N0	1	0.0435	0.0201	results/s2_hsd_Beauty_N0_s1.json
+HSD (SASRec)	Beauty	I10	1	0.0418	0.0195	results/s2_hsd_Beauty_I10_s1.json
+HSD (SASRec)	Beauty	I20	1	0.0424	0.0197	results/s2_hsd_Beauty_I20_s1.json
+STEAM	Beauty	N0	1	0.0629	0.0322	results/s2_steam_Beauty_N0_s1.json
+STEAM	Beauty	I10	1	0.0601	0.0305	results/s2_steam_Beauty_I10_s1.json
+STEAM	Beauty	I20	1	0.0561	0.0278	results/s2_steam_Beauty_I20_s1.json
+FMLP-Rec	Sports_and_Outdoors	N0	1	0.0310	0.0172	logs/run_s2_fmlp_sports_and_outdoors_n0_s1.log
+FMLP-Rec	Sports_and_Outdoors	I10	1	0.0283	0.0145	logs/run_s2_fmlp_sports_and_outdoors_i10_s1.log
+FMLP-Rec	Sports_and_Outdoors	I20	1	0.0243	0.0125	logs/run_s2_fmlp_sports_and_outdoors_i20_s1.log
+HSD (SASRec)	Sports_and_Outdoors	N0	1	0.0223	0.0108	results/s2_hsd_Sports_and_Outdoors_N0_s1.json
+HSD (SASRec)	Sports_and_Outdoors	I10	1	0.0204	0.0091	results/s2_hsd_Sports_and_Outdoors_I10_s1.json
+HSD (SASRec)	Sports_and_Outdoors	I20	1	0.0193	0.0089	results/s2_hsd_Sports_and_Outdoors_I20_s1.json
