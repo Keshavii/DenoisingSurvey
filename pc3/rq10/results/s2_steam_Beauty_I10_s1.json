@@ -1,0 +1,27 @@
+{
+ "method": "STEAM",
+ "checkpoint": "./save_s2_Beauty_I10_s1/",
+ "best_valid_epoch": 206,
+ "best_valid_sum": 2.576429041820763,
+ "users": 22363,
+ "n_items": 12101,
+ "k": 10,
+ "original": {
+  "recall@10": 0.058444752492957115,
+  "ndcg@10": 0.029827410012799437,
+  "sampled_recall@10": 0.4993068908464875,
+  "sampled_mrr@10": 0.27992224614211564
+ },
+ "corrected": {
+  "recall@10": 0.06005455439788937,
+  "ndcg@10": 0.0304787783531481,
+  "sampled_recall@10": 0.5031078120109109,
+  "sampled_mrr@10": 0.2860756571405836
+ },
+ "reported": {
+  "recall@10": 0.06005455439788937,
+  "ndcg@10": 0.0304787783531481,
+  "sampled_recall@10": 0.5031078120109109,
+  "sampled_mrr@10": 0.2860756571405836
+ }
+}

@@ -1,31 +1,26 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-09 02:57:02 UTC  up since 2026-11-03 22:15:42
-code 7f48e30 05 Nov 21:52  linger yes  disk free 89G  ram used 10/62 GB swap 1 GB 
-gpu 64 %, 3473 MiB, 24564 MiB, 59
+pc3 (aura1@aura-node1)  2026-11-09 03:27:02 UTC  up since 2026-11-03 22:15:42
+code 7f48e30 05 Nov 21:52  linger yes  disk free 89G  ram used 11/62 GB swap 1 GB 
+gpu 41 %, 7881 MiB, 24564 MiB, 49
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-09 02:27:02 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-09 02:57:02 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  01:39:55    timeout 12h bash -c python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_I10_s1/train.dat -vf /home/aura1/survey/r
-  01:39:55    bash -c python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_I10_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/
-  15:14       python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_I10_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Beauty_I
-  00:00       python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_I10_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Beauty_I
-  00:00       python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_I10_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Beauty_I
-  00:00       python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_I10_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Beauty_I
-  00:00       python main.py -tf /home/aura1/survey/rq10/data_s2/Beauty_I10_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Beauty_I
+  03:22       timeout 12h python run_hsd_survey.py --dataset Beauty_I20_s1 --sub_model SASRec
+  03:22       python run_hsd_survey.py --dataset Beauty_I20_s1 --sub_model SASRec
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
   final: not started
 ---- RQ10 (specialists) ----
-  .done markers: 27  (hsd_sports_sasrec gbsr_yelp_r2 fmlp_beauty gbsr_epinions_r1 fmlp_beauty_n0 hdsr_default s2_hsd_beauty_n0_s1 steam_beauty gbsr_douban_r1 repro_fmlp hsd_beauty_sasrec steam_beauty_n2_20 s2_fmlp_beauty_n0_s1 gbsr_douban_r2 repro_gbsr steam_beauty_n3_30 repro_preferdiff gbsr_epinions_r2 steam_beauty_n0 gbsr_yelp_r1 s2_fmlp_sports_and_outdoors_n0_s1 s2_steam_beauty_n0_s1 hsd_yelp_sasrec repro_steam s2_hsd_sports_and_outdoors_n0_s1 s2_fmlp_beauty_i10_s1 s2_hsd_beauty_i10_s1 )
+  .done markers: 31  (hsd_sports_sasrec gbsr_yelp_r2 fmlp_beauty gbsr_epinions_r1 s2_fmlp_beauty_i20_s1 fmlp_beauty_n0 hdsr_default s2_hsd_beauty_n0_s1 s2_steam_beauty_i10_s1 steam_beauty gbsr_douban_r1 repro_fmlp hsd_beauty_sasrec steam_beauty_n2_20 s2_fmlp_beauty_n0_s1 gbsr_douban_r2 repro_gbsr steam_beauty_n3_30 repro_preferdiff gbsr_epinions_r2 s2_hsd_sports_and_outdoors_i10_s1 steam_beauty_n0 gbsr_yelp_r1 s2_fmlp_sports_and_outdoors_n0_s1 s2_steam_beauty_n0_s1 hsd_yelp_sasrec repro_steam s2_hsd_sports_and_outdoors_n0_s1 s2_fmlp_beauty_i10_s1 s2_hsd_beauty_i10_s1 s2_fmlp_sports_and_outdoors_i10_s1 )
   last lines of ~/rq10_stage1.log:
-    2026-11-09 01:06:58 [rq10-stage2] s2_hsd_beauty_i10_s1: start
-    2026-11-09 01:17:06 [rq10-stage2] s2_hsd_beauty_i10_s1: exit 0  10 min  peak 7881 MiB
-    2026-11-09 01:17:06 [rq10-stage2] s2_steam_beauty_i10_s1: start
+    2026-11-09 03:18:34 [rq10-stage2] s2_fmlp_beauty_i20_s1: start
+    2026-11-09 03:23:40 [rq10-stage2] s2_fmlp_beauty_i20_s1: exit 0  5 min  peak 2655 MiB
+    2026-11-09 03:23:40 [rq10-stage2] s2_hsd_beauty_i20_s1: start
   run_summary.tsv (name, exit code, minutes, peak MiB):
     gbsr_douban_r1	0	8	3642
     gbsr_epinions_r1	0	8	20896
@@ -86,6 +81,11 @@ gpu 64 %, 3473 MiB, 24564 MiB, 59
     s2_steam_sports_and_outdoors_n0_s1	1	0	507
     s2_fmlp_beauty_i10_s1	0	4	2665
     s2_hsd_beauty_i10_s1	0	10	7881
+    s2_steam_beauty_i10_s1	0	103	22679
+    s2_fmlp_sports_and_outdoors_i10_s1	0	8	2699
+    s2_hsd_sports_and_outdoors_i10_s1	0	10	7863
+    s2_steam_sports_and_outdoors_i10_s1	1	0	507
+    s2_fmlp_beauty_i20_s1	0	5	2655
 ---- queue log (~/survey_queue.log) ----
   2026-11-05 21:32:53 [pc3-queue] RQ10 re-runs complete
   2026-11-05 21:32:53 RQ4 start: datasets [yelp], tune 1, final seeds [all], picks from this PC
@@ -103,11 +103,11 @@ gpu 64 %, 3473 MiB, 24564 MiB, 59
   2026-11-08 22:17:58 stopping after the picks (STOP_AFTER_PICKS=1); finals come in a later call
   2026-11-08 22:17:58 [pc3-queue] RQ10 stage 1 (log ~/rq10_stage1.log)
 ---- recent service log lines ----
-2026-11-09T01:27:01+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-09T01:27:01+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-09T01:57:01+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-09T01:57:01+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-09T02:27:01+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-09T02:27:02+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-09T02:57:02+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-09T02:57:02+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-09T03:27:02+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
