@@ -1,0 +1,12 @@
+bash: /home/aura1/miniconda3/envs/r10-steam/lib/libtinfo.so.6: no version information available (required by bash)
+0it [00:00, ?it/s]35597it [00:00, 1375521.81it/s]initialize model
+cuda is available
+
+Traceback (most recent call last):
+  File "main.py", line 163, in <module>
+    loss.backward()
+  File "/home/aura1/miniconda3/envs/r10-steam/lib/python3.8/site-packages/torch/tensor.py", line 245, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/home/aura1/miniconda3/envs/r10-steam/lib/python3.8/site-packages/torch/autograd/__init__.py", line 145, in backward
+    Variable._execution_engine.run_backward(
+RuntimeError: CUDA out of memory. Tried to allocate 5.25 GiB (GPU 0; 23.49 GiB total capacity; 13.05 GiB already allocated; 5.03 GiB free; 16.29 GiB reserved in total by PyTorch)
