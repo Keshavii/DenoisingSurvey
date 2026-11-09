@@ -444,3 +444,15 @@
 2026-11-08 23:35:19 [pc1-queue] waiting for Part C to finish (Part C running: 4; idle checks 0/3); next look in 10 min
 2026-11-08 23:45:19 [pc1-queue] waiting for Part C to finish (Part C running: 4; idle checks 0/3); next look in 10 min
 2026-11-08 23:55:19 [pc1-queue] waiting for Part C to finish (Part C running: 0; idle checks 1/3); next look in 10 min
+2026-11-09 00:05:19 [pc1-queue] waiting for Part C to finish (Part C running: 0; idle checks 2/3); next look in 10 min
+2026-11-09 00:15:19 [pc1-queue] Part C has nothing left to run: starting RQ2
+2026-11-09 00:15:20 [pc1-queue] RQ2 1/4 rho*
+adressa: rho* 0.6067, injection rate 1.5423 (254487 of 419491 rows)
+ml1m: rho* 0.1553, injection rate 0.1839 (124325 of 800309 rows)
+yelp: rho* 0.1558, injection rate 0.1846 (260581 of 1672520 rows)
+amazon_book: rho* 0.0735, injection rate 0.0793 (199475 of 2714021 rows)
+2026-11-09 00:15:21 [pc1-queue] RQ2 2/4 MF-BPR on the clean bases (top-K for N3)
+2026-11-09 00:15:21 [pc1-queue]   python -m rq1kit.backbone --data data/adressa --train_file train_clean.tsv --model mf --loss bpr --lr 0.005 --reg 1e-05 --seed 1 --run_dir runs/rq2_prep/adressa_mf_clean
+2026-11-09 00:15:46 [pc1-queue]   python -m rq1kit.backbone --data data/ml1m --train_file train_clean.tsv --model mf --loss bpr --lr 0.001 --reg 0.01 --seed 1 --run_dir runs/rq2_prep/ml1m_mf_clean
+2026-11-09 00:17:43 [pc1-queue]   python -m rq1kit.backbone --data data/yelp --train_file train_clean.tsv --model mf --loss bpr --lr 0.001 --reg 0.01 --seed 1 --run_dir runs/rq2_prep/yelp_mf_clean
+2026-11-09 00:25:23 [pc1-queue]   python -m rq1kit.backbone --data data/amazon_book --train_file train_clean.tsv --model mf --loss bpr --lr 0.001 --reg 0.01 --seed 1 --run_dir runs/rq2_prep/amazon_book_mf_clean
