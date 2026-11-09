@@ -495,3 +495,53 @@ amazon_book N3 s2: 197973 injected = 0.0730 of 2712519 rows (rho* 0.0735)
 amazon_book N3 s3: 197883 injected = 0.0730 of 2712429 rows (rho* 0.0735)
 2026-11-09 00:55:00 [pc1-queue] RQ2 4/4 runs
 504 RQ2 jobs
+504 jobs to run, 0 already done
+{'job_id': 'rq2_adressa_plain_lightgcn_bce_RQ2N1_s1', 'status': 'ok', 'seconds': 365.7, 'peak_gpu_mb_while_running': 8027, 'slots': 1, 'finished': '2026-11-09 01:01:05'}
+{'job_id': 'rq2_adressa_plain_lightgcn_bpr_RQ2N1_s1', 'status': 'ok', 'seconds': 378.3, 'peak_gpu_mb_while_running': 8015, 'slots': 1, 'finished': '2026-11-09 01:01:18'}
+{'job_id': 'rq2_adressa_dcf_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 390.9, 'peak_gpu_mb_while_running': 8023, 'slots': 1, 'finished': '2026-11-09 01:01:31'}
+{'job_id': 'rq2_adressa_rce_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 372.1, 'peak_gpu_mb_while_running': 9881, 'slots': 1, 'finished': '2026-11-09 01:07:30'}
+{'job_id': 'rq2_adressa_pld_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 396.0, 'peak_gpu_mb_while_running': 9869, 'slots': 1, 'finished': '2026-11-09 01:07:42'}
+{'job_id': 'rq2_adressa_tce_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 490.7, 'peak_gpu_mb_while_running': 10681, 'slots': 1, 'finished': '2026-11-09 01:15:41'}
+{'job_id': 'rq2_adressa_drrl_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 1644.3, 'peak_gpu_mb_while_running': 10681, 'slots': 1, 'finished': '2026-11-09 01:22:24'}
+{'job_id': 'rq2_adressa_deca_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 1345.4, 'peak_gpu_mb_while_running': 9125, 'slots': 1, 'finished': '2026-11-09 01:44:50'}
+{'job_id': 'rq2_adressa_diffrec_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 597.9, 'peak_gpu_mb_while_running': 8327, 'slots': 1, 'finished': '2026-11-09 01:54:48'}
+{'job_id': 'rq2_adressa_ddrm_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 2635.1, 'peak_gpu_mb_while_running': 15773, 'slots': 1, 'finished': '2026-11-09 01:59:37'}
+{'job_id': 'rq2_adressa_bod_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 3603.4, 'peak_gpu_mb_while_running': 22631, 'slots': 1, 'finished': '2026-11-09 02:07:46'}
+{'job_id': 'rq2_adressa_plain_lightgcn_bpr_RQ2N2_s1', 'status': 'ok', 'seconds': 552.6, 'peak_gpu_mb_while_running': 21831, 'slots': 1, 'finished': '2026-11-09 02:16:59'}
+{'job_id': 'rq2_adressa_sgl_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 1531.7, 'peak_gpu_mb_while_running': 21831, 'slots': 1, 'finished': '2026-11-09 02:25:10'}
+{'job_id': 'rq2_adressa_plain_lightgcn_bce_RQ2N2_s1', 'status': 'ok', 'seconds': 596.4, 'peak_gpu_mb_while_running': 15175, 'slots': 1, 'finished': '2026-11-09 02:26:55'}
+{'job_id': 'rq2_adressa_rgcf_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 2053.9, 'peak_gpu_mb_while_running': 16537, 'slots': 1, 'finished': '2026-11-09 02:29:03'}
+{'job_id': 'rq2_adressa_dcf_lightgcn_RQ2N2_s1', 'status': 'ok', 'seconds': 816.2, 'peak_gpu_mb_while_running': 9901, 'slots': 1, 'finished': '2026-11-09 02:38:47'}
+{'job_id': 'rq2_adressa_drrl_lightgcn_RQ2N2_s1', 'status': 'ok', 'seconds': 1138.1, 'peak_gpu_mb_while_running': 9881, 'slots': 1, 'finished': '2026-11-09 02:45:54'}
+{'job_id': 'rq2_adressa_rce_lightgcn_RQ2N2_s1', 'status': 'ok', 'seconds': 645.0, 'peak_gpu_mb_while_running': 9369, 'slots': 1, 'finished': '2026-11-09 02:49:32'}
+{'job_id': 'rq2_adressa_pld_lightgcn_RQ2N2_s1', 'status': 'ok', 'seconds': 1334.4, 'peak_gpu_mb_while_running': 9879, 'slots': 1, 'finished': '2026-11-09 02:51:17'}
+{'job_id': 'rq2_adressa_tce_lightgcn_RQ2N2_s1', 'status': 'ok', 'seconds': 458.6, 'peak_gpu_mb_while_running': 10681, 'slots': 1, 'finished': '2026-11-09 02:57:12'}
+{'job_id': 'rq2_adressa_sl_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 7016.1, 'peak_gpu_mb_while_running': 10679, 'slots': 1, 'finished': '2026-11-09 02:58:27'}
+{'job_id': 'rq2_adressa_deca_lightgcn_RQ2N2_s1', 'status': 'ok', 'seconds': 1059.9, 'peak_gpu_mb_while_running': 9125, 'slots': 1, 'finished': '2026-11-09 03:16:08'}
+{'job_id': 'rq2_adressa_diffrec_lightgcn_RQ2N2_s1', 'status': 'ok', 'seconds': 776.4, 'peak_gpu_mb_while_running': 8327, 'slots': 1, 'finished': '2026-11-09 03:29:04'}
+{'job_id': 'rq2_adressa_bod_lightgcn_RQ2N2_s1', 'status': 'ok', 'seconds': 2844.6, 'peak_gpu_mb_while_running': 15773, 'slots': 1, 'finished': '2026-11-09 03:38:42'}
+{'job_id': 'rq2_adressa_rgcf_lightgcn_RQ2N2_s1', 'status': 'ok', 'seconds': 990.8, 'peak_gpu_mb_while_running': 21649, 'slots': 1, 'finished': '2026-11-09 03:45:35'}
+{'job_id': 'rq2_adressa_ddrm_lightgcn_RQ2N2_s1', 'status': 'ok', 'seconds': 3055.7, 'peak_gpu_mb_while_running': 14501, 'slots': 1, 'finished': '2026-11-09 03:48:08'}
+{'job_id': 'rq2_adressa_sl_lightgcn_RQ2N2_s1', 'status': 'ok', 'seconds': 3791.1, 'peak_gpu_mb_while_running': 14681, 'slots': 1, 'finished': '2026-11-09 03:49:05'}
+{'job_id': 'rq2_adressa_plain_lightgcn_bpr_RQ2N3_s1', 'status': 'ok', 'seconds': 417.5, 'peak_gpu_mb_while_running': 12829, 'slots': 1, 'finished': '2026-11-09 03:52:33'}
+{'job_id': 'rq2_adressa_plain_lightgcn_bce_RQ2N3_s1', 'status': 'ok', 'seconds': 505.2, 'peak_gpu_mb_while_running': 14191, 'slots': 1, 'finished': '2026-11-09 03:56:34'}
+{'job_id': 'rq2_adressa_dcf_lightgcn_RQ2N3_s1', 'status': 'ok', 'seconds': 558.1, 'peak_gpu_mb_while_running': 14191, 'slots': 1, 'finished': '2026-11-09 03:58:24'}
+{'job_id': 'rq2_adressa_sgl_lightgcn_RQ2N2_s1', 'status': 'ok', 'seconds': 1462.9, 'peak_gpu_mb_while_running': 14171, 'slots': 1, 'finished': '2026-11-09 04:03:05'}
+{'job_id': 'rq2_adressa_pld_lightgcn_RQ2N3_s1', 'status': 'ok', 'seconds': 454.3, 'peak_gpu_mb_while_running': 8857, 'slots': 1, 'finished': '2026-11-09 04:04:09'}
+{'job_id': 'rq2_adressa_rce_lightgcn_RQ2N3_s1', 'status': 'ok', 'seconds': 791.2, 'peak_gpu_mb_while_running': 8857, 'slots': 1, 'finished': '2026-11-09 04:11:36'}
+{'job_id': 'rq2_adressa_drrl_lightgcn_RQ2N3_s1', 'status': 'ok', 'seconds': 1392.6, 'peak_gpu_mb_while_running': 10169, 'slots': 1, 'finished': '2026-11-09 04:15:47'}
+{'job_id': 'rq2_adressa_tce_lightgcn_RQ2N3_s1', 'status': 'ok', 'seconds': 921.8, 'peak_gpu_mb_while_running': 8295, 'slots': 1, 'finished': '2026-11-09 04:19:31'}
+{'job_id': 'rq2_adressa_deca_lightgcn_RQ2N3_s1', 'status': 'ok', 'seconds': 1183.8, 'peak_gpu_mb_while_running': 9125, 'slots': 1, 'finished': '2026-11-09 04:39:15'}
+{'job_id': 'rq2_adressa_bod_lightgcn_RQ2N3_s1', 'status': 'ok', 'seconds': 2644.2, 'peak_gpu_mb_while_running': 8327, 'slots': 1, 'finished': '2026-11-09 04:55:41'}
+{'job_id': 'rq2_adressa_diffrec_lightgcn_RQ2N3_s1', 'status': 'ok', 'seconds': 1032.2, 'peak_gpu_mb_while_running': 14675, 'slots': 1, 'finished': '2026-11-09 04:56:27'}
+{'job_id': 'rq2_adressa_ddrm_lightgcn_RQ2N3_s1', 'status': 'ok', 'seconds': 3203.5, 'peak_gpu_mb_while_running': 21649, 'slots': 1, 'finished': '2026-11-09 05:09:11'}
+{'job_id': 'rq2_adressa_sl_lightgcn_RQ2N3_s1', 'status': 'ok', 'seconds': 4352.6, 'peak_gpu_mb_while_running': 21157, 'slots': 1, 'finished': '2026-11-09 05:15:38'}
+{'job_id': 'rq2_adressa_sgl_lightgcn_RQ2N3_s1', 'status': 'ok', 'seconds': 1224.5, 'peak_gpu_mb_while_running': 18609, 'slots': 1, 'finished': '2026-11-09 05:16:53'}
+{'job_id': 'rq2_adressa_rgcf_lightgcn_RQ2N3_s1', 'status': 'ok', 'seconds': 1440.2, 'peak_gpu_mb_while_running': 11279, 'slots': 1, 'finished': '2026-11-09 05:19:42'}
+{'job_id': 'rq2_ml1m_plain_lightgcn_bpr_RQ2N1_s1', 'status': 'ok', 'seconds': 1252.6, 'peak_gpu_mb_while_running': 5035, 'slots': 1, 'finished': '2026-11-09 05:30:05'}
+{'job_id': 'rq2_ml1m_drrl_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 748.3, 'peak_gpu_mb_while_running': 5037, 'slots': 1, 'finished': '2026-11-09 05:32:10'}
+{'job_id': 'rq2_ml1m_plain_lightgcn_bce_RQ2N1_s1', 'status': 'ok', 'seconds': 1190.4, 'peak_gpu_mb_while_running': 3461, 'slots': 1, 'finished': '2026-11-09 05:35:29'}
+{'job_id': 'rq2_ml1m_dcf_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 1760.7, 'peak_gpu_mb_while_running': 5037, 'slots': 1, 'finished': '2026-11-09 05:46:14'}
+{'job_id': 'rq2_ml1m_rce_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 885.2, 'peak_gpu_mb_while_running': 5015, 'slots': 1, 'finished': '2026-11-09 05:46:56'}
+{'job_id': 'rq2_ml1m_pld_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 1603.6, 'peak_gpu_mb_while_running': 6235, 'slots': 1, 'finished': '2026-11-09 05:56:49'}
+{'job_id': 'rq2_ml1m_tce_lightgcn_RQ2N1_s1', 'status': 'ok', 'seconds': 1755.6, 'peak_gpu_mb_while_running': 6233, 'slots': 1, 'finished': '2026-11-09 06:15:30'}
