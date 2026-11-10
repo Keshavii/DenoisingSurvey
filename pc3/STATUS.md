@@ -1,22 +1,22 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-10 07:27:21 UTC  up since 2026-11-03 22:15:42
-code 7f48e30 05 Nov 21:52  linger yes  disk free 81G  ram used 9/62 GB swap 1 GB 
-gpu 100 %, 5496 MiB, 24564 MiB, 66
+pc3 (aura1@aura-node1)  2026-11-10 07:57:21 UTC  up since 2026-11-03 22:15:42
+code 7f48e30 05 Nov 21:52  linger yes  disk free 80G  ram used 10/62 GB swap 1 GB 
+gpu 100 %, 5496 MiB, 24564 MiB, 68
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-10 06:57:21 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-10 07:27:21 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  20:51       bash -c python -m rq1kit.rq4 --signal L3 --treat graph_drop --rate 0.05 --data data/yelp --train_file train.tsv --lr 0.
-  20:51       python -m rq1kit.rq4 --signal L3 --treat graph_drop --rate 0.05 --data data/yelp --train_file train.tsv --lr 0.005 --re
-  07:38       bash -c python -m rq1kit.rq4 --signal L3 --treat graph_reweight --beta 0.25 --data data/yelp --train_file train.tsv --l
-  07:38       python -m rq1kit.rq4 --signal L3 --treat graph_reweight --beta 0.25 --data data/yelp --train_file train.tsv --lr 0.005 
+  37:39       bash -c python -m rq1kit.rq4 --signal L3 --treat graph_reweight --beta 0.25 --data data/yelp --train_file train.tsv --l
+  37:39       python -m rq1kit.rq4 --signal L3 --treat graph_reweight --beta 0.25 --data data/yelp --train_file train.tsv --lr 0.005 
+  04:12       bash -c python -m rq1kit.rq4 --signal L3 --treat user_reweight --beta 0.25 --data data/yelp --train_file train.tsv --lr
+  04:12       python -m rq1kit.rq4 --signal L3 --treat user_reweight --beta 0.25 --data data/yelp --train_file train.tsv --lr 0.005 -
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
-  final yelp: 61/169 done, 0 failed so far, median 50 min/job, ~45 h left at 2 in parallel
+  final yelp: 62/169 done, 0 failed so far, median 50 min/job, ~44 h left at 2 in parallel
 ---- RQ10 (specialists) ----
   .done markers: 35  (hsd_sports_sasrec gbsr_yelp_r2 fmlp_beauty gbsr_epinions_r1 s2_fmlp_beauty_i20_s1 fmlp_beauty_n0 hdsr_default s2_hsd_beauty_i20_s1 s2_hsd_beauty_n0_s1 s2_steam_beauty_i10_s1 steam_beauty gbsr_douban_r1 repro_fmlp hsd_beauty_sasrec steam_beauty_n2_20 s2_fmlp_sports_and_outdoors_i20_s1 s2_fmlp_beauty_n0_s1 gbsr_douban_r2 repro_gbsr steam_beauty_n3_30 repro_preferdiff gbsr_epinions_r2 s2_hsd_sports_and_outdoors_i10_s1 steam_beauty_n0 gbsr_yelp_r1 s2_steam_beauty_i20_s1 s2_fmlp_sports_and_outdoors_n0_s1 s2_steam_beauty_n0_s1 hsd_yelp_sasrec s2_hsd_sports_and_outdoors_i20_s1 repro_steam s2_hsd_sports_and_outdoors_n0_s1 s2_fmlp_beauty_i10_s1 s2_hsd_beauty_i10_s1 s2_fmlp_sports_and_outdoors_i10_s1 )
   last lines of ~/rq10_stage1.log:
@@ -127,11 +127,11 @@ gpu 100 %, 5496 MiB, 24564 MiB, 66
   169 of 350 jobs kept (datasets yelp, seeds 1)
   169 jobs to run, 0 already done
 ---- recent service log lines ----
-2026-11-10T05:57:21+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-10T05:57:21+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-10T06:27:21+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-10T06:27:21+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-10T06:57:21+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-10T06:57:21+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-10T07:27:21+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-10T07:27:21+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-10T07:57:21+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
