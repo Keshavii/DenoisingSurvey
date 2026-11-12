@@ -1,23 +1,25 @@
 # pc1 status
 
 ```
-pc1 (aura3@home)  2026-11-12 19:52:34 UTC  up since 2026-09-30 13:27:10
-code 7f48e300 05 Nov 21:52  linger yes  disk free 1.1T  ram used 11/62 GB swap 0 GB 
-gpu 100 %, 18131 MiB, 24564 MiB, 68
+pc1 (aura3@home)  2026-11-12 20:23:34 UTC  up since 2026-09-30 13:27:10
+code 7f48e300 05 Nov 21:52  linger yes  disk free 1.1T  ram used 12/62 GB swap 0 GB 
+gpu 100 %, 10796 MiB, 24564 MiB, 65
 ---- services ----
   partc.service                active running
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-12 19:21:36 push ok (c6300429; pc1)
+  last snapshot: 2026-11-12 19:52:36 push ok (0740eaac; pc1)
 ---- gpu jobs ----
-  5-01:47:17  python -u -m rq1kit.partc run --skip dcf,pld,sl
-  01:24:37    bash -c python -m rq1kit.rgcf --lr_mult 0.1 --prune_threshold 0.06 --MIM_weight 1e-05 --data data/amazon_book --train_f
-  01:24:37    python -m rq1kit.rgcf --lr_mult 0.1 --prune_threshold 0.06 --MIM_weight 1e-05 --data data/amazon_book --train_file trai
-  20:07       bash -c python -m rq1kit.sgl --ssl_reg 0.1 --ssl_temp 0.2 --ssl_ratio 0.2 --data data/amazon_book --train_file train_RQ
-  20:07       python -m rq1kit.sgl --ssl_reg 0.1 --ssl_temp 0.2 --ssl_ratio 0.2 --data data/amazon_book --train_file train_RQ2N3_s1.t
+  5-02:18:17  python -u -m rq1kit.partc run --skip dcf,pld,sl
+  51:07       bash -c python -m rq1kit.sgl --ssl_reg 0.1 --ssl_temp 0.2 --ssl_ratio 0.2 --data data/amazon_book --train_file train_RQ
+  51:07       python -m rq1kit.sgl --ssl_reg 0.1 --ssl_temp 0.2 --ssl_ratio 0.2 --data data/amazon_book --train_file train_RQ2N3_s1.t
+  17:19       bash -c python -m rq1kit.drrl --lr2 0.0001 --lr_mult 1 --renyi_omega 1.1 --renyi_margin 0.8 --data data/adressa --train
+  17:19       python -m rq1kit.drrl --lr2 0.0001 --lr_mult 1 --renyi_omega 1.1 --renyi_margin 0.8 --data data/adressa --train_file tr
+  03:38       bash -c python -m rq1kit.adt --method rce --alpha 0.05 --data data/adressa --train_file train_RQ2N1_s2.tsv --model ligh
+  03:38       python -m rq1kit.adt --method rce --alpha 0.05 --data data/adressa --train_file train_RQ2N1_s2.tsv --model lightgcn --l
 ---- RQ1 Part C (partc driver status, refreshed every minute) ----
-  status file written 2026-11-12 19:52:29
-Part C status 2026-11-12 19:52  kit 7f48e300
+  status file written 2026-11-12 20:22:40
+Part C status 2026-11-12 20:22  kit 7f48e300
 method   b dataset      canary  tune   pick  finals  run fail confl
 DCF      1 adressa      passed   8/8   yes     9/9     0    0     0
 DCF      1 ml1m                  8/8   yes     9/9     0    0     0
@@ -81,13 +83,13 @@ SGL      2 gowalla               8/8   yes     6/6     0    0     0
 SGL      2 amazon_book           8/8   yes     6/6     0    0     0
 LLaRD    3 ml1m         passed   8/8   yes     6/6     0    0     0
 total: 954 of 954 done, 0 running, 0 failed, 0 conflicts; held: none
-GPU: 100 %, 18131 MiB, 24564 MiB   rq1kit.queue running (pids 2060000): partc shares the GPU, leaving it 4 slots
-rough finish: Thu 12 Nov 19:52 (0.0 h of known work)
+GPU: 100 %, 10796 MiB, 24564 MiB   rq1kit.queue running (pids 2060000): partc shares the GPU, leaving it 4 slots
+rough finish: Thu 12 Nov 20:22 (0.0 h of known work)
 ---- RQ2 (after Part C) ----
   started 2026-11-09 00:15:19
   rho*: adressa 0.607, ml1m 0.155, yelp 0.156, amazon_book 0.073
-  rq2 adressa: 42/126 done, 0 failed so far, median 17 min/job, ~6 h left at 4 in parallel
-  rq2 amazon_book: 40/126 done, 0 failed so far, median 198 min/job, ~142 h left at 2 in parallel
+  rq2 adressa: 46/126 done, 0 failed so far, median 16 min/job, ~5 h left at 4 in parallel
+  rq2 amazon_book: 41/126 done, 0 failed so far, median 190 min/job, ~135 h left at 2 in parallel
   rq2 ml1m: 42/126 done, 0 failed so far, median 21 min/job, ~7 h left at 4 in parallel
   rq2 yelp: 42/126 done, 0 failed so far, median 45 min/job, ~32 h left at 2 in parallel
 ---- queue log (~/survey_queue.log) ----
@@ -107,11 +109,11 @@ rough finish: Thu 12 Nov 19:52 (0.0 h of known work)
   504 RQ2 jobs
   504 jobs to run, 0 already done
 ---- recent service log lines ----
-2026-11-12T18:19:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-12T18:19:36+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-12T18:50:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-12T18:50:36+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-12T19:21:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-12T19:21:36+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-12T19:52:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-12T19:52:36+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-12T20:23:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
