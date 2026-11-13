@@ -94,9 +94,11 @@ for SEED in $SEEDS; do
       run "s2_fmlp_$LOW" fmlp "$R/fmlp" python run_fmlp_noise.py --data_name="$NAME" --full_sort $FMLP_ARGS
       run "s2_hsd_$LOW" recbole "$R/hsd" python run_hsd_survey.py --dataset "$NAME" --sub_model SASRec
       D=$S2/$NAME; O=./save_s2_$NAME/
-      A="-tf $D/train.dat -vf $D/valid.dat -ef $D/test.dat -vn $D/valid_neg.dat -en $D/test_neg.dat -n $N -o $O -e $STEAM_EPOCHS $STEAM_ARGS"
+      # more items than Beauty (12,101): STEAM's batch 256 runs out of the 4090's 24 GB (13 Nov), so batch 128 (deviation)
+      BIG=""; [ "$N" -gt 12104 ] && BIG="-b 128"
+      A="-tf $D/train.dat -vf $D/valid.dat -ef $D/test.dat -vn $D/valid_neg.dat -en $D/test_neg.dat -n $N -o $O -e $STEAM_EPOCHS $BIG $STEAM_ARGS"
       run "s2_steam_$LOW" steam "$R/steam" bash -c "python main.py $A -m=train && python main.py $A -m=valid && \
-          python steam_full_eval.py -ef $D/test.dat -en $D/test_neg.dat -n $N -o $O $STEAM_ARGS --out $RES/s2_steam_$NAME.json"
+          python steam_full_eval.py -ef $D/test.dat -en $D/test_neg.dat -n $N -o $O $BIG $STEAM_ARGS --out $RES/s2_steam_$NAME.json"
     done
   done
 done

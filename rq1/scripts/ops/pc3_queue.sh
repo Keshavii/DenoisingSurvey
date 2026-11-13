@@ -6,6 +6,7 @@
 #   2. RQ4 Yelp: tuning (249 trials) and picks (PC2 reads them for its Yelp seed-2 finals).
 #   3. RQ10 stage 1 (fixed reproduction runs) and stage 2 (design noise, full-ranking scores): rq10_stage1.sh.
 #   4. RQ4 Yelp finals of seed 1.
+#   5. RQ10 stage 3 (rq10_stage3.sh) and RQ4 Yelp finals of seed 2 (moved from PC2, 13 Nov).
 set -u
 REPO=${REPO:-$HOME/survey}
 KIT=$REPO/rq1
@@ -39,4 +40,13 @@ if ! grep -q "stage 1 complete" "$HOME/rq10_stage1.log" 2>/dev/null; then
 fi
 
 DATASETS=yelp FINAL_SEEDS=1 bash "$KIT/scripts/rq4_run.sh" || { say "RQ4 Yelp finals stopped with an error (see above); the service will retry"; exit 1; }
+
+# RQ10 stage 3 (13 Nov): GDMSR on CUDA 11.8, STEAM Sports/Yelp at batch 128, FMLP's Drive data, stage 2 again
+if ! grep -q "stage 3 complete" "$HOME/rq10_stage3.log" 2>/dev/null; then
+  say "RQ10 stage 3 (log ~/rq10_stage3.log)"
+  bash "$KIT/scripts/rq10/rq10_stage3.sh" >> "$HOME/rq10_stage3.log" 2>&1
+fi
+
+# RQ4 Yelp finals of seed 2 (moved here from PC2 on 13 Nov: PC3 has the Yelp picks and the same Yelp files)
+DATASETS=yelp FINAL_SEEDS=2 bash "$KIT/scripts/rq4_run.sh" || { say "RQ4 Yelp seed 2 stopped with an error (see above); the service will retry"; exit 1; }
 say "PC3 queue complete: nothing left to run"

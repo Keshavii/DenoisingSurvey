@@ -125,3 +125,17 @@ Decisions (common protocol, no change to any training code):
   STEAM and RecBole format, injected positions saved); scoring = full ranking, leave-one-out, Recall@10/NDCG@10 via
   FMLP --full_sort, RecBole full mode (HSD) and steam_full_eval.py (best validation epoch, corrected sequence;
   reproduces STEAM's own sampled numbers exactly); table results/stage2_summary.tsv. One noise draw (seed 1) for now.
+
+## 13 Nov: what went wrong and what changed
+- PC2 stuck 6-13 Nov: three ML-1M tuning trials (R4 drop, L4 graph_drop x2) hung from 02:13 IST on 6 Nov with the
+  GPU at 0% and memory held; rq1kit.queue has no time limit, so the rest waited 7.5 days. status.sh raised an ALERT
+  the whole time; nobody looked. Fix: every RQ4 job runs under `timeout` (4 h tuning, 12 h finals), a hung job counts
+  as failed and is retried alone. Cause of the hang: to be read from PC2 (ps/wchan, job logs).
+- PC3 idle from 11 Nov 22:23 (its queue was done). Yelp seed-2 finals moved from PC2 to PC3 (same files and picks).
+- RQ10: gdown --remaining-ok does not exist in the installed gdown (untested here: Drive unreachable from Claude's
+  workspace); STEAM Sports/Yelp exceed 24 GB at batch 256 (batch 128, recorded deviation); GDMSR's README stack
+  (DGL for CUDA 11.0) fails on the 4090 with CUSPARSE ERROR 10 (CUDA 11.8 stack: torch 2.0.1, DGL 1.1.3, recorded).
+  rq10_stage3.sh runs these on PC3 before the Yelp seed-2 finals.
+- RQ2 on PC1 started 9 Nov 00:15; rho*: Adressa 0.607, ML-1M 0.155, Yelp 0.156, Amazon-Book 0.073. Amazon-Book
+  (~3 h a run) sets the end, about 19-20 Nov.
+- Lesson: an ALERT nobody reads is not monitoring. Someone (or a scheduled check) must read the status branch daily.

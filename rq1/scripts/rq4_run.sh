@@ -21,6 +21,8 @@ DATASETS=${DATASETS:-ml1m yelp}
 TUNE=${TUNE:-1}
 PICKS_FROM=${PICKS_FROM:-}
 FINAL_SEEDS=${FINAL_SEEDS:-}
+TUNE_TIMEOUT=${TUNE_TIMEOUT:-4h}    # per job; ML-1M trials take ~14 min, Yelp ~36 min (6 Nov: 3 trials hung 7 days on PC2)
+FINAL_TIMEOUT=${FINAL_TIMEOUT:-12h} # per job; Yelp finals ~47 min
 cd "$KIT"
 if [ "${NO_CONDA:-0}" != 1 ]; then
   set +u; source ~/miniconda3/etc/profile.d/conda.sh; conda activate rq1; set -u
@@ -101,7 +103,7 @@ mkdir -p configs/rq4
 if [ "$TUNE" = 1 ]; then
   say "5 tuning [$DATASETS]"
   python scripts/rq4_jobs.py tune > configs/rq4/jobs_tune.csv
-  python scripts/ops/rq4_select.py filter configs/rq4/jobs_tune.csv --datasets "$DSCSV" > configs/rq4/jobs_tune_here.csv
+  python scripts/ops/rq4_select.py filter configs/rq4/jobs_tune.csv --datasets "$DSCSV" --timeout "$TUNE_TIMEOUT" > configs/rq4/jobs_tune_here.csv
   queue configs/rq4/jobs_tune_here.csv logs/rq4_tune
 
   say "6 picks"
@@ -121,7 +123,7 @@ if [ "${STOP_AFTER_PICKS:-0}" = 1 ]; then say "stopping after the picks (STOP_AF
 
 say "7 finals [$DATASETS] seeds [${FINAL_SEEDS:-all}]"
 python scripts/rq4_jobs.py final > configs/rq4/jobs_final.csv
-python scripts/ops/rq4_select.py filter configs/rq4/jobs_final.csv --datasets "$DSCSV" $SEEDARG > configs/rq4/jobs_final_$TAG.csv
+python scripts/ops/rq4_select.py filter configs/rq4/jobs_final.csv --datasets "$DSCSV" $SEEDARG --timeout "$FINAL_TIMEOUT" > configs/rq4/jobs_final_$TAG.csv
 queue configs/rq4/jobs_final_$TAG.csv logs/rq4_final
 touch configs/rq4/done_$TAG
 say "RQ4 done [$DATASETS] seeds [${FINAL_SEEDS:-all}]"
