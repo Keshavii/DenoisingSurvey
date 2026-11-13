@@ -32,9 +32,9 @@ def cmd_filter(path, datasets, seeds, timeout=None):
         raise SystemExit(f"{path}: no jobs")
     keep = [r for r in rows if job_dataset(r["job_id"]) in datasets
             and (seeds is None or job_seed(r["job_id"]) is None or job_seed(r["job_id"]) in seeds)]
-    if timeout:  # a job that hangs is killed (exit 124, SIGKILL 60 s later if needed) and counts as failed
-        for r in keep:
-            r["cmd"] = f"timeout -k 60 {timeout} {r['cmd']}"
+    if timeout:  # a job that hangs is aborted (exit 124; SIGKILL 60 s later if needed) and counts as failed; with
+        for r in keep:  # PYTHONFAULTHANDLER=1 (rq4_run.sh) SIGABRT first writes its Python traceback into the job log
+            r["cmd"] = f"timeout -s ABRT -k 60 {timeout} {r['cmd']}"
     w = csv.DictWriter(sys.stdout, fieldnames=list(rows[0].keys()))
     w.writeheader()
     w.writerows(keep)

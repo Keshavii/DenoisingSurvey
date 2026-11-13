@@ -30,6 +30,7 @@ fi
 export OMP_NUM_THREADS=${OMP_NUM_THREADS:-8} MKL_NUM_THREADS=${MKL_NUM_THREADS:-8}
 # vLLM 0.32 JIT-builds a FlashInfer sampler (needs nvcc, absent on PC2); same setting as run_llard_ml1m.sh
 export VLLM_USE_FLASHINFER_SAMPLER=0
+export PYTHONFAULTHANDLER=1   # a job aborted by its time limit writes where it was stuck into its log
 say() { echo "$(date '+%F %T') $*"; }
 best() { python -c "import json;b=json.load(open('configs/best_plain.json'))['$1'];print(b['lr'],b['reg'])"; }
 has() { case " $DATASETS " in *" $1 "*) return 0 ;; *) return 1 ;; esac; }
