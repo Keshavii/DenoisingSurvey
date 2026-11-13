@@ -5,6 +5,8 @@ selects rows and moves picks between machines.
   python scripts/ops/rq4_select.py split  configs/rq4/best.json yelp configs/rq4/picks_yelp.json
   python scripts/ops/rq4_select.py merge  configs/rq4/best.json PICKS.json yelp
   python scripts/ops/rq4_select.py check  PICKS.json yelp        # exit 0 only if every Yelp cell has a pick
+  python scripts/ops/rq4_select.py keep_failed logs/rq4_tune      # copy failed jobs' logs to <logdir>/failed/ (a retry
+                                                                  # rewrites <job>.log; the copy keeps the traceback)
 
 Job ids: tuning rq4tune_<dataset>_..., finals rq4_<dataset>_<run>_s<seed>.
 """
@@ -81,6 +83,28 @@ def cmd_check(picks_path, ds):
     sys.exit(0 if not missing else 1)
 
 
+def cmd_keep_failed(logdir):
+    import shutil
+    import time
+    last = {}
+    state = os.path.join(logdir, "state.jsonl")
+    for line in (open(state) if os.path.isfile(state) else []):
+        try:
+            r = json.loads(line)
+            last[r["job_id"]] = r
+        except ValueError:
+            pass
+    os.makedirs(os.path.join(logdir, "failed"), exist_ok=True)
+    stamp = time.strftime("%Y%m%d-%H%M%S")
+    n = 0
+    for jid, r in last.items():
+        src = os.path.join(logdir, jid + ".log")
+        if r.get("status") != "ok" and os.path.isfile(src):
+            shutil.copy2(src, os.path.join(logdir, "failed", f"{jid}.{stamp}.log"))
+            n += 1
+    print(f"kept the logs of {n} failed jobs in {logdir}/failed", file=sys.stderr)
+
+
 def main():
     a = sys.argv[1:]
     if not a:
@@ -95,6 +119,8 @@ def main():
         cmd_merge(a[1], a[2], a[3])
     elif a[0] == "check":
         cmd_check(a[1], a[2])
+    elif a[0] == "keep_failed":
+        cmd_keep_failed(a[1])
     else:
         raise SystemExit(__doc__)
 

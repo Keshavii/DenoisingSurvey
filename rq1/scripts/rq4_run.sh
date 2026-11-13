@@ -39,6 +39,7 @@ TAG=$(echo $DATASETS | tr ' ' '_')${FINAL_SEEDS:+_s$(echo $FINAL_SEEDS | tr ' ,'
 SEEDARG=${FINAL_SEEDS:+--seeds $(echo $FINAL_SEEDS | tr ' ' ',')}
 queue() {  # queue <jobs.csv> <logdir>: a normal pass, then the failed jobs again, one at a time
   python -m rq1kit.queue --jobs "$1" --slots "$SLOTS" --logs "$2"
+  python scripts/ops/rq4_select.py keep_failed "$2"
   say "  retry pass: failed jobs of $1, one at a time"
   python -m rq1kit.queue --jobs "$1" --slots 1 --logs "$2"
 }
