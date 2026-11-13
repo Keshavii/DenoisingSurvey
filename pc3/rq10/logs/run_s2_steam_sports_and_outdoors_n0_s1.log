@@ -1,2 +1,544 @@
 bash: /home/aura1/miniconda3/envs/r10-steam/lib/libtinfo.so.6: no version information available (required by bash)
-0it [00:00, ?it/s]35598it [00:00, 1382463.60it/s]
+0it [00:00, ?it/s]35598it [00:00, 1382463.60it/s]initialize model
+cuda is available
+
+Epoch 1 Step 50 corrector loss 10.2089 Time 7
+Epoch 1 Step 50 recommender loss 19.3511 Time 7
+Epoch 1 Step 100 corrector loss 9.1979 Time 14
+Epoch 1 Step 100 recommender loss 19.1852 Time 14
+Epoch 1 Step 150 corrector loss 8.5586 Time 21
+Epoch 1 Step 150 recommender loss 19.1123 Time 21
+Epoch 1 Step 200 corrector loss 8.2008 Time 28
+Epoch 1 Step 200 recommender loss 19.0600 Time 29
+Epoch 1 Step 250 corrector loss 7.9771 Time 36
+Epoch 1 Step 250 recommender loss 19.0134 Time 36
+Epoch 1 corrector loss 7.8782 Time 40
+Epoch 1 recommender loss 18.9938 Time 40
+Epoch 2 Step 50 corrector loss 6.9529 Time 7
+Epoch 2 Step 50 recommender loss 18.6099 Time 7
+Epoch 2 Step 100 corrector loss 6.9820 Time 14
+Epoch 2 Step 100 recommender loss 18.6265 Time 14
+Epoch 2 Step 150 corrector loss 6.9706 Time 21
+Epoch 2 Step 150 recommender loss 18.6140 Time 21
+Epoch 2 Step 200 corrector loss 6.9749 Time 28
+Epoch 2 Step 200 recommender loss 18.6177 Time 28
+Epoch 2 Step 250 corrector loss 6.9702 Time 35
+Epoch 2 Step 250 recommender loss 18.6253 Time 36
+Epoch 2 corrector loss 6.9687 Time 40
+Epoch 2 recommender loss 18.6277 Time 40
+Epoch 3 Step 50 corrector loss 6.8989 Time 7
+Epoch 3 Step 50 recommender loss 18.4998 Time 7
+Epoch 3 Step 100 corrector loss 6.9187 Time 14
+Epoch 3 Step 100 recommender loss 18.5281 Time 14
+Epoch 3 Step 150 corrector loss 6.9129 Time 21
+Epoch 3 Step 150 recommender loss 18.5410 Time 21
+Epoch 3 Step 200 corrector loss 6.9180 Time 28
+Epoch 3 Step 200 recommender loss 18.5463 Time 28
+Epoch 3 Step 250 corrector loss 6.9254 Time 35
+Epoch 3 Step 250 recommender loss 18.5548 Time 35
+Epoch 3 corrector loss 6.9247 Time 40
+Epoch 3 recommender loss 18.5581 Time 40
+Epoch 4 Step 50 corrector loss 6.9281 Time 7
+Epoch 4 Step 50 recommender loss 18.4838 Time 7
+Epoch 4 Step 100 corrector loss 6.9346 Time 14
+Epoch 4 Step 100 recommender loss 18.4975 Time 14
+Epoch 4 Step 150 corrector loss 6.9248 Time 21
+Epoch 4 Step 150 recommender loss 18.4904 Time 21
+Epoch 4 Step 200 corrector loss 6.9296 Time 28
+Epoch 4 Step 200 recommender loss 18.5017 Time 28
+Epoch 4 Step 250 corrector loss 6.9260 Time 35
+Epoch 4 Step 250 recommender loss 18.4974 Time 36
+Epoch 4 corrector loss 6.9221 Time 40
+Epoch 4 recommender loss 18.4971 Time 40
+Epoch 5 Step 50 corrector loss 6.8900 Time 7
+Epoch 5 Step 50 recommender loss 18.4852 Time 7
+Epoch 5 Step 100 corrector loss 6.8888 Time 14
+Epoch 5 Step 100 recommender loss 18.4783 Time 14
+Epoch 5 Step 150 corrector loss 6.9058 Time 21
+Epoch 5 Step 150 recommender loss 18.4701 Time 21
+Epoch 5 Step 200 corrector loss 6.8958 Time 28
+Epoch 5 Step 200 recommender loss 18.4675 Time 28
+Epoch 5 Step 250 corrector loss 6.8963 Time 35
+Epoch 5 Step 250 recommender loss 18.4699 Time 36
+Epoch 5 corrector loss 6.9032 Time 40
+Epoch 5 recommender loss 18.4785 Time 40
+Epoch 6 Step 50 corrector loss 6.9331 Time 7
+Epoch 6 Step 50 recommender loss 18.4732 Time 7
+Epoch 6 Step 100 corrector loss 6.9147 Time 14
+Epoch 6 Step 100 recommender loss 18.4542 Time 14
+Epoch 6 Step 150 corrector loss 6.9152 Time 21
+Epoch 6 Step 150 recommender loss 18.4430 Time 21
+Epoch 6 Step 200 corrector loss 6.9192 Time 28
+Epoch 6 Step 200 recommender loss 18.4532 Time 28
+Epoch 6 Step 250 corrector loss 6.9206 Time 35
+Epoch 6 Step 250 recommender loss 18.4414 Time 36
+Epoch 6 corrector loss 6.9159 Time 40
+Epoch 6 recommender loss 18.4277 Time 40
+Epoch 7 Step 50 corrector loss 6.8667 Time 7
+Epoch 7 Step 50 recommender loss 18.1828 Time 7
+Epoch 7 Step 100 corrector loss 6.8893 Time 14
+Epoch 7 Step 100 recommender loss 18.2740 Time 14
+Epoch 7 Step 150 corrector loss 6.9045 Time 21
+Epoch 7 Step 150 recommender loss 18.2758 Time 21
+Epoch 7 Step 200 corrector loss 6.9028 Time 28
+Epoch 7 Step 200 recommender loss 18.3032 Time 28
+Epoch 7 Step 250 corrector loss 6.8968 Time 36
+Epoch 7 Step 250 recommender loss 18.3107 Time 36
+Epoch 7 corrector loss 6.8967 Time 40
+Epoch 7 recommender loss 18.3067 Time 40
+Epoch 8 Step 50 corrector loss 6.8628 Time 7
+Epoch 8 Step 50 recommender loss 18.2194 Time 7
+Epoch 8 Step 100 corrector loss 6.8782 Time 14
+Epoch 8 Step 100 recommender loss 18.1816 Time 14
+Epoch 8 Step 150 corrector loss 6.8629 Time 21
+Epoch 8 Step 150 recommender loss 18.1980 Time 21
+Epoch 8 Step 200 corrector loss 6.8503 Time 28
+Epoch 8 Step 200 recommender loss 18.1975 Time 28
+Epoch 8 Step 250 corrector loss 6.8537 Time 35
+Epoch 8 Step 250 recommender loss 18.2063 Time 36
+Epoch 8 corrector loss 6.8628 Time 40
+Epoch 8 recommender loss 18.2107 Time 40
+Epoch 9 Step 50 corrector loss 6.8134 Time 7
+Epoch 9 Step 50 recommender loss 18.1195 Time 7
+Epoch 9 Step 100 corrector loss 6.8093 Time 14
+Epoch 9 Step 100 recommender loss 18.1144 Time 14
+Epoch 9 Step 150 corrector loss 6.8181 Time 21
+Epoch 9 Step 150 recommender loss 18.1252 Time 21
+Epoch 9 Step 200 corrector loss 6.8121 Time 28
+Epoch 9 Step 200 recommender loss 18.1145 Time 28
+Epoch 9 Step 250 corrector loss 6.8170 Time 35
+Epoch 9 Step 250 recommender loss 18.1105 Time 36
+Epoch 9 corrector loss 6.8147 Time 40
+Epoch 9 recommender loss 18.1084 Time 40
+Epoch 10 Step 50 corrector loss 6.7958 Time 7
+Epoch 10 Step 50 recommender loss 18.0405 Time 7
+Epoch 10 Step 100 corrector loss 6.7802 Time 14
+Epoch 10 Step 100 recommender loss 18.0247 Time 14
+Epoch 10 Step 150 corrector loss 6.7998 Time 21
+Epoch 10 Step 150 recommender loss 18.0241 Time 21
+Epoch 10 Step 200 corrector loss 6.8069 Time 28
+Epoch 10 Step 200 recommender loss 18.0109 Time 28
+Epoch 10 Step 250 corrector loss 6.8064 Time 35
+Epoch 10 Step 250 recommender loss 18.0119 Time 36
+Epoch 10 corrector loss 6.8039 Time 40
+Epoch 10 recommender loss 18.0068 Time 40
+Epoch 11 Step 50 corrector loss 6.7231 Time 7
+Epoch 11 Step 50 recommender loss 17.8895 Time 7
+Epoch 11 Step 100 corrector loss 6.7494 Time 14
+Epoch 11 Step 100 recommender loss 17.9022 Time 14
+Epoch 11 Step 150 corrector loss 6.7570 Time 21
+Epoch 11 Step 150 recommender loss 17.9018 Time 21
+Epoch 11 Step 200 corrector loss 6.7506 Time 28
+Epoch 11 Step 200 recommender loss 17.9168 Time 28
+Epoch 11 Step 250 corrector loss 6.7479 Time 35
+Epoch 11 Step 250 recommender loss 17.9296 Time 35
+Epoch 11 corrector loss 6.7547 Time 40
+Epoch 11 recommender loss 17.9209 Time 40
+Epoch 12 Step 50 corrector loss 6.7142 Time 7
+Epoch 12 Step 50 recommender loss 17.7826 Time 7
+Epoch 12 Step 100 corrector loss 6.6979 Time 14
+Epoch 12 Step 100 recommender loss 17.8011 Time 14
+Epoch 12 Step 150 corrector loss 6.7223 Time 21
+Epoch 12 Step 150 recommender loss 17.8237 Time 21
+Epoch 12 Step 200 corrector loss 6.7239 Time 28
+Epoch 12 Step 200 recommender loss 17.8320 Time 28
+Epoch 12 Step 250 corrector loss 6.7304 Time 35
+Epoch 12 Step 250 recommender loss 17.8414 Time 36
+Epoch 12 corrector loss 6.7345 Time 40
+Epoch 12 recommender loss 17.8461 Time 40
+Epoch 13 Step 50 corrector loss 6.6914 Time 7
+Epoch 13 Step 50 recommender loss 17.7827 Time 7
+Epoch 13 Step 100 corrector loss 6.6872 Time 14
+Epoch 13 Step 100 recommender loss 17.7793 Time 14
+Epoch 13 Step 150 corrector loss 6.7038 Time 21
+Epoch 13 Step 150 recommender loss 17.7767 Time 21
+Epoch 13 Step 200 corrector loss 6.7115 Time 28
+Epoch 13 Step 200 recommender loss 17.7879 Time 28
+Epoch 13 Step 250 corrector loss 6.7208 Time 35
+Epoch 13 Step 250 recommender loss 17.7977 Time 36
+Epoch 13 corrector loss 6.7176 Time 40
+Epoch 13 recommender loss 17.7988 Time 40
+Epoch 14 Step 50 corrector loss 6.6379 Time 7
+Epoch 14 Step 50 recommender loss 17.6988 Time 7
+Epoch 14 Step 100 corrector loss 6.6763 Time 14
+Epoch 14 Step 100 recommender loss 17.7014 Time 14
+Epoch 14 Step 150 corrector loss 6.6707 Time 21
+Epoch 14 Step 150 recommender loss 17.7176 Time 21
+Epoch 14 Step 200 corrector loss 6.6758 Time 28
+Epoch 14 Step 200 recommender loss 17.7322 Time 28
+Epoch 14 Step 250 corrector loss 6.6823 Time 35
+Epoch 14 Step 250 recommender loss 17.7397 Time 35
+Epoch 14 corrector loss 6.6890 Time 40
+Epoch 14 recommender loss 17.7356 Time 40
+Epoch 15 Step 50 corrector loss 6.6662 Time 7
+Epoch 15 Step 50 recommender loss 17.6946 Time 7
+Epoch 15 Step 100 corrector loss 6.6588 Time 14
+Epoch 15 Step 100 recommender loss 17.6844 Time 14
+Epoch 15 Step 150 corrector loss 6.6598 Time 21
+Epoch 15 Step 150 recommender loss 17.6767 Time 21
+Epoch 15 Step 200 corrector loss 6.6732 Time 28
+Epoch 15 Step 200 recommender loss 17.7034 Time 28
+Epoch 15 Step 250 corrector loss 6.6717 Time 35
+Epoch 15 Step 250 recommender loss 17.7154 Time 36
+Epoch 15 corrector loss 6.6697 Time 40
+Epoch 15 recommender loss 17.7144 Time 40
+Epoch 16 Step 50 corrector loss 6.5898 Time 7
+Epoch 16 Step 50 recommender loss 17.6287 Time 7
+Epoch 16 Step 100 corrector loss 6.6156 Time 14
+Epoch 16 Step 100 recommender loss 17.6238 Time 14
+Epoch 16 Step 150 corrector loss 6.6337 Time 21
+Epoch 16 Step 150 recommender loss 17.6558 Time 21
+Epoch 16 Step 200 corrector loss 6.6332 Time 28
+Epoch 16 Step 200 recommender loss 17.6553 Time 28
+Epoch 16 Step 250 corrector loss 6.6362 Time 35
+Epoch 16 Step 250 recommender loss 17.6656 Time 35
+Epoch 16 corrector loss 6.6385 Time 40
+Epoch 16 recommender loss 17.6617 Time 40
+Epoch 17 Step 50 corrector loss 6.6370 Time 7
+Epoch 17 Step 50 recommender loss 17.6252 Time 7
+Epoch 17 Step 100 corrector loss 6.6468 Time 14
+Epoch 17 Step 100 recommender loss 17.6286 Time 14
+Epoch 17 Step 150 corrector loss 6.6375 Time 21
+Epoch 17 Step 150 recommender loss 17.6300 Time 21
+Epoch 17 Step 200 corrector loss 6.6289 Time 28
+Epoch 17 Step 200 recommender loss 17.6487 Time 28
+Epoch 17 Step 250 corrector loss 6.6333 Time 35
+Epoch 17 Step 250 recommender loss 17.6616 Time 36
+Epoch 17 corrector loss 6.6328 Time 40
+Epoch 17 recommender loss 17.6589 Time 40
+Epoch 18 Step 50 corrector loss 6.5955 Time 7
+Epoch 18 Step 50 recommender loss 17.5750 Time 7
+Epoch 18 Step 100 corrector loss 6.6128 Time 14
+Epoch 18 Step 100 recommender loss 17.5789 Time 14
+Epoch 18 Step 150 corrector loss 6.6107 Time 21
+Epoch 18 Step 150 recommender loss 17.5919 Time 21
+Epoch 18 Step 200 corrector loss 6.6201 Time 28
+Epoch 18 Step 200 recommender loss 17.6108 Time 28
+Epoch 18 Step 250 corrector loss 6.6190 Time 35
+Epoch 18 Step 250 recommender loss 17.6145 Time 36
+Epoch 18 corrector loss 6.6206 Time 40
+Epoch 18 recommender loss 17.6268 Time 40
+Epoch 19 Step 50 corrector loss 6.6023 Time 7
+Epoch 19 Step 50 recommender loss 17.5634 Time 7
+Epoch 19 Step 100 corrector loss 6.6107 Time 14
+Epoch 19 Step 100 recommender loss 17.5717 Time 14
+Epoch 19 Step 150 corrector loss 6.6062 Time 21
+Epoch 19 Step 150 recommender loss 17.5775 Time 21
+Epoch 19 Step 200 corrector loss 6.6133 Time 28
+Epoch 19 Step 200 recommender loss 17.5880 Time 28
+Epoch 19 Step 250 corrector loss 6.6118 Time 35
+Epoch 19 Step 250 recommender loss 17.5986 Time 35
+Epoch 19 corrector loss 6.6124 Time 40
+Epoch 19 recommender loss 17.6035 Time 40
+Epoch 20 Step 50 corrector loss 6.5976 Time 7
+Epoch 20 Step 50 recommender loss 17.5180 Time 7
+Epoch 20 Step 100 corrector loss 6.5924 Time 14
+Epoch 20 Step 100 recommender loss 17.5379 Time 14
+Epoch 20 Step 150 corrector loss 6.5851 Time 21
+Epoch 20 Step 150 recommender loss 17.5330 Time 21
+Epoch 20 Step 200 corrector loss 6.5864 Time 28
+Epoch 20 Step 200 recommender loss 17.5387 Time 28
+Epoch 20 Step 250 corrector loss 6.5900 Time 35
+Epoch 20 Step 250 recommender loss 17.5527 Time 36
+Epoch 20 corrector loss 6.5875 Time 40
+Epoch 20 recommender loss 17.5547 Time 40
+Epoch 21 Step 50 corrector loss 6.5744 Time 7
+Epoch 21 Step 50 recommender loss 17.5256 Time 7
+Epoch 21 Step 100 corrector loss 6.5650 Time 14
+Epoch 21 Step 100 recommender loss 17.4910 Time 14
+Epoch 21 Step 150 corrector loss 6.5843 Time 21
+Epoch 21 Step 150 recommender loss 17.4857 Time 21
+Epoch 21 Step 200 corrector loss 6.5945 Time 28
+Epoch 21 Step 200 recommender loss 17.5072 Time 28
+Epoch 21 Step 250 corrector loss 6.5951 Time 35
+Epoch 21 Step 250 recommender loss 17.5089 Time 36
+Epoch 21 corrector loss 6.5947 Time 40
+Epoch 21 recommender loss 17.5173 Time 40
+Epoch 22 Step 50 corrector loss 6.5454 Time 7
+Epoch 22 Step 50 recommender loss 17.4781 Time 7
+Epoch 22 Step 100 corrector loss 6.5486 Time 14
+Epoch 22 Step 100 recommender loss 17.4715 Time 14
+Epoch 22 Step 150 corrector loss 6.5619 Time 21
+Epoch 22 Step 150 recommender loss 17.4684 Time 21
+Epoch 22 Step 200 corrector loss 6.5583 Time 28
+Epoch 22 Step 200 recommender loss 17.4848 Time 28
+Epoch 22 Step 250 corrector loss 6.5582 Time 35
+Epoch 22 Step 250 recommender loss 17.4904 Time 36
+Epoch 22 corrector loss 6.5623 Time 40
+Epoch 22 recommender loss 17.4937 Time 40
+Epoch 23 Step 50 corrector loss 6.5315 Time 7
+Epoch 23 Step 50 recommender loss 17.5039 Time 7
+Epoch 23 Step 100 corrector loss 6.5550 Time 14
+Epoch 23 Step 100 recommender loss 17.4730 Time 14
+Epoch 23 Step 150 corrector loss 6.5591 Time 21
+Epoch 23 Step 150 recommender loss 17.4717 Time 21
+Epoch 23 Step 200 corrector loss 6.5542 Time 28
+Epoch 23 Step 200 recommender loss 17.4636 Time 28
+Epoch 23 Step 250 corrector loss 6.5622 Time 35
+Epoch 23 Step 250 recommender loss 17.4809 Time 36
+Epoch 23 corrector loss 6.5667 Time 40
+Epoch 23 recommender loss 17.4822 Time 40
+Epoch 24 Step 50 corrector loss 6.5411 Time 7
+Epoch 24 Step 50 recommender loss 17.3816 Time 7
+Epoch 24 Step 100 corrector loss 6.5469 Time 14
+Epoch 24 Step 100 recommender loss 17.4032 Time 14
+Epoch 24 Step 150 corrector loss 6.5402 Time 21
+Epoch 24 Step 150 recommender loss 17.4072 Time 21
+Epoch 24 Step 200 corrector loss 6.5436 Time 28
+Epoch 24 Step 200 recommender loss 17.4260 Time 28
+Epoch 24 Step 250 corrector loss 6.5404 Time 35
+Epoch 24 Step 250 recommender loss 17.4321 Time 35
+Epoch 24 corrector loss 6.5427 Time 40
+Epoch 24 recommender loss 17.4347 Time 40
+Epoch 25 Step 50 corrector loss 6.5407 Time 7
+Epoch 25 Step 50 recommender loss 17.3662 Time 7
+Epoch 25 Step 100 corrector loss 6.5754 Time 14
+Epoch 25 Step 100 recommender loss 17.3834 Time 14
+Epoch 25 Step 150 corrector loss 6.5652 Time 21
+Epoch 25 Step 150 recommender loss 17.4003 Time 21
+Epoch 25 Step 200 corrector loss 6.5528 Time 28
+Epoch 25 Step 200 recommender loss 17.4178 Time 28
+Epoch 25 Step 250 corrector loss 6.5502 Time 35
+Epoch 25 Step 250 recommender loss 17.4111 Time 36
+Epoch 25 corrector loss 6.5524 Time 40
+Epoch 25 recommender loss 17.4130 Time 40
+Epoch 26 Step 50 corrector loss 6.5423 Time 7
+Epoch 26 Step 50 recommender loss 17.3313 Time 7
+Epoch 26 Step 100 corrector loss 6.5106 Time 14
+Epoch 26 Step 100 recommender loss 17.3544 Time 14
+Epoch 26 Step 150 corrector loss 6.5119 Time 21
+Epoch 26 Step 150 recommender loss 17.3717 Time 21
+Epoch 26 Step 200 corrector loss 6.5212 Time 28
+Epoch 26 Step 200 recommender loss 17.3902 Time 28
+Epoch 26 Step 250 corrector loss 6.5261 Time 35
+Epoch 26 Step 250 recommender loss 17.3841 Time 36
+Epoch 26 corrector loss 6.5324 Time 40
+Epoch 26 recommender loss 17.3951 Time 40
+Epoch 27 Step 50 corrector loss 6.4506 Time 7
+Epoch 27 Step 50 recommender loss 17.3155 Time 7
+Epoch 27 Step 100 corrector loss 6.4852 Time 14
+Epoch 27 Step 100 recommender loss 17.3074 Time 14
+Epoch 27 Step 150 corrector loss 6.4993 Time 21
+Epoch 27 Step 150 recommender loss 17.3249 Time 21
+Epoch 27 Step 200 corrector loss 6.4956 Time 28
+Epoch 27 Step 200 recommender loss 17.3401 Time 28
+Epoch 27 Step 250 corrector loss 6.5018 Time 35
+Epoch 27 Step 250 recommender loss 17.3428 Time 35
+Epoch 27 corrector loss 6.5043 Time 40
+Epoch 27 recommender loss 17.3526 Time 40
+Epoch 28 Step 50 corrector loss 6.4909 Time 7
+Epoch 28 Step 50 recommender loss 17.3488 Time 7
+Epoch 28 Step 100 corrector loss 6.4747 Time 14
+Epoch 28 Step 100 recommender loss 17.2867 Time 14
+Epoch 28 Step 150 corrector loss 6.4943 Time 21
+Epoch 28 Step 150 recommender loss 17.3278 Time 21
+Epoch 28 Step 200 corrector loss 6.4980 Time 28
+Epoch 28 Step 200 recommender loss 17.3350 Time 28
+Epoch 28 Step 250 corrector loss 6.5004 Time 35
+Epoch 28 Step 250 recommender loss 17.3498 Time 36
+Epoch 28 corrector loss 6.5010 Time 40
+Epoch 28 recommender loss 17.3503 Time 40
+Epoch 29 Step 50 corrector loss 6.4878 Time 7
+Epoch 29 Step 50 recommender loss 17.3338 Time 7
+Epoch 29 Step 100 corrector loss 6.4836 Time 14
+Epoch 29 Step 100 recommender loss 17.3070 Time 14
+Epoch 29 Step 150 corrector loss 6.4983 Time 21
+Epoch 29 Step 150 recommender loss 17.3119 Time 21
+Epoch 29 Step 200 corrector loss 6.5107 Time 28
+Epoch 29 Step 200 recommender loss 17.3244 Time 28
+Epoch 29 Step 250 corrector loss 6.5117 Time 35
+Epoch 29 Step 250 recommender loss 17.3386 Time 36
+Epoch 29 corrector loss 6.5103 Time 40
+Epoch 29 recommender loss 17.3358 Time 40
+Epoch 30 Step 50 corrector loss 6.4742 Time 7
+Epoch 30 Step 50 recommender loss 17.2498 Time 7
+Epoch 30 Step 100 corrector loss 6.4890 Time 14
+Epoch 30 Step 100 recommender loss 17.2797 Time 14
+Epoch 30 Step 150 corrector loss 6.5004 Time 21
+Epoch 30 Step 150 recommender loss 17.3166 Time 21
+Epoch 30 Step 200 corrector loss 6.4979 Time 28
+Epoch 30 Step 200 recommender loss 17.3108 Time 28
+Epoch 30 Step 250 corrector loss 6.4933 Time 35
+Epoch 30 Step 250 recommender loss 17.3171 Time 36
+Epoch 30 corrector loss 6.4945 Time 40
+Epoch 30 recommender loss 17.3084 Time 40
+Epoch 31 Step 50 corrector loss 6.4510 Time 7
+Epoch 31 Step 50 recommender loss 17.1840 Time 7
+Epoch 31 Step 100 corrector loss 6.4545 Time 14
+Epoch 31 Step 100 recommender loss 17.2248 Time 14
+Epoch 31 Step 150 corrector loss 6.4838 Time 21
+Epoch 31 Step 150 recommender loss 17.2686 Time 21
+Epoch 31 Step 200 corrector loss 6.4853 Time 28
+Epoch 31 Step 200 recommender loss 17.2838 Time 28
+Epoch 31 Step 250 corrector loss 6.4786 Time 35
+Epoch 31 Step 250 recommender loss 17.2857 Time 36
+Epoch 31 corrector loss 6.4816 Time 40
+Epoch 31 recommender loss 17.2859 Time 40
+Epoch 32 Step 50 corrector loss 6.4480 Time 7
+Epoch 32 Step 50 recommender loss 17.1709 Time 7
+Epoch 32 Step 100 corrector loss 6.4644 Time 14
+Epoch 32 Step 100 recommender loss 17.2090 Time 14
+Epoch 32 Step 150 corrector loss 6.4572 Time 21
+Epoch 32 Step 150 recommender loss 17.2450 Time 21
+Epoch 32 Step 200 corrector loss 6.4713 Time 28
+Epoch 32 Step 200 recommender loss 17.2707 Time 28
+Epoch 32 Step 250 corrector loss 6.4747 Time 35
+Epoch 32 Step 250 recommender loss 17.2698 Time 36
+Epoch 32 corrector loss 6.4759 Time 40
+Epoch 32 recommender loss 17.2767 Time 40
+Epoch 33 Step 50 corrector loss 6.4415 Time 7
+Epoch 33 Step 50 recommender loss 17.1861 Time 7
+Epoch 33 Step 100 corrector loss 6.4518 Time 14
+Epoch 33 Step 100 recommender loss 17.1938 Time 14
+Epoch 33 Step 150 corrector loss 6.4632 Time 21
+Epoch 33 Step 150 recommender loss 17.2287 Time 21
+Epoch 33 Step 200 corrector loss 6.4652 Time 28
+Epoch 33 Step 200 recommender loss 17.2399 Time 28
+Epoch 33 Step 250 corrector loss 6.4561 Time 35
+Epoch 33 Step 250 recommender loss 17.2611 Time 36
+Epoch 33 corrector loss 6.4603 Time 40
+Epoch 33 recommender loss 17.2596 Time 40
+Epoch 34 Step 50 corrector loss 6.4326 Time 7
+Epoch 34 Step 50 recommender loss 17.1693 Time 7
+Epoch 34 Step 100 corrector loss 6.4637 Time 14
+Epoch 34 Step 100 recommender loss 17.1938 Time 14
+Epoch 34 Step 150 corrector loss 6.4599 Time 21
+Epoch 34 Step 150 recommender loss 17.1994 Time 21
+Epoch 34 Step 200 corrector loss 6.4701 Time 28
+Epoch 34 Step 200 recommender loss 17.2162 Time 28
+Epoch 34 Step 250 corrector loss 6.4726 Time 35
+Epoch 34 Step 250 recommender loss 17.2290 Time 36
+Epoch 34 corrector loss 6.4695 Time 40
+Epoch 34 recommender loss 17.2370 Time 40
+Epoch 35 Step 50 corrector loss 6.4625 Time 7
+Epoch 35 Step 50 recommender loss 17.1949 Time 7
+Epoch 35 Step 100 corrector loss 6.4610 Time 14
+Epoch 35 Step 100 recommender loss 17.2311 Time 14
+Epoch 35 Step 150 corrector loss 6.4531 Time 21
+Epoch 35 Step 150 recommender loss 17.2371 Time 21
+Epoch 35 Step 200 corrector loss 6.4493 Time 28
+Epoch 35 Step 200 recommender loss 17.2412 Time 28
+Epoch 35 Step 250 corrector loss 6.4497 Time 35
+Epoch 35 Step 250 recommender loss 17.2369 Time 36
+Epoch 35 corrector loss 6.4560 Time 40
+Epoch 35 recommender loss 17.2379 Time 40
+Epoch 36 Step 50 corrector loss 6.4287 Time 7
+Epoch 36 Step 50 recommender loss 17.1444 Time 7
+Epoch 36 Step 100 corrector loss 6.4258 Time 14
+Epoch 36 Step 100 recommender loss 17.1490 Time 14
+Epoch 36 Step 150 corrector loss 6.4397 Time 21
+Epoch 36 Step 150 recommender loss 17.1796 Time 21
+Epoch 36 Step 200 corrector loss 6.4417 Time 28
+Epoch 36 Step 200 recommender loss 17.1968 Time 28
+Epoch 36 Step 250 corrector loss 6.4457 Time 35
+Epoch 36 Step 250 recommender loss 17.2145 Time 36
+Epoch 36 corrector loss 6.4411 Time 40
+Epoch 36 recommender loss 17.2261 Time 40
+Epoch 37 Step 50 corrector loss 6.4469 Time 7
+Epoch 37 Step 50 recommender loss 17.1981 Time 7
+Epoch 37 Step 100 corrector loss 6.4591 Time 14
+Epoch 37 Step 100 recommender loss 17.2236 Time 14
+Epoch 37 Step 150 corrector loss 6.4522 Time 21
+Epoch 37 Step 150 recommender loss 17.2252 Time 21
+Epoch 37 Step 200 corrector loss 6.4444 Time 28
+Epoch 37 Step 200 recommender loss 17.2199 Time 28
+Epoch 37 Step 250 corrector loss 6.4467 Time 35
+Epoch 37 Step 250 recommender loss 17.2343 Time 36
+Epoch 37 corrector loss 6.4489 Time 40
+Epoch 37 recommender loss 17.2372 Time 40
+Epoch 38 Step 50 corrector loss 6.3938 Time 7
+Epoch 38 Step 50 recommender loss 17.1166 Time 7
+Epoch 38 Step 100 corrector loss 6.4299 Time 14
+Epoch 38 Step 100 recommender loss 17.1336 Time 14
+Epoch 38 Step 150 corrector loss 6.4251 Time 21
+Epoch 38 Step 150 recommender loss 17.1448 Time 21
+Epoch 38 Step 200 corrector loss 6.4342 Time 28
+Epoch 38 Step 200 recommender loss 17.1598 Time 28
+Epoch 38 Step 250 corrector loss 6.4321 Time 35
+Epoch 38 Step 250 recommender loss 17.1651 Time 36
+Epoch 38 corrector loss 6.4312 Time 40
+Epoch 38 recommender loss 17.1764 Time 40
+Epoch 39 Step 50 corrector loss 6.4273 Time 7
+Epoch 39 Step 50 recommender loss 17.1334 Time 7
+Epoch 39 Step 100 corrector loss 6.4068 Time 14
+Epoch 39 Step 100 recommender loss 17.1715 Time 14
+Epoch 39 Step 150 corrector loss 6.4138 Time 21
+Epoch 39 Step 150 recommender loss 17.1621 Time 21
+Epoch 39 Step 200 corrector loss 6.4128 Time 28
+Epoch 39 Step 200 recommender loss 17.1729 Time 28
+Epoch 39 Step 250 corrector loss 6.4240 Time 35
+Epoch 39 Step 250 recommender loss 17.1900 Time 36
+Epoch 39 corrector loss 6.4249 Time 40
+Epoch 39 recommender loss 17.1853 Time 40
+Epoch 40 Step 50 corrector loss 6.4124 Time 7
+Epoch 40 Step 50 recommender loss 17.0738 Time 7
+Epoch 40 Step 100 corrector loss 6.4142 Time 14
+Epoch 40 Step 100 recommender loss 17.1206 Time 14
+Epoch 40 Step 150 corrector loss 6.4159 Time 21
+Epoch 40 Step 150 recommender loss 17.1278 Time 21
+Epoch 40 Step 200 corrector loss 6.4186 Time 28
+Epoch 40 Step 200 recommender loss 17.1364 Time 28
+Epoch 40 Step 250 corrector loss 6.4283 Time 35
+Epoch 40 Step 250 recommender loss 17.1518 Time 36
+Epoch 40 corrector loss 6.4206 Time 40
+Epoch 40 recommender loss 17.1564 Time 40
+Epoch 41 Step 50 corrector loss 6.3628 Time 7
+Epoch 41 Step 50 recommender loss 17.1381 Time 7
+Epoch 41 Step 100 corrector loss 6.3787 Time 14
+Epoch 41 Step 100 recommender loss 17.1424 Time 14
+Epoch 41 Step 150 corrector loss 6.3964 Time 21
+Epoch 41 Step 150 recommender loss 17.1451 Time 21
+Epoch 41 Step 200 corrector loss 6.4024 Time 28
+Epoch 41 Step 200 recommender loss 17.1450 Time 28
+Epoch 41 Step 250 corrector loss 6.4029 Time 35
+Epoch 41 Step 250 recommender loss 17.1541 Time 36
+Epoch 41 corrector loss 6.4019 Time 40
+Epoch 41 recommender loss 17.1536 Time 40
+Epoch 42 Step 50 corrector loss 6.3723 Time 7
+Epoch 42 Step 50 recommender loss 17.0776 Time 7
+Epoch 42 Step 100 corrector loss 6.4002 Time 14
+Epoch 42 Step 100 recommender loss 17.1056 Time 14
+Epoch 42 Step 150 corrector loss 6.4020 Time 21
+Epoch 42 Step 150 recommender loss 17.1197 Time 21
+Epoch 42 Step 200 corrector loss 6.4136 Time 28
+Epoch 42 Step 200 recommender loss 17.1386 Time 28
+Epoch 42 Step 250 corrector loss 6.4103 Time 35
+Epoch 42 Step 250 recommender loss 17.1441 Time 36
+Epoch 42 corrector loss 6.4091 Time 40
+Epoch 42 recommender loss 17.1530 Time 40
+Epoch 43 Step 50 corrector loss 6.3845 Time 7
+Epoch 43 Step 50 recommender loss 17.0781 Time 7
+Epoch 43 Step 100 corrector loss 6.3831 Time 14
+Epoch 43 Step 100 recommender loss 17.1081 Time 14
+Epoch 43 Step 150 corrector loss 6.3871 Time 21
+Epoch 43 Step 150 recommender loss 17.0965 Time 21
+Epoch 43 Step 200 corrector loss 6.3967 Time 28
+Epoch 43 Step 200 recommender loss 17.0990 Time 28
+Epoch 43 Step 250 corrector loss 6.4031 Time 35
+Epoch 43 Step 250 recommender loss 17.1112 Time 36
+Epoch 43 corrector loss 6.4059 Time 40
+Epoch 43 recommender loss 17.1221 Time 40
+Epoch 44 Step 50 corrector loss 6.3902 Time 7
+Epoch 44 Step 50 recommender loss 17.0974 Time 7
+Epoch 44 Step 100 corrector loss 6.3929 Time 14
+Epoch 44 Step 100 recommender loss 17.0822 Time 14
+Epoch 44 Step 150 corrector loss 6.4032 Time 21
+Epoch 44 Step 150 recommender loss 17.1128 Time 21
+Epoch 44 Step 200 corrector loss 6.3974 Time 28
+Epoch 44 Step 200 recommender loss 17.1194 Time 28
+Epoch 44 Step 250 corrector loss 6.3927 Time 35
+Epoch 44 Step 250 recommender loss 17.1194 Time 36
+Epoch 44 corrector loss 6.3974 Time 40
+Epoch 44 recommender loss 17.1202 Time 40
+Epoch 45 Step 50 corrector loss 6.3954 Time 7
+Epoch 45 Step 50 recommender loss 17.0566 Time 7
+Epoch 45 Step 100 corrector loss 6.3656 Time 14
+Epoch 45 Step 100 recommender loss 17.0471 Time 14
+Epoch 45 Step 150 corrector loss 6.3907 Time 21
+Epoch 45 Step 150 recommender loss 17.0726 Time 21
+Epoch 45 Step 200 corrector loss 6.3883 Time 28
+Epoch 45 Step 200 recommender loss 17.0757 Time 28
+Epoch 45 Step 250 corrector loss 6.3983 Time 35
+Epoch 45 Step 250 recommender loss 17.0892 Time 36
+Epoch 45 corrector loss 6.4013 Time 40
+Epoch 45 recommender loss 17.0893 Time 40
