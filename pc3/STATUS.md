@@ -1,27 +1,28 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-13 18:00:21 UTC  up since 2026-11-03 22:15:42
-code 31cd54b4 13 Nov 13:24  linger yes  disk free 65G  ram used 10/62 GB swap 1 GB 
-gpu 58 %, 3127 MiB, 24564 MiB, 51
+pc3 (aura1@aura-node1)  2026-11-13 18:30:25 UTC  up since 2026-11-03 22:15:42
+code 31cd54b4 13 Nov 13:24  linger yes  disk free 63G  ram used 10/62 GB swap 1 GB 
+gpu 96 %, 16201 MiB, 24564 MiB, 56
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-13 17:30:09 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-13 18:00:22 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  04:08:56    timeout 12h bash -c python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/val
-  04:08:56    python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
-  00:02       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
-  00:02       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
-  00:02       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
-  00:02       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
+  00:12       timeout 12h bash -c python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat -vn ./Yelp/valid_neg.d
+  00:12       bash -c python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat -vn ./Yelp/valid_neg.dat -en ./Yel
+  00:12       python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat -vn ./Yelp/valid_neg.dat -en ./Yelp/test_n
+  00:10       python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat -vn ./Yelp/valid_neg.dat -en ./Yelp/test_n
+  00:10       python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat -vn ./Yelp/valid_neg.dat -en ./Yelp/test_n
+  00:10       python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat -vn ./Yelp/valid_neg.dat -en ./Yelp/test_n
+  00:10       python main.py -tf ./Yelp/train.dat -vf ./Yelp/valid.dat -ef ./Yelp/test.dat -vn ./Yelp/valid_neg.dat -en ./Yelp/test_n
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
   final yelp: 169/169 done, 0 failed so far
   finished: yelp_s1
 ---- RQ10 (specialists) ----
-  .done markers: 31  (hsd_sports_sasrec gbsr_yelp_r2 fmlp_beauty gbsr_epinions_r1 s2_fmlp_beauty_i20_s1 fmlp_beauty_n0 hdsr_default s2_hsd_beauty_i20_s1 s2_hsd_beauty_n0_s1 fmlp_sports_and_outdoors s2_steam_beauty_i10_s1 steam_beauty gbsr_douban_r1 repro_fmlp hsd_beauty_sasrec steam_beauty_n2_20 s2_fmlp_beauty_n0_s1 gbsr_douban_r2 repro_gbsr steam_beauty_n3_30 fmlp_yelp repro_preferdiff gbsr_epinions_r2 steam_beauty_n0 gbsr_yelp_r1 s2_steam_beauty_i20_s1 s2_steam_beauty_n0_s1 hsd_yelp_sasrec repro_steam s2_fmlp_beauty_i10_s1 s2_hsd_beauty_i10_s1 )
+  .done markers: 32  (hsd_sports_sasrec gbsr_yelp_r2 fmlp_beauty gbsr_epinions_r1 s2_fmlp_beauty_i20_s1 fmlp_beauty_n0 hdsr_default s2_hsd_beauty_i20_s1 s2_hsd_beauty_n0_s1 fmlp_sports_and_outdoors s2_steam_beauty_i10_s1 steam_beauty gbsr_douban_r1 repro_fmlp hsd_beauty_sasrec steam_beauty_n2_20 s2_fmlp_beauty_n0_s1 gbsr_douban_r2 repro_gbsr steam_beauty_n3_30 fmlp_yelp repro_preferdiff gbsr_epinions_r2 steam_beauty_n0 steam_sports_b128 gbsr_yelp_r1 s2_steam_beauty_i20_s1 s2_steam_beauty_n0_s1 hsd_yelp_sasrec repro_steam s2_fmlp_beauty_i10_s1 s2_hsd_beauty_i10_s1 )
   last lines of ~/rq10_stage1.log:
       HSD (SASRec)  Sports_and_Outdoors  I20  s1  Recall@10 0.0193  NDCG@10 0.0089
     2026-11-09 05:43:07 [rq10-stage2] stage 2 complete: 15 runs with results (table: /home/aura1/survey/rq10/results/stage2_summary.tsv)
@@ -115,6 +116,7 @@ gpu 58 %, 3127 MiB, 24564 MiB, 51
     s2_steam_sports_and_outdoors_i20_s1	1	0	507
     fmlp_sports_and_outdoors	0	8	3045
     fmlp_yelp	0	10	2984
+    steam_sports_b128	0	278	18035
 ---- queue log (~/survey_queue.log) ----
   0 jobs to run, 249 already done
   kept the logs of 0 failed jobs in logs/rq4_tune/failed
@@ -132,11 +134,11 @@ gpu 58 %, 3127 MiB, 24564 MiB, 51
   2026-11-13 13:29:19 RQ4 done [yelp] seeds [1]
   2026-11-13 13:29:19 [pc3-queue] RQ10 stage 3 (log ~/rq10_stage3.log)
 ---- recent service log lines ----
-2026-11-13T16:29:45+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-13T16:29:45+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-13T16:59:56+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-13T16:59:57+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-13T17:30:09+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-13T17:30:09+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-13T18:00:21+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-13T18:00:22+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-13T18:30:25+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
