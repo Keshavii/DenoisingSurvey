@@ -12,3 +12,15 @@
 2026-11-13 13:51:25 [rq10-stage3] steam_sports_b128: start
 2026-11-13 18:30:13 [rq10-stage3] steam_sports_b128: exit 0  278 min  peak 18035 MiB  (log /home/aura1/survey/rq10/logs/run_steam_sports_b128.log)
 2026-11-13 18:30:13 [rq10-stage3] steam_yelp_b128: start
+2026-11-13 21:17:33 [rq10-stage3] steam_yelp_b128: exit 0  167 min  peak 16259 MiB  (log /home/aura1/survey/rq10/logs/run_steam_yelp_b128.log)
+2026-11-13 21:17:33 [rq10-stage3] === 4. stage 2 again (finished runs are skipped) ===
+2026-11-13 21:17:33 [rq10-stage2] start (datasets [Beauty Sports_and_Outdoors Yelp], levels [N0 I10 I20], seeds [1])
+2026-11-13 21:17:33 [rq10-stage2] noise files [ Beauty Sports_and_Outdoors Yelp ]
+2026-11-13 21:17:37 [rq10-stage2] s2_fmlp_beauty_n0_s1: already done, skip
+2026-11-13 21:17:37 [rq10-stage2] s2_hsd_beauty_n0_s1: already done, skip
+2026-11-13 21:17:37 [rq10-stage2] s2_steam_beauty_n0_s1: already done, skip
+2026-11-13 21:17:37 [rq10-stage2] s2_fmlp_sports_and_outdoors_n0_s1: start
+2026-11-13 21:24:20 [rq10-stage2] s2_fmlp_sports_and_outdoors_n0_s1: exit 0  6 min  peak 2795 MiB
+2026-11-13 21:24:20 [rq10-stage2] s2_hsd_sports_and_outdoors_n0_s1: start
+2026-11-13 21:31:49 [rq10-stage2] s2_hsd_sports_and_outdoors_n0_s1: exit 0  7 min  peak 7957 MiB
+2026-11-13 21:31:49 [rq10-stage2] s2_steam_sports_and_outdoors_n0_s1: start
