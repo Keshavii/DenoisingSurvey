@@ -58,3 +58,50 @@
 {'job_id': 'rq4tune_ml1m_M1_reshape_t0', 'status': 'ok', 'seconds': 442.6, 'peak_gpu_mb_while_running': 21501, 'slots': 1, 'finished': '2026-11-06 05:30:08'}
 {'job_id': 'rq4tune_ml1m_M1_reshape_t1', 'status': 'ok', 'seconds': 444.5, 'peak_gpu_mb_while_running': 21501, 'slots': 1, 'finished': '2026-11-06 05:37:34'}
 {'job_id': 'rq4tune_ml1m_M1_reshape_t2', 'status': 'ok', 'seconds': 621.1, 'peak_gpu_mb_while_running': 21501, 'slots': 1, 'finished': '2026-11-06 05:47:56'}
+2026-11-13 18:40:30 [pc2-queue] start, code d8338e12
+2026-11-13 18:40:30 RQ4 start: datasets [ml1m], tune 1, final seeds [all], picks from this PC
+2026-11-13 18:40:30 1 clean base and MF-BPR on it
+2026-11-13 18:40:30 2 noise files
+2026-11-13 18:40:30 3 LLM item profiles for R4
+2026-11-13 18:40:30 4 reference models and Llama scores (ML-1M)
+2026-11-13 18:40:36 4b reference models for the clean bases (teacher M1c) and the Yelp files (R2, M1, hard positives)
+2026-11-13 18:40:37 5 tuning [ml1m]
+273 of 522 jobs kept (datasets ml1m)
+14 jobs to run, 259 already done
+{'job_id': 'rq4tune_ml1m_R4_drop_t2', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 3030, 'slots': 1, 'finished': '2026-11-13 18:40:39'}
+{'job_id': 'rq4tune_ml1m_R4_drop_t1', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 3030, 'slots': 1, 'finished': '2026-11-13 18:40:39'}
+{'job_id': 'rq4tune_ml1m_R4_reweight_t0', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 3030, 'slots': 1, 'finished': '2026-11-13 18:40:39'}
+{'job_id': 'rq4tune_ml1m_R4_reweight_t1', 'status': 'exit 1', 'seconds': 2.6, 'peak_gpu_mb_while_running': 3030, 'slots': 1, 'finished': '2026-11-13 18:40:39'}
+{'job_id': 'rq4tune_ml1m_R4_reweight_t2', 'status': 'exit 1', 'seconds': 2.4, 'peak_gpu_mb_while_running': 1159, 'slots': 1, 'finished': '2026-11-13 18:40:42'}
+{'job_id': 'rq4tune_ml1m_R4_relabel_t1', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 1159, 'slots': 1, 'finished': '2026-11-13 18:40:42'}
+{'job_id': 'rq4tune_ml1m_R4_relabel_t2', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 1159, 'slots': 1, 'finished': '2026-11-13 18:40:42'}
+{'job_id': 'rq4tune_ml1m_R4_relabel_t0', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 1159, 'slots': 1, 'finished': '2026-11-13 18:40:42'}
+{'job_id': 'rq4tune_ml1m_R4_resample_t1', 'status': 'exit 1', 'seconds': 2.4, 'peak_gpu_mb_while_running': 22688, 'slots': 1, 'finished': '2026-11-13 18:40:45'}
+{'job_id': 'rq4tune_ml1m_R4_resample_t2', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 22688, 'slots': 1, 'finished': '2026-11-13 18:40:45'}
+{'job_id': 'rq4tune_ml1m_R4_resample_t0', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 22688, 'slots': 1, 'finished': '2026-11-13 18:40:45'}
+{'job_id': 'rq4tune_ml1m_L4_graph_drop_t2', 'status': 'ok', 'seconds': 515.8, 'peak_gpu_mb_while_running': 5858, 'slots': 1, 'finished': '2026-11-13 18:49:22'}
+{'job_id': 'rq4tune_ml1m_L4_graph_drop_t1', 'status': 'ok', 'seconds': 601.2, 'peak_gpu_mb_while_running': 5858, 'slots': 1, 'finished': '2026-11-13 18:50:44'}
+{'job_id': 'rq4tune_ml1m_R1_graph_drop_t0', 'status': 'ok', 'seconds': 613.6, 'peak_gpu_mb_while_running': 5858, 'slots': 1, 'finished': '2026-11-13 18:50:59'}
+2026-11-13 18:51:00   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
+2026-11-13 18:57:43 [pc2-queue] start, code 31cd54b4
+2026-11-13 18:57:43 RQ4 start: datasets [ml1m], tune 1, final seeds [all], picks from this PC
+2026-11-13 18:57:43 1 clean base and MF-BPR on it
+2026-11-13 18:57:43 2 noise files
+2026-11-13 18:57:43 3 LLM item profiles for R4
+2026-11-13 18:57:43 4 reference models and Llama scores (ML-1M)
+2026-11-13 18:57:49 4b reference models for the clean bases (teacher M1c) and the Yelp files (R2, M1, hard positives)
+2026-11-13 18:57:49 5 tuning [ml1m]
+273 of 522 jobs kept (datasets ml1m)
+10 jobs to run, 263 already done
+{'job_id': 'rq4tune_ml1m_R4_drop_t2', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 12840, 'slots': 1, 'finished': '2026-11-13 18:57:52'}
+{'job_id': 'rq4tune_ml1m_R4_reweight_t0', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 12840, 'slots': 1, 'finished': '2026-11-13 18:57:52'}
+{'job_id': 'rq4tune_ml1m_R4_reweight_t1', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 12840, 'slots': 1, 'finished': '2026-11-13 18:57:52'}
+{'job_id': 'rq4tune_ml1m_R4_reweight_t2', 'status': 'exit 1', 'seconds': 2.6, 'peak_gpu_mb_while_running': 12840, 'slots': 1, 'finished': '2026-11-13 18:57:52'}
+{'job_id': 'rq4tune_ml1m_R4_relabel_t0', 'status': 'exit 1', 'seconds': 2.4, 'peak_gpu_mb_while_running': 1283, 'slots': 1, 'finished': '2026-11-13 18:57:55'}
+{'job_id': 'rq4tune_ml1m_R4_relabel_t1', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 1283, 'slots': 1, 'finished': '2026-11-13 18:57:55'}
+{'job_id': 'rq4tune_ml1m_R4_resample_t0', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 1283, 'slots': 1, 'finished': '2026-11-13 18:57:55'}
+{'job_id': 'rq4tune_ml1m_R4_relabel_t2', 'status': 'exit 1', 'seconds': 2.5, 'peak_gpu_mb_while_running': 1283, 'slots': 1, 'finished': '2026-11-13 18:57:55'}
+{'job_id': 'rq4tune_ml1m_R4_resample_t2', 'status': 'exit 1', 'seconds': 2.1, 'peak_gpu_mb_while_running': 1280, 'slots': 1, 'finished': '2026-11-13 18:57:58'}
+{'job_id': 'rq4tune_ml1m_R4_resample_t1', 'status': 'ok', 'seconds': 323.4, 'peak_gpu_mb_while_running': 23484, 'slots': 1, 'finished': '2026-11-13 19:03:19'}
+kept the logs of 9 failed jobs in logs/rq4_tune/failed
+2026-11-13 19:03:19   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
