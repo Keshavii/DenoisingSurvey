@@ -352,3 +352,12 @@ error: failed to push some refs to 'https://github.com/Keshavii/DenoisingSurvey.
 2026-11-13 04:08:36 push ok (3ceaeb3c; pc1)
 2026-11-13 04:39:36 push ok (6acdef11; pc1)
 fatal: unable to access 'https://github.com/Keshavii/DenoisingSurvey.git/': Recv failure: Connection reset by peer
+To https://github.com/Keshavii/DenoisingSurvey.git
+ ! [rejected]          HEAD -> status (fetch first)
+error: failed to push some refs to 'https://github.com/Keshavii/DenoisingSurvey.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-11-13 05:11:12 push ok (b1ebe890; pc1)
