@@ -1,21 +1,21 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-13 13:58:25 UTC  up since 2026-11-03 22:15:42
+pc3 (aura1@aura-node1)  2026-11-13 14:28:59 UTC  up since 2026-11-03 22:15:42
 code 31cd54b4 13 Nov 13:24  linger yes  disk free 69G  ram used 10/62 GB swap 1 GB 
-gpu 95 %, 17647 MiB, 24564 MiB, 63
+gpu 97 %, 17683 MiB, 24564 MiB, 63
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-13 13:28:14 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-13 13:58:26 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  07:00       timeout 12h bash -c python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/val
-  07:00       bash -c python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -
-  07:00       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
-  00:16       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
-  00:16       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
-  00:16       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
-  00:16       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
+  37:33       timeout 12h bash -c python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/val
+  37:33       bash -c python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -
+  37:33       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
+  00:38       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
+  00:38       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
+  00:38       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
+  00:38       python main.py -tf ./Sports/train.dat -vf ./Sports/valid.dat -ef ./Sports/test.dat -vn ./Sports/valid_neg.dat -en ./Spo
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
@@ -133,12 +133,12 @@ gpu 95 %, 17647 MiB, 24564 MiB, 63
   2026-11-13 13:29:19 RQ4 done [yelp] seeds [1]
   2026-11-13 13:29:19 [pc3-queue] RQ10 stage 3 (log ~/rq10_stage3.log)
 ---- recent service log lines ----
-2026-11-13T12:28:13+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-13T12:28:13+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-13T12:58:13+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-13T12:58:13+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-13T13:28:14+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-13T13:28:14+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-13T13:29:12+00:00 aura-node1 systemd[7943]: Started survey-queue.service - Survey unattended queue (pc3).
 2026-11-13T13:58:25+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-13T13:58:26+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-13T14:28:59+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
