@@ -1,7 +1,151 @@
-usage: gdown [-h] [-V] [-O OUTPUT] [-q] [--proxy PROXY] [--speed SPEED]
-             [--cookies FILE] [--cookies-from-browser BROWSER] [--no-cookies]
-             [--no-check-certificate] [--continue] [--retries N] [--folder]
-             [--json] [--format FORMAT] [--user-agent USER_AGENT]
-             [--timeout SECONDS]
-             url_or_id
-gdown: error: unrecognized arguments: --remaining-ok
+warning: `--folder` is no longer required for folder URLs and will be removed in a future release
+Retrieving folder contents
+Retrieving folder contents completed
+Building directory structure
+Building directory structure completed
+Downloading...
+From: https://drive.google.com/uc?id=1u0SABvg5aJ4em3cDO7WSQBGtgpt0fQmJ
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/nowplaying/nowplaying.test.inter
+Retrieving folder 1-_PflslubApuEIK5kW3VelVwrvu_QVlj data
+Retrieving folder 1RHG_hrLkyhWAVZi-yJ0JdJtxhcJ_NUyS nowplaying
+Processing file 1u0SABvg5aJ4em3cDO7WSQBGtgpt0fQmJ nowplaying.test.inter
+Processing file 1hyDk0ut9eifGl-6HvCy_JRtvRIfujr03 nowplaying.train.inter
+Processing file 1QP5rwMAnoMq3GzxblkboUeQQ2gU21uG1 nowplaying.valid.inter
+Processing file 1oQF3EjGk1-hX7yhpUmbF-F1cEMUZ4KY7 nowplaying_test_sample.txt
+Processing file 13x7GTDRaTT69rbYd6h04oYnZbVdcmvrI nowplaying_valid_sample.txt
+Retrieving folder 1XfhT1-jK3wwKsgXD_gUPKwjBV7zI3-9X retailrocket
+Processing file 1j9akEj6d8ZcZjBE_D4KTX95loN2zOMes retailrocket.test.inter
+Processing file 182Ebm-s9ppzb6T7oixiNdKTIHXy4zpEP retailrocket.train.inter
+Processing file 1EQXG_1hvoS8qGf9bfQb8_z4xXjvD0qnL retailrocket.valid.inter
+Processing file 1pNG58aMHogpgWbiXJqHiWcBkt2W3Uwby retailrocket_test_sample.txt
+Processing file 138W2WdszYlg963PzVAmQsXIyVQUbVPY5 retailrocket_valid_sample.txt
+Retrieving folder 1ZEF1R2-J7DRKHEA43WzuGSJlUYk1z1SU tmall
+Processing file 13Ddp-lMoIczgxIDADd8X5Buzj9i9Bt17 tmall.test.inter
+Processing file 1TkBvfxwMm-sxVls201UFWzvGP7mB6XXp tmall.train.inter
+Processing file 1O6Sb1vjMFKGYJacooDLO-3RALKZ35_L_ tmall.valid.inter
+Processing file 19Fu7__QCt2q0kE03srXr6VQMhRhkqc-Q tmall_test_sample.txt
+Processing file 1S0xCM2B63FUJNmWvAYeWPpndv4EHYYFz tmall_valid_sample.txt
+Retrieving folder 15eoBMtK79i_VGfVf80UEPycUqjkX7qGz yoochoose
+Processing file 1JGyLFGABDHeqI4fs6BLLv6pu2g9cj8u0 yoochoose.test.inter
+Processing file 1n8M6HE_nI1wb0kpBVMSGkLRtfX-UzLQ9 yoochoose.train.inter
+Processing file 1affVcQav0LStzsqffVLSYqeLcn0vV8A_ yoochoose.valid.inter
+Processing file 1Y0xoaIuRofGVD-A6Hx-Ob4z9toJaBKtm yoochoose_test_sample.txt
+Processing file 1mZWAezoAKfeamTzg4IZrvtwOdYn_kgQy yoochoose_valid_sample.txt
+Processing file 1JL6XqnkFybRrYcfn8JYlgoMld87y59yq Beauty.txt
+Processing file 1RVIRbFHRzy2oPHTEAhjnX0ZkdSSfleOy Beauty_sample.txt
+Processing file 1gjdyU1EdUORd5E_P9OTFFPq7C61IgQVL Sports_and_Outdoors.txt
+Processing file 15gvEO1XlzRFL0MxIevpuSmrIFwEospGL Sports_and_Outdoors_sample.txt
+Processing file 1HGPoAifq_Xq0ntvdDs1QDSsu5iaH37ue Toys_and_Games.txt
+Processing file 1KV88HZUC0fA-o9V9H_kKgNf2-isWkxiM Toys_and_Games_sample.txt
+Processing file 1VKjj5lYDOVyosmS3spFH4xZ1b8VqXhYg Yelp.txt
+Processing file 1RknusT8TXYLZVdTEV5SyKXBPdPusSOPM Yelp_sample.txt
+  0%|          | 0.00/5.85M [00:00<?, ?B/s]  9%|▉         | 524k/5.85M [00:00<00:03, 1.76MB/s] 36%|███▌      | 2.10M/5.85M [00:00<00:00, 5.86MB/s] 81%|████████  | 4.72M/5.85M [00:00<00:00, 12.0MB/s]100%|██████████| 5.85M/5.85M [00:00<00:00, 10.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1hyDk0ut9eifGl-6HvCy_JRtvRIfujr03
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/nowplaying/nowplaying.train.inter
+  0%|          | 0.00/56.8M [00:00<?, ?B/s]  1%|          | 524k/56.8M [00:00<00:33, 1.70MB/s]  4%|▎         | 2.10M/56.8M [00:00<00:09, 5.76MB/s]  9%|▉         | 5.24M/56.8M [00:00<00:04, 12.7MB/s] 15%|█▍        | 8.39M/56.8M [00:00<00:02, 17.2MB/s] 19%|█▉        | 11.0M/56.8M [00:00<00:03, 14.5MB/s] 23%|██▎       | 13.1M/56.8M [00:01<00:03, 13.3MB/s] 27%|██▋       | 15.2M/56.8M [00:01<00:03, 12.4MB/s] 32%|███▏      | 18.4M/56.8M [00:01<00:02, 15.7MB/s] 36%|███▌      | 20.4M/56.8M [00:01<00:02, 14.9MB/s] 42%|████▏     | 23.6M/56.8M [00:01<00:02, 14.9MB/s] 46%|████▌     | 26.2M/56.8M [00:01<00:01, 17.1MB/s] 50%|████▉     | 28.3M/56.8M [00:02<00:01, 14.8MB/s] 55%|█████▌    | 31.5M/56.8M [00:02<00:01, 17.7MB/s] 59%|█████▉    | 33.6M/56.8M [00:02<00:01, 15.8MB/s] 65%|██████▍   | 36.7M/56.8M [00:02<00:01, 17.0MB/s] 69%|██████▉   | 39.3M/56.8M [00:02<00:00, 19.0MB/s] 73%|███████▎  | 41.4M/56.8M [00:02<00:00, 17.2MB/s] 79%|███████▊  | 44.6M/56.8M [00:02<00:00, 19.7MB/s] 83%|████████▎ | 47.2M/56.8M [00:03<00:00, 17.4MB/s] 87%|████████▋ | 49.3M/56.8M [00:03<00:00, 16.0MB/s] 92%|█████████▏| 52.4M/56.8M [00:03<00:00, 18.6MB/s] 98%|█████████▊| 55.6M/56.8M [00:03<00:00, 20.7MB/s]100%|██████████| 56.8M/56.8M [00:03<00:00, 16.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1QP5rwMAnoMq3GzxblkboUeQQ2gU21uG1
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/nowplaying/nowplaying.valid.inter
+  0%|          | 0.00/6.64M [00:00<?, ?B/s]  8%|▊         | 524k/6.64M [00:00<00:02, 2.67MB/s] 32%|███▏      | 2.10M/6.64M [00:00<00:00, 7.69MB/s] 71%|███████   | 4.72M/6.64M [00:00<00:00, 14.4MB/s]100%|██████████| 6.64M/6.64M [00:00<00:00, 13.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1oQF3EjGk1-hX7yhpUmbF-F1cEMUZ4KY7
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/nowplaying/nowplaying_test_sample.txt
+  0%|          | 0.00/56.6M [00:00<?, ?B/s]  1%|          | 524k/56.6M [00:00<00:20, 2.68MB/s]  4%|▎         | 2.10M/56.6M [00:00<00:07, 7.75MB/s]  8%|▊         | 4.72M/56.6M [00:00<00:03, 14.4MB/s] 12%|█▏        | 6.82M/56.6M [00:00<00:06, 7.84MB/s] 18%|█▊        | 9.96M/56.6M [00:00<00:03, 11.9MB/s] 21%|██▏       | 12.1M/56.6M [00:01<00:03, 11.3MB/s] 27%|██▋       | 15.2M/56.6M [00:01<00:02, 14.7MB/s] 31%|███       | 17.3M/56.6M [00:01<00:02, 14.9MB/s] 36%|███▌      | 20.4M/56.6M [00:01<00:02, 17.9MB/s] 40%|███▉      | 22.5M/56.6M [00:01<00:02, 16.1MB/s] 45%|████▌     | 25.7M/56.6M [00:01<00:01, 18.8MB/s] 50%|█████     | 28.3M/56.6M [00:02<00:02, 13.1MB/s] 54%|█████▍    | 30.4M/56.6M [00:02<00:02, 11.5MB/s] 58%|█████▊    | 33.0M/56.6M [00:02<00:01, 13.9MB/s] 63%|██████▎   | 35.7M/56.6M [00:03<00:02, 8.00MB/s] 69%|██████▊   | 38.8M/56.6M [00:03<00:01, 10.5MB/s] 74%|███████▍  | 41.9M/56.6M [00:03<00:01, 13.2MB/s] 80%|███████▉  | 45.1M/56.6M [00:03<00:00, 15.6MB/s] 85%|████████▌ | 48.2M/56.6M [00:03<00:00, 18.0MB/s] 91%|█████████ | 51.4M/56.6M [00:03<00:00, 20.0MB/s] 96%|█████████▋| 54.5M/56.6M [00:03<00:00, 21.7MB/s]100%|██████████| 56.6M/56.6M [00:03<00:00, 14.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=13x7GTDRaTT69rbYd6h04oYnZbVdcmvrI
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/nowplaying/nowplaying_valid_sample.txt
+  0%|          | 0.00/60.0M [00:00<?, ?B/s]  1%|          | 524k/60.0M [00:00<00:34, 1.73MB/s]  3%|▎         | 2.10M/60.0M [00:00<00:09, 5.84MB/s]  9%|▊         | 5.24M/60.0M [00:00<00:04, 12.8MB/s] 14%|█▍        | 8.39M/60.0M [00:00<00:02, 17.3MB/s] 19%|█▉        | 11.5M/60.0M [00:00<00:02, 20.4MB/s] 24%|██▎       | 14.2M/60.0M [00:00<00:02, 22.0MB/s] 29%|██▉       | 17.3M/60.0M [00:00<00:01, 23.5MB/s] 34%|███▍      | 20.4M/60.0M [00:01<00:01, 24.6MB/s] 39%|███▉      | 23.6M/60.0M [00:01<00:01, 25.3MB/s] 45%|████▍     | 26.7M/60.0M [00:01<00:01, 25.8MB/s] 50%|████▉     | 29.9M/60.0M [00:01<00:01, 26.1MB/s] 55%|█████▌    | 33.0M/60.0M [00:01<00:01, 26.3MB/s] 60%|██████    | 36.2M/60.0M [00:01<00:00, 26.5MB/s] 65%|██████▌   | 39.3M/60.0M [00:01<00:00, 26.6MB/s] 71%|███████   | 42.5M/60.0M [00:01<00:00, 26.7MB/s] 76%|███████▌  | 45.6M/60.0M [00:02<00:00, 26.8MB/s] 81%|████████  | 48.8M/60.0M [00:02<00:00, 23.6MB/s] 88%|████████▊ | 53.0M/60.0M [00:02<00:00, 27.8MB/s] 93%|█████████▎| 56.1M/60.0M [00:02<00:00, 27.5MB/s] 99%|█████████▊| 59.2M/60.0M [00:02<00:00, 27.4MB/s]100%|██████████| 60.0M/60.0M [00:02<00:00, 23.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1j9akEj6d8ZcZjBE_D4KTX95loN2zOMes
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/retailrocket/retailrocket.test.inter
+  0%|          | 0.00/3.47M [00:00<?, ?B/s] 15%|█▌        | 524k/3.47M [00:00<00:01, 1.84MB/s] 60%|██████    | 2.10M/3.47M [00:00<00:00, 6.09MB/s]100%|██████████| 3.47M/3.47M [00:00<00:00, 7.59MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=182Ebm-s9ppzb6T7oixiNdKTIHXy4zpEP
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/retailrocket/retailrocket.train.inter
+  0%|          | 0.00/35.4M [00:00<?, ?B/s]  1%|▏         | 524k/35.4M [00:00<00:20, 1.74MB/s]  6%|▌         | 2.10M/35.4M [00:00<00:05, 5.80MB/s] 13%|█▎        | 4.72M/35.4M [00:00<00:02, 11.9MB/s] 22%|██▏       | 7.86M/35.4M [00:00<00:01, 16.8MB/s] 28%|██▊       | 9.96M/35.4M [00:00<00:01, 14.8MB/s] 34%|███▍      | 12.1M/35.4M [00:01<00:01, 11.7MB/s] 39%|███▊      | 13.6M/35.4M [00:01<00:02, 9.88MB/s] 47%|████▋     | 16.8M/35.4M [00:01<00:01, 13.5MB/s] 53%|█████▎    | 18.9M/35.4M [00:01<00:01, 13.0MB/s] 58%|█████▊    | 20.4M/35.4M [00:01<00:01, 10.7MB/s] 67%|██████▋   | 23.6M/35.4M [00:01<00:00, 14.2MB/s] 73%|███████▎  | 25.7M/35.4M [00:02<00:00, 13.9MB/s] 80%|████████  | 28.3M/35.4M [00:02<00:00, 13.8MB/s] 87%|████████▋ | 30.9M/35.4M [00:02<00:00, 16.2MB/s] 93%|█████████▎| 33.0M/35.4M [00:02<00:00, 14.4MB/s]100%|██████████| 35.4M/35.4M [00:02<00:00, 13.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1EQXG_1hvoS8qGf9bfQb8_z4xXjvD0qnL
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/retailrocket/retailrocket.valid.inter
+  0%|          | 0.00/3.69M [00:00<?, ?B/s] 14%|█▍        | 524k/3.69M [00:00<00:01, 2.66MB/s] 57%|█████▋    | 2.10M/3.69M [00:00<00:00, 7.62MB/s]100%|██████████| 3.69M/3.69M [00:00<00:00, 9.88MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1pNG58aMHogpgWbiXJqHiWcBkt2W3Uwby
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/retailrocket/retailrocket_test_sample.txt
+  0%|          | 0.00/43.3M [00:00<?, ?B/s]  1%|          | 524k/43.3M [00:00<00:16, 2.52MB/s]  5%|▍         | 2.10M/43.3M [00:00<00:05, 7.33MB/s] 12%|█▏        | 5.24M/43.3M [00:00<00:02, 14.8MB/s] 19%|█▉        | 8.39M/43.3M [00:00<00:01, 19.1MB/s] 27%|██▋       | 11.5M/43.3M [00:00<00:01, 21.8MB/s] 34%|███▍      | 14.7M/43.3M [00:00<00:01, 23.4MB/s] 41%|████      | 17.8M/43.3M [00:00<00:01, 24.5MB/s] 48%|████▊     | 21.0M/43.3M [00:01<00:00, 25.3MB/s] 56%|█████▌    | 24.1M/43.3M [00:01<00:00, 25.8MB/s] 63%|██████▎   | 27.3M/43.3M [00:01<00:00, 26.2MB/s] 70%|███████   | 30.4M/43.3M [00:01<00:00, 26.4MB/s] 77%|███████▋  | 33.6M/43.3M [00:01<00:00, 26.6MB/s] 85%|████████▍ | 36.7M/43.3M [00:01<00:00, 26.6MB/s] 92%|█████████▏| 39.8M/43.3M [00:01<00:00, 26.7MB/s] 99%|█████████▉| 43.0M/43.3M [00:01<00:00, 26.8MB/s]100%|██████████| 43.3M/43.3M [00:01<00:00, 23.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=138W2WdszYlg963PzVAmQsXIyVQUbVPY5
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/retailrocket/retailrocket_valid_sample.txt
+  0%|          | 0.00/45.7M [00:00<?, ?B/s]  1%|          | 524k/45.7M [00:00<00:17, 2.65MB/s]  5%|▍         | 2.10M/45.7M [00:00<00:05, 7.55MB/s] 11%|█▏        | 5.24M/45.7M [00:00<00:02, 15.1MB/s] 18%|█▊        | 8.39M/45.7M [00:00<00:01, 19.3MB/s] 25%|██▌       | 11.5M/45.7M [00:00<00:01, 21.9MB/s] 32%|███▏      | 14.7M/45.7M [00:00<00:01, 23.5MB/s] 39%|███▉      | 17.8M/45.7M [00:00<00:01, 24.4MB/s] 46%|████▌     | 21.0M/45.7M [00:01<00:00, 25.1MB/s] 53%|█████▎    | 24.1M/45.7M [00:01<00:00, 25.7MB/s] 60%|█████▉    | 27.3M/45.7M [00:01<00:00, 26.1MB/s] 67%|██████▋   | 30.4M/45.7M [00:01<00:00, 26.3MB/s] 73%|███████▎  | 33.6M/45.7M [00:01<00:00, 26.5MB/s] 80%|████████  | 36.7M/45.7M [00:01<00:00, 26.7MB/s] 87%|████████▋ | 39.8M/45.7M [00:01<00:00, 26.7MB/s] 94%|█████████▍| 43.0M/45.7M [00:01<00:00, 26.8MB/s]100%|██████████| 45.7M/45.7M [00:01<00:00, 23.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=13Ddp-lMoIczgxIDADd8X5Buzj9i9Bt17
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/tmall/tmall.test.inter
+  0%|          | 0.00/12.6M [00:00<?, ?B/s]  4%|▍         | 524k/12.6M [00:00<00:04, 2.41MB/s] 17%|█▋        | 2.10M/12.6M [00:00<00:01, 7.08MB/s] 42%|████▏     | 5.24M/12.6M [00:00<00:00, 14.5MB/s] 67%|██████▋   | 8.39M/12.6M [00:00<00:00, 18.9MB/s] 88%|████████▊ | 11.0M/12.6M [00:00<00:00, 19.5MB/s]100%|██████████| 12.6M/12.6M [00:00<00:00, 16.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1TkBvfxwMm-sxVls201UFWzvGP7mB6XXp
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/tmall/tmall.train.inter
+  0%|          | 0.00/15.5M [00:00<?, ?B/s]  3%|▎         | 524k/15.5M [00:00<00:07, 1.87MB/s] 14%|█▎        | 2.10M/15.5M [00:00<00:02, 6.32MB/s] 31%|███       | 4.72M/15.5M [00:00<00:00, 12.6MB/s] 51%|█████     | 7.86M/15.5M [00:00<00:00, 17.5MB/s] 64%|██████▍   | 9.96M/15.5M [00:00<00:00, 13.7MB/s] 78%|███████▊  | 12.1M/15.5M [00:01<00:00, 10.4MB/s] 88%|████████▊ | 13.6M/15.5M [00:01<00:00, 9.69MB/s]100%|██████████| 15.5M/15.5M [00:01<00:00, 11.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1O6Sb1vjMFKGYJacooDLO-3RALKZ35_L_
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/tmall/tmall.valid.inter
+  0%|          | 0.00/3.38M [00:00<?, ?B/s] 16%|█▌        | 524k/3.38M [00:00<00:01, 2.65MB/s] 62%|██████▏   | 2.10M/3.38M [00:00<00:00, 7.66MB/s]100%|██████████| 3.38M/3.38M [00:00<00:00, 9.35MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=19Fu7__QCt2q0kE03srXr6VQMhRhkqc-Q
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/tmall/tmall_test_sample.txt
+  0%|          | 0.00/58.1M [00:00<?, ?B/s]  1%|          | 524k/58.1M [00:00<00:31, 1.80MB/s]  4%|▎         | 2.10M/58.1M [00:00<00:09, 6.07MB/s]  8%|▊         | 4.72M/58.1M [00:00<00:04, 12.3MB/s] 14%|█▎        | 7.86M/58.1M [00:00<00:02, 17.3MB/s] 18%|█▊        | 10.5M/58.1M [00:00<00:02, 19.9MB/s] 23%|██▎       | 13.6M/58.1M [00:00<00:02, 22.2MB/s] 28%|██▊       | 16.3M/58.1M [00:00<00:01, 23.3MB/s] 33%|███▎      | 19.4M/58.1M [00:01<00:01, 24.5MB/s] 39%|███▉      | 22.5M/58.1M [00:01<00:01, 25.3MB/s] 44%|████▍     | 25.7M/58.1M [00:01<00:01, 25.8MB/s] 50%|████▉     | 28.8M/58.1M [00:01<00:01, 26.2MB/s] 55%|█████▌    | 32.0M/58.1M [00:01<00:00, 26.4MB/s] 60%|██████    | 35.1M/58.1M [00:01<00:00, 26.6MB/s] 66%|██████▌   | 38.3M/58.1M [00:01<00:00, 26.7MB/s] 71%|███████▏  | 41.4M/58.1M [00:01<00:00, 26.8MB/s] 77%|███████▋  | 44.6M/58.1M [00:01<00:00, 26.8MB/s] 82%|████████▏ | 47.7M/58.1M [00:02<00:00, 26.9MB/s] 88%|████████▊ | 50.9M/58.1M [00:02<00:00, 26.9MB/s] 93%|█████████▎| 54.0M/58.1M [00:02<00:00, 26.9MB/s] 98%|█████████▊| 57.1M/58.1M [00:02<00:00, 26.9MB/s]100%|██████████| 58.1M/58.1M [00:02<00:00, 23.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1S0xCM2B63FUJNmWvAYeWPpndv4EHYYFz
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/tmall/tmall_valid_sample.txt
+  0%|          | 0.00/28.8M [00:00<?, ?B/s]  2%|▏         | 524k/28.8M [00:00<00:10, 2.61MB/s]  7%|▋         | 2.10M/28.8M [00:00<00:03, 7.29MB/s] 18%|█▊        | 5.24M/28.8M [00:00<00:01, 14.8MB/s] 29%|██▉       | 8.39M/28.8M [00:00<00:01, 19.1MB/s] 38%|███▊      | 11.0M/28.8M [00:00<00:00, 20.1MB/s] 47%|████▋     | 13.6M/28.8M [00:00<00:00, 18.4MB/s] 55%|█████▍    | 15.7M/28.8M [00:00<00:00, 18.3MB/s] 62%|██████▏   | 17.8M/28.8M [00:01<00:00, 17.7MB/s] 69%|██████▉   | 19.9M/28.8M [00:01<00:00, 17.0MB/s] 80%|███████▉  | 23.1M/28.8M [00:01<00:00, 19.8MB/s] 89%|████████▉ | 25.7M/28.8M [00:01<00:00, 19.2MB/s]100%|█████████▉| 28.8M/28.8M [00:01<00:00, 21.2MB/s]100%|██████████| 28.8M/28.8M [00:01<00:00, 18.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1JGyLFGABDHeqI4fs6BLLv6pu2g9cj8u0
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/yoochoose/yoochoose.test.inter
+  0%|          | 0.00/6.73M [00:00<?, ?B/s]  8%|▊         | 524k/6.73M [00:00<00:03, 1.83MB/s] 31%|███       | 2.10M/6.73M [00:00<00:00, 6.13MB/s] 70%|███████   | 4.72M/6.73M [00:00<00:00, 11.9MB/s]100%|██████████| 6.73M/6.73M [00:00<00:00, 11.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1n8M6HE_nI1wb0kpBVMSGkLRtfX-UzLQ9
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/yoochoose/yoochoose.train.inter
+  0%|          | 0.00/34.6M [00:00<?, ?B/s]  2%|▏         | 524k/34.6M [00:00<00:19, 1.77MB/s]  6%|▌         | 2.10M/34.6M [00:00<00:05, 5.97MB/s] 14%|█▎        | 4.72M/34.6M [00:00<00:02, 12.1MB/s] 23%|██▎       | 7.86M/34.6M [00:00<00:01, 17.1MB/s] 29%|██▉       | 9.96M/34.6M [00:00<00:01, 13.9MB/s] 35%|███▍      | 12.1M/34.6M [00:01<00:01, 11.5MB/s] 39%|███▉      | 13.6M/34.6M [00:01<00:02, 9.35MB/s] 48%|████▊     | 16.8M/34.6M [00:01<00:01, 12.9MB/s] 55%|█████▍    | 18.9M/34.6M [00:01<00:01, 12.5MB/s] 62%|██████▏   | 21.5M/34.6M [00:01<00:01, 11.9MB/s] 71%|███████   | 24.6M/34.6M [00:02<00:00, 14.9MB/s] 77%|███████▋  | 26.7M/34.6M [00:02<00:00, 13.7MB/s] 86%|████████▋ | 29.9M/34.6M [00:02<00:00, 13.5MB/s] 95%|█████████▌| 33.0M/34.6M [00:02<00:00, 16.2MB/s]100%|██████████| 34.6M/34.6M [00:02<00:00, 13.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1affVcQav0LStzsqffVLSYqeLcn0vV8A_
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/yoochoose/yoochoose.valid.inter
+  0%|          | 0.00/5.01M [00:00<?, ?B/s] 10%|█         | 524k/5.01M [00:00<00:01, 2.56MB/s] 42%|████▏     | 2.10M/5.01M [00:00<00:00, 7.48MB/s] 94%|█████████▍| 4.72M/5.01M [00:00<00:00, 14.1MB/s]100%|██████████| 5.01M/5.01M [00:00<00:00, 11.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Y0xoaIuRofGVD-A6Hx-Ob4z9toJaBKtm
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/yoochoose/yoochoose_test_sample.txt
+  0%|          | 0.00/91.1M [00:00<?, ?B/s]  1%|          | 524k/91.1M [00:00<00:52, 1.73MB/s]  2%|▏         | 2.10M/91.1M [00:00<00:15, 5.85MB/s]  5%|▌         | 4.72M/91.1M [00:00<00:07, 12.0MB/s]  9%|▊         | 7.86M/91.1M [00:00<00:04, 17.0MB/s] 12%|█▏        | 10.5M/91.1M [00:00<00:04, 19.4MB/s] 14%|█▍        | 13.1M/91.1M [00:00<00:04, 19.3MB/s] 17%|█▋        | 15.7M/91.1M [00:00<00:03, 21.2MB/s] 21%|██        | 18.9M/91.1M [00:01<00:03, 22.8MB/s] 24%|██▎       | 21.5M/91.1M [00:01<00:02, 23.7MB/s] 27%|██▋       | 24.6M/91.1M [00:01<00:02, 24.6MB/s] 31%|███       | 27.8M/91.1M [00:01<00:02, 25.3MB/s] 34%|███▍      | 30.9M/91.1M [00:01<00:02, 25.8MB/s] 37%|███▋      | 34.1M/91.1M [00:01<00:02, 26.1MB/s] 41%|████      | 37.2M/91.1M [00:01<00:02, 26.4MB/s] 44%|████▍     | 40.4M/91.1M [00:01<00:01, 26.6MB/s] 48%|████▊     | 43.5M/91.1M [00:02<00:01, 26.7MB/s] 51%|█████     | 46.7M/91.1M [00:02<00:01, 26.7MB/s] 55%|█████▍    | 49.8M/91.1M [00:02<00:01, 26.8MB/s] 58%|█████▊    | 53.0M/91.1M [00:02<00:01, 26.9MB/s] 62%|██████▏   | 56.1M/91.1M [00:02<00:01, 26.9MB/s] 65%|██████▌   | 59.2M/91.1M [00:02<00:01, 26.9MB/s] 69%|██████▊   | 62.4M/91.1M [00:02<00:01, 26.9MB/s] 72%|███████▏  | 65.5M/91.1M [00:02<00:00, 27.0MB/s] 75%|███████▌  | 68.7M/91.1M [00:02<00:00, 26.9MB/s] 79%|███████▉  | 71.8M/91.1M [00:03<00:00, 26.9MB/s] 82%|████████▏ | 75.0M/91.1M [00:03<00:00, 26.9MB/s] 86%|████████▌ | 78.1M/91.1M [00:03<00:00, 27.0MB/s] 89%|████████▉ | 81.3M/91.1M [00:03<00:00, 26.9MB/s] 93%|█████████▎| 84.4M/91.1M [00:03<00:00, 27.0MB/s] 96%|█████████▌| 87.6M/91.1M [00:03<00:00, 26.9MB/s]100%|█████████▉| 90.7M/91.1M [00:03<00:00, 26.9MB/s]100%|██████████| 91.1M/91.1M [00:03<00:00, 24.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1mZWAezoAKfeamTzg4IZrvtwOdYn_kgQy
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/yoochoose/yoochoose_valid_sample.txt
+  0%|          | 0.00/78.2M [00:00<?, ?B/s]  1%|          | 524k/78.2M [00:00<00:30, 2.55MB/s]  3%|▎         | 2.10M/78.2M [00:00<00:10, 7.42MB/s]  7%|▋         | 5.24M/78.2M [00:00<00:04, 14.9MB/s] 11%|█         | 8.39M/78.2M [00:00<00:03, 19.2MB/s] 15%|█▍        | 11.5M/78.2M [00:00<00:03, 21.8MB/s] 19%|█▉        | 14.7M/78.2M [00:00<00:02, 23.5MB/s] 23%|██▎       | 17.8M/78.2M [00:00<00:02, 24.6MB/s] 27%|██▋       | 21.0M/78.2M [00:01<00:02, 25.3MB/s] 31%|███       | 24.1M/78.2M [00:01<00:02, 25.8MB/s] 35%|███▍      | 27.3M/78.2M [00:01<00:01, 26.2MB/s] 39%|███▉      | 30.4M/78.2M [00:01<00:01, 26.4MB/s] 43%|████▎     | 33.6M/78.2M [00:01<00:01, 26.6MB/s] 47%|████▋     | 36.7M/78.2M [00:01<00:01, 26.6MB/s] 51%|█████     | 39.8M/78.2M [00:01<00:01, 26.8MB/s] 55%|█████▍    | 43.0M/78.2M [00:01<00:01, 26.8MB/s] 59%|█████▉    | 46.1M/78.2M [00:01<00:01, 26.8MB/s] 63%|██████▎   | 49.3M/78.2M [00:02<00:01, 26.9MB/s] 67%|██████▋   | 52.4M/78.2M [00:02<00:00, 26.9MB/s] 71%|███████   | 55.6M/78.2M [00:02<00:00, 26.9MB/s] 75%|███████▌  | 58.7M/78.2M [00:02<00:00, 26.9MB/s] 79%|███████▉  | 61.9M/78.2M [00:02<00:00, 27.0MB/s] 83%|████████▎ | 65.0M/78.2M [00:02<00:00, 26.9MB/s] 87%|████████▋ | 68.2M/78.2M [00:02<00:00, 26.9MB/s] 91%|█████████ | 71.3M/78.2M [00:03<00:00, 20.3MB/s] 99%|█████████▉| 77.6M/78.2M [00:03<00:00, 29.1MB/s]100%|██████████| 78.2M/78.2M [00:03<00:00, 24.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1JL6XqnkFybRrYcfn8JYlgoMld87y59yq
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/Beauty.txt
+  0%|          | 0.00/1.09M [00:00<?, ?B/s] 48%|████▊     | 524k/1.09M [00:00<00:00, 2.72MB/s]100%|██████████| 1.09M/1.09M [00:00<00:00, 4.30MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1RVIRbFHRzy2oPHTEAhjnX0ZkdSSfleOy
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/Beauty_sample.txt
+  0%|          | 0.00/11.4M [00:00<?, ?B/s]  5%|▍         | 524k/11.4M [00:00<00:05, 1.82MB/s] 18%|█▊        | 2.10M/11.4M [00:00<00:01, 6.10MB/s] 41%|████▏     | 4.72M/11.4M [00:00<00:00, 12.3MB/s] 69%|██████▉   | 7.86M/11.4M [00:00<00:00, 17.3MB/s] 88%|████████▊ | 9.96M/11.4M [00:00<00:00, 13.1MB/s]100%|██████████| 11.4M/11.4M [00:00<00:00, 12.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1gjdyU1EdUORd5E_P9OTFFPq7C61IgQVL
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/Sports_and_Outdoors.txt
+  0%|          | 0.00/1.71M [00:00<?, ?B/s] 31%|███       | 524k/1.71M [00:00<00:00, 1.86MB/s]100%|██████████| 1.71M/1.71M [00:00<00:00, 4.56MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=15gvEO1XlzRFL0MxIevpuSmrIFwEospGL
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/Sports_and_Outdoors_sample.txt
+  0%|          | 0.00/19.2M [00:00<?, ?B/s]  3%|▎         | 524k/19.2M [00:00<00:07, 2.64MB/s] 11%|█         | 2.10M/19.2M [00:00<00:02, 7.59MB/s] 27%|██▋       | 5.24M/19.2M [00:00<00:00, 15.1MB/s] 44%|████▎     | 8.39M/19.2M [00:00<00:00, 19.3MB/s] 57%|█████▋    | 11.0M/19.2M [00:00<00:00, 20.9MB/s] 71%|███████   | 13.6M/19.2M [00:00<00:00, 17.8MB/s] 85%|████████▍ | 16.3M/19.2M [00:00<00:00, 19.2MB/s] 95%|█████████▌| 18.4M/19.2M [00:01<00:00, 16.6MB/s]100%|██████████| 19.2M/19.2M [00:01<00:00, 16.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1HGPoAifq_Xq0ntvdDs1QDSsu5iaH37ue
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/Toys_and_Games.txt
+  0%|          | 0.00/922k [00:00<?, ?B/s] 57%|█████▋    | 524k/922k [00:00<00:00, 1.83MB/s]100%|██████████| 922k/922k [00:00<00:00, 2.75MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1KV88HZUC0fA-o9V9H_kKgNf2-isWkxiM
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/Toys_and_Games_sample.txt
+  0%|          | 0.00/9.85M [00:00<?, ?B/s]  5%|▌         | 524k/9.85M [00:00<00:03, 2.64MB/s] 21%|██▏       | 2.10M/9.85M [00:00<00:01, 7.40MB/s] 53%|█████▎    | 5.24M/9.85M [00:00<00:00, 15.0MB/s] 85%|████████▌ | 8.39M/9.85M [00:00<00:00, 19.2MB/s]100%|██████████| 9.85M/9.85M [00:01<00:00, 8.28MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1VKjj5lYDOVyosmS3spFH4xZ1b8VqXhYg
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/Yelp.txt
+  0%|          | 0.00/1.81M [00:00<?, ?B/s] 29%|██▉       | 524k/1.81M [00:00<00:00, 2.57MB/s]100%|██████████| 1.81M/1.81M [00:00<00:00, 6.65MB/s]100%|██████████| 1.81M/1.81M [00:00<00:00, 5.83MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1RknusT8TXYLZVdTEV5SyKXBPdPusSOPM
+To: /home/aura1/survey/rq10/downloads/fmlp_drive/data/Yelp_sample.txt
+  0%|          | 0.00/16.6M [00:00<?, ?B/s]  3%|▎         | 524k/16.6M [00:00<00:06, 2.62MB/s] 13%|█▎        | 2.10M/16.6M [00:00<00:01, 7.49MB/s] 32%|███▏      | 5.24M/16.6M [00:00<00:00, 15.0MB/s] 51%|█████     | 8.39M/16.6M [00:00<00:00, 19.2MB/s] 66%|██████▋   | 11.0M/16.6M [00:00<00:00, 20.8MB/s] 82%|████████▏ | 13.6M/16.6M [00:00<00:00, 18.4MB/s] 95%|█████████▍| 15.7M/16.6M [00:00<00:00, 17.3MB/s]100%|██████████| 16.6M/16.6M [00:01<00:00, 16.5MB/s]
+Download completed

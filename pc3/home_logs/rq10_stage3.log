@@ -1,0 +1,12 @@
+2026-11-13 13:29:19 [rq10-stage3] start
+2026-11-13 13:29:19 [rq10-stage3] === 1. FMLP home data from the authors' Google Drive folder ===
+2026-11-13 13:31:32 [rq10-stage3]   Yelp.txt from the Drive folder
+2026-11-13 13:31:32 [rq10-stage3]   Yelp_sample.txt from the Drive folder
+2026-11-13 13:31:32 [rq10-stage3]   authors' Sports_and_Outdoors arrived: replacing STEAM's copy and retiring stage 2's Sports runs
+2026-11-13 13:31:32 [rq10-stage3] === 2. FMLP Sports_and_Outdoors and Yelp (home data, stage-1 jobs) ===
+2026-11-13 13:31:32 [rq10-stage3] fmlp_sports_and_outdoors: start
+2026-11-13 13:40:30 [rq10-stage3] fmlp_sports_and_outdoors: exit 0  8 min  peak 3045 MiB  (log /home/aura1/survey/rq10/logs/run_fmlp_sports_and_outdoors.log)
+2026-11-13 13:40:30 [rq10-stage3] fmlp_yelp: start
+2026-11-13 13:51:25 [rq10-stage3] fmlp_yelp: exit 0  10 min  peak 2984 MiB  (log /home/aura1/survey/rq10/logs/run_fmlp_yelp.log)
+2026-11-13 13:51:25 [rq10-stage3] === 3. STEAM Sports and Yelp at batch 128 (home data) ===
+2026-11-13 13:51:25 [rq10-stage3] steam_sports_b128: start
