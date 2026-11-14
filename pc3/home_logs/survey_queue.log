@@ -506,3 +506,18 @@ kept the logs of 0 failed jobs in logs/rq4_final/failed
 0 jobs to run, 169 already done
 2026-11-13 13:29:19 RQ4 done [yelp] seeds [1]
 2026-11-13 13:29:19 [pc3-queue] RQ10 stage 3 (log ~/rq10_stage3.log)
+2026-11-14 21:37:42 RQ4 start: datasets [yelp], tune 1, final seeds [2], picks from this PC
+2026-11-14 21:37:42 1 clean base and MF-BPR on it
+2026-11-14 21:37:42 2 noise files
+2026-11-14 21:37:42 4b reference models for the clean bases (teacher M1c) and the Yelp files (R2, M1, hard positives)
+2026-11-14 21:37:46 5 tuning [yelp]
+249 of 522 jobs kept (datasets yelp)
+0 jobs to run, 249 already done
+kept the logs of 0 failed jobs in logs/rq4_tune/failed
+2026-11-14 21:37:46   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
+0 jobs to run, 249 already done
+2026-11-14 21:37:46 6 picks
+83 cells picked -> /home/aura1/survey/rq1/configs/rq4/best.json; incomplete: ml1m|L1|drop (0/3), ml1m|L1|reweight (0/3), ml1m|L1|relabel (0/3), ml1m|L1|resample (0/3), ml1m|M1|drop (0/3), ml1m|M1|reweight (0/3), ml1m|M1|relabel (0/3), ml1m|M1|resample (0/3), ml1m|M2|drop (0/3), ml1m|M2|reweight (0/3), ml1m|M2|relabel (0/3), ml1m|M2|resample (0/3), ml1m|M1c|drop (0/3), ml1m|M1c|reweight (0/3), ml1m|M1c|relabel (0/3), ml1m|M1c|resample (0/3), ml1m|L2|drop (0/3), ml1m|L2|reweight (0/3), ml1m|L2|relabel (0/3), ml1m|L2|resample (0/3), ml1m|L5|drop (0/3), ml1m|L5|reweight (0/3), ml1m|L5|relabel (0/3), ml1m|L5|resample (0/3), ml1m|L3|drop (0/3), ml1m|L3|reweight (0/3), ml1m|L3|relabel (0/3), ml1m|L3|resample (0/3), ml1m|L4|drop (0/3), ml1m|L4|reweight (0/3), ml1m|L4|relabel (0/3), ml1m|L4|resample (0/3), ml1m|P1|drop (0/3), ml1m|P1|reweight (0/3), ml1m|P1|relabel (0/3), ml1m|P1|resample (0/3), ml1m|P2|drop (0/3), ml1m|P2|reweight (0/3), ml1m|P2|relabel (0/3), ml1m|P2|resample (0/3), ml1m|R1|drop (0/3), ml1m|R1|reweight (0/3), ml1m|R1|relabel (0/3), ml1m|R1|resample (0/3), ml1m|R2|drop (0/3), ml1m|R2|reweight (0/3), ml1m|R2|relabel (0/3), ml1m|R2|resample (0/3), ml1m|R3|drop (0/3), ml1m|R3|reweight (0/3), ml1m|R3|relabel (0/3), ml1m|R3|resample (0/3), ml1m|R4|drop (0/3), ml1m|R4|reweight (0/3), ml1m|R4|relabel (0/3), ml1m|R4|resample (0/3), ml1m|R5|drop (0/3), ml1m|R5|reweight (0/3), ml1m|R5|relabel (0/3), ml1m|R5|resample (0/3), ml1m|L1|graph_drop (0/3), ml1m|L1|graph_reweight (0/3), ml1m|L1|user_reweight (0/3), ml1m|L1|soft_relabel (0/3), ml1m|M1|graph_drop (0/3), ml1m|M1|graph_reweight (0/3), ml1m|M1|user_reweight (0/3), ml1m|M1|soft_relabel (0/3), ml1m|L3|graph_drop (0/3), ml1m|L3|graph_reweight (0/3), ml1m|L3|user_reweight (0/3), ml1m|L3|soft_relabel (0/3), ml1m|L4|graph_drop (0/3), ml1m|L4|graph_reweight (0/3), ml1m|L4|user_reweight (0/3), ml1m|L4|soft_relabel (0/3), ml1m|R1|graph_drop (0/3), ml1m|R1|graph_reweight (0/3), ml1m|R1|user_reweight (0/3), ml1m|R1|soft_relabel (0/3), ml1m|R2|graph_drop (0/3), ml1m|R2|graph_reweight (0/3), ml1m|R2|user_reweight (0/3), ml1m|R2|soft_relabel (0/3), ml1m|L1|reshape (0/3), ml1m|M1|reshape (0/3), ml1m|L3|reshape (0/3), ml1m|L4|reshape (0/3), ml1m|R1|reshape (0/3), ml1m|R2|reshape (0/3), ml1m|none|reshape (0/3)
+83 yelp picks -> configs/rq4/picks_yelp.json
+2026-11-14 21:37:46 7 finals [yelp] seeds [2]
+169 of 350 jobs kept (datasets yelp, seeds 2)

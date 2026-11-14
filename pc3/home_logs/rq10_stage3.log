@@ -60,3 +60,39 @@
 2026-11-14 17:39:55 [rq10-stage2] s2_hsd_yelp_i20_s1: start
 2026-11-14 17:56:20 [rq10-stage2] s2_hsd_yelp_i20_s1: exit 0  16 min  peak 7877 MiB
 2026-11-14 17:56:20 [rq10-stage2] s2_steam_yelp_i20_s1: start
+2026-11-14 21:35:11 [rq10-stage2] s2_steam_yelp_i20_s1: exit 0  218 min  peak 19642 MiB
+27 runs -> /home/aura1/survey/rq10/results/stage2_summary.tsv
+  FMLP-Rec      Beauty               N0   s1  Recall@10 0.0562  NDCG@10 0.0294
+  FMLP-Rec      Beauty               I10  s1  Recall@10 0.0527  NDCG@10 0.0274
+  FMLP-Rec      Beauty               I20  s1  Recall@10 0.0511  NDCG@10 0.0269
+  HSD (SASRec)  Beauty               N0   s1  Recall@10 0.0435  NDCG@10 0.0201
+  HSD (SASRec)  Beauty               I10  s1  Recall@10 0.0418  NDCG@10 0.0195
+  HSD (SASRec)  Beauty               I20  s1  Recall@10 0.0424  NDCG@10 0.0197
+  STEAM         Beauty               N0   s1  Recall@10 0.0629  NDCG@10 0.0322
+  STEAM         Beauty               I10  s1  Recall@10 0.0601  NDCG@10 0.0305
+  STEAM         Beauty               I20  s1  Recall@10 0.0561  NDCG@10 0.0278
+  FMLP-Rec      Sports_and_Outdoors  N0   s1  Recall@10 0.0306  NDCG@10 0.0164
+  FMLP-Rec      Sports_and_Outdoors  I10  s1  Recall@10 0.0291  NDCG@10 0.0155
+  FMLP-Rec      Sports_and_Outdoors  I20  s1  Recall@10 0.0251  NDCG@10 0.0129
+  HSD (SASRec)  Sports_and_Outdoors  N0   s1  Recall@10 0.0214  NDCG@10 0.0097
+  HSD (SASRec)  Sports_and_Outdoors  I10  s1  Recall@10 0.0229  NDCG@10 0.0103
+  HSD (SASRec)  Sports_and_Outdoors  I20  s1  Recall@10 0.0183  NDCG@10 0.0082
+  STEAM         Sports_and_Outdoors  N0   s1  Recall@10 0.0390  NDCG@10 0.0200
+  STEAM         Sports_and_Outdoors  I10  s1  Recall@10 0.0385  NDCG@10 0.0196
+  STEAM         Sports_and_Outdoors  I20  s1  Recall@10 0.0333  NDCG@10 0.0170
+  FMLP-Rec      Yelp                 N0   s1  Recall@10 0.0256  NDCG@10 0.0130
+  FMLP-Rec      Yelp                 I10  s1  Recall@10 0.0265  NDCG@10 0.0131
+  FMLP-Rec      Yelp                 I20  s1  Recall@10 0.0244  NDCG@10 0.0126
+  HSD (SASRec)  Yelp                 N0   s1  Recall@10 0.0437  NDCG@10 0.0287
+  HSD (SASRec)  Yelp                 I10  s1  Recall@10 0.0435  NDCG@10 0.0285
+  HSD (SASRec)  Yelp                 I20  s1  Recall@10 0.0427  NDCG@10 0.0287
+  STEAM         Yelp                 N0   s1  Recall@10 0.0627  NDCG@10 0.0347
+  STEAM         Yelp                 I10  s1  Recall@10 0.0564  NDCG@10 0.0305
+  STEAM         Yelp                 I20  s1  Recall@10 0.0586  NDCG@10 0.0322
+2026-11-14 21:35:11 [rq10-stage2] stage 2 complete: 27 runs with results (table: /home/aura1/survey/rq10/results/stage2_summary.tsv)
+2026-11-14 21:35:11 [rq10-stage3] === 5. GDMSR on CUDA 11.8 (README stack fails on the 4090: CUSPARSE ERROR 10) ===
+2026-11-14 21:37:42 [rq10-stage3] env r10-gdmsr2 failed its GPU smoke test (see /home/aura1/survey/rq10/logs/gdmsr2_env.log); GDMSR skipped
+2026-11-14 21:37:42 [rq10-stage3] gdmsr2_yelp: env r10-gdmsr2 not ready, skip
+2026-11-14 21:37:42 [rq10-stage3] gdmsr2_ciao: env r10-gdmsr2 not ready, skip
+2026-11-14 21:37:42 [rq10-stage3] gdmsr2_douban: env r10-gdmsr2 not ready, skip
+2026-11-14 21:37:42 [rq10-stage3] stage 3 complete: 4 of 7 jobs have results; without: gdmsr2_yelp gdmsr2_ciao gdmsr2_douban (stage 2 table: results/stage2_summary.tsv)
