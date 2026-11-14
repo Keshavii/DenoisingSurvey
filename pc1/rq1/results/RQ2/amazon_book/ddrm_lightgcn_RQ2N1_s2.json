@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.05005836471808388,
+  "recall@20": 0.07779085239386942,
+  "recall@50": 0.13316987785351528,
+  "ndcg@10": 0.03556035369754029,
+  "ndcg@20": 0.04391181240216559,
+  "ndcg@50": 0.05830096355273297,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1510,
+      "ndcg@20": 0.032144088274945956,
+      "recall@20": 0.059602649006622516
+    },
+    "warm(5-20)": {
+      "n_users": 40330,
+      "ndcg@20": 0.03636889090413709,
+      "recall@20": 0.07803124225142573
+    },
+    "established(>20)": {
+      "n_users": 38509,
+      "ndcg@20": 0.05227285235250424,
+      "recall@20": 0.07825228385559256
+    },
+    "user_q1": {
+      "n_users": 15081,
+      "ndcg@20": 0.027598736062483493,
+      "recall@20": 0.06278319298012952
+    },
+    "user_q2": {
+      "n_users": 13944,
+      "ndcg@20": 0.035327284146169174,
+      "recall@20": 0.07665184547714668
+    },
+    "user_q3": {
+      "n_users": 18935,
+      "ndcg@20": 0.04714293345271234,
+      "recall@20": 0.09364052460170759
+    },
+    "user_q4": {
+      "n_users": 16303,
+      "ndcg@20": 0.05018598938917561,
+      "recall@20": 0.08597964733338591
+    },
+    "user_q5": {
+      "n_users": 16086,
+      "ndcg@20": 0.05648491831843021,
+      "recall@20": 0.06589214276506426
+    },
+    "items_head": {
+      "n_truth": 189723,
+      "recall@20_micro": 0.09684645509505964
+    },
+    "items_mid": {
+      "n_truth": 55038,
+      "recall@20_micro": 0.013318071150841236
+    },
+    "items_tail": {
+      "n_truth": 39151,
+      "recall@20_micro": 0.005414931930218896
+    },
+    "coverage@20": 0.45784133869839755,
+    "gini@20": 0.9232673893553953
+  },
+  "part": "RQ2",
+  "dataset": "amazon_book",
+  "method": "DDRM",
+  "backbone": "LightGCN",
+  "cond": "RQ2N1",
+  "seed": "2",
+  "train_file": "train_RQ2N1_s2.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/rq2/amazon_book/ddrm_lightgcn_RQ2N1_s2/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-14 16:48:54"
+}
