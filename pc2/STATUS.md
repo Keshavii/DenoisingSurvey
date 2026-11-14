@@ -1,30 +1,30 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-15 04:45:33 IST  up since 2026-11-05 14:24:20
+pc2 (anurag@home)  2026-11-15 05:16:33 IST  up since 2026-11-05 14:24:20
 code 31cd54b4 13 Nov 13:24  linger yes  disk free 944G  ram used 10/62 GB swap 0 GB 
-gpu 100 %, 5690 MiB, 24564 MiB, 64
+gpu 100 %, 6174 MiB, 24564 MiB, 64
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-15 04:14:37 push ok (44105b0e; pc2 pc3)
+  last snapshot: 2026-11-15 04:45:37 push ok (afbf9b03; pc2 pc3)
 ---- gpu jobs ----
-  23:11       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal L1 --treat resample --temp 0.2 --data data/ml1m --train
-  23:11       bash -c python -m rq1kit.rq4 --signal L1 --treat resample --temp 0.2 --data data/ml1m --train_file train_N1_20_s2.tsv -
-  23:11       python -m rq1kit.rq4 --signal L1 --treat resample --temp 0.2 --data data/ml1m --train_file train_N1_20_s2.tsv --lr 0.00
-  13:17       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M1 --treat drop --rate 0.05 --data data/ml1m --train_fi
-  13:17       bash -c python -m rq1kit.rq4 --signal M1 --treat drop --rate 0.05 --data data/ml1m --train_file train_N1_20_s2.tsv --lr
-  13:17       python -m rq1kit.rq4 --signal M1 --treat drop --rate 0.05 --data data/ml1m --train_file train_N1_20_s2.tsv --lr 0.001 -
-  11:53       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M1 --treat reweight --beta 0.25 --data data/ml1m --trai
-  11:53       bash -c python -m rq1kit.rq4 --signal M1 --treat reweight --beta 0.25 --data data/ml1m --train_file train_N1_20_s2.tsv 
-  11:53       python -m rq1kit.rq4 --signal M1 --treat reweight --beta 0.25 --data data/ml1m --train_file train_N1_20_s2.tsv --lr 0.0
-  06:41       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M1 --treat relabel --rate 0.1 --data data/ml1m --train_
-  06:41       bash -c python -m rq1kit.rq4 --signal M1 --treat relabel --rate 0.1 --data data/ml1m --train_file train_N1_20_s2.tsv --
-  06:41       python -m rq1kit.rq4 --signal M1 --treat relabel --rate 0.1 --data data/ml1m --train_file train_N1_20_s2.tsv --lr 0.001
+  19:48       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M2 --treat reweight --beta 0.25 --data data/ml1m --trai
+  19:48       bash -c python -m rq1kit.rq4 --signal M2 --treat reweight --beta 0.25 --data data/ml1m --train_file train_N1_20_s2.tsv 
+  19:48       python -m rq1kit.rq4 --signal M2 --treat reweight --beta 0.25 --data data/ml1m --train_file train_N1_20_s2.tsv --lr 0.0
+  17:56       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M2 --treat relabel --rate 0.05 --data data/ml1m --train
+  17:56       bash -c python -m rq1kit.rq4 --signal M2 --treat relabel --rate 0.05 --data data/ml1m --train_file train_N1_20_s2.tsv -
+  17:56       python -m rq1kit.rq4 --signal M2 --treat relabel --rate 0.05 --data data/ml1m --train_file train_N1_20_s2.tsv --lr 0.00
+  11:28       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M2 --treat resample --temp 0.2 --data data/ml1m --train
+  11:28       bash -c python -m rq1kit.rq4 --signal M2 --treat resample --temp 0.2 --data data/ml1m --train_file train_N1_20_s2.tsv -
+  11:28       python -m rq1kit.rq4 --signal M2 --treat resample --temp 0.2 --data data/ml1m --train_file train_N1_20_s2.tsv --lr 0.00
+  07:02       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M1c --treat drop --rate 0.1 --data data/ml1m --train_fi
+  07:02       bash -c python -m rq1kit.rq4 --signal M1c --treat drop --rate 0.1 --data data/ml1m --train_file train_N1_20_s2.tsv --lr
+  07:02       python -m rq1kit.rq4 --signal M1c --treat drop --rate 0.1 --data data/ml1m --train_file train_N1_20_s2.tsv --lr 0.001 -
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
   picks: picks_ml1m.json (91 cells)
-  final ml1m: 361/831 done, 12 failed so far, median 21 min/job, ~42 h left at 4 in parallel
+  final ml1m: 367/831 done, 12 failed so far, median 21 min/job, ~41 h left at 4 in parallel
     failed rq4_ml1m_R4_reweight_N0_s2 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
     failed rq4_ml1m_R4_relabel_N0_s2 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
     failed rq4_ml1m_R4_resample_N0_s2 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
@@ -45,11 +45,11 @@ gpu 100 %, 5690 MiB, 24564 MiB, 64
   831 of 837 jobs kept (datasets ml1m)
   831 jobs to run, 0 already done
 ---- recent service log lines ----
-2026-11-15T03:12:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-15T03:12:37+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-15T03:43:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-15T03:43:37+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-15T04:14:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-15T04:14:37+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-15T04:45:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-15T04:45:37+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-15T05:16:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
