@@ -1,21 +1,21 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-14 02:32:16 UTC  up since 2026-11-03 22:15:42
+pc3 (aura1@aura-node1)  2026-11-14 03:02:16 UTC  up since 2026-11-03 22:15:42
 code 31cd54b4 13 Nov 13:24  linger yes  disk free 55G  ram used 10/62 GB swap 1 GB 
-gpu 99 %, 18961 MiB, 24564 MiB, 62
+gpu 97 %, 18961 MiB, 24564 MiB, 61
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-14 02:02:16 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-14 02:32:16 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  48:30       timeout 12h bash -c python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10
-  48:30       bash -c python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Yel
-  48:30       python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/
-  00:02       python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/
-  00:02       python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/
-  00:02       python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/
-  00:02       python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/
+  01:18:30    timeout 12h bash -c python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10
+  01:18:30    bash -c python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Yel
+  01:18:30    python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/
+  00:14       python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/
+  00:14       python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/
+  00:14       python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/
+  00:13       python main.py -tf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/train.dat -vf /home/aura1/survey/rq10/data_s2/Yelp_N0_s1/
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
@@ -140,11 +140,11 @@ gpu 99 %, 18961 MiB, 24564 MiB, 62
   2026-11-13 13:29:19 RQ4 done [yelp] seeds [1]
   2026-11-13 13:29:19 [pc3-queue] RQ10 stage 3 (log ~/rq10_stage3.log)
 ---- recent service log lines ----
-2026-11-14T01:02:15+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-14T01:02:15+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-14T01:32:15+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-14T01:32:16+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-14T02:02:15+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-14T02:02:16+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-14T02:32:16+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-14T02:32:16+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-14T03:02:16+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
