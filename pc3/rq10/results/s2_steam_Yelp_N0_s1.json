@@ -1,0 +1,27 @@
+{
+ "method": "STEAM",
+ "checkpoint": "./save_s2_Yelp_N0_s1/",
+ "best_valid_epoch": 167,
+ "best_valid_sum": 3.7687207013732986,
+ "users": 30431,
+ "n_items": 20033,
+ "k": 10,
+ "original": {
+  "recall@10": 0.06260063750780454,
+  "ndcg@10": 0.03465875722929414,
+  "sampled_recall@10": 0.80641451151786,
+  "sampled_mrr@10": 0.45151565889631307
+ },
+ "corrected": {
+  "recall@10": 0.06266635996188098,
+  "ndcg@10": 0.03465382676308532,
+  "sampled_recall@10": 0.8060201767934014,
+  "sampled_mrr@10": 0.4512243284704159
+ },
+ "reported": {
+  "recall@10": 0.06266635996188098,
+  "ndcg@10": 0.03465382676308532,
+  "sampled_recall@10": 0.8060201767934014,
+  "sampled_mrr@10": 0.4512243284704159
+ }
+}
