@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.04305075200076642,
+  "recall@20": 0.07204923785301309,
+  "recall@50": 0.1317720732998032,
+  "ndcg@10": 0.028802175087638875,
+  "ndcg@20": 0.03804699891291649,
+  "ndcg@50": 0.05375374581338929,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1510,
+      "ndcg@20": 0.01451852989254644,
+      "recall@20": 0.038410596026490065
+    },
+    "warm(5-20)": {
+      "n_users": 40330,
+      "ndcg@20": 0.03111481322301541,
+      "recall@20": 0.0699851227374163
+    },
+    "established(>20)": {
+      "n_users": 38509,
+      "ndcg@20": 0.046229580571605866,
+      "recall@20": 0.07552998551641822
+    },
+    "user_q1": {
+      "n_users": 15081,
+      "ndcg@20": 0.020072861866724575,
+      "recall@20": 0.04975355303582874
+    },
+    "user_q2": {
+      "n_users": 13944,
+      "ndcg@20": 0.030950419943843274,
+      "recall@20": 0.07195448460508701
+    },
+    "user_q3": {
+      "n_users": 18935,
+      "ndcg@20": 0.042584955187317926,
+      "recall@20": 0.08829328404189772
+    },
+    "user_q4": {
+      "n_users": 16303,
+      "ndcg@20": 0.04619034005437851,
+      "recall@20": 0.08297362740716725
+    },
+    "user_q5": {
+      "n_users": 16086,
+      "ndcg@20": 0.04745490425006249,
+      "recall@20": 0.06284130079775592
+    },
+    "items_head": {
+      "n_truth": 188737,
+      "recall@20_micro": 0.08677153923184114
+    },
+    "items_mid": {
+      "n_truth": 55407,
+      "recall@20_micro": 0.012435251863482953
+    },
+    "items_tail": {
+      "n_truth": 39768,
+      "recall@20_micro": 0.009027358680346006
+    },
+    "coverage@20": 0.1516171209065202,
+    "gini@20": 0.9826497496120467
+  },
+  "part": "RQ2",
+  "dataset": "amazon_book",
+  "method": "RGCF",
+  "backbone": "LightGCN",
+  "cond": "RQ2N2",
+  "seed": "2",
+  "train_file": "train_RQ2N2_s2.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/rq2/amazon_book/rgcf_lightgcn_RQ2N2_s2/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-15 12:41:37"
+}
