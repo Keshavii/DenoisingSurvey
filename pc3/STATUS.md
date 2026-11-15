@@ -1,20 +1,20 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-15 18:35:23 UTC  up since 2026-11-03 22:15:42
+pc3 (aura1@aura-node1)  2026-11-15 19:05:23 UTC  up since 2026-11-03 22:15:42
 code 31cd54b4 13 Nov 13:24  linger yes  disk free 26G  ram used 9/62 GB swap 1 GB 
-gpu 96 %, 6392 MiB, 24564 MiB, 66
+gpu 100 %, 6280 MiB, 24564 MiB, 66
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-15 18:05:23 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-15 18:35:23 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  08:01       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R3 --treat resample --temp 0.2 --data data/yelp --train
-  08:01       bash -c python -m rq1kit.rq4 --signal R3 --treat resample --temp 0.2 --data data/yelp --train_file train.tsv --lr 0.005
-  08:01       python -m rq1kit.rq4 --signal R3 --treat resample --temp 0.2 --data data/yelp --train_file train.tsv --lr 0.005 --reg 0
-  04:08       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal L1 --treat graph_drop --rate 0.05 --data data/yelp --tr
-  04:08       bash -c python -m rq1kit.rq4 --signal L1 --treat graph_drop --rate 0.05 --data data/yelp --train_file train.tsv --lr 0.
-  04:08       python -m rq1kit.rq4 --signal L1 --treat graph_drop --rate 0.05 --data data/yelp --train_file train.tsv --lr 0.005 --re
+  38:02       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R3 --treat resample --temp 0.2 --data data/yelp --train
+  38:02       bash -c python -m rq1kit.rq4 --signal R3 --treat resample --temp 0.2 --data data/yelp --train_file train.tsv --lr 0.005
+  38:02       python -m rq1kit.rq4 --signal R3 --treat resample --temp 0.2 --data data/yelp --train_file train.tsv --lr 0.005 --reg 0
+  34:08       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal L1 --treat graph_drop --rate 0.05 --data data/yelp --tr
+  34:08       bash -c python -m rq1kit.rq4 --signal L1 --treat graph_drop --rate 0.05 --data data/yelp --train_file train.tsv --lr 0.
+  34:08       python -m rq1kit.rq4 --signal L1 --treat graph_drop --rate 0.05 --data data/yelp --train_file train.tsv --lr 0.005 --re
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
@@ -164,11 +164,11 @@ gpu 96 %, 6392 MiB, 24564 MiB, 66
   2026-11-14 21:37:46 7 finals [yelp] seeds [2]
   169 of 350 jobs kept (datasets yelp, seeds 2)
 ---- recent service log lines ----
-2026-11-15T17:05:22+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-15T17:05:22+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-15T17:35:22+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-15T17:35:23+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-15T18:05:22+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-15T18:05:23+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-15T18:35:23+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-15T18:35:23+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-15T19:05:23+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
