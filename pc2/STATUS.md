@@ -1,30 +1,30 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-16 02:27:36 IST  up since 2026-11-05 14:24:20
+pc2 (anurag@home)  2026-11-16 02:58:33 IST  up since 2026-11-05 14:24:20
 code 31cd54b4 13 Nov 13:24  linger yes  disk free 941G  ram used 10/62 GB swap 0 GB 
-gpu 100 %, 8295 MiB, 24564 MiB, 64
+gpu 100 %, 7073 MiB, 24564 MiB, 65
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-16 01:56:40 push ok (b66956fa; pc2 pc3)
+  last snapshot: 2026-11-16 02:27:40 push ok (83e19775; pc2 pc3)
 ---- gpu jobs ----
-  20:52       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R1 --treat user_reweight --beta 0.25 --data data/ml1m -
-  20:52       bash -c python -m rq1kit.rq4 --signal R1 --treat user_reweight --beta 0.25 --data data/ml1m --train_file train.tsv --lr
-  20:52       python -m rq1kit.rq4 --signal R1 --treat user_reweight --beta 0.25 --data data/ml1m --train_file train.tsv --lr 0.001 -
-  20:05       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R2 --treat graph_drop --rate 0.2 --data data/ml1m --tra
-  20:05       bash -c python -m rq1kit.rq4 --signal R2 --treat graph_drop --rate 0.2 --data data/ml1m --train_file train.tsv --lr 0.0
-  20:05       python -m rq1kit.rq4 --signal R2 --treat graph_drop --rate 0.2 --data data/ml1m --train_file train.tsv --lr 0.001 --reg
-  13:38       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R2 --treat graph_reweight --beta 0.25 --data data/ml1m 
-  13:38       bash -c python -m rq1kit.rq4 --signal R2 --treat graph_reweight --beta 0.25 --data data/ml1m --train_file train.tsv --l
-  13:38       python -m rq1kit.rq4 --signal R2 --treat graph_reweight --beta 0.25 --data data/ml1m --train_file train.tsv --lr 0.001 
-  04:04       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R2 --treat user_reweight --beta 0.25 --data data/ml1m -
-  04:04       bash -c python -m rq1kit.rq4 --signal R2 --treat user_reweight --beta 0.25 --data data/ml1m --train_file train.tsv --lr
-  04:04       python -m rq1kit.rq4 --signal R2 --treat user_reweight --beta 0.25 --data data/ml1m --train_file train.tsv --lr 0.001 -
+  27:11       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal L1 --treat reshape --ssl_reg 0.05 --data data/ml1m --tr
+  27:11       bash -c python -m rq1kit.rq4 --signal L1 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.
+  27:11       python -m rq1kit.rq4 --signal L1 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.001 --re
+  22:01       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M1 --treat reshape --ssl_reg 0.05 --data data/ml1m --tr
+  22:01       bash -c python -m rq1kit.rq4 --signal M1 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.
+  22:01       python -m rq1kit.rq4 --signal M1 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.001 --re
+  14:18       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal L3 --treat reshape --ssl_reg 0.05 --data data/ml1m --tr
+  14:18       bash -c python -m rq1kit.rq4 --signal L3 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.
+  14:18       python -m rq1kit.rq4 --signal L3 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.001 --re
+  10:09       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal L4 --treat reshape --ssl_reg 0.05 --data data/ml1m --tr
+  10:09       bash -c python -m rq1kit.rq4 --signal L4 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.
+  10:09       python -m rq1kit.rq4 --signal L4 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.001 --re
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
   picks: picks_ml1m.json (91 cells)
-  final ml1m: 613/831 done, 21 failed so far, median 21 min/job, ~19 h left at 4 in parallel
+  final ml1m: 618/831 done, 21 failed so far, median 21 min/job, ~18 h left at 4 in parallel
     failed rq4_ml1m_R4_reweight_N0_s3 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
     failed rq4_ml1m_R4_relabel_N0_s3 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
     failed rq4_ml1m_R4_resample_N0_s3 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
@@ -45,12 +45,12 @@ gpu 100 %, 8295 MiB, 24564 MiB, 64
   831 of 837 jobs kept (datasets ml1m)
   831 jobs to run, 0 already done
 ---- recent service log lines ----
-2026-11-16T00:54:37+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-16T01:25:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-16T01:25:43+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T01:25:43+05:30 home systemd[2034]: survey-snapshot.service: Consumed 1.008s CPU time.
 2026-11-16T01:56:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-16T01:56:40+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T01:56:40+05:30 home systemd[2034]: survey-snapshot.service: Consumed 1.006s CPU time.
 2026-11-16T02:27:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-16T02:27:40+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-16T02:27:40+05:30 home systemd[2034]: survey-snapshot.service: Consumed 1.000s CPU time.
+2026-11-16T02:58:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
