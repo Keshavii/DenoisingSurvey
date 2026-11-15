@@ -1,30 +1,30 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-16 02:58:33 IST  up since 2026-11-05 14:24:20
+pc2 (anurag@home)  2026-11-16 03:29:33 IST  up since 2026-11-05 14:24:20
 code 31cd54b4 13 Nov 13:24  linger yes  disk free 941G  ram used 10/62 GB swap 0 GB 
-gpu 100 %, 7073 MiB, 24564 MiB, 65
+gpu 100 %, 6751 MiB, 24564 MiB, 65
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-16 02:27:40 push ok (83e19775; pc2 pc3)
+  last snapshot: 2026-11-16 02:58:36 push ok (00e801f6; pc2 pc3)
 ---- gpu jobs ----
-  27:11       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal L1 --treat reshape --ssl_reg 0.05 --data data/ml1m --tr
-  27:11       bash -c python -m rq1kit.rq4 --signal L1 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.
-  27:11       python -m rq1kit.rq4 --signal L1 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.001 --re
-  22:01       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M1 --treat reshape --ssl_reg 0.05 --data data/ml1m --tr
-  22:01       bash -c python -m rq1kit.rq4 --signal M1 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.
-  22:01       python -m rq1kit.rq4 --signal M1 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.001 --re
-  14:18       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal L3 --treat reshape --ssl_reg 0.05 --data data/ml1m --tr
-  14:18       bash -c python -m rq1kit.rq4 --signal L3 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.
-  14:18       python -m rq1kit.rq4 --signal L3 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.001 --re
-  10:09       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal L4 --treat reshape --ssl_reg 0.05 --data data/ml1m --tr
-  10:09       bash -c python -m rq1kit.rq4 --signal L4 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.
-  10:09       python -m rq1kit.rq4 --signal L4 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.001 --re
+  27:20       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R1 --treat reshape --ssl_reg 0.05 --data data/ml1m --tr
+  27:20       bash -c python -m rq1kit.rq4 --signal R1 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.
+  27:20       python -m rq1kit.rq4 --signal R1 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.001 --re
+  21:16       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R2 --treat reshape --ssl_reg 0.05 --data data/ml1m --tr
+  21:16       bash -c python -m rq1kit.rq4 --signal R2 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.
+  21:16       python -m rq1kit.rq4 --signal R2 --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.001 --re
+  17:06       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal none --treat reshape --ssl_reg 0.05 --data data/ml1m --
+  17:06       bash -c python -m rq1kit.rq4 --signal none --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 
+  17:06       python -m rq1kit.rq4 --signal none --treat reshape --ssl_reg 0.05 --data data/ml1m --train_file train.tsv --lr 0.001 --
+  07:56       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal none --treat none --data data/ml1m --train_file train_N
+  07:56       bash -c python -m rq1kit.rq4 --signal none --treat none --data data/ml1m --train_file train_N1_20_s3.tsv --lr 0.001 --r
+  07:56       python -m rq1kit.rq4 --signal none --treat none --data data/ml1m --train_file train_N1_20_s3.tsv --lr 0.001 --reg 1e-05
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
   picks: picks_ml1m.json (91 cells)
-  final ml1m: 618/831 done, 21 failed so far, median 21 min/job, ~18 h left at 4 in parallel
+  final ml1m: 622/831 done, 21 failed so far, median 21 min/job, ~18 h left at 4 in parallel
     failed rq4_ml1m_R4_reweight_N0_s3 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
     failed rq4_ml1m_R4_relabel_N0_s3 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
     failed rq4_ml1m_R4_resample_N0_s3 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.29 GiB. GPU 0 has a total capacity of 23.52 Gi
@@ -45,12 +45,12 @@ gpu 100 %, 7073 MiB, 24564 MiB, 65
   831 of 837 jobs kept (datasets ml1m)
   831 jobs to run, 0 already done
 ---- recent service log lines ----
-2026-11-16T01:25:43+05:30 home systemd[2034]: survey-snapshot.service: Consumed 1.008s CPU time.
-2026-11-16T01:56:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-16T01:56:40+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T01:56:40+05:30 home systemd[2034]: survey-snapshot.service: Consumed 1.006s CPU time.
 2026-11-16T02:27:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-16T02:27:40+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T02:27:40+05:30 home systemd[2034]: survey-snapshot.service: Consumed 1.000s CPU time.
 2026-11-16T02:58:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-16T02:58:36+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-16T02:58:36+05:30 home systemd[2034]: survey-snapshot.service: Consumed 1.051s CPU time.
+2026-11-16T03:29:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
