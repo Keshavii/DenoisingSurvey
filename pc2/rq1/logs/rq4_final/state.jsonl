@@ -411,3 +411,13 @@
 {"job_id": "rq4_ml1m_R1_drop_N1_20_s2", "status": "ok", "seconds": 1353.6, "peak_gpu_mb_while_running": 8798, "slots": 1, "finished": "2026-11-15 08:08:06"}
 {"job_id": "rq4_ml1m_R1_relabel_N1_20_s2", "status": "ok", "seconds": 1133.9, "peak_gpu_mb_while_running": 8578, "slots": 1, "finished": "2026-11-15 08:08:20"}
 {"job_id": "rq4_ml1m_R1_reweight_N1_20_s2", "status": "ok", "seconds": 1214.5, "peak_gpu_mb_while_running": 8350, "slots": 1, "finished": "2026-11-15 08:08:28"}
+{"job_id": "rq4_ml1m_R2_relabel_N1_20_s2", "status": "ok", "seconds": 1079.1, "peak_gpu_mb_while_running": 8142, "slots": 1, "finished": "2026-11-15 08:26:28"}
+{"job_id": "rq4_ml1m_R1_resample_N1_20_s2", "status": "ok", "seconds": 1535.6, "peak_gpu_mb_while_running": 8144, "slots": 1, "finished": "2026-11-15 08:27:00"}
+{"job_id": "rq4_ml1m_R2_drop_N1_20_s2", "status": "ok", "seconds": 1176.0, "peak_gpu_mb_while_running": 7944, "slots": 1, "finished": "2026-11-15 08:27:42"}
+{"job_id": "rq4_ml1m_R2_reweight_N1_20_s2", "status": "ok", "seconds": 1232.8, "peak_gpu_mb_while_running": 7960, "slots": 1, "finished": "2026-11-15 08:28:53"}
+{"job_id": "rq4_ml1m_R3_relabel_N1_20_s2", "status": "ok", "seconds": 725.5, "peak_gpu_mb_while_running": 7978, "slots": 1, "finished": "2026-11-15 08:40:59"}
+{"job_id": "rq4_ml1m_R3_reweight_N1_20_s2", "status": "ok", "seconds": 1039.8, "peak_gpu_mb_while_running": 7978, "slots": 1, "finished": "2026-11-15 08:45:03"}
+{"job_id": "rq4_ml1m_R3_resample_N1_20_s2", "status": "ok", "seconds": 575.5, "peak_gpu_mb_while_running": 23436, "slots": 1, "finished": "2026-11-15 08:50:35"}
+{"job_id": "rq4_ml1m_R4_reweight_N1_20_s2", "status": "exit 1", "seconds": 2.0, "peak_gpu_mb_while_running": 21677, "slots": 1, "finished": "2026-11-15 08:50:37"}
+{"job_id": "rq4_ml1m_R4_relabel_N1_20_s2", "status": "exit 1", "seconds": 2.0, "peak_gpu_mb_while_running": 0, "slots": 1, "finished": "2026-11-15 08:50:40"}
+{"job_id": "rq4_ml1m_R4_resample_N1_20_s2", "status": "exit 1", "seconds": 2.0, "peak_gpu_mb_while_running": 21677, "slots": 1, "finished": "2026-11-15 08:50:43"}

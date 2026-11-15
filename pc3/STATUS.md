@@ -1,20 +1,21 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-15 02:35:11 UTC  up since 2026-11-03 22:15:42
-code 31cd54b4 13 Nov 13:24  linger yes  disk free 30G  ram used 9/62 GB swap 1 GB 
-gpu 90 %, 5214 MiB, 24564 MiB, 64
+pc3 (aura1@aura-node1)  2026-11-15 03:05:11 UTC  up since 2026-11-03 22:15:42
+code 31cd54b4 13 Nov 13:24  linger yes  disk free 30G  ram used 10/62 GB swap 1 GB 
+gpu 97 %, 5214 MiB, 24564 MiB, 64
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-15 02:05:11 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-15 02:35:11 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  11:30       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M2 --treat resample --temp 0.2 --data data/yelp --train
-  11:30       bash -c python -m rq1kit.rq4 --signal M2 --treat resample --temp 0.2 --data data/yelp --train_file train.tsv --lr 0.005
-  11:30       python -m rq1kit.rq4 --signal M2 --treat resample --temp 0.2 --data data/yelp --train_file train.tsv --lr 0.005 --reg 0
-  03:39       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M1c --treat drop --rate 0.1 --data data/yelp --train_fi
-  03:39       bash -c python -m rq1kit.rq4 --signal M1c --treat drop --rate 0.1 --data data/yelp --train_file train.tsv --lr 0.005 --
-  03:39       python -m rq1kit.rq4 --signal M1c --treat drop --rate 0.1 --data data/yelp --train_file train.tsv --lr 0.005 --reg 0.00
+  41:30       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M2 --treat resample --temp 0.2 --data data/yelp --train
+  41:30       bash -c python -m rq1kit.rq4 --signal M2 --treat resample --temp 0.2 --data data/yelp --train_file train.tsv --lr 0.005
+  41:30       python -m rq1kit.rq4 --signal M2 --treat resample --temp 0.2 --data data/yelp --train_file train.tsv --lr 0.005 --reg 0
+  33:40       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M1c --treat drop --rate 0.1 --data data/yelp --train_fi
+  33:40       bash -c python -m rq1kit.rq4 --signal M1c --treat drop --rate 0.1 --data data/yelp --train_file train.tsv --lr 0.005 --
+  33:40       python -m rq1kit.rq4 --signal M1c --treat drop --rate 0.1 --data data/yelp --train_file train.tsv --lr 0.005 --reg 0.00
+  00:01       /usr/bin/python3 /usr/local/bin/vllm serve --model /models/qwen3-32b-awq --served-model-name aura-llm --quantization aw
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
@@ -164,11 +165,11 @@ gpu 90 %, 5214 MiB, 24564 MiB, 64
   2026-11-14 21:37:46 7 finals [yelp] seeds [2]
   169 of 350 jobs kept (datasets yelp, seeds 2)
 ---- recent service log lines ----
-2026-11-15T01:05:10+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-15T01:05:10+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-15T01:35:10+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-15T01:35:11+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-15T02:05:10+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-15T02:05:11+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-15T02:35:11+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-15T02:35:11+00:00 aura-node1 systemd[7943]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-15T03:05:11+00:00 aura-node1 systemd[7943]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
