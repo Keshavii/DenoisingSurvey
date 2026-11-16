@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.057471839562856314,
+  "recall@20": 0.10117645551293124,
+  "recall@50": 0.20358062877866417,
+  "ndcg@10": 0.0726865907679644,
+  "ndcg@20": 0.08367335803697483,
+  "ndcg@50": 0.11610997514785848,
+  "n_eval_users": 5991,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1,
+      "ndcg@20": 0.0,
+      "recall@20": 0.0
+    },
+    "warm(5-20)": {
+      "n_users": 419,
+      "ndcg@20": 0.07709699933448524,
+      "recall@20": 0.1607000795544948
+    },
+    "established(>20)": {
+      "n_users": 5571,
+      "ndcg@20": 0.08418299143391973,
+      "recall@20": 0.09671779063806096
+    },
+    "user_q1": {
+      "n_users": 1167,
+      "ndcg@20": 0.07789395927093984,
+      "recall@20": 0.1577406455298486
+    },
+    "user_q2": {
+      "n_users": 1186,
+      "ndcg@20": 0.07332872678038993,
+      "recall@20": 0.11997112172070014
+    },
+    "user_q3": {
+      "n_users": 1226,
+      "ndcg@20": 0.07576324807872221,
+      "recall@20": 0.096849000193209
+    },
+    "user_q4": {
+      "n_users": 1212,
+      "ndcg@20": 0.07086520646511572,
+      "recall@20": 0.07206045485722216
+    },
+    "user_q5": {
+      "n_users": 1200,
+      "ndcg@20": 0.12053549599046107,
+      "recall@20": 0.06142076313338317
+    },
+    "items_head": {
+      "n_truth": 60842,
+      "recall@20_micro": 0.09795864698727852
+    },
+    "items_mid": {
+      "n_truth": 14454,
+      "recall@20_micro": 0.00020755500207555002
+    },
+    "items_tail": {
+      "n_truth": 3922,
+      "recall@20_micro": 0.0
+    },
+    "coverage@20": 0.22477064220183487,
+    "gini@20": 0.952323532092222
+  },
+  "part": "RQ2",
+  "dataset": "ml1m",
+  "method": "PLD",
+  "backbone": "LightGCN",
+  "cond": "RQ2N1",
+  "seed": "3",
+  "train_file": "train_RQ2N1_s3.tsv",
+  "data": "data/ml1m",
+  "topk": "runs/rq2/ml1m/pld_lightgcn_RQ2N1_s3/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-16 16:44:51"
+}
