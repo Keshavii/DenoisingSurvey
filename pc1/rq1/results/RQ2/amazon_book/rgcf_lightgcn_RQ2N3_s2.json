@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.04681736488636038,
+  "recall@20": 0.07671070922438218,
+  "recall@50": 0.1383357417395468,
+  "ndcg@10": 0.03216992615282782,
+  "ndcg@20": 0.04160505510673061,
+  "ndcg@50": 0.05778021611433296,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1510,
+      "ndcg@20": 0.01782647073478477,
+      "recall@20": 0.05099337748344371
+    },
+    "warm(5-20)": {
+      "n_users": 40330,
+      "ndcg@20": 0.03331698478917707,
+      "recall@20": 0.07382428299859492
+    },
+    "established(>20)": {
+      "n_users": 38509,
+      "ndcg@20": 0.05121744541311544,
+      "recall@20": 0.08074204581101951
+    },
+    "user_q1": {
+      "n_users": 15081,
+      "ndcg@20": 0.022349787616696454,
+      "recall@20": 0.05450014366863383
+    },
+    "user_q2": {
+      "n_users": 13944,
+      "ndcg@20": 0.0328554469501439,
+      "recall@20": 0.07371151271753681
+    },
+    "user_q3": {
+      "n_users": 18935,
+      "ndcg@20": 0.045250219679475616,
+      "recall@20": 0.09310360003520818
+    },
+    "user_q4": {
+      "n_users": 16303,
+      "ndcg@20": 0.050826762657894334,
+      "recall@20": 0.08975969950023804
+    },
+    "user_q5": {
+      "n_users": 16086,
+      "ndcg@20": 0.053604964081062474,
+      "recall@20": 0.0676121924562251
+    },
+    "items_head": {
+      "n_truth": 188754,
+      "recall@20_micro": 0.09410131705818155
+    },
+    "items_mid": {
+      "n_truth": 56612,
+      "recall@20_micro": 0.015120469158482301
+    },
+    "items_tail": {
+      "n_truth": 38546,
+      "recall@20_micro": 0.010714471021636486
+    },
+    "coverage@20": 0.17453351306974246,
+    "gini@20": 0.9770865317475196
+  },
+  "part": "RQ2",
+  "dataset": "amazon_book",
+  "method": "RGCF",
+  "backbone": "LightGCN",
+  "cond": "RQ2N3",
+  "seed": "2",
+  "train_file": "train_RQ2N3_s2.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/rq2/amazon_book/rgcf_lightgcn_RQ2N3_s2/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-16 09:58:13"
+}
