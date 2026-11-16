@@ -49,7 +49,7 @@ SKIP = (".pt", ".pth", ".npy", ".npz", ".pkl", ".ckpt", ".bin", ".safetensors", 
 specs = [(kit, ["results/**", "configs/rq4/*.json", "configs/rq4/*.csv", "configs/partc/best/*.json",
                 "logs/*/state.jsonl", "logs/partc/status.txt", "logs/partc/driver.log", "tables/**",
                 "runs/**/run.json", "runs/**/history.jsonl"], "rq1")]
-if pc == "pc3":
+if os.path.isdir(os.path.join(home, "survey/rq10/logs")):
     specs.append((os.path.join(home, "survey/rq10"), ["results/**", "logs/*.log", "logs/*.done", "logs/*.gpu"], "rq10"))
 n = 0
 # top-level experiment logs in the home folder (not recursive)

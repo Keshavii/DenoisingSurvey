@@ -15,6 +15,8 @@ TS=https://download.pytorch.org/whl/torch_stable.html
 W=https://download.pytorch.org/whl
 PYG=https://data.pyg.org/whl
 say() { echo "$(date '+%F %T') $*"; }
+# ENVS="fmlp steam recbole": clone and build only these envs (another PC that needs a part of RQ10); empty = all
+want() { [ -z "${ENVS:-}" ] || case " $ENVS " in *" $1 "*) return 0 ;; *) return 1 ;; esac; }
 
 # name|github repo|commit audited 4 Nov 2026|env
 REPO_LIST="
@@ -53,6 +55,7 @@ hdsr|laowangzi/HDSR|9721276|hdsr
 
 mkenv() {  # name python [pip args...]: create env r10-<name> and install; skipped when done before
   local n=$1 py=$2; shift 2
+  want "$n" || return 0
   [ -f "$OK/$n" ] && { say "env $n: done before"; return 0; }
   conda env remove -y -q -n r10-$n > /dev/null 2>&1
   conda create -y -q -n r10-$n python=$py > /dev/null 2>&1 || conda create -y -q -n r10-$n -c conda-forge python=$py > /dev/null \
@@ -64,6 +67,7 @@ pipn() { ~/miniconda3/envs/r10-$N/bin/pip install -q "$@"; }
 clone_all() {
   echo "$REPO_LIST" | while IFS='|' read n repo commit env; do
     [ -z "$n" ] && continue
+    want "$env" || continue
     if [ ! -d "$REPOS/$n/.git" ]; then git clone -q "https://github.com/$repo" "$REPOS/$n" || { say "clone $n: FAILED"; continue; }; fi
     (cd "$REPOS/$n" && git checkout -q "$commit" && say "repo $n at $(git log -1 --format=%h)")
   done
@@ -99,6 +103,7 @@ build_all() {
 
 check_all() {  # every env must run a real kernel on the 4090 (old CUDA builds can import but fail on Ada)
   for n in fmlp steam recbole iadsr preferdiff damrs mmrec gdmsr gbsr hdsr; do
+    want "$n" || continue
     PY=~/miniconda3/envs/r10-$n/bin/python
     [ -x $PY ] || { echo "$n: no env"; continue; }
     printf "%-11s " $n

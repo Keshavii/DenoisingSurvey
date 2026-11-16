@@ -116,11 +116,11 @@ pc2|pc3)
   for d in "$C"/done_*; do [ -f "$d" ] && echo "  finished: ${d##*/done_}"; done
   ;;
 esac
-if [ "$PC" = pc3 ]; then
+if [ "$PC" = pc3 ] || [ -d "$HOME/survey/rq10/logs" ]; then
   hr "RQ10 (specialists)"
   R10=$HOME/survey/rq10
   echo "  .done markers: $(find "$R10/logs" -maxdepth 1 -name '*.done' 2>/dev/null | wc -l)  ($(find "$R10/logs" -maxdepth 1 -name '*.done' -printf '%f ' 2>/dev/null | sed 's/run_//g;s/\.done//g'))"
-  for f in "$HOME/rq10_stage1.log" "$HOME/rq10_rerun.log"; do
+  for f in "$HOME/rq10_seeds.log" "$HOME/rq10_stage1.log" "$HOME/rq10_rerun.log"; do
     [ -s "$f" ] && { echo "  last lines of ~/${f##*/}:"; tail -3 "$f" | cut -c1-140 | sed 's/^/    /'; break; }
   done
   [ $FULL = 1 ] && [ -f "$R10/results/stage2_summary.tsv" ] && { echo "  stage 2 (full ranking, Recall@10 / NDCG@10):"; column -t "$R10/results/stage2_summary.tsv" | cut -c1-110 | sed 's/^/    /'; }

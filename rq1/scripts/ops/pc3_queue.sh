@@ -7,6 +7,7 @@
 #   3. RQ10 stage 1 (fixed reproduction runs) and stage 2 (design noise, full-ranking scores): rq10_stage1.sh.
 #   4. RQ4 Yelp finals of seed 1.
 #   5. RQ10 stage 3 (rq10_stage3.sh) and RQ4 Yelp finals of seed 2 (moved from PC2, 13 Nov).
+#   6. RQ10 noise seed 3 for the sequential specialists (16 Nov; seed 2 runs on PC2): stage 2, about 30 h, ~/rq10_seeds.log.
 set -u
 REPO=${REPO:-$HOME/survey}
 KIT=$REPO/rq1
@@ -49,4 +50,8 @@ fi
 
 # RQ4 Yelp finals of seed 2 (moved here from PC2 on 13 Nov: PC3 has the Yelp picks and the same Yelp files)
 DATASETS=yelp FINAL_SEEDS=2 bash "$KIT/scripts/rq4_run.sh" || { say "RQ4 Yelp seed 2 stopped with an error (see above); the service will retry"; exit 1; }
+
+say "RQ10 noise seed 3 (log ~/rq10_seeds.log)"
+bash "$KIT/scripts/rq10/rq10_seed_run.sh" 3 >> "$HOME/rq10_seeds.log" 2>&1 \
+  || { say "RQ10 seed 3 stopped with an error (last lines of ~/rq10_seeds.log: $(tail -2 "$HOME/rq10_seeds.log" | tr '\n' ' ' | cut -c1-200)); the service will retry"; exit 1; }
 say "PC3 queue complete: nothing left to run"
