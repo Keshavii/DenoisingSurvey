@@ -1,28 +1,20 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-16 22:03:33 IST  up since 2026-11-05 14:24:20
-code 31cd54b4 13 Nov 13:24  linger yes  disk free 936G  ram used 5/62 GB swap 0 GB 
-gpu 79 %, 17937 MiB, 24564 MiB, 60
+pc2 (anurag@home)  2026-11-16 22:34:33 IST  up since 2026-11-05 14:24:20
+code 31cd54b4 13 Nov 13:24  linger yes  disk free 936G  ram used 4/62 GB swap 0 GB 
+gpu 1 %, 716 MiB, 24564 MiB, 44
 ---- services ----
-  survey-queue.service         active running
+  survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-16 21:32:41 push ok (712e0f32; pc2 pc3)
+  last snapshot: 2026-11-16 22:03:37 push ok (a3f1aa73; pc2 pc3)
 ---- gpu jobs ----
-  04:36       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R4 --treat resample --temp 0.2 --data data/ml1m --train
-  04:36       bash -c python -m rq1kit.rq4 --signal R4 --treat resample --temp 0.2 --data data/ml1m --train_file train_N1_20_s3.tsv -
-  04:36       python -m rq1kit.rq4 --signal R4 --treat resample --temp 0.2 --data data/ml1m --train_file train_N1_20_s3.tsv --lr 0.00
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
   picks: picks_ml1m.json (91 cells)
-  final ml1m: 827/831 done, 4 failed so far, median 20 min/job, ~0 h left at 4 in parallel
-    failed rq4_ml1m_R4_reweight_N3_20_s3 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.27 GiB. GPU 0 has a total capacity of 23.52 Gi
-    failed rq4_ml1m_R4_relabel_N3_20_s3 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.27 GiB. GPU 0 has a total capacity of 23.52 Gi
-    failed rq4_ml1m_R4_resample_N3_20_s3 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.27 GiB. GPU 0 has a total capacity of 23.52 Gi
+  final ml1m: 831/831 done, 0 failed so far
+  finished: ml1m
 ---- queue log (~/survey_queue.log) ----
-  2026-11-13 18:57:49 4b reference models for the clean bases (teacher M1c) and the Yelp files (R2, M1, hard positives)
-  2026-11-13 18:57:49 5 tuning [ml1m]
-  273 of 522 jobs kept (datasets ml1m)
   10 jobs to run, 263 already done
   kept the logs of 9 failed jobs in logs/rq4_tune/failed
   2026-11-13 19:03:19   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
@@ -35,12 +27,16 @@ gpu 79 %, 17937 MiB, 24564 MiB, 60
   831 jobs to run, 0 already done
   kept the logs of 27 failed jobs in logs/rq4_final/failed
   2026-11-16 19:28:14   retry pass: failed jobs of configs/rq4/jobs_final_ml1m.csv, one at a time
+  27 jobs to run, 804 already done
+  2026-11-16 22:29:54 RQ4 done [ml1m] seeds [all]
+  2026-11-16 22:29:54 [pc2-queue] PC2 queue complete: RQ4 ML-1M finished
 ---- recent service log lines ----
-2026-11-16T20:30:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-16T20:30:46+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T21:01:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-16T21:01:37+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T21:32:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-16T21:32:41+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T22:03:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-16T22:03:37+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-16T22:29:54+05:30 home systemd[2034]: survey-queue.service: Consumed 1w 5d 15h 10min 54.237s CPU time.
+2026-11-16T22:34:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
