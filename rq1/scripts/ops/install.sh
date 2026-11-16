@@ -41,7 +41,7 @@ cat > "$UD/survey-queue.service" <<EOF
 [Unit]
 Description=Survey unattended queue ($PC)
 StartLimitIntervalSec=86400
-StartLimitBurst=6
+StartLimitBurst=40
 
 [Service]
 Type=simple
@@ -56,9 +56,32 @@ StandardError=append:$HOME/survey_queue.log
 [Install]
 WantedBy=default.target
 EOF
+# Kick: every 2 h start survey-queue. A running queue is left alone (start does nothing); a queue that has finished or
+# stopped runs again, and every step skips what is done, so work added by a git pull starts without anyone logging in
+# (11-13 Nov: PC3 sat idle two days after its queue completed; PC2 the same on 16 Nov).
+cat > "$UD/survey-kick.service" <<EOF
+[Unit]
+Description=Start survey-queue if it is not running
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl --user start --no-block survey-queue
+EOF
+cat > "$UD/survey-kick.timer" <<EOF
+[Unit]
+Description=Start survey-queue if idle, every 2 h
+
+[Timer]
+OnBootSec=30min
+OnUnitActiveSec=2h
+
+[Install]
+WantedBy=timers.target
+EOF
 systemctl --user daemon-reload
 systemctl --user enable --now survey-snapshot.timer
-say "timer survey-snapshot: $(systemctl --user is-active survey-snapshot.timer)"
+systemctl --user enable --now survey-kick.timer
+say "timer survey-snapshot: $(systemctl --user is-active survey-snapshot.timer); timer survey-kick: $(systemctl --user is-active survey-kick.timer)"
 
 if [ "$PC" = pc2 ]; then
   if systemctl --user is-active --quiet rq4run; then
