@@ -1,21 +1,21 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-16 21:01:33 IST  up since 2026-11-05 14:24:20
+pc2 (anurag@home)  2026-11-16 21:32:36 IST  up since 2026-11-05 14:24:20
 code 31cd54b4 13 Nov 13:24  linger yes  disk free 936G  ram used 5/62 GB swap 0 GB 
-gpu 0 %, 17932 MiB, 24564 MiB, 55
+gpu 88 %, 17701 MiB, 24564 MiB, 63
 ---- services ----
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-16 20:30:46 push ok (575ae828; pc2 pc3)
+  last snapshot: 2026-11-16 21:01:37 push ok (7c2f5987; pc2 pc3)
 ---- gpu jobs ----
-  08:32       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R4 --treat resample --temp 0.2 --data data/ml1m --train
-  08:32       bash -c python -m rq1kit.rq4 --signal R4 --treat resample --temp 0.2 --data data/ml1m --train_file train_N1_20_s2.tsv -
-  08:32       python -m rq1kit.rq4 --signal R4 --treat resample --temp 0.2 --data data/ml1m --train_file train_N1_20_s2.tsv --lr 0.00
+  02:43       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R4 --treat relabel --rate 0.05 --data data/ml1m --train
+  02:43       bash -c python -m rq1kit.rq4 --signal R4 --treat relabel --rate 0.05 --data data/ml1m --train_file train.tsv --lr 0.001
+  02:43       python -m rq1kit.rq4 --signal R4 --treat relabel --rate 0.05 --data data/ml1m --train_file train.tsv --lr 0.001 --reg 1
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
   picks: picks_ml1m.json (91 cells)
-  final ml1m: 818/831 done, 13 failed so far, median 20 min/job, ~1 h left at 4 in parallel
+  final ml1m: 823/831 done, 8 failed so far, median 20 min/job, ~1 h left at 4 in parallel
     failed rq4_ml1m_R4_reweight_N3_20_s3 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.27 GiB. GPU 0 has a total capacity of 23.52 Gi
     failed rq4_ml1m_R4_relabel_N3_20_s3 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.27 GiB. GPU 0 has a total capacity of 23.52 Gi
     failed rq4_ml1m_R4_resample_N3_20_s3 (exit 1): torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.27 GiB. GPU 0 has a total capacity of 23.52 Gi
@@ -36,11 +36,11 @@ gpu 0 %, 17932 MiB, 24564 MiB, 55
   kept the logs of 27 failed jobs in logs/rq4_final/failed
   2026-11-16 19:28:14   retry pass: failed jobs of configs/rq4/jobs_final_ml1m.csv, one at a time
 ---- recent service log lines ----
-2026-11-16T19:29:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-16T19:29:43+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T19:59:53+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-16T19:59:58+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T20:30:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-16T20:30:46+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T21:01:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-16T21:01:37+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-16T21:32:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
