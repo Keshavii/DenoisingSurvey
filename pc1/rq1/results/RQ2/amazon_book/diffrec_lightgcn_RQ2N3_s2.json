@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.07468664261191449,
+  "recall@20": 0.10709375686714555,
+  "recall@50": 0.16554109276899345,
+  "ndcg@10": 0.05945528010994904,
+  "ndcg@20": 0.06898244145837273,
+  "ndcg@50": 0.0845380867913411,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1510,
+      "ndcg@20": 0.010887095951227478,
+      "recall@20": 0.027152317880794703
+    },
+    "warm(5-20)": {
+      "n_users": 40330,
+      "ndcg@20": 0.05057429423686452,
+      "recall@20": 0.09668154392925034
+    },
+    "established(>20)": {
+      "n_users": 38509,
+      "ndcg@20": 0.09053907884597603,
+      "recall@20": 0.12113297161317126
+    },
+    "user_q1": {
+      "n_users": 15081,
+      "ndcg@20": 0.027426374693365896,
+      "recall@20": 0.0594401343854298
+    },
+    "user_q2": {
+      "n_users": 13944,
+      "ndcg@20": 0.05070866779686937,
+      "recall@20": 0.09858481545228533
+    },
+    "user_q3": {
+      "n_users": 18935,
+      "ndcg@20": 0.07472836622236914,
+      "recall@20": 0.13146289939265907
+    },
+    "user_q4": {
+      "n_users": 16303,
+      "ndcg@20": 0.0842544987566876,
+      "recall@20": 0.1284361919950462
+    },
+    "user_q5": {
+      "n_users": 16086,
+      "ndcg@20": 0.10154100836614174,
+      "recall@20": 0.10883051716335371
+    },
+    "items_head": {
+      "n_truth": 188754,
+      "recall@20_micro": 0.15054515400998125
+    },
+    "items_mid": {
+      "n_truth": 56612,
+      "recall@20_micro": 0.015509079347134884
+    },
+    "items_tail": {
+      "n_truth": 38546,
+      "recall@20_micro": 0.0024905307943755514
+    },
+    "coverage@20": 0.22121768038677114,
+    "gini@20": 0.9603833800011946
+  },
+  "part": "RQ2",
+  "dataset": "amazon_book",
+  "method": "DiffRec",
+  "backbone": "LightGCN",
+  "cond": "RQ2N3",
+  "seed": "2",
+  "train_file": "train_RQ2N3_s2.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/rq2/amazon_book/diffrec_lightgcn_RQ2N3_s2/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-16 08:15:40"
+}
