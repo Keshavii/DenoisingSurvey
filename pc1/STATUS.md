@@ -1,27 +1,27 @@
 # pc1 status
 
 ```
-pc1 (aura3@home)  2026-11-16 14:48:34 UTC  up since 2026-09-30 13:27:10
+pc1 (aura3@home)  2026-11-16 15:19:34 UTC  up since 2026-09-30 13:27:10
 code 7f48e300 05 Nov 21:52  linger yes  disk free 1.1T  ram used 12/62 GB swap 0 GB 
-gpu 100 %, 20197 MiB, 24564 MiB, 63
+gpu 100 %, 8651 MiB, 24564 MiB, 60
 ---- services ----
   partc.service                active running
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-16 14:17:37 push ok (3c05bfc7; pc1)
+  last snapshot: 2026-11-16 14:48:37 push ok (2b5e3372; pc1)
 ---- gpu jobs ----
-  8-20:43:17  python -u -m rq1kit.partc run --skip dcf,pld,sl
-  30:07       bash -c python -m rq1kit.rgcf --lr_mult 1 --prune_threshold 0.02 --MIM_weight 1e-05 --data data/adressa --train_file tr
-  30:07       python -m rq1kit.rgcf --lr_mult 1 --prune_threshold 0.02 --MIM_weight 1e-05 --data data/adressa --train_file train_RQ2N
-  27:42       bash -c python -m rq1kit.sgl --ssl_reg 0.05 --ssl_temp 0.5 --ssl_ratio 0.2 --data data/adressa --train_file train_RQ2N2
-  27:42       python -m rq1kit.sgl --ssl_reg 0.05 --ssl_temp 0.5 --ssl_ratio 0.2 --data data/adressa --train_file train_RQ2N2_s3.tsv 
-  06:10       bash -c python -m rq1kit.backbone --loss bce --data data/adressa --train_file train_RQ2N3_s3.tsv --model lightgcn --lr 
-  06:10       python -m rq1kit.backbone --loss bce --data data/adressa --train_file train_RQ2N3_s3.tsv --model lightgcn --lr 0.001 --
-  05:15       bash -c python -m rq1kit.dcf --drop_rate 0.2 --num_gradual 30000 --time_step 3 --schedule_epochs 100 --relabel_ratio 0.
-  05:15       python -m rq1kit.dcf --drop_rate 0.2 --num_gradual 30000 --time_step 3 --schedule_epochs 100 --relabel_ratio 0.09 --co_
+  8-21:14:17  python -u -m rq1kit.partc run --skip dcf,pld,sl
+  23:56       bash -c python -m rq1kit.drrl --loss sl --lr_mult 10 --ssm_temp 0.12 --data data/adressa --train_file train_RQ2N3_s3.ts
+  23:56       python -m rq1kit.drrl --loss sl --lr_mult 10 --ssm_temp 0.12 --data data/adressa --train_file train_RQ2N3_s3.tsv --mode
+  12:17       bash -c python -m rq1kit.bod --lr_mult 0.1 --generator_lr 0.01 --weight_uniformity 0.5 --data data/adressa --train_file
+  12:17       python -m rq1kit.bod --lr_mult 0.1 --generator_lr 0.01 --weight_uniformity 0.5 --data data/adressa --train_file train_R
+  10:15       bash -c python -m rq1kit.ddrm --diff_lr 0.001 --alpha 0.1 --steps 50 --data data/adressa --train_file train_RQ2N3_s3.ts
+  10:15       python -m rq1kit.ddrm --diff_lr 0.001 --alpha 0.1 --steps 50 --data data/adressa --train_file train_RQ2N3_s3.tsv --mode
+  05:58       bash -c python -m rq1kit.deca --C_1 1000 --C_2 10 --alpha 1 --data data/adressa --train_file train_RQ2N3_s3.tsv --model
+  05:58       python -m rq1kit.deca --C_1 1000 --C_2 10 --alpha 1 --data data/adressa --train_file train_RQ2N3_s3.tsv --model lightgc
 ---- RQ1 Part C (partc driver status, refreshed every minute) ----
-  status file written 2026-11-16 14:48:01
-Part C status 2026-11-16 14:48  kit 7f48e300
+  status file written 2026-11-16 15:19:13
+Part C status 2026-11-16 15:19  kit 7f48e300
 method   b dataset      canary  tune   pick  finals  run fail confl
 DCF      1 adressa      passed   8/8   yes     9/9     0    0     0
 DCF      1 ml1m                  8/8   yes     9/9     0    0     0
@@ -85,12 +85,12 @@ SGL      2 gowalla               8/8   yes     6/6     0    0     0
 SGL      2 amazon_book           8/8   yes     6/6     0    0     0
 LLaRD    3 ml1m         passed   8/8   yes     6/6     0    0     0
 total: 954 of 954 done, 0 running, 0 failed, 0 conflicts; held: none
-GPU: 100 %, 20197 MiB, 24564 MiB   rq1kit.queue running (pids 2060000): partc shares the GPU, leaving it 4 slots
-rough finish: Mon 16 Nov 14:48 (0.0 h of known work)
+GPU: 100 %, 8651 MiB, 24564 MiB   rq1kit.queue running (pids 2060000): partc shares the GPU, leaving it 4 slots
+rough finish: Mon 16 Nov 15:19 (0.0 h of known work)
 ---- RQ2 (after Part C) ----
   started 2026-11-09 00:15:19
   rho*: adressa 0.607, ml1m 0.155, yelp 0.156, amazon_book 0.073
-  rq2 adressa: 111/126 done, 0 failed so far, median 17 min/job, ~1 h left at 4 in parallel
+  rq2 adressa: 119/126 done, 0 failed so far, median 17 min/job, ~1 h left at 4 in parallel
   rq2 amazon_book: 84/126 done, 0 failed so far, median 172 min/job, ~60 h left at 2 in parallel
   rq2 ml1m: 84/126 done, 0 failed so far, median 22 min/job, ~4 h left at 4 in parallel
   rq2 yelp: 84/126 done, 0 failed so far, median 45 min/job, ~16 h left at 2 in parallel
@@ -111,11 +111,11 @@ rough finish: Mon 16 Nov 14:48 (0.0 h of known work)
   504 RQ2 jobs
   504 jobs to run, 0 already done
 ---- recent service log lines ----
-2026-11-16T13:15:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-16T13:15:37+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T13:46:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-16T13:46:43+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T14:17:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-16T14:17:37+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-16T14:48:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-16T14:48:37+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-16T15:19:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
