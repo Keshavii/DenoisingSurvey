@@ -1,13 +1,13 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-17 20:58:27 IST  up since 2026-11-17 18:44:08
+pc2 (anurag@home)  2026-11-17 21:29:27 IST  up since 2026-11-17 18:44:08
 code 31cd54b4 13 Nov 13:24  linger yes  disk free 936G  ram used 2/62 GB swap 0 GB 
 gpu 0 %, 176 MiB, 24564 MiB, 37
 ---- services ----
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-17 20:27:33 push ok (be90843b; pc2 pc3)
+  last snapshot: 2026-11-17 20:58:31 push ok (3b70c971; pc2 pc3)
 ---- gpu jobs ----
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
@@ -31,11 +31,11 @@ gpu 0 %, 176 MiB, 24564 MiB, 37
   2026-11-17 18:44:32 RQ4 done [ml1m] seeds [all]
   2026-11-17 18:44:32 [pc2-queue] PC2 queue complete: RQ4 ML-1M finished
 ---- recent service log lines ----
-2026-11-17T19:25:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-17T19:25:37+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-17T19:56:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-17T19:56:34+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-17T20:27:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-17T20:27:33+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-17T20:58:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-17T20:58:31+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-17T21:29:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
