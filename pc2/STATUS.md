@@ -1,13 +1,13 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-17 15:06:34 IST  up since 2026-11-05 14:24:20
+pc2 (anurag@home)  2026-11-17 15:37:33 IST  up since 2026-11-05 14:24:20
 code 31cd54b4 13 Nov 13:24  linger yes  disk free 936G  ram used 3/62 GB swap 0 GB 
-gpu 2 %, 275 MiB, 24564 MiB, 38
+gpu 7 %, 275 MiB, 24564 MiB, 38
 ---- services ----
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-17 14:35:41 push ok (1354a3ad; pc2 pc3)
+  last snapshot: 2026-11-17 15:06:38 push ok (45776417; pc2 pc3)
 ---- gpu jobs ----
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
@@ -31,11 +31,11 @@ gpu 2 %, 275 MiB, 24564 MiB, 38
   2026-11-16 22:29:54 RQ4 done [ml1m] seeds [all]
   2026-11-16 22:29:54 [pc2-queue] PC2 queue complete: RQ4 ML-1M finished
 ---- recent service log lines ----
-2026-11-17T13:33:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-17T13:33:40+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-17T14:04:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-17T14:04:37+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-17T14:35:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-17T14:35:41+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-17T15:06:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-17T15:06:38+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-17T15:37:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
