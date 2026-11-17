@@ -1,13 +1,13 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-17 18:54:28 IST  up since 2026-11-17 18:44:08
+pc2 (anurag@home)  2026-11-17 19:25:33 IST  up since 2026-11-17 18:44:08
 code 31cd54b4 13 Nov 13:24  linger yes  disk free 936G  ram used 2/62 GB swap 0 GB 
 gpu 0 %, 176 MiB, 24564 MiB, 37
 ---- services ----
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-17 18:12:37 push ok (82737730; pc2 pc3)
+  last snapshot: 2026-11-17 18:54:32 push ok (2b72313f; pc2 pc3)
 ---- gpu jobs ----
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
@@ -31,12 +31,12 @@ gpu 0 %, 176 MiB, 24564 MiB, 37
   2026-11-17 18:44:32 RQ4 done [ml1m] seeds [all]
   2026-11-17 18:44:32 [pc2-queue] PC2 queue complete: RQ4 ML-1M finished
 ---- recent service log lines ----
-2026-11-17T17:41:38+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-17T18:12:32+05:30 home systemd[2034]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-17T18:12:37+05:30 home systemd[2034]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-17T18:41:51+05:30 home systemd[2034]: Stopped survey-snapshot.timer - Survey snapshot every 30 min.
 2026-11-17T18:44:24+05:30 home systemd[1983]: Started survey-snapshot.timer - Survey snapshot every 30 min.
 2026-11-17T18:44:24+05:30 home systemd[1983]: Started survey-queue.service - Survey unattended queue (pc2).
 2026-11-17T18:44:32+05:30 home systemd[1983]: survey-queue.service: Consumed 16.634s CPU time.
 2026-11-17T18:54:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-17T18:54:32+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-17T19:25:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
