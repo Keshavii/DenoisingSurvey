@@ -1164,3 +1164,81 @@ kept the logs of 0 failed jobs in logs/rq4_final/failed
 2026-11-18 17:29:07 [pc2-queue] RQ4 ML-1M finished
 2026-11-18 17:29:07 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
 2026-11-18 17:29:27 [pc2-queue] RQ10 seed 2 stopped with an error (last lines of ~/rq10_seeds.log: scp: Connection closed 2026-11-18 17:29:27 [rq10-seed2] Sports_and_Outdoors.txt: copy from aura1@10.100.97.71 failed ); the service will retry
+2026-11-18 17:39:27 [pc2-queue] start, code 6a15530f
+2026-11-18 17:39:28 RQ4 start: datasets [ml1m], tune 1, final seeds [all], picks from this PC
+2026-11-18 17:39:28 1 clean base and MF-BPR on it
+2026-11-18 17:39:28 2 noise files
+2026-11-18 17:39:28 3 LLM item profiles for R4
+2026-11-18 17:39:28 4 reference models and Llama scores (ML-1M)
+2026-11-18 17:39:34 4b reference models for the clean bases (teacher M1c) and the Yelp files (R2, M1, hard positives)
+2026-11-18 17:39:34 5 tuning [ml1m]
+273 of 522 jobs kept (datasets ml1m)
+0 jobs to run, 273 already done
+kept the logs of 0 failed jobs in logs/rq4_tune/failed
+2026-11-18 17:39:35   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
+0 jobs to run, 273 already done
+2026-11-18 17:39:35 6 picks
+91 cells picked -> /home/anurag/survey/rq1/configs/rq4/best.json; incomplete: yelp|L1|drop (0/3), yelp|L1|reweight (0/3), yelp|L1|relabel (0/3), yelp|L1|resample (0/3), yelp|M1|drop (0/3), yelp|M1|reweight (0/3), yelp|M1|relabel (0/3), yelp|M1|resample (0/3), yelp|M2|drop (0/3), yelp|M2|reweight (0/3), yelp|M2|relabel (0/3), yelp|M2|resample (0/3), yelp|M1c|drop (0/3), yelp|M1c|reweight (0/3), yelp|M1c|relabel (0/3), yelp|M1c|resample (0/3), yelp|L2|drop (0/3), yelp|L2|reweight (0/3), yelp|L2|relabel (0/3), yelp|L2|resample (0/3), yelp|L5|drop (0/3), yelp|L5|reweight (0/3), yelp|L5|relabel (0/3), yelp|L5|resample (0/3), yelp|L3|drop (0/3), yelp|L3|reweight (0/3), yelp|L3|relabel (0/3), yelp|L3|resample (0/3), yelp|L4|drop (0/3), yelp|L4|reweight (0/3), yelp|L4|relabel (0/3), yelp|L4|resample (0/3), yelp|P1|drop (0/3), yelp|P1|reweight (0/3), yelp|P1|relabel (0/3), yelp|P1|resample (0/3), yelp|P2|drop (0/3), yelp|P2|reweight (0/3), yelp|P2|relabel (0/3), yelp|P2|resample (0/3), yelp|R1|drop (0/3), yelp|R1|reweight (0/3), yelp|R1|relabel (0/3), yelp|R1|resample (0/3), yelp|R2|drop (0/3), yelp|R2|reweight (0/3), yelp|R2|relabel (0/3), yelp|R2|resample (0/3), yelp|R3|drop (0/3), yelp|R3|reweight (0/3), yelp|R3|relabel (0/3), yelp|R3|resample (0/3), yelp|L1|graph_drop (0/3), yelp|L1|graph_reweight (0/3), yelp|L1|user_reweight (0/3), yelp|L1|soft_relabel (0/3), yelp|M1|graph_drop (0/3), yelp|M1|graph_reweight (0/3), yelp|M1|user_reweight (0/3), yelp|M1|soft_relabel (0/3), yelp|L3|graph_drop (0/3), yelp|L3|graph_reweight (0/3), yelp|L3|user_reweight (0/3), yelp|L3|soft_relabel (0/3), yelp|L4|graph_drop (0/3), yelp|L4|graph_reweight (0/3), yelp|L4|user_reweight (0/3), yelp|L4|soft_relabel (0/3), yelp|R1|graph_drop (0/3), yelp|R1|graph_reweight (0/3), yelp|R1|user_reweight (0/3), yelp|R1|soft_relabel (0/3), yelp|R2|graph_drop (0/3), yelp|R2|graph_reweight (0/3), yelp|R2|user_reweight (0/3), yelp|R2|soft_relabel (0/3), yelp|L1|reshape (0/3), yelp|M1|reshape (0/3), yelp|L3|reshape (0/3), yelp|L4|reshape (0/3), yelp|R1|reshape (0/3), yelp|R2|reshape (0/3), yelp|none|reshape (0/3)
+91 ml1m picks -> configs/rq4/picks_ml1m.json
+2026-11-18 17:39:35 7 finals [ml1m] seeds [all]
+831 of 837 jobs kept (datasets ml1m)
+0 jobs to run, 831 already done
+kept the logs of 0 failed jobs in logs/rq4_final/failed
+2026-11-18 17:39:35   retry pass: failed jobs of configs/rq4/jobs_final_ml1m.csv, one at a time
+0 jobs to run, 831 already done
+2026-11-18 17:39:35 RQ4 done [ml1m] seeds [all]
+2026-11-18 17:39:35 [pc2-queue] RQ4 ML-1M finished
+2026-11-18 17:39:35 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
+2026-11-18 17:39:55 [pc2-queue] RQ10 seed 2 stopped with an error (last lines of ~/rq10_seeds.log: scp: Connection closed 2026-11-18 17:39:55 [rq10-seed2] Sports_and_Outdoors.txt: copy from aura1@10.100.97.71 failed ); the service will retry
+2026-11-18 17:49:55 [pc2-queue] start, code 6a15530f
+2026-11-18 17:49:55 RQ4 start: datasets [ml1m], tune 1, final seeds [all], picks from this PC
+2026-11-18 17:49:55 1 clean base and MF-BPR on it
+2026-11-18 17:49:55 2 noise files
+2026-11-18 17:49:55 3 LLM item profiles for R4
+2026-11-18 17:49:55 4 reference models and Llama scores (ML-1M)
+2026-11-18 17:50:01 4b reference models for the clean bases (teacher M1c) and the Yelp files (R2, M1, hard positives)
+2026-11-18 17:50:02 5 tuning [ml1m]
+273 of 522 jobs kept (datasets ml1m)
+0 jobs to run, 273 already done
+kept the logs of 0 failed jobs in logs/rq4_tune/failed
+2026-11-18 17:50:02   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
+0 jobs to run, 273 already done
+2026-11-18 17:50:02 6 picks
+91 cells picked -> /home/anurag/survey/rq1/configs/rq4/best.json; incomplete: yelp|L1|drop (0/3), yelp|L1|reweight (0/3), yelp|L1|relabel (0/3), yelp|L1|resample (0/3), yelp|M1|drop (0/3), yelp|M1|reweight (0/3), yelp|M1|relabel (0/3), yelp|M1|resample (0/3), yelp|M2|drop (0/3), yelp|M2|reweight (0/3), yelp|M2|relabel (0/3), yelp|M2|resample (0/3), yelp|M1c|drop (0/3), yelp|M1c|reweight (0/3), yelp|M1c|relabel (0/3), yelp|M1c|resample (0/3), yelp|L2|drop (0/3), yelp|L2|reweight (0/3), yelp|L2|relabel (0/3), yelp|L2|resample (0/3), yelp|L5|drop (0/3), yelp|L5|reweight (0/3), yelp|L5|relabel (0/3), yelp|L5|resample (0/3), yelp|L3|drop (0/3), yelp|L3|reweight (0/3), yelp|L3|relabel (0/3), yelp|L3|resample (0/3), yelp|L4|drop (0/3), yelp|L4|reweight (0/3), yelp|L4|relabel (0/3), yelp|L4|resample (0/3), yelp|P1|drop (0/3), yelp|P1|reweight (0/3), yelp|P1|relabel (0/3), yelp|P1|resample (0/3), yelp|P2|drop (0/3), yelp|P2|reweight (0/3), yelp|P2|relabel (0/3), yelp|P2|resample (0/3), yelp|R1|drop (0/3), yelp|R1|reweight (0/3), yelp|R1|relabel (0/3), yelp|R1|resample (0/3), yelp|R2|drop (0/3), yelp|R2|reweight (0/3), yelp|R2|relabel (0/3), yelp|R2|resample (0/3), yelp|R3|drop (0/3), yelp|R3|reweight (0/3), yelp|R3|relabel (0/3), yelp|R3|resample (0/3), yelp|L1|graph_drop (0/3), yelp|L1|graph_reweight (0/3), yelp|L1|user_reweight (0/3), yelp|L1|soft_relabel (0/3), yelp|M1|graph_drop (0/3), yelp|M1|graph_reweight (0/3), yelp|M1|user_reweight (0/3), yelp|M1|soft_relabel (0/3), yelp|L3|graph_drop (0/3), yelp|L3|graph_reweight (0/3), yelp|L3|user_reweight (0/3), yelp|L3|soft_relabel (0/3), yelp|L4|graph_drop (0/3), yelp|L4|graph_reweight (0/3), yelp|L4|user_reweight (0/3), yelp|L4|soft_relabel (0/3), yelp|R1|graph_drop (0/3), yelp|R1|graph_reweight (0/3), yelp|R1|user_reweight (0/3), yelp|R1|soft_relabel (0/3), yelp|R2|graph_drop (0/3), yelp|R2|graph_reweight (0/3), yelp|R2|user_reweight (0/3), yelp|R2|soft_relabel (0/3), yelp|L1|reshape (0/3), yelp|M1|reshape (0/3), yelp|L3|reshape (0/3), yelp|L4|reshape (0/3), yelp|R1|reshape (0/3), yelp|R2|reshape (0/3), yelp|none|reshape (0/3)
+91 ml1m picks -> configs/rq4/picks_ml1m.json
+2026-11-18 17:50:02 7 finals [ml1m] seeds [all]
+831 of 837 jobs kept (datasets ml1m)
+0 jobs to run, 831 already done
+kept the logs of 0 failed jobs in logs/rq4_final/failed
+2026-11-18 17:50:02   retry pass: failed jobs of configs/rq4/jobs_final_ml1m.csv, one at a time
+0 jobs to run, 831 already done
+2026-11-18 17:50:02 RQ4 done [ml1m] seeds [all]
+2026-11-18 17:50:02 [pc2-queue] RQ4 ML-1M finished
+2026-11-18 17:50:02 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
+2026-11-18 17:50:22 [pc2-queue] RQ10 seed 2 stopped with an error (last lines of ~/rq10_seeds.log: scp: Connection closed 2026-11-18 17:50:22 [rq10-seed2] Sports_and_Outdoors.txt: copy from aura1@10.100.97.71 failed ); the service will retry
+2026-11-18 18:00:22 [pc2-queue] start, code 6a15530f
+2026-11-18 18:00:22 RQ4 start: datasets [ml1m], tune 1, final seeds [all], picks from this PC
+2026-11-18 18:00:22 1 clean base and MF-BPR on it
+2026-11-18 18:00:22 2 noise files
+2026-11-18 18:00:22 3 LLM item profiles for R4
+2026-11-18 18:00:22 4 reference models and Llama scores (ML-1M)
+2026-11-18 18:00:28 4b reference models for the clean bases (teacher M1c) and the Yelp files (R2, M1, hard positives)
+2026-11-18 18:00:29 5 tuning [ml1m]
+273 of 522 jobs kept (datasets ml1m)
+0 jobs to run, 273 already done
+kept the logs of 0 failed jobs in logs/rq4_tune/failed
+2026-11-18 18:00:29   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
+0 jobs to run, 273 already done
+2026-11-18 18:00:29 6 picks
+91 cells picked -> /home/anurag/survey/rq1/configs/rq4/best.json; incomplete: yelp|L1|drop (0/3), yelp|L1|reweight (0/3), yelp|L1|relabel (0/3), yelp|L1|resample (0/3), yelp|M1|drop (0/3), yelp|M1|reweight (0/3), yelp|M1|relabel (0/3), yelp|M1|resample (0/3), yelp|M2|drop (0/3), yelp|M2|reweight (0/3), yelp|M2|relabel (0/3), yelp|M2|resample (0/3), yelp|M1c|drop (0/3), yelp|M1c|reweight (0/3), yelp|M1c|relabel (0/3), yelp|M1c|resample (0/3), yelp|L2|drop (0/3), yelp|L2|reweight (0/3), yelp|L2|relabel (0/3), yelp|L2|resample (0/3), yelp|L5|drop (0/3), yelp|L5|reweight (0/3), yelp|L5|relabel (0/3), yelp|L5|resample (0/3), yelp|L3|drop (0/3), yelp|L3|reweight (0/3), yelp|L3|relabel (0/3), yelp|L3|resample (0/3), yelp|L4|drop (0/3), yelp|L4|reweight (0/3), yelp|L4|relabel (0/3), yelp|L4|resample (0/3), yelp|P1|drop (0/3), yelp|P1|reweight (0/3), yelp|P1|relabel (0/3), yelp|P1|resample (0/3), yelp|P2|drop (0/3), yelp|P2|reweight (0/3), yelp|P2|relabel (0/3), yelp|P2|resample (0/3), yelp|R1|drop (0/3), yelp|R1|reweight (0/3), yelp|R1|relabel (0/3), yelp|R1|resample (0/3), yelp|R2|drop (0/3), yelp|R2|reweight (0/3), yelp|R2|relabel (0/3), yelp|R2|resample (0/3), yelp|R3|drop (0/3), yelp|R3|reweight (0/3), yelp|R3|relabel (0/3), yelp|R3|resample (0/3), yelp|L1|graph_drop (0/3), yelp|L1|graph_reweight (0/3), yelp|L1|user_reweight (0/3), yelp|L1|soft_relabel (0/3), yelp|M1|graph_drop (0/3), yelp|M1|graph_reweight (0/3), yelp|M1|user_reweight (0/3), yelp|M1|soft_relabel (0/3), yelp|L3|graph_drop (0/3), yelp|L3|graph_reweight (0/3), yelp|L3|user_reweight (0/3), yelp|L3|soft_relabel (0/3), yelp|L4|graph_drop (0/3), yelp|L4|graph_reweight (0/3), yelp|L4|user_reweight (0/3), yelp|L4|soft_relabel (0/3), yelp|R1|graph_drop (0/3), yelp|R1|graph_reweight (0/3), yelp|R1|user_reweight (0/3), yelp|R1|soft_relabel (0/3), yelp|R2|graph_drop (0/3), yelp|R2|graph_reweight (0/3), yelp|R2|user_reweight (0/3), yelp|R2|soft_relabel (0/3), yelp|L1|reshape (0/3), yelp|M1|reshape (0/3), yelp|L3|reshape (0/3), yelp|L4|reshape (0/3), yelp|R1|reshape (0/3), yelp|R2|reshape (0/3), yelp|none|reshape (0/3)
+91 ml1m picks -> configs/rq4/picks_ml1m.json
+2026-11-18 18:00:29 7 finals [ml1m] seeds [all]
+831 of 837 jobs kept (datasets ml1m)
+0 jobs to run, 831 already done
+kept the logs of 0 failed jobs in logs/rq4_final/failed
+2026-11-18 18:00:29   retry pass: failed jobs of configs/rq4/jobs_final_ml1m.csv, one at a time
+0 jobs to run, 831 already done
+2026-11-18 18:00:29 RQ4 done [ml1m] seeds [all]
+2026-11-18 18:00:29 [pc2-queue] RQ4 ML-1M finished
+2026-11-18 18:00:29 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
+2026-11-18 18:00:49 [pc2-queue] RQ10 seed 2 stopped with an error (last lines of ~/rq10_seeds.log: scp: Connection closed 2026-11-18 18:00:49 [rq10-seed2] Sports_and_Outdoors.txt: copy from aura1@10.100.97.71 failed ); the service will retry
