@@ -1,14 +1,15 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-18 22:48:27 IST  up since 2026-11-17 18:44:08
+pc2 (anurag@home)  2026-11-18 23:19:27 IST  up since 2026-11-17 18:44:08
 code 6a15530f 16 Nov 20:44  linger yes  disk free 918G  ram used 3/62 GB swap 0 GB 
-gpu 0 %, 409 MiB, 24564 MiB, 41
+gpu 1 %, 409 MiB, 24564 MiB, 40
 ---- services ----
   survey-kick.service          inactive dead
-  survey-queue.service         activating auto-restart
+  survey-queue.service         failed failed
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-18 22:17:44 push ok (d7c1a095; pc2)
+ALERT: survey-queue has failed: journalctl --user -u survey-queue -n 30
+  last snapshot: 2026-11-18 22:48:49 push ok (aae3d9a3; pc2)
 ALERT: could not fetch another PC's status over SSH (see ~/survey_snapshot.log)
 ---- gpu jobs ----
 ---- RQ4 (signal x treatment) ----
@@ -17,28 +18,28 @@ ALERT: could not fetch another PC's status over SSH (see ~/survey_snapshot.log)
   final ml1m: 831/831 done, 0 failed so far
   finished: ml1m
 ---- queue log (~/survey_queue.log) ----
-  2026-11-18 22:42:49   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
+  2026-11-18 22:53:16   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
   0 jobs to run, 273 already done
-  2026-11-18 22:42:49 6 picks
+  2026-11-18 22:53:17 6 picks
   91 cells picked -> /home/anurag/survey/rq1/configs/rq4/best.json; incomplete: yelp|L1|drop (0/3), yelp|L1|reweight (0/3), yelp|L1|relabel (0/3), yelp|L1|resampl
   91 ml1m picks -> configs/rq4/picks_ml1m.json
-  2026-11-18 22:42:49 7 finals [ml1m] seeds [all]
+  2026-11-18 22:53:17 7 finals [ml1m] seeds [all]
   831 of 837 jobs kept (datasets ml1m)
   0 jobs to run, 831 already done
   kept the logs of 0 failed jobs in logs/rq4_final/failed
-  2026-11-18 22:42:49   retry pass: failed jobs of configs/rq4/jobs_final_ml1m.csv, one at a time
+  2026-11-18 22:53:17   retry pass: failed jobs of configs/rq4/jobs_final_ml1m.csv, one at a time
   0 jobs to run, 831 already done
-  2026-11-18 22:42:49 RQ4 done [ml1m] seeds [all]
-  2026-11-18 22:42:49 [pc2-queue] RQ4 ML-1M finished
-  2026-11-18 22:42:49 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
-  2026-11-18 22:43:09 [pc2-queue] RQ10 seed 2 stopped with an error (last lines of ~/rq10_seeds.log: scp: Connection closed 2026-11-18 22:43:09 [rq10-seed2] Spor
+  2026-11-18 22:53:17 RQ4 done [ml1m] seeds [all]
+  2026-11-18 22:53:17 [pc2-queue] RQ4 ML-1M finished
+  2026-11-18 22:53:17 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
+  2026-11-18 22:53:37 [pc2-queue] RQ10 seed 2 stopped with an error (last lines of ~/rq10_seeds.log: scp: Connection closed 2026-11-18 22:53:37 [rq10-seed2] Spor
 ---- recent service log lines ----
-2026-11-18T22:32:42+05:30 home systemd[1983]: survey-queue.service: Failed with result 'exit-code'.
-2026-11-18T22:32:42+05:30 home systemd[1983]: survey-queue.service: Consumed 16.665s CPU time.
-2026-11-18T22:42:42+05:30 home systemd[1983]: survey-queue.service: Scheduled restart job, restart counter is at 35.
-2026-11-18T22:42:42+05:30 home systemd[1983]: Started survey-queue.service - Survey unattended queue (pc2).
-2026-11-18T22:43:09+05:30 home systemd[1983]: survey-queue.service: Main process exited, code=exited, status=1/FAILURE
-2026-11-18T22:43:09+05:30 home systemd[1983]: survey-queue.service: Failed with result 'exit-code'.
-2026-11-18T22:43:09+05:30 home systemd[1983]: survey-queue.service: Consumed 16.604s CPU time.
-2026-11-18T22:48:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-18T22:53:37+05:30 home systemd[1983]: survey-queue.service: Failed with result 'exit-code'.
+2026-11-18T22:53:37+05:30 home systemd[1983]: survey-queue.service: Consumed 16.619s CPU time.
+2026-11-18T23:03:37+05:30 home systemd[1983]: survey-queue.service: Scheduled restart job, restart counter is at 37.
+2026-11-18T23:03:37+05:30 home systemd[1983]: survey-queue.service: Start request repeated too quickly.
+2026-11-18T23:03:37+05:30 home systemd[1983]: survey-queue.service: Failed with result 'exit-code'.
+2026-11-18T23:03:37+05:30 home systemd[1983]: Failed to start survey-queue.service - Survey unattended queue (pc2).
+2026-11-18T23:03:37+05:30 home systemd[1983]: survey-queue.service: Consumed 16.619s CPU time.
+2026-11-18T23:19:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
