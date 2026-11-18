@@ -1,14 +1,15 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-18 16:23:42 IST  up since 2026-11-17 18:44:08
-code 6a15530f 16 Nov 20:44  linger yes  disk free 936G  ram used 3/62 GB swap 0 GB 
-gpu 20 %, 765 MiB, 24564 MiB, 39
+pc2 (anurag@home)  2026-11-18 16:36:27 IST  up since 2026-11-17 18:44:08
+code 6a15530f 16 Nov 20:44  linger yes  disk free 917G  ram used 4/62 GB swap 0 GB 
+gpu 0 %, 654 MiB, 24564 MiB, 41
 ---- services ----
   survey-kick.service          inactive dead
   survey-queue.service         active running
-  survey-snapshot.service      inactive dead
-  last snapshot: 2026-11-18 16:05:37 push ok (7db998e6; pc2 pc3)
+  survey-snapshot.service      activating start
+  last snapshot: 2026-11-18 16:23:59 push ok (ae171e4a; pc2)
+ALERT: could not fetch another PC's status over SSH (see ~/survey_snapshot.log)
 ---- gpu jobs ----
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
@@ -32,7 +33,6 @@ gpu 20 %, 765 MiB, 24564 MiB, 39
   2026-11-18 16:23:38 [pc2-queue] RQ4 ML-1M finished
   2026-11-18 16:23:38 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
 ---- recent service log lines ----
-2026-11-18T15:34:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-18T15:34:31+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-18T16:05:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-18T16:05:37+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
@@ -40,4 +40,5 @@ gpu 20 %, 765 MiB, 24564 MiB, 39
 2026-11-18T16:23:31+05:30 home systemd[1983]: Starting survey-kick.service - Start survey-queue if it is not running...
 2026-11-18T16:23:31+05:30 home systemd[1983]: Started survey-queue.service - Survey unattended queue (pc2).
 2026-11-18T16:23:31+05:30 home systemd[1983]: Finished survey-kick.service - Start survey-queue if it is not running.
+2026-11-18T16:36:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```

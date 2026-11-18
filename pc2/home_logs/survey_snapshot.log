@@ -585,3 +585,11 @@
 2026-11-18 15:03:30 push ok (def33737; pc2 pc3)
 2026-11-18 15:34:31 push ok (a2ef5ce7; pc2 pc3)
 2026-11-18 16:05:37 push ok (7db998e6; pc2 pc3)
+Connection timed out during banner exchange
+Connection to 10.100.97.71 port 22 timed out
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+2026-11-18 16:23:57 relay pc3 FAILED (ssh aura1@10.100.97.71)
+2026-11-18 16:23:59 push ok (ae171e4a; pc2)
