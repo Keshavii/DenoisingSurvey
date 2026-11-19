@@ -1,28 +1,33 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-20 04:15:27 IST  up since 2026-11-17 18:44:08
-code 6a15530f 16 Nov 20:44  linger yes  disk free 908G  ram used 8/62 GB swap 0 GB 
-gpu 64 %, 7764 MiB, 24564 MiB, 50
+pc2 (anurag@home)  2026-11-20 04:46:27 IST  up since 2026-11-17 18:44:08
+code 6a15530f 16 Nov 20:44  linger yes  disk free 907G  ram used 7/62 GB swap 0 GB 
+gpu 100 %, 22562 MiB, 24564 MiB, 66
 ---- services ----
   survey-kick.service          inactive dead
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-20 03:44:31 push ok (b7903176; pc2 pc3)
+  last snapshot: 2026-11-20 04:15:31 push ok (11a57e7a; pc2 pc3)
 ---- gpu jobs ----
-  01:50       timeout 12h python run_hsd_survey.py --dataset Beauty_I10_s2 --sub_model SASRec
-  01:50       python run_hsd_survey.py --dataset Beauty_I10_s2 --sub_model SASRec
+  26:04       timeout 12h bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s2/train.dat -vf /home/anurag/survey
+  26:04       bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s2/train.dat -vf /home/anurag/survey/rq10/data_s
+  26:04       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s2/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  00:14       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s2/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  00:14       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s2/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  00:14       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s2/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  00:14       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s2/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
   picks: picks_ml1m.json (91 cells)
   final ml1m: 831/831 done, 0 failed so far
   finished: ml1m
 ---- RQ10 (specialists) ----
-  .done markers: 10  (s2_hsd_sports_and_outdoors_n0_s2 s2_fmlp_beauty_i10_s2 s2_steam_beauty_n0_s2 s2_hsd_beauty_n0_s2 s2_steam_sports_and_outdoors_n0_s2 s2_fmlp_beauty_n0_s2 s2_fmlp_yelp_n0_s2 s2_fmlp_sports_and_outdoors_n0_s2 s2_hsd_yelp_n0_s2 s2_steam_yelp_n0_s2 )
+  .done markers: 11  (s2_hsd_beauty_i10_s2 s2_hsd_sports_and_outdoors_n0_s2 s2_fmlp_beauty_i10_s2 s2_steam_beauty_n0_s2 s2_hsd_beauty_n0_s2 s2_steam_sports_and_outdoors_n0_s2 s2_fmlp_beauty_n0_s2 s2_fmlp_yelp_n0_s2 s2_fmlp_sports_and_outdoors_n0_s2 s2_hsd_yelp_n0_s2 s2_steam_yelp_n0_s2 )
   last lines of ~/rq10_seeds.log:
-    2026-11-20 04:09:40 [rq10-stage2] s2_fmlp_beauty_i10_s2: start
-    2026-11-20 04:13:36 [rq10-stage2] s2_fmlp_beauty_i10_s2: exit 0  3 min  peak 2544 MiB
     2026-11-20 04:13:36 [rq10-stage2] s2_hsd_beauty_i10_s2: start
+    2026-11-20 04:20:22 [rq10-stage2] s2_hsd_beauty_i10_s2: exit 0  6 min  peak 7764 MiB
+    2026-11-20 04:20:22 [rq10-stage2] s2_steam_beauty_i10_s2: start
   run_summary.tsv (name, exit code, minutes, peak MiB):
     s2_fmlp_beauty_n0_s2	0	3	2557
     s2_hsd_beauty_n0_s2	0	7	7783
@@ -34,6 +39,7 @@ gpu 64 %, 7764 MiB, 24564 MiB, 50
     s2_hsd_yelp_n0_s2	0	15	7779
     s2_steam_yelp_n0_s2	0	212	18863
     s2_fmlp_beauty_i10_s2	0	3	2544
+    s2_hsd_beauty_i10_s2	0	6	7764
 ---- queue log (~/survey_queue.log) ----
   kept the logs of 0 failed jobs in logs/rq4_tune/failed
   2026-11-19 18:20:06   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
@@ -51,12 +57,12 @@ gpu 64 %, 7764 MiB, 24564 MiB, 50
   2026-11-19 18:20:06 [pc2-queue] RQ4 ML-1M finished
   2026-11-19 18:20:06 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
 ---- recent service log lines ----
-2026-11-20T02:39:26+05:30 home systemd[1983]: Finished survey-kick.service - Start survey-queue if it is not running.
-2026-11-20T02:42:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-20T02:42:31+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-20T03:13:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-20T03:13:31+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-20T03:44:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-20T03:44:31+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-20T04:15:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-20T04:15:31+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-20T04:15:31+05:30 home systemd[1983]: survey-snapshot.service: Consumed 1.087s CPU time.
+2026-11-20T04:40:26+05:30 home systemd[1983]: Starting survey-kick.service - Start survey-queue if it is not running...
+2026-11-20T04:40:26+05:30 home systemd[1983]: Finished survey-kick.service - Start survey-queue if it is not running.
+2026-11-20T04:46:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
