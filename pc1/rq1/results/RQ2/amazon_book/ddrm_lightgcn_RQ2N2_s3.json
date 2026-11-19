@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.04929058820404992,
+  "recall@20": 0.0770508284284002,
+  "recall@50": 0.13269598373103708,
+  "ndcg@10": 0.034653934971832445,
+  "ndcg@20": 0.043150088653167155,
+  "ndcg@50": 0.05762036103541151,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1515,
+      "ndcg@20": 0.03454077376004757,
+      "recall@20": 0.06930693069306931
+    },
+    "warm(5-20)": {
+      "n_users": 40332,
+      "ndcg@20": 0.03606771317988909,
+      "recall@20": 0.0772298257793646
+    },
+    "established(>20)": {
+      "n_users": 38502,
+      "ndcg@20": 0.05090785395500414,
+      "recall@20": 0.07716803490884099
+    },
+    "user_q1": {
+      "n_users": 15063,
+      "ndcg@20": 0.028181662681238926,
+      "recall@20": 0.0640531987873155
+    },
+    "user_q2": {
+      "n_users": 13939,
+      "ndcg@20": 0.03455224909755505,
+      "recall@20": 0.0780782935169907
+    },
+    "user_q3": {
+      "n_users": 18937,
+      "ndcg@20": 0.04662584049209122,
+      "recall@20": 0.0906382566756438
+    },
+    "user_q4": {
+      "n_users": 16316,
+      "ndcg@20": 0.04972750535100175,
+      "recall@20": 0.08539528829428315
+    },
+    "user_q5": {
+      "n_users": 16094,
+      "ndcg@20": 0.05384831423818387,
+      "recall@20": 0.06387872227231711
+    },
+    "items_head": {
+      "n_truth": 188478,
+      "recall@20_micro": 0.09312492704718853
+    },
+    "items_mid": {
+      "n_truth": 55730,
+      "recall@20_micro": 0.01722591064058855
+    },
+    "items_tail": {
+      "n_truth": 39704,
+      "recall@20_micro": 0.007429981865806972
+    },
+    "coverage@20": 0.4901432147816304,
+    "gini@20": 0.9049653006400487
+  },
+  "part": "RQ2",
+  "dataset": "amazon_book",
+  "method": "DDRM",
+  "backbone": "LightGCN",
+  "cond": "RQ2N2",
+  "seed": "3",
+  "train_file": "train_RQ2N2_s3.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/rq2/amazon_book/ddrm_lightgcn_RQ2N2_s3/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-19 05:17:04"
+}
