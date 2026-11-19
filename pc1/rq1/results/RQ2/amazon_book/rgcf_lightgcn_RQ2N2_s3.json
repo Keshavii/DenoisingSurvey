@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.0433885067150232,
+  "recall@20": 0.0713060543547759,
+  "recall@50": 0.13023794766005617,
+  "ndcg@10": 0.02919638251504229,
+  "ndcg@20": 0.038072238987074444,
+  "ndcg@50": 0.05354140130132484,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1515,
+      "ndcg@20": 0.013251053953493904,
+      "recall@20": 0.036303630363036306
+    },
+    "warm(5-20)": {
+      "n_users": 40332,
+      "ndcg@20": 0.030982061088748954,
+      "recall@20": 0.06921923038778141
+    },
+    "established(>20)": {
+      "n_users": 38502,
+      "ndcg@20": 0.046476092042010246,
+      "recall@20": 0.07486936162671781
+    },
+    "user_q1": {
+      "n_users": 15063,
+      "ndcg@20": 0.020075227626750073,
+      "recall@20": 0.050194737657394496
+    },
+    "user_q2": {
+      "n_users": 13939,
+      "ndcg@20": 0.03053604448065301,
+      "recall@20": 0.06918238993710692
+    },
+    "user_q3": {
+      "n_users": 18937,
+      "ndcg@20": 0.04234672575582671,
+      "recall@20": 0.08767668233264685
+    },
+    "user_q4": {
+      "n_users": 16316,
+      "ndcg@20": 0.04682856191671837,
+      "recall@20": 0.08315413441669878
+    },
+    "user_q5": {
+      "n_users": 16094,
+      "ndcg@20": 0.04753675225199568,
+      "recall@20": 0.0616302537721531
+    },
+    "items_head": {
+      "n_truth": 188478,
+      "recall@20_micro": 0.0862700155986375
+    },
+    "items_mid": {
+      "n_truth": 55730,
+      "recall@20_micro": 0.013098869549614211
+    },
+    "items_tail": {
+      "n_truth": 39704,
+      "recall@20_micro": 0.009470078581503123
+    },
+    "coverage@20": 0.1517083405126542,
+    "gini@20": 0.9824175396506855
+  },
+  "part": "RQ2",
+  "dataset": "amazon_book",
+  "method": "RGCF",
+  "backbone": "LightGCN",
+  "cond": "RQ2N2",
+  "seed": "3",
+  "train_file": "train_RQ2N2_s3.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/rq2/amazon_book/rgcf_lightgcn_RQ2N2_s3/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-19 04:27:28"
+}
