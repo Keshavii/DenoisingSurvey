@@ -977,3 +977,11 @@ tar: Child returned status 1
 tar: Error is not recoverable: exiting now
 2026-11-19 16:53:42 relay pc3 FAILED (ssh aura1@10.100.97.71)
 2026-11-19 16:53:45 push ok (00044d80; pc2)
+Connection timed out during banner exchange
+Connection to 10.100.97.71 port 22 timed out
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+2026-11-19 17:24:42 relay pc3 FAILED (ssh aura1@10.100.97.71)
+2026-11-19 17:24:44 push ok (a1ebeb2b; pc2)
