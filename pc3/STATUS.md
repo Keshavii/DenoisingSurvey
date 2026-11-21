@@ -1,21 +1,21 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-21 17:00:14 UTC  up since 2026-11-19 12:42:06
-code 6a15530f 16 Nov 20:44  linger yes  disk free 584G  ram used 7/62 GB swap 0 GB 
+pc3 (aura1@aura-node1)  2026-11-21 17:30:21 UTC  up since 2026-11-19 12:42:06
+code 6a15530f 16 Nov 20:44  linger yes  disk free 584G  ram used 6/62 GB swap 0 GB 
 gpu No devices were found
 ---- services ----
   survey-kick.service          inactive dead
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-21 16:29:22 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-21 17:00:15 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  04:17:25    timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R1 --treat graph_drop --rate 0.1 --data data/yelp --tra
-  04:17:25    bash -c python -m rq1kit.rq4 --signal R1 --treat graph_drop --rate 0.1 --data data/yelp --train_file train_N3_20_s2.tsv
-  04:17:25    python -m rq1kit.rq4 --signal R1 --treat graph_drop --rate 0.1 --data data/yelp --train_file train_N3_20_s2.tsv --lr 0.
-  37:12       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R1 --treat graph_reweight --beta 0.25 --data data/yelp 
-  37:12       bash -c python -m rq1kit.rq4 --signal R1 --treat graph_reweight --beta 0.25 --data data/yelp --train_file train_N3_20_s
-  37:12       python -m rq1kit.rq4 --signal R1 --treat graph_reweight --beta 0.25 --data data/yelp --train_file train_N3_20_s2.tsv --
+  04:47:32    timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R1 --treat graph_drop --rate 0.1 --data data/yelp --tra
+  04:47:32    bash -c python -m rq1kit.rq4 --signal R1 --treat graph_drop --rate 0.1 --data data/yelp --train_file train_N3_20_s2.tsv
+  04:47:32    python -m rq1kit.rq4 --signal R1 --treat graph_drop --rate 0.1 --data data/yelp --train_file train_N3_20_s2.tsv --lr 0.
+  01:07:19    timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R1 --treat graph_reweight --beta 0.25 --data data/yelp 
+  01:07:19    bash -c python -m rq1kit.rq4 --signal R1 --treat graph_reweight --beta 0.25 --data data/yelp --train_file train_N3_20_s
+  01:07:19    python -m rq1kit.rq4 --signal R1 --treat graph_reweight --beta 0.25 --data data/yelp --train_file train_N3_20_s2.tsv --
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
@@ -168,12 +168,12 @@ gpu No devices were found
   2026-11-19 12:42:36 7 finals [yelp] seeds [2]
   169 of 350 jobs kept (datasets yelp, seeds 2)
 ---- recent service log lines ----
-2026-11-21T15:20:21+00:00 aura-node1 systemd[2111]: Finished survey-kick.service - Start survey-queue if it is not running.
-2026-11-21T15:28:21+00:00 aura-node1 systemd[2111]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-21T15:28:22+00:00 aura-node1 systemd[2111]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-21T15:59:10+00:00 aura-node1 systemd[2111]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-21T15:59:11+00:00 aura-node1 systemd[2111]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-21T16:29:21+00:00 aura-node1 systemd[2111]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-21T16:29:22+00:00 aura-node1 systemd[2111]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-21T17:00:14+00:00 aura-node1 systemd[2111]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-21T17:00:15+00:00 aura-node1 systemd[2111]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-21T17:20:57+00:00 aura-node1 systemd[2111]: Starting survey-kick.service - Start survey-queue if it is not running...
+2026-11-21T17:20:57+00:00 aura-node1 systemd[2111]: Finished survey-kick.service - Start survey-queue if it is not running.
+2026-11-21T17:30:21+00:00 aura-node1 systemd[2111]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
