@@ -52,4 +52,19 @@ python -m rq1kit.queue --jobs configs/rq2/jobs.csv --slots "$SLOTS" --logs logs/
 say "  retry pass: failed RQ2 jobs, one at a time"
 python -m rq1kit.queue --jobs configs/rq2/jobs.csv --slots 1 --logs logs/rq2
 touch configs/rq2/done
-say "PC1 queue complete: RQ2 finished (results/RQ2)"
+
+# RQ5 (lean): popularity-noise curves 10/30/50% on Yelp and Gowalla, Part C picks, LightGCN, 3 seeds (scripts/rq5_jobs.py
+# lives in the survey repo; it runs against this kit through KIT). Every step skips what is already done.
+RQ5=$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)/rq5_jobs.py
+[ -f "$RQ5" ] || { say "$RQ5 missing (git pull in ~/survey)"; exit 1; }
+export KIT
+mkdir -p configs/rq5
+say "RQ5 1/2 noise files"
+python "$RQ5" noise || { say "RQ5 noise files failed"; exit 1; }
+say "RQ5 2/2 runs"
+python "$RQ5" jobs > configs/rq5/jobs.csv || { say "RQ5 job list failed"; exit 1; }
+python -m rq1kit.queue --jobs configs/rq5/jobs.csv --slots "$SLOTS" --logs logs/rq5
+say "  retry pass: failed RQ5 jobs, one at a time"
+python -m rq1kit.queue --jobs configs/rq5/jobs.csv --slots 1 --logs logs/rq5
+touch configs/rq5/done
+say "PC1 queue complete: RQ2 and RQ5 finished (results/RQ2, results/RQ5)"

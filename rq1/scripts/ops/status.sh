@@ -104,6 +104,12 @@ pc1)
   else
     echo "  waits until Part C has nothing left to run"
   fi
+  hr "RQ5 (noise curves, Yelp and Gowalla)"
+  if [ -f "$KIT/configs/rq5/jobs.csv" ]; then
+    queue_progress "$KIT/configs/rq5/jobs.csv" "$KIT/logs/rq5" rq5
+  else
+    echo "  not started (the queue starts it after RQ2)"
+  fi
   ;;
 pc2|pc3)
   hr "RQ4 (signal x treatment)"
