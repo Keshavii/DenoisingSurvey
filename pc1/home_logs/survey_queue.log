@@ -1023,3 +1023,23 @@ amazon_book N3 s3: 197883 injected = 0.0730 of 2712429 rows (rho* 0.0735)
 2026-11-21 18:28:36 [pc1-queue]   retry pass: failed RQ2 jobs, one at a time
 0 jobs to run, 504 already done
 2026-11-21 18:28:36 [pc1-queue] RQ5 1/2 noise files
+yelp N2 10% s1: 141217 injected = 0.0909 of 1553156 rows
+yelp N2 10% s2: 141257 injected = 0.0909 of 1553196 rows
+yelp N2 10% s3: 141208 injected = 0.0909 of 1553147 rows
+yelp N2 30% s1: 423581 injected = 0.2308 of 1835520 rows
+yelp N2 30% s2: 423628 injected = 0.2308 of 1835567 rows
+yelp N2 30% s3: 423653 injected = 0.2308 of 1835592 rows
+yelp N2 50% s1: 705883 injected = 0.3333 of 2117822 rows
+yelp N2 50% s2: 706003 injected = 0.3333 of 2117942 rows
+yelp N2 50% s3: 706002 injected = 0.3333 of 2117941 rows
+gowalla N2 10% s1: 82219 injected = 0.0909 of 904697 rows
+gowalla N2 10% s2: 82294 injected = 0.0910 of 904772 rows
+gowalla N2 10% s3: 82291 injected = 0.0910 of 904769 rows
+gowalla N2 30% s1: 246715 injected = 0.2307 of 1069193 rows
+gowalla N2 30% s2: 246772 injected = 0.2308 of 1069250 rows
+gowalla N2 30% s3: 246677 injected = 0.2307 of 1069155 rows
+gowalla N2 50% s1: 411216 injected = 0.3333 of 1233694 rows
+gowalla N2 50% s2: 411305 injected = 0.3334 of 1233783 rows
+gowalla N2 50% s3: 411245 injected = 0.3333 of 1233723 rows
+2026-11-21 18:30:53 [pc1-queue] RQ5 2/2 runs
+252 RQ5 jobs
