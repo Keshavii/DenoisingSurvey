@@ -1151,3 +1151,10 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-11-22 19:48:30 push ok (ea76a6f9; pc2 pc3)
 2026-11-22 20:19:30 push ok (123c652c; pc2 pc3)
 2026-11-22 20:50:30 push ok (24c05938; pc2 pc3)
+ssh: connect to host 10.100.97.71 port 22: No route to host
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+2026-11-22 21:21:41 relay pc3 FAILED (ssh aura1@10.100.97.71)
+2026-11-22 21:21:43 push ok (f05291ff; pc2)
