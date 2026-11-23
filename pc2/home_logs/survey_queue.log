@@ -2984,3 +2984,9 @@ kept the logs of 0 failed jobs in logs/rq4_final/failed
 2026-11-23 07:14:33 [pc2-queue] RQ4 ML-1M finished
 2026-11-23 07:14:33 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
 2026-11-23 07:14:37 [pc2-queue] PC2 queue complete: RQ4 ML-1M and RQ10 seed 2 finished
+2026-11-23 09:14:26 [pc2-queue] start, code 6a15530f
+2026-11-23 09:14:26 RQ4 start: datasets [ml1m], tune 1, final seeds [all], picks from this PC
+2026-11-23 09:14:26 1 clean base and MF-BPR on it
+2026-11-23 09:14:26 2 noise files
+2026-11-23 09:14:26 3 LLM item profiles for R4
+2026-11-23 09:14:26 4 reference models and Llama scores (ML-1M)
