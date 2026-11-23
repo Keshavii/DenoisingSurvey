@@ -3062,3 +3062,29 @@ kept the logs of 0 failed jobs in logs/rq4_final/failed
 2026-11-23 13:16:33 [pc2-queue] RQ4 ML-1M finished
 2026-11-23 13:16:33 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
 2026-11-23 13:16:37 [pc2-queue] PC2 queue complete: RQ4 ML-1M and RQ10 seed 2 finished
+2026-11-23 15:17:26 [pc2-queue] start, code 6a15530f
+2026-11-23 15:17:26 RQ4 start: datasets [ml1m], tune 1, final seeds [all], picks from this PC
+2026-11-23 15:17:26 1 clean base and MF-BPR on it
+2026-11-23 15:17:26 2 noise files
+2026-11-23 15:17:26 3 LLM item profiles for R4
+2026-11-23 15:17:26 4 reference models and Llama scores (ML-1M)
+2026-11-23 15:17:32 4b reference models for the clean bases (teacher M1c) and the Yelp files (R2, M1, hard positives)
+2026-11-23 15:17:33 5 tuning [ml1m]
+273 of 522 jobs kept (datasets ml1m)
+0 jobs to run, 273 already done
+kept the logs of 0 failed jobs in logs/rq4_tune/failed
+2026-11-23 15:17:33   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
+0 jobs to run, 273 already done
+2026-11-23 15:17:33 6 picks
+91 cells picked -> /home/anurag/survey/rq1/configs/rq4/best.json; incomplete: yelp|L1|drop (0/3), yelp|L1|reweight (0/3), yelp|L1|relabel (0/3), yelp|L1|resample (0/3), yelp|M1|drop (0/3), yelp|M1|reweight (0/3), yelp|M1|relabel (0/3), yelp|M1|resample (0/3), yelp|M2|drop (0/3), yelp|M2|reweight (0/3), yelp|M2|relabel (0/3), yelp|M2|resample (0/3), yelp|M1c|drop (0/3), yelp|M1c|reweight (0/3), yelp|M1c|relabel (0/3), yelp|M1c|resample (0/3), yelp|L2|drop (0/3), yelp|L2|reweight (0/3), yelp|L2|relabel (0/3), yelp|L2|resample (0/3), yelp|L5|drop (0/3), yelp|L5|reweight (0/3), yelp|L5|relabel (0/3), yelp|L5|resample (0/3), yelp|L3|drop (0/3), yelp|L3|reweight (0/3), yelp|L3|relabel (0/3), yelp|L3|resample (0/3), yelp|L4|drop (0/3), yelp|L4|reweight (0/3), yelp|L4|relabel (0/3), yelp|L4|resample (0/3), yelp|P1|drop (0/3), yelp|P1|reweight (0/3), yelp|P1|relabel (0/3), yelp|P1|resample (0/3), yelp|P2|drop (0/3), yelp|P2|reweight (0/3), yelp|P2|relabel (0/3), yelp|P2|resample (0/3), yelp|R1|drop (0/3), yelp|R1|reweight (0/3), yelp|R1|relabel (0/3), yelp|R1|resample (0/3), yelp|R2|drop (0/3), yelp|R2|reweight (0/3), yelp|R2|relabel (0/3), yelp|R2|resample (0/3), yelp|R3|drop (0/3), yelp|R3|reweight (0/3), yelp|R3|relabel (0/3), yelp|R3|resample (0/3), yelp|L1|graph_drop (0/3), yelp|L1|graph_reweight (0/3), yelp|L1|user_reweight (0/3), yelp|L1|soft_relabel (0/3), yelp|M1|graph_drop (0/3), yelp|M1|graph_reweight (0/3), yelp|M1|user_reweight (0/3), yelp|M1|soft_relabel (0/3), yelp|L3|graph_drop (0/3), yelp|L3|graph_reweight (0/3), yelp|L3|user_reweight (0/3), yelp|L3|soft_relabel (0/3), yelp|L4|graph_drop (0/3), yelp|L4|graph_reweight (0/3), yelp|L4|user_reweight (0/3), yelp|L4|soft_relabel (0/3), yelp|R1|graph_drop (0/3), yelp|R1|graph_reweight (0/3), yelp|R1|user_reweight (0/3), yelp|R1|soft_relabel (0/3), yelp|R2|graph_drop (0/3), yelp|R2|graph_reweight (0/3), yelp|R2|user_reweight (0/3), yelp|R2|soft_relabel (0/3), yelp|L1|reshape (0/3), yelp|M1|reshape (0/3), yelp|L3|reshape (0/3), yelp|L4|reshape (0/3), yelp|R1|reshape (0/3), yelp|R2|reshape (0/3), yelp|none|reshape (0/3)
+91 ml1m picks -> configs/rq4/picks_ml1m.json
+2026-11-23 15:17:33 7 finals [ml1m] seeds [all]
+831 of 837 jobs kept (datasets ml1m)
+0 jobs to run, 831 already done
+kept the logs of 0 failed jobs in logs/rq4_final/failed
+2026-11-23 15:17:33   retry pass: failed jobs of configs/rq4/jobs_final_ml1m.csv, one at a time
+0 jobs to run, 831 already done
+2026-11-23 15:17:33 RQ4 done [ml1m] seeds [all]
+2026-11-23 15:17:33 [pc2-queue] RQ4 ML-1M finished
+2026-11-23 15:17:33 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
+2026-11-23 15:17:37 [pc2-queue] PC2 queue complete: RQ4 ML-1M and RQ10 seed 2 finished
