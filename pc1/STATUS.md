@@ -1,7 +1,7 @@
 # pc1 status
 
 ```
-pc1 (aura3@home)  2026-11-24 22:47:04 UTC  up since 2026-09-30 13:27:10
+pc1 (aura3@home)  2026-11-24 23:17:05 UTC  up since 2026-09-30 13:27:10
 code 2b25825f 21 Nov 18:28  linger yes  disk free 1008G  ram used 7/62 GB swap 0 GB 
 gpu 0 %, 890 MiB, 24564 MiB, 39
 ---- services ----
@@ -9,12 +9,12 @@ gpu 0 %, 890 MiB, 24564 MiB, 39
   survey-kick.service          inactive dead
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-24 22:17:07 push ok (427d76e1; pc1)
+  last snapshot: 2026-11-24 22:47:07 push ok (3202d48d; pc1)
 ---- gpu jobs ----
-  17-04:41:47 python -u -m rq1kit.partc run --skip dcf,pld,sl
+  17-05:11:48 python -u -m rq1kit.partc run --skip dcf,pld,sl
 ---- RQ1 Part C (partc driver status, refreshed every minute) ----
-  status file written 2026-11-24 22:46:10
-Part C status 2026-11-24 22:46  kit 2b25825f
+  status file written 2026-11-24 23:16:21
+Part C status 2026-11-24 23:16  kit 2b25825f
 method   b dataset      canary  tune   pick  finals  run fail confl
 DCF      1 adressa      passed   8/8   yes     9/9     0    0     0
 DCF      1 ml1m                  8/8   yes     9/9     0    0     0
@@ -79,7 +79,7 @@ SGL      2 amazon_book           8/8   yes     6/6     0    0     0
 LLaRD    3 ml1m         passed   8/8   yes     6/6     0    0     0
 total: 954 of 954 done, 0 running, 0 failed, 0 conflicts; held: none
 GPU: 0 %, 890 MiB, 24564 MiB
-rough finish: Tue 24 Nov 22:46 (0.0 h of known work)
+rough finish: Tue 24 Nov 23:16 (0.0 h of known work)
 ---- RQ2 (after Part C) ----
   started 2026-11-09 00:15:19
   rho*: adressa 0.607, ml1m 0.155, yelp 0.156, amazon_book 0.073
@@ -107,12 +107,12 @@ rough finish: Tue 24 Nov 22:46 (0.0 h of known work)
   0 jobs to run, 252 already done
   2026-11-24 22:42:44 [pc1-queue] PC1 queue complete: RQ2 and RQ5 finished (results/RQ2, results/RQ5)
 ---- recent service log lines ----
-2026-11-24T21:47:06+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-24T22:17:03+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-24T22:17:07+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-24T22:42:42+00:00 home systemd[3714]: Starting survey-kick.service - Start survey-queue if it is not running...
 2026-11-24T22:42:42+00:00 home systemd[3714]: Started survey-queue.service - Survey unattended queue (pc1).
 2026-11-24T22:42:42+00:00 home systemd[3714]: Finished survey-kick.service - Start survey-queue if it is not running.
 2026-11-24T22:42:44+00:00 home systemd[3714]: survey-queue.service: Consumed 2.187s CPU time.
 2026-11-24T22:47:03+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-24T22:47:07+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-24T23:17:04+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
