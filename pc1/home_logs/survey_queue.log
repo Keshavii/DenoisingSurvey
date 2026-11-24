@@ -1284,3 +1284,18 @@ gowalla N2 50% s3: 411245 injected = 0.3333 of 1233723 rows
 {'job_id': 'rq5_gowalla_sgl_lightgcn_RQ5N2_30_s3', 'status': 'ok', 'seconds': 938.6, 'peak_gpu_mb_while_running': 1338, 'slots': 2, 'finished': '2026-11-24 17:20:54'}
 {'job_id': 'rq5_gowalla_plain_lightgcn_bpr_RQ5N2_50_s3', 'status': 'ok', 'seconds': 414.8, 'peak_gpu_mb_while_running': 4685, 'slots': 2, 'finished': '2026-11-24 17:27:47'}
 {'job_id': 'rq5_gowalla_plain_lightgcn_bce_RQ5N2_50_s3', 'status': 'ok', 'seconds': 477.8, 'peak_gpu_mb_while_running': 4723, 'slots': 2, 'finished': '2026-11-24 17:28:52'}
+{'job_id': 'rq5_gowalla_dcf_lightgcn_RQ5N2_50_s3', 'status': 'ok', 'seconds': 711.7, 'peak_gpu_mb_while_running': 5225, 'slots': 2, 'finished': '2026-11-24 17:39:39'}
+{'job_id': 'rq5_gowalla_drrl_lightgcn_RQ5N2_50_s3', 'status': 'ok', 'seconds': 1550.6, 'peak_gpu_mb_while_running': 5187, 'slots': 2, 'finished': '2026-11-24 17:54:43'}
+{'job_id': 'rq5_gowalla_pld_lightgcn_RQ5N2_50_s3', 'status': 'ok', 'seconds': 930.2, 'peak_gpu_mb_while_running': 4683, 'slots': 2, 'finished': '2026-11-24 17:55:09'}
+{'job_id': 'rq5_gowalla_rce_lightgcn_RQ5N2_50_s3', 'status': 'ok', 'seconds': 841.6, 'peak_gpu_mb_while_running': 5185, 'slots': 2, 'finished': '2026-11-24 18:08:45'}
+{'job_id': 'rq5_gowalla_tce_lightgcn_RQ5N2_50_s3', 'status': 'ok', 'seconds': 1155.1, 'peak_gpu_mb_while_running': 5185, 'slots': 2, 'finished': '2026-11-24 18:28:00'}
+{'job_id': 'rq5_gowalla_bod_lightgcn_RQ5N2_50_s3', 'status': 'ok', 'seconds': 1986.6, 'peak_gpu_mb_while_running': 5213, 'slots': 2, 'finished': '2026-11-24 19:01:07'}
+{'job_id': 'rq5_gowalla_ddrm_lightgcn_RQ5N2_50_s3', 'status': 'ok', 'seconds': 787.5, 'peak_gpu_mb_while_running': 5185, 'slots': 2, 'finished': '2026-11-24 19:14:15'}
+{'job_id': 'rq5_gowalla_deca_lightgcn_RQ5N2_50_s3', 'status': 'ok', 'seconds': 376.9, 'peak_gpu_mb_while_running': 5287, 'slots': 2, 'finished': '2026-11-24 19:20:32'}
+{'job_id': 'rq5_gowalla_diffrec_lightgcn_RQ5N2_50_s3', 'status': 'ok', 'seconds': 232.5, 'peak_gpu_mb_while_running': 7473, 'slots': 2, 'finished': '2026-11-24 19:24:25'}
+{'job_id': 'rq5_gowalla_sl_lightgcn_RQ5N2_50_s3', 'status': 'ok', 'seconds': 5746.5, 'peak_gpu_mb_while_running': 8773, 'slots': 2, 'finished': '2026-11-24 19:30:57'}
+{'job_id': 'rq5_gowalla_rgcf_lightgcn_RQ5N2_50_s3', 'status': 'ok', 'seconds': 1458.9, 'peak_gpu_mb_while_running': 9036, 'slots': 2, 'finished': '2026-11-24 19:48:45'}
+{'job_id': 'rq5_gowalla_sgl_lightgcn_RQ5N2_50_s3', 'status': 'ok', 'seconds': 1116.9, 'peak_gpu_mb_while_running': 9036, 'slots': 2, 'finished': '2026-11-24 19:49:34'}
+2026-11-24 19:49:34 [pc1-queue]   retry pass: failed RQ5 jobs, one at a time
+0 jobs to run, 252 already done
+2026-11-24 19:49:34 [pc1-queue] PC1 queue complete: RQ2 and RQ5 finished (results/RQ2, results/RQ5)
