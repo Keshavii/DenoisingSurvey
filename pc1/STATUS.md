@@ -1,24 +1,24 @@
 # pc1 status
 
 ```
-pc1 (aura3@home)  2026-11-24 06:46:53 UTC  up since 2026-09-30 13:27:10
+pc1 (aura3@home)  2026-11-24 07:16:54 UTC  up since 2026-09-30 13:27:10
 code 2b25825f 21 Nov 18:28  linger yes  disk free 1013G  ram used 9/62 GB swap 0 GB 
-gpu 100 %, 5482 MiB, 24564 MiB, 67
+gpu 100 %, 5110 MiB, 24564 MiB, 66
 ---- services ----
   partc.service                active running
   survey-kick.service          inactive dead
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-24 06:16:56 push ok (f10f11f5; pc1)
+  last snapshot: 2026-11-24 06:46:56 push ok (45ae7027; pc1)
 ---- gpu jobs ----
-  16-12:41:36 python -u -m rq1kit.partc run --skip dcf,pld,sl
-  01:20:14    bash -c python -m rq1kit.backbone --loss bce --data data/yelp --train_file train_RQ5N2_50_s3.tsv --model lightgcn --lr 
-  01:20:14    python -m rq1kit.backbone --loss bce --data data/yelp --train_file train_RQ5N2_50_s3.tsv --model lightgcn --lr 0.005 --
-  25:31       bash -c python -m rq1kit.drrl --lr2 0.0001 --lr_mult 10 --renyi_omega 1.1 --renyi_margin 0.8 --data data/yelp --train_f
-  25:31       python -m rq1kit.drrl --lr2 0.0001 --lr_mult 10 --renyi_omega 1.1 --renyi_margin 0.8 --data data/yelp --train_file trai
+  16-13:11:36 python -u -m rq1kit.partc run --skip dcf,pld,sl
+  16:46       bash -c python -m rq1kit.pld --begin_adv 5 --item_num 5 --temp 0.2 --data data/yelp --train_file train_RQ5N2_50_s3.tsv 
+  16:46       python -m rq1kit.pld --begin_adv 5 --item_num 5 --temp 0.2 --data data/yelp --train_file train_RQ5N2_50_s3.tsv --model 
+  04:07       bash -c python -m rq1kit.adt --method rce --alpha 0.05 --data data/yelp --train_file train_RQ5N2_50_s3.tsv --model ligh
+  04:07       python -m rq1kit.adt --method rce --alpha 0.05 --data data/yelp --train_file train_RQ5N2_50_s3.tsv --model lightgcn --l
 ---- RQ1 Part C (partc driver status, refreshed every minute) ----
-  status file written 2026-11-24 06:46:45
-Part C status 2026-11-24 06:46  kit 2b25825f
+  status file written 2026-11-24 07:15:55
+Part C status 2026-11-24 07:15  kit 2b25825f
 method   b dataset      canary  tune   pick  finals  run fail confl
 DCF      1 adressa      passed   8/8   yes     9/9     0    0     0
 DCF      1 ml1m                  8/8   yes     9/9     0    0     0
@@ -82,8 +82,8 @@ SGL      2 gowalla               8/8   yes     6/6     0    0     0
 SGL      2 amazon_book           8/8   yes     6/6     0    0     0
 LLaRD    3 ml1m         passed   8/8   yes     6/6     0    0     0
 total: 954 of 954 done, 0 running, 0 failed, 0 conflicts; held: none
-GPU: 100 %, 5482 MiB, 24564 MiB   rq1kit.queue running (pids 3758135): partc shares the GPU, leaving it 4 slots
-rough finish: Tue 24 Nov 06:46 (0.0 h of known work)
+GPU: 99 %, 5110 MiB, 24564 MiB   rq1kit.queue running (pids 3758135): partc shares the GPU, leaving it 4 slots
+rough finish: Tue 24 Nov 07:15 (0.0 h of known work)
 ---- RQ2 (after Part C) ----
   started 2026-11-09 00:15:19
   rho*: adressa 0.607, ml1m 0.155, yelp 0.156, amazon_book 0.073
@@ -93,7 +93,7 @@ rough finish: Tue 24 Nov 06:46 (0.0 h of known work)
   rq2 yelp: 126/126 done, 0 failed so far
 ---- RQ5 (noise curves, Yelp and Gowalla) ----
   rq5 gowalla: 84/126 done, 0 failed so far, median 15 min/job, ~5 h left at 2 in parallel
-  rq5 yelp: 114/126 done, 0 failed so far, median 43 min/job, ~4 h left at 2 in parallel
+  rq5 yelp: 116/126 done, 0 failed so far, median 43 min/job, ~4 h left at 2 in parallel
 ---- queue log (~/survey_queue.log) ----
   yelp N2 50% s1: 705883 injected = 0.3333 of 2117822 rows
   yelp N2 50% s2: 706003 injected = 0.3333 of 2117942 rows
@@ -111,12 +111,12 @@ rough finish: Tue 24 Nov 06:46 (0.0 h of known work)
   252 RQ5 jobs
   252 jobs to run, 0 already done
 ---- recent service log lines ----
-2026-11-24T05:16:55+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-24T05:46:52+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-24T05:46:56+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-24T06:16:52+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-24T06:16:56+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-24T06:42:39+00:00 home systemd[3714]: Starting survey-kick.service - Start survey-queue if it is not running...
 2026-11-24T06:42:39+00:00 home systemd[3714]: Finished survey-kick.service - Start survey-queue if it is not running.
 2026-11-24T06:46:52+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-24T06:46:56+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-24T07:16:53+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
