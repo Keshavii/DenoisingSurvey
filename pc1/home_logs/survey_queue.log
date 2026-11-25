@@ -1475,3 +1475,19 @@ gowalla N2 50% s3: 411245 injected = 0.3333 of 1233723 rows
 2026-11-25 16:43:35 [pc1-queue]   retry pass: failed RQ5 jobs, one at a time
 0 jobs to run, 252 already done
 2026-11-25 16:43:35 [pc1-queue] PC1 queue complete: RQ2 and RQ5 finished (results/RQ2, results/RQ5)
+2026-11-25 18:44:33 [pc1-queue] start, code 2b25825f
+2026-11-25 18:44:34 [pc1-queue] RQ2 1/4 rho*
+2026-11-25 18:44:34 [pc1-queue] RQ2 2/4 MF-BPR on the clean bases (top-K for N3)
+2026-11-25 18:44:34 [pc1-queue] RQ2 3/4 noise files
+2026-11-25 18:44:35 [pc1-queue] RQ2 4/4 runs
+504 RQ2 jobs
+0 jobs to run, 504 already done
+2026-11-25 18:44:35 [pc1-queue]   retry pass: failed RQ2 jobs, one at a time
+0 jobs to run, 504 already done
+2026-11-25 18:44:35 [pc1-queue] RQ5 1/2 noise files
+2026-11-25 18:44:35 [pc1-queue] RQ5 2/2 runs
+252 RQ5 jobs
+0 jobs to run, 252 already done
+2026-11-25 18:44:35 [pc1-queue]   retry pass: failed RQ5 jobs, one at a time
+0 jobs to run, 252 already done
+2026-11-25 18:44:35 [pc1-queue] PC1 queue complete: RQ2 and RQ5 finished (results/RQ2, results/RQ5)
