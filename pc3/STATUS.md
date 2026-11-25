@@ -1,25 +1,25 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-25 23:06:16 UTC  up since 2026-11-25 16:56:12
+pc3 (aura1@aura-node1)  2026-11-25 23:36:17 UTC  up since 2026-11-25 16:56:12
 code 6a15530f 16 Nov 20:44  linger yes  disk free 582G  ram used 8/62 GB swap 0 GB 
-gpu 100 %, 9525 MiB, 24564 MiB, 65
+gpu 99 %, 10177 MiB, 24564 MiB, 66
 ---- services ----
   survey-kick.service          inactive dead
   survey-queue.service         active running
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-25 22:36:17 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-25 23:06:17 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
-  30:11       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal R2 --treat soft_relabel --lam 0.3 --data data/yelp --tr
-  30:11       bash -c python -m rq1kit.rq4 --signal R2 --treat soft_relabel --lam 0.3 --data data/yelp --train_file train_N3_20_s2.ts
-  30:11       python -m rq1kit.rq4 --signal R2 --treat soft_relabel --lam 0.3 --data data/yelp --train_file train_N3_20_s2.tsv --lr 0
-  05:54       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal L1 --treat reshape --ssl_reg 0.5 --data data/yelp --tra
-  05:54       bash -c python -m rq1kit.rq4 --signal L1 --treat reshape --ssl_reg 0.5 --data data/yelp --train_file train_N3_20_s2.tsv
-  05:54       python -m rq1kit.rq4 --signal L1 --treat reshape --ssl_reg 0.5 --data data/yelp --train_file train_N3_20_s2.tsv --lr 0.
+  23:52       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal M1 --treat reshape --ssl_reg 0.5 --data data/yelp --tra
+  23:52       bash -c python -m rq1kit.rq4 --signal M1 --treat reshape --ssl_reg 0.5 --data data/yelp --train_file train_N3_20_s2.tsv
+  23:52       python -m rq1kit.rq4 --signal M1 --treat reshape --ssl_reg 0.5 --data data/yelp --train_file train_N3_20_s2.tsv --lr 0.
+  01:41       timeout -s ABRT -k 60 12h bash -c python -m rq1kit.rq4 --signal L3 --treat reshape --ssl_reg 0.5 --data data/yelp --tra
+  01:41       bash -c python -m rq1kit.rq4 --signal L3 --treat reshape --ssl_reg 0.5 --data data/yelp --train_file train_N3_20_s2.tsv
+  01:41       python -m rq1kit.rq4 --signal L3 --treat reshape --ssl_reg 0.5 --data data/yelp --train_file train_N3_20_s2.tsv --lr 0.
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
-  final yelp: 329/338 done, 0 failed so far, median 47 min/job, ~4 h left at 2 in parallel
+  final yelp: 331/338 done, 0 failed so far, median 47 min/job, ~3 h left at 2 in parallel
   finished: yelp_s1
 ---- RQ10 (specialists) ----
   .done markers: 51  (hsd_sports_sasrec s2_steam_yelp_i20_s1 gbsr_yelp_r2 fmlp_beauty gbsr_epinions_r1 s2_steam_sports_and_outdoors_i10_s1 s2_fmlp_beauty_i20_s1 fmlp_beauty_n0 hdsr_default s2_hsd_beauty_i20_s1 s2_hsd_beauty_n0_s1 fmlp_sports_and_outdoors s2_steam_beauty_i10_s1 s2_steam_yelp_i10_s1 s2_hsd_yelp_i10_s1 steam_beauty gbsr_douban_r1 s2_hsd_yelp_i20_s1 repro_fmlp hsd_beauty_sasrec steam_beauty_n2_20 s2_fmlp_yelp_i10_s1 s2_fmlp_sports_and_outdoors_i20_s1 s2_fmlp_beauty_n0_s1 s2_steam_sports_and_outdoors_n0_s1 gbsr_douban_r2 repro_gbsr steam_yelp_b128 steam_beauty_n3_30 fmlp_yelp repro_preferdiff gbsr_epinions_r2 s2_hsd_sports_and_outdoors_i10_s1 s2_steam_sports_and_outdoors_i20_s1 steam_beauty_n0 steam_sports_b128 gbsr_yelp_r1 s2_steam_beauty_i20_s1 s2_fmlp_sports_and_outdoors_n0_s1 s2_steam_beauty_n0_s1 s2_fmlp_yelp_n0_s1 hsd_yelp_sasrec s2_hsd_sports_and_outdoors_i20_s1 s2_fmlp_yelp_i20_s1 s2_hsd_yelp_n0_s1 s2_steam_yelp_n0_s1 repro_steam s2_hsd_sports_and_outdoors_n0_s1 s2_fmlp_beauty_i10_s1 s2_hsd_beauty_i10_s1 s2_fmlp_sports_and_outdoors_i10_s1 )
@@ -165,12 +165,12 @@ gpu 100 %, 9525 MiB, 24564 MiB, 65
   2026-11-25 17:02:13 7 finals [yelp] seeds [2]
   169 of 350 jobs kept (datasets yelp, seeds 2)
 ---- recent service log lines ----
-2026-11-25T21:26:13+00:00 aura-node1 systemd[2052]: Finished survey-kick.service - Start survey-queue if it is not running.
-2026-11-25T21:36:15+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-25T21:36:16+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-25T22:06:16+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-25T22:06:16+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-25T22:36:16+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-25T22:36:17+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-25T23:06:16+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-25T23:06:17+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-25T23:26:14+00:00 aura-node1 systemd[2052]: Starting survey-kick.service - Start survey-queue if it is not running...
+2026-11-25T23:26:14+00:00 aura-node1 systemd[2052]: Finished survey-kick.service - Start survey-queue if it is not running.
+2026-11-25T23:36:17+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
