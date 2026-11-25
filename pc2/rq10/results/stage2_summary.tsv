@@ -2,9 +2,11 @@ method	dataset	level	seed	recall10	ndcg10	source
 FMLP-Rec	Beauty	N0	2	0.0562	0.0294	logs/run_s2_fmlp_beauty_n0_s2.log
 FMLP-Rec	Beauty	I10	2	0.0521	0.0270	logs/run_s2_fmlp_beauty_i10_s2.log
 FMLP-Rec	Beauty	I20	2	0.0494	0.0253	logs/run_s2_fmlp_beauty_i20_s2.log
+FMLP-Rec	Beauty	N0	3	0.0562	0.0294	logs/run_s2_fmlp_beauty_n0_s3.log
 HSD (SASRec)	Beauty	N0	2	0.0435	0.0201	results/s2_hsd_Beauty_N0_s2.json
 HSD (SASRec)	Beauty	I10	2	0.0431	0.0201	results/s2_hsd_Beauty_I10_s2.json
 HSD (SASRec)	Beauty	I20	2	0.0434	0.0202	results/s2_hsd_Beauty_I20_s2.json
+HSD (SASRec)	Beauty	N0	3	0.0435	0.0201	results/s2_hsd_Beauty_N0_s3.json
 STEAM	Beauty	N0	2	0.0629	0.0322	results/s2_steam_Beauty_N0_s2.json
 STEAM	Beauty	I10	2	0.0574	0.0288	results/s2_steam_Beauty_I10_s2.json
 STEAM	Beauty	I20	2	0.0561	0.0289	results/s2_steam_Beauty_I20_s2.json
