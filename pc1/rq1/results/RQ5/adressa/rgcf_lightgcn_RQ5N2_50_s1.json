@@ -1,0 +1,62 @@
+{
+  "recall@10": 0.09130065903909833,
+  "recall@20": 0.10585469657723993,
+  "recall@50": 0.13265261312226628,
+  "ndcg@10": 0.055412889654566665,
+  "ndcg@20": 0.05987872562617837,
+  "ndcg@50": 0.06656483989288121,
+  "n_eval_users": 10380,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 8804,
+      "ndcg@20": 0.04918476763495657,
+      "recall@20": 0.09070323701741238
+    },
+    "warm(5-20)": {
+      "n_users": 1543,
+      "ndcg@20": 0.12018175212689533,
+      "recall@20": 0.19264780010081373
+    },
+    "established(>20)": {
+      "n_users": 33,
+      "ndcg@20": 0.09327376393255457,
+      "recall@20": 0.08984533984533985
+    },
+    "user_q4": {
+      "n_users": 7665,
+      "ndcg@20": 0.0355246387889482,
+      "recall@20": 0.06869843246555576
+    },
+    "user_q5": {
+      "n_users": 2715,
+      "ndcg@20": 0.12863529122741937,
+      "recall@20": 0.21075442564392838
+    },
+    "items_head": {
+      "n_truth": 13807,
+      "recall@20_micro": 0.15564568697037734
+    },
+    "items_mid": {
+      "n_truth": 11,
+      "recall@20_micro": 0.0
+    },
+    "items_tail": {
+      "n_truth": 4210,
+      "recall@20_micro": 0.0
+    },
+    "coverage@20": 0.03653729533050334,
+    "gini@20": 0.9955875283027633
+  },
+  "part": "RQ5",
+  "dataset": "adressa",
+  "method": "RGCF",
+  "backbone": "LightGCN",
+  "cond": "RQ5N2_50",
+  "seed": "1",
+  "train_file": "train_RQ5N2_50_s1.tsv",
+  "data": "data/adressa",
+  "topk": "runs/rq5/adressa/rgcf_lightgcn_RQ5N2_50_s1/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-25 19:02:48"
+}
