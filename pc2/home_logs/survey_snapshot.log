@@ -1961,3 +1961,10 @@ tar: Child returned status 1
 tar: Error is not recoverable: exiting now
 2026-11-25 08:15:30 relay pc3 FAILED (ssh aura1@10.100.97.71)
 2026-11-25 08:15:33 push ok (28bc9d69; pc2)
+ssh: connect to host 10.100.97.71 port 22: No route to host
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+2026-11-25 08:46:30 relay pc3 FAILED (ssh aura1@10.100.97.71)
+2026-11-25 08:46:32 push ok (f491fbbd; pc2)
