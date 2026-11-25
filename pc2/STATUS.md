@@ -1,14 +1,14 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-25 10:50:27 IST  up since 2026-11-17 18:44:08
+pc2 (anurag@home)  2026-11-25 11:21:27 IST  up since 2026-11-17 18:44:08
 code 6a15530f 16 Nov 20:44  linger yes  disk free 888G  ram used 4/62 GB swap 0 GB 
-gpu 0 %, 329 MiB, 24564 MiB, 39
+gpu 15 %, 329 MiB, 24564 MiB, 40
 ---- services ----
   survey-kick.service          inactive dead
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-25 10:19:32 push ok (cd09f346; pc2)
+  last snapshot: 2026-11-25 10:50:32 push ok (ea9e19dd; pc2)
 ALERT: could not fetch another PC's status over SSH (see ~/survey_snapshot.log)
 ---- gpu jobs ----
 ---- RQ4 (signal x treatment) ----
@@ -96,12 +96,12 @@ ALERT: could not fetch another PC's status over SSH (see ~/survey_snapshot.log)
   2026-11-25 09:36:33 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
   2026-11-25 09:36:37 [pc2-queue] PC2 queue complete: RQ4 ML-1M and RQ10 seed 2 finished
 ---- recent service log lines ----
-2026-11-25T09:36:26+05:30 home systemd[1983]: Started survey-queue.service - Survey unattended queue (pc2).
-2026-11-25T09:36:26+05:30 home systemd[1983]: Finished survey-kick.service - Start survey-queue if it is not running.
 2026-11-25T09:36:37+05:30 home systemd[1983]: survey-queue.service: Consumed 20.731s CPU time.
 2026-11-25T09:48:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-25T09:48:32+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-25T10:19:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-25T10:19:32+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-25T10:50:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-25T10:50:32+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-25T11:21:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
