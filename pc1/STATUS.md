@@ -1,29 +1,29 @@
 # pc1 status
 
 ```
-pc1 (aura3@home)  2026-11-25 17:18:34 UTC  up since 2026-09-30 13:27:10
-code 2b25825f 21 Nov 18:28  linger yes  disk free 1003G  ram used 10/62 GB swap 0 GB 
-gpu 100 %, 18508 MiB, 24564 MiB, 62
+pc1 (aura3@home)  2026-11-25 17:49:34 UTC  up since 2026-09-30 13:27:10
+code 2b25825f 21 Nov 18:28  linger yes  disk free 1000G  ram used 11/62 GB swap 0 GB 
+gpu 100 %, 9048 MiB, 24564 MiB, 60
 ---- services ----
   partc.service                active running
   rq5more.service              active running
   survey-kick.service          inactive dead
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-25 16:47:37 push ok (27bffadd; pc1)
+  last snapshot: 2026-11-25 17:18:37 push ok (2ad9287b; pc1)
 ---- gpu jobs ----
-  04:48       bash -c python -m rq1kit.rgcf --lr_mult 1 --prune_threshold 0.02 --MIM_weight 1e-05 --data data/adressa --train_file tr
-  04:48       python -m rq1kit.rgcf --lr_mult 1 --prune_threshold 0.02 --MIM_weight 1e-05 --data data/adressa --train_file train_RQ5N
-  02:40       bash -c python -m rq1kit.sgl --ssl_reg 0.05 --ssl_temp 0.5 --ssl_ratio 0.2 --data data/adressa --train_file train_RQ5N2
-  02:40       python -m rq1kit.sgl --ssl_reg 0.05 --ssl_temp 0.5 --ssl_ratio 0.2 --data data/adressa --train_file train_RQ5N2_10_s1.t
-  01:04       bash -c python -m rq1kit.backbone --loss bpr --data data/adressa --train_file train_RQ5N2_30_s1.tsv --model lightgcn --
-  01:04       python -m rq1kit.backbone --loss bpr --data data/adressa --train_file train_RQ5N2_30_s1.tsv --model lightgcn --lr 0.001
-  00:00       bash -c python -m rq1kit.backbone --loss bce --data data/adressa --train_file train_RQ5N2_30_s1.tsv --model lightgcn --
-  00:00       python -m rq1kit.backbone --loss bce --data data/adressa --train_file train_RQ5N2_30_s1.tsv --model lightgcn --lr 0.001
-  17-23:13:17 python -u -m rq1kit.partc run --skip dcf,pld,sl
+  22:55       bash -c python -m rq1kit.drrl --loss sl --lr_mult 10 --ssm_temp 0.12 --data data/adressa --train_file train_RQ5N2_30_s1
+  22:55       python -m rq1kit.drrl --loss sl --lr_mult 10 --ssm_temp 0.12 --data data/adressa --train_file train_RQ5N2_30_s1.tsv --m
+  16:27       bash -c python -m rq1kit.bod --lr_mult 0.1 --generator_lr 0.01 --weight_uniformity 0.5 --data data/adressa --train_file
+  16:27       python -m rq1kit.bod --lr_mult 0.1 --generator_lr 0.01 --weight_uniformity 0.5 --data data/adressa --train_file train_R
+  14:03       bash -c python -m rq1kit.ddrm --diff_lr 0.001 --alpha 0.1 --steps 50 --data data/adressa --train_file train_RQ5N2_30_s1
+  14:03       python -m rq1kit.ddrm --diff_lr 0.001 --alpha 0.1 --steps 50 --data data/adressa --train_file train_RQ5N2_30_s1.tsv --m
+  02:11       bash -c python -m rq1kit.deca --C_1 1000 --C_2 10 --alpha 1 --data data/adressa --train_file train_RQ5N2_30_s1.tsv --mo
+  02:11       python -m rq1kit.deca --C_1 1000 --C_2 10 --alpha 1 --data data/adressa --train_file train_RQ5N2_30_s1.tsv --model ligh
+  17-23:44:17 python -u -m rq1kit.partc run --skip dcf,pld,sl
 ---- RQ1 Part C (partc driver status, refreshed every minute) ----
-  status file written 2026-11-25 17:17:58
-Part C status 2026-11-25 17:17  kit 2b25825f
+  status file written 2026-11-25 17:49:12
+Part C status 2026-11-25 17:49  kit 2b25825f
 method   b dataset      canary  tune   pick  finals  run fail confl
 DCF      1 adressa      passed   8/8   yes     9/9     0    0     0
 DCF      1 ml1m                  8/8   yes     9/9     0    0     0
@@ -87,8 +87,8 @@ SGL      2 gowalla               8/8   yes     6/6     0    0     0
 SGL      2 amazon_book           8/8   yes     6/6     0    0     0
 LLaRD    3 ml1m         passed   8/8   yes     6/6     0    0     0
 total: 954 of 954 done, 0 running, 0 failed, 0 conflicts; held: none
-GPU: 100 %, 19574 MiB, 24564 MiB   rq1kit.queue running (pids 52508 52727): partc shares the GPU, leaving it 4 slots
-rough finish: Wed 25 Nov 17:17 (0.0 h of known work)
+GPU: 100 %, 9048 MiB, 24564 MiB   rq1kit.queue running (pids 52508 52727): partc shares the GPU, leaving it 4 slots
+rough finish: Wed 25 Nov 17:49 (0.0 h of known work)
 ---- RQ2 (after Part C) ----
   started 2026-11-09 00:15:19
   rho*: adressa 0.607, ml1m 0.155, yelp 0.156, amazon_book 0.073
@@ -116,12 +116,12 @@ rough finish: Wed 25 Nov 17:17 (0.0 h of known work)
   0 jobs to run, 252 already done
   2026-11-25 16:43:35 [pc1-queue] PC1 queue complete: RQ2 and RQ5 finished (results/RQ2, results/RQ5)
 ---- recent service log lines ----
-2026-11-25T16:31:28+00:00 home systemd[3714]: Started rq5more.service - /usr/bin/bash -lc "source ~/miniconda3/etc/profile.d/conda.sh; conda activate rq1; cd ~/rq1-kit; export KIT=\$HOME/rq1-kit RQ5_DATASETS=adressa,ml1m,amazon_book OMP_NUM_THREADS=7 MKL_NUM_THREADS=7; R=\$HOME/survey/rq1/scripts/rq5_jobs.py; python \$R noise && python \$R jobs > configs/rq5/jobs_more.csv && python -m rq1kit.queue --jobs configs/rq5/jobs_more.csv --slots 4 --logs logs/rq5more && python -m rq1kit.queue --jobs configs/rq5/jobs_more.csv --slots 1 --logs logs/rq5more".
-2026-11-25T16:43:33+00:00 home systemd[3714]: Starting survey-kick.service - Start survey-queue if it is not running...
 2026-11-25T16:43:33+00:00 home systemd[3714]: Started survey-queue.service - Survey unattended queue (pc1).
 2026-11-25T16:43:33+00:00 home systemd[3714]: Finished survey-kick.service - Start survey-queue if it is not running.
 2026-11-25T16:43:35+00:00 home systemd[3714]: survey-queue.service: Consumed 2.996s CPU time.
 2026-11-25T16:47:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-25T16:47:37+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-25T17:18:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-25T17:18:37+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-25T17:49:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
