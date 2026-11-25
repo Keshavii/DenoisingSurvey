@@ -1,20 +1,29 @@
 # pc1 status
 
 ```
-pc1 (aura3@home)  2026-11-25 16:17:17 UTC  up since 2026-09-30 13:27:10
-code 2b25825f 21 Nov 18:28  linger yes  disk free 1008G  ram used 7/62 GB swap 0 GB 
-gpu 0 %, 890 MiB, 24564 MiB, 43
+pc1 (aura3@home)  2026-11-25 16:47:34 UTC  up since 2026-09-30 13:27:10
+code 2b25825f 21 Nov 18:28  linger yes  disk free 1006G  ram used 11/62 GB swap 0 GB 
+gpu 100 %, 10099 MiB, 24564 MiB, 60
 ---- services ----
   partc.service                active running
+  rq5more.service              active running
   survey-kick.service          inactive dead
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-25 15:47:20 push ok (c10b17a7; pc1)
+  last snapshot: 2026-11-25 16:17:20 push ok (adcdde19; pc1)
 ---- gpu jobs ----
-  17-22:12:00 python -u -m rq1kit.partc run --skip dcf,pld,sl
+  11:14       bash -c python -m rq1kit.drrl --lr2 0.0001 --lr_mult 1 --renyi_omega 1.1 --renyi_margin 0.8 --data data/adressa --train
+  11:14       python -m rq1kit.drrl --lr2 0.0001 --lr_mult 1 --renyi_omega 1.1 --renyi_margin 0.8 --data data/adressa --train_file tr
+  08:05       bash -c python -m rq1kit.adt --method rce --alpha 0.05 --data data/adressa --train_file train_RQ5N2_10_s1.tsv --model l
+  08:05       python -m rq1kit.adt --method rce --alpha 0.05 --data data/adressa --train_file train_RQ5N2_10_s1.tsv --model lightgcn 
+  08:03       bash -c python -m rq1kit.drrl --loss sl --lr_mult 10 --ssm_temp 0.12 --data data/adressa --train_file train_RQ5N2_10_s1
+  08:03       python -m rq1kit.drrl --loss sl --lr_mult 10 --ssm_temp 0.12 --data data/adressa --train_file train_RQ5N2_10_s1.tsv --m
+  05:00       bash -c python -m rq1kit.adt --method tce --drop_rate 0.1 --num_gradual 1000 --data data/adressa --train_file train_RQ5
+  05:00       python -m rq1kit.adt --method tce --drop_rate 0.1 --num_gradual 1000 --data data/adressa --train_file train_RQ5N2_10_s1
+  17-22:42:17 python -u -m rq1kit.partc run --skip dcf,pld,sl
 ---- RQ1 Part C (partc driver status, refreshed every minute) ----
-  status file written 2026-11-25 16:16:33
-Part C status 2026-11-25 16:16  kit 2b25825f
+  status file written 2026-11-25 16:46:45
+Part C status 2026-11-25 16:46  kit 2b25825f
 method   b dataset      canary  tune   pick  finals  run fail confl
 DCF      1 adressa      passed   8/8   yes     9/9     0    0     0
 DCF      1 ml1m                  8/8   yes     9/9     0    0     0
@@ -78,8 +87,8 @@ SGL      2 gowalla               8/8   yes     6/6     0    0     0
 SGL      2 amazon_book           8/8   yes     6/6     0    0     0
 LLaRD    3 ml1m         passed   8/8   yes     6/6     0    0     0
 total: 954 of 954 done, 0 running, 0 failed, 0 conflicts; held: none
-GPU: 0 %, 890 MiB, 24564 MiB
-rough finish: Wed 25 Nov 16:16 (0.0 h of known work)
+GPU: 99 %, 10091 MiB, 24564 MiB   rq1kit.queue running (pids 52508 52727): partc shares the GPU, leaving it 4 slots
+rough finish: Wed 25 Nov 16:46 (0.0 h of known work)
 ---- RQ2 (after Part C) ----
   started 2026-11-09 00:15:19
   rho*: adressa 0.607, ml1m 0.155, yelp 0.156, amazon_book 0.073
@@ -91,28 +100,28 @@ rough finish: Wed 25 Nov 16:16 (0.0 h of known work)
   rq5 gowalla: 126/126 done, 0 failed so far
   rq5 yelp: 126/126 done, 0 failed so far
 ---- queue log (~/survey_queue.log) ----
-  2026-11-25 14:42:46 [pc1-queue] RQ2 1/4 rho*
-  2026-11-25 14:42:46 [pc1-queue] RQ2 2/4 MF-BPR on the clean bases (top-K for N3)
-  2026-11-25 14:42:46 [pc1-queue] RQ2 3/4 noise files
-  2026-11-25 14:42:46 [pc1-queue] RQ2 4/4 runs
+  2026-11-25 16:43:34 [pc1-queue] RQ2 1/4 rho*
+  2026-11-25 16:43:34 [pc1-queue] RQ2 2/4 MF-BPR on the clean bases (top-K for N3)
+  2026-11-25 16:43:34 [pc1-queue] RQ2 3/4 noise files
+  2026-11-25 16:43:35 [pc1-queue] RQ2 4/4 runs
   504 RQ2 jobs
   0 jobs to run, 504 already done
-  2026-11-25 14:42:46 [pc1-queue]   retry pass: failed RQ2 jobs, one at a time
+  2026-11-25 16:43:35 [pc1-queue]   retry pass: failed RQ2 jobs, one at a time
   0 jobs to run, 504 already done
-  2026-11-25 14:42:46 [pc1-queue] RQ5 1/2 noise files
-  2026-11-25 14:42:46 [pc1-queue] RQ5 2/2 runs
+  2026-11-25 16:43:35 [pc1-queue] RQ5 1/2 noise files
+  2026-11-25 16:43:35 [pc1-queue] RQ5 2/2 runs
   252 RQ5 jobs
   0 jobs to run, 252 already done
-  2026-11-25 14:42:46 [pc1-queue]   retry pass: failed RQ5 jobs, one at a time
+  2026-11-25 16:43:35 [pc1-queue]   retry pass: failed RQ5 jobs, one at a time
   0 jobs to run, 252 already done
-  2026-11-25 14:42:46 [pc1-queue] PC1 queue complete: RQ2 and RQ5 finished (results/RQ2, results/RQ5)
+  2026-11-25 16:43:35 [pc1-queue] PC1 queue complete: RQ2 and RQ5 finished (results/RQ2, results/RQ5)
 ---- recent service log lines ----
-2026-11-25T14:42:46+00:00 home systemd[3714]: survey-queue.service: Consumed 2.173s CPU time.
-2026-11-25T14:47:15+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-25T14:47:19+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-25T15:17:15+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-25T15:17:19+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-25T15:47:16+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-25T15:47:20+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-25T16:17:16+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-25T16:17:20+00:00 home systemd[3714]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-25T16:31:28+00:00 home systemd[3714]: Started rq5more.service - /usr/bin/bash -lc "source ~/miniconda3/etc/profile.d/conda.sh; conda activate rq1; cd ~/rq1-kit; export KIT=\$HOME/rq1-kit RQ5_DATASETS=adressa,ml1m,amazon_book OMP_NUM_THREADS=7 MKL_NUM_THREADS=7; R=\$HOME/survey/rq1/scripts/rq5_jobs.py; python \$R noise && python \$R jobs > configs/rq5/jobs_more.csv && python -m rq1kit.queue --jobs configs/rq5/jobs_more.csv --slots 4 --logs logs/rq5more && python -m rq1kit.queue --jobs configs/rq5/jobs_more.csv --slots 1 --logs logs/rq5more".
+2026-11-25T16:43:33+00:00 home systemd[3714]: Starting survey-kick.service - Start survey-queue if it is not running...
+2026-11-25T16:43:33+00:00 home systemd[3714]: Started survey-queue.service - Survey unattended queue (pc1).
+2026-11-25T16:43:33+00:00 home systemd[3714]: Finished survey-kick.service - Start survey-queue if it is not running.
+2026-11-25T16:43:35+00:00 home systemd[3714]: survey-queue.service: Consumed 2.996s CPU time.
+2026-11-25T16:47:33+00:00 home systemd[3714]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
