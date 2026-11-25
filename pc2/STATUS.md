@@ -1,14 +1,14 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-25 13:25:27 IST  up since 2026-11-17 18:44:08
+pc2 (anurag@home)  2026-11-25 13:56:27 IST  up since 2026-11-17 18:44:08
 code 6a15530f 16 Nov 20:44  linger yes  disk free 888G  ram used 4/62 GB swap 0 GB 
-gpu 15 %, 329 MiB, 24564 MiB, 42
+gpu 0 %, 329 MiB, 24564 MiB, 42
 ---- services ----
   survey-kick.service          inactive dead
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-25 12:54:32 push ok (1d48a52c; pc2)
+  last snapshot: 2026-11-25 13:25:33 push ok (f2bb7686; pc2)
 ALERT: could not fetch another PC's status over SSH (see ~/survey_snapshot.log)
 ---- gpu jobs ----
 ---- RQ4 (signal x treatment) ----
@@ -20,8 +20,8 @@ ALERT: could not fetch another PC's status over SSH (see ~/survey_snapshot.log)
   .done markers: 27  (s2_fmlp_yelp_i20_s2 s2_hsd_beauty_i10_s2 s2_steam_sports_and_outdoors_i10_s2 s2_steam_yelp_i10_s2 s2_hsd_yelp_i20_s2 s2_hsd_sports_and_outdoors_n0_s2 s2_fmlp_beauty_i10_s2 s2_hsd_yelp_i10_s2 s2_steam_beauty_n0_s2 s2_steam_yelp_i20_s2 s2_steam_sports_and_outdoors_i20_s2 s2_hsd_sports_and_outdoors_i10_s2 s2_steam_beauty_i20_s2 s2_fmlp_yelp_i10_s2 s2_hsd_beauty_n0_s2 s2_hsd_beauty_i20_s2 s2_steam_beauty_i10_s2 s2_steam_sports_and_outdoors_n0_s2 s2_fmlp_beauty_n0_s2 s2_fmlp_yelp_n0_s2 s2_fmlp_sports_and_outdoors_i10_s2 s2_fmlp_beauty_i20_s2 s2_hsd_sports_and_outdoors_i20_s2 s2_fmlp_sports_and_outdoors_n0_s2 s2_hsd_yelp_n0_s2 s2_steam_yelp_n0_s2 s2_fmlp_sports_and_outdoors_i20_s2 )
   last lines of ~/rq10_seeds.log:
       STEAM         Yelp                 I20  s2  Recall@10 0.0550  NDCG@10 0.0301
-    2026-11-25 11:37:37 [rq10-stage2] stage 2 complete: 27 runs with results (table: /home/anurag/survey/rq10/results/stage2_summary.tsv)
-    2026-11-25 11:37:37 [rq10-seed2] stage 2 seed 2 finished with exit 0
+    2026-11-25 13:38:37 [rq10-stage2] stage 2 complete: 27 runs with results (table: /home/anurag/survey/rq10/results/stage2_summary.tsv)
+    2026-11-25 13:38:37 [rq10-seed2] stage 2 seed 2 finished with exit 0
   stage 2 (full ranking, Recall@10 / NDCG@10):
     method    dataset              level                seed  recall10  ndcg10  source                            
     FMLP-Rec  Beauty               N0                   2     0.0562    0.0294  logs/run_s2_fmlp_beauty_n0_s2.log 
@@ -80,28 +80,28 @@ ALERT: could not fetch another PC's status over SSH (see ~/survey_snapshot.log)
     s2_hsd_yelp_i20_s2	0	17	7699
     s2_steam_yelp_i20_s2	0	213	18783
 ---- queue log (~/survey_queue.log) ----
-  2026-11-25 11:37:33   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
+  2026-11-25 13:38:33   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
   0 jobs to run, 273 already done
-  2026-11-25 11:37:33 6 picks
+  2026-11-25 13:38:33 6 picks
   91 cells picked -> /home/anurag/survey/rq1/configs/rq4/best.json; incomplete: yelp|L1|drop (0/3), yelp|L1|reweight (0/3), yelp|L1|relabel (0/3), yelp|L1|resampl
   91 ml1m picks -> configs/rq4/picks_ml1m.json
-  2026-11-25 11:37:33 7 finals [ml1m] seeds [all]
+  2026-11-25 13:38:33 7 finals [ml1m] seeds [all]
   831 of 837 jobs kept (datasets ml1m)
   0 jobs to run, 831 already done
   kept the logs of 0 failed jobs in logs/rq4_final/failed
-  2026-11-25 11:37:33   retry pass: failed jobs of configs/rq4/jobs_final_ml1m.csv, one at a time
+  2026-11-25 13:38:33   retry pass: failed jobs of configs/rq4/jobs_final_ml1m.csv, one at a time
   0 jobs to run, 831 already done
-  2026-11-25 11:37:33 RQ4 done [ml1m] seeds [all]
-  2026-11-25 11:37:33 [pc2-queue] RQ4 ML-1M finished
-  2026-11-25 11:37:33 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
-  2026-11-25 11:37:37 [pc2-queue] PC2 queue complete: RQ4 ML-1M and RQ10 seed 2 finished
+  2026-11-25 13:38:33 RQ4 done [ml1m] seeds [all]
+  2026-11-25 13:38:33 [pc2-queue] RQ4 ML-1M finished
+  2026-11-25 13:38:33 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
+  2026-11-25 13:38:37 [pc2-queue] PC2 queue complete: RQ4 ML-1M and RQ10 seed 2 finished
 ---- recent service log lines ----
-2026-11-25T11:37:37+05:30 home systemd[1983]: survey-queue.service: Consumed 20.861s CPU time.
-2026-11-25T11:52:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-25T11:52:33+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-25T12:23:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-25T12:23:33+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-25T12:54:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-25T12:54:32+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-25T13:25:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-25T13:25:33+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-25T13:38:26+05:30 home systemd[1983]: Starting survey-kick.service - Start survey-queue if it is not running...
+2026-11-25T13:38:26+05:30 home systemd[1983]: Started survey-queue.service - Survey unattended queue (pc2).
+2026-11-25T13:38:26+05:30 home systemd[1983]: Finished survey-kick.service - Start survey-queue if it is not running.
+2026-11-25T13:38:37+05:30 home systemd[1983]: survey-queue.service: Consumed 20.800s CPU time.
+2026-11-25T13:56:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
