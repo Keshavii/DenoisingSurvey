@@ -1,15 +1,16 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-26 01:36:18 UTC  up since 2026-11-25 16:56:12
+pc3 (aura1@aura-node1)  2026-11-26 02:06:18 UTC  up since 2026-11-25 16:56:12
 code 6a15530f 16 Nov 20:44  linger yes  disk free 581G  ram used 5/62 GB swap 0 GB 
-gpu 0 %, 432 MiB, 24564 MiB, 43
+gpu 0 %, 432 MiB, 24564 MiB, 46
 ---- services ----
   survey-kick.service          inactive dead
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-26 01:06:18 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-26 01:36:19 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
+  00:04       /usr/bin/python3 /usr/local/bin/vllm serve --model /models/qwen3-32b-awq --served-model-name aura-llm --quantization aw
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
@@ -160,12 +161,12 @@ gpu 0 %, 432 MiB, 24564 MiB, 43
   2026-11-26 01:33:57 RQ4 done [yelp] seeds [2]
   2026-11-26 01:33:57 [pc3-queue] PC3 queue complete: nothing left to run
 ---- recent service log lines ----
-2026-11-26T00:36:17+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-26T00:36:18+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-26T01:06:18+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-26T01:06:18+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-26T01:26:14+00:00 aura-node1 systemd[2052]: Starting survey-kick.service - Start survey-queue if it is not running...
 2026-11-26T01:26:14+00:00 aura-node1 systemd[2052]: Finished survey-kick.service - Start survey-queue if it is not running.
 2026-11-26T01:33:57+00:00 aura-node1 systemd[2052]: survey-queue.service: Consumed 23h 38min 42.889s CPU time.
 2026-11-26T01:36:18+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-26T01:36:19+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-26T02:06:18+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
