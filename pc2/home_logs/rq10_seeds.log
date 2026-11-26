@@ -4122,3 +4122,9 @@ scp: Connection closed
   STEAM         Yelp                 I20  s2  Recall@10 0.0550  NDCG@10 0.0301
 2026-11-26 07:46:37 [rq10-stage2] stage 2 complete: 35 runs with results (table: /home/anurag/survey/rq10/results/stage2_summary.tsv)
 2026-11-26 07:46:37 [rq10-seed2] stage 2 seed 2 finished with exit 0
+2026-11-26 08:03:25 [rq10-stage2] s2_steam_yelp_n0_s3: exit 0  213 min  peak 18820 MiB
+2026-11-26 08:03:25 [rq10-stage2] s2_fmlp_beauty_i10_s3: start
+2026-11-26 08:08:19 [rq10-stage2] s2_fmlp_beauty_i10_s3: exit 0  4 min  peak 2510 MiB
+2026-11-26 08:08:19 [rq10-stage2] s2_hsd_beauty_i10_s3: start
+2026-11-26 08:15:14 [rq10-stage2] s2_hsd_beauty_i10_s3: exit 0  6 min  peak 7741 MiB
+2026-11-26 08:15:14 [rq10-stage2] s2_steam_beauty_i10_s3: start

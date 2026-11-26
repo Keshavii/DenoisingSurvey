@@ -1,34 +1,34 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-26 08:00:27 IST  up since 2026-11-17 18:44:08
-code 6a15530f 16 Nov 20:44  linger yes  disk free 879G  ram used 7/62 GB swap 0 GB 
-gpu 70 %, 2930 MiB, 24564 MiB, 58
+pc2 (anurag@home)  2026-11-26 08:31:27 IST  up since 2026-11-17 18:44:08
+code 6a15530f 16 Nov 20:44  linger yes  disk free 878G  ram used 7/62 GB swap 0 GB 
+gpu 91 %, 22534 MiB, 24564 MiB, 62
 ---- services ----
   rq10-seed3.service           active running
   survey-kick.service          inactive dead
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-26 07:29:31 push ok (cae904bc; pc2 pc3)
+  last snapshot: 2026-11-26 08:00:32 push ok (86d62cfd; pc2 pc3)
 ---- gpu jobs ----
-  03:30:16    timeout 12h bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_N0_s3/train.dat -vf /home/anurag/survey/rq
-  03:30:16    bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_N0_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Y
-  24:33       python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_N0_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Yelp_N0_s
-  00:00       python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_N0_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Yelp_N0_s
-  00:00       python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_N0_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Yelp_N0_s
-  00:00       python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_N0_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Yelp_N0_s
-  00:00       python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_N0_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Yelp_N0_s
+  16:12       timeout 12h bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey
+  16:12       bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s
+  16:12       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  00:12       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  00:12       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  00:12       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  00:12       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
   picks: picks_ml1m.json (91 cells)
   final ml1m: 831/831 done, 0 failed so far
   finished: ml1m
 ---- RQ10 (specialists) ----
-  .done markers: 35  (s2_fmlp_yelp_i20_s2 s2_hsd_sports_and_outdoors_n0_s3 s2_hsd_beauty_i10_s2 s2_steam_sports_and_outdoors_i10_s2 s2_steam_yelp_i10_s2 s2_hsd_yelp_i20_s2 s2_hsd_sports_and_outdoors_n0_s2 s2_fmlp_beauty_i10_s2 s2_hsd_yelp_i10_s2 s2_steam_beauty_n0_s2 s2_steam_yelp_i20_s2 s2_fmlp_sports_and_outdoors_n0_s3 s2_steam_sports_and_outdoors_i20_s2 s2_hsd_sports_and_outdoors_i10_s2 s2_steam_beauty_n0_s3 s2_steam_beauty_i20_s2 s2_steam_sports_and_outdoors_n0_s3 s2_fmlp_beauty_n0_s3 s2_fmlp_yelp_i10_s2 s2_hsd_beauty_n0_s2 s2_hsd_beauty_i20_s2 s2_steam_beauty_i10_s2 s2_steam_sports_and_outdoors_n0_s2 s2_fmlp_beauty_n0_s2 s2_fmlp_yelp_n0_s2 s2_hsd_yelp_n0_s3 s2_hsd_beauty_n0_s3 s2_fmlp_sports_and_outdoors_i10_s2 s2_fmlp_beauty_i20_s2 s2_hsd_sports_and_outdoors_i20_s2 s2_fmlp_sports_and_outdoors_n0_s2 s2_hsd_yelp_n0_s2 s2_steam_yelp_n0_s2 s2_fmlp_yelp_n0_s3 s2_fmlp_sports_and_outdoors_i20_s2 )
+  .done markers: 38  (s2_fmlp_yelp_i20_s2 s2_hsd_sports_and_outdoors_n0_s3 s2_fmlp_beauty_i10_s3 s2_hsd_beauty_i10_s2 s2_steam_sports_and_outdoors_i10_s2 s2_steam_yelp_i10_s2 s2_hsd_yelp_i20_s2 s2_hsd_sports_and_outdoors_n0_s2 s2_fmlp_beauty_i10_s2 s2_hsd_yelp_i10_s2 s2_steam_beauty_n0_s2 s2_steam_yelp_i20_s2 s2_fmlp_sports_and_outdoors_n0_s3 s2_steam_sports_and_outdoors_i20_s2 s2_hsd_sports_and_outdoors_i10_s2 s2_steam_beauty_n0_s3 s2_steam_beauty_i20_s2 s2_steam_sports_and_outdoors_n0_s3 s2_fmlp_beauty_n0_s3 s2_fmlp_yelp_i10_s2 s2_hsd_beauty_n0_s2 s2_steam_yelp_n0_s3 s2_hsd_beauty_i20_s2 s2_steam_beauty_i10_s2 s2_steam_sports_and_outdoors_n0_s2 s2_fmlp_beauty_n0_s2 s2_fmlp_yelp_n0_s2 s2_hsd_yelp_n0_s3 s2_hsd_beauty_n0_s3 s2_hsd_beauty_i10_s3 s2_fmlp_sports_and_outdoors_i10_s2 s2_fmlp_beauty_i20_s2 s2_hsd_sports_and_outdoors_i20_s2 s2_fmlp_sports_and_outdoors_n0_s2 s2_hsd_yelp_n0_s2 s2_steam_yelp_n0_s2 s2_fmlp_yelp_n0_s3 s2_fmlp_sports_and_outdoors_i20_s2 )
   last lines of ~/rq10_seeds.log:
-      STEAM         Yelp                 I20  s2  Recall@10 0.0550  NDCG@10 0.0301
-    2026-11-26 07:46:37 [rq10-stage2] stage 2 complete: 35 runs with results (table: /home/anurag/survey/rq10/results/stage2_summary.tsv)
-    2026-11-26 07:46:37 [rq10-seed2] stage 2 seed 2 finished with exit 0
+    2026-11-26 08:08:19 [rq10-stage2] s2_hsd_beauty_i10_s3: start
+    2026-11-26 08:15:14 [rq10-stage2] s2_hsd_beauty_i10_s3: exit 0  6 min  peak 7741 MiB
+    2026-11-26 08:15:14 [rq10-stage2] s2_steam_beauty_i10_s3: start
   stage 2 (full ranking, Recall@10 / NDCG@10):
     method    dataset              level                seed  recall10  ndcg10  source                            
     FMLP-Rec  Beauty               N0                   2     0.0562    0.0294  logs/run_s2_fmlp_beauty_n0_s2.log 
@@ -102,6 +102,9 @@ gpu 70 %, 2930 MiB, 24564 MiB, 58
     s2_steam_sports_and_outdoors_n0_s3	0	230	17446
     s2_fmlp_yelp_n0_s3	0	3	2552
     s2_hsd_yelp_n0_s3	0	15	7732
+    s2_steam_yelp_n0_s3	0	213	18820
+    s2_fmlp_beauty_i10_s3	0	4	2510
+    s2_hsd_beauty_i10_s3	0	6	7741
 ---- queue log (~/survey_queue.log) ----
   2026-11-26 07:46:33   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
   0 jobs to run, 273 already done
@@ -119,12 +122,12 @@ gpu 70 %, 2930 MiB, 24564 MiB, 58
   2026-11-26 07:46:33 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
   2026-11-26 07:46:37 [pc2-queue] PC2 queue complete: RQ4 ML-1M and RQ10 seed 2 finished
 ---- recent service log lines ----
-2026-11-26T07:29:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-26T07:29:31+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-26T07:29:31+05:30 home systemd[1983]: survey-snapshot.service: Consumed 1.002s CPU time.
 2026-11-26T07:46:26+05:30 home systemd[1983]: Starting survey-kick.service - Start survey-queue if it is not running...
 2026-11-26T07:46:26+05:30 home systemd[1983]: Started survey-queue.service - Survey unattended queue (pc2).
 2026-11-26T07:46:26+05:30 home systemd[1983]: Finished survey-kick.service - Start survey-queue if it is not running.
 2026-11-26T07:46:37+05:30 home systemd[1983]: survey-queue.service: Consumed 20.759s CPU time.
 2026-11-26T08:00:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-26T08:00:32+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-26T08:31:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
