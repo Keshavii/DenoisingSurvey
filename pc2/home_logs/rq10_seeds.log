@@ -3986,3 +3986,71 @@ scp: Connection closed
 2026-11-26 04:15:00 [rq10-stage2] s2_hsd_yelp_n0_s3: start
 2026-11-26 04:30:11 [rq10-stage2] s2_hsd_yelp_n0_s3: exit 0  15 min  peak 7732 MiB
 2026-11-26 04:30:11 [rq10-stage2] s2_steam_yelp_n0_s3: start
+2026-11-26 05:45:33 [rq10-seed2] stage 2, seed 2
+2026-11-26 05:45:33 [rq10-stage2] start (datasets [Beauty Sports_and_Outdoors Yelp], levels [N0 I10 I20], seeds [2])
+2026-11-26 05:45:33 [rq10-stage2] noise files [ Beauty Sports_and_Outdoors Yelp ]
+2026-11-26 05:45:37 [rq10-stage2] s2_fmlp_beauty_n0_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_hsd_beauty_n0_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_steam_beauty_n0_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_fmlp_sports_and_outdoors_n0_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_hsd_sports_and_outdoors_n0_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_steam_sports_and_outdoors_n0_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_fmlp_yelp_n0_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_hsd_yelp_n0_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_steam_yelp_n0_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_fmlp_beauty_i10_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_hsd_beauty_i10_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_steam_beauty_i10_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_fmlp_sports_and_outdoors_i10_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_hsd_sports_and_outdoors_i10_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_steam_sports_and_outdoors_i10_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_fmlp_yelp_i10_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_hsd_yelp_i10_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_steam_yelp_i10_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_fmlp_beauty_i20_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_hsd_beauty_i20_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_steam_beauty_i20_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_fmlp_sports_and_outdoors_i20_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_hsd_sports_and_outdoors_i20_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_steam_sports_and_outdoors_i20_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_fmlp_yelp_i20_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_hsd_yelp_i20_s2: already done, skip
+2026-11-26 05:45:37 [rq10-stage2] s2_steam_yelp_i20_s2: already done, skip
+35 runs -> /home/anurag/survey/rq10/results/stage2_summary.tsv
+  FMLP-Rec      Beauty               N0   s2  Recall@10 0.0562  NDCG@10 0.0294
+  FMLP-Rec      Beauty               I10  s2  Recall@10 0.0521  NDCG@10 0.0270
+  FMLP-Rec      Beauty               I20  s2  Recall@10 0.0494  NDCG@10 0.0253
+  FMLP-Rec      Beauty               N0   s3  Recall@10 0.0562  NDCG@10 0.0294
+  HSD (SASRec)  Beauty               N0   s2  Recall@10 0.0435  NDCG@10 0.0201
+  HSD (SASRec)  Beauty               I10  s2  Recall@10 0.0431  NDCG@10 0.0201
+  HSD (SASRec)  Beauty               I20  s2  Recall@10 0.0434  NDCG@10 0.0202
+  HSD (SASRec)  Beauty               N0   s3  Recall@10 0.0435  NDCG@10 0.0201
+  STEAM         Beauty               N0   s2  Recall@10 0.0629  NDCG@10 0.0322
+  STEAM         Beauty               I10  s2  Recall@10 0.0574  NDCG@10 0.0288
+  STEAM         Beauty               I20  s2  Recall@10 0.0561  NDCG@10 0.0289
+  STEAM         Beauty               N0   s3  Recall@10 0.0629  NDCG@10 0.0322
+  FMLP-Rec      Sports_and_Outdoors  N0   s2  Recall@10 0.0306  NDCG@10 0.0164
+  FMLP-Rec      Sports_and_Outdoors  I10  s2  Recall@10 0.0267  NDCG@10 0.0136
+  FMLP-Rec      Sports_and_Outdoors  I20  s2  Recall@10 0.0267  NDCG@10 0.0136
+  FMLP-Rec      Sports_and_Outdoors  N0   s3  Recall@10 0.0306  NDCG@10 0.0164
+  HSD (SASRec)  Sports_and_Outdoors  N0   s2  Recall@10 0.0214  NDCG@10 0.0097
+  HSD (SASRec)  Sports_and_Outdoors  I10  s2  Recall@10 0.0187  NDCG@10 0.0085
+  HSD (SASRec)  Sports_and_Outdoors  I20  s2  Recall@10 0.0185  NDCG@10 0.0083
+  HSD (SASRec)  Sports_and_Outdoors  N0   s3  Recall@10 0.0214  NDCG@10 0.0097
+  STEAM         Sports_and_Outdoors  N0   s2  Recall@10 0.0390  NDCG@10 0.0200
+  STEAM         Sports_and_Outdoors  I10  s2  Recall@10 0.0351  NDCG@10 0.0181
+  STEAM         Sports_and_Outdoors  I20  s2  Recall@10 0.0344  NDCG@10 0.0176
+  STEAM         Sports_and_Outdoors  N0   s3  Recall@10 0.0390  NDCG@10 0.0200
+  FMLP-Rec      Yelp                 N0   s2  Recall@10 0.0256  NDCG@10 0.0130
+  FMLP-Rec      Yelp                 I10  s2  Recall@10 0.0269  NDCG@10 0.0130
+  FMLP-Rec      Yelp                 I20  s2  Recall@10 0.0260  NDCG@10 0.0129
+  FMLP-Rec      Yelp                 N0   s3  Recall@10 0.0256  NDCG@10 0.0130
+  HSD (SASRec)  Yelp                 N0   s2  Recall@10 0.0437  NDCG@10 0.0287
+  HSD (SASRec)  Yelp                 I10  s2  Recall@10 0.0441  NDCG@10 0.0289
+  HSD (SASRec)  Yelp                 I20  s2  Recall@10 0.0430  NDCG@10 0.0284
+  HSD (SASRec)  Yelp                 N0   s3  Recall@10 0.0437  NDCG@10 0.0287
+  STEAM         Yelp                 N0   s2  Recall@10 0.0627  NDCG@10 0.0347
+  STEAM         Yelp                 I10  s2  Recall@10 0.0600  NDCG@10 0.0337
+  STEAM         Yelp                 I20  s2  Recall@10 0.0550  NDCG@10 0.0301
+2026-11-26 05:45:37 [rq10-stage2] stage 2 complete: 35 runs with results (table: /home/anurag/survey/rq10/results/stage2_summary.tsv)
+2026-11-26 05:45:37 [rq10-seed2] stage 2 seed 2 finished with exit 0
