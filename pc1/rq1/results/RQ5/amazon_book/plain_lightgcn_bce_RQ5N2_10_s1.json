@@ -1,0 +1,77 @@
+{
+  "recall@10": 0.04349137069917675,
+  "recall@20": 0.06905020599591205,
+  "recall@50": 0.12338745077386819,
+  "ndcg@10": 0.030761111150880167,
+  "ndcg@20": 0.038483949322652956,
+  "ndcg@50": 0.05252022015757103,
+  "n_eval_users": 80349,
+  "seen_item_leak_rate": 0.0,
+  "groups": {
+    "cold(<5)": {
+      "n_users": 1448,
+      "ndcg@20": 0.02357477763004102,
+      "recall@20": 0.04834254143646409
+    },
+    "warm(5-20)": {
+      "n_users": 39412,
+      "ndcg@20": 0.032296706467145476,
+      "recall@20": 0.07017321289624141
+    },
+    "established(>20)": {
+      "n_users": 39489,
+      "ndcg@20": 0.045205823668221665,
+      "recall@20": 0.06868870659927752
+    },
+    "user_q1": {
+      "n_users": 14633,
+      "ndcg@20": 0.023364283897859776,
+      "recall@20": 0.05325861636939337
+    },
+    "user_q2": {
+      "n_users": 16813,
+      "ndcg@20": 0.033935669014056896,
+      "recall@20": 0.07476357580443704
+    },
+    "user_q3": {
+      "n_users": 15777,
+      "ndcg@20": 0.04217944030342422,
+      "recall@20": 0.08399885909868797
+    },
+    "user_q4": {
+      "n_users": 16653,
+      "ndcg@20": 0.04290563270423662,
+      "recall@20": 0.07501551272043075
+    },
+    "user_q5": {
+      "n_users": 16473,
+      "ndcg@20": 0.048547583538174295,
+      "recall@20": 0.05689906725544042
+    },
+    "items_head": {
+      "n_truth": 190238,
+      "recall@20_micro": 0.08467814001408762
+    },
+    "items_mid": {
+      "n_truth": 55487,
+      "recall@20_micro": 0.01021860976444933
+    },
+    "items_tail": {
+      "n_truth": 38187,
+      "recall@20_micro": 0.006939534396522376
+    },
+    "coverage@20": 0.4127991242917811,
+    "gini@20": 0.9501534907399947
+  },
+  "part": "RQ5",
+  "dataset": "amazon_book",
+  "method": "Plain-BCE",
+  "backbone": "LightGCN",
+  "cond": "RQ5N2_10",
+  "seed": "1",
+  "train_file": "train_RQ5N2_10_s1.tsv",
+  "data": "data/amazon_book",
+  "topk": "runs/rq5/amazon_book/plain_lightgcn_bce_RQ5N2_10_s1/topk_test.npy",
+  "split": "test",
+  "evaluated_at": "2026-11-26 03:23:33"
+}
