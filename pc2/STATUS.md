@@ -1,23 +1,20 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-26 16:46:27 IST  up since 2026-11-17 18:44:08
+pc2 (anurag@home)  2026-11-26 17:17:27 IST  up since 2026-11-17 18:44:08
 code 6a15530f 16 Nov 20:44  linger yes  disk free 871G  ram used 7/62 GB swap 0 GB 
-gpu 97 %, 18819 MiB, 24564 MiB, 63
+gpu 94 %, 18819 MiB, 24564 MiB, 65
 ---- services ----
   rq10-seed3.service           active running
   survey-kick.service          inactive dead
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-26 16:15:31 push ok (ced9b538; pc2 pc3)
+  last snapshot: 2026-11-26 16:46:31 push ok (b2396d31; pc2 pc3)
 ---- gpu jobs ----
-  02:14:21    timeout 12h bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_I10_s3/train.dat -vf /home/anurag/survey/r
-  02:14:21    bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/
-  02:14:21    python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Yelp_I10
-  00:34       python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Yelp_I10
-  00:34       python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Yelp_I10
-  00:34       python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Yelp_I10
-  00:34       python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Yelp_I10
+  02:45:21    timeout 12h bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_I10_s3/train.dat -vf /home/anurag/survey/r
+  02:45:21    bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/
+  02:45:21    python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Yelp_I10
+  00:00       python main.py -tf /home/anurag/survey/rq10/data_s2/Yelp_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Yelp_I10
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
   picks: picks_ml1m.json (91 cells)
@@ -137,12 +134,12 @@ gpu 97 %, 18819 MiB, 24564 MiB, 63
   2026-11-26 15:50:33 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
   2026-11-26 15:50:37 [pc2-queue] PC2 queue complete: RQ4 ML-1M and RQ10 seed 2 finished
 ---- recent service log lines ----
-2026-11-26T15:50:26+05:30 home systemd[1983]: Starting survey-kick.service - Start survey-queue if it is not running...
-2026-11-26T15:50:26+05:30 home systemd[1983]: Started survey-queue.service - Survey unattended queue (pc2).
-2026-11-26T15:50:26+05:30 home systemd[1983]: Finished survey-kick.service - Start survey-queue if it is not running.
 2026-11-26T15:50:37+05:30 home systemd[1983]: survey-queue.service: Consumed 20.617s CPU time.
 2026-11-26T16:15:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-26T16:15:31+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-26T16:15:31+05:30 home systemd[1983]: survey-snapshot.service: Consumed 1.025s CPU time.
 2026-11-26T16:46:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-26T16:46:31+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-26T16:46:31+05:30 home systemd[1983]: survey-snapshot.service: Consumed 3.091s CPU time.
+2026-11-26T17:17:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
