@@ -1,14 +1,14 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-26 15:06:28 UTC  up since 2026-11-25 16:56:12
+pc3 (aura1@aura-node1)  2026-11-26 15:36:28 UTC  up since 2026-11-25 16:56:12
 code 6a15530f 16 Nov 20:44  linger yes  disk free 581G  ram used 5/62 GB swap 0 GB 
 gpu 0 %, 432 MiB, 24564 MiB, 42
 ---- services ----
   survey-kick.service          inactive dead
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-26 14:36:28 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-26 15:06:28 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
@@ -146,26 +146,26 @@ gpu 0 %, 432 MiB, 24564 MiB, 42
 ---- queue log (~/survey_queue.log) ----
   0 jobs to run, 249 already done
   kept the logs of 0 failed jobs in logs/rq4_tune/failed
-  2026-11-26 13:26:27   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
+  2026-11-26 15:26:28   retry pass: failed jobs of configs/rq4/jobs_tune_here.csv, one at a time
   0 jobs to run, 249 already done
-  2026-11-26 13:26:27 6 picks
+  2026-11-26 15:26:28 6 picks
   83 cells picked -> /home/aura1/survey/rq1/configs/rq4/best.json; incomplete: ml1m|L1|drop (0/3), ml1m|L1|reweight (0/3), ml1m|L1|relabel (0/3), ml1m|L1|resample
   83 yelp picks -> configs/rq4/picks_yelp.json
-  2026-11-26 13:26:27 7 finals [yelp] seeds [2]
+  2026-11-26 15:26:28 7 finals [yelp] seeds [2]
   169 of 350 jobs kept (datasets yelp, seeds 2)
   0 jobs to run, 338 already done
   kept the logs of 0 failed jobs in logs/rq4_final/failed
-  2026-11-26 13:26:27   retry pass: failed jobs of configs/rq4/jobs_final_yelp_s2.csv, one at a time
+  2026-11-26 15:26:28   retry pass: failed jobs of configs/rq4/jobs_final_yelp_s2.csv, one at a time
   0 jobs to run, 338 already done
-  2026-11-26 13:26:27 RQ4 done [yelp] seeds [2]
-  2026-11-26 13:26:27 [pc3-queue] PC3 queue complete: nothing left to run
+  2026-11-26 15:26:28 RQ4 done [yelp] seeds [2]
+  2026-11-26 15:26:28 [pc3-queue] PC3 queue complete: nothing left to run
 ---- recent service log lines ----
-2026-11-26T13:26:27+00:00 aura-node1 systemd[2052]: survey-queue.service: Consumed 25.528s CPU time.
-2026-11-26T13:36:26+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-26T13:36:27+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-26T14:06:26+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
-2026-11-26T14:06:27+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-26T14:36:27+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-26T14:36:28+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-26T15:06:27+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-26T15:06:28+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-26T15:26:16+00:00 aura-node1 systemd[2052]: Starting survey-kick.service - Start survey-queue if it is not running...
+2026-11-26T15:26:16+00:00 aura-node1 systemd[2052]: Started survey-queue.service - Survey unattended queue (pc3).
+2026-11-26T15:26:16+00:00 aura-node1 systemd[2052]: Finished survey-kick.service - Start survey-queue if it is not running.
+2026-11-26T15:26:28+00:00 aura-node1 systemd[2052]: survey-queue.service: Consumed 25.651s CPU time.
+2026-11-26T15:36:28+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
