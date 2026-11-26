@@ -829,3 +829,32 @@ kept the logs of 0 failed jobs in logs/rq4_tune/failed
 83 yelp picks -> configs/rq4/picks_yelp.json
 2026-11-25 17:02:13 7 finals [yelp] seeds [2]
 169 of 350 jobs kept (datasets yelp, seeds 2)
+23 jobs to run, 315 already done
+{'job_id': 'rq4_yelp_M1_graph_drop_N3_20_s2', 'status': 'ok', 'seconds': 3137.9, 'peak_gpu_mb_while_running': 5284, 'slots': 2, 'finished': '2026-11-25 17:54:31'}
+{'job_id': 'rq4_yelp_M1_graph_reweight_N3_20_s2', 'status': 'ok', 'seconds': 3150.5, 'peak_gpu_mb_while_running': 4497, 'slots': 2, 'finished': '2026-11-25 17:54:43'}
+{'job_id': 'rq4_yelp_L3_graph_drop_N3_20_s2', 'status': 'ok', 'seconds': 3035.8, 'peak_gpu_mb_while_running': 5201, 'slots': 2, 'finished': '2026-11-25 18:45:20'}
+{'job_id': 'rq4_yelp_M1_user_reweight_N3_20_s2', 'status': 'ok', 'seconds': 3065.8, 'peak_gpu_mb_while_running': 4741, 'slots': 2, 'finished': '2026-11-25 18:45:37'}
+{'job_id': 'rq4_yelp_L3_graph_reweight_N3_20_s2', 'status': 'ok', 'seconds': 3012.5, 'peak_gpu_mb_while_running': 5451, 'slots': 2, 'finished': '2026-11-25 19:35:33'}
+{'job_id': 'rq4_yelp_L3_user_reweight_N3_20_s2', 'status': 'ok', 'seconds': 3040.7, 'peak_gpu_mb_while_running': 5445, 'slots': 2, 'finished': '2026-11-25 19:36:18'}
+{'job_id': 'rq4_yelp_L4_graph_drop_N3_20_s2', 'status': 'ok', 'seconds': 2419.3, 'peak_gpu_mb_while_running': 5815, 'slots': 2, 'finished': '2026-11-25 20:15:53'}
+{'job_id': 'rq4_yelp_L4_user_reweight_N3_20_s2', 'status': 'ok', 'seconds': 3017.5, 'peak_gpu_mb_while_running': 6826, 'slots': 2, 'finished': '2026-11-25 20:26:36'}
+{'job_id': 'rq4_yelp_R1_graph_drop_N3_20_s2', 'status': 'ok', 'seconds': 2976.9, 'peak_gpu_mb_while_running': 8198, 'slots': 2, 'finished': '2026-11-25 21:05:30'}
+{'job_id': 'rq4_yelp_R1_graph_reweight_N3_20_s2', 'status': 'ok', 'seconds': 3033.8, 'peak_gpu_mb_while_running': 8152, 'slots': 2, 'finished': '2026-11-25 21:17:10'}
+{'job_id': 'rq4_yelp_R1_user_reweight_N3_20_s2', 'status': 'ok', 'seconds': 3166.3, 'peak_gpu_mb_while_running': 8004, 'slots': 2, 'finished': '2026-11-25 21:58:16'}
+{'job_id': 'rq4_yelp_R2_graph_drop_N3_20_s2', 'status': 'ok', 'seconds': 3198.6, 'peak_gpu_mb_while_running': 8173, 'slots': 2, 'finished': '2026-11-25 22:10:29'}
+{'job_id': 'rq4_yelp_R2_graph_reweight_N3_20_s2', 'status': 'ok', 'seconds': 2268.6, 'peak_gpu_mb_while_running': 8173, 'slots': 2, 'finished': '2026-11-25 22:36:05'}
+{'job_id': 'rq4_yelp_R2_user_reweight_N3_20_s2', 'status': 'ok', 'seconds': 2991.3, 'peak_gpu_mb_while_running': 8175, 'slots': 2, 'finished': '2026-11-25 23:00:21'}
+{'job_id': 'rq4_yelp_R2_soft_relabel_N3_20_s2', 'status': 'ok', 'seconds': 2178.5, 'peak_gpu_mb_while_running': 9525, 'slots': 2, 'finished': '2026-11-25 23:12:24'}
+{'job_id': 'rq4_yelp_L1_reshape_N3_20_s2', 'status': 'ok', 'seconds': 2052.4, 'peak_gpu_mb_while_running': 10631, 'slots': 2, 'finished': '2026-11-25 23:34:34'}
+{'job_id': 'rq4_yelp_M1_reshape_N3_20_s2', 'status': 'ok', 'seconds': 2254.6, 'peak_gpu_mb_while_running': 11081, 'slots': 2, 'finished': '2026-11-25 23:49:59'}
+{'job_id': 'rq4_yelp_L3_reshape_N3_20_s2', 'status': 'ok', 'seconds': 2255.0, 'peak_gpu_mb_while_running': 11777, 'slots': 2, 'finished': '2026-11-26 00:12:10'}
+{'job_id': 'rq4_yelp_L4_reshape_N3_20_s2', 'status': 'ok', 'seconds': 2253.4, 'peak_gpu_mb_while_running': 12071, 'slots': 2, 'finished': '2026-11-26 00:27:33'}
+{'job_id': 'rq4_yelp_R1_reshape_N3_20_s2', 'status': 'ok', 'seconds': 2256.5, 'peak_gpu_mb_while_running': 12535, 'slots': 2, 'finished': '2026-11-26 00:49:47'}
+{'job_id': 'rq4_yelp_R2_reshape_N3_20_s2', 'status': 'ok', 'seconds': 2256.9, 'peak_gpu_mb_while_running': 11665, 'slots': 2, 'finished': '2026-11-26 01:05:11'}
+{'job_id': 'rq4_yelp_none_reshape_N3_20_s2', 'status': 'ok', 'seconds': 1937.1, 'peak_gpu_mb_while_running': 7959, 'slots': 2, 'finished': '2026-11-26 01:22:05'}
+{'job_id': 'rq4_yelp_oracle_clean_s2', 'status': 'ok', 'seconds': 1725.0, 'peak_gpu_mb_while_running': 7959, 'slots': 2, 'finished': '2026-11-26 01:33:57'}
+kept the logs of 0 failed jobs in logs/rq4_final/failed
+2026-11-26 01:33:57   retry pass: failed jobs of configs/rq4/jobs_final_yelp_s2.csv, one at a time
+0 jobs to run, 338 already done
+2026-11-26 01:33:57 RQ4 done [yelp] seeds [2]
+2026-11-26 01:33:57 [pc3-queue] PC3 queue complete: nothing left to run
