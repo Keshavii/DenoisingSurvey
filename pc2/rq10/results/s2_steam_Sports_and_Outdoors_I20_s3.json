@@ -1,0 +1,27 @@
+{
+ "method": "STEAM",
+ "checkpoint": "./save_s2_Sports_and_Outdoors_I20_s3/",
+ "best_valid_epoch": 195,
+ "best_valid_sum": 2.5716820184532314,
+ "users": 35598,
+ "n_items": 18357,
+ "k": 10,
+ "original": {
+  "recall@10": 0.03413113096241362,
+  "ndcg@10": 0.017614569384178772,
+  "sampled_recall@10": 0.5108152143378841,
+  "sampled_mrr@10": 0.2623989710497388
+ },
+ "corrected": {
+  "recall@10": 0.03444013708635316,
+  "ndcg@10": 0.017760392090692783,
+  "sampled_recall@10": 0.5111804033934491,
+  "sampled_mrr@10": 0.264135291174733
+ },
+ "reported": {
+  "recall@10": 0.03444013708635316,
+  "ndcg@10": 0.017760392090692783,
+  "sampled_recall@10": 0.5111804033934491,
+  "sampled_mrr@10": 0.264135291174733
+ }
+}

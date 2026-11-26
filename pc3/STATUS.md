@@ -1,15 +1,18 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-26 18:06:30 UTC  up since 2026-11-25 16:56:12
-code 6a15530f 16 Nov 20:44  linger yes  disk free 581G  ram used 5/62 GB swap 0 GB 
-gpu 0 %, 432 MiB, 24564 MiB, 42
+pc3 (aura1@aura-node1)  2026-11-26 18:36:30 UTC  up since 2026-11-25 16:56:12
+code 6a15530f 16 Nov 20:44  linger yes  disk free 580G  ram used 9/62 GB swap 0 GB 
+gpu 85 %, 8451 MiB, 24564 MiB, 49
 ---- services ----
+  rq10-ssdrec-test.service     active running
   survey-kick.service          inactive dead
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-26 17:36:30 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-26 18:06:30 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
+  15:57       /usr/bin/bash -lc cd ~/survey/rq10/repos/ssdrec && PATH=~/miniconda3/envs/r10-recbole/bin:$PATH python run_ssdrec_surve
+  15:57       python run_ssdrec_survey.py --dataset Beauty --sub_model SASRec
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
   picks: picks_yelp.json (83 cells)
@@ -160,12 +163,12 @@ gpu 0 %, 432 MiB, 24564 MiB, 42
   2026-11-26 17:26:28 RQ4 done [yelp] seeds [2]
   2026-11-26 17:26:28 [pc3-queue] PC3 queue complete: nothing left to run
 ---- recent service log lines ----
-2026-11-26T17:06:30+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-26T17:26:16+00:00 aura-node1 systemd[2052]: Starting survey-kick.service - Start survey-queue if it is not running...
-2026-11-26T17:26:16+00:00 aura-node1 systemd[2052]: Started survey-queue.service - Survey unattended queue (pc3).
 2026-11-26T17:26:16+00:00 aura-node1 systemd[2052]: Finished survey-kick.service - Start survey-queue if it is not running.
 2026-11-26T17:26:28+00:00 aura-node1 systemd[2052]: survey-queue.service: Consumed 25.633s CPU time.
 2026-11-26T17:36:29+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-26T17:36:30+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-26T18:06:30+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-26T18:06:30+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-26T18:20:33+00:00 aura-node1 systemd[2052]: Started rq10-ssdrec-test.service - /usr/bin/bash -lc "cd ~/survey/rq10/repos/ssdrec && PATH=~/miniconda3/envs/r10-recbole/bin:\$PATH python run_ssdrec_survey.py --dataset Beauty --sub_model SASRec > ~/survey/rq10/logs/run_ssdrec_beauty_sasrec.log 2>&1".
+2026-11-26T18:36:30+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
