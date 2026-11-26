@@ -1,14 +1,14 @@
 # pc3 status
 
 ```
-pc3 (aura1@aura-node1)  2026-11-26 12:06:26 UTC  up since 2026-11-25 16:56:12
+pc3 (aura1@aura-node1)  2026-11-26 12:36:26 UTC  up since 2026-11-25 16:56:12
 code 6a15530f 16 Nov 20:44  linger yes  disk free 581G  ram used 5/62 GB swap 0 GB 
-gpu 0 %, 432 MiB, 24564 MiB, 43
+gpu 0 %, 432 MiB, 24564 MiB, 42
 ---- services ----
   survey-kick.service          inactive dead
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-26 11:36:26 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
+  last snapshot: 2026-11-26 12:06:26 staged /home/aura1/survey-status/pc3 for relay (this PC has no GitHub login; a relaying PC pushes it)
 ---- gpu jobs ----
 ---- RQ4 (signal x treatment) ----
   tune yelp: 249/249 done, 0 failed so far
@@ -160,12 +160,12 @@ gpu 0 %, 432 MiB, 24564 MiB, 43
   2026-11-26 11:26:27 RQ4 done [yelp] seeds [2]
   2026-11-26 11:26:27 [pc3-queue] PC3 queue complete: nothing left to run
 ---- recent service log lines ----
-2026-11-26T11:06:26+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
-2026-11-26T11:26:15+00:00 aura-node1 systemd[2052]: Starting survey-kick.service - Start survey-queue if it is not running...
 2026-11-26T11:26:15+00:00 aura-node1 systemd[2052]: Started survey-queue.service - Survey unattended queue (pc3).
 2026-11-26T11:26:15+00:00 aura-node1 systemd[2052]: Finished survey-kick.service - Start survey-queue if it is not running.
 2026-11-26T11:26:27+00:00 aura-node1 systemd[2052]: survey-queue.service: Consumed 25.537s CPU time.
 2026-11-26T11:36:25+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-26T11:36:26+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-26T12:06:26+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-26T12:06:26+00:00 aura-node1 systemd[2052]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-26T12:36:26+00:00 aura-node1 systemd[2052]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
