@@ -1,23 +1,23 @@
 # pc2 status
 
 ```
-pc2 (anurag@home)  2026-11-26 08:31:27 IST  up since 2026-11-17 18:44:08
+pc2 (anurag@home)  2026-11-26 09:02:27 IST  up since 2026-11-17 18:44:08
 code 6a15530f 16 Nov 20:44  linger yes  disk free 878G  ram used 7/62 GB swap 0 GB 
-gpu 91 %, 22534 MiB, 24564 MiB, 62
+gpu 94 %, 22534 MiB, 24564 MiB, 65
 ---- services ----
   rq10-seed3.service           active running
   survey-kick.service          inactive dead
   survey-queue.service         inactive dead
   survey-snapshot.service      activating start
-  last snapshot: 2026-11-26 08:00:32 push ok (86d62cfd; pc2 pc3)
+  last snapshot: 2026-11-26 08:31:31 push ok (a5b83fc9; pc2 pc3)
 ---- gpu jobs ----
-  16:12       timeout 12h bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey
-  16:12       bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s
-  16:12       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
-  00:12       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
-  00:12       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
-  00:12       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
-  00:12       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  47:12       timeout 12h bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey
+  47:12       bash -c python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s
+  47:12       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  00:01       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  00:01       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  00:01       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
+  00:01       python main.py -tf /home/anurag/survey/rq10/data_s2/Beauty_I10_s3/train.dat -vf /home/anurag/survey/rq10/data_s2/Beauty
 ---- RQ4 (signal x treatment) ----
   tune ml1m: 273/273 done, 0 failed so far
   picks: picks_ml1m.json (91 cells)
@@ -122,12 +122,12 @@ gpu 91 %, 22534 MiB, 24564 MiB, 62
   2026-11-26 07:46:33 [pc2-queue] RQ10 noise seed 2 (log ~/rq10_seeds.log, peer aura1@10.100.97.71)
   2026-11-26 07:46:37 [pc2-queue] PC2 queue complete: RQ4 ML-1M and RQ10 seed 2 finished
 ---- recent service log lines ----
-2026-11-26T07:29:31+05:30 home systemd[1983]: survey-snapshot.service: Consumed 1.002s CPU time.
-2026-11-26T07:46:26+05:30 home systemd[1983]: Starting survey-kick.service - Start survey-queue if it is not running...
-2026-11-26T07:46:26+05:30 home systemd[1983]: Started survey-queue.service - Survey unattended queue (pc2).
 2026-11-26T07:46:26+05:30 home systemd[1983]: Finished survey-kick.service - Start survey-queue if it is not running.
 2026-11-26T07:46:37+05:30 home systemd[1983]: survey-queue.service: Consumed 20.759s CPU time.
 2026-11-26T08:00:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 2026-11-26T08:00:32+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
 2026-11-26T08:31:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
+2026-11-26T08:31:31+05:30 home systemd[1983]: Finished survey-snapshot.service - Survey status and results to GitHub (branch status).
+2026-11-26T08:31:31+05:30 home systemd[1983]: survey-snapshot.service: Consumed 1.102s CPU time.
+2026-11-26T09:02:26+05:30 home systemd[1983]: Starting survey-snapshot.service - Survey status and results to GitHub (branch status)...
 ```
